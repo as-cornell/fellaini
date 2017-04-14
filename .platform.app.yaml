@@ -19,7 +19,8 @@ build:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-    database: 'mysqldb:mysql'
+    first: 'mysqldb:first'
+    second: 'mysqldb:second'
 #    solr: 'solrsearch:solr'
 #    redis: 'rediscache:redis'
 
@@ -82,7 +83,8 @@ disk: 2048
 # directory paths, relative to the application root. The values are strings such as
 # 'shared:files/NAME', where NAME is just a unique name for the mount.
 mounts:
-    '/web/sites/default/files': 'shared:files/files'
+    '/web/sites/default/files': 'shared:files/files-first'
+    '/web/sites/second/files': 'shared:files/files-second'
     '/tmp': 'shared:files/tmp'
     '/private': 'shared:files/private'
     '/drush-backups': 'shared:files/drush-backups'
