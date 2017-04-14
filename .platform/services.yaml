@@ -6,7 +6,20 @@
 mysqldb:
     type: "mysql:10.0"
     disk: 2048
-#
+    configuration:
+        schemas:
+            - firstdb2
+            - seconddb
+        endpoints:
+            first:
+                default_schema: firstdb
+                privileges:
+                    firstdb: admin
+            second:
+                default_schema: seconddb
+                privileges:
+                    seconddb: admin
+
 #rediscache:
 #    type: "redis:3.0"
 #

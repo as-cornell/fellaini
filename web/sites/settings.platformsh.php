@@ -4,12 +4,17 @@
  * Platform.sh settings.
  */
 
+if (!isset($platformsh_subsite_id)) {
+  $platformsh_subsite_id = 'database';
+}
+
 // Configure the database.
 if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
+
   $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
   if (empty($databases['default']) && !empty($relationships)) {
     foreach ($relationships as $key => $relationship) {
-      $drupal_key = ($key === 'database') ? 'default' : $key;
+      $drupal_key = ($key === $platformsh_subsite_id) ? 'default' : $key;
       foreach ($relationship as $instance) {
         if (empty($instance['scheme']) || ($instance['scheme'] !== 'mysql' && $instance['scheme'] !== 'pgsql')) {
           continue;
@@ -22,11 +27,11 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
           'host' => $instance['host'],
           'port' => $instance['port'],
         ];
-        
+
         if (!empty($instance['query']['compression'])) {
           $database['pdo'][PDO::MYSQL_ATTR_COMPRESS] = TRUE;
         }
-        
+
         if (!empty($instance['query']['is_master'])) {
           $databases[$drupal_key]['default'] = $database;
         }
@@ -42,10 +47,10 @@ if (isset($_ENV['PLATFORM_APP_DIR'])) {
 
   // Configure private and temporary file paths.
   if (!isset($settings['file_private_path'])) {
-    $settings['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private';
+    $settings['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private/' . $platformsh_subsite_id;
   }
   if (!isset($config['system.file']['path']['temporary'])) {
-    $config['system.file']['path']['temporary'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp';
+    $config['system.file']['path']['temporary'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp/' . $platformsh_subsite_id;
   }
 
   // Configure the default PhpStorage and Twig template cache directories.
@@ -103,5 +108,5 @@ if (isset($_ENV['PLATFORM_VARIABLES'])) {
 // Set the project-specific entropy value, used for generating one-time
 // keys and such.
 if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($settings['hash_salt'])) {
-  $settings['hash_salt'] = $_ENV['PLATFORM_PROJECT_ENTROPY'];
+  $settings['hash_salt'] = $_ENV['PLATFORM_PROJECT_ENTROPY'] . $platformsh_subsite_id;
 }
