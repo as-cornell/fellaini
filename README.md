@@ -1,7 +1,9 @@
 # Drupal project template for Platform.sh
 
-This project provides a starter kit for Drupal 8 projects hosted on [Platform.sh](http://platform.sh). It
+This project provides a starter kit for Drupal 8 multisite projects hosted on [Platform.sh](http://platform.sh). It
 is very closely based on the [Drupal Composer project](https://github.com/drupal-composer/drupal-project).
+
+It differs slightly from the standard [Drupal 8 project template](https://github.com/platformsh/platformsh-example-drupal8), in that it is setup for 2 multi-site instances, named `first` and `second`, both of which are setup to be subdomains of the same parent domain.  It can be used directly or as a reference for modifying your own project.
 
 ## Starting a new project
 
