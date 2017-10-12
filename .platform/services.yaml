@@ -8,7 +8,7 @@ mysqldb:
     disk: 2048
     configuration:
         schemas:
-            - firstdb2
+            - firstdb
             - seconddb
         endpoints:
             first:
