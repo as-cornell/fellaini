@@ -19,9 +19,23 @@ To start a new Drupal 8 project on Platform.sh, you have 2 options:
 
 ## Using as a reference
 
-You can also use this repository as a reference for your own Drupal projects, and
-borrow whatever code is needed.  The most important parts are the `.platform.app.yaml` file,
-the `.platform` directory, and the changes made to `settings.php`.
+You can also use this repository as a reference for your own Drupal projects, and borrow whatever code is needed.
+
+The important differences from the Drupal 8 template are as follows:
+
+* The [`routes.yaml`](.platform/routes/yaml) file has two routes defined, one for each subdomain.  Each subdomain corresponds to a separate Multisite instance.
+
+* There is a single MariaDB service that has a separate database and endpoint defined for each instance.  See [`services.yaml`](.platform/services.yaml#L9)
+
+* The [`.platform.app.yaml` file](.platform.app.yaml#L21) has a separate relationship defined for each database, named the same.
+
+* Each instance has its own [`sites`](web/sites) directory.  Note that while they are named consistently with the subdomain name they are not using the full domain name per Drupal default.  That's because the domain name will vary with the branch, and mapping in `sites.php` is required.
+
+* The [`sites.php` file](web/sites/sites.php) includes code to dynamically map the request site name to the appropriate directory.  The code there is written to assume a subdirectory configuration.  It will almost certainly need to be modified for your site.  Additionally, production domain names should be added as well as explict maps.
+
+* Each instance has its own [`settings.php` file](web/sites/default/settings.php).  The only notable difference from the single-site version is the definition of a `$platformsh_subsite_id` variable.  This variable is used in the shared `settings.platformsh.php` file, which is included from the `web/sites` directory.
+
+* The unified [`settings.platformsh.php` file](web/sites/settings.platformsh.php) is nearly identical to the one used by the single-site version, except it uses the `$platformsh_subsite_id` to determine which database relationship has the credentials for its database.
 
 ## Managing a Drupal site built with Composer
 
