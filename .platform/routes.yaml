@@ -3,10 +3,10 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
-"http://first.{default}/":
+"https://first.{default}/":
     type: upstream
     upstream: "app:http"
 
-"http://second.{default}/":
+"https://second.{default}/":
     type: upstream
     upstream: "app:http"
