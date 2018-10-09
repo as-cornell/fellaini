@@ -76,35 +76,6 @@ web:
                 '^/sites/default/files/(css|js)':
                     expires: 2w
 
-        '/styleguide':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/rooney/pattern-lab/public'
-            index:
-                - index.html
-            # Do not execute PHP scripts.
-            scripts: false
-        '/dist':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/rooney/dist'
-            scripts: false
-        '/pattern-lab':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/rooney/pattern-lab'
-            scripts: false
-        '/fonts':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/rooney/fonts'
-            scripts: false
-        '/images':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/rooney/images'
-            scripts: false
-
 # The size of the persistent disk of the application (in MB).
 disk: 2048
 
@@ -120,7 +91,7 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-     build: |
+    build: |
       curl -sS https://platform.sh/cli/installer | php
       set -e
       cd web/themes/custom/rooney
@@ -128,9 +99,8 @@ hooks:
       gulp build
       gulp pl
     # The deploy hook runs after your application has been deployed and started.
+    # The deploy hook runs after your application has been deployed and started.
     deploy: |
-      set -e
-      ./drush/platformsh_generate_drush_yml.php
       cd web
       drush -y cache-rebuild
       drush -y updatedb
