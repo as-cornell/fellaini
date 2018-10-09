@@ -1,0 +1,60 @@
+article[class*="slide"]{
+    //background: red;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: .25fr repeat(12, 1fr) .25fr;
+    grid-auto-rows: auto;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 4px;
+    max-height: 100%;
+    // nth:of-type loop
+    @for $i from 1 through 10{
+        $z: 10 - $i;
+        &:nth-of-type(#{$i}){
+            z-index: $z;
+        }
+    }
+    main{
+        //background: blue;
+        max-height: 100%;
+        grid-column: 2/14;
+    }
+    &[class*="aside"]{
+        background: $gold;
+        main{
+            grid-column: 2/11;
+        }
+        aside{
+            grid-column: 11/14;
+            align-self: center;
+        }
+    }
+    &[class*="poster"]{
+        //background: $white;
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            max-height: 776px;
+        }
+    }
+    h1{
+        font-weight: $font-medium;
+        font-size: 3.5rem;
+    }
+}
+
+
+
+.box{
+  grid-column: span 3;
+  background: yellow;
+}
+.bigBox{
+  grid-column: span 6;
+  background: blue;
+  grid-row: span 2;
+}

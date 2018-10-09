@@ -1,0 +1,14 @@
+{
+  "name": "drupal/as_slideshow",
+  "type": "drupal-module",
+  "description": "Contains configurations for slides content type and slideshow view as used on A&S Screens",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/as_slideshow",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/as_slideshow",
+    "source": "http://cgit.drupalcode.org/as_slideshow"
+  },
+  "require": { }
+}

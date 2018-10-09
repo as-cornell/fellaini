@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_audio_video
+    - node.type.article
+  module:
+    - text
+id: node.article.field_featured_audio_video
+field_name: field_featured_audio_video
+entity_type: node
+bundle: article
+label: 'Featured Audio Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

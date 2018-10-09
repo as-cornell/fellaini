@@ -1,0 +1,66 @@
+# Migration configuration for imported images.
+id: import_as_article_images
+label: Migrate images from D7 articles to D8
+migration_group: articles
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - as_migrate_articles
+
+destination:
+  plugin: entity:file
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'https://as.cornell.edu/'
+
+  urls: http://as.cornell.edu/article-images-json
+
+  ids:
+    id:
+      type: string
+
+  item_selector: images
+
+  fields:
+    -
+      name: id
+      label: 'id'
+      selector: /image/id
+    -
+      name: uuid
+      label: 'uuid'
+      selector: /image/uuid
+    -
+      name: filename
+      label: 'filename'
+      selector: /image/filename
+    -
+      name: created
+      label: 'Created'
+      selector: /image/created
+    -
+      name: uri
+      label: 'Uri'
+      selector: /image/uri
+    -
+      name: url
+      label: 'Url'
+      selector: /image/url
+
+process:
+
+  filename: filename
+  uuid: uuid
+  uri:
+    plugin: download
+    source:
+      - url
+      - uri
+    guzzle_options:
+      base_uri: url

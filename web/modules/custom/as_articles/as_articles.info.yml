@@ -1,0 +1,5 @@
+name: 'A&S Articles'
+type: module
+description: 'Contains configurations for articles content type as used on as.cornell.edu'
+core: 8.x
+package: 'AS'

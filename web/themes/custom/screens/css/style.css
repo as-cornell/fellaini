@@ -1,0 +1,160 @@
+html, body {
+  margin: 0; }
+
+html {
+  font-size: 18px; }
+
+body {
+  font-family: "canada-type-gibson", sans-serif;
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+p {
+  margin-top: 0;
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 1.3em; }
+
+strong {
+  font-weight: 400; }
+
+.grid {
+  display: grid;
+  background: url("http://as.cornell.edu/sites/as/files/color-swatches-2.svg") no-repeat bottom left;
+  margin: 0 auto;
+  grid-gap: 1.5rem;
+  grid-template-columns: 0.5fr 0.5fr repeat(12, 1fr) 0.5fr 0.5fr;
+  grid-template-rows: 130px 1fr 120px;
+  height: 100vh;
+  width: 100vw; }
+
+.logo,
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.logo {
+  grid-column: 3/6; }
+
+.date-time {
+  grid-column: 12/15; }
+
+.weather {
+  grid-row: 3;
+  grid-column: 12/15; }
+
+.slides {
+  grid-column: 2/16;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+.svg-sprite {
+  display: none; }
+
+article[class*="slide"] {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 0.25fr repeat(12, 1fr) 0.25fr;
+  grid-auto-rows: auto;
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 4px;
+  max-height: 100%; }
+  article[class*="slide"]:nth-of-type(1) {
+    z-index: 9; }
+  article[class*="slide"]:nth-of-type(2) {
+    z-index: 8; }
+  article[class*="slide"]:nth-of-type(3) {
+    z-index: 7; }
+  article[class*="slide"]:nth-of-type(4) {
+    z-index: 6; }
+  article[class*="slide"]:nth-of-type(5) {
+    z-index: 5; }
+  article[class*="slide"]:nth-of-type(6) {
+    z-index: 4; }
+  article[class*="slide"]:nth-of-type(7) {
+    z-index: 3; }
+  article[class*="slide"]:nth-of-type(8) {
+    z-index: 2; }
+  article[class*="slide"]:nth-of-type(9) {
+    z-index: 1; }
+  article[class*="slide"]:nth-of-type(10) {
+    z-index: 0; }
+  article[class*="slide"] main {
+    max-height: 100%;
+    grid-column: 2/14; }
+  article[class*="slide"][class*="aside"] {
+    background: #fdd100; }
+    article[class*="slide"][class*="aside"] main {
+      grid-column: 2/11; }
+    article[class*="slide"][class*="aside"] aside {
+      grid-column: 11/14;
+      align-self: center; }
+  article[class*="slide"][class*="poster"] main {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  article[class*="slide"][class*="poster"] img {
+    max-height: 776px; }
+  article[class*="slide"] h1 {
+    font-weight: 600;
+    font-size: 3.5rem; }
+
+.box {
+  grid-column: span 3;
+  background: yellow; }
+
+.bigBox {
+  grid-column: span 6;
+  background: blue;
+  grid-row: span 2; }
+
+/*
+    styles for date time block
+*/
+.date-time, .weather {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300; }
+  .date-time > svg, .weather > svg {
+    height: 40px;
+    width: 40px;
+    margin-right: 1rem;
+    stroke: #9b9b9b;
+    fill: #9b9b9b; }
+
+.calendar-logo, .weather-icon {
+  height: 40px;
+  margin-right: 1rem;
+  width: 40px;
+  font-size: 40px !important;
+  color: #9b9b9b; }
+
+.date-time > div, .weather > div {
+  display: flex;
+  border-left: 1px solid #9b9b9b;
+  flex-direction: column;
+  padding-left: 1rem;
+  color: #9b9b9b;
+  font-weight: 300;
+  width: 250px; }
+
+#time, .weather-description {
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #9b9b9b; }
+
+#date, .weather-temps {
+  padding-top: .5rem; }
+
+/*# sourceMappingURL=style.css.map */

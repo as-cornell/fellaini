@@ -1,0 +1,43 @@
+/*
+    styles for date time block
+*/
+.date-time, .weather{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: $font-light;
+    >svg{
+        height:40px;
+        width: 40px;
+        margin-right: 1rem;
+        stroke: $gray;
+        fill: $gray;
+    }
+}
+.calendar-logo, .weather-icon{
+    height: 40px;
+    margin-right: 1rem;
+    width: 40px;
+    font-size: 40px !important;
+    color: $gray;
+}
+.date-time>div, .weather>div{
+    display: flex;
+    border-left: 1px solid $gray;
+    flex-direction: column;
+    padding-left: 1rem;
+    color: $gray;
+    font-weight: $font-light;
+    width: 250px;
+}
+#time, .weather-description{
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $gray;
+}
+#date, .weather-temps{
+    padding-top: .5rem;
+}
+.owf{
+
+}

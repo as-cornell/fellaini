@@ -1,0 +1,49 @@
+# Migration configuration for imported terms from departments_programs.
+id: import_as_article_topics
+label: Import taxonomy vocabulary topics and disciplines terms for articles
+migration_group: articles
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - as_migrate_articles
+
+destination:
+  plugin: entity:taxonomy_term
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: http://as.cornell.edu/json-topics
+
+  ids:
+    id:
+      type: string
+
+  item_selector: data/
+
+  fields:
+    -
+      name: id
+      label: 'id'
+      selector: attributes/id
+    -
+      name: tid
+      label: 'tid'
+      selector: attributes/tid
+    -
+      name: name
+      label: 'uuid'
+      selector: attributes/name
+
+
+process:
+
+  id: id
+  uuid: id
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: topics
+  name: name

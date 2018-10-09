@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Screen Location'
+vid: screen_location
+description: 'Physical locations of screens set up as displays.'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,7 @@
+views_autorefresh:
+  version: VERSION
+  js:
+    views_autorefresh.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

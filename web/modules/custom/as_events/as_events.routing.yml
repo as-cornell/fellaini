@@ -1,0 +1,9 @@
+as_events.content:
+  path: '/as_events/{events_shown}/{keyword_params}'
+  defaults:
+    _controller: '\Drupal\as_events\Controller\EventsController::content'
+    _title: 'As Events'
+    events_shown: '1'
+    keyword_params: 'cascal'
+  requirements:
+    _permission: 'access content'

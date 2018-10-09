@@ -1,0 +1,5 @@
+name: 'A&S Slideshow'
+type: module
+description: 'Contains configurations for slides content type and slideshow view as used on A&S Screens'
+core: 8.x
+package: 'AS'

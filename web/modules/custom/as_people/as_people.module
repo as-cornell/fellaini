@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains as_people.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_people_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_people module.
+    case 'help.page.as_people':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Content type and related views for Arts &amp; Sciences people') . '</p>';
+      return $output;
+
+    default:
+  }
+}
