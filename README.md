@@ -1,4 +1,10 @@
-# Drupal project template for Platform.sh
+# Fellaini
+
+Fellaini does what Fellaini is going to do.
+
+![Fellaini](Fellaini.png)
+
+## Drupal project template for Platform.sh
 
 This project provides a starter kit for Drupal 8 multisite projects hosted on [Platform.sh](http://platform.sh). It
 is very closely based on the [Drupal Composer project](https://github.com/drupal-composer/drupal-project).
