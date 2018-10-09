@@ -1,0 +1,13 @@
+name: Screens
+type: theme
+description: 'Simple Drupal 8 theme for A&S Screens.'
+package: ASscreens
+core: 8.x
+regions:
+  page_top: 'Page top'
+  header: 'Header'
+  help: 'Help'
+  content: 'Content'
+  footer: 'Footer'
+libraries:
+  - screens/screens

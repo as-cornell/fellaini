@@ -1,0 +1,31 @@
+{# core/themes/stable/templates/views/views-view.html.twig #}
+{#
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+#}
+<div class="slides">
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+  {{ rows }}
+  {{ empty }}
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

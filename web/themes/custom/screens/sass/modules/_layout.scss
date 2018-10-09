@@ -1,0 +1,44 @@
+// main layout for asScreens
+
+.grid {
+  display: grid;
+ // background: yellow;
+ background: url('http://as.cornell.edu/sites/as/files/color-swatches-2.svg') no-repeat bottom left;
+ //Users/rtm9/Sites/devdesktop/cucasd8-prod/docroot/themes/screens/svgs/build/calendar-2.svg
+  margin: 0 auto;
+  grid-gap: 1.5rem;
+  grid-template-columns: 0.5fr 0.5fr repeat(12, 1fr) 0.5fr 0.5fr;
+  grid-template-rows: 130px 1fr 120px;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.logo,
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.logo {
+  grid-column: 3/6;
+}
+
+.date-time {
+  grid-column: 12/15;
+}
+
+.weather {
+  grid-row: 3;
+  grid-column: 12/15;
+}
+
+.slides {
+  grid-column: 2/16;
+  grid-row: 2;
+ // background: $white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}

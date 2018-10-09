@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Topics and Disciplines'
+vid: topics
+description: 'Categories to map nodes to top-level pages like Academics, Student Services, Research, etc.'
+hierarchy: 0
+weight: -9

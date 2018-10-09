@@ -1,0 +1,9 @@
+name: 'A&S migrate people descriptions'
+type: module
+description: 'Migrates people descriptions from d7 field collections to D8 paragraphs'
+core: 8.x
+package: 'AS'
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools

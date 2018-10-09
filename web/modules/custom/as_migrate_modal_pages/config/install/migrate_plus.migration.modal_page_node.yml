@@ -1,0 +1,78 @@
+# Migration configuration for imported modal page nodes.
+# need links, summary, image, departments/programs, person categories, person type, regions.
+id: modal_page
+label: Import modal page nodes
+migration_group: modal_page
+migration_dependencies:
+  require:
+    - modal_page_field_collection
+dependencies:
+  enforced:
+    module:
+      - as_migrate_people_descriptions
+
+destination:
+  plugin: entity:node
+  default_bundle: modal_page
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+
+  urls: http://people.as.cornell.edu/people-overviews-json
+
+  ids:
+    nid:
+      type: integer
+
+  item_selector: data/
+
+  fields:
+    -
+      name: nid
+      label: 'Nid'
+      selector: /attributes/nid
+    -
+      name: vid
+      label: 'Vid'
+      selector: /attributes/vid
+    -
+      name: uuid
+      label: 'Uuid'
+      selector: /attributes/uuid
+    -
+      name: title
+      label: 'Title'
+      selector: /attributes/title
+    -
+      name: promote
+      label: 'Promote'
+      selector: /attributes/promote
+    -
+      name: path
+      label: 'Path'
+      selector: /attributes/path
+    -
+      name: field_summary
+      label: 'Summary'
+      selector: /attributes/field_summary
+
+
+process:
+  type:
+    plugin: default_value
+    default_value: modal_page
+
+  title: title
+
+  path: path
+
+  'field_summary/target_id': field_summary
+
+  'field_summary/target_revision_id': field_summary
+
+  uid:
+    plugin: default_value
+    default_value: 1
+

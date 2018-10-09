@@ -1,0 +1,40 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+function as_weather_nameize($str,$a_char = array("'","-"," ")){
+    // adapted from http://php.net/manual/en/function.ucfirst.php
+    //$str contains the complete raw name string
+    //$a_char is an array containing the characters we use as separators for capitalization. If you don't pass anything, there are three in there as default.
+    $string = strtolower($str);
+    foreach ($a_char as $temp){
+        $pos = strpos($string,$temp);
+        if ($pos){
+            //we are in the loop because we found one of the special characters in the array, so lets split it up into chunks and capitalize each one.
+            $mend = '';
+            $a_split = explode($temp,$string);
+            foreach ($a_split as $temp2){
+                //capitalize each portion of the string which was separated at a special character
+                $mend .= ucfirst($temp2).$temp;
+                }
+            $string = substr($mend,0,-1);
+            }
+        }
+    return ucfirst($string);
+    }
+
+
+
+/**
+ * Implements hook_help().
+ */
+function as_weather_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.as_weather':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The A&S Weather module provides a block of current weather data for 14850.') . '</p>';
+
+      return $output;
+  }
+}

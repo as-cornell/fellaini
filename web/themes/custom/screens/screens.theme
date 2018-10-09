@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function screens_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $logged_in = \Drupal::currentUser()->isAuthenticated();
+  if ($logged_in) {
+    //$suggestions[] = 'node__' . 'authenticated';
+  }
+}
+
+function screens_preprocess_page(&$variables) {
+  $variables['logopath'] = '/' . drupal_get_path('theme','screens') . '/logo.png';
+}
+
+// RTM9 -- removes width and height attributes from images
+function screens_preprocess_image(&$variables) {
+  if (isset($variables['attributes']['width']) && isset($variables['attributes']['height'])) {
+    unset($variables['attributes']['width']);
+    unset($variables['attributes']['height']);
+  }
+}

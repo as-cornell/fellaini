@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Tags'
+vid: tags
+description: 'Tags used to provide ad-hoc categorization of Articles'
+hierarchy: 0
+weight: 0

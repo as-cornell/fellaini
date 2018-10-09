@@ -1,0 +1,9 @@
+name: 'A&S migrate modal pages'
+type: module
+description: 'Migrates modal pages from d7 field collections to D8 paragraphs'
+core: 8.x
+package: 'AS'
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools

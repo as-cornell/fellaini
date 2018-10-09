@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_description
+    - taxonomy.vocabulary.departments_and_programs
+  module:
+    - text
+id: taxonomy_term.departments_and_programs.field_description
+field_name: field_description
+entity_type: taxonomy_term
+bundle: departments_and_programs
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

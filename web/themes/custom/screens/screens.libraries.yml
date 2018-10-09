@@ -1,0 +1,11 @@
+screens:
+  css:
+    theme:
+      css/style.css: {}
+      css/owfont-regular.css: {}
+      https://use.fontawesome.com/releases/v5.0.10/css/regular.css: {}
+      https://use.fontawesome.com/releases/v5.0.10/css/fontawesome.css: {}
+  js:
+    js/build/js.min.js: {}
+  dependencies:
+      - core/jquery

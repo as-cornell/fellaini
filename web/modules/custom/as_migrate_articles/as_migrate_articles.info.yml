@@ -1,0 +1,8 @@
+type: module
+name: A&S migrate articles
+description: 'Migrate articles from D7 to D8.'
+package: AS
+core: 8.x
+dependencies:
+  - migrate_plus
+  - migrate_tools
