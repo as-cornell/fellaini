@@ -54,6 +54,14 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
+$sites = array(
+  'fellaini.cucas8.test' => 'default',
+  'local.8a.cucas8.test' => 'second',
+  'local.8b.cucas8.test' => '8b',
+  'local.8c.cucas8.test' => '8c',
+  'local.8d.cucas8.test' => '8d',
+);
+
 if (!empty($_ENV['PLATFORM_ROUTES'])) {
   $routes = json_decode(base64_decode($_ENV['PLATFORM_ROUTES']), TRUE);
 
