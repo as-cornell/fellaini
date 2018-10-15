@@ -1,0 +1,22 @@
+uuid: 190e6dff-aa98-44a8-bca7-6a646475a433
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rooney
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: rooney_breadcrumbs
+theme: rooney
+region: header
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

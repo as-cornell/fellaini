@@ -1,0 +1,14 @@
+uuid: 7b1c3fb1-45d5-4af7-b496-7508b50f83c3
+name: Fellaini
+mail: mark.e.wilson@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
