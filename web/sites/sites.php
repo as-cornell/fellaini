@@ -83,3 +83,5 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 // Add additional domain mappings here. The most common example will be to manually
 // specify your production domains.
 
+
+$sites['8b'] = '8b';

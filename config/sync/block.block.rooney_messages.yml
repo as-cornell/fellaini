@@ -1,0 +1,22 @@
+uuid: 9f393574-7e80-478e-ba2c-864979cbf4aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rooney
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: rooney_messages
+theme: rooney
+region: header
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

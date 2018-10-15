@@ -1,0 +1,22 @@
+uuid: c08d329b-c09f-40fb-9e9f-60ab9f2a7b77
+langcode: en
+status: true
+dependencies:
+  theme:
+    - rooney
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: rooney_local_tasks
+theme: rooney
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
