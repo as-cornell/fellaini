@@ -1,4 +1,4 @@
-uuid: c08d329b-c09f-40fb-9e9f-60ab9f2a7b77
+uuid: ad08c5a3-4a50-47b8-ba29-2bde73624a3a
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: rooney_local_tasks
 theme: rooney
 region: content
-weight: -7
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:

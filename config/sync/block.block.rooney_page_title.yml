@@ -1,4 +1,4 @@
-uuid: 7f58d265-d81f-4a40-97bc-f7255f5e2580
+uuid: 74c942be-d3c1-4485-a8cb-8c1b62febe3f
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: rooney_page_title
 theme: rooney
 region: content
-weight: -7
+weight: -5
 provider: null
 plugin: page_title_block
 settings:

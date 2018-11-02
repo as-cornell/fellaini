@@ -1,4 +1,4 @@
-uuid: 4ec9aa72-4140-4064-b687-14f0b9ca7ef0
+uuid: b764eda1-fcae-4bdb-b803-69af1810a9d6
 langcode: en
 status: true
 dependencies:
@@ -14,21 +14,13 @@ content:
   account:
     weight: -10
     region: content
-    settings: {  }
-    third_party_settings: {  }
   contact:
     weight: 5
     region: content
-    settings: {  }
-    third_party_settings: {  }
   language:
     weight: 0
     region: content
-    settings: {  }
-    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden: {  }

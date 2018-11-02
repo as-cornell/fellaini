@@ -1,0 +1,11 @@
+uuid: 1229d621-18cb-4aba-bce9-28d52c03d42d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: m8pXg35tC7IJQsl53XbIEr010_rej36Yy8wKKhdQrhI
+name: 'Topics and Disciplines'
+vid: topics
+description: 'Categories to map nodes to top-level pages like Academics, Student Services, Research, etc.'
+hierarchy: 0
+weight: -9

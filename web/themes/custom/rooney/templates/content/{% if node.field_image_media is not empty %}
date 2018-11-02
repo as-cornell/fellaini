@@ -1,0 +1,8 @@
+{% if node.field_image_media is not empty %}
+<figure>
+<img src='{{ file_url(node.field_image_media.entity.field_media_image.entity.fileuri) }}' />
+<figcaption>{{ node.field_media_source.value }}</figcaption>
+</figure>
+{{node.field_image_media.caption}}
+{{ media_image_url }}
+{% endif %}

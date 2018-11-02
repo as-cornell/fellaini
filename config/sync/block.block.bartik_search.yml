@@ -1,4 +1,4 @@
-uuid: 8a68dd47-03ec-43d3-aea8-d52de1922c99
+uuid: f556d138-942f-4ce2-95a4-1af149c52377
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: bartik_search
 theme: bartik
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: search_form_block
 settings:
