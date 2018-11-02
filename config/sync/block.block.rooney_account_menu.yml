@@ -1,4 +1,4 @@
-uuid: df383d22-d1d0-41ad-940b-564028cd8e92
+uuid: 69c6a982-efa7-4750-b196-d0cdd326aede
 langcode: en
 status: true
 dependencies:
@@ -12,8 +12,8 @@ _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
 id: rooney_account_menu
 theme: rooney
-region: header
-weight: 0
+region: footer
+weight: -4
 provider: null
 plugin: 'system_menu_block:account'
 settings:

@@ -1,4 +1,4 @@
-uuid: aac04fcf-bf59-4c28-bf59-0d687862a5ea
+uuid: a1575fea-e9f6-41dd-8d31-57921d65310d
 langcode: en
 status: true
 dependencies:
@@ -14,6 +14,4 @@ content:
   member_for:
     weight: 5
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden: {  }

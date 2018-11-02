@@ -1,4 +1,4 @@
-uuid: a156190c-4e3d-444b-8329-a7456d3ef13d
+uuid: 9bd339a5-e9fc-488e-9138-7b4dbbd697a6
 langcode: en
 status: true
 dependencies:
@@ -11,12 +11,12 @@ _core:
 id: rooney_search
 theme: rooney
 region: header
-weight: -5
+weight: -4
 provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
   label: Search
   provider: search
-  label_display: visible
+  label_display: '0'
 visibility: {  }

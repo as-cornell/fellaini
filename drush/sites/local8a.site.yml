@@ -1,0 +1,5 @@
+drupalvm:
+  root: /var/www/fellaini/web
+  uri: local.8a.cucas8.test
+  host: local.8a.cucas8.test
+  remote-user: vagrant

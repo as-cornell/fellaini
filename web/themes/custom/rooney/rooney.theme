@@ -1,6 +1,21 @@
 <?php
 
+
 /**
  * @file
  * Functions to support theming in the Pattern Lab theme.
  */
+
+/**
+ * Implements template_preprocess_image().
+ */
+function rooney_preprocess_image(&$variables) {
+
+    // Remove explicit width & height declaration.
+    unset($variables['width'], $variables['height'], $variables['attributes']['width'], $variables['attributes']['height']);
+
+}
+
+
+
+

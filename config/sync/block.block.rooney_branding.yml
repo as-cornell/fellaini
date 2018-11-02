@@ -1,4 +1,4 @@
-uuid: 76b6e369-2250-44e7-afc7-7b7746cd6fab
+uuid: 8c090b60-7e0b-4603-a8d7-3851515dd1c6
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: rooney_branding
 theme: rooney
 region: header
-weight: -6
+weight: -5
 provider: null
 plugin: system_branding_block
 settings:

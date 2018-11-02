@@ -1,0 +1,10 @@
+uuid: 22c54052-0366-41d9-be70-9807be925138
+langcode: en
+status: true
+dependencies: {  }
+id: articles
+label: Articles
+description: ''
+source_type: ''
+module: null
+shared_configuration: null

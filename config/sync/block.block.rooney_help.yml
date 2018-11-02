@@ -1,4 +1,4 @@
-uuid: b820c0a4-cf61-4b4f-8533-d6952517fc95
+uuid: 47253af7-9b2d-4112-8e20-645c1d53ce99
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: rooney_help
 theme: rooney
 region: content
-weight: -7
+weight: -5
 provider: null
 plugin: help_block
 settings:

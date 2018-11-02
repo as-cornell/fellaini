@@ -1,4 +1,4 @@
-uuid: 0371fdd1-8c9e-487d-8663-c73712397db7
+uuid: 0e26aba7-344f-4128-814d-78e51851eee5
 langcode: en
 status: true
 dependencies:
@@ -655,16 +655,18 @@ display:
       footer: {  }
       empty:
         area:
-          id: area_text_custom
+          id: area
           table: views
-          field: area_text_custom
+          field: area
           relationship: none
           group_type: group
-          admin_label: 'No log messages available.'
+          admin_label: ''
           empty: true
           tokenize: false
-          content: 'No log messages available.'
-          plugin_id: text_custom
+          content:
+            value: 'No log messages available.'
+            format: basic_html
+          plugin_id: text
       relationships:
         uid:
           id: uid

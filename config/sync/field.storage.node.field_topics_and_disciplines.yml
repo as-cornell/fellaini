@@ -1,0 +1,22 @@
+uuid: b0451b30-e6ce-4cf9-bbf0-0cd4a0d41a2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: npBK_tBq16863bJLCgIAP7cFXbTXQKHPofmkUfpcAa8
+id: node.field_topics_and_disciplines
+field_name: field_topics_and_disciplines
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
