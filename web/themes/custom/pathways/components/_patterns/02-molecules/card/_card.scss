@@ -1,0 +1,45 @@
+// set styles specifically for PL
+.card{
+  .pl &{
+    max-width: 400px;
+  }
+}
+.card__title {
+  //@include heading-large($font-size: 1.3rem);
+  //@include no-bottom;
+
+  &-link {
+    @include link;
+  }
+}
+
+.card__subtitle {
+  //@include heading-medium($font-size: 1rem);
+  @include no-bottom;
+
+  color: $gray;
+}
+
+.card__body {
+  margin: 0.7em 0 1em;
+}
+
+.card__link {
+  @include link;
+}
+
+.card__button {
+  @include button;
+}
+
+// Variations
+.card--bg {
+  background-color: $gray-lightest;
+  padding: 1em;
+}
+.card--article{
+  background: yellow;
+}
+.card--major-minor{
+  background: pink;
+}
