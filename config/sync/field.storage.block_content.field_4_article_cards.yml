@@ -1,0 +1,20 @@
+uuid: dfe5c24a-0af1-4635-804b-e41b600a7ea8
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - views
+id: block_content.field_4_article_cards
+field_name: field_4_article_cards
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: view
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

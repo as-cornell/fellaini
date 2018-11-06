@@ -1,0 +1,9 @@
+{% include "@organisms/card-grid/card-grid.twig" 
+  with {
+    "grid_blockname": "card",
+    "grid_modifiers": ["divider", "columns-3"],
+    grid_label: "Articles",
+    card_img_src: img.rectangle,
+    cards: cards.articles
+  }
+%}

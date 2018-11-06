@@ -1,0 +1,20 @@
+{# 
+/**
+ This is the block template to show articles-block-1 view. 
+ */
+ #}
+
+{% set rows = [] %}
+{% set rows = rows | merge(drupal_view_result('articles', 'block_1')) %}
+
+{% embed "@organisms/card-grid/card-grid.twig" with {
+  
+} %}
+    {% block grid_content %}
+        {% for row in rows %}
+            {% set view_mode = 'card' %}
+            {# {% set view_mode = (loop.first) ? 'card' : 'card' %} #}
+            {{ drupal_entity('node', row.nid, view_mode) }}
+        {% endfor %}
+    {% endblock %}
+{% endembed %}

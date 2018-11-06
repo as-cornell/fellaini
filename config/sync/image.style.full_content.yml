@@ -1,0 +1,7 @@
+uuid: 1d77356a-71b4-4361-81d8-ffb9ab048cb4
+langcode: en
+status: true
+dependencies: {  }
+name: full_content
+label: 'Full Content'
+effects: {  }
