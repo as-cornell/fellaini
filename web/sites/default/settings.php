@@ -12,11 +12,11 @@
 // See https://api.drupal.org/api/drupal/sites!default!default.settings.php/8
 $databases = [];
 $config_directories = [];
-$settings['update_free_access'] = FALSE;
+$settings['update_free_access'] = false;
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['file_scan_ignore_directories'] = [
-  'node_modules',
-  'bower_components',
+    'node_modules',
+    'bower_components',
 ];
 
 // The hash_salt should be a unique random value for each application.
@@ -34,12 +34,12 @@ $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/../settings.platformsh.php')) {
-  $platformsh_subsite_id = 'first';
-  include $app_root . '/' . $site_path . '/../settings.platformsh.php';
+    $platformsh_subsite_id = 'first';
+    include $app_root . '/' . $site_path . '/../settings.platformsh.php';
 }
 
 // Local settings. These come last so that they can override anything.
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
+    include $app_root . '/' . $site_path . '/settings.local.php';
 }
 $settings['install_profile'] = 'standard';
