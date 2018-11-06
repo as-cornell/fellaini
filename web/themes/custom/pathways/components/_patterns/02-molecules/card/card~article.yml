@@ -1,0 +1,21 @@
+card_modifiers:
+  1:
+    article
+
+# Title
+card_title:
+  'This is the title to an article'
+
+# Subtitle
+card_subtitle:
+  'Astronomy'
+
+# Link
+card_link_url:
+  'http://astro.cornell.edu'
+
+# Button
+card_button_url:
+  '#'
+card_button_content:
+  'Read more'
