@@ -1,0 +1,31 @@
+uuid: 04452091-053d-411e-951b-8cae37f46955
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.4_article_cards
+    - field.field.block_content.4_article_cards.body
+    - field.field.block_content.4_article_cards.field_4_article_cards
+  module:
+    - text
+id: block_content.4_article_cards.default
+targetEntityType: block_content
+bundle: 4_article_cards
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_4_article_cards:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }
