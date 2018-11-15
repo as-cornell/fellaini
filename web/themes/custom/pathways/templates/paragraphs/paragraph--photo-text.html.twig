@@ -36,5 +36,17 @@
  * @ingroup themeable
  */
 #}
-(paragraph photo-text)
-{% include "@organisms/_paragraph.twig" %}
+{# 
+    pass title, link, text, photo
+ #}
+{# {{kint(_context)}} #}
+
+{% set foo = "oldThing" %}
+
+{% embed "@molecules/photo-text/photo-text.twig" with {
+    title: content.field_photo_text_title,
+    text: content.field_photo_text_text,
+    image: content.field_photo_text_image,
+    link_url: content.field_photo_text_link_url,
+    link_text: content.field_photo_text_link_text
+}%}{% endembed %}

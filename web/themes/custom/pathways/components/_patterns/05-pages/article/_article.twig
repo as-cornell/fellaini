@@ -6,9 +6,6 @@
 
     {% block page_content %}
         {{article_field_image_media}}
-        {# {{ bamboo_file_url_absolute(content.field_image[0]) }} #}
-        {# {{node.article_pano.entity.fileuri}} #}
-
         {{article_pano}}
 
         {% include "@atoms/headings/_heading.twig" with {
@@ -25,7 +22,6 @@
             {{article_dateline}}
             {{article_mediasource}}<br/>
         </p>
-        {# {{bamboo_path_system('theme', 'pathways')}} #}
         {{article_body}}
         {{other_news}}
     {% endblock %}
