@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Display a paragraph pano image. Will be specific to the top pano images for pages. 
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -36,5 +36,12 @@
  * @ingroup themeable
  */
 #}
+{# {{kint()}} #}
+{# {{kint()}} #}
+<h1>hi mark</h1>
+
+<div class="slideshow">
+    {{content}}
+</div>
 
 {% include "@organisms/_paragraph.twig" with {} %}

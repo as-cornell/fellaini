@@ -44,36 +44,37 @@
  */
 #}
 
-
-{% if page.sidebar|render %} {# this may or may not correctly filter sidebar #}
-  {% set sidebar = TRUE %}
+{% if page.sidebar | render %}
+    {# this may or may not correctly filter sidebar #}
+    {% set sidebar = TRUE %}
 {% endif %}
 
 {% extends "@templates/_default.twig" %}
 
-  {% block page_header %}
+{% block page_header %}
     {% if page.header %}
-      {{ page.header }}
+        {{ page.header }}
+        {# {% include "@organisms/site/site-header/site-header.twig" %} #}
     {% endif %}
-  {% endblock %}
+{% endblock %}
 
-  {% block page_system %}
+{% block page_system %}
     {{ page.breadcrumb }}
     {{ page.highlighted }}
     {{ page.help }}
     {{ messages }}
-  {% endblock %}
+{% endblock %}
 
-  {% block page_sidebar %}
+{% block page_sidebar %}
     {{ page.sidebar }}
-  {% endblock %}
+{% endblock %}
 
-  {% block page_content %}
+{% block page_content %}
     {{ page.content }}
-  {% endblock %}
+{% endblock %}
 
-  {% block page_footer %}
+{% block page_footer %}
     {% if page.footer %}
-      {{ page.footer }}
+        {{ page.footer }}
     {% endif %}
-  {% endblock %}
+{% endblock %}
