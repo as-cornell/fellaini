@@ -1,31 +1,36 @@
 //////////////////////////
 // General Variables
-// Note: colors should go into
-// components/_patterns/00-base/global/01-colors/_color-vars.scss
-// and breakpoint related vars into
-// components/_patterns/00-base/_breakpoints.scss
-// Quark
+
+/*
+    Building blocks
+*/
+
 $quark: 4px;
+
+$x-wide: $quark * 358;
+$wide: $quark * 306;
+
+/*
+    Font styles
+*/
+
 // Fonts
 $font-sans: "canada-type-gibson", sans-serif;
 $font-serif: "freight-micro-pro", verdana;
 
-
 $font-body: $font-sans;
-$font-heading: $font-serif;
-
-//font variables
+$font-headings: $font-sans;
+//font size
 $base-font-size: 6 * $quark;
 $base-line-height: 1.4;
+
+//font weight
 $light: 300;
 $regular: 400;
 $medium: 600;
 $heavy: 800;
 
 
-// Widths
-$x-wide: $quark * 358;
-$wide: $quark * 306;
 
 // Spacing
 $space: 1rem;

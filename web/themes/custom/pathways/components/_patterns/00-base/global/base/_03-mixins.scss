@@ -1,6 +1,21 @@
 /////////////////////
 // General Mixins (put specific ones in component files where applicable)
 
+@mixin baseFont($size: $base-font-size, $color: $black, $weight: $regular, $line-height: $base-line-height, $family: $font-sans){
+    font-family: $family;
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    line-height: $line-height;
+    margin-bottom: 1rem;
+  }
+  
+
+
+
+
+// -------- plan on removing all of the stuff below this line ------
+
 /// Mixin - Clearfix.
 /// Adds clearfix based on http://bourbon.io/docs/#clearfix
 /// use example =   @include cleafix
