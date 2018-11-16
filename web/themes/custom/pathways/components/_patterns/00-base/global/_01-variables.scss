@@ -4,13 +4,24 @@
 // components/_patterns/00-base/global/01-colors/_color-vars.scss
 // and breakpoint related vars into
 // components/_patterns/00-base/_breakpoints.scss
-
-// Fonts
-$font-body: "canada-type-gibson", sans-serif;
-$font-heading: "freight-micro-pro", verdana;
-
 // Quark
 $quark: 4px;
+// Fonts
+$font-sans: "canada-type-gibson", sans-serif;
+$font-serif: "freight-micro-pro", verdana;
+
+
+$font-body: $font-sans;
+$font-heading: $font-serif;
+
+//font variables
+$base-font-size: 6 * $quark;
+$base-line-height: 1.4;
+$light: 300;
+$regular: 400;
+$medium: 600;
+$heavy: 800;
+
 
 // Widths
 $x-wide: $quark * 358;
