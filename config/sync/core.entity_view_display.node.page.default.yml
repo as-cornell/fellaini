@@ -20,21 +20,21 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
   field_page_components:
     type: entity_reference_revisions_entity_view
-    weight: 2
-    label: hidden
+    weight: 102
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
   links:
-    weight: 0
+    weight: 101
     region: content
     settings: {  }
     third_party_settings: {  }
