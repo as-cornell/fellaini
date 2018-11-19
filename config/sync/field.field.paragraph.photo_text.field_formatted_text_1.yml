@@ -1,0 +1,22 @@
+uuid: ea63919c-da8c-40e0-9159-424c525ca841
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text_1
+    - paragraphs.paragraphs_type.photo_text
+  module:
+    - text
+id: paragraph.photo_text.field_formatted_text_1
+field_name: field_formatted_text_1
+entity_type: paragraph
+bundle: photo_text
+label: 'Photo Text Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary
