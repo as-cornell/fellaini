@@ -264,6 +264,17 @@ display:
       display_extenders: {  }
       display_description: ''
       block_description: '4 Articles'
+      style:
+        type: default
+        options: {  }
+      defaults:
+        style: false
+        row: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: default
     cache_metadata:
       max-age: -1
       contexts:
