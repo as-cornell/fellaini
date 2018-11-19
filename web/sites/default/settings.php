@@ -42,4 +42,5 @@ if (file_exists($app_root . '/' . $site_path . '/../settings.platformsh.php')) {
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
     include $app_root . '/' . $site_path . '/settings.local.php';
 }
-$settings['install_profile'] = 'standard';
+
+$settings['hash_salt'] = 'eY4Nown9w_UoQAC08vp60Qdzfs0bZDufkvz47GOWBP4bb3td2-OzycKEkIhs-RdSg6jk1WqRtA';
