@@ -54,10 +54,6 @@ function pathways_preprocess_paragraph(&$variables)
         $media_entity = pathways_get_media_entity_from_reference($paragraph->get('field_pano_image')->first());
         $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
     }
-    if ($paragraph->hasField('field_image')) {
-        $media_entity = pathways_get_media_entity_from_reference($paragraph->get('field_image')->first());
-        $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
-    }
 }
 
 /**

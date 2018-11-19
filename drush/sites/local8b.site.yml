@@ -1,3 +1,0 @@
-drupalvm:
-  root: /var/www/fellaini/web
-  uri: local.8b.cucas8.test

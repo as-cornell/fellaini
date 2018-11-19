@@ -16,11 +16,10 @@
  */
 #}
 
-{# Will default views to show card grid. #}
-
 {% embed "@organisms/card-grid/card-grid.twig" with {
   grid_label: title
 } %}
+
     {% block grid_content %}
         {% for row in rows %}
             {{ row.content }}
