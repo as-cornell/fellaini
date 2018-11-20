@@ -32,19 +32,23 @@
  */
 #}
 
-{# Label. If not displayed, we still provide it for screen readers. #}
-{# {% if not configuration.label_display %}
-  {% set title_attributes = title_attributes.addClass('visually-hidden') %}
-{% endif %}
-{{ title_prefix }}
-{% include "@atoms/02-text/00-headings/_heading.twig" with {
-  "heading_level": 2,
-  "heading": label,
-} %}
-{{ title_suffix }} #}
+{# 
+    RTM9
+    block--audience.html.twig
+    FIRST in queue Sets the content of the audience block to {content}
+
+    menu--audience.html.twig
+    SECOND in queue calls PL audience-menu.twig passing in items
+
+    audience-menu.twig
+    THIRD in queue opens <nav> calls _menu.twig with class and passes items
+
+    _menu.twig
+    FOURTH in queue Does a bunch of stuff with the content, calls ul.twig > _menu-item.twig
+    Builds all of the lists.
+ #}
 
 {# Menu. #}
-
 {% block content %}
     {{ content }}
 {% endblock %}
