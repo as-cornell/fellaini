@@ -18,7 +18,7 @@ mode: default
 content:
   field_caption:
     weight: 2
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -26,14 +26,14 @@ content:
     region: content
   field_credit:
     weight: 3
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_media_image:
-    label: hidden
+    label: visually_hidden
     settings:
       image_style: ''
       image_link: file
