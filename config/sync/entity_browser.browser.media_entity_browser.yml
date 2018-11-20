@@ -10,9 +10,9 @@ _core:
   default_config_hash: UoGZLPH_DEy28wDjCYqiBKYsKoHlf6l6deygJjqdgPc
 name: media_entity_browser
 label: 'Media Entity Browser'
-display: iframe
+display: modal
 display_configuration:
-  width: 100%
+  width: ''
   height: '600'
   link_text: 'Select images'
   auto_open: false

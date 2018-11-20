@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
     - field.storage.node.field_image
     - image.style.medium
     - node.type.article
@@ -265,20 +264,6 @@ display:
       display_extenders: {  }
       display_description: ''
       block_description: '4 Articles'
-      style:
-        type: default
-        options:
-          row_class: ''
-          default_row_class: false
-          uses_fields: false
-      defaults:
-        style: false
-        row: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: card
     cache_metadata:
       max-age: -1
       contexts:

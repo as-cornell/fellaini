@@ -11,7 +11,8 @@ function as_paragraphs_install() {
     return;
   }
   $overridden_config = [
-
+    'paragraphs.paragraphs_type.view',
+    'paragraphs.settings'
   ];
 
   $config_path = \Drupal::root() . '/' . drupal_get_path('module', 'as_paragraphs') . '/config/optional/';
