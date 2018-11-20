@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: photo_text_slider
+label: 'Photo Text Slider'
+icon_uuid: null
+description: 'Container paragraph to make a photo text slider'
+behavior_plugins: {  }

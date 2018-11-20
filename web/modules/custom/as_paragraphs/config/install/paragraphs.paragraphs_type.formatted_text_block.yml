@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: formatted_text_block
+label: 'Formatted Text block'
+icon_uuid: null
+description: 'Full formatted text block.'
+behavior_plugins: {  }
