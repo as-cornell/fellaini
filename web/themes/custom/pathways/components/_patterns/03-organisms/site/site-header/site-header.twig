@@ -7,14 +7,17 @@
     <!-- black bar -->
     <div class="row row--black">
         <div class="container">
-            <form action="">
+            {{elements.pathways_search}}
+            {# <form action="">
                 <label for="search" class="visuallyhidden">Search:
                 </label>
                 <input type="text" name="search" id="search">
                 <button type="submit">Search</button>
-            </form>
+            </form> #}
+
             <nav>
-                <ul class="nav--audience">
+                {{elements.audience}}
+                {# <ul class="nav--audience">
                     <li>
                         <a href="">Prospective Students</a>
                     </li>
@@ -30,7 +33,7 @@
                     <li>
                         <a href="">Media</a>
                     </li>
-                </ul>
+                </ul> #}
             </nav>
         </div>
     </div>
@@ -39,40 +42,25 @@
     <div class="row">
         <div class="x-wide">
             <div class="logo--main">
-                {% block header_content %}
-                    {% include "@atoms/04-images/00-image/_image.twig" with {
+                {# {{kint(_context)}} #}
+                {{elements.pathways_branding.content.site_logo}}
+
+                {# {% include "@atoms/04-images/00-image/_image.twig" with {
                         img_src : 'https://as.cornell.edu/sites/as/files/AS-Cornell-lockup.png',
                         img_alt: 'Logo',
                         img_url: logo_link_url | default('/'),
                         image_figure_base_class: 'logo',
                         image_link_blockname: 'logo'
                     } %}
-                    {% include "@molecules/site/menus/main-menu/main-menu.twig" %}
-                {% endblock %}
+                    {% include "@molecules/site/menus/main-menu/main-menu.twig" %} #}
+
             </div>
         </div>
     </div>
     <div class="row border-top-bottom">
         <div class="x-wide flex">
-            <nav class="">
-                <ul class="nav--main">
-                    <li>
-                        <a href="">Admissions</a>
-                    </li>
-                    <li>
-                        <a href="">Academics</a>
-                    </li>
-                    <li>
-                        <a href="">Advising</a>
-                    </li>
-                    <li>
-                        <a href="">Researchers</a>
-                    </li>
-                    <li>
-                        <a href="">About</a>
-                    </li>
-                </ul>
-            </nav>
+            {{elements.mainnavigation}}
+            {# {% include "@molecules/site/menus/main-menu/main-menu.twig" %} #}
         </div>
     </div>
 </header>
