@@ -8,59 +8,17 @@
     <div class="row row--black">
         <div class="container">
             {{elements.pathways_search}}
-            {# <form action="">
-                <label for="search" class="visuallyhidden">Search:
-                </label>
-                <input type="text" name="search" id="search">
-                <button type="submit">Search</button>
-            </form> #}
-
-            <nav>
-                {{elements.audience}}
-                {# <ul class="nav--audience">
-                    <li>
-                        <a href="">Prospective Students</a>
-                    </li>
-                    <li>
-                        <a href="">Parents</a>
-                    </li>
-                    <li>
-                        <a href="">Faculty</a>
-                    </li>
-                    <li>
-                        <a href="">Staff</a>
-                    </li>
-                    <li>
-                        <a href="">Media</a>
-                    </li>
-                </ul> #}
-            </nav>
+            {{elements.audience}}
         </div>
     </div>
-
     <!-- Logo -->
-    <div class="row">
-        <div class="x-wide">
-            <div class="logo--main">
-                {# {{kint(_context)}} #}
-                {{elements.pathways_branding.content.site_logo}}
-
-                {# {% include "@atoms/04-images/00-image/_image.twig" with {
-                        img_src : 'https://as.cornell.edu/sites/as/files/AS-Cornell-lockup.png',
-                        img_alt: 'Logo',
-                        img_url: logo_link_url | default('/'),
-                        image_figure_base_class: 'logo',
-                        image_link_blockname: 'logo'
-                    } %}
-                    {% include "@molecules/site/menus/main-menu/main-menu.twig" %} #}
-
-            </div>
-        </div>
+    <div class="row--logo">
+        {# {{kint(_context)}} #}
+        {{elements.pathways_branding.content.site_logo}}
     </div>
-    <div class="row border-top-bottom">
+    <div class="row row--main-nav">
         <div class="x-wide flex">
             {{elements.mainnavigation}}
-            {# {% include "@molecules/site/menus/main-menu/main-menu.twig" %} #}
         </div>
     </div>
 </header>
