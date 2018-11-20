@@ -3,21 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.view.field_4_article_cards
+    - field.field.paragraph.view.field_view_reference
     - paragraphs.paragraphs_type.view
+  module:
+    - viewsreference
 id: paragraph.view.default
 targetEntityType: paragraph
 bundle: view
 mode: default
 content:
-  field_4_article_cards:
-    weight: 1
+  field_view_reference:
+    weight: 0
     settings:
       match_operator: CONTAINS
-      size: 60
+      size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: viewsreference_autocomplete
     region: content
 hidden:
   created: true

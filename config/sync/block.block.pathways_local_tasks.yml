@@ -1,4 +1,4 @@
-uuid: ae073b9e-4f06-4000-855c-bae424cf4358
+uuid: 535c9b5f-0d75-425d-85d6-890cda3a73fc
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: pathways_local_tasks
 theme: pathways
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:

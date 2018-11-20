@@ -1,4 +1,4 @@
-uuid: a4245a84-1b83-4c8f-a8d7-f55bc24e12ed
+uuid: b88daebb-cbe1-4e06-becc-c1c2b8ef2233
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: pathways_page_title
 theme: pathways
 region: content
-weight: -2
+weight: -5
 provider: null
 plugin: page_title_block
 settings:

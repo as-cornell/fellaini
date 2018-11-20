@@ -1,0 +1,65 @@
+uuid: 4f5807c6-54ef-4220-a40b-4aded7759828
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.article.body
+    - field.field.node.article.field_byline
+    - field.field.node.article.field_card_label
+    - field.field.node.article.field_dateline
+    - field.field.node.article.field_department_program
+    - field.field.node.article.field_featured_audio_video
+    - field.field.node.article.field_image
+    - field.field.node.article.field_media_source
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_topics_and_disciplines
+    - node.type.article
+  module:
+    - datetime
+    - image
+    - user
+id: node.article.card
+targetEntityType: node
+bundle: article
+mode: card
+content:
+  field_card_label:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_dateline:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_image:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_byline: true
+  field_department_program: true
+  field_featured_audio_video: true
+  field_media_source: true
+  field_tags: true
+  field_topics_and_disciplines: true

@@ -1,4 +1,4 @@
-uuid: 7780c89a-7b16-4a9e-b3fb-fd56a9c03740
+uuid: c9d55cc4-8ef4-49f8-8fd3-3941830d87cf
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: pathways_content
 theme: pathways
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: system_main_block
 settings:
