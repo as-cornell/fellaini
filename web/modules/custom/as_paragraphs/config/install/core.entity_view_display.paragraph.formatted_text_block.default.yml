@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.formatted_text_block.field_formatted_text_1
+    - paragraphs.paragraphs_type.formatted_text_block
+  module:
+    - text
+id: paragraph.formatted_text_block.default
+targetEntityType: paragraph
+bundle: formatted_text_block
+mode: default
+content:
+  field_formatted_text_1:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

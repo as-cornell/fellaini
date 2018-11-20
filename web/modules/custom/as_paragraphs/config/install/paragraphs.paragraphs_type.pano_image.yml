@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: pano_image
+label: 'Pano Image'
+icon_uuid: null
+description: 'To be used when pano images are added to pages.'
+behavior_plugins: {  }
