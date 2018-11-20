@@ -1,0 +1,37 @@
+{% embed "@templates/_default.twig" with {
+    sidebar : FALSE,
+    menu_items: header.menu_items,
+    footer_menu_items: footer.menu_items
+} %}
+
+    {% block page_content %}
+        {{article_field_image_media}}
+        {{article_pano}}
+
+        {% include "@atoms/headings/_heading.twig" with {
+            "heading_level" : 1,
+            "heading" : article_title,
+            "heading_modifiers" : ["margin"]
+        } %}
+        {# 
+          Should this be wrapped up into a "meta" block?
+          These also come with <div/> around them, can't figure out how to remove it.
+        #}
+        <p>
+            {{article_byline}},
+            {{article_dateline}}
+            {{article_mediasource}}<br/>
+        </p>
+        {{article_body}}
+        {{other_news}}
+    {% endblock %}
+
+    {% block page_sidebar %}
+        {% include "@atoms/headings/_heading.twig" with {
+            "heading_level" : 2,
+            "heading" : "Sidebar Content",
+            "heading_modifiers" : ["margin"]
+        } %}
+    {% endblock %}
+
+{% endembed %}
