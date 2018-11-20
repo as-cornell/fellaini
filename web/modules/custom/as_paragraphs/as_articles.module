@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains as_paragraphs.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_paragraphs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_paragraphs module.
+    case 'help.page.as_paragraphs':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains configurations for paragraph types as used on as.cornell.edu') . '</p>';
+      return $output;
+
+    default:
+  }
+}
