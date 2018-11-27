@@ -1,0 +1,47 @@
+{% set article_pano %}
+{% include "@atoms/04-images/00-image/figure.twig" with {
+    img_url : "#",
+    img_src: "https://placeimg.com/1200/200/tech",
+    img_alt: "This is the alt text",
+    img_caption: "This is an image caption.",
+    output_image_tag: TRUE
+} %}
+{% endset %}
+
+{% set article_title %}
+{% include "@atoms/headings/_heading.twig" with {
+    "heading_level" : 1,
+    "heading" : title,
+    "heading_modifiers" : ["margin"]
+} %}
+{% endset %}
+
+{% set other_news %}
+{% include "@organisms/card-grid/card-grid-articles.twig" %}
+{% endset %}
+
+{% set article_byline %}
+{{byline}}
+{% endset %}
+
+{% set article_dateline %}
+{{dateline}}
+{% endset %}
+
+{% set article_mediasource %}
+{{mediasource}}
+{% endset %}
+
+{% set article_body %}
+{{body}}
+{% endset %}
+
+{# {% block page_sidebar %}
+    {% include "@atoms/headings/_heading.twig" with {
+        "heading_level" : 2,
+        "heading" : "Sidebar Content",
+        "heading_modifiers" : ["margin"]
+    } %}
+{% endblock %} #}
+
+{% include "@pages/article/_article.twig"%}
