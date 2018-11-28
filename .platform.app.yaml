@@ -65,8 +65,9 @@ web:
                     allow: true
                 '^/sitemap\.xml$':
                     allow: true
+
         '/simplesaml':
-            root: 'public/sites/default/simplesamlphp/www'
+            root: 'vendor/simplesamlphp/simplesamlphp/www'
             allow: true
             scripts: true
             index:
