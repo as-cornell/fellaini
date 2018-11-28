@@ -72,8 +72,8 @@ $config = array(
      * The email address will be used as the recipient address for error reports, and
      * also as the technical contact in generated metadata.
      */
-    'technicalcontact_name' => 'Administrator',
-    'technicalcontact_email' => 'na@example.org',
+    'technicalcontact_name' => 'Mark Wilson',
+    'technicalcontact_email' => 'mew72@cornell.edu',
 
     /*
      * The envelope from address for outgoing emails.
@@ -113,7 +113,7 @@ $config = array(
      * metadata listing and diagnostics pages.
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
-    'auth.adminpassword' => '123',
+    'auth.adminpassword' => 'E9yO2^V#Vixf',
 
     /*
      * Set this options to true if you want to require administrator password to access the web interface
@@ -697,7 +697,7 @@ $config = array(
      * Languages available, RTL languages, and what language is the default.
      */
     'language.available' => array(
-        'en', 'no', 'nn', 'se', 'da', 'de', 'sv', 'fi', 'es', 'ca', 'fr', 'it', 'nl', 'lb', 
+        'en', 'no', 'nn', 'se', 'da', 'de', 'sv', 'fi', 'es', 'ca', 'fr', 'it', 'nl', 'lb',
         'cs', 'sl', 'lt', 'hr', 'hu', 'pl', 'pt', 'pt-br', 'tr', 'ja', 'zh', 'zh-tw', 'ru',
         'et', 'he', 'id', 'sr', 'lv', 'ro', 'eu', 'el', 'af'
     ),
@@ -1089,3 +1089,46 @@ $config = array(
      */
     'store.redis.prefix' => 'SimpleSAMLphp',
 );
+
+
+// added per https://docs.platform.sh/frameworks/drupal8/simplesaml.html
+// Set SimpleSAML to log using error_log(), which on Platform.sh will
+// be mapped to the /var/log/app.log file.
+$config['logging.handler'] = 'errorlog';
+
+// Set SimpleSAML to use the metadata directory in Git, rather than
+// the empty one in the vendor directory.
+$config['metadata.sources'] = [
+   ['type' => 'flatfile', 'directory' =>  dirname(__DIR__) . '/metadata'],
+];
+
+// Setup the database connection for all parts of SimpleSAML.
+if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
+  $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
+  foreach ($relationships['database'] as $instance) {
+    if (!empty($instance['query']['is_master'])) {
+      $dsn = sprintf("%s:host=%s;dbname=%s",
+        $instance['scheme'],
+        $instance['host'],
+        $instance['path']
+      );
+      $config['database.dsn'] = $dsn;
+      $config['database.username'] = $instance['username'];
+      $config['database.password'] = $instance['password'];
+
+      $config['store.type'] = 'sql';
+      $config['store.sql.dsn'] = $dsn;
+      $config['store.sql.username'] = $instance['username'];
+      $config['store.sql.password'] = $instance['password'];
+      $config['store.sql.prefix'] = 'simplesaml';
+
+    }
+  }
+}
+
+// Set the salt value from the Platform.sh entropy value, provided for this purpose.
+if (isset($_ENV['PLATFORM_PROJECT_ENTROPY'])) {
+  $config['secretsalt'] = $_ENV['PLATFORM_PROJECT_ENTROPY'];
+}
+
+$config['certdir'] = dirname(__DIR__) . '/cert';
