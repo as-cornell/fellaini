@@ -18,7 +18,7 @@ $config = array(
         'privatekey' => 'saml.pem',
         'certificate' => 'saml.crt',
         'entityID' => 'https://asd8.as.cornell.edu/',
-        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
 
         // The URL to the discovery service.
         // Can be NULL/unset, in which case a builtin discovery service will be used.
