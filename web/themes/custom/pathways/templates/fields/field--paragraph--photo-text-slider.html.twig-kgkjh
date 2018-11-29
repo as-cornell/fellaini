@@ -1,0 +1,5 @@
+{# {{kint(_context)}} #}
+
+<div class="slider">
+    {{content}}
+</div>

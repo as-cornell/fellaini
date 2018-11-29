@@ -1,0 +1,6 @@
+{% include "@atoms/04-images/00-image/figure.twig" with {
+    "img_src" : img.uri | image_style('large'),
+    "img_alt" : img.alt,
+    "img_caption" : img.caption,
+    "img_credit" : img.credit
+} %}
