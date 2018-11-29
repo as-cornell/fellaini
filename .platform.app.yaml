@@ -161,3 +161,8 @@ crons:
 variables:
     env:
         SIMPLESAMLPHP_CONFIG_DIR: /app/simplesamlphp/config
+
+# Added for New Relic
+runtime:
+    extensions:
+        - newrelic
