@@ -1,0 +1,33 @@
+/*
+ Base css for the layout and general structure of the website. All roads will lead through this.
+*/
+
+// Base page-slice structure
+.row{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+  }
+  .row--black{
+    background: #000;
+  }
+  .row--centered{
+    justify-content: center;
+  }
+
+
+// Base inner content container for each slice
+.container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: $x-wide;
+}
+
+
+
+// .main {
+//   @include wrapper;
+//   display: block; // Fix for IE weirdness
+// }
+
