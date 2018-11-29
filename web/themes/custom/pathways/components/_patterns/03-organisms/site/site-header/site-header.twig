@@ -7,8 +7,44 @@
     <!-- black bar -->
     <div class="row row--black">
         <div class="container">
-            {{elements.pathways_search}}
-            {{elements.audience}}
+            {% if pl %}
+                {% include "@molecules/forms/search-form.twig" %}
+            {% else %}
+                {{elements.pathways_search}}
+            {% endif %}
+
+            {% if pl %}
+                <nav id="audience" class="nav--audience">
+                    <ul class="audience-menu">
+                        <li class="audience-menu__item">
+                            <a class="audience-menu__link" href="http://as.cornell.edu">
+                                Current Students
+                            </a>
+                        </li>
+                        <li class="audience-menu__item">
+                            <a class="audience-menu__link" href="http://as.cornell.edu">
+                                Faculty
+                            </a>
+                        </li>
+                        <li class="audience-menu__item">
+                            <a class="audience-menu__link" href="http://as.cornell.edu">
+                                Prospective Students
+                            </a>
+                        </li>
+                        <li class="audience-menu__item">
+
+                            <a class="audience-menu__link" href="http://as.cornell.edu">
+                                Staff
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                {# anyway to use audience-menu.yml for this? if not i'll hardcode it in here}
+                {% include "@molecules/site/menus/audience-menu/audience-menu.twig" with {   
+                } % #}
+            {% else %}
+                {{elements.audience}}
+            {% endif %}
         </div>
     </div>
     <!-- Logo -->
