@@ -1,0 +1,12 @@
+{# {{kint(_context)}}
+hello #}
+{# {% include "@atoms/04-images/00-image/_image.twig" with {
+    "img_src" : img.uri,
+    "img_alt" : img.alt,
+    "img_caption" : img.caption
+} %} #}aljdhf;alksjdf;askldfj
+
+<figure>
+    <img src='{{background_image_url}}'/>
+    <figcaption>{{ node.field_media_source.value }}</figcaption>
+</figure>

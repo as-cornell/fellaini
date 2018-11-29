@@ -1,0 +1,10 @@
+.nav--audience{
+
+}
+.audience-menu{
+    @include list-reset;
+    display: flex;
+}
+.audience-menu__link{
+    color: $white;
+}
