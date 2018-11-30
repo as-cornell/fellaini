@@ -3,8 +3,9 @@
 }
 .audience-menu{
     @include list-reset;
-    display: flex;
+    @include baseFlex;
 }
 .audience-menu__link{
     color: $white;
+    margin-right: 1rem;
 }
