@@ -7,7 +7,7 @@
 name: 'app'
 
 # The runtime the application uses.
-type: 'php:7.2'
+type: 'php:7.1'
 
 # Configuration of the build of this application.
 build:
@@ -161,3 +161,8 @@ crons:
 variables:
     env:
         SIMPLESAMLPHP_CONFIG_DIR: /app/simplesamlphp/config
+
+# Added for New Relic
+runtime:
+    extensions:
+        - newrelic
