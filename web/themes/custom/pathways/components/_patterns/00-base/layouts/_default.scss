@@ -45,29 +45,3 @@ $main-width: calc(100% - (#{$sidebar-width} + #{$gutter}));
     }
   }
 }
-
-//
-// Layout Using CSS Grid (NO IE11 support)
-// Remove Flexbox code above and uncomment this section to use CSS Grid.
-//
-
-// .main {
-//   &--with-sidebar {
-//     @include large {
-//       display: grid;
-//       grid-gap: $gutter;
-//       grid-template-areas: "content sidebar";
-//       grid-template-columns: $main-width #{$sidebar-width};
-//     }
-//   }
-// }
-//
-// .main-sidebar {
-//   grid-area: sidebar;
-//   margin-bottom: $space-double;
-// }
-//
-// .main-content {
-//   grid-area: content;
-//   width: 100%;
-// }

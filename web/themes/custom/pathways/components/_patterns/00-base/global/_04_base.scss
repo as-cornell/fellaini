@@ -19,6 +19,7 @@
 // Base inner content container for each slice
 .container{
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: $x-wide;
