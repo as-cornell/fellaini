@@ -67,6 +67,7 @@
         {% endif %}
     </div>
 {% else %}
+    {{kint(slider)}}
     <div {{ bem(PT_base_class, (photoText_modifiers)) }}>
         <div {{ bem('image','', PT_base_class) }}>
             {% include "@atoms/04-images/00-image/figure.twig" with {
