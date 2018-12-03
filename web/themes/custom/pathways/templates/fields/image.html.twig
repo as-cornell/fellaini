@@ -10,4 +10,10 @@
  * @see template_preprocess_image()
  */
 #}
-<img{{ attributes }} />
+{# {{kint(_context)}} #}
+
+{# <img{{ attributes }}/>{{attributes}} #}
+{% include "@atoms/04-images/00-image/_image.twig" with {
+    "img_src" : attributes.uri,
+    "img_alt" : attributes.alt
+} %}

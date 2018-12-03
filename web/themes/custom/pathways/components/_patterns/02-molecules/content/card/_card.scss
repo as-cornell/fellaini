@@ -1,5 +1,6 @@
 // set styles specifically for PL
 .card{
+  border: 1px solid $gray-lt;
   .pl &{
     max-width: 400px;
   }
@@ -37,9 +38,9 @@
   background-color: $gray-lightest;
   padding: 1em;
 }
-.card--article{
-  background: yellow;
-}
-.card--major-minor{
-  background: pink;
-}
+// .card--article{
+//   background: yellow;
+// }
+// .card--major-minor{
+//   background: pink;
+// }

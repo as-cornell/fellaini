@@ -1,0 +1,11 @@
+menu_items:
+  - title: "Current Students"
+    url: "#"
+  - title: "Prospective Students"
+    url: "#"
+  - title: "Faculty"
+    url: "#"
+  - title: "Staff"
+    url: "#"
+  - title: "Alumni"
+    url: "#"
