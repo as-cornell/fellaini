@@ -23,6 +23,10 @@
     "rectangle": {
       "src": "https://placeimg.com/400/300/tech",
       "alt": "Rectangle"
+    },
+    "full_logo": {
+      "src": "../../images/as-logo-trans-1x.png",
+      "alt": "College of Arts & Sciences"
     }
   },
   "text": "Some text",
