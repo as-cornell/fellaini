@@ -34,7 +34,7 @@ $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/people';
 
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/../settings.platformsh.php')) {
-  $platformsh_subsite_id = 'second';
+  $platformsh_subsite_id = 'people';
   include $app_root . '/' . $site_path . '/../settings.platformsh.php';
 }
 
