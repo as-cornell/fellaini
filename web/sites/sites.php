@@ -86,3 +86,4 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 
 $sites['8b'] = '8b';
 $sites['second.asd8.as.cornell.edu'] = 'second';
+$sites['people.asd8.as.cornell.edu'] = 'people';

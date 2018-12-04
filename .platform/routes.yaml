@@ -4,6 +4,9 @@ https://first.{default}/:
 https://second.asd8.as.cornell.edu/:
   type: upstream
   upstream: app:http
+https://people.asd8.as.cornell.edu/:
+  type: upstream
+  upstream: app:http
 http://asd8.as.cornell.edu/:
   primary: null
   id: null
