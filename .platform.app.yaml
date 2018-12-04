@@ -89,6 +89,36 @@ web:
                 '^/sites/default/files/(css|js)':
                     expires: 2w
 
+        '/sites/second/files':
+            # Allow access to all files in the public files directory.
+            allow: true
+            expires: 5m
+            passthru: '/index.php'
+            root: 'web/sites/second/files'
+
+            # Do not execute PHP scripts.
+            scripts: false
+
+            rules:
+                # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+                '^/sites/default/files/(css|js)':
+                    expires: 2w
+
+        '/sites/people/files':
+            # Allow access to all files in the public files directory.
+            allow: true
+            expires: 5m
+            passthru: '/index.php'
+            root: 'web/sites/people/files'
+
+            # Do not execute PHP scripts.
+            scripts: false
+
+            rules:
+                # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+                '^/sites/default/files/(css|js)':
+                    expires: 2w
+
         '/styleguide':
             allow: true
             expires: 5m
@@ -128,6 +158,7 @@ disk: 2048
 mounts:
     '/web/sites/default/files': 'shared:files/files-first'
     '/web/sites/second/files': 'shared:files/files-second'
+    '/web/sites/people/files': 'shared:files/files-people'
     '/tmp': 'shared:files/tmp'
     '/private': 'shared:files/private'
     '/drush-backups': 'shared:files/drush-backups'
