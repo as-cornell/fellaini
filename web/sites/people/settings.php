@@ -43,14 +43,4 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
     include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
-$databases['default']['default'] = array (
-  'database' => 'people',
-  'username' => 'people',
-  'password' => 'drupal',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
 $settings['hash_salt'] = 'Gze5OOIlitsbtGpDoblpp1s5Hrw64KH6WSFsjw4YHlghRl7cKrQZes5Ln8Cksm0i9gYtPOuKwg';
