@@ -23,7 +23,7 @@ mysqldb:
             people:
                 default_schema: peopledb
                 privileges:
-                    seconddb: admin
+                    peopledb: admin
 
 #rediscache:
 #    type: "redis:3.0"
