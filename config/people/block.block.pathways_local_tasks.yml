@@ -1,0 +1,22 @@
+uuid: bb2b76c9-7816-4fa0-a061-6c55fcdff95c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pathways
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: pathways_local_tasks
+theme: pathways
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
