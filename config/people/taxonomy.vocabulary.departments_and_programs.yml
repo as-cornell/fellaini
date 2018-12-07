@@ -1,0 +1,9 @@
+uuid: 82a1dc40-0910-4bd7-b4cd-33586d85f2e2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Departments and Programs'
+vid: departments_and_programs
+description: ''
+hierarchy: 0
+weight: 0

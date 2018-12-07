@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:2c30b847-0dad-4d11-80c2-5de3e7208d82'
+id: person_description_standard
+label: 'Person Description Standard'
+icon_uuid: 2c30b847-0dad-4d11-80c2-5de3e7208d82
+description: 'This provides a paragraph for a person description with all the fields from the person description field collection in the Drupal 7 version of people.as .'
+behavior_plugins: {  }

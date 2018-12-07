@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'People Categories'
+vid: people_categories
+description: 'Taxonomy for Person content type'
+hierarchy: 0
+weight: 0
