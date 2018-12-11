@@ -1,4 +1,5 @@
 module:
+  as_migrate_people_descriptions: 0
   as_people: 0
   automated_cron: 0
   big_pipe: 0
@@ -15,6 +16,8 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
+  entity_browser: 0
   entity_reference_revisions: 0
   field: 0
   field_ui: 0
@@ -24,6 +27,7 @@ module:
   history: 0
   image: 0
   link: 0
+  media: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0
@@ -45,6 +49,7 @@ module:
   unified_twig_ext: 0
   user: 0
   views_ui: 0
+  viewsreference: 0
   menu_link_content: 1
   views: 10
   paragraphs: 11
