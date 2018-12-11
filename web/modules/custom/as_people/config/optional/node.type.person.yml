@@ -10,7 +10,7 @@ third_party_settings:
     parent: 'main:'
 name: Person
 type: person
-description: ''
+description: 'People content type for storing all sorts of people data'
 help: ''
 new_revision: true
 preview_mode: 1

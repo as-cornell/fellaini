@@ -20,10 +20,9 @@ dependencies:
     - field.field.node.person.field_person_type
     - field.field.node.person.field_regions
     - field.field.node.person.field_summary
-    - image.style.thumbnail
     - node.type.person
   module:
-    - image
+    - entity_browser
     - link
     - paragraphs
     - path
@@ -58,13 +57,19 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_image:
-    type: image_image
-    weight: 9
-    region: content
+    weight: 26
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
+      entity_browser: null
+      open: false
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      selection_mode: selection_append
+      view_mode: default
     third_party_settings: {  }
+    type: entity_browser_file
+    region: content
   field_keywords:
     type: text_textarea
     weight: 10

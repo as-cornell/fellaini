@@ -1,4 +1,4 @@
-uuid: d585e8e7-3f80-42c0-a228-a2d09d08c16a
+uuid: 7b8d6bb7-23da-42ca-9d83-ce994c100b09
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,6 @@ dependencies:
     - node.type.person
   module:
     - image
-_core:
-  default_config_hash: _A3bynp-MB-wLhlAormFiEFfTf0A5MbNJ1f6ukdGWyA
 id: node.person.field_image
 field_name: field_image
 entity_type: node
@@ -20,21 +18,21 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: ''
+  file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
-  max_resolution: 450x517
-  min_resolution: 450x517
+  max_resolution: ''
+  min_resolution: ''
   alt_field: true
   alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:
-    uuid: e60230a6-d7cf-4bde-bf13-3630c0533646
+    uuid: ''
     alt: ''
     title: ''
-    width: 450
-    height: 518
+    width: null
+    height: null
   handler: 'default:file'
   handler_settings: {  }
 field_type: image
