@@ -6,7 +6,7 @@
 <header>
     <!-- black bar -->
     <div class="row row--black">
-        <div class="container">
+        <div class="container container--topBar">
             {% if pl %}
                 {% include "@molecules/forms/search-form.twig" %}
             {% else %}
@@ -38,9 +38,6 @@
                         </li>
                     </ul>
                 </nav>
-                {# anyway to use audience-menu.yml for this? if not i'll hardcode it in here}
-                {% include "@molecules/site/menus/audience-menu/audience-menu.twig" with {   
-                } % #}
             {% else %}
                 {{elements.audience}}
             {% endif %}
@@ -48,18 +45,21 @@
     </div>
     <!-- Logo -->
     <div class="row row--centered">
-        {# {{kint(_context)}} #}
-        {% if pl %}
-            {% include "@atoms/04-images/00-image/_image.twig" with {
-                "img_src" : img.full_logo.src,
-                "img_alt" : img.full_logo.alt
-            } %}
-        {% else %}
-            {{elements.pathways_branding.content.site_logo}}
-        {% endif %}
+        <div class="container g-center">
+            {# {{kint(_context)}} #}
+            {% if pl %}
+                {% include "@atoms/04-images/00-image/_image.twig" with {
+                    "img_src" : img.full_logo.src,
+                    "img_alt" : img.full_logo.alt
+                } %}
+            {% else %}
+                {{elements.pathways_branding.content.site_logo}}
+            {% endif %}
+        </div>
+
     </div>
     <div class="row row--main-nav">
-        <div class="x-wide flex">
+        <div class="container">
             {% if pl %}
                 {% include "@molecules/site/menus/main-menu/main-menu.twig" with {
                     menu_items: menu_items,

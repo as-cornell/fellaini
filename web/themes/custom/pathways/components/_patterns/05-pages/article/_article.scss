@@ -1,0 +1,50 @@
+.container--article{    
+    grid-template-areas:
+      "pano pano pano pano pano pano"
+      ". title title title title ."
+      ". social social social social ."
+      ". content content content content ."
+     ". sidebar sidebar sidebar sidebar .";
+    @include medium{
+        grid-template-areas:
+      ". pano pano pano pano pano pano pano pano pano pano ."
+      ". title title title title title title title title title title ."
+      ". content content content content content content content content content social ."
+      ". sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar .";
+    }
+    @include large{
+        grid-template-areas:
+      ". . pano pano pano pano pano pano pano pano pano pano . ."
+      ". . title title title title title title title title title title . ."
+      ". social content content content content content content content content sidebar sidebar sidebar .";
+    }
+
+}
+
+
+
+
+  
+.pano{
+  grid-area: pano;
+}
+.title{
+  grid-area: title;     
+}
+.social{
+  grid-area: social;
+}
+.content{
+  grid-area: content;
+}
+.sidebar{
+  grid-area: sidebar;
+}
+.grid > p,blockquote {
+  grid-column: main ;
+}
+
+.full {
+  grid-column: full;
+  background: pink;
+}
