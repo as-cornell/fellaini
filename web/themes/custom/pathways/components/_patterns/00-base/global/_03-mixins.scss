@@ -69,3 +69,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+// Mixin - Base Grid
+@mixin baseGrid{
+  display: grid;
+  grid-gap: $space;
+}

@@ -1,0 +1,42 @@
+/*
+ Base css for the layout and general structure of the website. All roads will lead through this.
+*/
+
+
+.row{
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, $xl) 1fr;
+  &--black{
+    background: $black;
+  }
+}
+
+
+.container{
+  grid-column: 2;
+  @include baseGrid();
+  &--topBar{
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: .5rem 0;
+  }
+  &--content{
+    // this will be the basis of all main content block layouts
+    grid-template-columns: $space repeat(4, 1fr) $space;
+    // background: red;
+    @include medium{
+      // background: pink;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    @include large{
+      // background: green;
+      grid-template-columns: repeat(14, 1fr);
+    }
+  }
+}
+
+// Grid helper classes prefixed with 'g-'
+
+.g-center{
+    justify-content: center;
+}

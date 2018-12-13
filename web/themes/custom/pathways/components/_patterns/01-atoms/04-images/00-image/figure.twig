@@ -1,9 +1,15 @@
 {% set image_figure_base_class = image_figure_base_class | default('figure') %}
+{% set image_figure_blockname = image_figure_blockname | default('') %}
+{% set figure_modifiers = figure_modifiers | default(['image']) %}
 {% set image_link_base_class = image_link_base_class | default('link') %}
+{% set alignment = field_image_alignment %}
 
-<figure {{ bem(image_figure_base_class, (image_figure_modifiers), image_figure_blockname) }}>
+{# {{kint(alignment)}} #}
+
+{# {{figure_modifiers}} #}
+<figure {{ bem(image_figure_base_class, (figure_modifiers), image_figure_blockname, (alignment)) }}>
     {% if img_url %}
-        <a {{ bem(image_link_base_class, (image_link_modifiers), image_link_blockname|default(image_figure_base_class)) }} href="{{ img_url }}">
+        <a {{ bem(image_link_base_class, (image_link_modifiers), image_link_blockname|default(image_figure_base_class)) }} href=" {{ img_url }} ">
         {% endif %}
         {% block figure_content %}
             {% include "@atoms/04-images/00-image/_image.twig" with {
