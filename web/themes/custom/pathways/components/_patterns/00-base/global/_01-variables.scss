@@ -7,8 +7,8 @@
 
 $quark: 4px;
 
-$x-wide: $quark * 358;
-$wide: $quark * 306;
+// $x-wide: $quark * 358; // 1,432
+// $wide: $quark * 306; // 1,224
 
 /*
     Font styles
@@ -22,7 +22,7 @@ $font-body: $font-sans;
 $font-heading: $font-sans;
 
 //font size
-$base-font-size: 6 * $quark;
+$base-font-size: 6 * $quark; //24px
 $base-line-height: 1.4;
 
 //font weight
@@ -52,3 +52,18 @@ $space-one-fifth: $space/5;
 $space-one-sixth: $space/6;
 $space-one-seventh: $space/7;
 $space-one-eighth: $space/8;
+
+// colors
+$white: white;
+$black: #2c2c2c;
+$gray-dark: #5d5d5d;
+$gray-med: #999;
+$gray-lt: #d9d9d9;
+$dusk: #435363;
+$fog: #607774;
+$storm: #4f869f;
+$teal: #85c4ca;
+$gold: #ffd91f;
+$green: #4d9b5e;
+$red: #b31b1b;
+

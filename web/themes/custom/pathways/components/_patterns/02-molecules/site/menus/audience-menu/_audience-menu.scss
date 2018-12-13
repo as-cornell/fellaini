@@ -4,6 +4,7 @@
 .audience-menu{
     @include list-reset;
     @include baseFlex;
+    justify-content: flex-end;
 }
 .audience-menu__link{
     color: $white;

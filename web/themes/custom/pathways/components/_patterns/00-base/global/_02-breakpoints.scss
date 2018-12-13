@@ -9,11 +9,16 @@
 
 // Avoid using in favor of atomic, content-specific, breakpoints.
 // These should be used for generic code, like layouts and typography, only.
+
+// $x-wide: $quark * 358; 
+// $wide: $quark * 306; 
+
+
 $xs: 320px;
 $small: 480px;
-$medium: 720px;
-$large: 920px;
-$xl: 1224px;
+$medium: $quark * 196; // 782
+$large: $quark * 306; // 1,224
+$xl: $quark * 358; // 1,432
 // The max-width breakpoint is used when the design should be applied at whatever the
 // largest breakpoint is regardless of actual pixel value. e.g. removing outer margin on body wrapper
 $max-width: $xl;

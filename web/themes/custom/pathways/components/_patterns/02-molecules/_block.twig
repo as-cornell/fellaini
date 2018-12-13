@@ -26,15 +26,14 @@
  */
 #}
 
-
 <div {{ bem('block') }}>
-<!-- ##### Start of block ##### -->
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+    <!-- ##### Start of block ##### -->
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+        {{ content }}
+    {% endblock %}
 </div>

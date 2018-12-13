@@ -1,10 +1,10 @@
 {% set layout_modifiers = [] %}
 
-{% set main_base_class = main_base_class | default('main') %}
+{% set main_base_class = main_base_class | default('row') %}
 {% set main_modifiers = [] %}
 
-{% set main_content_base_class = main_content_base_class|default('main-content') %}
-{% set main_content_modifiers = [] %}
+{% set main_content_base_class = main_content_base_class | default('container') %}
+{% set main_content_modifiers = main_content_modifiers | default(['']) %}
 
 {% if sidebar %}
     {% set main_modifiers = main_modifiers|merge(['with-sidebar']) %}
@@ -12,7 +12,7 @@
 {% endif %}
 
 <div {{ bem('layout-container', (layout_modifiers)) }}>
-    <!-- ##### _patterns/04-templates/_default ##### -->
+
     {% block page_header %}
         {# {% include "@organisms/site/site-header/site-header.twig" %} #}
     {% endblock %}
@@ -22,21 +22,22 @@
     <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
         <a id="main-content" tabindex="-1"></a>
         {# link is in html.html.twig #}
-
-        {% if sidebar %}
-            <aside class="main-sidebar" role="complementary">
-                {% block page_sidebar %}{% endblock %}
-            </aside>
-        {% endif %}
-
         <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
-
             {% block page_content %}{% endblock %}
+            {# This needs to be revisted. Seems like this is only for the drupals #}
+            {% if sidebar %}
+                <div class="sidebar" role="complementary">
+                    SIDEBAR BLOCK
+                    {# this is just for blocks added to the sidebar region #}
+                    {% block page_sidebar %}{% endblock %}
+                </div>
+            {% endif %}
         </div>
 
     </main>
 
     {% block page_footer %}
+        default.twig footer
         {% include "@organisms/site/site-footer/site-footer.twig" %}
     {% endblock %}
 </div>

@@ -19,28 +19,6 @@
             hi mark
         {% endfor %}
     {% else %}
-        {# i'd really like to figure out how to pass or include something so the revisions here can get modifiers in photo-text.twig #}
-        {% set slider = true %}
-        {# {{kint(content.field_pt_slider_slide['#items']|length)}} #}
-        {% set itemCount = content.field_pt_slider_slide['#items'] | length -1%}
-        {% set photo_texts = [] %}
-        {% for item in 0..itemCount %}
-            {% set photo_texts = photo_texts | merge(content.field_pt_slider_slide[item]) %}
-            {# {{kint(content.field_pt_slider_slide[item])}} #}
-        {% endfor %}
-        {% for photo_text in photo_texts %}
-            {% include "@molecules/content/photo-text/photo-text.twig" with {
-                    title: photo_text.title,
-                    text: photo_text.text,
-                    image: photo_text.image,
-                    link_url: photo_text.link_url,
-                    link_text: photo_text.link_text
-                    }
-                %}
-            hi mark
-        {% endfor %}
-        {{kint(photo_texts)}}
+        {{content}}
     {% endif %}
 </div>
-
-{# only for the pattern lab part. set up with photo-text.yml #}
