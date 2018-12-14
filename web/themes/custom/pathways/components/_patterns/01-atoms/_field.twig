@@ -40,12 +40,13 @@
 <!-- start of _field.twig -->
 {% if label_hidden %}
     {% if multiple %}
-        {# <div{{ attributes }}> #}
-        {% for item in items %}
-            <div{{ item.attributes }}>{{ item.content }}</div>
-            {# {{ item.content }} #}
-        {% endfor %}
-        {# </div> #}
+        <div{{ attributes }}>
+            {% for item in items %}
+
+                {# <div{{ item.attributes }}>{{ item.content }}</div> #}
+                {{ item.content }}
+            {% endfor %}
+        </div>
     {% else %}
         {% for item in items %}
             <div{{ attributes }}>{{ item.content }}</div>
@@ -56,10 +57,9 @@
     <div{{ attributes }}>
         <div{{ title_attributes }}>{{ label }}</div>
         {% if multiple %}
-            <div>
+            <div class="item">
             {% endif %}
             {% for item in items %}
-                {# <div{{ item.attributes }}>{{ item.content }}</div> #}
                 {{ item.content }}
             {% endfor %}
             {% if multiple %}

@@ -4,7 +4,8 @@
     img_src: "https://placeimg.com/1200/200/tech",
     img_alt: "This is the alt text in article demo",
     img_caption: "This is an image caption in article demo.",
-    output_image_tag: TRUE
+    output_image_tag: TRUE,
+    figure_modifiers: ['pano']
 } %}
 {% endset %}
 
@@ -33,7 +34,24 @@
 {% endset %}
 
 {% set article_body %}
-{{body}}
+{{body|raw}}
+{% include "@atoms/08-video/video.twig" with{
+    figure_modifiers: ['video']
+}%}
+{{body|raw}}
+{% include "@atoms/04-images/00-image/figure.twig" with {
+    img_src : "https://placeimg.com/400/300/tech",
+    img_caption: "Just a little old image caption here. Should be descriptiver than this.",
+    img_credit: "Bob Martin",
+    "field_component_alignment" : ['pullLeft']
+} %}
+
+{{body|raw}}
+{{body|raw}}
+{% include "@atoms/08-video/video.twig" with {
+    "video_figure_modifiers" : ['video'],
+    "field_component_alignment" : ['stretch']
+} %}
 {% endset %}
 
 {# {% block page_sidebar %}

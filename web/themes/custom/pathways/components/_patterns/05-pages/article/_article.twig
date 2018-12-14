@@ -20,15 +20,6 @@
         <div class="pano">
             {{article_pano}}
         </div>
-        {# I'd like to be able to use article_pano on the include here so i could pass a modifier instead of this extra wrapper #}
-        {# {% include "@atoms/04-images/00-image/figure.twig" with {
-            img_url : "#",
-            "img_src" : img.uri | image_style('large'),
-            img_alt: "This is the alt text",
-            img_caption: img.caption,
-            figure_modifiers: ['pano'],
-            output_image_tag: TRUE
-        } %} #}
         <div class="title">
             {% include "@atoms/headings/_heading.twig" with {
                 "heading_level" : 1,
@@ -45,6 +36,9 @@
             <br/>
             Facebook</div>
         <div class="content">
+            {% if pl %}
+                {{article_body}}
+            {% endif %}
             {{article_paragraphs}}
             {# {{article_body}} #}
         </div>
@@ -75,6 +69,9 @@
                 <a href="#">Some Link</a>
             </li>
         </ul>
+        {{article_related_articles}}
     {% endblock %}
+
+    {% block other_news %}{% endblock %}
 
 {% endembed %}

@@ -1,8 +1,16 @@
 // floats try not to use
-.left{
+.floatLeft{
     float: left;
+    margin-left: 0;
+}
+.floatRight{
+    float: right;
+    margin-right: 0;
 }
 .pullLeft{
     float: left;
     margin-left: -3rem;
+}
+.stretch{
+    margin: 0 -3rem;
 }
