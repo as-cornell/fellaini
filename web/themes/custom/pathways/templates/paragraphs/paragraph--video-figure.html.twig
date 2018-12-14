@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Display a paragraph pano image. Will be specific to the top pano images for pages. 
+ * Display a paragraph video figure. . 
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -21,8 +21,8 @@
  *   - paragraphs: The current template type (also known as a "theming hook").
  *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
  *     "Image" it would result in "paragraphs--type--image". Note that the machine
- *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
  *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
  *     preview would result in: "paragraphs--view-mode--preview", and
  *     default: "paragraphs--view-mode--default".
  * - view_mode: View mode; for example, "preview" or "full".
@@ -38,10 +38,13 @@
 #}
 {# {{kint(content)}} #}
 
-{% include "@atoms/04-images/00-image/figure.twig" with {
-    "img_src" : img.uri | image_style('full_content'),
-    "img_alt" : img.alt,
-    "img_caption" : img.caption,
-    "img_credit" : img.credit,
+{% include "@atoms/08-video/video.twig" with {
+    video_content : content.field_video_embed_code[0]['#context'].value | raw,
+    video_caption: content.field_video_caption,
     "field_component_alignment" : content.field_component_alignment[0]
 } %}
+
+{# {{content.field_video_caption}}
+{{content.field_component_alignment[0]}} #}
+
+{# {{content.field_video_embed_code[0]['#context'].value|raw}} #}

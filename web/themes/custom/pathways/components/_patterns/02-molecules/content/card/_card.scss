@@ -1,23 +1,25 @@
+/*
+  Universal Card Styles
+*/
+
 // set styles specifically for PL
 .card{
+  
   border: 1px solid $gray-lt;
   .pl &{
     max-width: 400px;
   }
 }
-.card__title {
-  //@include heading-large($font-size: 1.3rem);
-  //@include no-bottom;
 
+.card__title {
+  font-size: 10rem;
   &-link {
     @include link;
   }
 }
 
 .card__subtitle {
-  //@include heading-medium($font-size: 1rem);
   @include no-bottom;
-
   color: $gray;
 }
 
@@ -38,9 +40,14 @@
   background-color: $gray-lightest;
   padding: 1em;
 }
-// .card--article{
-//   background: yellow;
-// }
-// .card--major-minor{
-//   background: pink;
-// }
+
+.sidebar{
+  .card{
+    @include baseGrid();
+    grid-template-columns: $max-column 1fr;
+    .card__title{
+      @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
+    }
+  }
+}
+

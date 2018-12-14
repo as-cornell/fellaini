@@ -75,3 +75,18 @@
   display: grid;
   grid-gap: $space;
 }
+
+// Borders
+@mixin baseBorder{
+  border: 1px solid $gray-lt;
+}
+
+// component padding
+@mixin baseComponentPadding($b-top: $space, $b-right: $space, $b-bottom: $space, $b-left: $space){
+  padding: $b-top $b-right $b-bottom $b-left ;
+}
+
+// component margin
+@mixin baseComponentMargin($m-top: $space, $m-right: $space, $m-bottom: $space, $m-left: $space){
+  margin: $m-top $m-right $m-bottom $m-left ;
+}
