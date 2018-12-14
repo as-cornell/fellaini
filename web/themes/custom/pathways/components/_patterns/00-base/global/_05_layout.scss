@@ -21,16 +21,15 @@
     padding: .5rem 0;
   }
   &--content{
-    // this will be the basis of all main content block layouts
     grid-template-columns: $space repeat(4, 1fr) $space;
-    // background: red;
     @include medium{
-      // background: pink;
       grid-template-columns: repeat(12, 1fr);
     }
     @include large{
-      // background: green;
       grid-template-columns: repeat(14, 1fr);
+    }
+    @include xl{
+      gird-template-columns: repeat(14, $max-column);
     }
   }
 }

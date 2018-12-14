@@ -36,6 +36,9 @@ $heavy: 800;
 // Spacing
 $space: 1rem;
 
+// Grid Columns
+$max-column: $quark * 20; // 80px
+
 // times
 $space-double: $space*2;
 $space-triple: $space*3;

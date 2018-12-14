@@ -12,32 +12,26 @@
 {% endif %}
 
 <div {{ bem('layout-container', (layout_modifiers)) }}>
-
-    {% block page_header %}
-        {# {% include "@organisms/site/site-header/site-header.twig" %} #}
-    {% endblock %}
+    default
+    {% block page_header %}{% endblock %}
 
     {% block page_system %}{% endblock %}
 
     <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
         <a id="main-content" tabindex="-1"></a>
-        {# link is in html.html.twig #}
         <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
             {% block page_content %}{% endblock %}
-            {# This needs to be revisted. Seems like this is only for the drupals #}
+
             {% if sidebar %}
                 <div class="sidebar" role="complementary">
-                    SIDEBAR BLOCK
-                    {# this is just for blocks added to the sidebar region #}
                     {% block page_sidebar %}{% endblock %}
+                    {% block other_news %}{% endblock %}
                 </div>
             {% endif %}
+
         </div>
 
     </main>
 
-    {% block page_footer %}
-        default.twig footer
-        {% include "@organisms/site/site-footer/site-footer.twig" %}
-    {% endblock %}
+    {% block page_footer %}{% endblock %}
 </div>

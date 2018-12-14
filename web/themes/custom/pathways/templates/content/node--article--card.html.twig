@@ -72,12 +72,12 @@
 #}
 
 {% embed "@molecules/content/card/01-card.twig" with {
-  card_modifiers: ["grid-item", "article"],
-  card_title: label,
-  card_body: content.body,
-  card_link_url: url,
-  card_img: content.field_image,
-  card_date: content.field_date
+    card_modifiers : ["article"],
+    card_title: label,
+    card_body: content.body,
+    card_link_url: url,
+    card_img: content.field_image,
+    card_date: content.field_date
 } %}
     {% block card_img %}
         {{ content.field_image }}

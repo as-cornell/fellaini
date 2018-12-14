@@ -70,36 +70,6 @@
  *   in different view modes.
  */
 #}
-{# {% set rows = drupal_view('articles', 'block_1') %}
-
-{% set grid_content %}
-{{rows}}
-{% endset %} #}
-
-{# {% set rows = rows | merge(drupal_view_result('promoted_items', 'block_1')) %}
-{% set rows = rows | merge(drupal_view_result('promoted_items', 'attachment_1')) %} #}
-
-{# {% embed "@organisms/card-grid/card-grid.twig" with {
-  grid_modifiers: ['promoted'],
-  grid_base_class: 'card',
-  grid_blockname: 'grid'
-} %}
-    {% block grid_content %}
-        {% for row in rows %}
-            {% set view_mode = (loop.first) ? 'card_common' : 'card_common_alt' %}
-            {{ drupal_entity('node', row.nid, view_mode) }}
-        {% endfor %}
-    {% endblock %}
-{% endembed %} #}
-
-{# {% set other_news %}
-{% include "@organisms/card-grid/card-grid.twig" with {
-  grid_content: grid_content
-} %}
-{% endset %} #}
-
-{# {% set article_pano = pathways_get_image_properties_from_media_entity(content.field_image_2) %} #}
-{# {{kint(_context)}} #}
 
 {% include "@pages/article/_article.twig" with {
 
@@ -110,11 +80,7 @@
     article_dateline: content.field_dateline,
     article_byline: content.field_byline,
     article_mediasource: content.field_media_source,
-    sidebar: true
+    sidebar: true,
+    article_related_articles: content.field_related_articles
 
 } %}
-
-{# {{content.field_image_figure}} #}
-{# {{content.field_article_body}} #}
-{# {{content.field_image_media}} #}
-{# {{content.field_pano_image}} #}
