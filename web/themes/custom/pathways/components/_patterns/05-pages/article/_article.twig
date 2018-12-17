@@ -51,25 +51,14 @@
             "heading" : "Related Stories",
             "heading_modifiers" : ["margin"]
         } %}
-        <p>This needs to be some sort of block with taxonomy or some such.</p>
-        <ul>
-            <li>
-                <a href="#">Some Link</a>
-            </li>
-            <li>
-                <a href="#">Some Link</a>
-            </li>
-            <li>
-                <a href="#">Some Link</a>
-            </li>
-            <li>
-                <a href="#">Some Link</a>
-            </li>
-            <li>
-                <a href="#">Some Link</a>
-            </li>
-        </ul>
-        {{article_related_articles}}
+
+        {% if pl %}
+            {# {% block related_news %}{% endblock %} #}
+            {% include "@organisms/card-grid/card-grid-articles.twig" %}
+        {% else %}
+            {{article_related_articles}}
+        {% endif %}
+
     {% endblock %}
 
     {% block other_news %}{% endblock %}
