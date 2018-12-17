@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_netid
+    - node.type.person
+id: node.person.field_person_netid
+field_name: field_person_netid
+entity_type: node
+bundle: person
+label: NetID
+description: 'Used as unique identifier. Will reference contact information from CU directory and various additional related content types on department websites.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

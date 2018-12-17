@@ -1,0 +1,66 @@
+uuid: 388f034d-995e-403f-850b-c37f72a2f1e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.body
+    - field.field.node.person.field_departments_programs
+    - field.field.node.person.field_image
+    - field.field.node.person.field_keywords
+    - field.field.node.person.field_links
+    - field.field.node.person.field_person_affiliation
+    - field.field.node.person.field_person_categories
+    - field.field.node.person.field_person_education
+    - field.field.node.person.field_person_first_name
+    - field.field.node.person.field_person_graduate_fields
+    - field.field.node.person.field_person_last_name
+    - field.field.node.person.field_person_netid
+    - field.field.node.person.field_person_publications
+    - field.field.node.person.field_person_title
+    - field.field.node.person.field_person_type
+    - field.field.node.person.field_regions
+    - field.field.node.person.field_summary
+    - node.type.person
+  module:
+    - image
+    - user
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  field_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_person_title:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_departments_programs: true
+  field_keywords: true
+  field_links: true
+  field_person_affiliation: true
+  field_person_categories: true
+  field_person_education: true
+  field_person_first_name: true
+  field_person_graduate_fields: true
+  field_person_last_name: true
+  field_person_netid: true
+  field_person_publications: true
+  field_person_type: true
+  field_regions: true
+  field_summary: true
+  links: true

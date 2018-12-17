@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_person_research_focus
+    - paragraphs.paragraphs_type.person_description_standard
+  module:
+    - text
+id: paragraph.person_description_standard.field_person_research_focus
+field_name: field_person_research_focus
+entity_type: paragraph
+bundle: person_description_standard
+label: 'Research Focus'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

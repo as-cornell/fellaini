@@ -10,6 +10,7 @@ mysqldb:
         schemas:
             - firstdb
             - seconddb
+            - peopledb
         endpoints:
             first:
                 default_schema: firstdb
@@ -19,6 +20,10 @@ mysqldb:
                 default_schema: seconddb
                 privileges:
                     seconddb: admin
+            people:
+                default_schema: peopledb
+                privileges:
+                    peopledb: admin
 
 #rediscache:
 #    type: "redis:3.0"

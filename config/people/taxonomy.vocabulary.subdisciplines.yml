@@ -1,0 +1,11 @@
+uuid: e794c3ad-b104-4db2-a6c2-46a47aa2ef65
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Y3ynrpvq8M6nFP12QXRpk_33girsyTf5bPb7FtgTWv0
+name: Subdisciplines
+vid: subdisciplines
+description: 'Taxonomy per department for categorizing people and research into subdisciplines'
+hierarchy: 0
+weight: 0
