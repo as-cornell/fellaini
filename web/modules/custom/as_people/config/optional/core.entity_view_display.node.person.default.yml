@@ -1,0 +1,177 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.body
+    - field.field.node.person.field_departments_programs
+    - field.field.node.person.field_image
+    - field.field.node.person.field_keywords
+    - field.field.node.person.field_links
+    - field.field.node.person.field_person_affiliation
+    - field.field.node.person.field_person_categories
+    - field.field.node.person.field_person_education
+    - field.field.node.person.field_person_first_name
+    - field.field.node.person.field_person_graduate_fields
+    - field.field.node.person.field_person_last_name
+    - field.field.node.person.field_person_netid
+    - field.field.node.person.field_person_publications
+    - field.field.node.person.field_person_title
+    - field.field.node.person.field_person_type
+    - field.field.node.person.field_regions
+    - field.field.node.person.field_summary
+    - node.type.person
+  module:
+    - entity_reference_revisions
+    - image
+    - link
+    - text
+    - user
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_departments_programs:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_image:
+    type: image
+    weight: 3
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_keywords:
+    type: text_default
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_links:
+    type: link
+    weight: 5
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_person_affiliation:
+    type: string
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_categories:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_person_education:
+    type: text_default
+    weight: 8
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_person_first_name:
+    type: string
+    weight: 9
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_graduate_fields:
+    type: string
+    weight: 11
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_last_name:
+    type: string
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_netid:
+    type: string
+    weight: 12
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_publications:
+    type: text_default
+    weight: 13
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_person_title:
+    type: string
+    weight: 14
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_type:
+    type: entity_reference_label
+    weight: 15
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_regions:
+    type: entity_reference_label
+    weight: 16
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_summary:
+    type: entity_reference_revisions_entity_view
+    weight: 17
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

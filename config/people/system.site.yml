@@ -1,0 +1,14 @@
+uuid: e16f8bab-5a45-407a-9d5c-5b9a1981bafd
+name: people.asd8
+mail: mew72@cornell.edu
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

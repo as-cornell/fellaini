@@ -1,0 +1,21 @@
+uuid: a398cbb5-910a-49f6-923d-a9a19d233d16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_netid
+    - node.type.person
+_core:
+  default_config_hash: qphiQdOSAq79JbmYym_LDINj2rE45bAnDm0mTouJbg0
+id: node.person.field_person_netid
+field_name: field_person_netid
+entity_type: node
+bundle: person
+label: NetID
+description: 'Used as unique identifier. Will reference contact information from CU directory and various additional related content types on department websites.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 66ca1be4-10cb-486e-bf06-6c7d4a805627
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: n_S8BGRXugkELSMD9I5qFWC20cyoBj74fSzIIdDvMw4
+id: node.field_person_education
+field_name: field_person_education
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

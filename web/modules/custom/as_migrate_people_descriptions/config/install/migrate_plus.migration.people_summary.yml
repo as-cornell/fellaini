@@ -57,16 +57,6 @@ process:
     plugin: default_value
     default_value: person_description_standard
 
-  field_departments_programs:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_departments_programs
-    -
-      plugin: explode
-      source: field_departments_programs
-      delimiter: ,
-
   'field_description/value': field_description
 
   'field_description/format':

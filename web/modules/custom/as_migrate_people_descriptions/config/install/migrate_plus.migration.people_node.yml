@@ -184,30 +184,10 @@ process:
   'field_links/uri': field_links_url
   'field_links/title': field_links_title
 
-  field_departments_programs:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_departments_programs
-    -
-      plugin: explode
-      source: field_departments_programs
-      delimiter: ,
-
   field_person_type:
       plugin: skip_on_empty
       method: process
       source: field_person_type
-
-  field_regions:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_regions
-    -
-      plugin: explode
-      source: field_regions
-      delimiter: ,
 
   'field_image/target_id':
     plugin: migration

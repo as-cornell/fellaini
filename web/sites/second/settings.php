@@ -30,7 +30,7 @@ $settings['file_scan_ignore_directories'] = [
 // Set up a config sync directory.
 //
 // This is defined inside the read-only "config" directory, deployed via Git.
-$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/8a';
+$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/second';
 
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/../settings.platformsh.php')) {
@@ -43,3 +43,14 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 $settings['install_profile'] = 'standard';
+$databases['default']['default'] = array (
+  'database' => 'second',
+  'username' => 'second',
+  'password' => 'drupal',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['hash_salt'] = '72nz6twHiwbogRuebNUFamnIkLBayEpb2AsAqcqZurAd2555JUO55fpxgxV-u0KGkCOw2TsHcA';
