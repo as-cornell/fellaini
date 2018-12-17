@@ -1,0 +1,10 @@
+uuid: 634b7be5-d840-4689-ad2d-f49ee734b8cc
+langcode: en
+status: true
+dependencies: {  }
+id: people
+label: People
+description: ''
+source_type: ''
+module: null
+shared_configuration: null

@@ -56,8 +56,8 @@
 
 $sites = array(
   'fellaini.cucas8.test' => 'default',
-  'local.8a.cucas8.test' => 'second',
-  'local.8b.cucas8.test' => '8b',
+  'local.second.cucas8.test' => 'second',
+  'local.people.cucas8.test' => 'people',
   'local.8c.cucas8.test' => '8c',
   'local.8d.cucas8.test' => '8d',
 );
@@ -84,5 +84,6 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 // specify your production domains.
 
 
-$sites['8b'] = '8b';
+$sites['local.people.cucas8.test'] = 'people';
 $sites['second.asd8.as.cornell.edu'] = 'second';
+$sites['people.asd8.as.cornell.edu'] = 'people';

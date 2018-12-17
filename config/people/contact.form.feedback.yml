@@ -1,0 +1,14 @@
+uuid: 2b3bc388-33a8-4518-bc54-28ad1210a1bb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - mew72@cornell.edu
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

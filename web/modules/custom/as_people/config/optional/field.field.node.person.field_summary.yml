@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.person
+    - paragraphs.paragraphs_type.person_description_standard
+  module:
+    - entity_reference_revisions
+id: node.person.field_summary
+field_name: field_summary
+entity_type: node
+bundle: person
+label: Summary
+description: 'Use this field to display custom overviews and research focuses for different departments or programs.  The default setting is for all departments and programs to use the same summary.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      person_description_standard: person_description_standard
+    target_bundles_drag_drop:
+      person_description_standard:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions
