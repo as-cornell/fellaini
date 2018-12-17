@@ -1,5 +1,5 @@
 {% extends "@base/layouts/grid/00-grid.twig" %}
-
+{% set grid_modifiers = grid_modifiers %}
 {% block grid_content %}
     {% for card in cards %}
         {% include "@molecules/content/card/01-card.twig" with {
@@ -10,7 +10,9 @@
             "card_subtitle" : card.card_subtitle,
             "card_body" : card.card_body,
             "card_link_url" : card.card_link_url,
-            "card_image_output_image_tag" : card.card_image_output_image_tag
+            "card_image_output_image_tag" : card.card_image_output_image_tag,
+
+            grid_modifiers: grid_modifiers
         } %}
     {% endfor %}
 {% endblock %}
