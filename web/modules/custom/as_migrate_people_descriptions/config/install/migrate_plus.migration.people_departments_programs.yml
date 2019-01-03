@@ -1,0 +1,66 @@
+# Migration configuration for imported terms from departments_programs.
+id: people_departments_programs
+label: Import taxonomy vocabulary departments and programs nodes as terms for people
+migration_group: people
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - as_migrate_people_descriptions
+
+destination:
+  plugin: entity:taxonomy_term
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'http://as.cornell.edu'
+
+  urls: http://as.cornell.edu/json-departments-programs
+
+  ids:
+    id:
+      type: string
+
+  item_selector: data/
+
+  fields:
+    -
+      name: id
+      label: 'id'
+      selector: attributes/id
+    -
+      name: nid
+      label: 'nid'
+      selector: attributes/nid
+    -
+      name: name
+      label: 'name'
+      selector: attributes/name
+    -
+      name: description
+      label: 'Description'
+      selector: attributes/description
+    -
+      name: field_image
+      label: 'image'
+      selector: attributes/field_image/src
+
+
+process:
+
+  id: id
+  uuid: id
+  tid: nid
+  vid:
+    plugin: default_value
+    default_value: departments_and_programs
+  name: name
+  'field_description/value': description
+  'field_description/format':
+    plugin: default_value
+    default_value: full_html
+  'field_image/src': field_image
+  'field_image/alt': name
