@@ -49,32 +49,88 @@
     {% set sidebar = TRUE %}
 {% endif %}
 
-{% extends "@templates/_default.twig" %}
+{# {% extends "@templates/_default.twig" %} #}
 
-{% block page_header %}
+{% set layout_modifiers = [] %}
+
+{% set main_base_class = main_base_class | default('row') %}
+{% set main_modifiers = [] %}
+
+{% set main_content_base_class = main_content_base_class | default('container') %}
+{% set main_content_modifiers = main_content_modifiers | default(['']) %}
+
+{% if sidebar %}
+    {% set main_modifiers = main_modifiers|merge(['with-sidebar']) %}
+    {% set main_content_modifiers = main_content_modifiers|merge(['with-sidebar']) %}
+{% endif %}
+
+<div {{ bem('layout-container', (layout_modifiers)) }}>
+    default
+    {% block page_header %}
+        {% if page.header %}
+            {{ page.header }}
+            {# {% include "@organisms/site/site-header/site-header.twig" %} #}
+        {% endif %}
+    {% endblock %}
+
+    {% block page_system %}
+        {{ page.breadcrumb }}
+        {{ page.highlighted }}
+        {{ page.help }}
+        {{ messages }}
+    {% endblock %}
+
+    <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
+        <a id="main-content" tabindex="-1"></a>
+        <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
+            {% block page_content %}
+                {{ page.content }}
+            {% endblock %}
+
+            {% if sidebar %}
+                <div class="sidebar" role="complementary">
+                    {% block page_sidebar %}
+                        {{ page.sidebar }}
+                    {% endblock %}
+                    {% block other_news %}{% endblock %}
+                </div>
+            {% endif %}
+
+        </div>
+
+    </main>
+
+    {% block page_footer %}
+        {% if page.footer %}
+            {{ page.footer }}
+        {% endif %}
+    {% endblock %}
+</div>
+
+{# {% block page_header %}
     {% if page.header %}
         {{ page.header }}
-        {# {% include "@organisms/site/site-header/site-header.twig" %} #}
+        {# {% include "@organisms/site/site-header/site-header.twig" %} /# }
     {% endif %}
-{% endblock %}
+{% endblock %} #}
 
-{% block page_system %}
+{# {% block page_system %}
     {{ page.breadcrumb }}
     {{ page.highlighted }}
     {{ page.help }}
     {{ messages }}
-{% endblock %}
+{% endblock %} #}
 
-{% block page_sidebar %}
+{# {% block page_sidebar %}
     {{ page.sidebar }}
-{% endblock %}
+{% endblock %} #}
 
-{% block page_content %}
+{# {% block page_content %}
     {{ page.content }}
-{% endblock %}
+{% endblock %} #}
 
-{% block page_footer %}
+{# {% block page_footer %}
     {% if page.footer %}
         {{ page.footer }}
     {% endif %}
-{% endblock %}
+{% endblock %} #}

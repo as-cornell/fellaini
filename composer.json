@@ -48,7 +48,8 @@
         "drupal/viewsreference": "^1.2",
         "drupal/entity": "^1.0",
         "drupal/simplesamlphp_auth": "^3.0",
-        "simplesamlphp/simplesamlphp": "^1.16"
+        "simplesamlphp/simplesamlphp": "^1.16",
+        "drupal/field_group": "^3.0"
 
     },
     "require-dev": {

@@ -85,7 +85,7 @@
     {% endif %}
     {{ title_suffix }}
 
-    {% if display_submitted %}
+    {# {% if display_submitted %}
         <footer>
             {{ author_picture }}
             <div{{ author_attributes }}>
@@ -96,12 +96,12 @@
                 {{ metadata }}
             </div>
         </footer>
-    {% endif %}
+    {% endif %} #}
 
-    <div{{ content_attributes }}>
+    {# <div{{ content_attributes }}>
 
-        <h1>_node.twig</h1>
-        {{ content }}
-    </div>
+        <h1>_node.twig</h1> #}
+    {{ content }}
+    {# </div> #}
 
 </article>
