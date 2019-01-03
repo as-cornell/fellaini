@@ -70,38 +70,15 @@
  *   in different view modes.
  */
 #}
-<article {{ bem("node") }}>
 
-    {{ title_prefix }}
-    {% if not page %}
-        {% include "@atoms/headings/_heading.twig" with {
-            "heading_level" : 2,
-            "heading" : label,
-            "heading_url" : url,
-            "heading_link_attributes" : {
-                'rel': 'bookmark'
-            }
-        } %}
-    {% endif %}
-    {{ title_suffix }}
-
-    {# {% if display_submitted %}
-        <footer>
-            {{ author_picture }}
-            <div{{ author_attributes }}>
-                {% trans %}Submitted by
-                {{ author_name }}
-                on
-                {{ date }}{% endtrans %}
-                {{ metadata }}
-            </div>
-        </footer>
-    {% endif %} #}
-
-    {# <div{{ content_attributes }}>
-
-        <h1>_node.twig</h1> #}
-    {{ content }}
-    {# </div> #}
-
-</article>
+{# 
+    RTM9 -- the default node template extends _default.twig for main content in <main>. Specific node--contentType.html.twig and _contnetType.twig can be used to override this template.
+#}
+{% extends "@templates/_default.twig" %}
+{% block page_content %}
+    {% include "@atoms/headings/_heading.twig" with {
+        "heading_level" : 1,
+        "heading" : label
+    } %}
+    {{content}}
+{% endblock %}

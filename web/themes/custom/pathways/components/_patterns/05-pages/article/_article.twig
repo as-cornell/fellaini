@@ -5,14 +5,9 @@
  #}
 
 {% set sidebar = true %}
-{% set main_content_modifiers = ['article', 'content'] %}
 
-{# {% embed "@templates/_default.twig" with {
-    sidebar : sidebar,
-    menu_items: header.menu_items,
-    footer_menu_items: footer.menu_items,
-    main_content_modifiers: ['article', 'content']
-} %} #}
+{# {% extends "@pages/_page.twig" %} #}
+{% extends "@templates/_default.twig" %}
 
 {% block page_content %}
     {# {{article_field_image_media}} #}
@@ -60,5 +55,6 @@
 {% endblock %}
 
 {% block other_news %}{% endblock %}
-{# 
-{% endembed %} #}
+
+{% set main_content_modifiers = ['article'] %}
+{# {{kint(main_content_modifiers)}} #}
