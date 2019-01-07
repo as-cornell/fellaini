@@ -125,7 +125,7 @@ process:
       source: field_topic
       delimiter: /
 
-  'field_department_program/tid':
+  field_department_program:
     -
       plugin: skip_on_empty
       method: process
@@ -134,10 +134,6 @@ process:
       plugin: explode
       source: field_department_program
       delimiter: /
-    -
-      plugin: migration
-      migration: import_as_article_departments_programs
-      source: nid
 
   field_byline: field_byline
   field_media_source: field_media_source
