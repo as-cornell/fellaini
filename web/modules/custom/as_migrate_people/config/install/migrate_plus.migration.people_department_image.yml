@@ -1,24 +1,23 @@
 # Migration configuration for imported images.
-id: people_image
-label: Import people images
+id: people_department_image
+label: Import department image files
 migration_group: people
 migration_dependencies: {}
 dependencies:
   enforced:
     module:
-      - as_migrate_people_descriptions
+      - as_migrate_people
 
-destination:
-  plugin: entity:file
+
 
 source:
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: json
   constants:
-    source_base_path: 'http://people.as.cornell.edu'
+    source_base_path: 'http://as.cornell.edu'
 
-  urls: http://people.as.cornell.edu/people-overviews-json
+  urls: http://as.cornell.edu/json-departments-programs
 
   ids:
     id:
@@ -38,11 +37,13 @@ source:
     -
       name: url
       label: 'Url'
-      selector: /attributes/field_image_url
+      selector: /attributes/field_image/src
+
+
+destination:
+  plugin: entity:file
 
 process:
-
-
 
   uri:
     plugin: download

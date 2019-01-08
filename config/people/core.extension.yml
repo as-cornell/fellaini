@@ -1,5 +1,5 @@
 module:
-  as_migrate_people_descriptions: 0
+  as_migrate_people: 0
   as_people: 0
   automated_cron: 0
   big_pipe: 0
@@ -12,12 +12,14 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
   entity: 0
   entity_browser: 0
+  entity_browser_example: 0
   entity_reference_revisions: 0
   field: 0
   field_ui: 0

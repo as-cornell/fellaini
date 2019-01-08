@@ -6,7 +6,7 @@ migration_dependencies: {}
 dependencies:
   enforced:
     module:
-      - as_migrate_people_descriptions
+      - as_migrate_people
 
 destination:
   plugin: entity_reference_revisions:paragraph

@@ -1,0 +1,9 @@
+name: 'A&S migrate people'
+type: module
+description: 'Migrates people from Drupal 7 to Drupal 8.  Migrates summary field collections to paragraphs, and Images to Media References.'
+core: 8.x
+package: 'AS'
+dependencies:
+  - migrate
+  - migrate_plus
+  - migrate_tools
