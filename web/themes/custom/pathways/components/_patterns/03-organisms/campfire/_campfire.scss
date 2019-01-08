@@ -1,0 +1,35 @@
+.campfire{
+    @include baseGrid($r-gap: $space);
+    grid-template-columns: $space 1fr $space;
+    grid-template-areas:
+    ". two ."
+    ". one ."
+    ". three .";
+    @include medium{
+    grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+        "one one one one two two two two three three three three";
+    }
+    @include large{
+        grid-template-columns: repeat(14, 1fr);
+        grid-template-areas:
+        "one one one one two two two two two two three three three three";
+    }
+    @include xl{
+    // gird-template-columns: repeat(14, $max-column);
+    }
+    &__articles{
+        grid-area: one;
+    }
+    &__feature{
+        grid-area: two;
+    }
+    &__articles_2{
+        grid-area: three;
+    }
+} 
+
+// campfire specific styles
+.multiple{
+    @include baseGrid();
+}
