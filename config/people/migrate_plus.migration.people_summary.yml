@@ -1,12 +1,12 @@
-uuid: 0ec0ffe1-6e25-4912-bdbe-1e346e139e6b
+uuid: 93813fe6-3592-43a8-9dd9-1cac2c50a04b
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
-      - as_migrate_people_descriptions
+      - as_migrate_people
 _core:
-  default_config_hash: mz_h4px75Lwj49qQjOFIA4UPv9f39Xsck5gKyT3heHU
+  default_config_hash: 7mi8IRHDwRtjMjvrWk0phaykzTevq_ZEMCWdTqJZ05w
 id: people_summary
 class: null
 field_plugin_method: null

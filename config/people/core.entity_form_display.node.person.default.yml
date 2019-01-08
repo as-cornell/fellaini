@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.test_files
     - field.field.node.person.body
     - field.field.node.person.field_departments_programs
     - field.field.node.person.field_image
+    - field.field.node.person.field_images
     - field.field.node.person.field_keywords
     - field.field.node.person.field_links
     - field.field.node.person.field_person_affiliation
@@ -69,6 +71,20 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_browser_file
+    region: content
+  field_images:
+    weight: 27
+    settings:
+      entity_browser: test_files
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_replace: false
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
     region: content
   field_keywords:
     type: text_textarea
