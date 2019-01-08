@@ -43,13 +43,12 @@
  * @see html.html.twig
  */
 #}
-
+{% set main_content_modifiers = main_content_modifiers | default(['']) %}
+{% set sidebar = sidebar | default(false) %}
 {% if page.sidebar | render %}
     {# this may or may not correctly filter sidebar #}
     {% set sidebar = TRUE %}
 {% endif %}
-
-{% extends "@templates/_default.twig" %}
 
 {% block page_header %}
     {% if page.header %}
@@ -70,6 +69,7 @@
 {% endblock %}
 
 {% block page_content %}
+
     {{ page.content }}
 {% endblock %}
 

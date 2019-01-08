@@ -12,7 +12,7 @@
 }
 
 .card__title {
-  font-size: 10rem;
+  font-size: 1.5rem;
   &-link {
     @include link;
   }
@@ -39,6 +39,29 @@
 .card--bg {
   background-color: $gray-lightest;
   padding: 1em;
+}
+.card--article{
+  .card__copy{
+    padding: $space;
+    @include baseGrid($g-gap: 0px);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "label label date"
+      "title title title"
+      "byline byline social";
+  }
+  .card__title{
+    grid-area: title;
+  }
+  .label{
+    grid-area: label;
+  }
+  .date{
+    grid-area: date;
+  }
+  .byline{
+    grid-area: byline;
+  }
 }
 
 .sidebar{

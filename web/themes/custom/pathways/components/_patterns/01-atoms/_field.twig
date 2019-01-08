@@ -36,13 +36,18 @@
  * @see template_preprocess_field()
  */
 #}
+{# 
+
+#}
+{% set modifiers = modifiers | default(['']) %}
+{% set classes = classes | default(['']) %}
+{# {{ kint(modifiers) }} #}
 
 <!-- start of _field.twig -->
 {% if label_hidden %}
     {% if multiple %}
-        <div{{ attributes }}>
+        <div{{ attributes }}{{ bem('multiple', (modifiers), '', classes) }}>
             {% for item in items %}
-
                 {# <div{{ item.attributes }}>{{ item.content }}</div> #}
                 {{ item.content }}
             {% endfor %}

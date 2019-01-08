@@ -4,63 +4,57 @@
 
  #}
 
-{% if pl %}
-    {% set sidebar = true %}
-{% endif %}
+{% set sidebar = true %}
 
-{% embed "@templates/_default.twig" with {
-    sidebar : sidebar,
-    menu_items: header.menu_items,
-    footer_menu_items: footer.menu_items,
-    main_content_modifiers: ['article', 'content']
-} %}
+{# {% extends "@pages/_page.twig" %} #}
+{% extends "@templates/_default.twig" %}
 
-    {% block page_content %}
-        {# {{article_field_image_media}} #}
-        <div class="pano">
-            {{article_pano}}
-        </div>
-        <div class="title">
-            {% include "@atoms/headings/_heading.twig" with {
-                "heading_level" : 1,
-                "heading" : article_title,
-                "heading_modifiers" : ["margin"]
-            } %}
-            <div>
-                {{article_byline}},
-                {{article_dateline}}
-                {{article_mediasource}}<br/>
-            </div>
-        </div>
-        <div class="social">Twitter
-            <br/>
-            Facebook</div>
-        <div class="content">
-            {% if pl %}
-                {{article_body}}
-            {% endif %}
-            {{article_paragraphs}}
-            {# {{article_body}} #}
-        </div>
-
-    {% endblock %}
-
-    {% block page_sidebar %}
+{% block page_content %}
+    {# {{article_field_image_media}} #}
+    <div class="pano">
+        {{article_pano}}
+    </div>
+    <div class="title">
         {% include "@atoms/headings/_heading.twig" with {
-            "heading_level" : 2,
-            "heading" : "Related Stories",
+            "heading_level" : 1,
+            "heading" : article_title,
             "heading_modifiers" : ["margin"]
         } %}
-
+        <div>
+            {{article_byline}},
+            {{article_dateline}}
+            {{article_mediasource}}<br/>
+        </div>
+    </div>
+    <div class="social">Twitter
+        <br/>
+        Facebook</div>
+    <div class="content">
         {% if pl %}
-            {# {% block related_news %}{% endblock %} #}
-            {% include "@organisms/card-grid/card-grid-articles.twig" %}
-        {% else %}
-            {{article_related_articles}}
+            {{article_body}}
         {% endif %}
+        {{article_paragraphs}}
+        {# {{article_body}} #}
+    </div>
 
-    {% endblock %}
+{% endblock %}
 
-    {% block other_news %}{% endblock %}
+{% block page_sidebar %}
+    {% include "@atoms/headings/_heading.twig" with {
+        "heading_level" : 2,
+        "heading" : "Related Stories",
+        "heading_modifiers" : ["margin"]
+    } %}
 
-{% endembed %}
+    {% if pl %}
+        {% include "@organisms/card-grid/card-grid-articles.twig" %}
+    {% else %}
+        {{article_related_articles}}
+    {% endif %}
+
+{% endblock %}
+
+{% block other_news %}{% endblock %}
+
+{% set main_content_modifiers = ['article', 'content'] %}
+{# {{kint(main_content_modifiers)}} #}
