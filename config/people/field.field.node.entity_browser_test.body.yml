@@ -1,0 +1,27 @@
+uuid: 71117fc0-1794-428e-8731-0f7efa793671
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.entity_browser_test
+  enforced:
+    module:
+      - entity_browser_example
+  module:
+    - text
+_core:
+  default_config_hash: ov1nt8D4VmcIfz4dEympmyJx0_UTu5AgX52ICMq0t4U
+id: node.entity_browser_test.body
+field_name: body
+entity_type: node
+bundle: entity_browser_test
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

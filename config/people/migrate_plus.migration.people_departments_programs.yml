@@ -1,12 +1,12 @@
-uuid: be40951d-2d4e-458d-a98d-a8f96e3bc782
+uuid: 00003e0d-740e-4e2c-a06e-3bcde7ae798b
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
-      - as_migrate_people_descriptions
+      - as_migrate_people
 _core:
-  default_config_hash: eWnrPcnjfMzOSvqbr3HLjPJUzdRPRbKakQYre1kIJhQ
+  default_config_hash: 7UEpYS-81ARZJQWKELS9WLBZy5Pnfw5EMkSj2pfbrOA
 id: people_departments_programs
 class: null
 field_plugin_method: null
