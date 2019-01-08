@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains as_migrate_people_descriptions.module.
+ * Contains as_migrate_people.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -10,13 +10,13 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function as_migrate_people_descriptions_help($route_name, RouteMatchInterface $route_match) {
+function as_migrate_people_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     // Main module help for the as_migrate_people_descriptions module.
-    case 'help.page.as_migrate_people_descriptions':
+    case 'help.page.as_migrate_people':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Migrates people descriptions from d7 field collections to D8 paragraphs') . '</p>';
+      $output .= '<p>' . t('Migrates people from Drupal 7 to Drupal 8.  Migrates summary field collections to paragraphs, and Images to Media References.') . '</p>';
       return $output;
 
     default:
@@ -26,9 +26,9 @@ function as_migrate_people_descriptions_help($route_name, RouteMatchInterface $r
 /**
  * Implements hook_theme().
  */
-function as_migrate_people_descriptions_theme() {
+function as_migrate_people_theme() {
   return [
-    'as_migrate_people_descriptions' => [
+    'as_migrate_people' => [
       'render element' => 'children',
     ],
   ];

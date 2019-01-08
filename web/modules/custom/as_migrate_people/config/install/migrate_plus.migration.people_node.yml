@@ -6,12 +6,11 @@ migration_group: people
 migration_dependencies:
   require:
     - people_image
-    - people_departments_programs
     - people_summary
 dependencies:
   enforced:
     module:
-      - as_migrate_people_descriptions
+      - as_migrate_people
 
 destination:
   plugin: entity:node
@@ -196,10 +195,24 @@ process:
 
   'field_image/alt': title
 
+  'field_images/target_id':
+    plugin: migration
+    migration: people_image_media
+    source: nid
+
+  field_departments_programs:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_departments_programs
+    -
+      plugin: explode
+      source: field_departments_programs
+      delimiter: +
+
   'field_summary/target_id': field_summary
 
   'field_summary/target_revision_id': field_summary
-
 
   uid: uid
 
