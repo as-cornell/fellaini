@@ -1,0 +1,38 @@
+// Layout for all landing and basic pages. 
+
+.container{
+    // base page main conent grids
+    &--content{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "page-title"
+            "content";
+        @include medium{
+            // grid-template-columns: repeat(12, 1fr);
+            // grid-template-areas:
+            // "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
+            // "content content content content content content content content content content content content";
+        }
+        @include large{
+            // grid-template-columns: repeat(14, 1fr);
+            // grid-template-areas:
+            //     "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
+            //     "content content content content content content content content content content content content content content";
+        }
+        @include xl{
+            // gird-template-columns: repeat(14, $max-column);
+        }
+    }
+}
+
+//if additional sidebar grid needs to be created, it will go here.
+
+// sections of a basic page
+.page-title{
+    grid-area: page-title;
+}
+
+.main-content{
+    grid-area: content;
+}
+

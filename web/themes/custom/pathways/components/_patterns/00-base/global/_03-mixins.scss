@@ -71,9 +71,10 @@
 }
 
 // Mixin - Base Grid
-@mixin baseGrid{
+@mixin baseGrid($g-gap: $space, $r-gap: '0'){
   display: grid;
-  grid-gap: $space;
+  grid-gap: $g-gap;
+  row-gap: $r-gap;
 }
 
 // Borders
