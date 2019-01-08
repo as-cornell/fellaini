@@ -36,39 +36,9 @@
  * @see template_preprocess_field()
  */
 #}
-{# 
 
-#}
-{% set modifiers = modifiers | default(['']) %}
-{% set classes = classes | default(['']) %}
-{# {{ kint(modifiers) }} #}
-
-<!-- start of _field.twig -->
-{% if label_hidden %}
-    {% if multiple %}
-        <div{{ attributes }}{{ bem('multiple', (modifiers), '', classes) }}>
-            {% for item in items %}
-                {# <div{{ item.attributes }}>{{ item.content }}</div> #}
-                {{ item.content }}
-            {% endfor %}
-        </div>
-    {% else %}
-        {% for item in items %}
-            <div{{ attributes }}>{{ item.content }}</div>
-            {# {{ item.content }} #}
-        {% endfor %}
-    {% endif %}
-{% else %}
-    <div{{ attributes }}>
-        <div{{ title_attributes }}>{{ label }}</div>
-        {% if multiple %}
-            <div class="item">
-            {% endif %}
-            {% for item in items %}
-                {{ item.content }}
-            {% endfor %}
-            {% if multiple %}
-            </div>
-        {% endif %}
-    </div>
-{% endif %}
+{% embed "@atoms/_field.twig" with {
+    modifiers : ["page_components"],
+    classes : ['main-content']
+} %}{% endembed %}
+<h1>field--field-page-components</h1>

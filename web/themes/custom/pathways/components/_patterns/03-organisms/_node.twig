@@ -78,7 +78,9 @@
 {% block page_content %}
     {% include "@atoms/headings/_heading.twig" with {
         "heading_level" : 1,
-        "heading" : label
+        "heading" : label,
+        "heading_base_class" : 'page-title'
     } %}
     {{content}}
 {% endblock %}
+{% set main_content_modifiers = ['content'] %}

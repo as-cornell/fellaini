@@ -43,7 +43,7 @@
  * @see html.html.twig
  */
 #}
-{% set main_content_modifiers = main_content_modifiers | default(['himark']) %}
+{% set main_content_modifiers = main_content_modifiers | default(['']) %}
 {% set sidebar = sidebar | default(false) %}
 {% if page.sidebar | render %}
     {# this may or may not correctly filter sidebar #}
