@@ -6,10 +6,9 @@ migration_dependencies: {}
 dependencies:
   enforced:
     module:
-      - as_migrate_people_descriptions
+      - as_migrate_people
 
-destination:
-  plugin: entity:file
+
 
 source:
   plugin: url
@@ -18,46 +17,33 @@ source:
   constants:
     source_base_path: 'http://people.as.cornell.edu'
 
-  urls: http://people.as.cornell.edu/imagesjson
+  urls: http://people.as.cornell.edu/people-overviews-json
 
   ids:
     id:
       type: integer
 
-  item_selector: images/
+  item_selector: data/
 
   fields:
     -
       name: id
       label: 'id'
-      selector: image/id
-    -
-      name: uuid
-      label: 'uuid'
-      selector: image/uuid
-    -
-      name: filename
-      label: 'filename'
-      selector: image/filename
-    -
-      name: created
-      label: 'Created'
-      selector: image/created
+      selector: /attributes/nid
     -
       name: uri
       label: 'Uri'
-      selector: image/uri
+      selector: /attributes/field_image_uri
     -
       name: url
       label: 'Url'
-      selector: image/url
+      selector: /attributes/field_image_url
+
+
+destination:
+  plugin: entity:file
 
 process:
-
-  filename: filename
-
-  uuid: uuid
-
 
   uri:
     plugin: download

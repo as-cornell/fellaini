@@ -1,4 +1,4 @@
-uuid: c9a9888c-18c7-42b0-a3d2-4875273ff791
+uuid: 728df47e-5af7-4b76-894f-e44243e50c51
 langcode: en
 status: true
 dependencies:
@@ -6,14 +6,14 @@ dependencies:
     module:
       - as_migrate_people
 _core:
-  default_config_hash: RugzA5N9-IFUtHSqJgOvFJAxFoM_poSvvGBrMispYVI
-id: people_image
+  default_config_hash: baIbpUlmHu5qi7QgaZY21utQytQ7wp2AdjFCPRXbY7Y
+id: people_image_media
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: people
-label: 'Import people images'
+label: 'Import people images into media entities'
 source:
   plugin: url
   data_fetcher_plugin: http
@@ -31,6 +31,10 @@ source:
       label: id
       selector: /attributes/nid
     -
+      name: title
+      label: Title
+      selector: /attributes/title
+    -
       name: uri
       label: Uri
       selector: /attributes/field_image_uri
@@ -39,13 +43,19 @@ source:
       label: Url
       selector: /attributes/field_image_url
 process:
-  uri:
-    plugin: download
-    source:
-      - url
-      - uri
-    guzzle_options:
-      base_uri: url
+  bundle:
+    plugin: default_value
+    default_value: image
+  name: title
+  uid:
+    -
+      plugin: default_value
+      default_value: 1
+  field_media_image/target_id:
+    plugin: migration
+    migration: people_image
+    source: id
+  field_media_image/alt: title
 destination:
-  plugin: 'entity:file'
+  plugin: 'entity:media'
 migration_dependencies: {  }
