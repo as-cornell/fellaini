@@ -1,9 +1,6 @@
-uuid: 15cf3bbe-a475-40b0-be11-5cbf0b44ad1b
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: IuI7CaKZT0jd0DPnyWffIDafQ5JMJQMnqCLllsye2lM
 id: people
 label: People
 description: ''

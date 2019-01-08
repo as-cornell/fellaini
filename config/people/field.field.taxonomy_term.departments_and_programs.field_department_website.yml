@@ -1,0 +1,25 @@
+uuid: 9d90919b-f21d-4555-9e5b-6f41d61350ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_department_website
+    - taxonomy.vocabulary.departments_and_programs
+  module:
+    - link
+_core:
+  default_config_hash: r3Z3J9t9aAXFNXIJVeYFhRdv1KlIuVsoNQ-UsuJ_e28
+id: taxonomy_term.departments_and_programs.field_department_website
+field_name: field_department_website
+entity_type: taxonomy_term
+bundle: departments_and_programs
+label: 'Department Website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

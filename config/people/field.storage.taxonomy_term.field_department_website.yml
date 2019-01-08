@@ -1,0 +1,21 @@
+uuid: a625c1b7-7b69-4dc5-b717-41a68d7ab429
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+_core:
+  default_config_hash: LHRJy8dbIEAVgVWid4KXZiLWoSZ31SLzFykwvwQcrBw
+id: taxonomy_term.field_department_website
+field_name: field_department_website
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
