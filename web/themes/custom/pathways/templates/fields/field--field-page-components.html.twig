@@ -36,9 +36,8 @@
  * @see template_preprocess_field()
  */
 #}
-
 {% embed "@atoms/_field.twig" with {
-    modifiers : ["page_components"],
+    modifiers : ["grid", "page_components"],
     classes : ['main-content']
 } %}{% endembed %}
 <h1>field--field-page-components</h1>
