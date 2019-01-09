@@ -1,0 +1,11 @@
+// Base styles for multiple field outputs
+// for variations from the default _somefield.twig will pass 
+
+.multiple{
+    &--grid{
+        @include baseGrid();
+    }
+    &--flex{
+        @include baseFlex();
+    }
+}
