@@ -1,0 +1,143 @@
+# Migration configuration for imported articles.
+id: import_as_article
+label: Migrate articles from D7 AS to D8 AS
+migration_group: articles
+migration_dependencies:
+  require:
+    - import_as_article_images
+dependencies:
+  enforced:
+    module:
+      - as_migrate_articles
+
+destination:
+  plugin: entity:node
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'http://as.cornell.edu'
+
+  urls: http://as.cornell.edu/articles-asd8-json-depts
+
+  ids:
+    nid:
+      type: integer
+
+  item_selector: data/
+
+  fields:
+    -
+      name: nid
+      label: 'Nid'
+      selector: /attributes/nid
+    -
+      name: vid
+      label: 'Vid'
+      selector: /attributes/vid
+    -
+      name: uuid
+      label: 'Uuid'
+      selector: /attributes/uuid
+    -
+      name: title
+      label: 'Title'
+      selector: /attributes/title
+    -
+      name: created
+      label: 'Created'
+      selector: /attributes/created
+    -
+      name: changed
+      label: 'Changed'
+      selector: /attributes/changed
+    -
+      name: status
+      label: 'Status'
+      selector: /attributes/status
+    -
+      name: path
+      label: 'Path'
+      selector: /attributes/path
+    -
+      name: summary
+      label: 'Summary'
+      selector: /attributes/summary
+    -
+      name: body
+      label: 'Body'
+      selector: /attributes/description
+    -
+      name: field_departments_programs
+      label: 'Departments'
+      selector: /attributes/field_departments_programs
+    -
+      name: field_byline
+      label: 'Field Byline'
+      selector: /attributes/field_byline
+    -
+      name: field_media_source
+      label: 'Field Media Source'
+      selector: /attributes/field_media_source
+    -
+      name: field_dateline
+      label: 'Field dateline'
+      selector: /attributes/field_dateline
+    -
+      name: field_card_label
+      label: 'Field Card Label'
+      selector: /attributes/field_card_label
+    -
+      name: field_image_url
+      label: 'Image URL'
+      selector: /attributes/field_image/src
+    -
+      name: field_image_uri
+      label: 'Image URI'
+      selector: /attributes/field_image_uri
+    -
+      name: field_image_alt
+      label: 'Image Alt tag'
+      selector: /attributes/field_image/alt
+
+
+
+
+process:
+  type:
+    plugin: default_value
+    default_value: article
+  uuid: uuid
+  title: title
+  created: created
+  changed: changed
+  path: path
+  'body/value': body
+  'body/format':
+    plugin: default_value
+    default_value: full_html
+  'field_article_body/target_id': nid
+  'field_article_body/target_revision_id': nid
+  field_departments_programs:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_departments_programs
+    -
+      plugin: explode
+      source: field_departments_programs
+      delimiter: +
+  field_byline: field_byline
+  field_media_source: field_media_source
+  field_dateline: field_dateline
+  field_card_label: field_card_label
+  'field_image/target_id':
+    plugin: migration
+    migration: import_as_article_image_media
+    source: nid
+  'field_image/alt': field_image_alt
+  uid:
+    plugin: default_value
+    default_value: 1

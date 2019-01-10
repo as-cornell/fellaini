@@ -1,0 +1,55 @@
+uuid: 54add0cc-e728-4e6e-8ec4-2f481ac33ae2
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - as_migrate_articles
+_core:
+  default_config_hash: 4gDFvLqDcSlL7GW-6ifaBDHia1SvtgV-WkXN3U-6GM4
+id: import_as_article_body
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: articles
+label: 'Import article bodies into paragraphs'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'http://as.cornell.edu'
+  urls: 'http://as.cornell.edu/articles-asd8-json-depts'
+  ids:
+    nid:
+      type: integer
+  item_selector: data/
+  fields:
+    -
+      name: nid
+      label: Nid
+      selector: /attributes/nid
+    -
+      name: uuid
+      label: uuid
+      selector: /attributes/uuid
+    -
+      name: description
+      label: Description
+      selector: /attributes/description
+process:
+  id: nid
+  revision_id: nid
+  uuid: uuid
+  type:
+    plugin: default_value
+    default_value: formatted_text_block
+  field_formatted_text_1/value: description
+  field_formatted_text_1/format:
+    plugin: default_value
+    default_value: basic_html
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: formatted_text_block
+migration_dependencies: {  }
