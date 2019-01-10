@@ -1,0 +1,32 @@
+uuid: 18522636-d760-4941-98ab-3802292bd5f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_campfire_center_main
+    - node.type.article
+    - node.type.landing_page
+    - node.type.page
+    - paragraphs.paragraphs_type.campfire_center
+id: paragraph.campfire_center.field_campfire_center_main
+field_name: field_campfire_center_main
+entity_type: paragraph
+bundle: campfire_center
+label: 'Campfire Center Main Article'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      landing_page: landing_page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

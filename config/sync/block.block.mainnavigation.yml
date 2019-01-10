@@ -1,0 +1,24 @@
+uuid: 9ed4fa1f-8132-4997-9587-07b24b5f834b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - pathways
+id: mainnavigation
+theme: pathways
+region: header
+weight: -1
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }
