@@ -3,7 +3,11 @@
     -specific styles will be in atom directores 
     -image
     -video
-*/
+
+    display:table, and display:table-caption,caption-side:bottom to allow for sizing to the image not the caption
+
+    */
+
 
 figure{
     display: inline-block;
@@ -17,6 +21,12 @@ figure{
     }
     &--image{
         max-width: $quark * 100;
+        display: table;
+        figcaption{
+            display: table-caption;
+            caption-side: bottom;
+            @include baseBorder();
+        }
     }
     &--video{
         display: block;

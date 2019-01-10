@@ -4,8 +4,8 @@
 
 // set styles specifically for PL
 .card{
-  
   border: 1px solid $gray-lt;
+  margin-bottom: 1rem;
   .pl &{
     max-width: 400px;
   }
@@ -35,11 +35,18 @@
   @include button;
 }
 
-// Variations
-.card--bg {
-  background-color: $gray-lightest;
-  padding: 1em;
+// global .sidebar>.card styles
+.sidebar{
+  .card{
+    @include baseGrid();
+    grid-template-columns: $max-column 1fr;
+    .card__title{
+      @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
+    }
+  }
 }
+
+// Article Cards
 .card--article{
   .card__copy{
     padding: $space;
@@ -64,13 +71,30 @@
   }
 }
 
+// Sidebar Article cards
+
 .sidebar{
-  .card{
-    @include baseGrid();
-    grid-template-columns: $max-column 1fr;
+  .card--article{
+    .card__copy{
+      padding: $space;
+      @include baseGrid($g-gap: 0px);
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "date"
+        "title";
+    }
     .card__title{
-      @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
+      grid-area: title;
+    }
+    .label, .byline{
+      display: none;
+    }
+    .date{
+      grid-area: date;
     }
   }
 }
+
+
+
 

@@ -38,7 +38,11 @@
     #}
 {# 
     Probably need to consider adding an additional modifier if there will be a sidebar, to rearrange the grid.
- #}{% embed "@atoms/_field.twig" with {
+    - adds class main-content to main container which puts it in the middle of row
+ #}
+ 
+ 
+ {% embed "@atoms/_field.twig" with {
     modifiers : ["grid", "page_components"],
     classes : ['main-content']
 } %}{% endembed %}
