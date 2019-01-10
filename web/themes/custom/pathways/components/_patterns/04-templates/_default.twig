@@ -11,13 +11,15 @@
     {% set main_content_modifiers = main_content_modifiers|merge(['with-sidebar']) %}
 {% endif %}
 
-<div {{ bem('layout-container', (layout_modifiers)) }}>
+{# <div {{ bem('layout-container', (layout_modifiers)) }}> #}
     {% block page_header %}{% endblock %}
 
     {% block page_system %}{% endblock %}
 
+
+<a id="main-content" tabindex="-1"></a>
     <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
-        <a id="main-content" tabindex="-1"></a>
+        
         <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
             {% block page_content %}{% endblock %}
 
@@ -33,4 +35,4 @@
     </main>
 
     {% block page_footer %}{% endblock %}
-</div>
+{# </div> #}

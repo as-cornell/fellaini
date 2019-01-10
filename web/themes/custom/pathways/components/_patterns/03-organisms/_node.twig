@@ -74,13 +74,19 @@
 {# 
     RTM9 -- the default node template extends _default.twig for main content in <main>. Specific node--contentType.html.twig and _contnetType.twig can be used to override this template.
 #}
+
 {% extends "@templates/_default.twig" %}
+
 {% block page_content %}
-    {% include "@atoms/headings/_heading.twig" with {
-        "heading_level" : 1,
-        "heading" : label,
-        "heading_base_class" : 'page-title'
-    } %}
+    {% if url != '/home' %}
+        {% include "@atoms/headings/_heading.twig" with {
+            "heading_level" : 1,
+            "heading" : label,
+            "heading_base_class" : 'page-title'
+        } %}
+    {% endif %}
     {{content}}
 {% endblock %}
+
+
 {% set main_content_modifiers = ['content'] %}

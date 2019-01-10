@@ -1,4 +1,5 @@
 .container--article{    
+    grid-template-columns: repeat(6, minmax(50px, $max-column));
     grid-template-areas:
       "pano pano pano pano pano pano"
       ". title title title title ."
@@ -6,6 +7,7 @@
       ". content content content content ."
      ". sidebar sidebar sidebar sidebar .";
     @include medium{
+      grid-template-columns: repeat(12, minmax(50px, $max-column));
         grid-template-areas:
       ". pano pano pano pano pano pano pano pano pano pano ."
       ". title title title title title title title title title title ."
@@ -13,10 +15,11 @@
       ". sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar .";
     }
     @include large{
+      grid-template-columns: repeat(14, minmax(50px, $max-column));
         grid-template-areas:
       ". . pano pano pano pano pano pano pano pano pano pano . ."
       ". . title title title title title title title title title title . ."
-      ". social content content content content content content content content sidebar sidebar sidebar .";
+      " social . content content content content content content content content . sidebar sidebar sidebar";
     }
 }
 
