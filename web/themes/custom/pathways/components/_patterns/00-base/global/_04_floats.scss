@@ -1,0 +1,22 @@
+// floats try not to use
+.floatLeft{
+    float: left;
+    margin-left: 0;
+}
+.floatRight{
+    float: right;
+    margin-right: 0;
+}
+@include medium{
+    .pullLeft{
+        float: left;
+        margin-left: -3rem;
+    }
+    .pullRight{
+        float: right;
+        margin-right: -3rem;
+    }
+    .stretch{
+        margin: 0 -3rem;
+    }
+}
