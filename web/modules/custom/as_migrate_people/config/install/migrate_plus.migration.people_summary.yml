@@ -63,9 +63,19 @@ process:
     plugin: default_value
     default_value: basic_html
 
-  'field_research_focus/value': field_research_focus
+  'field_person_research_focus/value': field_research_focus
 
-  'field_description/format':
+  'field_person_research_focus/format':
     plugin: default_value
     default_value: basic_html
+
+  field_departments_programs:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_departments_programs
+    -
+      plugin: explode
+      source: field_departments_programs
+      delimiter: +
 

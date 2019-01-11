@@ -1,0 +1,9 @@
+uuid: bdd8df1a-4ef5-4c05-9200-6fecbd265e53
+langcode: en
+status: true
+dependencies: {  }
+id: video_figure
+label: 'Video Figure'
+icon_uuid: null
+description: 'Paragraph to add a figure with a video and a caption.'
+behavior_plugins: {  }
