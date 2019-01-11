@@ -20,12 +20,13 @@ figure{
         margin: 0;
     }
     &--image{
-        max-width: $quark * 100;
+        //max-width: $quark * 100;
         display: table;
+        @include baseBorder(border-no-bottom);
         figcaption{
             display: table-caption;
             caption-side: bottom;
-            @include baseBorder();
+            @include baseBorder(border-no-top);
         }
     }
     &--video{
