@@ -10,14 +10,20 @@ _core:
   default_config_hash: UoGZLPH_DEy28wDjCYqiBKYsKoHlf6l6deygJjqdgPc
 name: media_entity_browser
 label: 'Media Entity Browser'
-display: modal
+display: iframe
 display_configuration:
-  width: ''
+  width: 100%
   height: '600'
   link_text: 'Select images'
   auto_open: false
-selection_display: no_display
-selection_display_configuration: {  }
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: default
+  select_text: 'Use selected'
+  selection_hidden: false
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:

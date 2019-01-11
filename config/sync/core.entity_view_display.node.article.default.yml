@@ -4,19 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_article_body
     - field.field.node.article.field_byline
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
-    - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
-    - field.field.node.article.field_tags
+    - field.field.node.article.field_pano_image
+    - field.field.node.article.field_related_articles
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
     - datetime
-    - image
+    - entity_reference_revisions
     - text
     - user
 id: node.article.default
@@ -31,11 +32,20 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_article_body:
+    type: entity_reference_revisions_entity_view
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_byline:
     type: string
     weight: 4
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -43,7 +53,7 @@ content:
     type: string
     weight: 2
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -51,7 +61,7 @@ content:
     type: datetime_default
     weight: 3
     region: content
-    label: above
+    label: hidden
     settings:
       format_type: medium
       timezone_override: ''
@@ -64,39 +74,41 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-  field_featured_audio_video:
-    type: text_default
-    weight: 7
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_image:
-    type: image
-    weight: 1
-    region: content
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-  field_media_source:
-    type: string
-    weight: 5
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_tags:
     type: entity_reference_entity_view
-    weight: 9
-    region: content
-    label: above
+    weight: 14
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    region: content
+  field_media_source:
+    type: string
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_pano_image:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_related_articles:
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   links:
     weight: 0
     region: content
