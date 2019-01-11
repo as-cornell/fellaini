@@ -1,0 +1,56 @@
+uuid: 59ce0bf4-0629-41d0-bd3b-24bb3324dffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.campfire.field_campfire_center
+    - field.field.paragraph.campfire.field_related_articles
+    - field.field.paragraph.campfire.field_related_articles_2
+    - paragraphs.paragraphs_type.campfire
+  module:
+    - paragraphs
+id: paragraph.campfire.default
+targetEntityType: paragraph
+bundle: campfire
+mode: default
+content:
+  field_campfire_center:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  field_related_articles:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_related_articles_2:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,9 @@
+uuid: 9a2d7f1a-87d9-4372-9680-51722d312f65
+langcode: en
+status: true
+dependencies: {  }
+id: image_figure
+label: 'Image Figure'
+icon_uuid: null
+description: 'Paragraph for and image/photo with caption and credit'
+behavior_plugins: {  }
