@@ -6,16 +6,31 @@ card_modifiers:
 card_title:
   'This is the title to an article'
 
-# Subtitle
-card_subtitle:
+# label
+card_label:
   'Astronomy'
+
+#dateline
+card_dateline:
+  '10/25/18'
+
+# byline
+card_byline:
+  'Linda Glaser'
 
 # Link
 card_link_url:
   'http://astro.cornell.edu'
 
-# Button
-card_button_url:
-  '#'
+# overwrite
+card_subtitle:
+  ''
+card_body:
+  ''
 card_button_content:
-  'Read more'
+  ''
+card_button_url:
+  ''
+card_link_text:
+  ''
+
