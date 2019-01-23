@@ -11,42 +11,116 @@ cards:
   articles:
     1:
       card_modifiers:
-        1: "grid-item"
-        2: "article"
+        1: "article"
       card_img_src:
         "https://as.cornell.edu/sites/as/files/Podcast-Love-Sternberg-image.jpg"
       card_title:
-        "New podcasts explores 'What Do We Know About Love?'"
+        "Hi New podcasts explores 'What Do We Know About Love?'"
+      card_label: 'What Makes us Human?'
+      card_byline: 'Linda Glaser'
+      card_dateline: '10/05/18'
+      card_link_url: '#'
+      # overwrite
       card_subtitle:
-        "Humanities"
+        ''
       card_body:
-        ""
-      card_link:
-        ""
+        ''
+      card_button_content:
+        ''
+      card_button_url:
+        ''
+      card_link_text:
+        ''
     2:
       card_modifiers:
-        1: "grid-item"
-        2: "article"
+        1: "article"
       card_img_src:
         "https://as.cornell.edu/sites/as/files/field/image/Nobelhand.jpg"
       card_title:
         "Arthur Ashkin, Ph.D.'52, shares Nobel Prize in physics"
+      card_label: 'Physics'
+      card_byline: 'Linda Glaser'
+      card_dateline: '10/05/18'
+      card_link_url: '#'
+      # overwrite
       card_subtitle:
-        "Physics"
+        ''
       card_body:
-        ""
+        ''
+      card_button_content:
+        ''
+      card_button_url:
+        ''
+      card_link_text:
+        ''
     3:
       card_modifiers:
-        1: "grid-item"
-        2: "article"
+        1: "article"
       card_img_src:
         "https://as.cornell.edu/sites/as/files/field/image/anyperson_seal450.jpg"
       card_title:
         "At150, '...any person ...any study' still stands strong"
+      card_label: 'Any Person...'
+      card_byline: 'Linda Glaser'
+      card_dateline: '10/05/18'
+      card_link_url: '#'
+      # overwrite
       card_subtitle:
-        "Our Founding Vision"
+        ''
       card_body:
-        ""
+        ''
+      card_button_content:
+        ''
+      card_button_url:
+        ''
+      card_link_text:
+        ''
+    4:
+      card_modifiers:
+        1: "article"
+      card_img_src:
+        "https://as.cornell.edu/sites/as/files/field/image/hiphop450.jpg"
+      card_title:
+        "Appert explores hip-hop and social change in Sengal"
+      card_label: 'Any Person...'
+      card_byline: 'George Clooney'
+      card_dateline: '1/5/19'
+      card_link_url: '#'
+      # overwrite
+      card_subtitle:
+        ''
+      card_body:
+        ''
+      card_button_content:
+        ''
+      card_button_url:
+        ''
+      card_link_text:
+        ''
+    5:
+      card_modifiers:
+        1: "article"
+        2: "large"
+      card_img_src:
+        "https://as.cornell.edu/sites/as/files/field/image/avery-crop-3.jpg"
+      card_title:
+        "Major dilemma: Four stories about choosing a major you love"
+      card_label: ''
+      card_byline: ''
+      card_dateline: ''
+      card_link_url: '#'
+      # overwrite
+      card_subtitle:
+        ''
+      card_body:
+        ''
+      card_button_content:
+        ''
+      card_button_url:
+        ''
+      card_link_text:
+        ''
+
   majors:
     1:
       card_modifiers:
@@ -86,7 +160,17 @@ cards:
         ""
       card_body:
         ""
-video_content:
-  "<iframe width='854' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/YRnVnlhjOBs?autoplay=0&amp;start=0'></iframe>"
-video_caption:
-  "This is a neat video caption to be shown with a video."
+campfire_center:
+figures:
+  image:
+    url: "#"
+    src: "https://placeimg.com/1200/200/tech"
+    alt: "This is the alt text"
+    caption: "This is an image caption."
+    credit: "CU Photo"
+    output_image_tag: TRUE
+  video:
+    embed:
+      "<iframe width='854' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/YRnVnlhjOBs?autoplay=0&amp;start=0'></iframe>"
+    caption:
+      " from data.yaml This is a neat video caption to be shown with a video."

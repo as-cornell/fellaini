@@ -9,7 +9,7 @@ card_image_output_image_tag: TRUE
 
 # Title
 card_label:
-  "This is a Card Label"
+  "card label 'Astronomy'"
 card_title:
   "This is a card title"
 card_title_link:
@@ -20,7 +20,7 @@ card_title_blockname:
 
 # Subtitle
 card_subtitle:
-  "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+  "card subtitle... should be 'astronomy?'"
 card_subtitle_link:
 card_subtitle_modifiers:
   1:
