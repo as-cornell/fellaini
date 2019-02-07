@@ -18,6 +18,7 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
+    - image
     - text
     - user
 id: node.article.default
@@ -58,13 +59,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_dateline:
-    type: datetime_default
+    type: datetime_custom
     weight: 3
     region: content
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      date_format: d/m/y
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_label
@@ -75,14 +76,14 @@ content:
       link: true
     third_party_settings: {  }
   field_image:
-    type: entity_reference_entity_view
-    weight: 14
+    type: image
+    weight: 1
+    region: content
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    region: content
   field_media_source:
     type: string
     weight: 5
@@ -104,7 +105,7 @@ content:
     weight: 12
     label: hidden
     settings:
-      view_mode: card
+      view_mode: card_small
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view

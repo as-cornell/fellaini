@@ -18,6 +18,7 @@ dependencies:
     - node.type.article
   module:
     - datetime
+    - image
     - user
 id: node.article.card
 targetEntityType: node
@@ -50,13 +51,13 @@ content:
       date_format: d/m/y
     third_party_settings: {  }
   field_image:
-    type: entity_reference_entity_view
+    type: image
     weight: 1
     region: content
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
   links:
     weight: 0

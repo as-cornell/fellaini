@@ -1,4 +1,4 @@
-uuid: 80a57878-d370-4447-ae9c-5cb91ac3c39c
+uuid: ae8284c7-ae08-46f2-bee1-239f1b269be9
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     module:
       - as_migrate_articles
 _core:
-  default_config_hash: K1ZBiVEXTkfFp2ptiJHEBYN-544iOc2I4yuZpUFBToE
-id: import_as_article
+  default_config_hash: F2a1EzN6_f5s-WMh-wBe40w0fVIH1aZVqQerI_yY89U
+id: import_as_articles
 class: null
 field_plugin_method: null
 cck_plugin_method: null
@@ -18,86 +18,80 @@ source:
   plugin: url
   data_fetcher_plugin: http
   data_parser_plugin: json
-  constants:
-    source_base_path: 'http://as.cornell.edu'
-  urls: 'http://as.cornell.edu/articles-asd8-json-depts'
+  urls: 'http://as.cornell.edu/articles-asd8-json'
   ids:
     nid:
       type: integer
-  item_selector: data/
+  item_selector: articles
   fields:
     -
       name: nid
       label: Nid
-      selector: /attributes/nid
+      selector: /article/nid
     -
       name: vid
       label: Vid
-      selector: /attributes/vid
+      selector: /article/vid
     -
       name: uuid
       label: Uuid
-      selector: /attributes/uuid
+      selector: /article/uuid
     -
       name: title
       label: Title
-      selector: /attributes/title
+      selector: /article/title
     -
       name: created
       label: Created
-      selector: /attributes/created
+      selector: /article/created
     -
       name: changed
       label: Changed
-      selector: /attributes/changed
+      selector: /article/changed
     -
       name: status
       label: Status
-      selector: /attributes/status
+      selector: /article/status
     -
       name: path
       label: Path
-      selector: /attributes/path
+      selector: /article/path
     -
       name: summary
       label: Summary
-      selector: /attributes/summary
+      selector: /article/summary
     -
       name: body
       label: Body
-      selector: /attributes/description
-    -
-      name: field_departments_programs
-      label: Departments
-      selector: /attributes/field_departments_programs
+      selector: /article/description
     -
       name: field_byline
       label: 'Field Byline'
-      selector: /attributes/field_byline
+      selector: /article/field_byline
     -
       name: field_media_source
       label: 'Field Media Source'
-      selector: /attributes/field_media_source
+      selector: /article/field_media_source
     -
       name: field_dateline
       label: 'Field dateline'
-      selector: /attributes/field_dateline
+      selector: /article/field_dateline
+    -
+      name: field_department_program
+      label: 'Field Department Program'
+      selector: /article/field_department_program
     -
       name: field_card_label
       label: 'Field Card Label'
-      selector: /attributes/field_card_label
+      selector: /article/field_card_label
     -
-      name: field_image_url
-      label: 'Image URL'
-      selector: /attributes/field_image/src
+      name: field_topic
+      label: 'Field Topic'
+      selector: /article/field_topic
     -
-      name: field_image_uri
-      label: 'Image URI'
-      selector: /attributes/field_image_uri
-    -
-      name: field_image_alt
-      label: 'Image Alt tag'
-      selector: /attributes/field_image/alt
+      name: field_article_view_tags
+      label: 'Field Article View Tags'
+      selector: /article/field_article_view_tags
 process:
   type:
     plugin: default_value
@@ -111,26 +105,37 @@ process:
   body/format:
     plugin: default_value
     default_value: full_html
-  field_article_body/target_id: nid
-  field_article_body/target_revision_id: nid
-  field_department_program:
+  field_topics_and_disciplines:
     -
       plugin: skip_on_empty
       method: process
-      source: field_departments_programs
+      source: field_topic
     -
       plugin: explode
-      source: field_departments_programs
-      delimiter: +
+      source: field_topic
+      delimiter: /
+  field_department_program/tid:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_department_program
+    -
+      plugin: explode
+      source: field_department_program
+      delimiter: /
+    -
+      plugin: migration
+      migration: import_as_article_departments_programs
+      source: nid
   field_byline: field_byline
   field_media_source: field_media_source
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_image/target_id:
     plugin: migration
-    migration: import_as_article_image_media
+    migration: import_as_article_images
     source: nid
-  field_image/alt: field_image_alt
+  field_image/alt: title
   uid:
     plugin: default_value
     default_value: 1

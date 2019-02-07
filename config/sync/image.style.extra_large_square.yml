@@ -1,0 +1,15 @@
+uuid: 6aa83867-a187-4d41-a499-d90d71209f19
+langcode: en
+status: true
+dependencies: {  }
+name: extra_large_square
+label: 'extra large square'
+effects:
+  bbd9ae15-a457-4242-88c6-bcb93c2ae124:
+    uuid: bbd9ae15-a457-4242-88c6-bcb93c2ae124
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 600
+      anchor: center-center
