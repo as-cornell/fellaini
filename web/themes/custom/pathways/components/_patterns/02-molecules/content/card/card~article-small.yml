@@ -1,0 +1,38 @@
+card_modifiers:
+  1:
+    article
+  2:
+    small
+
+# Title
+card_title:
+  'This is the title to an article'
+
+# label
+card_label:
+  ''
+
+#dateline
+card_dateline:
+  '10/25/18'
+
+# byline
+card_byline:
+  ''
+
+# Link
+card_link_url:
+  'http://astro.cornell.edu'
+
+# overwrite
+card_subtitle:
+  ''
+card_body:
+  ''
+card_button_content:
+  ''
+card_button_url:
+  ''
+card_link_text:
+  ''
+
