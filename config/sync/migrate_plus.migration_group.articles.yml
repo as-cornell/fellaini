@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: articles
 label: Articles
-description: 'Migrate article content from Drupal 7 to Drupal 8'
-source_type: 'Drupal 7'
+description: ''
+source_type: ''
 module: null
 shared_configuration: null
