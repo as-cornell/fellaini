@@ -1,7 +1,9 @@
-uuid: ad1a6e43-cd73-4709-9866-97d489083e86
+uuid: eef45c78-88dd-4d0c-9df0-f1f3cff0779c
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: lGuR0lrxMHtm9j3iHTybSUfKszQGwe8GBJHiBIVbnPs
 id: stats
 label: Stats
 description: 'Migrate stats content from Drupal 7 to Drupal 8'

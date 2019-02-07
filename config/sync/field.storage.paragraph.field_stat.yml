@@ -1,10 +1,12 @@
-uuid: a9537aad-e127-4b22-9d7a-a01a4ae571ff
+uuid: 858c9886-37a3-4c2f-a5ad-3985231e2cc0
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - paragraphs
+_core:
+  default_config_hash: JHQjX-u1ev-gIBq3G6V_CutjR2d6i2G8OQSMqAjjPDA
 id: paragraph.field_stat
 field_name: field_stat
 entity_type: paragraph

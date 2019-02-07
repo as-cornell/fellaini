@@ -1,10 +1,12 @@
-uuid: 2d257218-8975-42b5-9b75-13df041446c9
+uuid: 659564ea-f304-40c6-a1a8-d033cad44b07
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_stat_description
     - node.type.stat
+_core:
+  default_config_hash: qMUB29-kRFHmn9w_zjnyXV_3yJHEYEPOws7Lek0sgfU
 id: node.stat.field_stat_description
 field_name: field_stat_description
 entity_type: node

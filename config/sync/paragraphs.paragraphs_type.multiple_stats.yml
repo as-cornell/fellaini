@@ -1,0 +1,11 @@
+uuid: 04a3d72b-0e3f-435c-8f72-378220656ba8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yUJhr9yDALYZ461Qt7P29o6wl9gO1a_c2SFOYuSKu1Y
+id: multiple_stats
+label: 'Multiple Stats'
+icon_uuid: null
+description: 'Multiple stats to appear in a slice or other landing page element.'
+behavior_plugins: {  }

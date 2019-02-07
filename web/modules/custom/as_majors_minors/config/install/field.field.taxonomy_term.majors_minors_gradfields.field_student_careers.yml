@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_student_careers
+    - taxonomy.vocabulary.majors_minors_gradfields
+id: taxonomy_term.majors_minors_gradfields.field_student_careers
+field_name: field_student_careers
+entity_type: taxonomy_term
+bundle: majors_minors_gradfields
+label: 'Student Careers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

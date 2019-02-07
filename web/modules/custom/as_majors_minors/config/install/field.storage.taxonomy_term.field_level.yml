@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_level
+field_name: field_level
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: major
+      label: Major
+    -
+      value: minor
+      label: Minor
+    -
+      value: graduate
+      label: Graduate
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

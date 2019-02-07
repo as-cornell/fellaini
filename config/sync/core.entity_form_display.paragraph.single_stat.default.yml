@@ -1,10 +1,12 @@
-uuid: f45fbd4b-dc50-4fb7-bfcd-7ed49ee7edbf
+uuid: c99d0c6a-16c3-4ec8-858e-382c8c9dbae1
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.paragraph.single_stat.field_stat
     - paragraphs.paragraphs_type.single_stat
+_core:
+  default_config_hash: 22O02WmGGJvHLIhM7nHBWsYirIG7FrVgzLu-aVpGLiw
 id: paragraph.single_stat.default
 targetEntityType: paragraph
 bundle: single_stat
