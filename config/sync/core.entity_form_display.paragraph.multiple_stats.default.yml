@@ -1,0 +1,25 @@
+uuid: 823488d5-aa31-4c39-a344-a2bb178dec0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multiple_stats.field_stats
+    - paragraphs.paragraphs_type.multiple_stats
+id: paragraph.multiple_stats.default
+targetEntityType: paragraph
+bundle: multiple_stats
+mode: default
+content:
+  field_stats:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true
