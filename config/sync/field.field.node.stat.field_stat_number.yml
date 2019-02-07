@@ -1,10 +1,12 @@
-uuid: 3fb28193-ffa9-42ec-a30d-027b2cdd6709
+uuid: ebbbd7d2-ec28-4672-92ed-bd0241c5e52b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_stat_number
     - node.type.stat
+_core:
+  default_config_hash: _XvzkIlAexFVO8zP5Yjjoyja3UjqoP8SlV0pm6tKH-o
 id: node.stat.field_stat_number
 field_name: field_stat_number
 entity_type: node

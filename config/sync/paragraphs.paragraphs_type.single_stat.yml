@@ -1,0 +1,11 @@
+uuid: dafdfcd4-87b2-4ab5-af1a-8909aa67c9a9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yJAq35PvJQHHjqQRzz8aAnWZ9M1VlDwGLrpgvhsW4Ko
+id: single_stat
+label: 'Single Stat'
+icon_uuid: null
+description: 'A single stat to appear in a card like in a campfire.'
+behavior_plugins: {  }

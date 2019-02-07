@@ -1,18 +1,18 @@
-uuid: 77a14edd-2391-4f48-acd6-3738a5da0003
+uuid: c859463c-ae5b-4402-90d6-1bcbaae0f7a7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_stat
+    - field.storage.paragraph.field_stats
     - node.type.stat
-    - paragraphs.paragraphs_type.single_stat
+    - paragraphs.paragraphs_type.multiple_stats
 _core:
-  default_config_hash: gWLOnm-yyYVLhKVWfSjrdgDOlXCXRw-7FxfkeRP9pVs
-id: paragraph.single_stat.field_stat
-field_name: field_stat
+  default_config_hash: iLKEJwZNyo32JqqrmoBG6aDVDjykeS7qy3ipzi7EONI
+id: paragraph.multiple_stats.field_stats
+field_name: field_stats
 entity_type: paragraph
-bundle: single_stat
-label: Stat
+bundle: multiple_stats
+label: Stats
 description: ''
 required: false
 translatable: false

@@ -1,4 +1,4 @@
-uuid: d6e2c16d-d907-42c5-a513-b46477a78258
+uuid: ad85901c-5003-4b93-b8a4-7692b89b3b73
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: HwmQhZddY0Eo4ty1wh3ev9OgthDSDkL3iDTaHec9kRs
 name: Stat
 type: stat
 description: 'Content type for stats and other short content to be displayed in cards in paragraphs on various pages.'

@@ -1,9 +1,11 @@
-uuid: 851b4d41-bcb6-4bbb-82c4-560fd651cf91
+uuid: 37e66d1b-6668-4142-858f-d8162a34742b
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.stat
+_core:
+  default_config_hash: IJlwyAnBheV-cyGXWBROjjReZWBhwhukrlXOeGct_Lw
 id: node.stat.promote
 field_name: promote
 entity_type: node
