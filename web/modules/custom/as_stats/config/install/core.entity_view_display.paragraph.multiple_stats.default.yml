@@ -1,0 +1,21 @@
+uuid: 27a7fc37-f40b-4f6a-9cb4-fd6caeab4a78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multiple_stats.field_stats
+    - paragraphs.paragraphs_type.multiple_stats
+id: paragraph.multiple_stats.default
+targetEntityType: paragraph
+bundle: multiple_stats
+mode: default
+content:
+  field_stats:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }
