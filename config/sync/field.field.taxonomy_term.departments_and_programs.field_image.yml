@@ -1,22 +1,22 @@
-uuid: 059ee57b-0d48-4d2d-a249-ec8bab8da495
+uuid: 462f21db-099c-485c-a1c9-7a6e7bb570f8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - node.type.article
+    - field.storage.taxonomy_term.field_image
+    - taxonomy.vocabulary.departments_and_programs
   module:
     - image
 _core:
-  default_config_hash: tgJzhA7Swh4M_gWU5FwFe5lPxPj5rebpMbvhpdNrERs
-id: node.article.field_image
+  default_config_hash: CX3jX4l5t3MMGH7L_19-L1uvrkxTrqXALOV0vnmif5A
+id: taxonomy_term.departments_and_programs.field_image
 field_name: field_image
-entity_type: node
-bundle: article
+entity_type: taxonomy_term
+bundle: departments_and_programs
 label: Image
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -26,11 +26,11 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: true
-  title_field: false
   alt_field_required: true
+  title_field: false
   title_field_required: false
   default_image:
-    uuid: null
+    uuid: ''
     alt: ''
     title: ''
     width: null

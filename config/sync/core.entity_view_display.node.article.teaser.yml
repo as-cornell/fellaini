@@ -17,12 +17,22 @@ dependencies:
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
+    - image
     - user
 id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
 content:
+  field_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
   links:
     weight: 1
     region: content
@@ -35,7 +45,6 @@ hidden:
   field_card_label: true
   field_dateline: true
   field_department_program: true
-  field_image: true
   field_media_source: true
   field_pano_image: true
   field_related_articles: true
