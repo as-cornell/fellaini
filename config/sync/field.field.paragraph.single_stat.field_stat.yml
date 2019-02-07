@@ -1,0 +1,28 @@
+uuid: f61ada5b-5a1c-4247-a17b-e3b37fc38882
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stat
+    - node.type.stat
+    - paragraphs.paragraphs_type.single_stat
+id: paragraph.single_stat.field_stat
+field_name: field_stat
+entity_type: paragraph
+bundle: single_stat
+label: Stat
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      stat: stat
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

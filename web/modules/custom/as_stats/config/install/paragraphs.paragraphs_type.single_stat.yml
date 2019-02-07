@@ -1,0 +1,9 @@
+uuid: 0c0727c0-4910-4890-8335-ff9be5060491
+langcode: en
+status: true
+dependencies: {  }
+id: single_stat
+label: 'Single Stat'
+icon_uuid: null
+description: 'A single stat to appear in a card like in a campfire.'
+behavior_plugins: {  }

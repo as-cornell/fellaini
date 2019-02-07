@@ -1,0 +1,10 @@
+uuid: ad1a6e43-cd73-4709-9866-97d489083e86
+langcode: en
+status: true
+dependencies: {  }
+id: stats
+label: Stats
+description: 'Migrate stats content from Drupal 7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null
