@@ -16,10 +16,11 @@
  */
 #}
 
-{% embed "@organisms/card-grid/card-grid.twig" with {
-  grid_label: title
+
+{% embed "@organisms/card-list/card-list.twig" with {
+  list_label: title
 } %}
-    {% block grid_content %}
+    {% block list_content %}
         {% for row in rows %}
             {{ row.content }}
         {% endfor %}
