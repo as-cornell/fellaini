@@ -35,16 +35,15 @@
   @include button;
 }
 
-// global .sidebar>.card styles
-.sidebar{
-  .card{
+// Global small card can be overidden with .card--type .card--small
+  .card--small{
     @include baseGrid();
     grid-template-columns: $max-column 1fr;
     .card__title{
       @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
     }
   }
-}
+
 
 // Article Cards
 .card--article{
@@ -69,12 +68,7 @@
   .byline{
     grid-area: byline;
   }
-}
-
-// Sidebar Article cards
-
-.sidebar{
-  .card--article{
+  &.card--small{
     .card__copy{
       padding: $space;
       @include baseGrid($g-gap: 0px);
@@ -94,7 +88,4 @@
     }
   }
 }
-
-
-
 
