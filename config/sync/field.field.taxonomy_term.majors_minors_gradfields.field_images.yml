@@ -1,4 +1,4 @@
-uuid: 56f4987a-a6a9-47ff-af26-19c1fc70b025
+uuid: 6b3cceca-1320-4a61-8fb2-bd93438292c8
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - field.storage.taxonomy_term.field_images
     - media.type.image
     - taxonomy.vocabulary.majors_minors_gradfields
+_core:
+  default_config_hash: 5WigyWdh1cH5TcSRfwie7R5kaYw7dAyZQSzPQDvcVQA
 id: taxonomy_term.majors_minors_gradfields.field_images
 field_name: field_images
 entity_type: taxonomy_term
