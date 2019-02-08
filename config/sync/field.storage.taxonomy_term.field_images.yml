@@ -1,10 +1,12 @@
-uuid: c93e1f8b-37f9-486c-8e96-e3eb11bfa113
+uuid: 879da1fb-28ca-4b63-b39c-60afff40e3ab
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - taxonomy
+_core:
+  default_config_hash: ZubKnKKy_fwg2KcS26QPfiwOyX2NERVn5gultphJO5E
 id: taxonomy_term.field_images
 field_name: field_images
 entity_type: taxonomy_term

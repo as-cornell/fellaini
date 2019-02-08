@@ -1,9 +1,11 @@
-uuid: 9ce2e6cc-4da7-4b1f-bb64-dbad77eb0194
+uuid: 78d06f97-9ac5-4e35-b226-fd4d9cdc212a
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
+_core:
+  default_config_hash: TxqK2AGHJbhRH458mFzwLI1DJLEFxWwyPHZ29Ab0mHM
 id: taxonomy_term.field_student_careers
 field_name: field_student_careers
 entity_type: taxonomy_term
