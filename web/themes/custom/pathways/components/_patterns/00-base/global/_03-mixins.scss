@@ -7,10 +7,31 @@
     color: $color;
     font-weight: $weight;
     line-height: $line-height;
-    margin-bottom: 1rem;
   }
+@mixin fontSize($plier){
+    font-size: $plier * $quark;
+}
   
+/// Mixin - Standard Margin
+@mixin margin {
+  margin-bottom: 1em;
+}
 
+@mixin no-bottom {
+  margin-bottom: 0;
+}
+
+// Mixin - Base Flex
+@mixin baseFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Mixin - Base Grid
+@mixin baseGrid($g-gap: $space, $r-gap: '0'){
+  display: grid;
+  grid-gap: $g-gap;
+}
 
 
 
@@ -55,27 +76,7 @@
   padding-right: calc(#{$v-padding} + calc(-50vw + 50%));
 }
 
-/// Mixin - Standard Margin
-@mixin margin {
-  margin-bottom: 1em;
-}
 
-@mixin no-bottom {
-  margin-bottom: 0;
-}
-
-// Mixin - Base Flex
-@mixin baseFlex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-// Mixin - Base Grid
-@mixin baseGrid($g-gap: $space, $r-gap: '0'){
-  display: grid;
-  grid-gap: $g-gap;
-  row-gap: $r-gap;
-}
 
 // Borders
 @mixin baseBorder($var-direction: "border", $var-width: $border-width, $var-color: $border-color) {
