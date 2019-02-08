@@ -1,4 +1,14 @@
+{# 
+  image_modifiers
+  link_href
+  link_class
+ #}
+
 {% set image_base_class = image_base_class|default('img') %}
+
+{% if link_href %}
+  <a href="{{link_href}}" class="{{link_class}}">
+{% endif %}
 
 <img
   {{ bem(image_base_class, (image_modifiers), image_blockname) }}
@@ -16,3 +26,7 @@
     title="{{ img_title }}"
   {% endif %}
 />
+{% if link_href %}
+    </a>
+{% endif %}
+
