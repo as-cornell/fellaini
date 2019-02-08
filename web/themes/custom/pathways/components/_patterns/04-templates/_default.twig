@@ -1,5 +1,5 @@
 {# 
-    _default.twig does the <main> layout for the site. it is called by _node.twig 
+    _default.twig does the <main> layout for the site. it is extended by _node.twig 
  #}
 {% set layout_modifiers = [] %}
 
@@ -19,7 +19,6 @@
 
     {% block page_system %}{% endblock %}
 
-<h1>_default.twig</h1>
 <a id="main-content" tabindex="-1"></a>
     <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
         
