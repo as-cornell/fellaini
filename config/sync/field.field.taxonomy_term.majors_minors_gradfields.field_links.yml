@@ -1,4 +1,4 @@
-uuid: 3f936e8b-5841-4d0c-8dcb-d4f504b5d3df
+uuid: 7d947cdf-e6f6-45cf-8c50-5c631952c622
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
     - link
+_core:
+  default_config_hash: 4j_WO0ZyzDEPSjF56AEpDTpE3d6WsXfMpO9_WKNpsmQ
 id: taxonomy_term.majors_minors_gradfields.field_links
 field_name: field_links
 entity_type: taxonomy_term
