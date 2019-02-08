@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: stats
+label: Stats
+description: 'Migrate stats content from Drupal 7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null

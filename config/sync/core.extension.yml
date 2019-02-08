@@ -1,6 +1,7 @@
 module:
   as_articles: 0
   as_migrate_articles: 0
+  as_stats: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -63,6 +64,7 @@ theme:
   stable: 0
   classy: 0
   seven: 0
+  rooney: 0
   pathways: 0
   material_admin: 0
 profile: standard

@@ -1,0 +1,9 @@
+uuid: 9ba8b6fc-d7cb-4bb2-a720-9c23ec4a973f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Majors Minors Gradfields'
+vid: majors_minors_gradfields
+description: 'Taxonomy to feature Majors Minors and Grad fields. Filtered by Level field and Discipline taxonomies.'
+hierarchy: 0
+weight: 0

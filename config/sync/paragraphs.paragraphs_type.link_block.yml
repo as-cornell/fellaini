@@ -5,5 +5,5 @@ dependencies: {  }
 id: link_block
 label: 'Link Block'
 icon_uuid: null
-description: ''
+description: 'Just the links, m''am.'
 behavior_plugins: {  }

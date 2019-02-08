@@ -1,0 +1,27 @@
+uuid: 16f71c96-4270-4743-bf38-aaa12479df4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multiple_stats.field_stats
+    - paragraphs.paragraphs_type.multiple_stats
+_core:
+  default_config_hash: d4Y9DccnW9cIL9180tLvvt7RduIyNmFa02ZT83aN2Z0
+id: paragraph.multiple_stats.default
+targetEntityType: paragraph
+bundle: multiple_stats
+mode: default
+content:
+  field_stats:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

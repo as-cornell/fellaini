@@ -1,0 +1,26 @@
+uuid: d9bf83c9-7c8a-40fe-a823-8b0d8b7a63ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.stat.field_stat_description
+    - field.field.node.stat.field_stat_number
+    - node.type.stat
+  module:
+    - user
+_core:
+  default_config_hash: CAFPQGIGJTuaPRQ5rYWWkV0xgfpg4Q4sW_QiITP0mBI
+id: node.stat.teaser
+targetEntityType: node
+bundle: stat
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_stat_description: true
+  field_stat_number: true
