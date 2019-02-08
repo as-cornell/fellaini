@@ -1,0 +1,57 @@
+# Migration configuration for imported images.
+id: major_minor_image
+label: Import major minor gradfield image files
+migration_group: majors_minors_gradfields
+migration_dependencies: {}
+dependencies:
+  enforced:
+    module:
+      - as_majors_minors
+
+
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'https://as.cornell.edu'
+
+  urls: https://as.cornell.edu/majors-minors-json
+
+  ids:
+    uuid:
+      type: string
+
+  item_selector: nodes/
+
+  fields:
+    -
+      name: uuid
+      label: 'uuid'
+      selector: /node/uuid
+    -
+      name: url
+      label: 'Url'
+      selector: /node/field_image/src
+    -
+      name: uri
+      label: 'Uri'
+      selector: /node/field_image_uri
+
+
+destination:
+  plugin: entity:file
+
+process:
+
+
+
+  uri:
+    plugin: download
+    source:
+      - url
+      - uri
+
+    guzzle_options:
+      base_uri: url

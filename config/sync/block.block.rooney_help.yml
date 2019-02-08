@@ -1,0 +1,22 @@
+uuid: 47253af7-9b2d-4112-8e20-645c1d53ce99
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - rooney
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: rooney_help
+theme: rooney
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

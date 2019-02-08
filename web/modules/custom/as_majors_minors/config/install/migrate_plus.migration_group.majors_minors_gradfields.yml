@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: majors_minors_gradfields
+label: 'Majors Minors Gradfields'
+description: 'Migrate Majors Minors Gradfields content from Drupal 7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null
