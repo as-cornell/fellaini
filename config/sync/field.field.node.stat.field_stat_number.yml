@@ -1,0 +1,21 @@
+uuid: ebbbd7d2-ec28-4672-92ed-bd0241c5e52b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stat_number
+    - node.type.stat
+_core:
+  default_config_hash: _XvzkIlAexFVO8zP5Yjjoyja3UjqoP8SlV0pm6tKH-o
+id: node.stat.field_stat_number
+field_name: field_stat_number
+entity_type: node
+bundle: stat
+label: 'Big stat #'
+description: 'The big number for stats.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

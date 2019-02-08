@@ -1,0 +1,10 @@
+uuid: 49ca010b-7bfc-487c-9e4a-a4d678b3f8b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_small
+label: 'Card Small'
+targetEntityType: node
+cache: true

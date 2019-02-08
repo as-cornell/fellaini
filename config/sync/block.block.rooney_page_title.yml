@@ -1,0 +1,20 @@
+uuid: 74c942be-d3c1-4485-a8cb-8c1b62febe3f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - rooney
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: rooney_page_title
+theme: rooney
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 8c090b60-7e0b-4603-a8d7-3851515dd1c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rooney
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: rooney_branding
+theme: rooney
+region: header
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

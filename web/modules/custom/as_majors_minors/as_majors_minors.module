@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains as_majors_minors.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_majors_minors_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_stats module.
+    case 'help.page.as_majors_minors':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains configurations for majors and minors as used on as.cornell.edu, and a migration group to import majors and minors from Drupal 7 nodes into Drupal 8 taxonomy terms') . '</p>';
+      return $output;
+
+    default:
+  }
+}
