@@ -1,10 +1,12 @@
-uuid: 8d9decd5-b8c2-4889-8168-4ba06f874853
+uuid: 91aaf7c6-23ab-4e6c-a8a1-06b724c0c984
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - taxonomy
+_core:
+  default_config_hash: sPw6Xb1x2nRUS7dtuPkFZzcnCsX053EEEDZUv3d3SII
 id: taxonomy_term.field_level
 field_name: field_level
 entity_type: taxonomy_term
