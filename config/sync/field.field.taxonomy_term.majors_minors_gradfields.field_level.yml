@@ -1,4 +1,4 @@
-uuid: 735590e9-2534-4f99-8387-30e51a9bae3e
+uuid: 6e7a8be7-e986-403e-98c1-dd0e58fe669c
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
     - options
+_core:
+  default_config_hash: PFide97xX9wF8W5pj0jlIho3ZL0aRbZlJ6MQ8yWiKdA
 id: taxonomy_term.majors_minors_gradfields.field_level
 field_name: field_level
 entity_type: taxonomy_term

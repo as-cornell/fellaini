@@ -12,7 +12,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
  */
 function as_majors_minors_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the as_stats module.
+    // Main module help for the as_majors_minors module.
     case 'help.page.as_majors_minors':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
