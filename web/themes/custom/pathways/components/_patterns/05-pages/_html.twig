@@ -30,9 +30,8 @@
         <title>{{ head_title|safe_join(' | ') }}</title>
         <css-placeholder token="{{ placeholder_token|raw }}">
         <js-placeholder token="{{ placeholder_token|raw }}">
-        <style>
-            @import url("https://use.typekit.net/fde2wmo.css");
-        </style>
+        {# currently set up to go to bob's typekit #}
+        <link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
     </head>
     <body{{attributes}}>
         {{ page_top }}

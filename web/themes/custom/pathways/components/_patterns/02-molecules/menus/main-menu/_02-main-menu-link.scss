@@ -2,23 +2,24 @@
 .main-menu__link {
   color: $black;
   display: block;
-  font-size: 1.2rem;
+  @include fontSize(5);
   line-height: 1.5;
-  padding: (2*$quark) (4*$quark);
+  // padding: (2*$quark) (4*$quark);
   text-decoration: none;
-  font-weight: bold;
+  // font-weight: bold;
 
   &--with-sub {
     width: 80%;
   }
 
   @include breakpoint($main-menu-medium) {
-    border-bottom: none;
-    color: $gray-dark;
+    border-bottom: 10px solid pink;
+    background: red;
+    color: $black;
     display: inline-block;
-    font-size: 1.1rem;
-    padding: $space $space-double $space $space;
-    text-transform: none;
+    @include fontSize(5);
+    // padding: $space $space-double $space $space;
+    // text-transform: none;
     position: relative;
     width: auto;
 

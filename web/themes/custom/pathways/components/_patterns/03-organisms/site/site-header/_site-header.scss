@@ -36,6 +36,7 @@ header{
         grid-area: logo;
         display:flex;
         justify-content: center;
+        padding: (7 * $quark) 0;
     }
     .main-nav{
         grid-area: mainNav;
