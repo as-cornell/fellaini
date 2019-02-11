@@ -12,9 +12,12 @@
 }
 
 .card__title {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: $semi;
   &-link {
-    @include link;
+    @include link($black, none);
+
   }
 }
 
@@ -61,12 +64,17 @@
   }
   .label{
     grid-area: label;
+    @include baseFont($family: $font-serif);
+    @include fontSize(5);
   }
   .date{
     grid-area: date;
+    text-align: right;
+    @include fontSize(4);
   }
   .byline{
     grid-area: byline;
+    @include fontSize(4);
   }
   &.card--small{
     .card__copy{
