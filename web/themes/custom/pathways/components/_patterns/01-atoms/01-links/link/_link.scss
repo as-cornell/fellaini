@@ -1,6 +1,7 @@
 /// Link
-@mixin link {
-  color: $color-link;
+@mixin link($color: $red,$text-decoration: underline) {
+  color: $color;
+  text-decoration: $text-decoration;
 
   &:hover {
     color: $color-link--hover;

@@ -3,7 +3,12 @@
         <a href="">Skip to main navigation</a>
         <a href="">Skip to main content</a>
     </nav> #}
+{% if pl %}
     {% include "@molecules/forms/search-form.twig" %}
+    {% else %}
+    {{elements.pathways_search}}
+{% endif %}
+{% if pl %}
     <nav class="nav--audience" id="audience">
         <ul class="audience-menu">
             <li class="audience-menu__item">
@@ -28,16 +33,30 @@
             </li>
         </ul>
     </nav>
-    {% include "@atoms/04-images/00-image/_image.twig" with {
+    {% else %}
+    {{elements.audience}}
+{% endif %}
+{% if pl %}
+{% include "@atoms/04-images/00-image/_image.twig" with {
         "img_src" : img.full_logo.src,
         "img_alt" : img.full_logo.alt,
         "image_modifiers" : ['mainLogo'],
         "link_href" : '/',
         "link_class" : 'siteLogo'
     } %}
+
+    {% else %}
+    <a href="/" title="The College of Arts & Sciences" class="siteLogo">
+        {{elements.pathways_branding.content.site_logo}}
+    </a>
+{% endif %}
+{% if pl %}
     {% include "@molecules/site/menus/main-menu/main-menu.twig" with {
-        menu_items: menu_items,
-    } %}
+                    menu_items: menu_items,
+                } %}
+    {% else %}
+    {{elements.mainnavigation}}
+{% endif %}
 </header>
 
 {# <header>
