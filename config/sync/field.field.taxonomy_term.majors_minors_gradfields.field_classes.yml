@@ -1,10 +1,12 @@
-uuid: c4194367-902c-4401-88bf-7f6e2ad18a5c
+uuid: eb909f18-cc68-4e9a-a418-c5f42ef5588d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_classes
     - taxonomy.vocabulary.majors_minors_gradfields
+_core:
+  default_config_hash: AIOHqpsGOh_YBCb3CkLS4e8jy2hjrN6mJx5tFc8ZAcE
 id: taxonomy_term.majors_minors_gradfields.field_classes
 field_name: field_classes
 entity_type: taxonomy_term
