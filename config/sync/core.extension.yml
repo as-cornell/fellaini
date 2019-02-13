@@ -1,7 +1,4 @@
 module:
-  as_articles: 0
-  as_majors_minors: 0
-  as_migrate_articles: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
