@@ -1,4 +1,4 @@
-uuid: 975efd41-7430-4715-abeb-89f8974641db
+uuid: 51eb7294-a4f5-45f0-9b96-0bdc1571779c
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
-    - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
     - field.field.node.article.field_pano_image
@@ -20,10 +19,9 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
-    - text
     - user
 _core:
-  default_config_hash: N5sZTC0Vt3Da6YQPjwaYcUNKdlx6wd7RuBsa6-XBnUw
+  default_config_hash: DAKDfoFGR-H0Z-UvxEAktiEZqnZLucdqy9C4hV5Mn78
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -71,16 +69,9 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-  field_featured_audio_video:
-    type: text_default
-    weight: 7
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
   field_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 12
     label: hidden
     settings:
       view_mode: default
