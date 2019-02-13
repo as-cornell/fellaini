@@ -1,9 +1,12 @@
+uuid: cab9c55b-f832-4664-8881-9233b508f760
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - taxonomy
+_core:
+  default_config_hash: xT1Z8LXo1kPRTCmJrk5CsxNYlEKiU7XwOuh7HOYnyrw
 id: taxonomy_term.field_image
 field_name: field_image
 entity_type: taxonomy_term

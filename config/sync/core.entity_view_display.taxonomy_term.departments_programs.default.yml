@@ -1,3 +1,4 @@
+uuid: 39d88f8a-9752-48a2-a66f-164a74180a92
 langcode: en
 status: true
 dependencies:
@@ -6,9 +7,10 @@ dependencies:
     - field.field.taxonomy_term.departments_programs.field_image
     - taxonomy.vocabulary.departments_programs
   module:
-    - image
     - link
     - text
+_core:
+  default_config_hash: qDuC0Y6MUNedfzwkibfc1kDLvJ1Hde8pGs4eDayorZI
 id: taxonomy_term.departments_programs.default
 targetEntityType: taxonomy_term
 bundle: departments_programs
