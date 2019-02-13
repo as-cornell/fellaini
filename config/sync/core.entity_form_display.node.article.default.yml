@@ -1,8 +1,9 @@
-uuid: 53db31a8-b6a0-4eba-ade8-e26807e50c73
+uuid: 31bacf40-6e22-45ab-b0f6-1685141477c8
 langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser
     - field.field.node.article.body
     - field.field.node.article.field_article_body
     - field.field.node.article.field_byline
@@ -16,12 +17,11 @@ dependencies:
     - field.field.node.article.field_related_articles
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
-    - image.style.thumbnail
     - node.type.article
   module:
     - datetime
+    - entity_browser
     - field_group
-    - image
     - paragraphs
     - path
 third_party_settings:
@@ -77,8 +77,8 @@ third_party_settings:
       region: content
     group_images:
       children:
-        - field_image
         - field_pano_image
+        - field_image
       parent_name: group_article
       weight: 15
       format_type: tab
@@ -186,13 +186,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_image:
-    type: image_image
-    weight: 0
-    region: content
+    weight: 27
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
     third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_media_source:
     type: string_textfield
     weight: 14
