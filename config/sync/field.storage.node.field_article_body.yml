@@ -6,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: l9oAU3UdCcTohHTjso3BmYbuqjU-qWKIqmxBls4XWas
 id: node.field_article_body
 field_name: field_article_body
 entity_type: node

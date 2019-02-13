@@ -1,4 +1,4 @@
-uuid: ceb190f9-7b4f-41b0-a18e-5e1a44963bf5
+uuid: 408c0305-4b0c-4da7-924d-9f03a2927102
 langcode: en
 status: true
 dependencies:
@@ -13,6 +13,8 @@ dependencies:
     - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: LtWVyQAvYVcyv9fIdXZcVJOmhgyyimhVR-MpFjd0CUQ
 id: node.article.field_article_body
 field_name: field_article_body
 entity_type: node
