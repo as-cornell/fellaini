@@ -1,0 +1,36 @@
+card_modifiers:
+  1:
+   stat
+
+# Title
+card_title:
+  '2,400 undergraduate courses offered in A&S with another 2000 offered across the university.'
+
+# Subtitle
+card_subtitle:
+  ''
+
+# Link
+card_link_url:
+  'http://astro.cornell.edu'
+
+# Image
+card_img_modifiers:
+card_img_blockname:
+card_img_src:
+  ''
+card_img_alt:
+  ''
+card_image_output_image_tag: false
+
+# overrides
+card_body:
+  'undergraduate courses offered in A&S with another 2000 offered across the university.'
+card_button_url:
+  ''
+card_button_content:
+  ''
+card_label:
+  '2,400'
+card_link_text:
+  ''

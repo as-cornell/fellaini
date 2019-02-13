@@ -174,3 +174,10 @@ figures:
       "<iframe width='854' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/YRnVnlhjOBs?autoplay=0&amp;start=0'></iframe>"
     caption:
       " from data.yaml This is a neat video caption to be shown with a video."
+stat:
+  label:
+    "2,400 undergraduate courses offered in A&S with another 2000 offered across the university."
+  stat:
+    "2,400"
+  description:
+    ";lkajsdf;lkajsdfundergraduate courses offered in A&S with another 2000 offered across the university."
