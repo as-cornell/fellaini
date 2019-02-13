@@ -11,6 +11,10 @@
   }
 }
 
+// main to add side gutters to main content wrapper
+main{
+  padding: 0 1rem;
+}
 
 .container{
   grid-column: 2;
