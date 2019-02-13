@@ -1,3 +1,4 @@
+uuid: 2cdf57a9-cfaf-4ea7-a1a5-f28d6eac47f2
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.taxonomy_term.field_image
     - media.type.image
     - taxonomy.vocabulary.departments_programs
+_core:
+  default_config_hash: FpeMJiiGvgTGKWBqEkiM2WJik3bAjg5q3W-MZY_DlsE
 id: taxonomy_term.departments_programs.field_image
 field_name: field_image
 entity_type: taxonomy_term
