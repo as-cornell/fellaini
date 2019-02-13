@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.departments_programs.field_department_website
+    - field.field.taxonomy_term.departments_programs.field_image
+    - taxonomy.vocabulary.departments_programs
+  module:
+    - image
+    - link
+    - text
+id: taxonomy_term.departments_programs.default
+targetEntityType: taxonomy_term
+bundle: departments_programs
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_department_website:
+    type: link
+    weight: 2
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+hidden: {  }

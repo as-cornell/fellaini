@@ -1,6 +1,6 @@
 # Migration configuration for imported articles.
 id: import_as_article
-label: Migrate articles from D7 AS to D8 AS
+label: Migrate A&S articles from Drupal 7 to Drupal 8
 migration_group: articles
 migration_dependencies:
   require:

@@ -16,7 +16,7 @@ function as_migrate_articles_help($route_name, RouteMatchInterface $route_match)
     case 'help.page.as_migrate_articles':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Migrates articles from D7 to D8') . '</p>';
+      $output .= '<p>' . t('Migrate A&S articles from Drupal 7 to Drupal 8') . '</p>';
       return $output;
 
     default:
