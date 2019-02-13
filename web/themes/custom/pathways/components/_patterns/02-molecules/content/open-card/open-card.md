@@ -1,8 +1,8 @@
 ---
-el: ".card"
-title: "Card default variation"
+el: ".open-card"
+title: "Card without separate content block"
 ---
-## Card
+## Open Card
 _Title and subtext_
 
 Cards.. harder than they look.

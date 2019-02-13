@@ -70,21 +70,17 @@
  *   in different view modes.
  */
 #}
-
-{% embed "@molecules/content/card/01-card.twig" with {
-    card_modifiers : [
-        "article", "large"
-    ],
+{% embed "@molecules/content/open-card/open-card.twig" with {
+    card_modifiers : ["article", "campfire-feature"],
     card_title: label,
+    card_label: content.field_card_label,
     card_link_url: url,
-    card_img: content.field_image
+    card_img: content.field_image,
+    card_byline: content.field_byline,
+    card_dateline: content.field_dateline
+
 } %}
     {% block card_img %}
         {{ content.field_image }}
-    {% endblock %}
-
-    {% block card_info %}
-        {# {{content.field_date|date("m/d/y")}} #}
-        {# {% trans %}Submitted by {{ author_name }} on {{ content.field_date }}{% endtrans %} #}
     {% endblock %}
 {% endembed %}

@@ -47,7 +47,14 @@
     } %}
 
     {% if pl %}
-        {% include "@organisms/card-grid/card-grid-articles.twig" %}
+{% include "@organisms/card-list/card-list.twig" with {
+    list_modifiers: ['articles', 'thumbnails'],
+    list_label: "hiya",
+    card_img_src: img.rectangle,
+    card_modifiers: ['article', 'small'],
+    cards: cards.articles
+  }%}
+
     {% else %}
         {{article_related_articles}}
     {% endif %}

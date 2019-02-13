@@ -5,6 +5,7 @@
 {# BEM vars #}
 {% set list_modifiers = list_modifiers %}
 {% set list_blockname = "list" %}
+{% set card_modifiers = card_modifiers | default('card.modifiers') %}
 {# As we go i might add list modifiers for different layouts #}
 
 {# list_label #}
@@ -21,7 +22,7 @@
         {% for card in cards %}
             {% include "@molecules/content/card/01-card.twig" with {
                 "card_blockname" : card.blockname,
-                "card_modifiers" : card.card_modifiers,
+                "card_modifiers" : card_modifiers,
                 "card_img_src" : card.card_img_src,
                 "card_title" : card.card_title,
                 "card_label" : card.card_label,

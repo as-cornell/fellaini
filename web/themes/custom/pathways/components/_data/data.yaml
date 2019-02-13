@@ -105,9 +105,9 @@ cards:
         "https://as.cornell.edu/sites/as/files/field/image/avery-crop-3.jpg"
       card_title:
         "Major dilemma: Four stories about choosing a major you love"
-      card_label: ''
-      card_byline: ''
-      card_dateline: ''
+      card_label: 'Liberal Arts'
+      card_byline: 'Kathy Hovis'
+      card_dateline: '12/25/18'
       card_link_url: '#'
       # overwrite
       card_subtitle:
