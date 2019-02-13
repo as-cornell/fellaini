@@ -22,7 +22,7 @@
   }
 }
 
-.card__subtitle {
+.card__label {
   @include no-bottom;
   color: $gray;
 }
@@ -64,17 +64,17 @@
   .card__title{
     grid-area: title;
   }
-  .label{
+  .card__label{
     grid-area: label;
     @include baseFont($family: $font-serif);
     @include fontSize(5);
   }
-  .date{
+  .card__date{
     grid-area: date;
     text-align: right;
     @include fontSize(4);
   }
-  .byline{
+  .card__byline{
     grid-area: byline;
     @include fontSize(4);
   }
@@ -109,6 +109,22 @@
     "top top"
     "label date"
     "byline social";
+  }
+}
+
+// STATS
+.card--stat{
+  padding: 1rem;
+  text-align: center;
+  .card__title{
+    display: none; // really never want this to show up even for a11y
+  }
+  .card__label{
+    @include baseFont($size: 12 * $quark, $weight: $heavy);
+    @include baseBorder($var-direction: border-bottom, $var-width: $quark, $var-color: $green);
+  }
+  .card__body{
+    font-weight: $semi;
   }
 }
 
