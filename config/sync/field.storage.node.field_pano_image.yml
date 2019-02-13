@@ -1,4 +1,4 @@
-uuid: 11015f91-cd2d-40a1-8148-f5a552d6d1dc
+uuid: 5bd09e1e-e91e-48f6-94b0-e7ebfb0e5129
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - node
     - paragraphs
 _core:
-  default_config_hash: ErX8NFse8eZnuSAwBG0-yJEpWlsaF8350jxA9TiACb4
+  default_config_hash: 0SkOkTlGEbMNAK3kekSLC7e_9hCSUjKgO4oJdy9CvH0
 id: node.field_pano_image
 field_name: field_pano_image
 entity_type: node
