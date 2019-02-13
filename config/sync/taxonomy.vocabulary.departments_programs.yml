@@ -1,0 +1,11 @@
+uuid: 74773721-78fa-45a2-9448-85ab9eeeb4d4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7CyhUvCRnnL3luF-G03uikGZ5c8pKpSfZmIcYYlr7Ak
+name: 'Departments and Programs'
+vid: departments_programs
+description: 'Departments and Programs in the College of Arts & Sciences'
+hierarchy: 0
+weight: 0
