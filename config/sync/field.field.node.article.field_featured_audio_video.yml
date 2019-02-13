@@ -1,0 +1,23 @@
+uuid: 47a0a5f9-1862-4eaa-a4f9-3d2ef8077cca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_audio_video
+    - node.type.article
+  module:
+    - text
+_core:
+  default_config_hash: OMvDsFZ275xiQ3CFOILX7itfrCv-TGrejmWKd9tV3LA
+id: node.article.field_featured_audio_video
+field_name: field_featured_audio_video
+entity_type: node
+bundle: article
+label: 'Featured Audio Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
