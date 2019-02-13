@@ -48,6 +48,6 @@ process:
       default_value: 1
   'field_media_image/target_id':
     plugin: migration
-    migration: people_department_image
+    migration: departments_programs_image
     source: id
   'field_media_image/alt': name
