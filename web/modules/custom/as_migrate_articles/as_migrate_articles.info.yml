@@ -1,6 +1,6 @@
 type: module
 name: A&S migrate articles
-description: 'Migrate articles from D7 to D8.'
+description: 'Migrate A&S articles from Drupal 7 to Drupal 8.'
 package: AS
 core: 8.x
 dependencies:

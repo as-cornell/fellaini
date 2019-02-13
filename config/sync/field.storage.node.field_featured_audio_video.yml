@@ -1,0 +1,22 @@
+uuid: 7dc8165c-23be-4bad-8b55-b09fa1d2d9a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: ryxqJ8s2XqxHqULXP4b3ufHhTV5AmTF70_0_U3fOV38
+id: node.field_featured_audio_video
+field_name: field_featured_audio_video
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
