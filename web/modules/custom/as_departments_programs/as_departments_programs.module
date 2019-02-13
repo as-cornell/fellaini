@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains as_departments_programs.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_departments_programs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_departments_programs module.
+    case 'help.page.as_departments_programs':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains configurations for departments and programs as used on as.cornell.edu, and a migration group to import departments and programs from Drupal 7 nodes into Drupal 8 taxonomy terms') . '</p>';
+      return $output;
+
+    default:
+  }
+}

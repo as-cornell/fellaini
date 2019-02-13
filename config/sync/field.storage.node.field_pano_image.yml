@@ -1,4 +1,4 @@
-uuid: fbc7c3fa-77c7-4427-809e-6706ea975693
+uuid: 5bd09e1e-e91e-48f6-94b0-e7ebfb0e5129
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: 0SkOkTlGEbMNAK3kekSLC7e_9hCSUjKgO4oJdy9CvH0
 id: node.field_pano_image
 field_name: field_pano_image
 entity_type: node
@@ -14,7 +16,7 @@ settings:
   target_type: paragraph
 module: entity_reference_revisions
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
