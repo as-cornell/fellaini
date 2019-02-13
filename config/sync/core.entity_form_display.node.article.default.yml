@@ -1,4 +1,4 @@
-uuid: a48bd836-92e6-4610-90cf-6a4443a52db2
+uuid: 53db31a8-b6a0-4eba-ade8-e26807e50c73
 langcode: en
 status: true
 dependencies:
@@ -123,6 +123,8 @@ third_party_settings:
         required_fields: true
       label: Authoring
       region: content
+_core:
+  default_config_hash: sTc8hdGRgKE6fkfgXRRXoS-ILXJL-mdhCQgYO8IlC5c
 id: node.article.default
 targetEntityType: node
 bundle: article
