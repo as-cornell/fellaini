@@ -1,0 +1,24 @@
+uuid: 9f3559fc-344c-4a5a-b620-8cd1fb5da1bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_description
+    - taxonomy.vocabulary.majors_minors_gradfields
+  module:
+    - text
+_core:
+  default_config_hash: UEyk9o-s1RxJftQvGXNoUsvEhvjLMh7qTbDcTeKGcXc
+id: taxonomy_term.majors_minors_gradfields.field_description
+field_name: field_description
+entity_type: taxonomy_term
+bundle: majors_minors_gradfields
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

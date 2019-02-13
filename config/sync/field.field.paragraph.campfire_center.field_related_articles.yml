@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_related_articles
-    - node.type.stat
     - paragraphs.paragraphs_type.campfire_center
 id: paragraph.campfire_center.field_related_articles
 field_name: field_related_articles
@@ -19,10 +18,9 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      stat: stat
+    target_bundles: {  }
     sort:
       field: _none
-    auto_create: null
-    auto_create_bundle: null
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

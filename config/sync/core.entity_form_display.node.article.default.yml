@@ -1,4 +1,4 @@
-uuid: 31bacf40-6e22-45ab-b0f6-1685141477c8
+uuid: 56b9b119-c50d-44b4-b2f7-1684163a79ce
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
-    - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
     - field.field.node.article.field_pano_image
@@ -293,4 +292,3 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
-  field_featured_audio_video: true
