@@ -109,6 +109,7 @@ h2 {
 
 h3 {
   @include baseFont($size: (10 * $quark), $weight: $medium, $line-height: (10 * $quark));
+  margin: 0 0 2rem 0;
 }
 
 h4 {

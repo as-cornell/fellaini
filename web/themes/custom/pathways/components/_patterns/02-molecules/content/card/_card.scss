@@ -46,6 +46,12 @@
     .card__title{
       @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
     }
+    .card__label, .card__byline{
+      display: none;
+    }
+    .card__date.card__date{
+      text-align: left; // using double selctor instead of !important
+    }
   }
 
 
@@ -121,7 +127,7 @@
   }
   .card__label{
     @include baseFont($size: 12 * $quark, $weight: $heavy);
-    @include baseBorder($var-direction: border-bottom, $var-width: $quark, $var-color: $green);
+    @include baseBorder($bor-direction: border-bottom, $bor-width: $quark, $bor-color: $green);
   }
   .card__body{
     font-weight: $semi;

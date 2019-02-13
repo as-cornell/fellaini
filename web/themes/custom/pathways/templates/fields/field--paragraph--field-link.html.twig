@@ -39,6 +39,6 @@
                     #}
 {# 
     Not too sure about this one... probably want to make it more specific to a landing page paragraph to get the full width.
- #}{% embed "@atoms/_field.twig" with {
-    modifiers : ["flex", "link-slice"]
-} %}{% endembed %}
+ #}{% include "@organisms/link-list/_link-list.twig" with {
+     group_base_class : 'links'
+ } %}
