@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_image
-    - taxonomy.vocabulary.departments_and_programs
+    - taxonomy.vocabulary.departments_programs
   module:
     - image
-id: taxonomy_term.departments_and_programs.field_image
+id: taxonomy_term.departments_programs.field_image
 field_name: field_image
 entity_type: taxonomy_term
-bundle: departments_and_programs
+bundle: departments_programs
 label: Image
 description: ''
 required: false
