@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_body
+    - node.type.article
+    - paragraphs.paragraphs_type.formatted_text_block
+    - paragraphs.paragraphs_type.image_figure
+    - paragraphs.paragraphs_type.photo_text_slider
+    - paragraphs.paragraphs_type.single_stat
+    - paragraphs.paragraphs_type.video_figure
+    - paragraphs.paragraphs_type.view
+  module:
+    - entity_reference_revisions
+id: node.article.field_article_body
+field_name: field_article_body
+entity_type: node
+bundle: article
+label: 'Article Components'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      formatted_text_block: formatted_text_block
+      image_figure: image_figure
+      photo_text_slider: photo_text_slider
+      single_stat: single_stat
+      video_figure: video_figure
+      view: view
+    target_bundles_drag_drop:
+      campfire:
+        weight: 13
+        enabled: false
+      campfire_center:
+        weight: 14
+        enabled: false
+      formatted_text_block:
+        enabled: true
+        weight: 15
+      image_figure:
+        enabled: true
+        weight: 16
+      link_block:
+        weight: 17
+        enabled: false
+      multiple_stats:
+        weight: 18
+        enabled: false
+      pano_image:
+        weight: 19
+        enabled: false
+      photo_text:
+        weight: 20
+        enabled: false
+      photo_text_slider:
+        enabled: true
+        weight: 21
+      single_stat:
+        enabled: true
+        weight: 22
+      video_figure:
+        enabled: true
+        weight: 23
+      view:
+        enabled: true
+        weight: 24
+field_type: entity_reference_revisions

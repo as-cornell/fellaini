@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_article_body
     - field.field.node.article.field_byline
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
+    - field.field.node.article.field_pano_image
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
     - image.style.thumbnail
@@ -18,6 +20,7 @@ dependencies:
   module:
     - datetime
     - image
+    - paragraphs
     - path
     - text
 id: node.article.default
@@ -27,7 +30,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 7
     region: content
     settings:
       rows: 9
@@ -36,13 +39,25 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_article_body:
+    type: entity_reference_paragraphs
+    weight: 16
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_byline:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60
@@ -50,7 +65,7 @@ content:
     third_party_settings: {  }
   field_card_label:
     type: string_textfield
-    weight: 2
+    weight: 3
     region: content
     settings:
       size: 60
@@ -58,13 +73,13 @@ content:
     third_party_settings: {  }
   field_dateline:
     type: datetime_default
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -73,7 +88,7 @@ content:
     third_party_settings: {  }
   field_featured_audio_video:
     type: text_textfield
-    weight: 7
+    weight: 8
     region: content
     settings:
       size: 60
@@ -89,15 +104,27 @@ content:
     third_party_settings: {  }
   field_media_source:
     type: string_textfield
-    weight: 4
+    weight: 5
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_pano_image:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -105,21 +132,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 12
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 15
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 13
     region: content
     third_party_settings: {  }
   title:
@@ -132,7 +159,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
