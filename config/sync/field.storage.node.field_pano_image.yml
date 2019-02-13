@@ -6,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: ErX8NFse8eZnuSAwBG0-yJEpWlsaF8350jxA9TiACb4
 id: node.field_pano_image
 field_name: field_pano_image
 entity_type: node

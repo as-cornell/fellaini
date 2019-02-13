@@ -1,4 +1,4 @@
-uuid: f31f678a-87d6-4960-aba7-30d9f0fff18e
+uuid: a9c69724-0a4a-409c-bfd9-eedc4aff4617
 langcode: en
 status: true
 dependencies:
@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.pano_image
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: mDLOv_uT77CIkoBdCqlhOwTT4nVlLIudVTrtFG1lV3Y
 id: node.article.field_pano_image
 field_name: field_pano_image
 entity_type: node

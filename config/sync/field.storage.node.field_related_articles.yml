@@ -1,18 +1,15 @@
-uuid: 1163fdd0-a099-4872-837f-926af3f5d70e
+uuid: d042b118-583e-4a1b-b79e-5a64a9cc9fa3
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-_core:
-  default_config_hash: kL0dUlwRNbI9ahagpIOgNWcEN2BzVo_Hvi6i5sOr-ks
-id: node.field_department_program
-field_name: field_department_program
+id: node.field_related_articles
+field_name: field_related_articles
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: node
 module: core
 locked: false
 cardinality: -1
