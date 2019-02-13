@@ -79,38 +79,45 @@
 
 
 // Borders
-@mixin baseBorder($var-direction: "border", $var-width: $border-width, $var-color: $border-color) {
-    @if $var-direction == 'border'{
-        border: $var-width solid $var-color;
+@mixin baseBorder($bor-direction: "border", $bor-width: $border-width, $bor-color: $border-color) {
+    @if $bor-direction == 'border'{
+        border: $bor-width solid $bor-color;
     }
-    @if $var-direction == 'border-bottom'{
-        border-bottom: $var-width solid $var-color;
+    @if $bor-direction == 'border-bottom'{
+        border-bottom: $bor-width solid $bor-color;
     }
-    @if $var-direction == 'border-top'{
-        border-top: $var-width solid $var-color;
+    @if $bor-direction == 'border-top'{
+        border-top: $bor-width solid $bor-color;
     }
-    @if $var-direction == 'border-right'{
-        border-right: $var-width solid $var-color;
+    @if $bor-direction == 'border-right'{
+        border-right: $bor-width solid $bor-color;
     }
-    @if $var-direction == 'border-left'{
-        border-left: $var-width solid $var-color;
+    @if $bor-direction == 'border-left'{
+        border-left: $bor-width solid $bor-color;
     }
-    @if $var-direction == 'border-tb'{
-        border-bottom: $var-width solid $var-color;
-        border-top:    $var-width solid $var-color;
+    @if $bor-direction == 'border-tb'{
+        border-bottom: $bor-width solid $bor-color;
+        border-top:    $bor-width solid $bor-color;
     }
-    @if $var-direction == 'border-lr'{
-        border-left:  $var-width solid $var-color;
-        border-right: $var-width solid $var-color;
+    @if $bor-direction == 'border-lr'{
+        border-left:  $bor-width solid $bor-color;
+        border-right: $bor-width solid $bor-color;
     }
-    @if $var-direction == 'border-no-top'{
-        border:     $var-width solid $var-color;
+    @if $bor-direction == 'border-no-top'{
+        border:     $bor-width solid $bor-color;
         border-top: none;
     }
-    @if $var-direction == 'border-no-bottom'{
-        border:        $var-width solid $var-color;
+    @if $bor-direction == 'border-no-bottom'{
+        border:        $bor-width solid $bor-color;
         border-bottom: none;
     }
+}
+
+//buttons
+@mixin button($btn-color:$gray-dark, $bor-color: $gray-dark){
+  @include baseBorder($bor-width: 2px, $bor-color: $bor-color);
+  padding: (4 * $quark) (6 * $quark);
+  color: $btn-color;
 }
 
 

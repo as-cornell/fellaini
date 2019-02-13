@@ -1,0 +1,14 @@
+.slice--link-bar{
+  background: $gray-lightest;
+  text-align: center;
+  padding: 3rem 0 1rem 0;
+  .links{
+    display: flex;
+    padding: (9 * $quark) 1rem;
+  } 
+  a{
+    @include button($btn-color: $gray-dark, $bor-color: $storm);
+     margin: 0 .5rem;
+  }
+
+}

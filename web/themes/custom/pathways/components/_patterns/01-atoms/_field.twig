@@ -39,13 +39,20 @@
 {# 
 
 #}
+{% set base_class = base_class | default('') %}
 {% set modifiers = modifiers | default(['']) %}
 {% set classes = classes | default(['']) %}
+
+{# Group/container bem #}
+{% set group_base_class = group_base_class | default('') %}
+{% set group_modifiers = group_modifiers | default(['']) %}
+{% set group_classes = group_classes | default(['']) %}
+
 {# {{ kint(modifiers) }} #}
 <!-- start of _field.twig -->
     {% if label_hidden %}
         {% if multiple %}
-            <div{{attributes}}{{bem('multiple',(modifiers),'',classes)}}>
+            <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
                 {% for item in items %}
                 {# <div{{ item.attributes }}>{{ item.content }}</div> #}
             {{ item.content }}
