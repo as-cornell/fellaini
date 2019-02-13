@@ -30,3 +30,11 @@
 } 
 
 // campfire specific styles
+.campfire__support{
+    @include baseBorder();
+    padding: $space;
+    h2{
+        text-align: center;
+        margin-top: 3 * $quark;
+    }
+}

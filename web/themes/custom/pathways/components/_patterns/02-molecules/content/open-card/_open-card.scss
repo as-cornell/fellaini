@@ -3,12 +3,12 @@
 */
 
 // set styles specifically for PL
-.card{
+.open-card{
   @include baseBorder();
   border-radius: $border-radius;
   margin-bottom: 1rem;
   .pl &{
-    //max-width: 400px;
+    max-width: 600px;
   }
 }
 
@@ -22,61 +22,59 @@
   }
 }
 
-.card__subtitle {
-  @include no-bottom;
-  color: $gray;
-}
 
-.card__body {
-  margin: 0.7em 0 1em;
-}
 
-.card__link {
-  @include link;
-}
-
-.card__button {
-  @include button;
-}
-
-// Global small card can be overidden with .card--type .card--small
-  .card--small{
-    @include baseGrid();
-    grid-template-columns: $max-column 1fr;
-    .card__title{
-      @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
+// Campfire center Open Card
+.open-card{
+  &--campfire-feature{
+    @include baseGrid($g-gap: 0px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "top top"
+    "label dateline"
+    "byline social";
+    a{
+      color: $white;
+      margin: 1rem;
+      padding: 1rem;
+      text-align: center;
+      @include baseBorder($var-width: $quark, $var-color: $white);
+      font-weight: $semi;
     }
   }
-
-
-
-// Article Cards
-.card--article{
-  .card__copy{
-    padding: $space;
-    @include baseGrid($g-gap: 0px);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      "label label date"
-      "title title title"
-      "byline byline social";
+  // .card__copy{
+  //   padding: $space;
+  //   @include baseGrid($g-gap: 0px);
+  //   grid-template-columns: 1fr 1fr 1fr;
+  //   grid-template-areas:
+  //     "label label date"
+  //     "title title title"
+  //     "byline byline social";
+  // }
+  img{
+    grid-area: top;
   }
-  .card__title{
-    grid-area: title;
+  &__title{
+    grid-area: top;
+    display: flex;
+    align-items: center;
   }
-  .label{
+  &__label{
     grid-area: label;
     @include baseFont($family: $font-serif);
     @include fontSize(5);
+    margin: (5 * $quark) 1rem;  
   }
-  .date{
-    grid-area: date;
+  &__date{
+    grid-area: dateline;
     text-align: right;
     @include fontSize(4);
+    margin: (5 * $quark) 1rem;
   }
-  .byline{
+  &__byline{
     grid-area: byline;
     @include fontSize(4);
+    margin: 0 1rem 1rem;
   }
   &.card--small{
     border: none;
@@ -111,11 +109,4 @@
     "byline social";
   }
 }
-
-// article cards in .list--thumbnail
-// .list--thumbnail{
-//   .card{
-    
-//   }
-// }
 
