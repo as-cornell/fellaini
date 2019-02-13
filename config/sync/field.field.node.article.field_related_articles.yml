@@ -1,10 +1,12 @@
-uuid: 9a9193fd-a421-4e30-82d0-2073a01f79de
+uuid: 3ceac526-46a4-41d1-806f-68e1b8354400
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_related_articles
     - node.type.article
+_core:
+  default_config_hash: 8af_ZwKaNRuIc2hrF0xGRFJYCtlyNcGlor3JzRCMCwY
 id: node.article.field_related_articles
 field_name: field_related_articles
 entity_type: node
