@@ -6,9 +6,11 @@ dependencies:
     - field.storage.node.field_page_components
     - node.type.page
     - paragraphs.paragraphs_type.formatted_text_block
+    - paragraphs.paragraphs_type.multiple_stats
     - paragraphs.paragraphs_type.pano_image
     - paragraphs.paragraphs_type.photo_text
     - paragraphs.paragraphs_type.photo_text_slider
+    - paragraphs.paragraphs_type.single_stat
     - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
@@ -32,6 +34,8 @@ settings:
       pano_image: pano_image
       photo_text: photo_text
       view: view
+      multiple_stats: multiple_stats
+      single_stat: single_stat
     target_bundles_drag_drop:
       formatted_text_block:
         enabled: true
@@ -48,4 +52,25 @@ settings:
       view:
         enabled: true
         weight: 10
+      campfire:
+        weight: 13
+        enabled: false
+      campfire_center:
+        weight: 14
+        enabled: false
+      image_figure:
+        weight: 16
+        enabled: false
+      link_block:
+        weight: 17
+        enabled: false
+      multiple_stats:
+        enabled: true
+        weight: 18
+      single_stat:
+        enabled: true
+        weight: 22
+      video_figure:
+        weight: 23
+        enabled: false
 field_type: entity_reference_revisions

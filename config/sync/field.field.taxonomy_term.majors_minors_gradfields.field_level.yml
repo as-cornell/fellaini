@@ -1,0 +1,23 @@
+uuid: 99803d49-7085-4964-81f5-8f61059855f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_level
+    - taxonomy.vocabulary.majors_minors_gradfields
+  module:
+    - options
+_core:
+  default_config_hash: PFide97xX9wF8W5pj0jlIho3ZL0aRbZlJ6MQ8yWiKdA
+id: taxonomy_term.majors_minors_gradfields.field_level
+field_name: field_level
+entity_type: taxonomy_term
+bundle: majors_minors_gradfields
+label: Level
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.link_block.field_link
+    - field.field.paragraph.link_block.field_slice_title
     - paragraphs.paragraphs_type.link_block
   module:
     - link
@@ -13,7 +14,7 @@ bundle: link_block
 mode: default
 content:
   field_link:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       trim_length: 80
@@ -23,5 +24,13 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_slice_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }
