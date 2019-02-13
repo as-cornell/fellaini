@@ -33,7 +33,7 @@ content:
     type: entity_reference_revisions_entity_view
     weight: 6
     region: content
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -42,7 +42,7 @@ content:
     type: string
     weight: 3
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -50,7 +50,7 @@ content:
     type: string
     weight: 2
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -58,7 +58,7 @@ content:
     type: datetime_default
     weight: 5
     region: content
-    label: above
+    label: hidden
     settings:
       format_type: medium
       timezone_override: ''
@@ -75,13 +75,13 @@ content:
     type: text_default
     weight: 7
     region: content
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
   field_image:
     type: entity_reference_entity_view
-    weight: 12
-    label: above
+    weight: 1
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -91,7 +91,7 @@ content:
     type: string
     weight: 4
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -99,7 +99,7 @@ content:
     type: entity_reference_revisions_entity_view
     weight: 0
     region: content
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
