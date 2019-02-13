@@ -1,7 +1,7 @@
 # Migration configuration for imported images.
 id: departments_programs_image
 label: Import department image files
-migration_group: people
+migration_group: departments_programs
 migration_dependencies: {}
 dependencies:
   enforced:
