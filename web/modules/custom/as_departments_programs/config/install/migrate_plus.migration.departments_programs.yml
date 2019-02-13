@@ -56,7 +56,7 @@ process:
   tid: nid
   vid:
     plugin: default_value
-    default_value: departments_and_programs
+    default_value: departments_programs
   name: name
   'description/value': description
   'description/format':
