@@ -58,8 +58,8 @@ content:
     region: content
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: m_d_y
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_label
