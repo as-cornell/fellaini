@@ -21,7 +21,7 @@ source:
     uuid:
       type: string
 
-  item_selector: data_fetcher_plugin/
+  item_selector: data/
 
   fields:
     -
@@ -33,9 +33,9 @@ source:
       label: 'term id'
       selector: attributes/tid
     -
-      name: title
-      label: 'title'
-      selector: attributes/title
+      name: name
+      label: 'name'
+      selector: attributes/name
 
 destination:
   plugin: entity:taxonomy_term
@@ -48,5 +48,5 @@ process:
   vid:
     plugin: default_value
     default_value: topics
-  name: title
+  name: name
 
