@@ -49,7 +49,7 @@
 {% set card_dateline = card_dateline | default('') %}
 {% set card_modifiers = card_modifiers | default(['open']) %}
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
-    {% block card_img %}
+    {# {% block card_img %} #}
         {% if card_img_src %}
             {% include "@atoms/04-images/00-image/responsive-image.twig" with {
                 "img_url": card_img_url|default(card_link_url),
@@ -61,7 +61,7 @@
                 "responsive_image_blockname" : card_base_class
             } %}
         {% endif %}
-    {% endblock %}
+    {# {% endblock %} #}
    
         {% if card_title %}
             {{ title_prefix }}
