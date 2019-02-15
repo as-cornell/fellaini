@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
-    - field.field.node.article.field_pano_image
+    - field.field.node.article.field_p
     - field.field.node.article.field_related_articles
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
@@ -86,15 +86,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  field_pano_image:
-    type: entity_reference_revisions_entity_view
-    weight: 0
-    region: content
-    label: hidden
+  field_p:
+    type: entity_reference_entity_view
+    weight: 13
+    label: above
     settings:
       view_mode: default
-      link: ''
+      link: false
     third_party_settings: {  }
+    region: content
   field_related_articles:
     weight: 9
     label: above
