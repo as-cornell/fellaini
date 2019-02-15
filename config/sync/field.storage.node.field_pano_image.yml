@@ -1,12 +1,12 @@
-uuid: c50d092e-15db-471a-b352-cf4b4a554c90
+uuid: ebf468da-e0e5-4b7c-9edd-85b2a1246ec0
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - node
-id: node.field_p
-field_name: field_p
+id: node.field_pano_image
+field_name: field_pano_image
 entity_type: node
 type: entity_reference
 settings:

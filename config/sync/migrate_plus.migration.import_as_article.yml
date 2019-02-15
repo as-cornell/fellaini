@@ -1,4 +1,4 @@
-uuid: 86f6edbd-f6ff-43cd-9dce-e3fc1798446a
+uuid: 4ad84fca-e9d3-475e-977f-288d4adc91dd
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_migrate_articles
 _core:
-  default_config_hash: ZqiKDbr4JUwm-yg0ied61UndGu_f4bTc1OAdKJCTXEU
+  default_config_hash: hzj8kKIDj6ydwZHZcfXI4Ot8ij7LHs4JxOz2Vyj5vi0
 id: import_as_article
 class: null
 field_plugin_method: null
@@ -155,12 +155,10 @@ process:
     plugin: migration
     migration: import_as_article_image_media
     source: nid
-  field_image/alt: field_image_alt
   field_pano_image/target_id:
     plugin: migration
     migration: import_as_article_pano_image_media
     source: nid
-  field_pano_image/alt: field_pano_image_alt
   uid:
     plugin: default_value
     default_value: 1

@@ -1,13 +1,13 @@
-uuid: 49234fdb-689c-4738-bf92-bc6407772a12
+uuid: 77a70c63-78cd-4df4-8092-e9ed7f3ff841
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_p
+    - field.storage.node.field_pano_image
     - media.type.image
     - node.type.article
-id: node.article.field_p
-field_name: field_p
+id: node.article.field_pano_image
+field_name: field_pano_image
 entity_type: node
 bundle: article
 label: 'Pano Image'
