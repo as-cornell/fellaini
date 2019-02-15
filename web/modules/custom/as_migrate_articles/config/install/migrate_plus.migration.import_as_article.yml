@@ -120,7 +120,7 @@ process:
     default_value: full_html
   'field_article_body/target_id': nid
   'field_article_body/target_revision_id': nid
-  'field_department_program/target_id':
+  field_department_program:
     -
       plugin: skip_on_empty
       method: process
