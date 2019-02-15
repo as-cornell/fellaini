@@ -35,6 +35,10 @@ function pathways_preprocess_node(&$variables)
     //$variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
     //}
     //}
+    if ($node->hasField('field_image')) {
+        $media_entity = pathways_get_media_entity_from_reference($node->get('field_image')->first());
+        $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
+    }
 }
 
 function pathways_preprocess_media(&$variables)
@@ -60,6 +64,10 @@ function pathways_preprocess_paragraph(&$variables)
     }
     if ($paragraph->hasField('field_figure_image')) {
         $media_entity = pathways_get_media_entity_from_reference($paragraph->get('field_figure_image')->first());
+        $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
+    }
+    if ($paragraph->hasField('field_image')) {
+        $media_entity = pathways_get_media_entity_from_reference($paragraph->get('field_image')->first());
         $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
     }
 }
