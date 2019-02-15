@@ -5,6 +5,7 @@ migration_group: articles
 migration_dependencies:
   require:
     - import_as_article_images
+    - import_as_article_images_media
 dependencies:
   enforced:
     module:
@@ -18,9 +19,9 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: json
   constants:
-    source_base_path: 'http://as.cornell.edu'
+    source_base_path: 'https://as.cornell.edu'
 
-  urls: http://as.cornell.edu/articles-asd8-json-depts
+  urls: https://as.cornell.edu/articles-asd8-json-depts
 
   ids:
     nid:
@@ -70,10 +71,6 @@ source:
       label: 'Body'
       selector: /attributes/description
     -
-      name: field_departments_programs
-      label: 'Departments'
-      selector: /attributes/field_departments_programs
-    -
       name: field_byline
       label: 'Field Byline'
       selector: /attributes/field_byline
@@ -89,6 +86,14 @@ source:
       name: field_card_label
       label: 'Field Card Label'
       selector: /attributes/field_card_label
+    -
+      name: field_departments_programs
+      label: 'Departments and Programs'
+      selector: /attributes/field_departments_programs
+    -
+      name: field_topic
+      label: 'Topics and Disciplines'
+      selector: /attributes/field_topic
     -
       name: field_image_url
       label: 'Image URL'
@@ -128,6 +133,15 @@ process:
     -
       plugin: explode
       source: field_departments_programs
+      delimiter: +
+  field_topics_and_disciplines:
+        -
+      plugin: skip_on_empty
+      method: process
+      source: field_topic
+    -
+      plugin: explode
+      source: field_topic
       delimiter: +
   field_byline: field_byline
   field_media_source: field_media_source
