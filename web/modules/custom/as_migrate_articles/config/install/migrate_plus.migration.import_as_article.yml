@@ -106,6 +106,18 @@ source:
       name: field_image_alt
       label: 'Image Alt tag'
       selector: /attributes/field_image/alt
+    -
+      name: field_pano_image_url
+      label: 'Image URL'
+      selector: /attributes/field_pano_image/src
+    -
+      name: field_pano_image_uri
+      label: 'Image URI'
+      selector: /attributes/field_pano_image_uri
+    -
+      name: field_pano_image_alt
+      label: 'Image Alt tag'
+      selector: /attributes/field_pano_image/alt
 
 
 
@@ -135,7 +147,7 @@ process:
       source: field_departments_programs
       delimiter: +
   field_topics_and_disciplines:
-        -
+    -
       plugin: skip_on_empty
       method: process
       source: field_topic
@@ -151,7 +163,10 @@ process:
     plugin: migration
     migration: import_as_article_image_media
     source: nid
-  'field_image/alt': field_image_alt
+  'field_pano_image/target_id':
+    plugin: migration
+    migration: import_as_article_pano_image_media
+    source: nid
   uid:
     plugin: default_value
     default_value: 1
