@@ -6,9 +6,14 @@
 
 {# set defaults from figrure.image in data.yaml #}
 {% set img_url = figures.image.url %}
+{% if pl %}
 {% set img_src = figures.image.src %}
+{% endif %}
+{# {% set img_src = figures.image.src %} #}
 {% set img_caption = figures.image.caption %}
 {% set img_credit = figures.image.credit %}
+
+<h2>{{img.src}}</h2>
 
 {# {{figure_modifiers}} #}
 <figure {{ bem(image_figure_base_class, (figure_modifiers), image_figure_blockname, alignment) }}>

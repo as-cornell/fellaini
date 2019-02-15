@@ -30,13 +30,14 @@
       font-weight: $semi;
     }
   }
-  img{
+  &__image{
     grid-area: top;
   }
   &__title{
     grid-area: top;
     display: flex;
     align-items: center;
+    z-index: 1;
   }
   &__label{
     grid-area: label;
