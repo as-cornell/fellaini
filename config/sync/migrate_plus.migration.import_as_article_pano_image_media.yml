@@ -1,4 +1,4 @@
-uuid: c7023eeb-cf87-4440-a047-4dc0322c0f5e
+uuid: 937ed1a7-5ac6-4e46-b177-20df23df2803
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_migrate_articles
 _core:
-  default_config_hash: '-t-MtZbje2d_Wu_qhjp6fH1Ur9ODjyMzyin0FlCUj2Y'
+  default_config_hash: FWZl5c99TnkRjYE-kEC_Iy-IQFULrrXAGOe8TJRXZ6c
 id: import_as_article_pano_image_media
 class: null
 field_plugin_method: null
@@ -50,7 +50,7 @@ process:
   bundle:
     plugin: default_value
     default_value: image
-  name: alt
+  name: title
   uid:
     plugin: default_value
     default_value: 1
@@ -58,7 +58,7 @@ process:
     plugin: migration
     migration: import_as_article_pano_image
     source: id
-  field_media_image/alt: alt
+  field_media_image/alt: title
 destination:
   plugin: 'entity:media'
 migration_dependencies: {  }

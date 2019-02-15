@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
-    - field.field.node.article.field_p
+    - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
@@ -76,7 +76,7 @@ third_party_settings:
       region: content
     group_images:
       children:
-        - field_p
+        - field_pano_image
         - field_image
       parent_name: group_article
       weight: 15
@@ -137,7 +137,7 @@ content:
     third_party_settings: {  }
   field_article_body:
     type: paragraphs
-    weight: 0
+    weight: 31
     region: content
     settings:
       title: Paragraph
@@ -185,7 +185,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_image:
-    weight: 29
+    weight: 31
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -207,8 +207,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_p:
-    weight: 28
+  field_pano_image:
+    weight: 30
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
