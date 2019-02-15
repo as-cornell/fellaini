@@ -18,9 +18,9 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: json
   constants:
-    source_base_path: 'http://as.cornell.edu'
+    source_base_path: 'https://as.cornell.edu'
 
-  urls: http://as.cornell.edu/articles-asd8-json-depts
+  urls: https://as.cornell.edu/articles-asd8-json-depts
 
   ids:
     nid:
@@ -70,10 +70,6 @@ source:
       label: 'Body'
       selector: /attributes/description
     -
-      name: field_departments_programs
-      label: 'Departments'
-      selector: /attributes/field_departments_programs
-    -
       name: field_byline
       label: 'Field Byline'
       selector: /attributes/field_byline
@@ -89,6 +85,10 @@ source:
       name: field_card_label
       label: 'Field Card Label'
       selector: /attributes/field_card_label
+    -
+      name: field_departments_programs
+      label: 'Departments'
+      selector: /attributes/field_departments_programs
     -
       name: field_image_url
       label: 'Image URL'
@@ -120,7 +120,7 @@ process:
     default_value: full_html
   'field_article_body/target_id': nid
   'field_article_body/target_revision_id': nid
-  field_department_program:
+  'field_department_program/target_id':
     -
       plugin: skip_on_empty
       method: process
