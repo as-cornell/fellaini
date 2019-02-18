@@ -1,4 +1,4 @@
-uuid: b283623c-ddeb-4d70-a758-43456edf889c
+uuid: 8367ce25-ea16-4570-8cf0-349178ea63b8
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - pathways
 _core:
-  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+  default_config_hash: WWu2OQswgCztl9OeXjD1stexIEMZsSgPMYIdC-JHx9c
 id: pathways_breadcrumbs
 theme: pathways
 region: header
-weight: -2
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:

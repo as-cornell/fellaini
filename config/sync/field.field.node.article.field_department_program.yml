@@ -1,13 +1,13 @@
-uuid: 020dad10-eff2-48c8-a29a-b6ebe9b15093
+uuid: 8eb4e7ae-829d-4140-89ae-0ba2cea43b14
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_department_program
     - node.type.article
-    - taxonomy.vocabulary.departments_programs
+    - taxonomy.vocabulary.departments_and_programs
 _core:
-  default_config_hash: 0Zhx7xJdiaiFHrR5opUbkG6IfeTeC1Vv55ivdlGVOps
+  default_config_hash: ZuqLdJu-cdzLvekrQSskcZYnetA8__az8YvOi6MnprQ
 id: node.article.field_department_program
 field_name: field_department_program
 entity_type: node
@@ -22,7 +22,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      departments_programs: departments_programs
+      departments_and_programs: departments_and_programs
     sort:
       field: name
       direction: asc

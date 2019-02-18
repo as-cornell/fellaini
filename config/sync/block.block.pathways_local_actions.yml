@@ -1,0 +1,20 @@
+uuid: 4e1fa8f8-f87d-48c5-bc0a-b9de0f947149
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pathways
+_core:
+  default_config_hash: HHryZVJbeKi9WnuBGC8FOhBZmBnk2G1H6KxFuy-rC9A
+id: pathways_local_actions
+theme: pathways
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

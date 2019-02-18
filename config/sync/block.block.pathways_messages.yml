@@ -1,4 +1,4 @@
-uuid: 24cc2d7f-02cd-4e38-8ffa-7eb357aa469c
+uuid: 115f01ec-bc92-4cd6-8424-c499f5fad09d
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   theme:
     - pathways
 _core:
-  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+  default_config_hash: XJqWwLt1LDCnazcEN6QkJmCLjk4R0__-8s0OO9xeNjg
 id: pathways_messages
 theme: pathways
 region: header

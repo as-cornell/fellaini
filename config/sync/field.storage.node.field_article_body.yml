@@ -1,4 +1,4 @@
-uuid: 3cb66b66-eb1a-49e9-ae5e-cb95dab93995
+uuid: 8b6df49a-be1f-40a9-a025-0fe97bb2382f
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,6 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-_core:
-  default_config_hash: 4-RBMncXBcQWsTRULwt9Hz7TNNX4JPVXmtuLBESRBBg
 id: node.field_article_body
 field_name: field_article_body
 entity_type: node

@@ -1,17 +1,15 @@
-uuid: b88daebb-cbe1-4e06-becc-c1c2b8ef2233
+uuid: 5b7f5b60-c7a9-43d1-854d-1e1d4b403efc
 langcode: en
-status: false
+status: true
 dependencies:
-  module:
-    - ctools
   theme:
     - pathways
 _core:
-  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
 id: pathways_page_title
 theme: pathways
-region: content
-weight: -5
+region: header
+weight: -30
 provider: null
 plugin: page_title_block
 settings:
@@ -19,11 +17,4 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      article: article
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
+visibility: {  }
