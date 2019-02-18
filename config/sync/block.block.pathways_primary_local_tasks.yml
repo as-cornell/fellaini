@@ -8,8 +8,8 @@ _core:
   default_config_hash: ddy1OsBbWxjwEI8VL1viD4I69qcLHOkul4BxbTqLBTs
 id: pathways_primary_local_tasks
 theme: pathways
-region: header
-weight: 0
+region: footer
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:
