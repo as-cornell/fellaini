@@ -1,19 +1,29 @@
-uuid: d4e4cd3f-b059-4b35-aadb-aa0eef56f508
+uuid: cc81cc46-3e2a-4785-b2ad-23fafccbd6b7
 langcode: en
 status: true
 dependencies:
   module:
-    - media
+    - file
+    - image
     - taxonomy
 _core:
-  default_config_hash: xT1Z8LXo1kPRTCmJrk5CsxNYlEKiU7XwOuh7HOYnyrw
+  default_config_hash: SWleCGeXN0U-_Si55Q-IBOwSXFMVfUeqbl5HgHOQAes
 id: taxonomy_term.field_image
 field_name: field_image
 entity_type: taxonomy_term
-type: entity_reference
+type: image
 settings:
-  target_type: media
-module: core
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
 locked: false
 cardinality: 1
 translatable: true
