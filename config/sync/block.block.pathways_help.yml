@@ -1,4 +1,4 @@
-uuid: bea550c8-8eb0-4db1-9051-bce81945a960
+uuid: 343d9c6c-1180-4814-939d-f3a69e48704e
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - pathways
 _core:
-  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+  default_config_hash: NU5A_49mwLHfs5xFzMFrZ850w9pgUolxMS9NNF3vv4c
 id: pathways_help
 theme: pathways
-region: content
-weight: -6
+region: header
+weight: 0
 provider: null
 plugin: help_block
 settings:

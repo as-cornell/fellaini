@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_campfire_center_main
+    - node.type.article
     - node.type.landing_page
     - node.type.page
     - paragraphs.paragraphs_type.campfire_center
@@ -21,10 +22,11 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      article: article
       page: page
       landing_page: landing_page
     sort:
       field: _none
-    auto_create: null
-    auto_create_bundle: null
+    auto_create: false
+    auto_create_bundle: article
 field_type: entity_reference
