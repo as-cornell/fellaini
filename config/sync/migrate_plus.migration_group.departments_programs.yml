@@ -1,0 +1,12 @@
+uuid: ada5e1a2-90a9-4cc3-b0b1-463d92f4531d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: XL8fLXvSNamEHEWF-7pTwLgq0UJONj-w_3tGasUnEUc
+id: departments_programs
+label: 'Departments and Programs'
+description: 'Migrate Departments and Programs content from Drupal 7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null

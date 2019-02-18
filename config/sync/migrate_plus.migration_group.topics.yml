@@ -1,0 +1,12 @@
+uuid: 93364171-fd18-4d07-9d7b-a044e4ee32dc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: QVZd6Rp5YFuXlifEB5aqYkmvFMWeYBAOihIcLZGbfOU
+id: topics
+label: 'Topics and Disciplines'
+description: 'Migrate Topics and Disciplines taxonomy terms from Drupal 7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null
