@@ -1,0 +1,67 @@
+uuid: a30483dd-14c0-4fc3-8d93-4d63b4bf8c37
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_entity_browser
+    - field.field.taxonomy_term.departments_programs.field_department_website
+    - field.field.taxonomy_term.departments_programs.field_image
+    - taxonomy.vocabulary.departments_programs
+  module:
+    - entity_browser
+    - link
+    - path
+    - text
+_core:
+  default_config_hash: CYdbphwo9IPlY4380nOlGI8L2n84Jm-b27YH2M50bgc
+id: taxonomy_term.departments_programs.default
+targetEntityType: taxonomy_term
+bundle: departments_programs
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_department_website:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_image:
+    type: entity_browser_entity_reference
+    weight: 1
+    region: content
+    settings:
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
