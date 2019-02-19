@@ -1,11 +1,10 @@
-uuid: 8e533167-5338-476a-af19-6008fc6320e2
+uuid: ed855e25-49d4-4d18-ac8b-d624fd5ea256
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_topics_and_disciplines
     - node.type.article
-    - taxonomy.vocabulary.topics
 _core:
   default_config_hash: Gku0zK663sNSldebq64U-g8hAP5GpsW67A61-17wvSg
 id: node.article.field_topics_and_disciplines
@@ -21,8 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      topics: topics
+    target_bundles: {  }
     sort:
       field: name
       direction: asc
