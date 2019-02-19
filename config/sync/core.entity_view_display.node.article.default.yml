@@ -1,4 +1,4 @@
-uuid: cdd5155c-e6f2-4dc6-8446-f4f423e6142f
+uuid: 2bc498bb-1859-46ea-a77c-10d1d4733ee8
 langcode: en
 status: true
 dependencies:
@@ -6,13 +6,16 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_body
     - field.field.node.article.field_byline
+    - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
+    - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
+    - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
@@ -20,35 +23,38 @@ dependencies:
     - entity_reference_revisions
     - text
     - user
+_core:
+  default_config_hash: DAKDfoFGR-H0Z-UvxEAktiEZqnZLucdqy9C4hV5Mn78
 id: node.article.default
 targetEntityType: node
 bundle: article
 mode: default
 content:
-  body:
-    type: text_default
-    weight: 6
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_article_body:
     type: entity_reference_revisions_entity_view
-    weight: 11
+    weight: 6
+    region: content
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
   field_byline:
     type: string
-    weight: 4
+    weight: 3
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_byline_reference:
+    weight: 13
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_card_label:
     type: string
     weight: 2
@@ -58,13 +64,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_dateline:
-    type: datetime_custom
-    weight: 3
+    type: datetime_default
+    weight: 5
     region: content
     label: hidden
     settings:
       timezone_override: ''
-      date_format: d/m/y
+      format_type: m_d_y
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_label
@@ -74,9 +80,16 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_featured_audio_video:
+    type: text_default
+    weight: 7
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_image:
     type: entity_reference_entity_view
-    weight: 14
+    weight: 12
     label: hidden
     settings:
       view_mode: default
@@ -85,34 +98,40 @@ content:
     region: content
   field_media_source:
     type: string
-    weight: 5
+    weight: 4
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   field_pano_image:
-    type: entity_reference_entity_view
-    weight: 13
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_related_articles:
-    weight: 12
-    label: hidden
-    settings:
-      view_mode: card_small
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  links:
+    type: entity_reference_entity_id
     weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_related_articles:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tags:
+    type: entity_reference_label
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_topics_and_disciplines: true

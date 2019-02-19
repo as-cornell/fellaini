@@ -1,16 +1,16 @@
-uuid: d0b13970-5504-45ab-8b0a-64bc7b5754dd
+uuid: a51d31db-0c8e-4085-9181-a19c20bd7c9c
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - adminimal_theme
+    - rooney
 _core:
-  default_config_hash: YqKTtloWJ8FjLtfVNfrHaK6kVgxT67lC1cJ3j6i6WLo
-id: adminimal_theme_messages
-theme: adminimal_theme
-region: highlighted
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: rooney_messages
+theme: rooney
+region: header
 weight: 0
 provider: null
 plugin: system_messages_block

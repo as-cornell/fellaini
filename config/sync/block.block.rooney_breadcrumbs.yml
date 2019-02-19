@@ -1,16 +1,16 @@
-uuid: f17ac7d0-f634-4e3f-b7f3-7ba8f1bb3528
+uuid: 9aa63181-0793-4a41-987a-66c3250ade91
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - adminimal_theme
+    - rooney
 _core:
-  default_config_hash: 8by5KRsb7ZpmjHj0ms1d7xAG_xH54AWsOX6spDLJ59U
-id: adminimal_theme_breadcrumbs
-theme: adminimal_theme
-region: breadcrumb
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: rooney_breadcrumbs
+theme: rooney
+region: header
 weight: 0
 provider: null
 plugin: system_breadcrumb_block

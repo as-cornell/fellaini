@@ -1,16 +1,18 @@
-uuid: 46b2391b-8f43-4734-885a-f4b5d3c9e7b7
+uuid: 991739a9-032f-4d60-9064-bdb5e64bc918
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_related_articles
     - node.type.article
+_core:
+  default_config_hash: 8af_ZwKaNRuIc2hrF0xGRFJYCtlyNcGlor3JzRCMCwY
 id: node.article.field_related_articles
 field_name: field_related_articles
 entity_type: node
 bundle: article
 label: 'Related Articles'
-description: 'Curated list of related articles'
+description: ''
 required: false
 translatable: false
 default_value: {  }

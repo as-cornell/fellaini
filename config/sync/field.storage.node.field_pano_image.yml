@@ -1,10 +1,12 @@
-uuid: a3c0937f-3e77-4c5a-8d2e-8f51aed9facb
+uuid: 2e473fad-610f-43c7-9594-046564987c00
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: rfZpB-mCxo1Z-X8VB0FH3tbiCVqsC0K4FxyA0WG-rRc
 id: node.field_pano_image
 field_name: field_pano_image
 entity_type: node

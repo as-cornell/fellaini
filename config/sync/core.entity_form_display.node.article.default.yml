@@ -1,4 +1,4 @@
-uuid: 523d97da-fcb2-4b35-a424-b6ee7555113b
+uuid: e232b992-3104-4c5c-8c45-2ec4df358969
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,16 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_body
     - field.field.node.article.field_byline
+    - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
+    - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
+    - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
@@ -22,71 +25,12 @@ dependencies:
     - field_group
     - paragraphs
     - path
-    - text
 third_party_settings:
   field_group:
-    group_tags:
-      children: {  }
-      parent_name: ''
-      weight: 2
-      format_type: tabs
-      format_settings:
-        id: ''
-        classes: ''
-        direction: vertical
-      label: Tags
-      region: content
-    group_tag:
-      children:
-        - field_department_program
-        - field_topics_and_disciplines
-      parent_name: group_article
-      weight: 21
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: Tags
-      region: content
-    group_header:
-      children:
-        - field_byline
-        - field_dateline
-        - field_card_label
-        - field_media_source
-      parent_name: group_article
-      weight: 20
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: Header
-      region: content
-    group_images:
-      children:
-        - field_pano_image
-        - field_image
-      parent_name: group_article
-      weight: 22
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-      label: Images
-      region: content
     group_article:
       children:
         - group_header
-        - group_tag
+        - group_tags
         - group_images
         - group_body
         - group_authoring
@@ -99,11 +43,60 @@ third_party_settings:
         direction: vertical
       label: Article
       region: content
+    group_header:
+      children:
+        - field_byline
+        - field_byline_reference
+        - field_dateline
+        - field_card_label
+        - field_media_source
+      parent_name: group_article
+      weight: 13
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Header
+      region: content
+    group_tags:
+      children:
+        - field_topics_and_disciplines
+        - field_tags
+        - field_department_program
+      parent_name: group_article
+      weight: 14
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Tags
+      region: content
+    group_images:
+      children:
+        - field_pano_image
+        - field_image
+      parent_name: group_article
+      weight: 15
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Images
+      region: content
     group_body:
       children:
         - field_article_body
       parent_name: group_article
-      weight: 23
+      weight: 16
       format_type: tab
       format_settings:
         id: ''
@@ -115,14 +108,14 @@ third_party_settings:
       region: content
     group_authoring:
       children:
-        - created
         - uid
+        - created
         - promote
         - sticky
         - path
         - status
       parent_name: group_article
-      weight: 24
+      weight: 17
       format_type: tab
       format_settings:
         id: ''
@@ -132,29 +125,23 @@ third_party_settings:
         required_fields: true
       label: Authoring
       region: content
+_core:
+  default_config_hash: sTc8hdGRgKE6fkfgXRRXoS-ILXJL-mdhCQgYO8IlC5c
 id: node.article.default
 targetEntityType: node
 bundle: article
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 18
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_body:
     type: paragraphs
-    weight: 9
+    weight: 29
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -169,18 +156,26 @@ content:
         duplicate: duplicate
         collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
-    region: content
   field_byline:
     type: string_textfield
-    weight: 6
+    weight: 11
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_byline_reference:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
   field_card_label:
     type: string_textfield
-    weight: 8
+    weight: 14
     region: content
     settings:
       size: 60
@@ -188,13 +183,13 @@ content:
     third_party_settings: {  }
   field_dateline:
     type: datetime_default
-    weight: 7
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_autocomplete
-    weight: 21
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
@@ -208,24 +203,26 @@ content:
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      field_widget_replace: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: default
-      field_widget_replace: false
       open: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
   field_media_source:
     type: string_textfield
-    weight: 9
+    weight: 15
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_pano_image:
-    weight: 26
+    type: entity_browser_entity_reference
+    weight: 0
+    region: content
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -237,10 +234,8 @@ content:
       field_widget_replace: false
       open: false
     third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_related_articles:
-    weight: 10
+    weight: 26
     settings:
       match_operator: CONTAINS
       size: 60
@@ -248,9 +243,18 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_tags:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_topics_and_disciplines:
     type: entity_reference_autocomplete
-    weight: 22
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -259,7 +263,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 17
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -267,21 +271,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 31
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 18
+    weight: 34
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 32
     region: content
     third_party_settings: {  }
   title:
@@ -294,11 +298,13 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 14
+    weight: 29
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  body: true
+  field_featured_audio_video: true
