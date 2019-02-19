@@ -1,0 +1,11 @@
+uuid: 842b70ef-c05f-4ed9-8f95-f2cddc7d4f63
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: M7ytXRy0DaJA4lhSYWSyS3DWDoSgLO9r5paKc4pOmfE
+name: 'Article Bylines'
+vid: article_bylines
+description: 'Bylines to Articles as tags to allow aggregating articles by author'
+hierarchy: 0
+weight: -9
