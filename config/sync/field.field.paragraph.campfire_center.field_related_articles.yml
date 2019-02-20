@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_related_articles
+    - node.type.article
     - paragraphs.paragraphs_type.campfire_center
 id: paragraph.campfire_center.field_related_articles
 field_name: field_related_articles
@@ -18,7 +19,8 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      article: article
     sort:
       field: _none
     auto_create: false
