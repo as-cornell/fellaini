@@ -52,7 +52,8 @@
         "drupal/field_group": "^3.0",
         "drupal/external_entities": "^1.0",
         "drupal/entity_share": "^1.0",
-        "drupal/config_delete": "^1.7"
+        "drupal/config_delete": "^1.7",
+        "drupal/date_popup": "^1.0"
 
     },
     "require-dev": {
