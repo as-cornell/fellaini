@@ -1,4 +1,4 @@
-uuid: dddfe891-2f4f-4142-a53d-46f56ef74cc8
+uuid: 0558217c-b11f-4da4-bd06-8ad32180b82d
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ settings:
   target_type: media
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
