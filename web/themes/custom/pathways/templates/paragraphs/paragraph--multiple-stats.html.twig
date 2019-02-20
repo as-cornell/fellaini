@@ -36,11 +36,8 @@
  * @ingroup themeable
  */
 #}
-
-{% set base_class = base_class | default('') %}
-{% set modifiers = modifiers | default(['']) %}
-{% set classes = classes | default([paragraph.bundle | clean_class]) %}
-
-<div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}>
-    {{ content }}
-</div>
+{% include "@organisms/_paragraph.twig" with {
+    classes : ['speical class'],
+    base_class : 'slice',
+    modifiers : ['full', 'gray']
+} %}

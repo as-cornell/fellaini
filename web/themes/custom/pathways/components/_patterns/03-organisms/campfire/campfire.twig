@@ -3,7 +3,7 @@
     - campfire_articles_1 and campfire_articles_2 are reference fields and the items are displayed with standard article-card components
  #}
 
-<div class="campfire">
+<div class="slice campfire">
     {% if pl %}
         <div class="campfire__feature">
             {% for card in cards.articles|slice(4, 1) %}

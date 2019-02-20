@@ -43,6 +43,7 @@
  
  
  {% embed "@atoms/_field.twig" with {
-    modifiers : ["grid", "page_components"],
-    classes : ['main-content']
+    group_base_class : 'container',
+    group_modifiers : ["grid", "page_components"],
+    group_classes : ['main-content']
 } %}{% endembed %}

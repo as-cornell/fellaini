@@ -7,6 +7,7 @@ $main-menu-medium: 43em;
 
   @include breakpoint($main-menu-medium) {
     display: block;
+    @include baseBorder('border-tb', 1px, $gray-lightest);
   }
 
   &--open {
@@ -18,12 +19,13 @@ $main-menu-medium: 43em;
 .main-menu {
   @include list-reset;
 
-  border-bottom: 1px solid;
   position: relative;
   z-index: 10;
+  max-width: $x-wide;
+  margin: 0 auto;
 
   @include breakpoint($main-menu-medium) {
-    @include baseBorder('border-tb', 1px, $gray-lightest);
+    // @include baseBorder('border-tb', 1px, $gray-lightest);
   }
 
   &--open {
