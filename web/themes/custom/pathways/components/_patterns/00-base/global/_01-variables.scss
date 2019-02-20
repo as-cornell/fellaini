@@ -7,8 +7,8 @@
 
 $quark: 4px;
 
-// $x-wide: $quark * 358; // 1,432
-// $wide: $quark * 306; // 1,224
+$x-wide: $quark * 358; // 1,432
+$wide: $quark * 306; // 1,224
 
 /*
     Font styles
@@ -73,5 +73,5 @@ $red: #b31b1b;
 
 // border variables
 $border-width: 1px;
-$border-color: pink;
+$border-color: $gray-lightest;
 $border-radius: 4px;

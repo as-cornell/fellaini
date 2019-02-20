@@ -48,16 +48,19 @@
 {% set group_modifiers = group_modifiers | default(['']) %}
 {% set group_classes = group_classes | default(['']) %}
 
+
+
 {# {{ kint(modifiers) }} #}
 <!-- start of _field.twig -->
     {% if label_hidden %}
         {% if multiple %}
+            <!-- multiple no label -->
             <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
                 {% for item in items %}
                 {# <div{{ item.attributes }}>{{ item.content }}</div> #}
-            {{ item.content }}
-        {% endfor %}
-        </div>
+                {{ item.content }}
+            {% endfor %}
+            </div>
         {% else %}
             {% for item in items %}
                 {# <div{{attributes}}> #}
@@ -67,17 +70,24 @@
         {% endfor %}
     {% endif %}
     {% else %}
-    <div{{attributes}}>
-        <div{{title_attributes}}>
-            {{ label }}</div>
-        {% if multiple %}
-            <div class="item">
-            {% endif %}
+{% include "@atoms/headings/_heading.twig" with {
+        "heading_level" : 3,
+        "heading" : label
+    } %}
+
+    <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
+
+
+       
+        {# {% if multiple %}
+            <div{{attributes}}>
+    
+            {% endif %} #}
             {% for item in items %}
                 {{ item.content }}
             {% endfor %}
-            {% if multiple %}
+            {# {% if multiple %}
             </div>
-        {% endif %}
+        {% endif %} #}
     </div>
 {% endif %}
