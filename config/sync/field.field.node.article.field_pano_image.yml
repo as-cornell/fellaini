@@ -1,15 +1,13 @@
-uuid: 7f79d9ba-2e6f-4573-b014-49a9a797a996
+uuid: 276817a0-cf4a-4f09-9f1b-4046c0a8d0bb
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_pano_image
+    - media.type.image
     - node.type.article
-    - paragraphs.paragraphs_type.pano_image
-  module:
-    - entity_reference_revisions
 _core:
-  default_config_hash: mDLOv_uT77CIkoBdCqlhOwTT4nVlLIudVTrtFG1lV3Y
+  default_config_hash: pYMRsplOvKgSx2JFJkFDrWq6v8k4FI1J8WpX0xQX3xY
 id: node.article.field_pano_image
 field_name: field_pano_image
 entity_type: node
@@ -21,46 +19,12 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:paragraph'
+  handler: 'default:media'
   handler_settings:
-    negate: 0
     target_bundles:
-      pano_image: pano_image
-    target_bundles_drag_drop:
-      campfire:
-        weight: 13
-        enabled: false
-      campfire_center:
-        weight: 14
-        enabled: false
-      formatted_text_block:
-        weight: 15
-        enabled: false
-      image_figure:
-        weight: 16
-        enabled: false
-      link_block:
-        weight: 17
-        enabled: false
-      multiple_stats:
-        weight: 18
-        enabled: false
-      pano_image:
-        enabled: true
-        weight: 19
-      photo_text:
-        weight: 20
-        enabled: false
-      photo_text_slider:
-        weight: 21
-        enabled: false
-      single_stat:
-        weight: 22
-        enabled: false
-      video_figure:
-        weight: 23
-        enabled: false
-      view:
-        weight: 24
-        enabled: false
-field_type: entity_reference_revisions
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,45 @@
+uuid: 7707fb61-eaf1-4d03-906d-e8a573feef16
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - as_migrate_articles
+_core:
+  default_config_hash: L4fv_sC4pGFxqQQTwe5-0cYqIVwrnIqlKt4bvNsn9ew
+id: import_as_article_bylines
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: articles
+label: 'Import article bylines into taxonomy terms'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'https://as.cornell.edu'
+  urls: 'https://as.cornell.edu/articles-asd8-json-bylines'
+  ids:
+    bylineid:
+      type: integer
+  item_selector: data/
+  fields:
+    -
+      name: bylineid
+      label: 'Byline ID'
+      selector: attributes/bylineid
+    -
+      name: field_byline
+      label: Byline
+      selector: attributes/field_byline
+process:
+  uuid: bylineid
+  vid:
+    plugin: default_value
+    default_value: article_bylines
+  name: field_byline
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: {  }
