@@ -22,9 +22,10 @@
 }
 
 // Mixin - Base Flex
-@mixin baseFlex {
+@mixin baseFlex($flex-jc: 'flex-start') {
   display: flex;
   flex-wrap: wrap;
+  justify-content: $flex-jc;
 }
 
 // Mixin - Base Grid

@@ -1,0 +1,14 @@
+{% set base_class = base_class | default('') %}
+{% set modifiers = modifiers | default(['']) %}
+{% set classes = classes | default(['']) %}
+
+
+<div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}>
+    
+    {% include "@atoms/headings/_heading.twig" with {
+      "heading_level" : 3,
+      "heading" : "hello"
+  } %}
+  {# {{stats}} #}
+    
+</div>

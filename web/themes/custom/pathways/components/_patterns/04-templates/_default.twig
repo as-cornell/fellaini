@@ -3,7 +3,7 @@
  #}
 {% set layout_modifiers = [] %}
 
-{% set main_base_class = main_base_class | default('row') %}
+{# {% set main_base_class = main_base_class | default('row') %} #}
 {% set main_modifiers = [] %}
 
 {% set main_content_base_class = main_content_base_class | default('container') %}
@@ -22,7 +22,7 @@
 <a id="main-content" tabindex="-1"></a>
     <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
         
-        <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}>
+        {# <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}> #}
             {% block page_content %}{% endblock %}
 
             {% if sidebar %}
@@ -32,7 +32,7 @@
                 </div>
             {% endif %}
 
-        </div>
+        {# </div> #}
 
     </main>
 

@@ -174,10 +174,27 @@ figures:
       "<iframe width='854' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/YRnVnlhjOBs?autoplay=0&amp;start=0'></iframe>"
     caption:
       " from data.yaml This is a neat video caption to be shown with a video."
-stat:
-  label:
-    "2,400 undergraduate courses offered in A&S with another 2000 offered across the university."
-  stat:
-    "2,400"
-  description:
-    "undergraduate courses offered in A&S with another 2000 offered across the university."
+stats:
+  1:
+    card_modifiers:
+      1: "stat"
+    title:
+      "2,400 undergraduate courses offered in A&S with another 2000 offered across the university."
+    card_label:
+      "2,000,400"
+    card_body:
+      "undergraduate courses offered in A&S with another 2000 offered across the university."
+  2:
+    title:
+      "2,400 undergraduate courses offered in A&S with another 2000 offered across the university."
+    card_label:
+      "2,400"
+    card_body:
+      "undergraduate courses offered in A&S with another 2000 offered across the university."
+  3:
+    title:
+      "2,400 undergraduate courses offered in A&S with another 2000 offered across the university."
+    card_label:
+      "2,400"
+    card_body:
+      "undergraduate courses offered in A&S with another 2000 offered across the university."

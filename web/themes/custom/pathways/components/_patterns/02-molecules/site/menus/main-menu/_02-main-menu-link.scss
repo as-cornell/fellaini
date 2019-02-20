@@ -14,7 +14,6 @@
 
   @include breakpoint($main-menu-medium) {
     border-bottom: none;
-    color: red;
     display: inline-block;
     font-size: 1.1rem;
     padding: $space $space-double $space $space;
