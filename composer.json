@@ -28,7 +28,7 @@
         "drupal/config_split": "^1.4",
         "drupal/crop": "^1.5",
         "drupal/ctools": "^3.0",
-        "drupal/devel": "^1.2",
+        "drupal/devel": "^2.0",
         "drupal/embed": "^1.0",
         "drupal/entity_browser": "^2.0",
         "drupal/entity_embed": "^1.0@beta",
@@ -53,7 +53,8 @@
         "drupal/external_entities": "^1.0",
         "drupal/entity_share": "^1.0",
         "drupal/config_delete": "^1.7",
-        "drupal/date_popup": "^1.0"
+        "drupal/date_popup": "^1.0",
+        "drupal/better_exposed_filters": "^3.0"
 
     },
     "require-dev": {
