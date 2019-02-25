@@ -35,7 +35,8 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
+{# <div{{ attributes.addClass(classes) }}>
+<h2>top of views-view.html.twig</h2>
   {{ title_prefix }}
   {{ title }}
   {{ title_suffix }}
@@ -50,9 +51,13 @@
   {{ exposed }}
   {{ attachment_before }}
 <div class="campfire">
-<div class="campfire__articles">
-  {{ rows }}
-  {{ empty }}
+<div class="campfire__articles"> #}
+<div class="slice">
+{{ rows }}
+
+</div>
+
+  {# {{ empty }}
   {{ pager }}
 </div>
 </div>
@@ -66,4 +71,4 @@
     </footer>
   {% endif %}
 
-</div>
+</div> #}
