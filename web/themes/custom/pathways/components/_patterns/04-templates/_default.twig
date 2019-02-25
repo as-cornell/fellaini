@@ -8,6 +8,7 @@
 
 {% set main_content_base_class = main_content_base_class | default('container') %}
 {% set main_content_modifiers = main_content_modifiers | default(['']) %}
+{% set main_extra_classes = main_extra_classes | default(['']) %}
 
 {% if sidebar %}
     {% set main_modifiers = main_modifiers|merge(['with-sidebar']) %}
@@ -20,7 +21,7 @@
     {% block page_system %}{% endblock %}
 
 <a id="main-content" tabindex="-1"></a>
-    <main {{ bem(main_base_class, (main_modifiers), main_blockname) }}>
+    <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }}>
         
         {# <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}> #}
             {% block page_content %}{% endblock %}
