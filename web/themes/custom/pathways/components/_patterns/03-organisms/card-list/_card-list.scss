@@ -1,5 +1,5 @@
 .list{
-  @include baseFlex('center');
+  @include baseFlex('space-between');
   margin: 0 auto;
   max-width: $x-wide;
 }
