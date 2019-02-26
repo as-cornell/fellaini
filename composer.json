@@ -54,7 +54,9 @@
         "drupal/entity_share": "^1.0",
         "drupal/config_delete": "^1.7",
         "drupal/date_popup": "^1.0",
-        "drupal/better_exposed_filters": "^3.0"
+        "drupal/better_exposed_filters": "^3.0",
+        "drupal/stage_file_proxy": "^1.0",
+        "drupal/views_taxonomy_term_name_into_id": "^1.0"
 
     },
     "require-dev": {
