@@ -1,86 +1,87 @@
-// LI
-.main-menu__item {
-  border-top: 1px solid;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
+// // LI
+// .main-menu__item {
+//   border-top: 1px solid;
 
-  @include breakpoint($main-menu-medium) {
-    border-top: none;
-    display: inline-block;
+//   display: flex;
+//   flex-wrap: wrap;
+//   position: relative;
 
-    // Only top level
-    &:not(.main-menu__item--sub):hover {
-      background-color: $black;
-      transition: all 0.2s;
+//   @include breakpoint($main-menu-medium) {
+//     border-top: none;
+//     display: inline-block;
 
-      & > .main-menu--sub {
-        display: block;
-      }
-    }
-  }
+//     // Only top level
+//     &:not(.main-menu__item--sub):hover {
+//       //background-color: $black;
+//       transition: all 0.2s;
 
-  &:hover {
-    .main-menu__link::after {
-      color: $gray;
-    }
-  }
-}
+//       & > .main-menu--sub {
+//         display: block;
+//       }
+//     }
+//   }
 
-// Expand Button
-.expand-sub {
-  background-color: $black;
-  cursor: pointer;
-  display: block;
-  width: 20%;
-  color: $white;
-  position: relative;
+//   &:hover {
+//     .main-menu__link::after {
+//       //color: $gray;
+//     }
+//   }
+// }
 
-  @include breakpoint($main-menu-medium) {
-    display: none;
-  }
+// // Expand Button
+// .expand-sub {
+//   background-color: $black;
+//   cursor: pointer;
+//   display: block;
+//   width: 20%;
+//   color: $white;
+//   position: relative;
 
-  // Down triangle
-  &::after {
-    border: 15px solid;
-    border-bottom-color: transparent;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    content: "";
-    display: block;
-    margin-right: -12px;
-    margin-top: -6px;
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    width: 0;
-  }
+//   @include breakpoint($main-menu-medium) {
+//     display: none;
+//   }
 
-  // See main-menu.js
-  &--open {
-    background-color: $black;
-    color: $near-white;
+//   // Down triangle
+//   &::after {
+//     border: 15px solid;
+//     border-bottom-color: transparent;
+//     border-left: 12px solid transparent;
+//     border-right: 12px solid transparent;
+//     content: "";
+//     display: block;
+//     margin-right: -12px;
+//     margin-top: -6px;
+//     position: absolute;
+//     right: 50%;
+//     top: 50%;
+//     width: 0;
+//   }
 
-    &::after {
-      border-top-color: transparent;
-      border-bottom: 15px solid;
-      margin-top: -20px;
-    }
-  }
-}
+//   // See main-menu.js
+//   &--open {
+//     background-color: $black;
+//     color: $near-white;
 
-//
-// Sub Navigation
-//
-// LI (Nested)
-.main-menu__item--sub {
-  @include breakpoint($main-menu-medium) {
-    display: block;
+//     &::after {
+//       border-top-color: transparent;
+//       border-bottom: 15px solid;
+//       margin-top: -20px;
+//     }
+//   }
+// }
 
-    &:not(:first-child) {
-      border-top: 1px solid $gray-light;
-    }
-  }
-}
+// //
+// // Sub Navigation
+// //
+// // LI (Nested)
+// .main-menu__item--sub {
+//   @include breakpoint($main-menu-medium) {
+//     display: block;
+
+//     &:not(:first-child) {
+//       border-top: 1px solid $gray-light;
+//     }
+//   }
+// }
 
 
