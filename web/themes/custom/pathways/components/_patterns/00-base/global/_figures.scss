@@ -14,7 +14,7 @@
 figure{
     display: inline-block;
     @include baseBorder();
-    @include baseComponentMargin($m-top: 0);
+    @include baseComponentMargin($m-top: 0, $m-right: 0, $m-bottom: (5 * $quark), $m-left: 0);
 }
 
 .figure{

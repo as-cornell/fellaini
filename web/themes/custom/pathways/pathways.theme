@@ -37,7 +37,11 @@ function pathways_preprocess_node(&$variables)
     //}
     if ($node->hasField('field_image')) {
         $media_entity = pathways_get_media_entity_from_reference($node->get('field_image')->first());
-        $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
+        $variables['field_image_img'] = pathways_get_image_properties_from_media_entity($media_entity);
+    }
+    if ($node->hasField('field_pano_image')) {
+        $media_entity = pathways_get_media_entity_from_reference($node->get('field_pano_image')->first());
+        $variables['field_pano_image_img'] = pathways_get_image_properties_from_media_entity($media_entity);
     }
 }
 
