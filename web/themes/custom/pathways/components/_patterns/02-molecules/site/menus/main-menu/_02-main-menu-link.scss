@@ -14,7 +14,7 @@
 
   @include breakpoint($main-menu-medium) {
     border-bottom: none;
-    display: inline-block;
+    //display: inline-block;
     //font-size: 1.1rem;
     padding: (6 * $quark) (8*$quark);
     text-transform: none;
@@ -31,7 +31,7 @@
     &::before{
       position: absolute;
       content: '';
-      height: 2px;
+      height: $quark;
       width: 100%;
       background: #737373;
       bottom: 0;

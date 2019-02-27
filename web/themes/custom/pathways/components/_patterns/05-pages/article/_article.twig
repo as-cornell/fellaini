@@ -12,7 +12,16 @@
 {% block page_content %}
     {# {{article_field_image_media}} #}
     <div class="pano">
-        {{article_pano}}
+    {% include "@atoms/04-images/00-image/figure.twig" with { 
+
+            "img_url": article_pano_img_url|default(card_link_url),
+            "img_src": article_pano_img_src,
+            "img_alt": article_pano_img_alt,
+            "img_caption" : article_pano_img_caption,
+            "img_credit" : article_pano_img_credit,
+            "figure_modifiers" : ['pano','image']
+        } %}
+
     </div>
     <div class="title">
         {% include "@atoms/headings/_heading.twig" with {
@@ -40,6 +49,16 @@
 {% endblock %}
 
 {% block page_sidebar %}
+{% include "@atoms/04-images/00-image/figure.twig" with { 
+
+        "img_url": article_image_img_url|default(card_link_url),
+        "img_src": article_image_img_src,
+        "img_alt": article_image_img_alt,
+        "img_caption" : article_image_img_caption,
+        "img_credit" : article_image_img_credit
+    } %}
+
+
     {% include "@atoms/headings/_heading.twig" with {
         "heading_level" : 2,
         "heading" : "Related Stories",

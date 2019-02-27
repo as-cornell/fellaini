@@ -47,6 +47,7 @@
 {% set card_base_class = 'card' %}
 {% set card_byline = card_byline | default('') %}
 {% set card_dateline = card_dateline | default('') %}
+
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
     {% block card_img %}
         {% if card_img_src %}
