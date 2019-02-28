@@ -40,5 +40,6 @@ figure{
 }
 
 figcaption{
-    @include baseComponentPadding();
+    @include baseFont($family: $font-serif, $size: (5 * $quark));
+    padding: (5 * $quark);
 }
