@@ -23,8 +23,10 @@
 {% set alignment = field_component_alignment %}
 
 {# set default to figures.video from data.yaml #}
-{% set video_content = figures.video.embed %}
-{% set video_caption = figures.video.caption %}
+{% if pl %}
+    {% set video_content = figures.video.embed %}
+    {% set video_caption = figures.video.caption %}
+{% endif %}
 
 <figure {{ bem(video_figure_base_class, (video_figure_modifiers), video_figure_blockname, alignment) }}>
     {% block video_content %}
@@ -33,7 +35,7 @@
         </div>
 
     {% endblock %}
-    <figcaption>
+    <figcaption>paiosdpaiosdfj
         {{video_caption}}
     </figcaption>
 </figure>
