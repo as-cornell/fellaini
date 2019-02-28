@@ -15,6 +15,9 @@ figure{
     display: inline-block;
     @include baseBorder();
     @include baseComponentMargin($m-top: 0, $m-right: 0, $m-bottom: (5 * $quark), $m-left: 0);
+    &.pullLeft, &.pullRight{
+        width: calc(100% + 3rem); //100% + the value of the pull left or right
+    }
 }
 
 .figure{

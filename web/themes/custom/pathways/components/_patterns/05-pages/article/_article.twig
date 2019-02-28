@@ -29,11 +29,10 @@
             "heading" : article_title,
             "heading_modifiers" : ["margin"]
         } %}
-        <div>
-            {{article_byline}}
-            {{article_mediasource}}
-            {{article_dateline}}<br/>
-        </div>
+        <p class="byline">
+            {{article_byline}}, {{article_mediasource}}<br/>
+            {{article_dateline}}
+        </p>
     </div>
     <div class="social">Twitter
         <br/>
