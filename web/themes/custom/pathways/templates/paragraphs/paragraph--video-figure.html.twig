@@ -38,13 +38,15 @@
 #}
 {# {{kint(content)}} #}
 
+
+
 {% include "@atoms/08-video/video.twig" with {
     video_content : content.field_video_embed_code[0]['#context'].value | raw,
     video_caption: content.field_video_caption,
     "field_component_alignment" : content.field_component_alignment[0]
 } %}
-
-{# {{content.field_video_caption}}
+{# {{content.field_video_embed_code[0]['#context'].value | raw}}
+{{content.field_video_caption}}
 {{content.field_component_alignment[0]}} #}
 
 {# {{content.field_video_embed_code[0]['#context'].value|raw}} #}

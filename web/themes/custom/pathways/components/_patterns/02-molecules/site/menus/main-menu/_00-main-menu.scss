@@ -23,6 +23,7 @@ $main-menu-medium: 43em;
   z-index: 10;
   max-width: $x-wide;
   margin: 0 auto;
+  @include baseFlex('center');
 
   @include breakpoint($main-menu-medium) {
     // @include baseBorder('border-tb', 1px, $gray-lightest);

@@ -73,7 +73,17 @@
 
 {% include "@pages/article/_article.twig" with {
 
-    article_pano : content.field_pano_image,
+    article_pano_img_src : field_pano_image_img.uri | image_style('full_content'),
+    article_pano_img_alt : field_pano_image_img.alt,
+    article_pano_img_caption : field_pano_image_img.caption,
+    article_pano_img_credit : field_pano_image_img.credit,
+
+    article_image_img_src : field_image_img.uri | image_style('full_content'),
+    article_image_img_alt : field_image_img.alt,
+    article_image_img_caption : field_image_img.caption,
+    article_image_img_credit : field_image_img.credit,
+
+
     article_title: label,
     article_body: content.body,
     article_paragraphs: content.field_article_body,
@@ -84,3 +94,6 @@
     article_related_articles: content.field_related_articles
 
 } %}
+{# {{field_pano_image_img.uri}}
+{{field_image_img.uri}} #}
+
