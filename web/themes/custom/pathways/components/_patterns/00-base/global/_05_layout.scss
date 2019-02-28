@@ -33,7 +33,7 @@ main{
 // anything that goes edge to edge. Will eventually receive a .slice--with-sidebar addtion
 .slice{
   max-width: $x-wide;
-  margin: (19 * $quark) auto;
+  margin: 0 auto (19 * $quark);
   &--full{
     max-width: 100%;
     width: 100%;
