@@ -2,6 +2,9 @@
  Base css for the layout and general structure of the website. All roads will lead through this.
 */
 
+body{
+  overflow-x: hidden;
+}
 
 .row{
   display: grid;
@@ -20,6 +23,8 @@ main{
   grid-column: 2;
   padding: 0 1rem;
   @include baseGrid();
+  max-width: $x-wide;
+  margin: 0 auto;
   &--topBar{
     grid-template-columns: auto 1fr;
     align-items: center;
@@ -35,8 +40,9 @@ main{
   max-width: $x-wide;
   margin: 0 auto (19 * $quark);
   &--full{
-    max-width: 100%;
-    width: 100%;
+    width: 500%;
+    max-width: 500%;
+    margin-left: -200%;
     text-align: center;
   }
 }
