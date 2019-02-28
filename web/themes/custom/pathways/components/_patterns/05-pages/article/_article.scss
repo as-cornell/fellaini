@@ -29,6 +29,10 @@
         text-align: center;
       }
     }
+    //override slice margin bottom on specific templates
+    .slice{
+      margin-bottom: 0;
+    }
 }
 
 .pano{
