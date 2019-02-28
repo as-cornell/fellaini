@@ -20,13 +20,17 @@
       ". . pano pano pano pano pano pano pano pano pano pano . ."
       ". . title title title title title title title title title title . ."
       " social . content content content content content content content content . sidebar sidebar sidebar";
+      h1{
+        font-weight: $regular;
+        text-align: center;
+      }
+      .byline{
+        @include baseFont($family: $font-serif);
+        text-align: center;
+      }
     }
 }
 
-
-
-
-  
 .pano{
   grid-area: pano;
 }
