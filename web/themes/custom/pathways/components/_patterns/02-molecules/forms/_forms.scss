@@ -1,20 +1,23 @@
-.search--top{
-    display: flex;
-    align-items: center;
-    height: 50px;
-    .form-item{
-        margin-bottom: 0;
-        &__textfield{
-          border:none;
-          background: none;
-          padding: 0;
-          height: 48px;
-        }
-    }
-    .button{
-      @include fontSize(4);
-    }
+header{
+  form{
+      display: flex;
+      align-items: center;
+      height: 50px;
+      .form-item{
+          margin-bottom: 0;
+          &__textfield{
+            border:none;
+            background: none;
+            padding: 0;
+            height: 48px;
+          }
+      }
+      .button{
+        @include fontSize(4);
+      }
+  }
 }
+
 
 // Text fields
 
