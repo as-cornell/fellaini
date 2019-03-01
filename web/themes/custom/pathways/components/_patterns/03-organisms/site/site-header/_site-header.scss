@@ -16,7 +16,7 @@
 }
 
 header{
-    background-image: linear-gradient($black, $black 50px, $white 50px, $white);
+    background-image: linear-gradient($black, $black 58px, $white 58px, $white);
     margin-bottom: (15 * $quark);
     @include baseGrid();
     grid-template-columns: 1fr repeat(14,minmax(50px,80px)) 1fr;
