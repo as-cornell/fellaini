@@ -2,12 +2,14 @@ header{
   form{
       display: flex;
       align-items: center;
-      height: 50px;
+      height: 58px;
       .form-item{
           margin-bottom: 0;
           &__textfield{
             border:none;
-            background: none;
+            background: $gray-dark;
+            color: $white;
+           // @include baseBorder($bor-color: $gray-lt);
             padding: 0;
             height: 48px;
           }
