@@ -136,16 +136,8 @@ process:
   created: created
   changed: changed
   path: path
-  'body/value':
-    plugin: image_inline_to_media
-    images_source: 'https://as.cornell.edu'
-    images_destination: 'public://inline-article-images'
-    source: body
-  'body/format':
-    plugin: default_value
-    default_value: full_html
   'field_article_body/target_id': nid
-  'field_article_body/target_revision_id': nid
+  'field_article_body/target_revision_id': vid
   field_department_program:
     -
       plugin: skip_on_empty

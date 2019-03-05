@@ -1,4 +1,4 @@
-uuid: 601ac211-d632-459d-ac58-270e7fa4dbe1
+uuid: 2cd0ac05-0eec-4458-841e-d145ce5f221f
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_migrate_articles
 _core:
-  default_config_hash: _ul-hp1RuQhzLJGjMW4pqMvWj8l1Zy42PQ3qkmuz7EU
+  default_config_hash: yMiNvuY4mqBYthw4rWUY7kIAyaHbj5pXxsvrum2pPL4
 id: import_as_article_body
 class: null
 field_plugin_method: null
@@ -31,24 +31,25 @@ source:
       label: Nid
       selector: /attributes/nid
     -
-      name: uuid
-      label: uuid
-      selector: /attributes/uuid
+      name: vid
+      label: Vid
+      selector: /attributes/vid
     -
       name: description
       label: Description
       selector: /attributes/description
 process:
   id: nid
-  revision_id: nid
-  type:
-    plugin: default_value
-    default_value: formatted_text_block
+  revision_id: vid
   field_formatted_text_1/value:
-    plugin: image_inline_to_media
-    images_source: 'https://as.cornell.edu'
-    images_destination: 'public://inline-article-images'
-    source: description
+    -
+      plugin: image_inline_to_media
+      images_source: 'https://as.cornell.edu'
+      images_destination: 'public://inline-article-images'
+      source: description
+    -
+      plugin: skip_on_empty
+      method: row
   field_formatted_text_1/format:
     plugin: default_value
     default_value: full_html
