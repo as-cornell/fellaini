@@ -1,4 +1,4 @@
-uuid: 2bc498bb-1859-46ea-a77c-10d1d4733ee8
+uuid: 6152e971-ef69-460f-a132-ebad5c62f5f9
 langcode: en
 status: true
 dependencies:
@@ -48,8 +48,8 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_byline_reference:
-    weight: 13
-    label: hidden
+    weight: 12
+    label: above
     settings:
       link: true
     third_party_settings: {  }
@@ -57,7 +57,7 @@ content:
     region: content
   field_card_label:
     type: string
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings:
@@ -65,7 +65,7 @@ content:
     third_party_settings: {  }
   field_dateline:
     type: datetime_default
-    weight: 5
+    weight: 2
     region: content
     label: hidden
     settings:
@@ -74,7 +74,7 @@ content:
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_label
-    weight: 8
+    weight: 10
     region: content
     label: above
     settings:
@@ -89,7 +89,7 @@ content:
     third_party_settings: {  }
   field_image:
     type: entity_reference_entity_view
-    weight: 12
+    weight: 0
     label: hidden
     settings:
       view_mode: default
@@ -98,40 +98,46 @@ content:
     region: content
   field_media_source:
     type: string
-    weight: 4
+    weight: 5
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   field_pano_image:
-    type: entity_reference_entity_id
-    weight: 0
+    type: entity_reference_entity_view
+    weight: 4
     region: content
     label: hidden
-    settings: {  }
+    settings:
+      view_mode: full
+      link: false
     third_party_settings: {  }
   field_related_articles:
-    weight: 9
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
+    weight: 8
     region: content
+    label: hidden
+    settings:
+      view_mode: card_small
+      link: false
+    third_party_settings: {  }
   field_tags:
     type: entity_reference_label
-    weight: 10
+    weight: 9
     region: content
     label: above
     settings:
       link: true
     third_party_settings: {  }
-  links:
+  field_topics_and_disciplines:
+    type: entity_reference_label
     weight: 11
     region: content
-    settings: {  }
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
 hidden:
   body: true
-  field_topics_and_disciplines: true
+  links: true

@@ -1,14 +1,14 @@
-uuid: ff04909a-4754-433c-a277-9e7313b5d8f7
+uuid: 5f6221aa-f99f-4753-ac0f-e445ae61cbb7
 langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser
     - field.field.taxonomy_term.departments_programs.field_department_website
     - field.field.taxonomy_term.departments_programs.field_image
-    - image.style.thumbnail
     - taxonomy.vocabulary.departments_programs
   module:
-    - image
+    - entity_browser
     - link
     - path
     - text
@@ -36,12 +36,19 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_image:
-    type: image_image
+    type: entity_browser_entity_reference
     weight: 1
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
     third_party_settings: {  }
   name:
     type: string_textfield

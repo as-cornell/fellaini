@@ -6,16 +6,16 @@ use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\file\FileInterface;
 use Drupal\migrate\Row;
-use Drupal\media_entity\Entity\Media;
+use Drupal\media\Entity\Media;
 use Drupal\Core\Database\Database;
 use Drupal\Component\Utility\Unicode;
 
 /**
  * @MigrateProcessPlugin(
- *   id = "fix_html_issues"
+ *   id = "image_inline_to_media"
  * )
  */
-class FixHTMLissues extends ProcessPluginBase {
+class InlineMediaMigrate extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
@@ -50,7 +50,7 @@ class FixHTMLissues extends ProcessPluginBase {
               else {
                 $file_contents = file_get_contents($images_source . $filepath);
               }
-              $new_destination = $destination . '/' . $row->getSourceProperty('id') . '-' . $filename;
+              $new_destination = $destination . '/' . $filename;
 
               if (!empty($file_contents)) {
 
@@ -59,24 +59,22 @@ class FixHTMLissues extends ProcessPluginBase {
                   // Create media entity using saved file.
                   $media = Media::create([
                     'bundle'      => 'image',
-                    'uid'         => \Drupal::currentUser()->id(),
-                    'langcode'    => \Drupal::languageManager()->getDefaultLanguage()->getId(),
-                    'status'      => Media::PUBLISHED,
-                    'field_image' => [
+                    'uid'         => 1,
+                    'langcode'    => 'en',
+                    'field_media_image' => [
                       'target_id' => $file->id(),
-                      'alt'       => !empty($tag_attributes[2][0]) ? Unicode::truncate(str_replace('"', '', $tag_attributes[2][0]), 512) : '',
-                      'title'     => !empty($tag_attributes[2][0]) ? Unicode::truncate(str_replace('"', '', $tag_attributes[2][0]), 1024) : '',
+                      'alt'       => 'I am alt.',
                     ],
                   ]);
 
                   $media->save();
                   $uuid = $this->getMediaUuid($file);
-                  $html = str_replace($img_tag, '<p><drupal-entity
-                    data-embed-button="embed_image"
-                    data-entity-embed-display="entity_reference:media_thumbnail"
-                    data-entity-embed-display-settings="{"image_style":"large","image_link":""}"
+                  $html = str_replace($img_tag, '<drupal-entity
+                    data-align="left"
+                    data-embed-button="media_entity_embed"
+                    data-entity-embed-display="view_mode:media.full"
                     data-entity-type="media"
-                    data-entity-uuid="' . $uuid . '"></drupal-entity>></p>', $html);
+                    data-entity-uuid="' . $uuid . '"></drupal-entity>', $html);
                 }
 
               }
@@ -93,10 +91,10 @@ class FixHTMLissues extends ProcessPluginBase {
    * Get Media UUID by File ID.
    */
   protected function getMediaUuid(FileInterface $file) {
-    $query = db_select('media__field_image', 'f', ['target' => 'default']);
+    $query = db_select('media__field_media_image', 'f', ['target' => 'default']);
     $query->innerJoin('media', 'm', 'm.mid = f.entity_id');
     $query->fields('m', ['uuid']);
-    $query->condition('f.field_image_target_id', $file->id());
+    $query->condition('f.field_media_image_target_id', $file->id());
     $uuid = $query->execute()->fetchField();
     return $uuid;
   }
