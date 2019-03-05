@@ -1,0 +1,10 @@
+uuid: 00daa909-ae31-41f6-aaa0-8554932ef98d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.inline
+label: Inline
+targetEntityType: media
+cache: true

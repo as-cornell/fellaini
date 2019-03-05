@@ -6,6 +6,7 @@ module:
   as_stats: 0
   as_topics: 0
   automated_cron: 0
+  better_exposed_filters: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -16,13 +17,17 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  crop: 0
   ctools: 0
+  date_popup: 0
   datetime: 0
   dblog: 0
   devel: 0
   dynamic_page_cache: 0
   editor: 0
+  embed: 0
   entity_browser: 0
+  entity_embed: 0
   entity_reference_revisions: 0
   field: 0
   field_group: 0
@@ -32,6 +37,7 @@ module:
   help: 0
   history: 0
   image: 0
+  image_widget_crop: 0
   kint: 0
   layout_discovery: 0
   link: 0
@@ -52,14 +58,18 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   twig_tweak: 0
   unified_twig_ext: 0
+  update: 0
   user: 0
+  views_taxonomy_term_name_into_id: 0
   views_ui: 0
   viewsreference: 0
   menu_link_content: 1
+  pathauto: 1
   views: 10
   paragraphs: 11
   standard: 1000
@@ -69,7 +79,7 @@ theme:
   seven: 0
   rooney: 0
   pathways: 0
-  material_admin: 0
+  seven_eleven: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

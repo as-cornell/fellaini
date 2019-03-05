@@ -44,7 +44,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Filter
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -333,92 +333,6 @@ display:
           entity_type: media
           plugin_id: entity_browser_select
       filters:
-        status:
-          id: status
-          table: media_field_data
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '0'
-          group: 1
-          exposed: true
-          expose:
-            operator_id: ''
-            label: 'True'
-            description: null
-            use_operator: false
-            operator: status_op
-            identifier: status
-            required: true
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: true
-          group_info:
-            label: 'Publishing status'
-            description: ''
-            identifier: status
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1:
-                title: Published
-                operator: '='
-                value: '1'
-              2:
-                title: Unpublished
-                operator: '='
-                value: '0'
-          entity_type: media
-          entity_field: status
-          plugin_id: boolean
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: bundle_op
-            label: Provider
-            description: ''
-            use_operator: false
-            operator: bundle_op
-            identifier: provider
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         name:
           id: name
           table: media_field_data
@@ -432,7 +346,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: 'Media name'
+            label: Title
             description: ''
             use_operator: false
             operator: name_op
@@ -443,6 +357,8 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              administrator: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -458,46 +374,6 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: string
-        langcode:
-          id: langcode
-          table: media_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: langcode_op
-            label: Language
-            description: ''
-            use_operator: false
-            operator: langcode_op
-            identifier: langcode
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: langcode
-          plugin_id: language
       sorts: {  }
       header: {  }
       footer: {  }

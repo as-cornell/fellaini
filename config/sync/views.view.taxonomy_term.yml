@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.card
   module:
     - node
     - taxonomy
@@ -223,8 +223,22 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
-      header: {  }
+          relationship: none
+          view_mode: card
+      header:
+        entity_taxonomy_term:
+          id: entity_taxonomy_term
+          table: views
+          field: entity_taxonomy_term
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: true
+          target: '{{ raw_arguments.tid }}'
+          view_mode: full
+          bypass_access: false
+          plugin_id: entity
       footer: {  }
       empty: {  }
       relationships: {  }
