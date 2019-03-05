@@ -45,14 +45,17 @@ source:
 process:
   id: nid
   revision_id: nid
-  uuid: uuid
   type:
     plugin: default_value
     default_value: formatted_text_block
 
-  'field_formatted_text_1/value': description
+  'field_formatted_text_1/value':
+    plugin: image_inline_to_media
+    images_source: 'https://as.cornell.edu'
+    images_destination: 'public://inline-article-images'
+    source: description
 
   'field_formatted_text_1/format':
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
 

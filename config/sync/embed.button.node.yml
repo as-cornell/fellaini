@@ -1,0 +1,30 @@
+uuid: 28dcdcee-b50c-4bb0-9e0f-3e9dd2ba6de3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.page
+    - node.type.stat
+  content:
+    - 'file:file:0df4927b-b54b-416c-84c2-956e5cedc066'
+  module:
+    - entity_embed
+    - node
+_core:
+  default_config_hash: xgvZUh-eaMilacE1XYCQ9nLH-2-meOjCyofXSO82gqg
+label: Node
+id: node
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles:
+    - article
+    - page
+    - stat
+  display_plugins:
+    - 'view_mode:node.card_small'
+  entity_browser: ''
+  entity_browser_settings:
+    display_review: false
+icon_uuid: 0df4927b-b54b-416c-84c2-956e5cedc066

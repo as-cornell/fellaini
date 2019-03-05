@@ -136,7 +136,11 @@ process:
   created: created
   changed: changed
   path: path
-  'body/value': body
+  'body/value':
+    plugin: image_inline_to_media
+    images_source: 'https://as.cornell.edu'
+    images_destination: 'public://inline-article-images'
+    source: body
   'body/format':
     plugin: default_value
     default_value: full_html
@@ -162,9 +166,8 @@ process:
       delimiter: +
   field_byline: field_byline
   field_byline_reference:
-    -
-      plugin: entity_lookup
-      source: field_byline
+    plugin: entity_lookup
+    source: field_byline
   field_media_source: field_media_source
   field_dateline: field_dateline
   field_card_label: field_card_label

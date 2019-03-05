@@ -1,4 +1,4 @@
-uuid: 319a3081-0464-4af9-b138-c4856e9ec7ed
+uuid: 11f78ad3-c5da-47b2-9b03-6459984c3380
 langcode: en
 status: true
 dependencies:
@@ -27,7 +27,7 @@ content:
     type: link
     weight: 2
     region: content
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -39,7 +39,7 @@ content:
     type: entity_reference_entity_view
     weight: 0
     region: content
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false

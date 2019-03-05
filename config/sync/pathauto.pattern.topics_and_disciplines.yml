@@ -1,0 +1,23 @@
+uuid: 7c56f7e3-eda9-48f8-83d0-ed892b13c920
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: topics_and_disciplines
+label: 'Topics and Disciplines'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'topic/[term:name]'
+selection_criteria:
+  c1edf325-0ef4-416d-b4a1-2913a65bf8df:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      topics: topics
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: c1edf325-0ef4-416d-b4a1-2913a65bf8df
+selection_logic: and
+weight: -5
+relationships: {  }
