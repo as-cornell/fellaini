@@ -1,4 +1,4 @@
-uuid: 2cd0ac05-0eec-4458-841e-d145ce5f221f
+uuid: b77d9a57-4651-4b96-b6cf-90461c764030
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_migrate_articles
 _core:
-  default_config_hash: yMiNvuY4mqBYthw4rWUY7kIAyaHbj5pXxsvrum2pPL4
+  default_config_hash: 6BIb5Ex2Dlf3gRHWQvl1FD2_5Edw0QIIMF3PYEY3C9M
 id: import_as_article_body
 class: null
 field_plugin_method: null
@@ -31,16 +31,10 @@ source:
       label: Nid
       selector: /attributes/nid
     -
-      name: vid
-      label: Vid
-      selector: /attributes/vid
-    -
       name: description
       label: Description
       selector: /attributes/description
 process:
-  id: nid
-  revision_id: vid
   field_formatted_text_1/value:
     -
       plugin: image_inline_to_media

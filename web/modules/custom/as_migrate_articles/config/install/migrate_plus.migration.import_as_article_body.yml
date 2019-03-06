@@ -33,18 +33,12 @@ source:
       label: 'Nid'
       selector: /attributes/nid
     -
-      name: vid
-      label: 'Vid'
-      selector: /attributes/vid
-    -
       name: description
       label: 'Description'
       selector: /attributes/description
 
 
 process:
-  id: nid
-  revision_id: vid
   'field_formatted_text_1/value':
     -
       plugin: image_inline_to_media
