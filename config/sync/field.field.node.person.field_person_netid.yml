@@ -1,0 +1,21 @@
+uuid: 33735d61-6977-4dd4-bd1e-07f0b9ad72f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_netid
+    - node.type.person
+_core:
+  default_config_hash: Fl0q6YZrzainJjoDHwbhdgB0r9h_hvz9owjc4smWkUI
+id: node.person.field_person_netid
+field_name: field_person_netid
+entity_type: node
+bundle: person
+label: 'Person NetID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
