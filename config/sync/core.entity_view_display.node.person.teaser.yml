@@ -1,0 +1,26 @@
+uuid: dc1bbad5-58a0-48f4-a54b-1fba0e8e6a21
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.field_links
+    - field.field.node.person.field_person_netid
+    - node.type.person
+  module:
+    - user
+_core:
+  default_config_hash: lbM5wwEf880q3lkGrhHKIcQypiLSUQd1JaiqJVx3V_s
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_links: true
+  field_person_netid: true

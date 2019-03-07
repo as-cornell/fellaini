@@ -1,0 +1,23 @@
+uuid: 1b313164-b725-4ea5-8fa0-4fe02bb68f0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: uhNti98HRfR2FbB3pX9PVR7NJNLRbTtIdscwlAKw0cw
+id: node.field_person_netid
+field_name: field_person_netid
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
