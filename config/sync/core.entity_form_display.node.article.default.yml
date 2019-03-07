@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.article.field_media_source
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_people
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
@@ -25,7 +26,6 @@ dependencies:
     - field_group
     - paragraphs
     - path
-    - text
 third_party_settings:
   field_group:
     group_article:
@@ -133,15 +133,6 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 3
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 3
@@ -253,6 +244,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_related_people:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_tags:
     type: entity_reference_autocomplete
     weight: 19
@@ -316,4 +316,5 @@ content:
     region: content
     third_party_settings: {  }
 hidden:
+  body: true
   field_featured_audio_video: true

@@ -1,0 +1,25 @@
+uuid: e1f191cf-3268-449d-8612-e652d160f782
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links
+    - node.type.person
+  module:
+    - link
+_core:
+  default_config_hash: zr2WU7Dv7JldPL9Hjt1BVtY7ywuTunLEHSAfGaknmeg
+id: node.person.field_links
+field_name: field_links
+entity_type: node
+bundle: person
+label: 'Link to full record'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
