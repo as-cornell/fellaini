@@ -1,0 +1,57 @@
+# Migration configuration for imported stats.
+id: import_as_people_stub
+label: Migrate stats from D7 AS to D8 AS
+migration_group: people
+dependencies:
+  enforced:
+    module:
+      - as_people_stub
+
+destination:
+  plugin: entity:node
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'https://as.cornell.edu'
+
+  urls: https://as.cornell.edu/people-json
+
+  ids:
+    nid:
+      type: integer
+
+  item_selector: nodes/
+
+  fields:
+    -
+      name: nid
+      label: 'nid'
+      selector: /node/nid
+    -
+      name: title
+      label: 'Title'
+      selector: /node/title
+    -
+      name: field_person_netid
+      label: 'NetID'
+      selector: /node/person_netid
+    -
+      name: field_links
+      label: 'Links'
+      selector: /node/person_links
+
+
+process:
+  type:
+    plugin: default_value
+    default_value: person
+  nid: nid
+  title: title
+  field_person_netid: field_person_netid
+  field_links: field_links
+  uid:
+    plugin: default_value
+    default_value: 1

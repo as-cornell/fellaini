@@ -1,4 +1,4 @@
-uuid: 9add94aa-1521-442b-8bca-a78b0fbf5722
+uuid: c6b7dd8a-3e09-4750-808a-59a36635756b
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_migrate_articles
 _core:
-  default_config_hash: j-VVst8W7bHYcBJRg0PRucZVr3Wp8DDBcbj0rRz_rCY
+  default_config_hash: X7Tva1FrEqZX2CFrIY-9fBS8qijGUIWsIbfZdLBHg8A
 id: import_as_article
 class: null
 field_plugin_method: null
@@ -118,6 +118,10 @@ source:
       name: field_related_articles
       label: 'Related Articles'
       selector: /attributes/field_related_articles
+    -
+      name: field_related_people
+      label: 'Related People'
+      selector: /attributes/field_related_people
 process:
   type:
     plugin: default_value
@@ -177,6 +181,15 @@ process:
     -
       plugin: entity_lookup
       source: field_related_articles
+  field_related_people:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_related_people
+    -
+      plugin: explode
+      source: field_related_people
+      delimiter: +
   field_image/target_id:
     plugin: migration
     migration: import_as_article_image_media

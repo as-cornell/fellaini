@@ -1,0 +1,12 @@
+uuid: 63b92dcd-6b52-442a-9e18-d79c12ae91e7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vA8R-WBqI-vU2KtNMbAdNA8y5UVVyOJxsHXLUmMYIHg
+id: people
+label: People
+description: 'Migrate people content from Drupal 7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null
