@@ -3,6 +3,7 @@ module:
   as_departments_programs: 0
   as_majors_minors: 0
   as_migrate_articles: 0
+  as_people_stub: 0
   as_stats: 0
   as_topics: 0
   automated_cron: 0
