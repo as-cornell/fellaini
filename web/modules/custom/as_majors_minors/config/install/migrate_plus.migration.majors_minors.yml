@@ -37,14 +37,6 @@ source:
       label: 'Description'
       selector: node/description
     -
-      name: links_title
-      label: 'Links'
-      selector: node/links_title
-    -
-      name: links_url
-      label: 'Links'
-      selector: node/links_url
-    -
       name: field_level
       label: 'Links'
       selector: node/field_level
@@ -56,6 +48,18 @@ source:
       name: field_student_careers
       label: 'Links'
       selector: node/student_careers
+    -
+      name: links_title
+      label: 'Links'
+      selector: node/links_title
+    -
+      name: links_url
+      label: 'Links'
+      selector: node/links_url
+    -
+      name: field_links
+      label: 'Links'
+      selector: node/field_links
 
 
 destination:
@@ -77,8 +81,6 @@ process:
     plugin: migration
     migration: major_minor_image_media
     source: uuid
-  'field_links/uri': links_url
-  'field_links/title': links_title
   field_level:
     -
       plugin: skip_on_empty
@@ -106,3 +108,27 @@ process:
       plugin: explode
       source: field_student_careers
       delimiter: +
+  temp_links_url:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_links
+    -
+      plugin: explode
+      source: field_links
+      delimiter: +
+  temp_links_title:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: links_title
+    -
+      plugin: explode
+      source: links_title
+      delimiter: +
+  field_links:
+    plugin: iterator
+    source:
+      - '@temp_links_url'
+      - '@temp_links_title'
+

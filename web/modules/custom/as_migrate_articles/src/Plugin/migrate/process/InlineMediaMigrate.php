@@ -33,7 +33,7 @@ class InlineMediaMigrate extends ProcessPluginBase {
       foreach ($result as $img_tags) {
         foreach ($img_tags as $img_tag) {
 
-          preg_match_all('/(alt|title|src)=("[^"]*")/i', $img_tag, $tag_attributes);
+          preg_match_all('/(alt|src)=("[^"]*")/i', $img_tag, $tag_attributes);
 
           $filepath = str_replace('"', '', $tag_attributes[2][1]);
 
@@ -63,7 +63,7 @@ class InlineMediaMigrate extends ProcessPluginBase {
                     'langcode'    => 'en',
                     'field_media_image' => [
                       'target_id' => $file->id(),
-                      'alt'       => 'I am alt.',
+                      'alt'       =>  !empty($tag_attributes[2][1]) ? Unicode::truncate(str_replace('"', '', $tag_attributes[2][1]), 512) : '',
                     ],
                   ]);
 
