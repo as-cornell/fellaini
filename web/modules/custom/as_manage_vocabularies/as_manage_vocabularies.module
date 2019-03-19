@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains as_manage_vocabularies.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_manage_vocabularies_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_stats module.
+    case 'help.page.as_manage_vocabularies':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds menu entries to the edit content tab and an admin view with basic tasks') . '</p>';
+      return $output;
+
+    default:
+  }
+}
