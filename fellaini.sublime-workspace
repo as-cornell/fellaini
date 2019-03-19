@@ -1,0 +1,312 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 64.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mew72/Sites/drupal-vm-cd/config/config.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/fellaini.sublime-project",
+		"/Users/mew72/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/mew72/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/mew72/Library/Application Support/Sublime Text 3/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/.platform.app.yaml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/platformsh2slack.php",
+		"/Users/mew72/Desktop/bits/https:::hooks.slack.com:services:T0342F49M:BGTKR3M",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/migrate_plus.migration.import_as_article_body.yml",
+		"/Users/mew72/Downloads/mediastudies.wordpress.2019-03-05.xml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/Plugin/migrate/process/FixHTMLissues.php",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfiredept/templates/page.tpl.php",
+		"/Users/mew72/.zshrc",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfire/templates/node--article__card.tpl.php",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfire/templates/node--person__netid.tpl.php",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/composer.json",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/taxonomy.vocabulary.article_bylines.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/themes/custom/pathways/pathways.theme",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/optional/core.entity_view_display.node.article.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/migrate_plus.migration.import_as_article_pano_image.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/migrate_plus.migration.import_as_article_pano_image_media.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/install/field.field.node.article.field_department_program.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/install/field.field.node.article.field_article_body.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/install/field.storage.node.field_article_body.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/install/field.storage.node.field_related_articles.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/install/field.field.node.article.field_related_articles.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/install/field.field.node.article.field_pano_image.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/install/field.storage.node.field_pano_image.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/config/optional/core.entity_form_display.node.article.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_articles/as_articles.install.php",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/config/sync/core.extension.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/migrate_plus.migration.departments_programs_image_media.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/migrate_plus.migration.departments_programs.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/config/sync/core.entity_form_display.taxonomy_term.departments_programs.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/field.field.taxonomy_term.departments_programs.field_department_website.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/as_departments_programs.module",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/field.field.taxonomy_term.departments_programs.field_image.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/migrate_plus.migration_group.departments_programs.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/migrate_plus.migration.import_as_article_departments_programs.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/migrate_plus.migration.departments_programs_image.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_departments_programs/config/install/taxonomy.vocabulary.departments_programs.yml",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfiredept/templates/node--event.tpl.php",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/as_majors_minors.info.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/as_majors_minors.install.php",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/as_majors_minors.module",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/migrate_plus.migration.major_minor_image.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/migrate_plus.migration_group.majors_minors_gradfields.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/migrate_plus.migration.major_minor_image_media.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_people/config/install/migrate_plus.migration.people_node.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/migrate_plus.migration.majors_minors.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/taxonomy.vocabulary.majors_minors_gradfields.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/core.entity_form_display.taxonomy_term.majors_minors_gradfields.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/core.entity_view_display.taxonomy_term.majors_minors_gradfields.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.field.taxonomy_term.majors_minors_gradfields.field_description.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.field.taxonomy_term.majors_minors_gradfields.field_classes.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.storage.taxonomy_term.field_classes.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.storage.taxonomy_term.field_images.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.field.taxonomy_term.majors_minors_gradfields.field_images.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.field.taxonomy_term.majors_minors_gradfields.field_student_careers.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.field.taxonomy_term.majors_minors_gradfields.field_links.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.field.taxonomy_term.majors_minors_gradfields.field_level.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.storage.taxonomy_term.field_level.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.storage.taxonomy_term.field_links.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_majors_minors/config/install/field.storage.taxonomy_term.field_student_careers.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/migrate_plus.migration.import_as_article.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/migrate_plus.migration.import_as_stat.yml",
+		"/Users/mew72/.drush/site-aliases/ydfzxlmxa2d3a.site.yml",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/.htaccess",
+		"/Users/mew72/.drush/site-aliases/artscicornell.aliases.drushrc.php",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/migrate_plus.migration_group.stats.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/node.type.stat.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/paragraphs.paragraphs_type.multiple_stats.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/paragraphs.paragraphs_type.single_stat.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.storage.paragraph.field_stats.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.storage.paragraph.field_stat.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.storage.node.field_stat_number.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.storage.node.field_stat_description.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.field.paragraph.single_stat.field_stat.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.field.paragraph.multiple_stats.field_stats.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.field.node.stat.field_stat_number.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/field.field.node.stat.field_stat_description.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.entity_view_display.paragraph.single_stat.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.entity_view_display.paragraph.multiple_stats.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.entity_view_display.node.stat.teaser.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.entity_view_display.node.stat.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.entity_form_display.paragraph.single_stat.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.entity_form_display.paragraph.multiple_stats.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.entity_form_display.node.stat.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/config/install/core.base_field_override.node.stat.promote.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/config/sync/core.entity_form_display.paragraph.single_stat.default.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/as_stats.info.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/as_stats.module",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_stats/as_stats.install.php",
+		"/Users/mew72/Desktop/ICM/cornell-reduced/cornell-reduced-black.svg",
+		"/Users/mew72/.drush/sites/drupalvm.site.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/composer.json",
+		"/Users/mew72/Desktop/bits/code snippets/symantic versioning",
+		"/Users/mew72/Sites/devshop/docker-compose.yml",
+		"/Users/mew72/Desktop/bits/code snippets/docker exec -u root -t -i fb26a1953139 :bin:bash",
+		"/Users/mew72/.ssh/known_hosts",
+		"/Users/mew72/.ssh/id_rsa.pub",
+		"/Users/mew72/.bash_profile",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfiredept/templates/bean--dept_landing_page--default.tpl.php",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/modules/contrib/ckeditor/ckeditor.config.js",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/modules/contrib/wysiwyg_a11ychecker/README.md",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfire/ckeditor.config.js",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfiredept/templates/bean--department_homepage--default.tpl.php",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfiredept/ckeditor.config.js",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/modules/contrib/wysiwyg/README.txt",
+		"/Users/mew72/Sites/devshop/Vagrantfile",
+		"/private/etc/hosts",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/simplesamlphp/config/authsources.php",
+		"/Users/mew72/Sites/devshop/vagrant/Vagrantfile",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/sites.php",
+		"/Users/mew72/Sites/devshop/base/metadata.json",
+		"/Users/mew72/Desktop/bits/code snippets/certdomains-new.php",
+		"/Users/mew72/Desktop/prod_as_cornell_edu_interm.cer",
+		"/Users/mew72/Desktop/prod_as_cornell_edu_cert.cer",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/themes/campfiredept/templates/node--course__spotlight.tpl.php",
+		"/Users/mew72/Desktop/AFC_FI_Training_Troubleshooting_Manual[1].html",
+		"/Users/mew72/Desktop/electricalcheck.html",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/modules/contrib/wysiwyg/editors/ckeditor.inc",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/libraries/ckeditor/plugins/image/dialogs/image.js",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/libraries/ckeditor/CHANGES.md",
+		"/Users/mew72/Sites/devdesktop/artscicornell-prod/docroot/sites/all/modules/contrib/views/theme/views-view.tpl.php",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/migrate_plus.migration.import_as_article_departments.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/migrate_plus.migration.import_as_article_image_media.yml",
+		"/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web/modules/custom/as_migrate_articles/config/install/migrate_plus.migration.import_as_article_image.yml"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 113.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "fellaini.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"play",
+				"provisioning/playbook.yml"
+			],
+			[
+				"featrea",
+				"docroot/sites/all/modules/contrib/features/README.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 450.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
