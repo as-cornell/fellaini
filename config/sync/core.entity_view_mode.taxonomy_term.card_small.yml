@@ -1,0 +1,10 @@
+uuid: 355d5215-eafd-4901-a382-9c697d7d3210
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.card_small
+label: 'Card Small'
+targetEntityType: taxonomy_term
+cache: true

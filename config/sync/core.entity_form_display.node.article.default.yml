@@ -96,6 +96,8 @@ third_party_settings:
     group_body:
       children:
         - field_article_body
+        - field_related_articles
+        - field_related_people
       parent_name: group_article
       weight: 16
       format_type: tab
@@ -236,7 +238,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_related_articles:
-    weight: 2
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -245,7 +247,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_related_people:
-    weight: 31
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
