@@ -55,11 +55,11 @@
  */
 
 $sites = array(
-  'fellaini.cucas8.test' => 'default',
-  'local.second.cucas8.test' => 'second',
-  'local.people.cucas8.test' => 'people',
-  'local.8c.cucas8.test' => '8c',
-  'local.8d.cucas8.test' => '8d',
+  'fellaini.local' => 'default',
+  'second.fellaini.local' => 'second',
+  'people.fellaini.local' => 'people',
+  '8c.fellaini.local' => '8c',
+  '8d.fellaini.local' => '8d',
 );
 
 if (!empty($_ENV['PLATFORM_ROUTES'])) {
@@ -83,7 +83,6 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 // Add additional domain mappings here. The most common example will be to manually
 // specify your production domains.
 
-
-$sites['local.people.cucas8.test'] = 'people';
+$sites['asd8.as.cornell.edu'] = 'default';
 $sites['second.asd8.as.cornell.edu'] = 'second';
 $sites['people.asd8.as.cornell.edu'] = 'people';

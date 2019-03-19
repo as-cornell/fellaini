@@ -1,0 +1,10 @@
+ "settings": {
+   "xdebug": {
+     "path_mapping": {
+       "/var/www/fellaini/web" : "/Users/mew72/Sites/drupal-vm-cd/sites/fellaini/web",
+     },
+     "url": "http://fellaini.cucas8.test/",
+     "super_globals": true,
+     "close_on_stop": true
+   }
+ }
