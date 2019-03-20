@@ -1,0 +1,12 @@
+{# /**
+* just a simple wrapping container
+*/
+ #}
+
+{% set base_class = base_class | default('') %}
+{% set modifiers = modifiers | default(['']) %}
+{% set classes = classes | default(['']) %}
+
+<div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}>
+    {{content}}
+</div>

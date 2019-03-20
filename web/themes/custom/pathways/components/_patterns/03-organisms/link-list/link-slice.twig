@@ -9,6 +9,11 @@
       "heading_level" : 3,
       "heading" : heading
   } %}
-  {{links}}
+  {% include "@organisms/link-list/_link-list.twig" with{
+        links: links,
+        group_base_class : 'links',
+        group_modifiers : ['horizontal']
+    } %}
+
     
 </div>
