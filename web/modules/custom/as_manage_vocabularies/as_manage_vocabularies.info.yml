@@ -1,0 +1,5 @@
+name: 'A&S Manage Vocabularies'
+type: module
+description: 'Adds menu entries to the edit content tab and an admin view with basic tasks'
+core: 8.x
+package: 'AS'
