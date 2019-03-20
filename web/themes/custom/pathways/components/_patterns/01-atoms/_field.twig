@@ -48,6 +48,10 @@
 {% set group_modifiers = group_modifiers | default(['']) %}
 {% set group_classes = group_classes | default(['']) %}
 
+{# selfTag, to add the content to a class #}
+
+{% set self_tag = self_tag | default('') %}
+
 
 
 {# {{ kint(modifiers) }} #}
@@ -57,8 +61,8 @@
             <!-- multiple no label -->
             <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
                 {% for item in items %}
-                {# <div{{ item.attributes }}>{{ item.content }}</div> #}
-                {{ item.content }}
+                <div{{ item.attributes }} {% if self_tag %}class="{{item.content}}" {% endif %}>{{ item.content }}</div>
+                {# {{ item.content }} #}
             {% endfor %}
             </div>
         {% else %}
@@ -70,24 +74,16 @@
         {% endfor %}
     {% endif %}
     {% else %}
-{% include "@atoms/headings/_heading.twig" with {
+    {% include "@atoms/headings/_heading.twig" with {
         "heading_level" : 3,
         "heading" : label
     } %}
 
     <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
 
-
-       
-        {# {% if multiple %}
-            <div{{attributes}}>
-    
-            {% endif %} #}
             {% for item in items %}
                 {{ item.content }}
             {% endfor %}
-            {# {% if multiple %}
-            </div>
-        {% endif %} #}
+
     </div>
 {% endif %}
