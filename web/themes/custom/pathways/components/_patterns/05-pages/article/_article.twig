@@ -10,7 +10,8 @@
 {% extends "@templates/_default.twig" %}
 
 {% block page_content %}
-    {# {{article_field_image_media}} #}
+
+    {% if article_pano_img_alt %}
     <div class="pano">
     {% include "@atoms/04-images/00-image/figure.twig" with { 
 
@@ -23,6 +24,7 @@
         } %}
 
     </div>
+    {% endif %}
     <div class="title">
         {% include "@atoms/headings/_heading.twig" with {
             "heading_level" : 1,
