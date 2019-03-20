@@ -24,8 +24,13 @@
  */
 #}
 {# {{kint(_context)}} #}
-<h1>{{ name }}</h1>
-<div{{ attributes }}>
-  {{content}}
-  
-</div>
+
+{% include "@pages/major-minor/_major-minor.twig" with{
+    mm_title : name,
+    mm_level: content.field_level,
+    mm_image: content.field_image,
+    mm_links_list: content.field_links,
+    mm_description: content.description,
+    mm_body: content.field_major_minor_components
+
+} %}
