@@ -126,9 +126,4 @@ process:
       plugin: explode
       source: links_title
       delimiter: +
-  field_links:
-    plugin: iterator
-    source:
-      - '@temp_links_url'
-      - '@temp_links_title'
-
+  field_links: '@temp_links_url'
