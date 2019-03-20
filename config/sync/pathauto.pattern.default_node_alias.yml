@@ -7,9 +7,9 @@ dependencies:
 id: default_node_alias
 label: 'Default Node Alias'
 type: 'canonical_entities:node'
-pattern: '[current-page:title]'
+pattern: '[node:title]'
 selection_criteria:
-  c07b181f-986d-406a-a252-0a957590992e:
+  3f637972-4845-4bfe-85c2-28a534bd423b:
     id: node_type
     bundles:
       landing_page: landing_page
@@ -18,7 +18,7 @@ selection_criteria:
     negate: false
     context_mapping:
       node: node
-    uuid: c07b181f-986d-406a-a252-0a957590992e
+    uuid: 3f637972-4845-4bfe-85c2-28a534bd423b
 selection_logic: and
 weight: -10
 relationships: {  }
