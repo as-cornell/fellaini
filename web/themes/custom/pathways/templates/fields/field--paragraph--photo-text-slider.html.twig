@@ -1,0 +1,31 @@
+{#
+    /**
+     * @file
+      loops over each item in the paragrah and runs them through 
+        @molecules/content/photo-text/photo-text.twig
+
+     */
+    #}
+{# 
+
+#}
+{% set base_class = base_class | default('') %}
+{% set modifiers = modifiers | default(['']) %}
+{% set classes = classes | default(['']) %}
+
+{# Group/container bem #}
+{% set group_base_class = group_base_class | default('') %}
+{% set group_modifiers = group_modifiers | default(['']) %}
+{% set group_classes = group_classes | default(['']) %}
+
+{# selfTag, to add the content to a class #}
+
+{% set self_tag = self_tag | default('') %}
+
+
+
+{# {{ kint(modifiers) }} #}
+
+    {% for item in items %}
+            <li class="slide" aria-hidden="true">{{ item.content }}</li>
+    {% endfor %}
