@@ -1,6 +1,3 @@
-alert('shit worked');
-console.log('Holy fucking shit')
-
 carousel = (function () {
 
     if (!document.querySelector ||
@@ -15,7 +12,7 @@ carousel = (function () {
     var prev = box.querySelector('.prev');
     var counter = 0;
     var items = box.querySelectorAll('.slide');
-    console.log('items');
+    // console.log('items');
     var amount = items.length; 
     var current = items[0];
 
