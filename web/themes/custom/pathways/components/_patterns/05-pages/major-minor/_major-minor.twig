@@ -16,16 +16,12 @@
         "base_class" : 'description'
     } %}
 
-    {# {{mm_links_list}} #}
-
     {% include "@atoms/_simple-container.twig" with{
         "content" : mm_links_list,
         "base_class" : 'links',
         "group_modifiers" : ['block']
     } %}
-    {# {{mm_links_list}} #}
 
-    {# {{mm_links}} #}
     {% include "@atoms/_simple-container.twig" with{
         "content" : mm_image,
         "base_class" : 'image'
