@@ -126,4 +126,10 @@ process:
       plugin: explode
       source: links_title
       delimiter: +
+  temp_links:
+    plugin: merge
+    source:
+      - '@temp_links_title'
+      - '@temp_links_url'
   field_links: '@temp_links_url'
+
