@@ -21,8 +21,8 @@ application:
     user: 'drupal'
     type: 'ssh'
   options:
-    learning: false
+    learning: true
 #    target: 'site-alias.dev'
 #    uri: 'multi-site.dev'
-    generate-inline: false
-    generate-chain: false
+    generate-inline: true
+    generate-chain: true
