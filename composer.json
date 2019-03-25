@@ -58,7 +58,8 @@
         "drupal/stage_file_proxy": "^1.0",
         "drupal/views_taxonomy_term_name_into_id": "^1.0",
         "drupal/imagecache_external": "^1.0",
-        "hanoii/platformsh2slack": "^1.5"
+        "hanoii/platformsh2slack": "^1.5",
+        "drupal/inline_entity_form": "^1.0"
 
     },
     "require-dev": {
