@@ -1,0 +1,5 @@
+name: 'A&S Page Components'
+type: module
+description: 'Provides custom entity types used as page components inside of nodes like Articles and Basic Pages and taxonomy terms like Department/Program and Major/Minor as featured on as.cornell.edu.'
+core: 8.x
+package: 'AS'
