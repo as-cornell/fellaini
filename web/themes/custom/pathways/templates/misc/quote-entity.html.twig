@@ -1,0 +1,35 @@
+{#
+/**
+ * @file quote_entity.html.twig
+ * Default theme implementation to present Quote entity data.
+ *
+ * This template is used when viewing Quote entity pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_quote_entity()
+ *
+ * @ingroup themeable
+ */
+Moved it to misc from the /modules to do includes and stuff.
+
+#}
+{% include "@atoms/blockquote/blockquote.twig" with {
+    quote : content.field_quote,
+    person : content.field_person,
+    as_person : content.field_as_person
+} %}
+
+{# <div{{attributes.addClass('quote_entity')}}>
+    {% if content %}
+
+        <blockquote>
+            {{content.field_quote}}
+            {{content.field_person}}
+            <cite>{{content.field_as_person}}</cite>
+        </blockquote>
+    {% endif %}
+</div> #}
