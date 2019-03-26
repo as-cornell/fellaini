@@ -1,0 +1,18 @@
+
+# Item menu items definition
+entity.page_component_entity.collection:
+  title: 'Item list'
+  route_name: entity.page_component_entity.collection
+  description: 'List Item entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Item type menu items definition
+entity.page_component_entity_type.collection:
+  title: 'Item type'
+  route_name: entity.page_component_entity_type.collection
+  description: 'List Item type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

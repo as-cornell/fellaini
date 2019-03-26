@@ -1,0 +1,12 @@
+as_page_components.page_component_entity_type.*:
+  type: config_entity
+  label: 'Item type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

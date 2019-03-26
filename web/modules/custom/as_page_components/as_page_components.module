@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains as_page_components.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_page_components_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_page_components module.
+    case 'help.page.as_page_components':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides custom entity types used as page components inside of nodes like Articles and Basic Pages and taxonomy terms like Department/Program and Major/Minor as featured on as.cornell.edu.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function as_page_components_theme() {
+  $theme = [];
+  $theme['page_component_entity'] = [
+    'render element' => 'elements',
+    'file' => 'page_component_entity.page.inc',
+    'template' => 'page_component_entity',
+  ];
+  $theme['page_component_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'page_component_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function as_page_components_theme_suggestions_page_component_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#page_component_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'page_component_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'page_component_entity__' . $entity->bundle();
+  $suggestions[] = 'page_component_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'page_component_entity__' . $entity->id();
+  $suggestions[] = 'page_component_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

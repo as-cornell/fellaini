@@ -1,0 +1,14 @@
+{
+  "name": "drupal/as_page_components",
+  "type": "drupal-module",
+  "description": "Provides custom entity types used as page components inside of nodes like Articles and Basic Pages and taxonomy terms like Department/Program and Major/Minor as featured on as.cornell.edu.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/as_page_components",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/as_page_components",
+    "source": "http://cgit.drupalcode.org/as_page_components"
+  },
+  "require": { }
+}
