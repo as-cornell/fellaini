@@ -1,39 +1,42 @@
-uuid: 9eb7d9cf-c881-4151-94c0-f33b6cfcc06a
+uuid: 6eed5d7d-4444-4685-9151-5136019eb7a5
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.pano_image
+    - entity_browser.browser.media_entity_browser
     - field.field.page_component_entity.pano_image.field_pano_image
+  module:
+    - entity_browser
+_core:
+  default_config_hash: 0Bjhtpaq9QOkDcrzDlGl2L_7YVedAhGuDl2MmiLPPRU
 id: page_component_entity.pano_image.default
 targetEntityType: page_component_entity
 bundle: pano_image
 mode: default
 content:
   field_pano_image:
-    weight: 26
+    weight: 1
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  user_id: true

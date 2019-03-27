@@ -1,4 +1,4 @@
-uuid: 37e8de50-7334-4544-af04-8ecfd1f3bba2
+uuid: 31817623-a82f-444e-956a-99a88748f433
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - media.type.photo_text
   module:
     - text
+_core:
+  default_config_hash: mSyzZOSMgOAUFW9gYtvEvd9XRrQ0KBOY0wcTzNwc898
 id: media.photo_text.field_photo_text_text
 field_name: field_photo_text_text
 entity_type: media

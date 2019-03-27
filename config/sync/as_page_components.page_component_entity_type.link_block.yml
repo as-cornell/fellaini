@@ -1,6 +1,8 @@
-uuid: 8813ebda-fd00-406b-81ef-a8aff6efa1f5
+uuid: a28b6dae-b807-4b4d-ab65-643a8812da19
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: yjvWQsRlleIjc42-1TxTvyxy2wtRFy_x3U_gEys8mE4
 id: link_block
 label: 'Link Block'

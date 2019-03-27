@@ -1,10 +1,12 @@
-uuid: 8274e63c-5465-4f5b-a67c-70f076d896ec
+uuid: 84e65bef-9be6-4e56-9e34-77a753a4d445
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
     - text
+_core:
+  default_config_hash: '-wVqiditFZ_a8FoWWMCLuk7nHhapAXLcq6mGl9jrJ1E'
 id: page_component_entity.field_formatted_text
 field_name: field_formatted_text
 entity_type: page_component_entity

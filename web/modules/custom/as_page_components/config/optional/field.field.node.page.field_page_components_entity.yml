@@ -16,7 +16,7 @@ id: node.page.field_page_components_entity
 field_name: field_page_components_entity
 entity_type: node
 bundle: page
-label: 'Page Components entity'
+label: 'Page Components'
 description: 'Select items to add to the page.'
 required: false
 translatable: false

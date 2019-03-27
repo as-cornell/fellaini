@@ -1,4 +1,4 @@
-uuid: 22f80767-4201-4c06-a2ae-2c0ead5efa56
+uuid: 0be74c9a-8e8d-4e87-be15-1c2c96151a5b
 langcode: en
 status: true
 dependencies:
@@ -8,15 +8,16 @@ dependencies:
     - field.field.page_component_entity.link_block.field_link
   module:
     - link
-    - user
+_core:
+  default_config_hash: AVHEL8Mr9WlXQpoRvd8cTHH0ezdHE8_mvilqW58QXDY
 id: page_component_entity.link_block.default
 targetEntityType: page_component_entity
 bundle: link_block
 mode: default
 content:
   field_block_title:
-    weight: 2
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -24,7 +25,7 @@ content:
     region: content
   field_link:
     weight: 1
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -34,19 +35,6 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true

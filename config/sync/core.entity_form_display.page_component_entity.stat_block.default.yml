@@ -1,17 +1,19 @@
-uuid: fe54a713-3117-46a0-8f85-d01d92ec821f
+uuid: 40be37da-c471-4bbd-a0f7-1a63609ffbc3
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.stat_block
     - field.field.page_component_entity.stat_block.field_stats
+_core:
+  default_config_hash: HH1TnZJ_p2WcDqlXYsnlkuBOyskNJE9CUIdwJUFdHrs
 id: page_component_entity.stat_block.default
 targetEntityType: page_component_entity
 bundle: stat_block
 mode: default
 content:
   field_stats:
-    weight: 26
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -21,19 +23,11 @@ content:
     region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  user_id: true

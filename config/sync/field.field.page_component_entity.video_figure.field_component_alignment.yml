@@ -1,4 +1,4 @@
-uuid: c9a9e8ed-aa46-44ba-9fa1-a9f1981a7129
+uuid: 706e4515-e9f6-4990-be41-43453c675ec8
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - field.storage.page_component_entity.field_component_alignment
   module:
     - options
+_core:
+  default_config_hash: Gl_3GKEpigqo6pCr4cJhwXRou4zqZ15lqzKfT-qqwFc
 id: page_component_entity.video_figure.field_component_alignment
 field_name: field_component_alignment
 entity_type: page_component_entity

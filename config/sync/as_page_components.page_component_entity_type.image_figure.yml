@@ -1,6 +1,8 @@
-uuid: 396e2894-a6a8-4c29-8944-131d3fbae975
+uuid: 1e56397a-71bd-4b02-99e5-dd7472870732
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: bU-F7xcLL28hCwo5e1xNnz2qsTo5zQ_4lpR6cTywhgM
 id: image_figure
 label: 'Image Figure'

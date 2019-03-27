@@ -1,9 +1,11 @@
-uuid: 6a8cc797-20fa-4df1-93c6-8e24edf11d60
+uuid: a27a05f8-8dfd-4db7-ab36-34a3c66cda7b
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
+_core:
+  default_config_hash: '-RUo8lbifT7StCYs-CV5vz25qUlSJyB1whB5xYdg4Zc'
 id: page_component_entity.field_video_embed_code
 field_name: field_video_embed_code
 entity_type: page_component_entity

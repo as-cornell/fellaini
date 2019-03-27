@@ -1,12 +1,12 @@
-uuid: dc548165-cd17-423a-952f-b4b421b107e4
+uuid: 6263548f-6cc1-4a23-98a0-a0f83f1eac64
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.photo_text_block
     - field.field.page_component_entity.photo_text_block.field_photo_text
-  module:
-    - user
+_core:
+  default_config_hash: kJU0pDocZ9P9c3XY6nVDD3RpjfPfeIEr95SW1V8o4lQ
 id: page_component_entity.photo_text_block.default
 targetEntityType: page_component_entity
 bundle: photo_text_block
@@ -14,26 +14,13 @@ mode: default
 content:
   field_photo_text:
     type: entity_reference_entity_view
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true

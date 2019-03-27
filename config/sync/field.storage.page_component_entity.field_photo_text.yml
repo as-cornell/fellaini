@@ -1,10 +1,12 @@
-uuid: 0eb3cfa8-2bee-47a1-b63e-1bbc77a6f534
+uuid: 5f2f1e5e-a91a-4647-a80f-ff35f38d80ca
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
     - media
+_core:
+  default_config_hash: psFL0-sgkDoEPkzS7F_SGEJtnW0Q2JOmBb8VlS83AeU
 id: page_component_entity.field_photo_text
 field_name: field_photo_text
 entity_type: page_component_entity

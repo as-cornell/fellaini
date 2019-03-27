@@ -1,6 +1,8 @@
-uuid: be9f1922-5519-4e66-9e82-39c7bfa54af5
+uuid: 61d23ce3-52e4-4921-b3c1-814a60e541db
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: eTNSY3CJF6GF_TNtUhyt32NLWWvssbzgIJJGDUxILNU
 id: video_figure
 label: 'Video Figure'

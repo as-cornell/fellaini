@@ -1,39 +1,42 @@
-uuid: 25fc6772-6680-485a-9192-d8d9fada1266
+uuid: 29058742-74ec-4f69-8957-03ee94cfd830
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.photo_text_block
+    - entity_browser.browser.media_entity_browser
     - field.field.page_component_entity.photo_text_block.field_photo_text
+  module:
+    - entity_browser
+_core:
+  default_config_hash: 2BLxj0t-zh9kf9rP7tcTFURrgK_oWtdiVUnXWy6RKxA
 id: page_component_entity.photo_text_block.default
 targetEntityType: page_component_entity
 bundle: photo_text_block
 mode: default
 content:
   field_photo_text:
-    weight: 26
+    weight: 1
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  user_id: true
