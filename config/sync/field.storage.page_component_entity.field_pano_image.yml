@@ -1,10 +1,12 @@
-uuid: d9ed861d-ccbb-4995-b5e8-e4f4e8e61b61
+uuid: bfcc042f-baa8-4a13-b6df-b692ea5c090f
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
     - media
+_core:
+  default_config_hash: NwEscUZ-2gPtANV8Hkt37t_G65RqjZTzuOok4KT9NbE
 id: page_component_entity.field_pano_image
 field_name: field_pano_image
 entity_type: page_component_entity

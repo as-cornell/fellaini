@@ -1,6 +1,8 @@
-uuid: 778aab73-19ff-4d81-85a9-8db4d20d03d5
+uuid: fc765a38-b2ca-4714-9c25-8d01fd8a1ff4
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: dtv7phTWJaV_-rM2s3MsVSbVCxfc9R0N8_m6IqJFwd4
 id: list_block
 label: 'List Block'

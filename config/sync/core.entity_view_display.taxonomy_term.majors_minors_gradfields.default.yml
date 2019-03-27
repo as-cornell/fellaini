@@ -1,4 +1,4 @@
-uuid: eb8e5ba6-c877-4838-a1c0-b7623596cadb
+uuid: da8e6c17-20f5-4764-93f4-9cffbc990d85
 langcode: en
 status: true
 dependencies:
@@ -7,29 +7,32 @@ dependencies:
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_links
+    - field.field.taxonomy_term.majors_minors_gradfields.field_major_minor_components
     - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
+    - field.field.taxonomy_term.majors_minors_gradfields.field_things
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
+    - entity_reference_revisions
     - link
     - options
     - text
 _core:
-  default_config_hash: QiDfumjrCyEPYtMwgoMc1fdekBmEmbrG_MJUR50hTzU
+  default_config_hash: paiqNyvsE8e77KNcqFe4dOybjvPdaUmEAFX_tv3_edE
 id: taxonomy_term.majors_minors_gradfields.default
 targetEntityType: taxonomy_term
 bundle: majors_minors_gradfields
 mode: default
 content:
   description:
-    type: text_default
-    weight: 1
-    region: content
     label: hidden
+    type: text_default
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
   field_classes:
-    weight: 3
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -37,7 +40,7 @@ content:
     region: content
   field_images:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -45,15 +48,15 @@ content:
     third_party_settings: {  }
     region: content
   field_level:
-    weight: 2
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_links:
-    weight: 5
-    label: above
+    weight: 3
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -63,12 +66,29 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_student_careers:
+  field_major_minor_components:
+    type: entity_reference_revisions_entity_view
     weight: 4
-    label: above
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_student_careers:
+    weight: 6
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_things:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden: {  }

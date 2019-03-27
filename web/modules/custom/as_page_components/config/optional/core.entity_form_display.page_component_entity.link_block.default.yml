@@ -13,7 +13,7 @@ bundle: link_block
 mode: default
 content:
   field_block_title:
-    weight: 27
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -21,7 +21,7 @@ content:
     type: string_textfield
     region: content
   field_link:
-    weight: 26
+    weight: 2
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -30,19 +30,11 @@ content:
     region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  user_id: true

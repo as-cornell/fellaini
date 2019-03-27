@@ -1,10 +1,12 @@
-uuid: 6f882509-c3d7-47db-aa9a-df290c3065ff
+uuid: 9db4a0f4-57d0-4cad-84e6-57eac5463f38
 langcode: en
 status: true
 dependencies:
   module:
     - link
     - media
+_core:
+  default_config_hash: dBXtYKuKKuMuWu7eKUrYBXKPAP0TEHroFamP5gWSHws
 id: media.field_photo_text_link
 field_name: field_photo_text_link
 entity_type: media

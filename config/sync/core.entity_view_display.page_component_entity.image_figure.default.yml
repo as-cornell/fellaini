@@ -1,4 +1,4 @@
-uuid: de96bf7b-7c53-4cda-8c72-1ea5cbbd4458
+uuid: a500de0d-9918-47e0-9fe7-fd637666bf4d
 langcode: en
 status: true
 dependencies:
@@ -8,41 +8,29 @@ dependencies:
     - field.field.page_component_entity.image_figure.field_figure_image
   module:
     - options
-    - user
+_core:
+  default_config_hash: sQSzpJFBLLYsY6NXGxj33y0CffmrPNyWhOY61491t9U
 id: page_component_entity.image_figure.default
 targetEntityType: page_component_entity
 bundle: image_figure
 mode: default
 content:
   field_component_alignment:
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_figure_image:
     type: entity_reference_entity_view
-    weight: 2
-    label: above
+    weight: 1
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true

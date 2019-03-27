@@ -1,10 +1,12 @@
-uuid: bd16d81e-d78f-4c86-87e4-bb4ff089cc5f
+uuid: fe46047a-3161-42b9-8691-469666fd6640
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_photo_text_title
     - media.type.photo_text
+_core:
+  default_config_hash: dhkup-g2lG53HCfGx-x54_vGcCcy4yeLtT76qkU1zeI
 id: media.photo_text.field_photo_text_title
 field_name: field_photo_text_title
 entity_type: media

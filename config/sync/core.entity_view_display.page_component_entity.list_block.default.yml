@@ -1,4 +1,4 @@
-uuid: 01778cd8-a85f-4992-b8ce-92078c9e4265
+uuid: 50d81498-e3f9-4b53-8858-b828d4b4a7ac
 langcode: en
 status: true
 dependencies:
@@ -6,35 +6,23 @@ dependencies:
     - as_page_components.page_component_entity_type.list_block
     - field.field.page_component_entity.list_block.field_list_reference
   module:
-    - user
     - viewsreference
+_core:
+  default_config_hash: tSlsi1cWH8zHhps8_-vQbD8NBxyE4es59KLA7RXeVTY
 id: page_component_entity.list_block.default
 targetEntityType: page_component_entity
 bundle: list_block
 mode: default
 content:
   field_list_reference:
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       plugin_types:
         - block
     third_party_settings: {  }
     type: viewsreference_formatter
     region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true

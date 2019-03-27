@@ -1,0 +1,21 @@
+uuid: ff63f8be-7262-4ba7-8c9d-9e1b63a0ef60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_things
+    - taxonomy.vocabulary.majors_minors_gradfields
+id: taxonomy_term.majors_minors_gradfields.field_things
+field_name: field_things
+entity_type: taxonomy_term
+bundle: majors_minors_gradfields
+label: things
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference

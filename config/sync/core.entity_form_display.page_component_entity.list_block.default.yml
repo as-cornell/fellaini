@@ -1,4 +1,4 @@
-uuid: e0697ad5-d655-4425-b37b-3a5369298252
+uuid: 3816798e-8382-41ef-95cc-a2d3a6a0a91d
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,15 @@ dependencies:
     - field.field.page_component_entity.list_block.field_list_reference
   module:
     - viewsreference
+_core:
+  default_config_hash: 7wWzC_zC-brrWIIih7s5Lh5OCBJ1KQHvF4DbW_VVGOw
 id: page_component_entity.list_block.default
 targetEntityType: page_component_entity
 bundle: list_block
 mode: default
 content:
   field_list_reference:
-    weight: 26
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: '60'
@@ -23,19 +25,11 @@ content:
     region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  user_id: true

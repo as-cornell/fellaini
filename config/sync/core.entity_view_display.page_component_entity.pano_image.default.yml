@@ -1,12 +1,12 @@
-uuid: 174f110e-1f1f-48c0-b2e1-278d92af82d0
+uuid: 55d6e286-88d1-44a8-ac24-9c5e0b3a5d59
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.pano_image
     - field.field.page_component_entity.pano_image.field_pano_image
-  module:
-    - user
+_core:
+  default_config_hash: Y3Mmm8LqYRUKU1kY5ZOCLJ0H7LU932DQPYDsxRRIx1Q
 id: page_component_entity.pano_image.default
 targetEntityType: page_component_entity
 bundle: pano_image
@@ -14,26 +14,13 @@ mode: default
 content:
   field_pano_image:
     type: entity_reference_entity_view
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true

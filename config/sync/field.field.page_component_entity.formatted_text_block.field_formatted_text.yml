@@ -1,4 +1,4 @@
-uuid: 1549f3b7-1ea7-4f0e-9c49-76110303ea43
+uuid: 4dce2fb1-6fc1-4e86-8f12-bf5b93b17db1
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - field.storage.page_component_entity.field_formatted_text
   module:
     - text
+_core:
+  default_config_hash: o0HHibiP3cc8Be8x4SAI6QNSPtq-xGq5ESrfbbJP_Zk
 id: page_component_entity.formatted_text_block.field_formatted_text
 field_name: field_formatted_text
 entity_type: page_component_entity

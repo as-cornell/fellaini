@@ -1,10 +1,12 @@
-uuid: 341001d4-73e2-4f43-9add-f44cdcb49391
+uuid: 4be08b82-607a-405a-b309-dce95c210de0
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
     - media
+_core:
+  default_config_hash: XblFtnMk78hQPqT0LeFaa2TsEHRUwfvMmr6r2peM5b8
 id: page_component_entity.field_figure_image
 field_name: field_figure_image
 entity_type: page_component_entity
