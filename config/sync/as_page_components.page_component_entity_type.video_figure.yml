@@ -1,0 +1,6 @@
+uuid: be9f1922-5519-4e66-9e82-39c7bfa54af5
+langcode: en
+status: true
+dependencies: {  }
+id: video_figure
+label: 'Video Figure'

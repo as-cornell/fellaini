@@ -1,0 +1,6 @@
+uuid: 778aab73-19ff-4d81-85a9-8db4d20d03d5
+langcode: en
+status: true
+dependencies: {  }
+id: list_block
+label: 'List Block'

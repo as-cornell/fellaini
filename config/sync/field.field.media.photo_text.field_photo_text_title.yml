@@ -1,0 +1,19 @@
+uuid: bd16d81e-d78f-4c86-87e4-bb4ff089cc5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_photo_text_title
+    - media.type.photo_text
+id: media.photo_text.field_photo_text_title
+field_name: field_photo_text_title
+entity_type: media
+bundle: photo_text
+label: 'Photo Text Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

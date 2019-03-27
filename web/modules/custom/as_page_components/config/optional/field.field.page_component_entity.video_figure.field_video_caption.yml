@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.video_figure
+    - field.storage.page_component_entity.field_video_caption
+id: page_component_entity.video_figure.field_video_caption
+field_name: field_video_caption
+entity_type: page_component_entity
+bundle: video_figure
+label: 'Video caption'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

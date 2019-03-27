@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_photo_text_text
+    - media.type.photo_text
+  module:
+    - text
+id: media.photo_text.field_photo_text_text
+field_name: field_photo_text_text
+entity_type: media
+bundle: photo_text
+label: 'Photo Text Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

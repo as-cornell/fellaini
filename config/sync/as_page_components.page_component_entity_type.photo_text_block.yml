@@ -1,0 +1,6 @@
+uuid: 18567d21-5438-494d-9046-75ee5e09b43b
+langcode: en
+status: true
+dependencies: {  }
+id: photo_text_block
+label: 'Photo Text Block'

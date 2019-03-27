@@ -1,0 +1,48 @@
+uuid: de96bf7b-7c53-4cda-8c72-1ea5cbbd4458
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.image_figure
+    - field.field.page_component_entity.image_figure.field_component_alignment
+    - field.field.page_component_entity.image_figure.field_figure_image
+  module:
+    - options
+    - user
+id: page_component_entity.image_figure.default
+targetEntityType: page_component_entity
+bundle: image_figure
+mode: default
+content:
+  field_component_alignment:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_figure_image:
+    type: entity_reference_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

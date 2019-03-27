@@ -1,9 +1,10 @@
 module:
-  as_admin_menu: 0
   as_articles: 0
   as_departments_programs: 0
   as_majors_minors: 0
+  as_manage_vocabularies: 0
   as_migrate_articles: 0
+  as_page_components: 0
   as_people_stub: 0
   as_stats: 0
   as_topics: 0
@@ -17,6 +18,7 @@ module:
   color: 0
   components: 0
   config: 0
+  config_delete: 0
   contact: 0
   contextual: 0
   crop: 0
@@ -29,6 +31,7 @@ module:
   editor: 0
   embed: 0
   entity_browser: 0
+  entity_browser_entity_form: 0
   entity_embed: 0
   entity_reference_revisions: 0
   field: 0
@@ -40,6 +43,7 @@ module:
   history: 0
   image: 0
   image_widget_crop: 0
+  inline_entity_form: 0
   kint: 0
   layout_discovery: 0
   link: 0
