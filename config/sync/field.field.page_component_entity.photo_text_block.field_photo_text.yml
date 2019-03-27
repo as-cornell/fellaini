@@ -1,0 +1,28 @@
+uuid: 4778780e-7849-4448-ac8f-cac4974f67cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.photo_text_block
+    - field.storage.page_component_entity.field_photo_text
+    - media.type.photo_text
+id: page_component_entity.photo_text_block.field_photo_text
+field_name: field_photo_text
+entity_type: page_component_entity
+bundle: photo_text_block
+label: 'Photo Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      photo_text: photo_text
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

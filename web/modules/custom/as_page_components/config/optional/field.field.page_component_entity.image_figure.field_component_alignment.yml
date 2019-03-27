@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.image_figure
+    - field.storage.page_component_entity.field_component_alignment
+  module:
+    - options
+id: page_component_entity.image_figure.field_component_alignment
+field_name: field_component_alignment
+entity_type: page_component_entity
+bundle: image_figure
+label: 'Component Alignment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

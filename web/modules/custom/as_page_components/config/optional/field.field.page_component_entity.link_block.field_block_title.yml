@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.link_block
+    - field.storage.page_component_entity.field_block_title
+id: page_component_entity.link_block.field_block_title
+field_name: field_block_title
+entity_type: page_component_entity
+bundle: link_block
+label: 'Block Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

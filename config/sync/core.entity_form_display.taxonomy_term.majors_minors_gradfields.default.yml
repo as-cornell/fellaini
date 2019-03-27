@@ -1,24 +1,20 @@
-uuid: c5545330-9a03-41ee-83fa-0c9092ae4942
+uuid: 1eb3e0e6-f0b5-44a7-bd8d-9f55b54be87a
 langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
     - field.field.taxonomy_term.majors_minors_gradfields.field_classes
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_links
-    - field.field.taxonomy_term.majors_minors_gradfields.field_major_minor_components
     - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
-    - entity_browser
     - link
-    - paragraphs
     - path
     - text
 _core:
-  default_config_hash: RnvuAg1vH_2RkNjXFRi4v3tpu4hkgcfcRnaPnygP_s8
+  default_config_hash: 0T-LJN4_GUU6Sgd-0xs6R2LvQig4XMA97IXVs9HrU5E
 id: taxonomy_term.majors_minors_gradfields.default
 targetEntityType: taxonomy_term
 bundle: majors_minors_gradfields
@@ -26,14 +22,14 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 3
+    weight: 2
     region: content
     settings:
-      placeholder: ''
       rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_classes:
-    weight: 7
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -41,54 +37,30 @@ content:
     type: string_textfield
     region: content
   field_images:
-    weight: 2
+    weight: 1
     settings:
-      entity_browser: media_entity_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: card_small
-      open: false
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_browser_entity_reference
+    type: entity_reference_autocomplete
     region: content
   field_level:
-    weight: 1
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_links:
-    weight: 4
+    weight: 6
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
     region: content
-  field_major_minor_components:
-    type: paragraphs
-    weight: 5
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-    third_party_settings: {  }
-    region: content
   field_student_careers:
-    weight: 8
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -105,7 +77,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

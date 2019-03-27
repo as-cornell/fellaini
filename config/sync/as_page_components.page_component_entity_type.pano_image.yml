@@ -1,0 +1,6 @@
+uuid: 3351c9c8-3620-4f41-a6b3-26fb65e6398d
+langcode: en
+status: true
+dependencies: {  }
+id: pano_image
+label: 'Pano Image'

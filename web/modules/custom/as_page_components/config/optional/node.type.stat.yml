@@ -1,0 +1,19 @@
+uuid: 5cae964d-e211-45f4-a1a1-5fe278274c97
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: HwmQhZddY0Eo4ty1wh3ev9OgthDSDkL3iDTaHec9kRs
+name: Stat
+type: stat
+description: 'Content type for stats and other short content to be displayed in cards in paragraphs on various pages.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
