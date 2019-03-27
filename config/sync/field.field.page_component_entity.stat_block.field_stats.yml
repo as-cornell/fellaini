@@ -1,0 +1,28 @@
+uuid: 6fcc6b1a-0605-4f9d-ab63-a34ec23d15d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.stat_block
+    - field.storage.page_component_entity.field_stats
+    - node.type.stat
+id: page_component_entity.stat_block.field_stats
+field_name: field_stats
+entity_type: page_component_entity
+bundle: stat_block
+label: Stats
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      stat: stat
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

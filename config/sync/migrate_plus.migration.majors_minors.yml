@@ -1,4 +1,4 @@
-uuid: e850117e-9851-4cc6-9934-95953d509d22
+uuid: 9aafe5ab-cb74-4577-abad-df04a56990a4
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_majors_minors
 _core:
-  default_config_hash: hLEiuvudV5KSvDCgRMxNXyQOkv8EFNoElqkhg5qgw7U
+  default_config_hash: kSNk2kMDtbVZecJxqYlT2Yi4eH_zfub-Qz5izrjOZgI
 id: majors_minors
 class: null
 field_plugin_method: null
@@ -39,14 +39,6 @@ source:
       label: Description
       selector: node/description
     -
-      name: links
-      label: Links
-      selector: node/links
-    -
-      name: links_url
-      label: Links
-      selector: node/links_url
-    -
       name: field_level
       label: Links
       selector: node/field_level
@@ -58,6 +50,18 @@ source:
       name: field_student_careers
       label: Links
       selector: node/student_careers
+    -
+      name: links_title
+      label: Links
+      selector: node/links_title
+    -
+      name: links_url
+      label: Links
+      selector: node/links_url
+    -
+      name: field_links
+      label: Links
+      selector: node/field_links
 process:
   uuid: uuid
   vid:
@@ -72,8 +76,6 @@ process:
     plugin: migration
     migration: major_minor_image_media
     source: uuid
-  field_links/uri: links
-  field_links/title: links_url
   field_level:
     -
       plugin: skip_on_empty
@@ -101,6 +103,30 @@ process:
       plugin: explode
       source: field_student_careers
       delimiter: +
+  temp_links_url:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_links
+    -
+      plugin: explode
+      source: field_links
+      delimiter: +
+  temp_links_title:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: links_title
+    -
+      plugin: explode
+      source: links_title
+      delimiter: +
+  temp_links:
+    plugin: merge
+    source:
+      - '@temp_links_title'
+      - '@temp_links_url'
+  field_links: '@temp_links_url'
 destination:
   plugin: 'entity:taxonomy_term'
 migration_dependencies: {  }

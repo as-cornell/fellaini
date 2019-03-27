@@ -1,0 +1,23 @@
+uuid: e173fa10-c199-47e3-abc7-ed5fca82d157
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_photo_text_link
+    - media.type.photo_text
+  module:
+    - link
+id: media.photo_text.field_photo_text_link
+field_name: field_photo_text_link
+entity_type: media
+bundle: photo_text
+label: 'Photo Text Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

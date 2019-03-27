@@ -1,0 +1,6 @@
+uuid: 13d0cb1d-dd8f-471c-8922-8723765e8901
+langcode: en
+status: true
+dependencies: {  }
+id: formatted_text_block
+label: 'Formatted Text Block'

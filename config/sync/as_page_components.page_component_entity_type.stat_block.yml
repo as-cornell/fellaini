@@ -1,0 +1,6 @@
+uuid: 7d2fca1b-1a7e-445d-893f-f4d695de2cdc
+langcode: en
+status: true
+dependencies: {  }
+id: stat_block
+label: 'Stat Block'

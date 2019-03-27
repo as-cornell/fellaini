@@ -1,0 +1,39 @@
+uuid: 25fc6772-6680-485a-9192-d8d9fada1266
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.photo_text_block
+    - field.field.page_component_entity.photo_text_block.field_photo_text
+id: page_component_entity.photo_text_block.default
+targetEntityType: page_component_entity
+bundle: photo_text_block
+mode: default
+content:
+  field_photo_text:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }
