@@ -1,46 +1,49 @@
-uuid: 7d6bfb36-57a8-461f-94fa-b65de6f1ce8a
+uuid: 35419e96-1047-4268-89f6-e03ba5a310a1
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.image_figure
+    - entity_browser.browser.media_entity_browser
     - field.field.page_component_entity.image_figure.field_component_alignment
     - field.field.page_component_entity.image_figure.field_figure_image
+  module:
+    - entity_browser
+_core:
+  default_config_hash: Oh2ixjU4-qp8plMbi4HsN0ZbzLq9gjoEArbRta9fkbw
 id: page_component_entity.image_figure.default
 targetEntityType: page_component_entity
 bundle: image_figure
 mode: default
 content:
   field_component_alignment:
-    weight: 26
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_figure_image:
-    weight: 27
+    weight: 2
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entity_browser_entity_reference
     region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  user_id: true

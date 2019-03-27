@@ -1,9 +1,11 @@
-uuid: db92be5e-ed17-456b-900b-6a833e089f4f
+uuid: 51a28c41-cb28-4cad-b210-ebfa95421ac9
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
+_core:
+  default_config_hash: jOJspa2g4Ek1B4aQronSO2ck1VIBIe6Q4OJf4RTfL0g
 id: page_component_entity.field_block_title
 field_name: field_block_title
 entity_type: page_component_entity

@@ -1,4 +1,4 @@
-uuid: 8c481e39-c1a4-420d-8909-019b35a35aa3
+uuid: d0cda86a-dd5b-427d-8aac-f5aa3be259b7
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - as_page_components
     - views
     - viewsreference
+_core:
+  default_config_hash: RnRmEIcdJ-usKOAblQlSsz4vLcvlelb-fEcD8KbPsq0
 id: page_component_entity.field_list_reference
 field_name: field_list_reference
 entity_type: page_component_entity

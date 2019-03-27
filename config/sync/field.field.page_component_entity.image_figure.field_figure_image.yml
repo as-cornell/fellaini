@@ -1,4 +1,4 @@
-uuid: c766d2dd-f89e-4b07-8b8b-608cbfb88b1b
+uuid: 29231578-6cc6-4f37-84d2-478e1b144eb9
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - as_page_components.page_component_entity_type.image_figure
     - field.storage.page_component_entity.field_figure_image
     - media.type.image
+_core:
+  default_config_hash: rpaivq6wvExyrRztxNLOVXMhPcv7CrhnI5BkcrBBDsw
 id: page_component_entity.image_figure.field_figure_image
 field_name: field_figure_image
 entity_type: page_component_entity

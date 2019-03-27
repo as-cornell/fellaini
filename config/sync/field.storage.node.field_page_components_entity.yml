@@ -1,10 +1,12 @@
-uuid: 5eddbde2-018a-4c65-a4fd-119ec7f31613
+uuid: 9463031e-31f0-4e25-9c03-7538705e0bc1
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
     - node
+_core:
+  default_config_hash: JEgQpaqi2lYe1Lve2gjv_6E0Repfb3VjCcqYUqxqWj0
 id: node.field_page_components_entity
 field_name: field_page_components_entity
 entity_type: node

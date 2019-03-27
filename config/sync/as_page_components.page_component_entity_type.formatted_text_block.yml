@@ -1,6 +1,8 @@
-uuid: 13d0cb1d-dd8f-471c-8922-8723765e8901
+uuid: 8200d025-af39-406c-b34c-cdc3443d329d
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Jmq4Ml06Sd0oTXHX-YFGdq26xcQUD5pMgH1FmN8Rwuc
 id: formatted_text_block
 label: 'Formatted Text Block'

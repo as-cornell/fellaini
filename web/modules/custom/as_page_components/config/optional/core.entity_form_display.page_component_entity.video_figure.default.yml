@@ -12,13 +12,13 @@ bundle: video_figure
 mode: default
 content:
   field_component_alignment:
-    weight: 26
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_video_caption:
-    weight: 27
+    weight: 3
     settings:
       rows: 5
       placeholder: ''
@@ -26,7 +26,7 @@ content:
     type: string_textarea
     region: content
   field_video_embed_code:
-    weight: 28
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
@@ -35,19 +35,11 @@ content:
     region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  user_id:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  user_id: true

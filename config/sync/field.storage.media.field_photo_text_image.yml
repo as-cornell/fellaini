@@ -1,9 +1,11 @@
-uuid: 65fbb71b-a22d-42ac-a6c1-fdb8d07d1342
+uuid: 09820d14-a8cc-4850-a6c8-5d5bf4f953c8
 langcode: en
 status: true
 dependencies:
   module:
     - media
+_core:
+  default_config_hash: py4pymccf7oV_eUcVwxWL_dPH5kQDcsQfRPS0k8PnRE
 id: media.field_photo_text_image
 field_name: field_photo_text_image
 entity_type: media

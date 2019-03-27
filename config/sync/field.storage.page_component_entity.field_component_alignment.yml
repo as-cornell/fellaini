@@ -1,10 +1,12 @@
-uuid: fa8ff1cb-9501-4942-a1ce-287aec8b6f9a
+uuid: d6da5659-2aab-4b8e-8b79-f9388363de95
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
     - options
+_core:
+  default_config_hash: c4FiFekRQ_egttAJsZ6E_KrHPQF663_v6_9Njr1pe5U
 id: page_component_entity.field_component_alignment
 field_name: field_component_alignment
 entity_type: page_component_entity

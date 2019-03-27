@@ -1,10 +1,12 @@
-uuid: 92f1d982-504b-4a39-94c3-a4b2d438c336
+uuid: 3bafb422-157c-4101-9b5e-46ec918f6623
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.video_figure
     - field.storage.page_component_entity.field_video_embed_code
+_core:
+  default_config_hash: 9K3a4rKjoAb3pH0FMccjLIDp1wmCBIxjNb1Yq7tzQOI
 id: page_component_entity.video_figure.field_video_embed_code
 field_name: field_video_embed_code
 entity_type: page_component_entity

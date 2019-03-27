@@ -1,4 +1,4 @@
-uuid: 218f306a-0985-4982-9d07-a16d18f3710e
+uuid: 00501d07-452f-41b3-bdea-87901c03fbe8
 langcode: en
 status: true
 dependencies:
@@ -7,32 +7,20 @@ dependencies:
     - field.field.page_component_entity.formatted_text_block.field_formatted_text
   module:
     - text
-    - user
+_core:
+  default_config_hash: K8OPmGy5guzVA1wi1cYXB1Mogvc_Vl0YWmXdWWO-qKk
 id: page_component_entity.formatted_text_block.default
 targetEntityType: page_component_entity
 bundle: formatted_text_block
 mode: default
 content:
   field_formatted_text:
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true

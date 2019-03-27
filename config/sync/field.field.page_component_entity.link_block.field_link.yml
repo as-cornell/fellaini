@@ -1,4 +1,4 @@
-uuid: 59481e62-d2aa-4605-a3fe-8e03652a2db6
+uuid: 577dd991-572a-484f-90a9-87b19a5fdc9c
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,8 @@ dependencies:
     - field.storage.page_component_entity.field_link
   module:
     - link
+_core:
+  default_config_hash: yf7w4fBFbtj9ppvhPaFgwxUcZGoNGwFTgV1X42Hy6js
 id: page_component_entity.link_block.field_link
 field_name: field_link
 entity_type: page_component_entity

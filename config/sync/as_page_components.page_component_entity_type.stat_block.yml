@@ -1,6 +1,8 @@
-uuid: 7d2fca1b-1a7e-445d-893f-f4d695de2cdc
+uuid: 8cbfd807-d45b-4fe2-8845-706197a57214
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 7sre-PvprvxiBOBzaxGURnLUZxxvwWWTu9mJgohMZfE
 id: stat_block
 label: 'Stat Block'

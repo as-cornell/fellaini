@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.field_page_components_entity
     - node.type.page
   module:
+    - inline_entity_form
     - paragraphs
     - path
 _core:
@@ -41,14 +42,21 @@ content:
     third_party_settings: {  }
     region: content
   field_page_components_entity:
+    type: inline_entity_form_complex
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   path:
     type: path
     weight: 7
