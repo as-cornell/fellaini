@@ -63,6 +63,10 @@ function pathways_preprocess_page_component_entity(&$variables)
         $media_entity = pathways_get_media_entity_from_reference($page_component_entity->get('field_pano_image')->first());
         $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
     }
+    if ($page_component_entity->hasField('field_figure_image')) {
+        $media_entity = pathways_get_media_entity_from_reference($page_component_entity->get('field_figure_image')->first());
+        $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
+    }
 
 }
 /**
