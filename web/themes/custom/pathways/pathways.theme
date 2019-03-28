@@ -53,9 +53,18 @@ function pathways_preprocess_media(&$variables)
 }
 
 
+/**
+ * Implements hook_preprocess_entity().
+ */
+function pathways_preprocess_page_component_entity(&$variables)
+{
+    $page_component_entity = &$variables['elements']['#page_component_entity'];
+    if ($page_component_entity->hasField('field_pano_image')) {
+        $media_entity = pathways_get_media_entity_from_reference($page_component_entity->get('field_pano_image')->first());
+        $variables['img'] = pathways_get_image_properties_from_media_entity($media_entity);
+    }
 
-
-
+}
 /**
  * Implements hook_preprocess_entity().
  */
