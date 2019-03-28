@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: photo_text
+label: 'Photo Text'
+description: 'Photo Text - has image, title, text, link'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map:
+  name: name

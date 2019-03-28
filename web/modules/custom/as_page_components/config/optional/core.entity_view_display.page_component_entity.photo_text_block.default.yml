@@ -3,21 +3,28 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.photo_text_block
-    - field.field.page_component_entity.photo_text_block.field_photo_text
+    - field.field.page_component_entity.photo_text_block.field_photo_text_media
 id: page_component_entity.photo_text_block.default
 targetEntityType: page_component_entity
 bundle: photo_text_block
 mode: default
 content:
-  field_photo_text:
+  field_photo_text_media:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
-  name: true
   user_id: true
