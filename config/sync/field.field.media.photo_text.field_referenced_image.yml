@@ -1,18 +1,16 @@
-uuid: 9d59faa2-e83c-4470-8fd7-632cceea042c
+uuid: e5e9851a-d48d-41a0-a6ec-3c2c419373f8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_photo_text_image
+    - field.storage.media.field_referenced_image
     - media.type.image
     - media.type.photo_text
-_core:
-  default_config_hash: RwY_O6KIlyc8wE-IT8Ua23CPXc_HXA5W_esMVuQuErg
-id: media.photo_text.field_photo_text_image
-field_name: field_photo_text_image
+id: media.photo_text.field_referenced_image
+field_name: field_referenced_image
 entity_type: media
 bundle: photo_text
-label: 'Photo Text Referenced Image'
+label: 'Referenced Image'
 description: ''
 required: false
 translatable: false

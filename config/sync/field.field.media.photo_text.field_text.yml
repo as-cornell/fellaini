@@ -1,19 +1,17 @@
-uuid: 31817623-a82f-444e-956a-99a88748f433
+uuid: 465420c4-cac6-40df-86b6-6d30fc55b55d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_photo_text_text
+    - field.storage.media.field_text
     - media.type.photo_text
   module:
     - text
-_core:
-  default_config_hash: mSyzZOSMgOAUFW9gYtvEvd9XRrQ0KBOY0wcTzNwc898
-id: media.photo_text.field_photo_text_text
-field_name: field_photo_text_text
+id: media.photo_text.field_text
+field_name: field_text
 entity_type: media
 bundle: photo_text
-label: 'Photo Text Text'
+label: Text
 description: ''
 required: false
 translatable: false

@@ -1,4 +1,4 @@
-uuid: a9d1bf56-e5b4-4d0c-aa83-61e883dcfbc1
+uuid: c3e36761-ace8-4a8a-ac1e-fbb064850ebf
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: KzZ7e_lD72Ivd65iFVeNKjWBK5cZ-fV3A5eHikNJtNc
+  default_config_hash: h2H3eeYHGOUsh1K0A0Pu6_bQ7Sl4Bm0eM8OzYcs012Y
 id: page_component_entity.video_figure.default
 targetEntityType: page_component_entity
 bundle: video_figure

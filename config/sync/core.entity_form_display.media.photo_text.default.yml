@@ -1,13 +1,12 @@
-uuid: b3230ca9-d9c2-4c0e-b19b-b7202dfb4562
+uuid: c6cf0348-b585-46b5-9081-06516769190a
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.photo_text.field_link
     - field.field.media.photo_text.field_media_image
-    - field.field.media.photo_text.field_photo_text_image
-    - field.field.media.photo_text.field_photo_text_link
-    - field.field.media.photo_text.field_photo_text_text
-    - field.field.media.photo_text.field_photo_text_title
+    - field.field.media.photo_text.field_referenced_image
+    - field.field.media.photo_text.field_text
     - image.style.thumbnail
     - media.type.photo_text
   module:
@@ -15,29 +14,29 @@ dependencies:
     - link
     - path
     - text
-_core:
-  default_config_hash: JC1-7EsXbmp3s61RDNfNWFFMIIzJMuggY01rUmqv3BY
 id: media.photo_text.default
 targetEntityType: media
 bundle: photo_text
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
+    type: link_default
+    region: content
   field_media_image:
-    weight: 0
+    weight: 1
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
     region: content
-  field_photo_text_image:
-    weight: 104
+  field_referenced_image:
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -45,33 +44,17 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_photo_text_link:
-    weight: 101
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_photo_text_text:
-    weight: 102
+  field_text:
+    weight: 3
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_photo_text_title:
-    weight: 103
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -79,7 +62,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -87,16 +70,9 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 100
+    weight: 6
     region: content
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  uid: true

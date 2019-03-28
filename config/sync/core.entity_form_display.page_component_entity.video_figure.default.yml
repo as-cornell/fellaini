@@ -1,4 +1,4 @@
-uuid: 8d16e63b-737b-492b-aa9f-f58fdefeb402
+uuid: 8c0aa964-833a-4d15-908b-bb09c6377e54
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - field.field.page_component_entity.video_figure.field_video_caption
     - field.field.page_component_entity.video_figure.field_video_embed_code
 _core:
-  default_config_hash: zn6YDOh9EKn9FSGQsLPEUZqqSWON-jxEieM6mKxCUdE
+  default_config_hash: hrYPq70VIJmsyJWT2izRwqLP6G7IsGZLHYOo7hR4C2k
 id: page_component_entity.video_figure.default
 targetEntityType: page_component_entity
 bundle: video_figure
