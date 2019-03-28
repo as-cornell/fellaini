@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - as_page_components.page_component_entity_type.photo_text_block
-    - field.storage.page_component_entity.field_photo_text
+    - field.storage.media.field_referenced_image
+    - media.type.image
     - media.type.photo_text
-id: page_component_entity.photo_text_block.field_photo_text
-field_name: field_photo_text
-entity_type: page_component_entity
-bundle: photo_text_block
-label: 'Photo Text'
+id: media.photo_text.field_referenced_image
+field_name: field_referenced_image
+entity_type: media
+bundle: photo_text
+label: 'Referenced Image'
 description: ''
 required: false
 translatable: false
@@ -19,7 +19,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      photo_text: photo_text
+      image: image
     sort:
       field: _none
     auto_create: false
