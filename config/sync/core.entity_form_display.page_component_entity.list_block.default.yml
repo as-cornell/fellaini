@@ -1,4 +1,4 @@
-uuid: 3816798e-8382-41ef-95cc-a2d3a6a0a91d
+uuid: 08e7407c-bc7a-40b9-a062-c994e4736bfa
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - viewsreference
 _core:
-  default_config_hash: 7wWzC_zC-brrWIIih7s5Lh5OCBJ1KQHvF4DbW_VVGOw
+  default_config_hash: 1kxv7K15cU_ceFFDmR8Y9ulr9nVtJG3Rn0DNT8lLD6U
 id: page_component_entity.list_block.default
 targetEntityType: page_component_entity
 bundle: list_block

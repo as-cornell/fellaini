@@ -1,4 +1,4 @@
-uuid: 35419e96-1047-4268-89f6-e03ba5a310a1
+uuid: f53532e1-bfeb-4651-8c18-4cf4ca62c327
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
   module:
     - entity_browser
 _core:
-  default_config_hash: Oh2ixjU4-qp8plMbi4HsN0ZbzLq9gjoEArbRta9fkbw
+  default_config_hash: J_G8_QcmXxx0BWqbNLgmCcFF6iAj1dpnas5kpAxUGhY
 id: page_component_entity.image_figure.default
 targetEntityType: page_component_entity
 bundle: image_figure

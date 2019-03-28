@@ -1,15 +1,13 @@
-uuid: 4b7229f1-67e1-43cc-8f60-0128b7a3c4c8
+uuid: cb7111c9-975d-4207-89b5-670183306919
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.photo_text_block
-    - field.storage.page_component_entity.field_photo_text
+    - field.storage.page_component_entity.field_photo_text_media
     - media.type.photo_text
-_core:
-  default_config_hash: aRlyrnkvIKovCD_hETrNxirUGp17JCM84Gxnj6TonZo
-id: page_component_entity.photo_text_block.field_photo_text
-field_name: field_photo_text
+id: page_component_entity.photo_text_block.field_photo_text_media
+field_name: field_photo_text_media
 entity_type: page_component_entity
 bundle: photo_text_block
 label: 'Photo Text'

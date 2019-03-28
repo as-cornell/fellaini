@@ -1,4 +1,4 @@
-uuid: 55d6e286-88d1-44a8-ac24-9c5e0b3a5d59
+uuid: 84e28325-b8dc-4035-bedd-ba32e2c64036
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - as_page_components.page_component_entity_type.pano_image
     - field.field.page_component_entity.pano_image.field_pano_image
 _core:
-  default_config_hash: Y3Mmm8LqYRUKU1kY5ZOCLJ0H7LU932DQPYDsxRRIx1Q
+  default_config_hash: ekp-ID1wtF9x6jtp7FxwGvSfvBVDCxbgSED4gtd2ods
 id: page_component_entity.pano_image.default
 targetEntityType: page_component_entity
 bundle: pano_image

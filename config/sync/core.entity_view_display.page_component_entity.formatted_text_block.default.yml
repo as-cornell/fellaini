@@ -1,4 +1,4 @@
-uuid: 00501d07-452f-41b3-bdea-87901c03fbe8
+uuid: 90c15c8d-5669-4843-ab19-17bace911e79
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: K8OPmGy5guzVA1wi1cYXB1Mogvc_Vl0YWmXdWWO-qKk
+  default_config_hash: kQu0Fzx8G4GdTHE4PqLKhf3W87t4A7QL0yBQRBnGBag
 id: page_component_entity.formatted_text_block.default
 targetEntityType: page_component_entity
 bundle: formatted_text_block

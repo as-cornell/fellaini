@@ -1,4 +1,4 @@
-uuid: 0be74c9a-8e8d-4e87-be15-1c2c96151a5b
+uuid: b7fad620-933e-4963-8150-1de44b0d71aa
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   module:
     - link
 _core:
-  default_config_hash: AVHEL8Mr9WlXQpoRvd8cTHH0ezdHE8_mvilqW58QXDY
+  default_config_hash: oePK7NuhG72Niinw1UXXeBPhSSCFboySawDe6F7WnkY
 id: page_component_entity.link_block.default
 targetEntityType: page_component_entity
 bundle: link_block

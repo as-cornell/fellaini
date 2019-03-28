@@ -1,4 +1,4 @@
-uuid: 40be37da-c471-4bbd-a0f7-1a63609ffbc3
+uuid: 53658e56-f075-455c-8984-b0d3a2bf1f29
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - as_page_components.page_component_entity_type.stat_block
     - field.field.page_component_entity.stat_block.field_stats
 _core:
-  default_config_hash: HH1TnZJ_p2WcDqlXYsnlkuBOyskNJE9CUIdwJUFdHrs
+  default_config_hash: EfX1GqNgIRFBkROBLzbPs6h--AY9FQhvHPkGrul8MyY
 id: page_component_entity.stat_block.default
 targetEntityType: page_component_entity
 bundle: stat_block
