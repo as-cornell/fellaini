@@ -1,4 +1,4 @@
-uuid: 6eed5d7d-4444-4685-9151-5136019eb7a5
+uuid: ee3f1ea9-f1cb-499b-b921-eac196584d3b
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   module:
     - entity_browser
 _core:
-  default_config_hash: 0Bjhtpaq9QOkDcrzDlGl2L_7YVedAhGuDl2MmiLPPRU
+  default_config_hash: d1B-Srs1y-mh_79cxkdyEkEq1s3MwPYvbC75VyThxX4
 id: page_component_entity.pano_image.default
 targetEntityType: page_component_entity
 bundle: pano_image

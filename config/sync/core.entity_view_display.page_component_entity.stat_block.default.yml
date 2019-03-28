@@ -1,4 +1,4 @@
-uuid: d92bf2cd-0c14-4b5d-927f-ff9524043aee
+uuid: a0114779-3d18-47ec-9803-cfac45057ff5
 langcode: en
 status: true
 dependencies:
@@ -6,14 +6,14 @@ dependencies:
     - as_page_components.page_component_entity_type.stat_block
     - field.field.page_component_entity.stat_block.field_stats
 _core:
-  default_config_hash: aDRK0NWSN4KQmfp41C_wUoQ4_CC5XjTpAGwb4NzgtEc
+  default_config_hash: AgWv60iGlXbq3jlh7xkwaTYLJefIab5w8DcuW8t8z-4
 id: page_component_entity.stat_block.default
 targetEntityType: page_component_entity
 bundle: stat_block
 mode: default
 content:
   field_stats:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: card_small
@@ -21,6 +21,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
-  name: true
   user_id: true

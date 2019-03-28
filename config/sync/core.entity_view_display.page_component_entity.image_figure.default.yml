@@ -1,4 +1,4 @@
-uuid: a500de0d-9918-47e0-9fe7-fd637666bf4d
+uuid: 6b560615-f8df-4d09-bcda-7063dcbc2433
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: sQSzpJFBLLYsY6NXGxj33y0CffmrPNyWhOY61491t9U
+  default_config_hash: O1mET0seaOv3y5hWceraVCF-qMk7nU9oYmx-NPJrBUM
 id: page_component_entity.image_figure.default
 targetEntityType: page_component_entity
 bundle: image_figure

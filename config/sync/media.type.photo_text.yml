@@ -1,14 +1,7 @@
-uuid: 41eb84cf-79ed-48ba-adb9-df6fd4a7037d
+uuid: f59c70f9-bb57-4f43-8446-84b1d569e879
 langcode: en
 status: true
-dependencies:
-  module:
-    - crop
-third_party_settings:
-  crop:
-    image_field: _none
-_core:
-  default_config_hash: 43KvEPYgpRvGkbV31m81AjljC3-6l5IAuYRHLLR7U1o
+dependencies: {  }
 id: photo_text
 label: 'Photo Text'
 description: 'Photo Text - has image, title, text, link'
