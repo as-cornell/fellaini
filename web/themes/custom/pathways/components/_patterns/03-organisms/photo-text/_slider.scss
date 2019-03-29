@@ -5,16 +5,16 @@
 }
 
 .slides{
-  list-style-type: none;
+
   padding: 0;
   margin-bottom: 0;
-    li[aria-hidden="true"]{
+    div[aria-hidden="true"]{
       display: none;
       
     }
-    li[aria-hidden="false"]{
-      display: flex;
-      flex-direction: column;
+    div[aria-hidden="false"]{
+      display: grid;
+     // flex-direction: column;
     //   @include medium-plus(){
     //     flex-direction: row;
     //   }

@@ -37,8 +37,14 @@
  */
 #}
 
-<h1>wrapper for page components entity</h1>
-{% embed "@atoms/_field.twig" with {
+<h1>wrapper for photo text media</h1>
+{{ attach_library('pathways/carousel') }}
+{% embed "@organisms/photo-text/photo-text-slider.twig" with {
+
+}%}{% endembed %}
+
+{# {% embed "@atoms/_field.twig" with {
     modifiers : ["grid", "page_components"],
     group_base_class : 'page-components',
-} %}{% endembed %}
+    classes : ['main-content']
+} %}{% endembed %} #}
