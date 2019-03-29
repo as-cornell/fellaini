@@ -18,9 +18,16 @@ carousel = (function () {
 
 
     // add .active to show buttons
+    // if (amount > 1) {
+    //     box.classList.add('slider--active');
+
+    // }
+
+    for (var i = 0; i < items.length; i++) {
+        items[i].setAttribute("aria-hidden", "true");
+    }
     if (amount > 1) {
         box.classList.add('slider--active');
-
     }
     function navigate(direction) {
         // current.classList.remove('butter');

@@ -9,7 +9,7 @@
 
 {% set base_class = base_class | default('') %}
 {% set modifiers = modifiers | default(['']) %}
-{% set classes = classes | default([paragraph.bundle | clean_class]) %}
+{% set classes = classes | default(['']) %}
 
 
 {% if pl %}
@@ -32,7 +32,7 @@
         {% endif %}
     </div>
 {% else %}
-    <div {{ bem(base_class, (modifiers)) }}>
+    <div {{ bem(base_class, (modifiers),'', classes) }}>
         <div {{ bem('image','', base_class) }}>
             {% include "@atoms/04-images/00-image/figure.twig" with {
                 "img_src" : img_src,
