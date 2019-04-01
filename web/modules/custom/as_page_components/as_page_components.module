@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
  * Implements hook_help().
@@ -55,4 +56,20 @@ function as_page_components_theme_suggestions_page_component_entity(array $varia
   $suggestions[] = 'page_component_entity__' . $entity->id();
   $suggestions[] = 'page_component_entity__' . $entity->id() . '__' . $sanitized_view_mode;
   return $suggestions;
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ *
+ * Sets the revision field to use our custom formatter and to be configurable.
+ */
+function as_page_components_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  //$revision_fields = $entity_type->get('revision_metadata_keys');
+  //$temp = $entity_type->getBundle();
+  //dump ($temp);
+  //if (isset($revision_fields['revision_log_message'])) {
+    /** @var \Drupal\Core\Field\BaseFieldDefinition $field */
+   // $field = &$fields[$revision_fields['revision_log_message']];
+   // $field->setDisplayConfigurable('form', TRUE);
+  //}
 }

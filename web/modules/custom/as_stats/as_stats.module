@@ -16,7 +16,7 @@ function as_stats_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.as_stats':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Contains configurations for stats content type as used on as.cornell.edu, and a migration to import stats from Drupal 7 into Drupal 8') . '</p>';
+      $output .= '<p>' . t('Contains migrations for stats content type as used on as.cornell.edu from Drupal 7 into Drupal 8') . '</p>';
       return $output;
 
     default:

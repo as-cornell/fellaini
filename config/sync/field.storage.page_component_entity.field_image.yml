@@ -1,18 +1,19 @@
-uuid: c3f732e0-18a9-40a3-abb4-0080725981f0
+uuid: 0846b166-5a4f-41d9-9e83-74c92d13b9c8
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
-id: page_component_entity.field_stats
-field_name: field_stats
+    - media
+id: page_component_entity.field_image
+field_name: field_image
 entity_type: page_component_entity
 type: entity_reference
 settings:
-  target_type: page_component_entity
+  target_type: media
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

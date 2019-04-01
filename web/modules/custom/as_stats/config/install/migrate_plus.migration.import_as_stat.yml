@@ -8,7 +8,7 @@ dependencies:
       - as_stats
 
 destination:
-  plugin: entity:node
+  plugin: entity:page_component_entity
 
 source:
   plugin: url
@@ -56,7 +56,7 @@ process:
     plugin: default_value
     default_value: stat
   uuid: uuid
-  title: title
+  name: title
   created: created
   changed: changed
   field_stat_number: field_stat_number
