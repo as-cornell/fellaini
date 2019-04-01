@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.stat
+    - field.storage.page_component_entity.field_stat_description
+  module:
+    - text
+id: page_component_entity.stat.field_stat_description
+field_name: field_stat_description
+entity_type: page_component_entity
+bundle: stat
+label: 'Stat Description'
+description: 'Smaller text below a stat number.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

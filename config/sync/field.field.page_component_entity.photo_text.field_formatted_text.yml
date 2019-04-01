@@ -1,0 +1,21 @@
+uuid: 17ee29e8-f6d4-4da5-9865-a43a9c338318
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.photo_text
+    - field.storage.page_component_entity.field_formatted_text
+  module:
+    - text
+id: page_component_entity.photo_text.field_formatted_text
+field_name: field_formatted_text
+entity_type: page_component_entity
+bundle: photo_text
+label: 'Formatted Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

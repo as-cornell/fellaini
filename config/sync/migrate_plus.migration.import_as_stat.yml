@@ -1,4 +1,4 @@
-uuid: af188187-8ca9-433b-b6e0-8b76d89d0a50
+uuid: a1720fdf-fb26-464f-a412-9f1b104e1b55
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_stats
 _core:
-  default_config_hash: k9gVgfN-xBc2A64un25oGMyqVHPPNbRQuLFJZvkbILQ
+  default_config_hash: CjJLvSBNHk42idx4qMQvTgVH75GcsXj6c8MXhiGMdOA
 id: import_as_stat
 class: null
 field_plugin_method: null
@@ -55,7 +55,7 @@ process:
     plugin: default_value
     default_value: stat
   uuid: uuid
-  title: title
+  name: title
   created: created
   changed: changed
   field_stat_number: field_stat_number
@@ -64,5 +64,5 @@ process:
     plugin: default_value
     default_value: 1
 destination:
-  plugin: 'entity:node'
+  plugin: 'entity:page_component_entity'
 migration_dependencies: null
