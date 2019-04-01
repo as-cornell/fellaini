@@ -4,10 +4,14 @@
   text-decoration: $text-decoration;
 
   &:hover {
-    color: $color-link--hover;
+    text-decoration: none;
   }
 }
 
 .link {
+  @include link;
+}
+
+a{
   @include link;
 }
