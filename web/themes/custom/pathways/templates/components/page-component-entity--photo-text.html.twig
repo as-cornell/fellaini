@@ -1,11 +1,10 @@
 {#
 /**
  * Output individual photoText
- Currently only used as a paragraph. Might need to revisit
+ Currently only used as a page-component. Might need to revisit
  if we wind up using this as a stand alone field somehwere.
 #}
 
-{% set foo = "oldThing" %}
 {% set link_url = content.field_link.0['#url']%}
 {% set link_text = content.field_link.0['#title']%}
 {% set base_class = 'photoText' %}
