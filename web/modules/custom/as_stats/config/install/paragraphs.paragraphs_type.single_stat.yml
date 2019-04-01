@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: single_stat
-label: 'Single Stat'
-icon_uuid: null
-description: 'A single stat to appear in a card like in a campfire.'
-behavior_plugins: {  }

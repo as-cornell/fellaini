@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_stat
-    - node.type.stat
     - paragraphs.paragraphs_type.single_stat
 _core:
   default_config_hash: gWLOnm-yyYVLhKVWfSjrdgDOlXCXRw-7FxfkeRP9pVs
@@ -21,8 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      stat: stat
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: false

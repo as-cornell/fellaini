@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: multiple_stats
-label: 'Multiple Stats'
-icon_uuid: null
-description: 'Multiple stats to appear in a slice or other landing page element.'
-behavior_plugins: {  }
