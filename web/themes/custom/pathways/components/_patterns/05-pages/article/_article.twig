@@ -26,7 +26,7 @@
     </div>
     {% endif %}
     <div class="title">
-        {% include "@atoms/headings/_heading.twig" with {
+        {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
             "heading" : article_title,
             "heading_modifiers" : ["margin"]
@@ -60,7 +60,7 @@
     } %}
 
 
-    {% include "@atoms/headings/_heading.twig" with {
+    {% include "@atoms/00-text/_heading.twig" with {
         "heading_level" : 2,
         "heading" : "Related Stories",
         "heading_modifiers" : ["margin"]
