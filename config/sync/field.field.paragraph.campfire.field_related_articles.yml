@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_related_articles
     - node.type.article
-    - node.type.stat
     - paragraphs.paragraphs_type.campfire
 id: paragraph.campfire.field_related_articles
 field_name: field_related_articles
@@ -22,7 +21,6 @@ settings:
   handler_settings:
     target_bundles:
       article: article
-      stat: stat
     sort:
       field: _none
     auto_create: false

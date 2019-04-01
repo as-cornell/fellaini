@@ -1,13 +1,11 @@
-uuid: 17159d31-aaf1-4688-866c-27e0d03ca424
+uuid: d82be999-dd87-42b2-b692-4fe9311a2103
 langcode: en
 status: true
 dependencies:
   config:
+    - as_page_components.page_component_entity_type.stat
     - as_page_components.page_component_entity_type.stat_block
     - field.storage.page_component_entity.field_stats
-    - node.type.stat
-_core:
-  default_config_hash: JnU8EADSdiqKqbuweyQM8BDt1L_mTraIMzF2etX-b7Y
 id: page_component_entity.stat_block.field_stats
 field_name: field_stats
 entity_type: page_component_entity
@@ -19,7 +17,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
       stat: stat
