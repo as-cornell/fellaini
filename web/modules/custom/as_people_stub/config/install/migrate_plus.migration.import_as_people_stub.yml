@@ -8,7 +8,7 @@ dependencies:
       - as_people_stub
 
 destination:
-  plugin: entity:node
+  plugin: entity:page_component_entity
 
 source:
   plugin: url
@@ -49,9 +49,9 @@ process:
     plugin: default_value
     default_value: person
   nid: nid
-  title: title
-  field_person_netid: field_person_netid
-  field_links: field_links
+  name: title
+  field_netid: field_person_netid
+  field_link: field_links
   uid:
     plugin: default_value
     default_value: 1
