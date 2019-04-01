@@ -1,16 +1,17 @@
-uuid: 1a5472d0-e2b2-4622-b4b7-a50707573a8f
+uuid: 0f75db9c-2f3a-450f-988f-1d28246c921d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_related_articles_2
+    - as_page_components.page_component_entity_type.stat
+    - field.storage.page_component_entity.field_related_content
     - node.type.article
-    - paragraphs.paragraphs_type.campfire
-id: paragraph.campfire.field_related_articles_2
-field_name: field_related_articles_2
-entity_type: paragraph
-bundle: campfire
-label: 'Related Articles 2'
+    - node.type.page
+id: page_component_entity.stat.field_related_content
+field_name: field_related_content
+entity_type: page_component_entity
+bundle: stat
+label: 'Related Content'
 description: ''
 required: false
 translatable: false
@@ -21,6 +22,7 @@ settings:
   handler_settings:
     target_bundles:
       article: article
+      page: page
     sort:
       field: _none
     auto_create: false

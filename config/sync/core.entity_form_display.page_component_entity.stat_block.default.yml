@@ -5,6 +5,9 @@ dependencies:
   config:
     - as_page_components.page_component_entity_type.stat_block
     - field.field.page_component_entity.stat_block.field_stats
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
 _core:
   default_config_hash: EfX1GqNgIRFBkROBLzbPs6h--AY9FQhvHPkGrul8MyY
 id: page_component_entity.stat_block.default
@@ -13,13 +16,22 @@ bundle: stat_block
 mode: default
 content:
   field_stats:
-    weight: 1
+    weight: 26
     settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+      override_labels: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
     region: content
   name:
     type: string_textfield

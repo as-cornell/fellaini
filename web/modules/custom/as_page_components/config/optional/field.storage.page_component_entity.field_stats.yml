@@ -3,13 +3,12 @@ status: true
 dependencies:
   module:
     - as_page_components
-    - node
 id: page_component_entity.field_stats
 field_name: field_stats
 entity_type: page_component_entity
 type: entity_reference
 settings:
-  target_type: node
+  target_type: page_component_entity
 module: core
 locked: false
 cardinality: -1

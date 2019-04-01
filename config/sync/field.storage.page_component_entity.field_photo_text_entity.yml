@@ -1,11 +1,11 @@
-uuid: c3f732e0-18a9-40a3-abb4-0080725981f0
+uuid: 0520f348-6702-45a1-9224-0ee210f568af
 langcode: en
 status: true
 dependencies:
   module:
     - as_page_components
-id: page_component_entity.field_stats
-field_name: field_stats
+id: page_component_entity.field_photo_text_entity
+field_name: field_photo_text_entity
 entity_type: page_component_entity
 type: entity_reference
 settings:

@@ -14,12 +14,11 @@ mode: default
 content:
   field_stats:
     weight: 1
-    label: hidden
+    label: above
     settings:
-      view_mode: card_small
-      link: false
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: entity_reference_label
     region: content
   name:
     type: string

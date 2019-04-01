@@ -3,25 +3,27 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.stat
-    - as_page_components.page_component_entity_type.stat_block
-    - field.storage.page_component_entity.field_stats
-id: page_component_entity.stat_block.field_stats
-field_name: field_stats
+    - field.storage.page_component_entity.field_related_content
+    - node.type.article
+    - node.type.page
+id: page_component_entity.stat.field_related_content
+field_name: field_related_content
 entity_type: page_component_entity
-bundle: stat_block
-label: Stats
+bundle: stat
+label: 'Related Content'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:page_component_entity'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      stat: stat
+      article: article
+      page: page
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: article
 field_type: entity_reference
