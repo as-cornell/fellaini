@@ -140,18 +140,11 @@ process:
   created: created
   changed: changed
   path: path
-  temp_body:
+  field_article_components_entity:
     plugin: migration_lookup
     migration: import_as_article_body
     no_stub: true
     source: nid
-  field_article_body:
-    plugin: iterator
-    source:
-      - '@temp_body'
-    process:
-      target_id: '0'
-      target_revision_id: '1'
   field_department_program:
     -
       plugin: skip_on_empty
