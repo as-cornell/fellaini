@@ -69,11 +69,11 @@
   }
   .card__title{
     grid-area: title;
+    margin-top: .5rem;
   }
   .card__label{
     grid-area: label;
-    @include baseFont($family: $font-serif);
-    @include fontSize(5);
+    @include baseFont($family: $font-serif, $size: 5 * $quark);
   }
   .card__date{
     grid-area: date;
