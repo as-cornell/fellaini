@@ -32,9 +32,23 @@
         </div>
         
         {% else %}
-        {{campfire_center}}
-    {% endif %}
+<div class="campfire__feature">
     {{campfire_center}}
+    <div class="campfire__support">
+        {{campfire_center_ftb}}
+        <ul>
+            {{campfire_other_news}}
+        </ul>
+    </div>
+
+</div>{% endif %}
+    {# {{campfire_center}}
+    {{campfire_center_ftb}}
+    {{campfire_other_news}} #}
+
+
+
+
     <div class="campfire__articles">
         {% if pl %}
             {% for card in cards.articles|slice(0,2) %}

@@ -8,22 +8,10 @@ body {
   @include baseFont();
 }
 
-// everthing below here probably goes away
-// Create a mixin for paragraph styles that can be implemented
-// in components with other classnames.
-@mixin paragraph($margin: 0 0 1em) {
-  margin: #{$margin};
+p{
+  @include baseMargin($margin-direction: margin-bottom, $margin-width: 1em);
 }
 
-@mixin body-copy {
-  font-family: $font-body;
-  font-size: 0.9rem;
-  line-height: 1.6em;
-}
-
-.paragraph {
-  @include paragraph;
-}
 
 .blockquote {
   font-style: italic;
@@ -36,20 +24,4 @@ body {
   border-style: solid;
   border-width: 1px 0 0;
   color: currentColor;
-}
-
-// TODO: BEM selectors should be applied to wysiwyg-created content
-
-.text-long {
-  p {
-    @extend .paragraph;
-  }
-
-  blockquote {
-    @extend .blockquote;
-  }
-
-  hr {
-    @extend .hr;
-  }
 }

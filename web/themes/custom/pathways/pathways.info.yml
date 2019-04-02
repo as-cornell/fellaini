@@ -61,6 +61,9 @@ component-libraries:
   pages:
     paths:
       - components/_patterns/05-pages
+  text:
+    paths:
+      - components/_patterns/00-text
 
 # Information added by Drupal.org packaging script on 2018-06-22
 version: '8.x-2.6'
