@@ -63,7 +63,7 @@ class InlineMediaMigrate extends ProcessPluginBase {
                     'langcode'    => 'en',
                     'field_media_image' => [
                       'target_id' => $file->id(),
-                      'alt'       =>  !empty($tag_attributes[0][1]) ? Unicode::truncate(str_replace('"', '', $tag_attributes[0][1]), 512) : '',
+                      'alt'       =>  !empty($tag_attributes[0][0]) ? Unicode::truncate(str_replace('"', '', $tag_attributes[0][0]), 512) : '',
                     ],
                   ]);
 
