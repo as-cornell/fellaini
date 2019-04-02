@@ -1,0 +1,26 @@
+{# 
+/**
+ * Box is just a box to put stuff in.
+ * output a stat block. sets the modifier to the array length to set flex on enclosed items
+ */
+ #}
+
+
+{% set length = items|length %}
+{% set group_base_class = 'box' %}
+{% set group_modifiers = ['flex', 'stats', length] %}
+{# {% include "@atoms/_field.twig" with {
+    group_base_class : 'box',
+    group_modifiers : ['flex','stats', length]
+} %} #}
+{# {{items|length}}#}
+
+{# <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
+    {{items}}
+</div> #}
+
+{% include "@organisms/stat-list/_stat-list.twig" with {
+
+} %}
+
+

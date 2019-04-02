@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Display a paragraph pano image. Will be specific to the top pano images for pages. 
+ * Display a paragraph video figure. . 
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -36,14 +36,17 @@
  * @ingroup themeable
  */
 #}
-{# {{kint()}} #}
+{# {{kint(content)}} #}
 
-{% include "@atoms/04-images/figure.twig" with {
-    "img_src" : img.uri | image_style('full_content'),
-    "img_alt" : img.alt,
-    "img_caption" : img.caption,
-    "img_credit" : img.credit,
-    "figure_modifiers" : ["pano"]
+
+
+{% include "@atoms/08-video/video.twig" with {
+    video_content : content.field_video_embed_code[0]['#context'].value | raw,
+    video_caption: content.field_video_caption,
+    "field_component_alignment" : content.field_component_alignment[0]
 } %}
-{# {{content.field_pano_image}}
-{{content}} #}
+{# {{content.field_video_embed_code[0]['#context'].value | raw}}
+{{content.field_video_caption}}
+{{content.field_component_alignment[0]}} #}
+
+{# {{content.field_video_embed_code[0]['#context'].value|raw}} #}

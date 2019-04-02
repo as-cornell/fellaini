@@ -18,11 +18,13 @@
 @include medium{
     .pullLeft{
         float: left;
-        margin-left: -3rem;
+        margin-left: -2rem;
+        margin-right: 2rem;
     }
     .pullRight{
         float: right;
-        margin-right: -3rem;
+        margin-right: -2rem;
+        margin-left: 2rem;
     }
     .stretch{
         margin: 0 -3rem;
