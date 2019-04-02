@@ -1,5 +1,5 @@
 name: 'A&S People Stub'
 type: module
-description: 'Contains configurations for person content type stub as used on as.cornell.edu, and a migration to import people stubs from Drupal 7 into Drupal 8'
+description: 'Contains a migration to import people stubs from Drupal 7 into Drupal 8'
 core: 8.x
 package: 'AS'

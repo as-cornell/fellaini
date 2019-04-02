@@ -16,7 +16,7 @@ function as_people_stub_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.as_people_stub':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Contains configurations for person content type stub as used on as.cornell.edu, and a migration to import people stubs from Drupal 7 into Drupal 8') . '</p>';
+      $output .= '<p>' . t('Contains migration to import people stubs from Drupal 7 into Drupal 8') . '</p>';
       return $output;
 
     default:
