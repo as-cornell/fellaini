@@ -1,7 +1,8 @@
+
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Display a paragraph pano image. Will be specific to the top pano images for pages. 
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -21,8 +22,8 @@
  *   - paragraphs: The current template type (also known as a "theming hook").
  *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
  *     "Image" it would result in "paragraphs--type--image". Note that the machine
- *     name will often be in a short form of the human readable label.
  *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     name will often be in a short form of the human readable label.
  *     preview would result in: "paragraphs--view-mode--preview", and
  *     default: "paragraphs--view-mode--default".
  * - view_mode: View mode; for example, "preview" or "full".
@@ -36,11 +37,11 @@
  * @ingroup themeable
  */
 #}
+{# {{kint(content)}} #}
 
-{% set base_class = base_class | default('') %}
-{% set modifiers = modifiers | default(['']) %}
-{% set classes = classes | default([paragraph.bundle | clean_class]) %}
-
-{# <div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}> #}
-    {{ content }}
-{# </div> #}
+{% include "@organisms/link-list/link-slice.twig" with{
+    heading : content.field_block_title,
+    links : content.field_link,
+    group_base_class : 'slice',
+    group_modifiers : ['link-bar', 'full']
+}%}

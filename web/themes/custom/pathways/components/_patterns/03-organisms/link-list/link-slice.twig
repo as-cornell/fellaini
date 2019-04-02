@@ -1,19 +1,17 @@
-{% set base_class = base_class | default('') %}
-{% set modifiers = modifiers | default(['']) %}
-{% set classes = classes | default(['']) %}
+{# 
+  template to show a div wrapped around plain text links
+  Used in - landing page slices
+ #}
+{# Group/container bem #}
+{% set group_base_class = group_base_class | default('') %}
+{% set group_modifiers = group_modifiers | default(['']) %}
+{% set group_classes = group_classes | default(['']) %}
 
-
-<div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}>
-    
-    {% include "@atoms/headings/_heading.twig" with {
+<div{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
+{% include "@atoms/00-text/_heading.twig" with {
       "heading_level" : 3,
       "heading" : heading
   } %}
-  {% include "@organisms/link-list/_link-list.twig" with{
-        links: links,
-        group_base_class : 'links',
-        group_modifiers : ['horizontal']
-    } %}
+  {{links}}
 
-    
 </div>

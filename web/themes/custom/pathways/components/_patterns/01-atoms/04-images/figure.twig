@@ -2,7 +2,7 @@
 {% set image_figure_blockname = image_figure_blockname | default('') %}
 {% set figure_modifiers = figure_modifiers | default(['image']) %}
 {% set image_link_base_class = image_link_base_class | default('link') %}
-{% set alignment = field_component_alignment %}
+{% set figure_alignment = figure_alignment | default('') %}
 
 {# set defaults from figrure.image in data.yaml #}
 {% set img_url = figures.image.url %}
@@ -24,7 +24,7 @@
         <a {{ bem(image_link_base_class, (image_link_modifiers), image_link_blockname|default(image_figure_base_class)) }} href=" {{ img_url }} ">
         {% endif %}
         {% block figure_content %}
-            {% include "@atoms/04-images/00-image/_image.twig" with {
+            {% include "@atoms/04-images/_image.twig" with {
                 "img_src" : img_src,
                 "img_alt" : img_alt
             } %}

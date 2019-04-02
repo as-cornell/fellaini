@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a paragraph.
+ * Display a paragraph pano image. Will be specific to the top pano images for pages. 
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -36,11 +36,17 @@
  * @ingroup themeable
  */
 #}
+{# {{kint()}} #}
+{% set alignment = content.field_component_alignment[0]%}
+{% include "@atoms/04-images/figure.twig" with {
+    "img_src" : img.uri | image_style('full_content'),
+    "img_alt" : img.alt,
+    "img_caption" : img.caption,
+    "img_credit" : img.credit,
+    "figure_modifiers" : ["figure","image"],
+    "figure_alignment" : alignment
+} %}
 
-{% set base_class = base_class | default('') %}
-{% set modifiers = modifiers | default(['']) %}
-{% set classes = classes | default([paragraph.bundle | clean_class]) %}
-
-{# <div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}> #}
-    {{ content }}
-{# </div> #}
+{# {{alignment}} #}
+{# {{content.field_pano_image}}
+{{content}} #}

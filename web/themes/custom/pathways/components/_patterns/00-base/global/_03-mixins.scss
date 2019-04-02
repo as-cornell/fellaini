@@ -114,6 +114,29 @@
     }
 }
 
+
+// Margins
+@mixin baseMargin($margin-direction: "margin", $margin-width: $margin-width) {
+    @if $margin-direction == 'margin'{
+        margin: $margin-width;
+    }
+    @if $margin-direction == 'margin-bottom'{
+        margin: 0 0 $margin-width;
+    }
+    @if $margin-direction == 'margin-right'{
+        margin-right: $margin-width;
+    }
+    @if $margin-direction == 'margin-left'{
+        margin-left: $margin-width;
+    }
+    @if $margin-direction == 'margin-tb'{
+        margin: $margin-width 0;
+    }
+    @if $margin-direction == 'margin-rl'{
+        margin:  0 $margin-width;
+    }
+}
+
 //buttons
 @mixin button($btn-color:$gray-dark, $bor-color: $gray-dark){
   @include baseBorder($bor-width: 2px, $bor-color: $bor-color);
