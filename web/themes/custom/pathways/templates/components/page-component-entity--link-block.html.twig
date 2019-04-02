@@ -1,3 +1,4 @@
+
 {#
 /**
  * @file
@@ -21,8 +22,8 @@
  *   - paragraphs: The current template type (also known as a "theming hook").
  *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
  *     "Image" it would result in "paragraphs--type--image". Note that the machine
- *     name will often be in a short form of the human readable label.
  *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     name will often be in a short form of the human readable label.
  *     preview would result in: "paragraphs--view-mode--preview", and
  *     default: "paragraphs--view-mode--default".
  * - view_mode: View mode; for example, "preview" or "full".
@@ -36,14 +37,11 @@
  * @ingroup themeable
  */
 #}
-{# {{kint()}} #}
+{# {{kint(content)}} #}
 
-{% include "@atoms/04-images/figure.twig" with {
-    "img_src" : img.uri | image_style('full_content'),
-    "img_alt" : img.alt,
-    "img_caption" : img.caption,
-    "img_credit" : img.credit,
-    "figure_modifiers" : ["pano"]
-} %}
-{# {{content.field_pano_image}}
-{{content}} #}
+{% include "@organisms/link-list/link-slice.twig" with{
+    heading : content.field_block_title,
+    links : content.field_link,
+    group_base_class : 'slice',
+    group_modifiers : ['link-bar', 'full']
+}%}
