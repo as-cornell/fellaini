@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override for a field.
+ * Wrapper field for page_components. This is the field that gets added to tcontent types that all the body of the page is built with.
  *
  * To override output, copy the "field.html.twig" from the templates directory
  * to your theme's directory and customize it, just like customizing other
@@ -37,8 +37,7 @@
  */
 #}
 
-<h1>wrapper for page components entity</h1>
 {% embed "@atoms/_field.twig" with {
-    modifiers : ["grid", "page_components"],
+    group_modifiers : ["grid", "page_components"],
     group_base_class : 'page-components',
 } %}{% endembed %}
