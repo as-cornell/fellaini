@@ -37,13 +37,16 @@
  */
 #}
 {# {{kint()}} #}
-
+{% set alignment = content.field_component_alignment[0]%}
 {% include "@atoms/04-images/figure.twig" with {
     "img_src" : img.uri | image_style('full_content'),
     "img_alt" : img.alt,
     "img_caption" : img.caption,
     "img_credit" : img.credit,
-    "figure_modifiers" : ["pano"]
+    "figure_modifiers" : ["figure","image"],
+    "figure_alignment" : alignment
 } %}
+
+{# {{alignment}} #}
 {# {{content.field_pano_image}}
 {{content}} #}

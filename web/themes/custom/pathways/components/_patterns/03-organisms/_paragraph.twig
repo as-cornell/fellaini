@@ -41,6 +41,6 @@
 {% set modifiers = modifiers | default(['']) %}
 {% set classes = classes | default([paragraph.bundle | clean_class]) %}
 
-<div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}>
+{# <div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}> #}
     {{ content }}
-</div>
+{# </div> #}
