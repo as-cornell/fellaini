@@ -4,7 +4,6 @@ namespace Drupal\as_events\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a Current Events Block.
@@ -16,44 +15,6 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class ASEvents extends BlockBase implements BlockPluginInterface {
-
-
-  /**
-   * {@inheritdoc}
-   */
-
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form = parent::blockForm($form, $form_state);
-
-    $config = $this->getConfiguration();
-
-    $form['events_shown'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Events Shown'),
-      '#description' => $this->t('How many events do you want to display in your block?'),
-      '#default_value' => isset($config['events_shown']) ? $config['events_shown'] : '',
-    ];
-
-    $form['keyword_params'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Keyword'),
-      '#description' => $this->t('What keyword or tag from localist do you want to display events for?'),
-      '#default_value' => isset($config['keyword_params']) ? $config['keyword_params'] : '',
-    ];
-
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state) {
-    parent::blockSubmit($form, $form_state);
-    $values = $form_state->getValues();
-    $this->configuration['events_shown'] = $values['events_shown'];
-    $this->configuration['keyword_params'] = $values['keyword_params'];
-  }
-
 
 
   /**
