@@ -1,0 +1,9 @@
+dev:
+  type: ssh
+  root: /var/www/fellaini
+  host: 192.168.88.88
+  port: 22
+  user: vagrant
+  options:
+    uri: default
+#  arguments:

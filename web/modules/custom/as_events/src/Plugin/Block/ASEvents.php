@@ -3,9 +3,10 @@
 namespace Drupal\as_events\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Block\BlockPluginInterface;
 
 /**
- * Provides a Current Weather Block.
+ * Provides a Current Events Block.
  *
  * @Block(
  *   id = "events_block",
@@ -13,7 +14,8 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("Upcoming Events"),
  * )
  */
-class ASEvents extends BlockBase {
+class ASEvents extends BlockBase implements BlockPluginInterface {
+
 
   /**
    * {@inheritdoc}
@@ -21,10 +23,25 @@ class ASEvents extends BlockBase {
 
 
   public function build() {
-    $keyword_params = "cascal";
+    $config = $this->getConfiguration();
+    //kint($config);
+    if (!empty($config['events_shown'])) {
+      $events_shown = $config['events_shown']['#markup'];
+    }
+    else {
+      $events_shown = 1;
+    }
+
+    if (!empty($config['keyword_params'])) {
+      $keyword_params = $config['keyword_params']['#context']['value'];
+    }
+    else {
+      $keyword_params = "casfeatured";
+    }
+    //$events_shown = 4;
+    //$keyword_params = "casfeatured";
     $main = "";
     $event_count = 0;
-    $events_shown = 1;
     $event_json = as_events_get_events_json($events_shown,$keyword_params);
 
 
