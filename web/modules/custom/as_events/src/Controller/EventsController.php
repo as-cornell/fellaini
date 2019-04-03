@@ -34,7 +34,7 @@ class EventsController extends ControllerBase {
     }
     return array(
       '#type' => 'markup',
-      '#markup' => $this->t('<div class="slides">
+      '#markup' => $this->t('<h1>Calendar Schizz</h1><div class="slides">
 <article class="slide-aside">'.$main.'</article></div>'),
     );
   }
