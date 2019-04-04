@@ -1,0 +1,5 @@
+name: 'A&S Courses'
+type: module
+description: 'Turns json from classes.cornell.edu and xml from courses.cornell.edu into blocks that can be implemented in a page component entity.'
+core: 8.x
+package: 'AS'
