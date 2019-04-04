@@ -1,25 +1,17 @@
-// // need to weed these out of everything
-// $white: white;
-// $near-white: #f2f2f2;
-// $gray-lightest: #e5e5e5;
-// $gray-lighter: #ccc;
-// $gray-light: #999;
-// $gray: #666;
-// $gray-dark: #4c4c4c;
-// $gray-darker: #333;
-// $black: black;
-// // real vars
-// $white: white;
-// $black: #2c2c2c;
-// $gray-dark: #5d5d5d;
-// $gray-med: #999;
-// $gray-lt: #d9d9d9;
-// $dusk: #435363;
-// $fog: #607774;
-// $storm: #4f869f;
-// $teal: #85c4ca;
-// $gold: #ffd91f;
-// $green: #4d9b5e;
-// $red: #b31b1b;
-
-
+$white: white;
+$black: #35363f;
+$dark-text: #35363f;
+$gray-dark: #5d5d5d;
+$gray-med: #999;
+$gray: #999; // depricate
+$gray-lt: #d9d9d9;
+$gray-light: #d9d9d9; // depricate
+$gray-lightest:#f4f4f4;
+$near-white: #f7f7f7; // depricate
+$dusk: #435363;
+$fog: #607774;
+$storm: #4f869f;
+$teal: #85c4ca;
+$gold: #ffd91f;
+$green: #4d9b5e;
+$red: #b31b1b;
