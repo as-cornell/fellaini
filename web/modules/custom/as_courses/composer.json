@@ -1,0 +1,14 @@
+{
+  "name": "drupal/as_courses",
+  "type": "drupal-module",
+  "description": "Turns json from classes.cornell.edu and xml from courses.cornell.edu into blocks that can be implemented in a page component entity.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/as_courses",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/as_courses",
+    "source": "http://cgit.drupalcode.org/as_courses"
+  },
+  "require": { }
+}
