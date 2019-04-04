@@ -8,7 +8,7 @@
   &::after {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 9px solid $gray-darker;
+    border-top: 9px solid $gray-lt;
     content: " ";
     position: absolute;
     top: 42%;
@@ -60,7 +60,7 @@
     appearance: none;
 
     &:focus {
-      border-color: $gray;
+      border-color: $gray-med;
       border-radius: 0;
     }
   }
