@@ -64,7 +64,8 @@ function as_events_generate_event_item_markup($event_data) {
     $event_end_date = NULL;
         }
     $event_formatted_date = as_events_format_event_dates($event_start_date,$event_end_date);
-    $event_description = strtok(strip_tags($event['description']),'.');
+    //$event_description = strtok(strip_tags($event['description']),'.');
+    $event_description = strip_tags($event['description']);
     $event_image = $event['photo_url'];
     // Create the markup
 
@@ -77,7 +78,7 @@ function as_events_generate_event_item_markup($event_data) {
     $markup = $markup . "<h3>" . $event_location . ": " .$event_room. "</h3>";
         }
     if ($event_description){
-    $markup = $markup . "<p>" . $event_description . ".</p>";
+    $markup = $markup . "<p>" . $event_description . "</p>";
         }
     $markup = $markup ."
             </main>
@@ -97,13 +98,13 @@ function as_events_generate_events_view($event_json) {
     if (!empty($event_json)) {
       $events[] = array('#markup' => '<main>');
       foreach($event_json as $event_data) {
-        //if ($event_count <= $events_shown || $events_shown == 0) {
-          //$markup = as_events_generate_event_item_markup($event_data, $event_count);
+        if ($event_count <= $events_shown || $events_shown == 0) {
+          $markup = as_events_generate_event_item_markup($event_data, $event_count);
           $markup = "some markup";
           // Add the markup to the render array
           $events[] = array('#markup' => $markup);
           $event_count++;
-        //}
+        }
 
       }
     $events[] = array('#markup' => '</main>');
