@@ -20,9 +20,9 @@ class CoursesBlock extends BlockBase {
   public function build() {
 
     $config = $this->getConfiguration();
-    //kint($config);
+    kint($config);
     if (!empty($config['semester'])) {
-      $semester = $config['semester'];
+      $semester = $config['semester']['#markup'];
     }
     else {
       $semester = "FA19";
