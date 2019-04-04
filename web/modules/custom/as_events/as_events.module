@@ -83,7 +83,7 @@ function as_events_generate_event_item_markup($event_data) {
     $markup = $markup ."
             </main>
             <aside>
-                <img src= '${event_image}' />
+                <img src= '${event_image}' alt= '${event_title}' />
             </aside>
             \n";
 
