@@ -42,6 +42,7 @@ function as_courses_generate_course_item_markup($course_data) {
     // Deal with classes.cornell.edu's funky json structure
     //$markup =kint($course_data);
     //$course = $course_data['classes'];
+    $markup = "";
     $course_subject = $course_data['subject'];
     $course_number = $course_data['catalogNbr'];
     $course_title = $course_data['titleLong'];
