@@ -4,6 +4,15 @@
 
 body{
   overflow-x: hidden;
+  background: $near-white;
+}
+
+.wrapper{
+  @include max-width(){
+    max-width: $xx-wide;
+    margin: 3rem auto;
+  }
+  background: $white;
 }
 
 .row{
@@ -22,6 +31,9 @@ main{
 .container{
   grid-column: 2;
   padding: 0 1rem;
+  @include large(){
+    padding: 0 2rem;
+  };
   @include baseGrid();
   max-width: $x-wide;
   margin: 0 auto;
@@ -37,14 +49,8 @@ main{
 // examples : campfire, phototext, links
 // anything that goes edge to edge. Will eventually receive a .slice--with-sidebar addtion
 .slice{
-  max-width: $x-wide;
-  margin: 0 auto (19 * $quark);
-  &--full{
-    width: 500%;
-    max-width: 500%;
-    margin-left: -200%;
-    text-align: center;
-  }
+  // max-width: $x-wide;
+  // margin: 0 auto (19 * $quark);
 }
 
 // Grid helper classes prefixed with 'g-'
