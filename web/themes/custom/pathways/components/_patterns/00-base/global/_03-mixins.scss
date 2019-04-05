@@ -12,9 +12,14 @@
     font-size: $plier * $quark;
 }
   
-/// Mixin - Standard Margin
+// Mixin - Standard Margin
 @mixin margin {
   margin-bottom: 1em;
+}
+
+// component margin for main components. 
+@mixin componentMargin($margin: 4rem){
+  margin-bottom: $margin;
 }
 
 @mixin no-bottom {
