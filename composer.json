@@ -61,7 +61,8 @@
         "hanoii/platformsh2slack": "^1.5",
         "drupal/inline_entity_form": "^1.0",
         "drupal/material_admin": "^1.0",
-        "drupal/hide_revision_field": "^2.1"
+        "drupal/hide_revision_field": "^2.1",
+        "drupal/dynamic_entity_reference": "^1.7"
 
     },
     "require-dev": {
