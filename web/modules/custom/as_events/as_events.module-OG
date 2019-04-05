@@ -34,26 +34,19 @@ function as_events_get_events_json($events_shown,$keyword_params) {
   }
 
 function as_events_format_event_dates($startdate, $enddate) {
-    $event_formatted_date['start_month'] = date_format($startdate,"M");
-    $event_formatted_date['start_date'] = date_format($startdate, "d");
-    $event_formatted_date['start_time'] = date_format($startdate, "g:i");
-
-    $event_formatted_date['end_month'] = date_format($enddate, "M");
-    $event_formatted_date['end_date'] = date_format($enddate, "d");
-    $event_formatted_date['end_time'] = date_format($enddate, "g:i");
-
+    $event_start_date = date_format($startdate,"M d g:i a");
       //check to see if there's an end date
-        //     if ($enddate){
-        // //don't repeat date if start and end is on same day
-        //       if (date_format($startdate,"M d") == date_format($enddate,"M d")){
-        //           $event_end_date = date_format($enddate,"g:i a");
-        //       }else{
-        //           $event_end_date = date_format($enddate,"M d g:i a");
-        //           }
-          //   $event_formatted_date = $event_start_date ." to ". $event_end_date;
-          // }else{
-          //   $event_formatted_date = $event_start_date;
-          //     }
+            if ($enddate){
+        //don't repeat date if start and end is on same day
+              if (date_format($startdate,"M d") == date_format($enddate,"M d")){
+                  $event_end_date = date_format($enddate,"g:i a");
+              }else{
+                  $event_end_date = date_format($enddate,"M d g:i a");
+                  }
+            $event_formatted_date = $event_start_date ." to ". $event_end_date;
+          }else{
+            $event_formatted_date = $event_start_date;
+              }
       return $event_formatted_date;
   }
 
@@ -77,30 +70,22 @@ function as_events_generate_event_item_markup($event_data) {
     // Create the markup
 
 
-    // $markup = kint($event_formatted_date);
-    // $markup = $markup . $event_formatted_date['start_month'];
-    $markup = "<div class='eventList__event event'>
-                <span class='event__title'>" . $event_title . "</span>
-                <span class='event__date'>
-                  <span class='event__month'>" . $event_formatted_date['start_month'] . "</span>
-                  <span class='event__date'>" . $event_formatted_date['start_date'] . "</span>
-                  <span class='event__time'>" . $event_formatted_date['start_time'] . "</span>
-                </span>";
+
+    $markup = "<main>
+                <h1>${event_title}</h1>
+                <h2>${event_formatted_date}</h2>";
     if ($event_location){
-    $markup = $markup . "<span class='event__location'>" . $event_location . ": " .$event_room. "</span>
-    </div>
-    \n";
+    $markup = $markup . "<h3>" . $event_location . ": " .$event_room. "</h3>";
         }
-    // if ($event_description){
-    // $markup = $markup . "<p class='event__description'>" . $event_description . "</p>";
-    //     }
-    // $markup = $markup ."
-            
-    //         // <span>
-    //         //     <img src= '${event_image}' alt= '${event_title}' />
-    //         // </span>
-    //         </div>
-    //         \n";
+    if ($event_description){
+    $markup = $markup . "<p>" . $event_description . "</p>";
+        }
+    $markup = $markup ."
+            </main>
+            <aside>
+                <img src= '${event_image}' alt= '${event_title}' />
+            </aside>
+            \n";
 
     return $markup;
   }
