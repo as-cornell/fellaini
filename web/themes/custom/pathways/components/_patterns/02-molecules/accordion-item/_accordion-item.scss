@@ -14,11 +14,11 @@
   }
 
   &:hover {
-    color: $gray;
+    color: $gray-med;
   }
 
   &.is-active {
-    color: $gray;
+    color: $gray-med;
 
     &::before {
       content: "-";
