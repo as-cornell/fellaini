@@ -1,4 +1,4 @@
-// floats try not to use
+// floats, pulls and full widths. Basically anything that will need to make a component or page item break out of the flow of the page or its container
 .floatLeft{
     float: left;
     margin-left: 0;
@@ -29,4 +29,13 @@
     .stretch{
         margin: 0 -3rem;
     }
+}
+
+// full width stretch
+
+.full-width{
+    width: calc(100% + 208px);
+   // max-width: 500%;
+    margin-left: -104px;
+    text-align: center;
 }

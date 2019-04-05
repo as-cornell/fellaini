@@ -42,6 +42,7 @@
  #}
  
  
- {% embed "@atoms/_field.twig" with {
-
+{% embed "@organisms/_components.twig" with {
+    group_modifiers : ["grid", "page_components"],
+    group_base_class : 'page-components',
 } %}{% endembed %}

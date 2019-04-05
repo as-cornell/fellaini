@@ -1,9 +1,9 @@
 .tabs__link,
 .tabs__link--local-tasks {
-  background-color: $near-white;
-  border: 1px solid $gray-lightest;
+  background-color: $gray-lightest;
+  border: 1px solid $gray-lt;
   border-bottom: none;
-  color: $gray;
+  color: $gray-lt;
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
@@ -25,20 +25,20 @@
 
   &:hover {
     background-color: $gray-lightest;
-    color: $gray-darker;
+    color: $gray-med;
   }
 
   &.is-active {
-    background-color: $gray;
-    border: 1px solid $gray;
+    background-color: $gray-lt;
+    border: 1px solid $gray-lt;
     color: $white;
 
     @include large {
       background-color: $white;
       border: 1px solid $gray-lightest;
-      border-bottom: 1px solid $gray;
+      border-bottom: 1px solid $gray-lt;
       border-left: none;
-      color: $gray;
+      color: $gray-lt;
     }
   }
 }
