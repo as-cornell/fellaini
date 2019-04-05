@@ -10,7 +10,7 @@ body{
 .wrapper{
   @include max-width(){
     max-width: $xx-wide;
-    margin: 3rem auto;
+    margin: 2rem auto;
   }
   background: $white;
 }
