@@ -77,9 +77,9 @@ function as_events_generate_event_item_markup($event_data) {
     // Create the markup
 
 
-    $markup = kint($event_formatted_date);
+    // $markup = kint($event_formatted_date);
     // $markup = $markup . $event_formatted_date['start_month'];
-    $markup = $markup . "<div class='eventList__event event'>
+    $markup = "<div class='eventList__event event'>
                 <span class='event__title'>" . $event_title . "</span>
                 <span class='event__date'>
                   <span class='event__month'>" . $event_formatted_date['start_month'] . "</span>
