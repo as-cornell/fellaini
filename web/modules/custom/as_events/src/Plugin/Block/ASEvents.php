@@ -24,7 +24,7 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
 
   public function build() {
     $config = $this->getConfiguration();
-    kint($config);
+    //kint($config);
     if (!empty($config['events_shown'])) {
       $events_shown = $config['events_shown'];
     }
