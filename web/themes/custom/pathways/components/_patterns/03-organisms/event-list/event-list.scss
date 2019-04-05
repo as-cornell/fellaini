@@ -1,4 +1,23 @@
 .eventList{
     @include baseGrid();
     grid-template-columns: repeat(3, 1fr);
+   @include componentMargin();
+
 }
+.event{
+    @include baseGrid();
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "date title title title"
+    "date location location location";
+    &__date{
+       grid-area: date;
+    }
+    &__title{
+        grid-area: title;
+    }
+    &__location{
+        grid-area: location;
+    }
+}
+

@@ -5,6 +5,7 @@
     ". two ."
     ". one ."
     ". three .";
+    @include componentMargin();
     @include medium{
     grid-template-columns: repeat(12, 1fr);
         grid-template-areas:
