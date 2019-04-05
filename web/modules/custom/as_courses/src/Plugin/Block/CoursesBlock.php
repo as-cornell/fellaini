@@ -22,13 +22,13 @@ class CoursesBlock extends BlockBase {
     $config = $this->getConfiguration();
     kint($config);
     if (!empty($config['semester'])) {
-      $semester = $config['semester']['#markup'];
+      $semester = $config['semester'];
     }
     else {
       $semester = "FA19";
     }
     if (!empty($config['courses_shown'])) {
-      $courses_shown = $config['courses_shown']['#markup'];
+      $courses_shown = $config['courses_shown'];
     }
     else {
       //1 shows 2, 2 shows 3 etc.
@@ -36,12 +36,13 @@ class CoursesBlock extends BlockBase {
     }
 
     if (!empty($config['keyword_params'])) {
-      $keyword_params = $config['keyword_params']['#context']['value'];
+      $keyword_params = $config['keyword_params'];
     }
     else {
       $keyword_params = "MATH";
     }
     $build = [];
+    $build['courses_block']['#markup'] = "";
     $course_count = 0;
     $course_json = as_courses_get_courses_json($semester,$keyword_params);
     if (!empty($course_json)) {
