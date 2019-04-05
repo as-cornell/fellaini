@@ -24,11 +24,35 @@ function as_events_nameize($str,$a_char = array("'","-"," ")){
     }
 
 function as_events_get_events_json($events_shown,$keyword_params) {
-    //$keyword_params = "cascal";
-    $url = "http://cornell.localist.com/api/2/events?days=364&pp={$events_shown}&keyword={$keyword_params}";
-    $data = file_get_contents($url);
-    $json = json_decode($data, true);
-    $event_json = $json['events'];
+    //set cache id (verify parameters are safe values to use as cache id)
+    $cid = "as_events:$events_shown:$keyword_params";
+    //fetch cache data
+      //check expiration date
+    // if no data check url
+      //fetch data and set cache
+
+    //return data
+    dump($cid);
+
+
+
+$event_json = NULL;
+  //check cache expiration
+if ($cache = \Drupal::cache('data')->get($cid)) {
+
+  $event_json = $cache->data;
+}
+
+else {
+      $url = "http://cornell.localist.com/api/2/events?days=364&pp={$events_shown}&keyword={$keyword_params}";
+      $data = file_get_contents($url);
+      $json = json_decode($data, true);
+      $event_json = $json['events'];
+  \Drupal::cache('data')
+    ->set($cid, $event_json, time()+360);
+}
+
+
 
     return $event_json;
   }
@@ -95,7 +119,7 @@ function as_events_generate_event_item_markup($event_data) {
     // $markup = $markup . "<p class='event__description'>" . $event_description . "</p>";
     //     }
     // $markup = $markup ."
-            
+
     //         // <span>
     //         //     <img src= '${event_image}' alt= '${event_title}' />
     //         // </span>
