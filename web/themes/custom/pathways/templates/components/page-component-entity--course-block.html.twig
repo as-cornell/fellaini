@@ -1,1 +1,4 @@
-{{ drupal_block('courses_block', {label: 'Courses', semester: content.field_semester.0 , courses_shown: content.field_courses_shown.0 , keyword_params: content.field_keyword_params.0}) }}
+{% set semesterValue = content.field_semester['#items'].getString() %}
+{% set coursesShownValue = content.field_courses_shown[0]['#markup'] %}
+{% set keywordParamsValue = content.field_keyword_params[0]['#context']['value'] %}
+{{ drupal_block('courses_block', {label: 'Courses', semester: semesterValue , courses_shown: coursesShownValue , keyword_params: keywordParamsValue }) }}
