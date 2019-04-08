@@ -35,6 +35,9 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+
+{# how can i add something here? #}
+
 <div{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
@@ -51,9 +54,8 @@
   {{ exposed }}
   {{ attachment_before }}
 
-<div class="slice">
   {{ rows }}
-</div>
+
 
   {{ empty }}
   {{ pager }}
