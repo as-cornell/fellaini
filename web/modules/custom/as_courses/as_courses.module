@@ -43,6 +43,7 @@ function as_courses_generate_course_item_markup($course_data,$semester) {
     //$markup = kint($course_data['enrollGroups'][0]['classSections'][0]['meetings'][0]['instructors'][0]['netid']);
     //$course = $course_data['classes'];
     $markup = "";
+    $instructor_markup = "";
     $course_subject = $course_data['subject'];
     $course_number = $course_data['catalogNbr'];
     $course_title = $course_data['titleLong'];
