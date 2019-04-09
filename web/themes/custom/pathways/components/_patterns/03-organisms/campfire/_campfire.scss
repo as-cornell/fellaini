@@ -1,5 +1,5 @@
 .campfire{
-    @include baseGrid($r-gap: $space);
+    @include baseGrid($g-gap: $space * 2);
     grid-template-columns: $space 1fr $space;
     grid-template-areas:
     ". two ."
