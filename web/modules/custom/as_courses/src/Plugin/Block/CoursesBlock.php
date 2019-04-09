@@ -48,12 +48,12 @@ class CoursesBlock extends BlockBase {
     if (!empty($course_json)) {
       foreach($course_json as $course_data) {
         if ($course_count <= $courses_shown) {
-            $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . as_courses_generate_course_item_markup($course_data);
+            $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . as_courses_generate_course_item_markup($course_data,$semester);
           $course_count++;
         }
 
       }
-
+      $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . "<div><a href='https://classes.cornell.edu/browse/roster/" . $semester . "/subject/" . $keyword_params . "'>Full Listing of " . $keyword_params . " Courses for " . $semester . " Semester</a></div>";
     } // There were no courses
     else {
       $build['courses_block']['#markup'] = "<main>
