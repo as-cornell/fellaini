@@ -6,8 +6,11 @@ dependencies:
     - field.field.paragraph.campfire.field_campfire_center
     - field.field.paragraph.campfire.field_related_articles
     - field.field.paragraph.campfire.field_related_articles_2
+    - field.field.paragraph.campfire.field_stat_1
     - paragraphs.paragraphs_type.campfire
   module:
+    - entity_browser_entity_form
+    - inline_entity_form
     - paragraphs
 id: paragraph.campfire.default
 targetEntityType: paragraph
@@ -49,6 +52,24 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_stat_1:
+    weight: 3
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
     region: content
 hidden:
   created: true

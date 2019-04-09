@@ -1,6 +1,8 @@
 module:
   as_articles: 0
+  as_courses: 0
   as_departments_programs: 0
+  as_events: 0
   as_majors_minors: 0
   as_manage_vocabularies: 0
   as_migrate_articles: 0

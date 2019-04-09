@@ -8,8 +8,9 @@ dependencies:
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_links
-    - field.field.taxonomy_term.majors_minors_gradfields.field_major_minor_components
+    - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
     - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
+    - field.field.taxonomy_term.majors_minors_gradfields.field_things
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
     - options
@@ -40,5 +41,6 @@ hidden:
   description: true
   field_classes: true
   field_links: true
-  field_major_minor_components: true
+  field_page_components: true
   field_student_careers: true
+  field_things: true

@@ -1,4 +1,4 @@
-uuid: a3d30088-eae2-4975-a5cf-c047f77b2a82
+uuid: ab0b6d89-d1b5-4ba9-ac1b-f8e6d23f0a9b
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - as_people_stub
 _core:
-  default_config_hash: zFa2lySuahGcFefdF-COcDONmA2JAoYOeZumI8uZVeM
+  default_config_hash: 6ZkRrpz-83j_qdGHFoS4HWSesV7wBqjtcf40ce3Vwxg
 id: import_as_people_stub
 class: null
 field_plugin_method: null
@@ -47,12 +47,12 @@ process:
     plugin: default_value
     default_value: person
   nid: nid
-  title: title
-  field_person_netid: field_person_netid
-  field_links: field_links
+  name: title
+  field_netid: field_person_netid
+  field_link: field_links
   uid:
     plugin: default_value
     default_value: 1
 destination:
-  plugin: 'entity:node'
+  plugin: 'entity:page_component_entity'
 migration_dependencies: null

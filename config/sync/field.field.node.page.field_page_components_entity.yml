@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - as_page_components.page_component_entity_type.events_block
     - as_page_components.page_component_entity_type.formatted_text_block
     - as_page_components.page_component_entity_type.image_figure
+    - as_page_components.page_component_entity_type.layout_group
     - as_page_components.page_component_entity_type.link_block
     - as_page_components.page_component_entity_type.list_block
-    - as_page_components.page_component_entity_type.pano_image
-    - as_page_components.page_component_entity_type.photo_text
     - as_page_components.page_component_entity_type.photo_text_block
     - as_page_components.page_component_entity_type.stat_block
     - as_page_components.page_component_entity_type.video_figure
@@ -30,12 +30,12 @@ settings:
   handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
+      events_block: events_block
       formatted_text_block: formatted_text_block
       image_figure: image_figure
+      layout_group: layout_group
       link_block: link_block
       list_block: list_block
-      pano_image: pano_image
-      photo_text: photo_text
       photo_text_block: photo_text_block
       stat_block: stat_block
       video_figure: video_figure

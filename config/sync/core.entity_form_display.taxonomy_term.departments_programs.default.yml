@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser
-    - field.field.taxonomy_term.departments_programs.field_department_programs_compon
     - field.field.taxonomy_term.departments_programs.field_department_website
     - field.field.taxonomy_term.departments_programs.field_image
+    - field.field.taxonomy_term.departments_programs.field_page_components
     - taxonomy.vocabulary.departments_programs
   module:
     - entity_browser
+    - entity_browser_entity_form
+    - inline_entity_form
     - link
-    - paragraphs
     - path
     - text
 _core:
@@ -29,24 +30,6 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
-  field_department_programs_compon:
-    type: paragraphs
-    weight: 3
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-    third_party_settings: {  }
-    region: content
   field_department_website:
     type: link_default
     weight: 4
@@ -70,6 +53,24 @@ content:
       field_widget_replace: false
       open: false
     third_party_settings: {  }
+  field_page_components:
+    weight: 3
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
   name:
     type: string_textfield
     weight: 0
