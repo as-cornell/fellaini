@@ -1,0 +1,6 @@
+uuid: c23eedfe-2594-437e-bd9f-40f35f1ee5d1
+langcode: en
+status: true
+dependencies: {  }
+id: campfire_side
+label: 'Campfire Side'

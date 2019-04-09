@@ -3,12 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.departments_programs.field_department_programs_compon
     - field.field.taxonomy_term.departments_programs.field_department_website
     - field.field.taxonomy_term.departments_programs.field_image
+    - field.field.taxonomy_term.departments_programs.field_page_components
     - taxonomy.vocabulary.departments_programs
   module:
-    - entity_reference_revisions
     - link
     - text
 _core:
@@ -25,18 +24,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_department_programs_compon:
-    type: entity_reference_revisions_entity_view
-    weight: 3
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_department_website:
     type: link
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:
@@ -55,4 +45,13 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
+  field_page_components:
+    weight: 2
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
 hidden: {  }

@@ -1,0 +1,44 @@
+uuid: 2782604e-a907-482e-9562-6782fbae26f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.campfire_side
+    - field.field.page_component_entity.campfire_side.field_articles_after
+    - field.field.page_component_entity.campfire_side.field_articles_before
+    - field.field.page_component_entity.campfire_side.field_stat
+id: page_component_entity.campfire_side.default
+targetEntityType: page_component_entity
+bundle: campfire_side
+mode: default
+content:
+  field_articles_after:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_articles_before:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_stat:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: card_small
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  name: true
+  user_id: true

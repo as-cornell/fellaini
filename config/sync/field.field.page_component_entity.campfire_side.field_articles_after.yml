@@ -1,0 +1,28 @@
+uuid: a74e34d7-b845-478c-9d4e-2e91ba7c100d
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.campfire_side
+    - field.storage.page_component_entity.field_articles_after
+    - node.type.article
+id: page_component_entity.campfire_side.field_articles_after
+field_name: field_articles_after
+entity_type: page_component_entity
+bundle: campfire_side
+label: 'Articles After'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

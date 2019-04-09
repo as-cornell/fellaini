@@ -8,7 +8,6 @@ dependencies:
     - node.type.page
   module:
     - inline_entity_form
-    - paragraphs
     - path
 _core:
   default_config_hash: sb0qCkzU_8mNq29NehYAU8jCBXWPLeX0UN8sYFVGVcw
@@ -19,28 +18,10 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_page_components:
-    type: paragraphs
-    weight: 2
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
-    third_party_settings: {  }
-    region: content
   field_page_components_entity:
     type: inline_entity_form_complex
     weight: 1
@@ -59,7 +40,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -67,21 +48,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 4
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
@@ -94,11 +75,12 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_page_components: true

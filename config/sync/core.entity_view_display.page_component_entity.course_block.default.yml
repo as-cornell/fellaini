@@ -1,0 +1,43 @@
+uuid: 044ae0a9-234d-475e-90e3-ea9b0001a6d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - field.field.page_component_entity.course_block.field_courses_shown
+    - field.field.page_component_entity.course_block.field_keyword_params
+    - field.field.page_component_entity.course_block.field_semester
+  module:
+    - options
+id: page_component_entity.course_block.default
+targetEntityType: page_component_entity
+bundle: course_block
+mode: default
+content:
+  field_courses_shown:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_keyword_params:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_semester:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  name: true
+  user_id: true

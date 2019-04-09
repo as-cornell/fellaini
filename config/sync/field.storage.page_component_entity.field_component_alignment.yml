@@ -12,7 +12,16 @@ field_name: field_component_alignment
 entity_type: page_component_entity
 type: list_string
 settings:
-  allowed_values: {  }
+  allowed_values:
+    -
+      value: pullLeft
+      label: 'Pull Left'
+    -
+      value: pullRight
+      label: 'Pull Right'
+    -
+      value: stretch
+      label: Stretch
   allowed_values_function: ''
 module: options
 locked: false

@@ -1,0 +1,21 @@
+uuid: 399c6510-5033-4e5c-81d8-c7ced03049e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.field_netid
+field_name: field_netid
+entity_type: page_component_entity
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

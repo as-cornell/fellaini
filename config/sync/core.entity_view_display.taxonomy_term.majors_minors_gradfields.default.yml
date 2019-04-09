@@ -7,12 +7,11 @@ dependencies:
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_links
-    - field.field.taxonomy_term.majors_minors_gradfields.field_major_minor_components
+    - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
     - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
     - field.field.taxonomy_term.majors_minors_gradfields.field_things
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
-    - entity_reference_revisions
     - link
     - options
     - text
@@ -55,7 +54,7 @@ content:
     type: list_default
     region: content
   field_links:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -66,14 +65,14 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_major_minor_components:
-    type: entity_reference_revisions_entity_view
-    weight: 4
-    label: hidden
+  field_page_components:
+    weight: 3
+    label: above
     settings:
+      link: true
       view_mode: default
-      link: ''
     third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_student_careers:
     weight: 6

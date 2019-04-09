@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.campfire.field_campfire_center
     - field.field.paragraph.campfire.field_related_articles
     - field.field.paragraph.campfire.field_related_articles_2
+    - field.field.paragraph.campfire.field_stat_1
     - paragraphs.paragraphs_type.campfire
   module:
     - entity_reference_revisions
@@ -16,7 +17,7 @@ mode: default
 content:
   field_campfire_center:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -33,12 +34,20 @@ content:
     type: entity_reference_entity_view
     region: content
   field_related_articles_2:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       view_mode: card
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_stat_1:
+    weight: 4
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden: {  }

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_body
+    - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_byline
     - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
@@ -39,6 +40,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  field_article_components_entity:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_byline:
     type: string
     weight: 4
@@ -116,10 +126,10 @@ content:
       link: false
     third_party_settings: {  }
   field_related_people:
-    weight: 8
-    label: hidden
+    weight: 13
+    label: above
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content

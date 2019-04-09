@@ -53,12 +53,12 @@ settings:
       pano_image:
         enabled: true
         weight: 10
-      link_block:
-        enabled: true
-        weight: 11
       campfire_center:
         weight: 11
         enabled: false
+      link_block:
+        enabled: true
+        weight: 11
       photo_text:
         enabled: true
         weight: 11
