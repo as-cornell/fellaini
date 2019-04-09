@@ -1,0 +1,21 @@
+uuid: 0e7d4658-cc14-4229-a230-6bfbad1fd22a
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.campfire
+    - field.storage.page_component_entity.field_formatted_text
+  module:
+    - text
+id: page_component_entity.campfire.field_formatted_text
+field_name: field_formatted_text
+entity_type: page_component_entity
+bundle: campfire
+label: 'Formatted Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

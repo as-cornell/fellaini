@@ -1,8 +1,0 @@
-uuid: f9af80b4-2787-4eb9-b6df-8749c99d8bbd
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: WL-g6naAyNjSsLOhxaDUXgFGIBBA8-30AI6FSdwUofU
-id: pano_image
-label: 'Pano Image'

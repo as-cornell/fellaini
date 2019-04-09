@@ -29,7 +29,7 @@ content:
     type: entity_reference_entity_view
     weight: 1
     region: content
-    label: above
+    label: hidden
     settings:
       link: true
       view_mode: default

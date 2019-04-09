@@ -1,0 +1,45 @@
+uuid: e663872a-f294-4a82-b68a-ee7164f824b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - field.field.page_component_entity.course_block.field_courses_shown
+    - field.field.page_component_entity.course_block.field_keyword_params
+    - field.field.page_component_entity.course_block.field_semester
+id: page_component_entity.course_block.default
+targetEntityType: page_component_entity
+bundle: course_block
+mode: default
+content:
+  field_courses_shown:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_keyword_params:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_semester:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

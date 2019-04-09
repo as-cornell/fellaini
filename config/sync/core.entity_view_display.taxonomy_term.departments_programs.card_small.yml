@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.card_small
-    - field.field.taxonomy_term.departments_programs.field_department_programs_compon
     - field.field.taxonomy_term.departments_programs.field_department_website
     - field.field.taxonomy_term.departments_programs.field_image
+    - field.field.taxonomy_term.departments_programs.field_page_components
     - taxonomy.vocabulary.departments_programs
 _core:
   default_config_hash: qDuC0Y6MUNedfzwkibfc1kDLvJ1Hde8pGs4eDayorZI
@@ -26,5 +26,5 @@ content:
     third_party_settings: {  }
 hidden:
   description: true
-  field_department_programs_compon: true
   field_department_website: true
+  field_page_components: true

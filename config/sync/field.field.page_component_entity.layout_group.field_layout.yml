@@ -1,0 +1,21 @@
+uuid: 312c5220-97ff-4085-b80f-cb3c6d073749
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.layout_group
+    - field.storage.page_component_entity.field_layout
+  module:
+    - options
+id: page_component_entity.layout_group.field_layout
+field_name: field_layout
+entity_type: page_component_entity
+bundle: layout_group
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

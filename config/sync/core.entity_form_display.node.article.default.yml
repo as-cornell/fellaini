@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.media_entity_browser
     - field.field.node.article.body
     - field.field.node.article.field_article_body
+    - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_byline
     - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
@@ -24,7 +25,7 @@ dependencies:
     - datetime
     - entity_browser
     - field_group
-    - paragraphs
+    - inline_entity_form
     - path
 third_party_settings:
   field_group:
@@ -95,7 +96,7 @@ third_party_settings:
       region: content
     group_body:
       children:
-        - field_article_body
+        - field_article_components_entity
         - field_related_articles
         - field_related_people
       parent_name: group_article
@@ -141,24 +142,22 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_article_body:
-    type: paragraphs
-    weight: 0
-    region: content
+  field_article_components_entity:
+    weight: 2
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      allow_duplicate: false
     third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
   field_byline:
     type: string_textfield
     weight: 11
@@ -238,7 +237,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_related_articles:
-    weight: 1
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -247,7 +246,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_related_people:
-    weight: 2
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -319,4 +318,5 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_article_body: true
   field_featured_audio_video: true

@@ -1,0 +1,21 @@
+uuid: a31bb812-f873-4076-9aa3-7f419f959802
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - field.storage.page_component_entity.field_semester
+  module:
+    - options
+id: page_component_entity.course_block.field_semester
+field_name: field_semester
+entity_type: page_component_entity
+bundle: course_block
+label: Semester
+description: 'Semester to display.  Leave blank to always display the current semester.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
