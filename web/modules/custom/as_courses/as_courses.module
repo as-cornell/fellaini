@@ -40,7 +40,7 @@ function as_courses_get_courses_json($semester,$keyword_params) {
 
 function as_courses_generate_course_item_markup($course_data) {
     // Deal with classes.cornell.edu's funky json structure
-    //$markup =kint($course_data);
+    //$markup = kint($course_data['enrollGroups'][0]['classSections'][0]['meetings'][0]['instructors'][0]['netid']);
     //$course = $course_data['classes'];
     $markup = "";
     $course_subject = $course_data['subject'];
@@ -50,11 +50,18 @@ function as_courses_generate_course_item_markup($course_data) {
     $course_offered = $course_data['catalogWhenOffered'];
     $course_acadGroup = $course_data['acadGroup'];
     $course_acadCareer = $course_data['acadCareer'];
+    $course_instructors = $course_data['enrollGroups'];
+        foreach ($course_instructors as $instructors) {
+            $instructor_markup = $instructor_markup . $instructors['classSections'][0]['meetings'][0]['instructors'][0]['firstName'];
+            $instructor_markup = $instructor_markup . " " .$instructors['classSections'][0]['meetings'][0]['instructors'][0]['lastName'];
+            $instructor_markup = $instructor_markup . " (" . $instructors['classSections'][0]['meetings'][0]['instructors'][0]['netid'] . ") ";
+            }
+    //dump($instructor_markup);
     $markup = $markup . "<main>
                 <h1>{$course_subject} {$course_number}: {$course_title}</h1>";
-    if ($course_description){
-    $markup = $markup . "<p>" . $course_description . "</p>";
-        }
+    //if ($course_description){
+    //$markup = $markup . "<p>" . $course_description . "</p>";
+    //    }
     if ($course_offered){
     $markup = $markup . "<p> Course Offered: " . $course_offered . "</p>";
         }
@@ -63,6 +70,9 @@ function as_courses_generate_course_item_markup($course_data) {
         }
     if ($course_acadCareer){
     $markup = $markup . "<p> Academic Career: " . $course_acadCareer . "</p>";
+        }
+    if ($instructor_markup){
+    $markup = $markup . "<p> Instructors: " . $instructor_markup . "</p>";
         }
     $markup = $markup ."
             </main>
