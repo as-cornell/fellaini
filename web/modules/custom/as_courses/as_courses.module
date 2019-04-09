@@ -38,7 +38,7 @@ function as_courses_get_courses_json($semester,$keyword_params) {
     return $course_json;
   }
 
-function as_courses_generate_course_item_markup($course_data) {
+function as_courses_generate_course_item_markup($course_data,$semester) {
     // Deal with classes.cornell.edu's funky json structure
     //$markup = kint($course_data['enrollGroups'][0]['classSections'][0]['meetings'][0]['instructors'][0]['netid']);
     //$course = $course_data['classes'];
@@ -58,7 +58,7 @@ function as_courses_generate_course_item_markup($course_data) {
             }
     //dump($instructor_markup);
     $markup = $markup . "<main>
-                <h1>{$course_subject} {$course_number}: {$course_title}</h1>";
+                <h1><a href='https://classes.cornell.edu/browse/roster/{$semester}/class/{$course_subject}/{$course_number}'>{$course_subject} {$course_number}: {$course_title}</a></h1>";
     //if ($course_description){
     //$markup = $markup . "<p>" . $course_description . "</p>";
     //    }
@@ -72,7 +72,7 @@ function as_courses_generate_course_item_markup($course_data) {
     $markup = $markup . "<p> Academic Career: " . $course_acadCareer . "</p>";
         }
     if ($instructor_markup){
-    $markup = $markup . "<p> Instructors: " . $instructor_markup . "</p>";
+    $markup = $markup . "<p> Instructor: " . $instructor_markup . "</p>";
         }
     $markup = $markup ."
             </main>
