@@ -76,6 +76,7 @@ function as_events_generate_event_item_markup($event_data) {
     // Deal with localist's funky json structure
     $event = $event_data['event'];
     $event_title = $event['title'];
+    $event_url = $event['localist_url'];
     $event_location = $event['location_name'];
     $event_room = $event['room_number'];
     //dates and times
@@ -95,7 +96,7 @@ function as_events_generate_event_item_markup($event_data) {
     // $markup = kint($event_formatted_date);
     // $markup = $markup . $event_formatted_date['start_month'];
     $markup = "<div class='eventList__event event'>
-                <span class='event__title'>" . $event_title . "</span>
+                <span class='event__title'><a href='" . $event_url . "'>" . $event_title . "</a></span>
                 <span class='event__date'>
                   <span class='event__month'>" . $event_formatted_date['start_month'] . "</span>
                   <span class='event__date'>" . $event_formatted_date['start_date'] . "</span>
