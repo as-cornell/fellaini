@@ -8,8 +8,8 @@
 
 
 {% set length = items|length %}
-{% set group_base_class = 'box' %}
-{% set group_modifiers = ['flex', 'stats', length] %}
+{% set group_base_class = 'statList' %}
+{% set group_modifiers = [length] %}
 
 
 {% include "@organisms/stat-list/_stat-list.twig" with {
