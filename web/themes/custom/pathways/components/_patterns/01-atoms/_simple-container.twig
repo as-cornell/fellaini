@@ -7,6 +7,8 @@
 {% set modifiers = modifiers | default(['']) %}
 {% set classes = classes | default(['']) %}
 
-<div{{attributes}}{{bem(base_class,(modifiers),'',classes)}}>
+{# {{modifiers|length}} #}
+
+<div {{bem(base_class,(modifiers),'',classes)}} >
     {{content}}
 </div>

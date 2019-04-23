@@ -59,22 +59,22 @@ function as_courses_generate_course_item_markup($course_data,$semester) {
             }
     //dump($instructor_markup);
     $markup = $markup . "<div class='courseList__course card course course--card'>
-                <h3><a href='https://classes.cornell.edu/browse/roster/{$semester}/class/{$course_subject}/{$course_number}'>{$course_title}</a></h3>
-                <span class='course__number'>{$course_subject} {$course_number}</span>";
+                <h3 class='course__title'><a href='https://classes.cornell.edu/browse/roster/{$semester}/class/{$course_subject}/{$course_number}'>{$course_title}</a></h3>
+                <span class='course__number'>{$course_subject} {$course_number}</span><span class='course__details'>";
     //if ($course_description){
     //$markup = $markup . "<p>" . $course_description . "</p>";
     //    }
     if ($course_offered){
-    $markup = $markup . "<span> Course Offered: " . $course_offered . "</span>";
+    $markup = $markup . "<span class='course__semester'> Course Offered: " . $course_offered . "</span>";
         }
     if ($course_acadGroup){
-    $markup = $markup . "<span> Academic Group: " . $course_acadGroup . "</span>";
+    $markup = $markup . "<span class='course__group'> Academic Group: " . $course_acadGroup . "</span>";
         }
     if ($course_acadCareer){
-    $markup = $markup . "<span> Academic Career: " . $course_acadCareer . "</span>";
+    $markup = $markup . "<span class='course__career'> Academic Career: " . $course_acadCareer . "</span>";
         }
     if ($instructor_markup){
-    $markup = $markup . "<span> Instructor: " . $instructor_markup . "</span>";
+    $markup = $markup . "<span class='course__instructor'> Instructor: " . $instructor_markup . "</span></span>";
         }
     $markup = $markup ."
             </div>
