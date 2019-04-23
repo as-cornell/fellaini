@@ -5,39 +5,86 @@
 {{ title_suffix }}
 {% block content %}
 <div class="eventList">
-{{ content }}
+    {% if pl %}
+    <div class='eventList__event card event event--card'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/the_odyssey_in_ithaca'>The Odyssey in Ithaca</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>Apr</span>
+            <span class='event__date'>26</span>
+            <span class='event__time'>8:00</span>
+        </span>
+        <span class='event__location'>Klarman Hall: Atrium</span>
+    </div>
+    <div class='eventList__event card event event--card'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/disaster_cyclone_idai_climate_change_climate_migration'>Disaster: Cyclone Idai, Climate Change & Climate Migration</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>Apr</span>
+            <span class='event__date'>30</span>
+            <span class='event__time'>4:30</span>
+        </span>
+        <span class='event__location'>Goldwin Smith Hall: Lewis Auditorium</span>
+    </div>
+    <div class='eventList__event card event event--card'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/last_day_of_classes_5418'>Last Day of Classes</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>May</span>
+            <span class='event__date'>07</span>
+            <span class='event__time'>12:00</span>
+        </span>
+        <span class='event__location'>Campus-wide:
+        </span>
+    </div>
+    <div class='eventList__event card event event--card'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/cu_music_wind_symphony_convocation_concert'>CU Music: Wind Symphony Convocation Concert</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>May</span>
+            <span class='event__date'>25</span>
+            <span class='event__time'>11:15</span>
+        </span>
+        <span class='event__location'>Schoellkopf Field:
+        </span>
+    </div>
+
+    <div class='eventList__event card event event--card'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/glee_club_and_chorus_commencement_concert_9305'>Glee Club and Chorus Commencement Concert</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>May</span>
+            <span class='event__date'>25</span>
+            <span class='event__time'>8:00</span>
+        </span>
+        <span class='event__location'>Bailey Hall:
+        </span>
+    </div>
+{% else %}
+    {{ content }}
+{% endif %}
+
 </div>
     
 {% endblock %}
 {# 
-<div class='eventList__event event'>
-    <span class='event__title'>Kenneth A.R. Kennedy Lecture in Human Evolution: "Tibetan adaptations to high altitude"</span>
-    <span class='event__date'>Apr 09 4:00 pm to 5:00 pm</span>
-    <span class='event__location'>Biotechnology Building: G10</span>
+/**
+ * {{content}} html is being created in the module
 
-    <span>
-        <img alt='Kenneth A.R. Kennedy Lecture in Human Evolution: "Tibetan adaptations to high altitude"' src='http://images-cf.localist.com/photos/832486/huge/3f06ad9885bda23bcf9752434ee3070d3b857fd2.jpg' />
-    </span>
-</div>
+    <div class='eventList__event event'>
+        <span class='event__title'>Kenneth A.R. Kennedy Lecture in Human Evolution: "Tibetan adaptations to high altitude"</span>
+        <span class='event__date'>Apr 09 4:00 pm to 5:00 pm</span>
+        <span class='event__location'>Biotechnology Building: G10</span>
 
-<div class='eventList__event event'>
-    <span class='event__title'>CU Music Open House for Undergraduates</span>
-    <span class='event__date'>Apr 11 12:00 pm to 2:00 pm</span>
-    <span class='event__location'>Lincoln Hall: Room B20</span>
+        <span>
+            <img alt='Kenneth A.R. Kennedy Lecture in Human Evolution: "Tibetan adaptations to high altitude"' src='http://images-cf.localist.com/photos/832486/huge/3f06ad9885bda23bcf9752434ee3070d3b857fd2.jpg' />
+        </span>
+    </div>
 
-    <span>
-        <img alt='CU Music Open House for Undergraduates' src='http://images-cf.localist.com/photos/555891/huge/de65f9a41c4d618cdb21101a209ee17b9ad4f2ac.jpg' />
-    </span>
-</div>
-
-<div class='eventList__event event'>
-    <span class='event__title'>Stamped from the Beginning : The Krieger Lecture in American Political Culture</span>
-    <span class='event__date'>Apr 15 4:45 pm</span>
-    <span class='event__location'>
-        Rhodes-Rawlings Auditorium, Klarman Hall :
-    </span>
-
-    <span>
-        <img alt='Stamped from the Beginning : The Krieger Lecture in American Political Culture' src='http://images-cf.localist.com/photos/751081/huge/3e1be0a2a5604fdc7d95bee097553f4584fb6ca0.jpg' />
-    </span>
-</div> #}
+*/
+#}
