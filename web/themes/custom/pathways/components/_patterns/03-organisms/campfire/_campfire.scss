@@ -1,5 +1,5 @@
 .campfire{
-    @include baseGrid($g-gap: $space * 2);
+    @include baseGrid();
     grid-template-columns: $space 1fr $space;
     grid-template-areas:
     ". two ."
@@ -11,22 +11,22 @@
         grid-template-areas:
         "one one one two two two two two two three three three";
     }
-    @include large{
-        grid-template-columns: repeat(14, 1fr);
-        grid-template-areas:
-        "one one one one two two two two two two three three three three";
-    }
+    // @include large{
+    //     grid-template-columns: repeat(14, 1fr);
+    //     grid-template-areas:
+    //     "one one one one two two two two two two three three three three";
+    // }
     @include xl{
     // gird-template-columns: repeat(14, $max-column);
     }
-    &__articles{
+    &__articles:nth-child(2n+2){
         grid-area: one;
+    }
+    &__articles:nth-child(3n+3){
+        grid-area: three;
     }
     &__feature{
         grid-area: two;
-    }
-    &__articles_2{
-        grid-area: three;
     }
 } 
 

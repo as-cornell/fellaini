@@ -44,21 +44,21 @@
  * - card_button_modifiers - array of modifiers to add to the base classname of the button
  */
 #}
-{% set card_base_class = 'open-card' %}
+{% set card_base_class = 'card' %}
 {% set card_byline = card_byline | default('') %}
 {% set card_dateline = card_dateline | default('') %}
 {% set card_modifiers = card_modifiers | default(['open']) %}
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
     {% block card_img %}
         {% if card_img_src %}
-        <div class="open-card__image">
+        <div class="card--open__image">
             {% include "@atoms/04-images/responsive-image.twig" with {
                 "img_url": card_img_url|default(card_link_url),
                 "img_src": card_img_src,
                 "img_alt": card_img_alt,
                 "image_link_blockname": card_base_class,
                 "image_blockname": card_base_class,
-                "output_image_tag": card_image_output_image_tag,
+                
                 "responsive_image_blockname" : card_base_class
             } %}
 
@@ -66,14 +66,14 @@
             
         {% endif %}
     {% endblock %}
-   
+   asdfasdfasdfasdf
         {% if card_title %}
             {{ title_prefix }}
             {% include "@atoms/00-text/_heading.twig" with {
                 "heading_level": 2,
                 "heading": card_title,
                 "heading_url": card_title_link|default(card_link_url),
-                "heading_blockname": card_title_blockname|default(card_base_class),
+                "heading_blockname": 'card--open',
                 "heading_modifiers": card_title_modifiers,
                 "heading_link_base_class": card_title_link_base_class|default('title-link'),
                 "heading_link_blockname": card_base_class,
@@ -82,12 +82,12 @@
             {{ title_suffix }}
         {% endif %}
         {% if card_label %}
-            <span class="open-card__label">
+            <span class="card--open__label">
                 {{ card_label }}
             </span>
         {% endif %}
         {% if card_dateline %}
-            <span class="open-card__date">
+            <span class="card--open__date">
                 {{ card_dateline }}
             </span>
         {% endif %}
@@ -112,7 +112,7 @@
         {% endif %}
         
         {% if card_byline %}
-            <span class="open-card__byline">
+            <span class="card--open__byline">
                 by :
                 {{ card_byline }}
             </span>

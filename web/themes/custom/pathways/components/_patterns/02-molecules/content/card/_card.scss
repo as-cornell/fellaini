@@ -5,8 +5,8 @@
 // set styles specifically for PL
 .card{
   @include baseBorder();
-  border-radius: $border-radius;
-  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space);
   .pl &{
     //max-width: 400px;
   }
@@ -15,16 +15,15 @@
 .card__title {
   font-size: 1rem;
   line-height: 1.3;
-  font-weight: $semi;
+  font-weight: var(--semi);
   &-link {
-    @include link($black, none);
-
+    color: var(--black);
   }
 }
 
 .card__label {
   @include no-bottom;
-  color: $gray-med;
+  color: var(--gray-dark);
 }
 
 .card__body {
@@ -32,7 +31,7 @@
 }
 
 .card__link {
-  @include link;
+  // @include link;
 }
 
 .card__button {
@@ -117,6 +116,65 @@
     "byline social";
   }
 }
+
+// Large article cards
+
+// set styles specifically for PL
+.open-card{
+  @include baseBorder();
+  border-radius: $border-radius;
+  margin-bottom: 1rem;
+  .pl &{
+    max-width: 600px;
+  }
+}
+
+// Campfire center Open Card
+.card--feature{
+  
+    @include baseGrid($g-gap: 0px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "top top"
+    "label dateline"
+    "byline social";
+    a{
+      color: $white;
+      margin: 1rem;
+      padding: 1rem;
+      text-align: center;
+      @include baseBorder($bor-width: $quark, $bor-color: $white);
+      font-weight: $semi;
+    }
+  
+  .card__image{
+    grid-area: top;
+  }
+  .card__title{
+    grid-area: top;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  .card__label{
+    grid-area: label;
+    @include baseFont($family: $font-serif);
+    @include fontSize(5);
+    margin: (5 * $quark) 1rem;  
+  }
+  .card__date{
+    grid-area: dateline;
+    text-align: right;
+    @include fontSize(4);
+    margin: (5 * $quark) 1rem;
+  }
+  .card__byline{
+    grid-area: byline;
+    @include fontSize(4);
+    margin: 0 1rem 1rem;
+  }
+}
+
 
 // STATS
 .card--stat{

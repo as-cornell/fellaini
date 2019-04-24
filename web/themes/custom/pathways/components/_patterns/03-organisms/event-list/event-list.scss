@@ -2,7 +2,6 @@
     @include baseGrid();
     grid-template-columns: repeat(3, 1fr);
    @include componentMargin();
-
 }
 .event{
     @include baseGrid();

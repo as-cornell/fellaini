@@ -1,7 +1,7 @@
 /////////////////////
 // General Mixins (put specific ones in component files where applicable)
 
-@mixin baseFont($size: $base-font-size, $color: $black, $weight: $regular, $line-height: $base-line-height, $family: $font-sans){
+@mixin baseFont($size: $base-font-size, $color: var(--black), $weight: $regular, $line-height: $base-line-height, $family: $font-sans){
     font-family: $family;
     font-size: $size;
     color: $color;
@@ -34,7 +34,7 @@
 }
 
 // Mixin - Base Grid
-@mixin baseGrid($g-gap: $space, $r-gap: '0'){
+@mixin baseGrid($g-gap: var(--space)){
   display: grid;
   grid-gap: $g-gap;
 }
