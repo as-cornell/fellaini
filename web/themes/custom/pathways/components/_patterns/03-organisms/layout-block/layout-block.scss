@@ -1,6 +1,7 @@
 .columns{
-    display: flex;
+    @include baseGrid;
     &--heavyRight{
+        grid-template-columns: 2fr 1fr;
         background:red;
     }
 }
