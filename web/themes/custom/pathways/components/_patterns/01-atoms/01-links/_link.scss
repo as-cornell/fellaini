@@ -1,17 +1,15 @@
 /// Link
-@mixin link($color: $red,$text-decoration: underline) {
-  color: $color;
-  text-decoration: $text-decoration;
+// @mixin link($color: var(--red),$text-decoration: underline) {
+//   color: $color;
+//   text-decoration: $text-decoration;
 
-  &:hover {
-    text-decoration: none;
-  }
+//   &:hover {
+//     text-decoration: none;
+//   }
+// }
+
+a, .link {
+  color: var(--red);
+  text-decoration-color: var(--gray-lt);
 }
 
-.link {
-  @include link;
-}
-
-a{
-  @include link;
-}
