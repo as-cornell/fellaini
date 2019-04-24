@@ -34,7 +34,7 @@ $semi: 600;
 $heavy: 800;
 
 // Spacing
-$space: 1rem;
+$space: 1.5rem;
 $largeGap: 12 * $quark;
 
 // Grid Columns
@@ -75,6 +75,50 @@ $teal: #85c4ca;
 $gold: #ffd91f;
 $green: #4d9b5e;
 $red: #b31b1b;
+
+//bold new world of variables
+
+
+:root{
+    --white: white;
+    --black: #35363f;
+    --dark-text: #35363f;
+    --gray-dark: #5d5d5d;
+    --gray-med: #999;
+    --gray: #999; // depricate
+    --gray-lt: #d9d9d9;
+    --gray-light: #d9d9d9; // depricate
+    --gray-lightest:#eee;
+    --near-white: #eee; // depricate
+    --dusk: #435363;
+    --fog: #607774;
+    --storm: #4f869f;
+    --teal: #85c4ca;
+    --gold: #ffd91f;
+    --green: #4d9b5e;
+    --red: #b31b1b; 
+
+    //font weights
+
+    --light: 300;
+    --regular: 400;
+    --semi: 600;
+    --heavy: 800;
+
+    // border-variables
+
+    --border-width: 1px;
+    --border-color: var(--gray-lightest);
+    --border-radius: 4px;
+
+    // spacing elements
+    --space: 1.5rem;
+
+}
+
+//font weight
+
+
 
 // border variables
 $border-width: 1px;

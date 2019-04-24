@@ -3,13 +3,11 @@
     grid-template-columns: repeat(3, 1fr);
    @include componentMargin();
 }
-
 .course{
     @include baseFlex();
     span{
         flex-basis: 100%;
     }
-
     &__details, &__title{
         order: 2;
     }

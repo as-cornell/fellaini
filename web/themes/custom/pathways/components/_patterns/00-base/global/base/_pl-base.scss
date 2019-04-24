@@ -12,6 +12,9 @@
 
 .pl,
 .sg-main {
+  body{
+    background: var(--white);
+  }
   .sg-subtype h2 {
     font-size: 3rem;
     text-transform: uppercase;

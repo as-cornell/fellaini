@@ -3,13 +3,14 @@
     - campfire_articles_1 and campfire_articles_2 are reference fields and the items are displayed with standard article-card components
  #}
 
-<div class="slice campfire">
+<div class="campfire">
     {% if pl %}
         <div class="campfire__feature">
             {% for card in cards.articles|slice(4, 1) %}
                 {% include "@molecules/content/card/01-card.twig" with {
                     "card_blockname" : card.blockname,
-                    "card_modifiers" : card.card_modifiers,
+                    "card_feature" : 'true',
+                    "card_modifiers" : ["feature"],
                     "card_img_src" : card.card_img_src,
                     "card_title" : card.card_title,
                     "card_label" : card.card_label,
@@ -70,7 +71,7 @@
         {{campfire_articles_1}}
         {% endif %}
     </div>
-    <div class="campfire__articles_2">
+    <div class="campfire__articles">
     {% if pl %}
         {% for card in cards.articles|slice(2,2) %}
             {% include "@molecules/content/card/01-card.twig" with {
