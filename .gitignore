@@ -18,3 +18,4 @@ web/sites/*/settings.local.php
 # Ignore SQL dump files
 *--dump.sql
 *.sql
+.DS_Store
