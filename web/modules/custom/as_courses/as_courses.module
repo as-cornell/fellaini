@@ -29,12 +29,25 @@ function as_courses_nameize($str,$a_char = array("'","-"," ")){
     }
 
 function as_courses_get_courses_json($semester,$keyword_params) {
-    //$semester = 'FA19';
+    //set cache id (verify parameters are safe values to use as cache id)
+    $cid = "as_courses:" . $semester . ":" . $keyword_params;
+    $course_json = NULL;
+    //check cache
+    if ($cache = \Drupal::cache('data')->get($cid)) {
+        //fetch cache data
+      $course_json = $cache->data;
+        //check cache expiration
+    }
+       // if no data check url
+    else {
     $url = "https://classes.cornell.edu/api/2.0/search/classes.json?roster={$semester}&subject={$keyword_params}";
     $data = file_get_contents($url);
     $json = json_decode($data, true);
     $course_json = $json['data']['classes'];
-
+    \Drupal::cache('data')
+        ->set($cid, $course_json, time()+360);
+    }
+    //return data
     return $course_json;
   }
 
