@@ -26,7 +26,6 @@ function as_events_nameize($str,$a_char = array("'","-"," ")){
 function as_events_get_events_json($events_shown,$keyword_params) {
     //set cache id (verify parameters are safe values to use as cache id)
     $cid = "as_events:" . $events_shown . ":" . $keyword_params;
-    //dump($cid);
     $event_json = NULL;
       //check cache
     if ($cache = \Drupal::cache('data')->get($cid)) {
