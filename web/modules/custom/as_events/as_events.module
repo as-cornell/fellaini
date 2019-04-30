@@ -52,11 +52,11 @@ function as_events_format_event_dates($startdate, $enddate) {
     $event_formatted_date['start_month'] = date_format($startdate,"M");
     $event_formatted_date['start_date'] = date_format($startdate, "d");
     $event_formatted_date['start_time'] = date_format($startdate, "g:i");
-
+    if ($enddate){
     $event_formatted_date['end_month'] = date_format($enddate, "M");
     $event_formatted_date['end_date'] = date_format($enddate, "d");
     $event_formatted_date['end_time'] = date_format($enddate, "g:i");
-
+      }
       //check to see if there's an end date
         //     if ($enddate){
         // //don't repeat date if start and end is on same day
