@@ -10,9 +10,12 @@
 // Avoid using in favor of atomic, content-specific, breakpoints.
 // These should be used for generic code, like layouts and typography, only.
 
-// $x-wide: $quark * 358; 
-// $wide: $quark * 306; 
 
+$quark: 4px;
+$xx-wide: $quark * 410; //1640 used for MQ and width of wrapper at very large widths
+
+$x-wide: $quark * 358; // 1,432
+$wide: $quark * 306; // 1,224
 
 $xs: 320px;
 $small: 480px;
