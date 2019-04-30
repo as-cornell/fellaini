@@ -2,15 +2,8 @@
 // General Variables
 
 /*
-    Building blocks
+    All width variables moved to _01-breakpoint.scss so breakpoint could use them.
 */
-
-$quark: 4px;
-
-$xx-wide: $quark * 410; //1640 used for MQ and width of wrapper at very large widths
-
-$x-wide: $quark * 358; // 1,432
-$wide: $quark * 306; // 1,224
 
 /*
     Font styles
@@ -112,8 +105,11 @@ $red: #b31b1b;
     --border-radius: 4px;
 
     // spacing elements
-    --space: 1.5rem;
-
+    --space: 1rem;
+    @include small(){
+        --space: 1.5rem;
+        background: red;
+    }
 }
 
 //font weight

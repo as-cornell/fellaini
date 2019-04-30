@@ -1,10 +1,14 @@
 .eventList{
-    @include baseGrid();
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-gap: var(--space);
+    grid-row-gap: var(--space);
+    grid-template-columns: repeat(4, 1fr);
    @include componentMargin();
 }
 .event{
-    @include baseGrid();
+    display: grid;
+    grid-gap: var(--space);
+    grid-row-gap: 0;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
     "date title title title"
