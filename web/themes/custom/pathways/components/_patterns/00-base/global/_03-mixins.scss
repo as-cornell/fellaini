@@ -34,7 +34,7 @@
 }
 
 // Mixin - Base Grid
-@mixin baseGrid($g-gap: var(--space)){
+@mixin baseGrid($g-gap: var(--space), $g-row-gap: var(--space)){
   display: grid;
   grid-gap: $g-gap;
 }

@@ -75,12 +75,18 @@
     card_title: label,
     card_label: content.field_card_label,
     card_link_url: url,
-    card_img: content.field_image,
+    card_img_src : field_image_img.uri | image_style('full_content'),
+
+    card_img_alt : field_image_img.alt,
     card_byline: content.field_byline,
     card_dateline: content.field_dateline
 
 } %}
-    {% block card_img %}
+    
+
+    {# {% block card_img %}
         {{ content.field_image }}
-    {% endblock %}
+    {% endblock %} #}
 {% endembed %}
+
+{# <h1>{{field_image_img.uri}}</h1> #}
