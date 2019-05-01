@@ -47,8 +47,8 @@
 {% set card_base_class = 'card' %}
 {% set card_byline = card_byline | default('') %}
 {% set card_dateline = card_dateline | default('') %}
-
-<div {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
+{# {{nodeId}} #}
+<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} aria-labelledby="article-title-{{card_nodeId}}">
     {% block card_img %}
         {% if card_img_src %}
             <div class="card__image">
@@ -79,9 +79,11 @@
                 "heading_link_base_class": card_title_link_base_class|default('title-link'),
                 "heading_link_blockname": card_base_class,
                 "heading_base_class": card_title_base_class|default('title'),
+                "isAriaLabel" : card_nodeId
             } %}
             {{ title_suffix }}
         {% endif %}
+        
         {% if card_label %}
             <span class="card__label">
                 {{ card_label }}
