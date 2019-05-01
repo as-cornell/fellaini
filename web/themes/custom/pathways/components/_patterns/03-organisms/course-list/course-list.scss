@@ -1,21 +1,26 @@
 .courseList{
     @include baseGrid();
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-row-gap: 2rem;
    @include componentMargin();
 }
 .course{
-    @include baseFlex();
+    @include baseGrid();
+    grid-template-rows: repeat(2, minmax(2rem, 1fr));
+
     span{
         flex-basis: 100%;
-    }
-    &__details, &__title{
-        order: 2;
     }
     &__title{
        @include baseFont();
     }
     &__number{
-        order: 1;
         @include baseFont($size: 1.25rem, $weight: $semi);
+        display: block;
+    }
+    &__details{
+        >span{
+            display: block;
+        }
     }
 }
