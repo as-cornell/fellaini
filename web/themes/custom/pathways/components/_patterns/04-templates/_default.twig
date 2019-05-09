@@ -20,8 +20,8 @@
 
     {% block page_system %}{% endblock %}
 
-<a id="main-content" tabindex="-1"></a>
-    <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }}>
+
+    <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }} id="mainContent">
         
         {# <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}> #}
             {% block page_content %}{% endblock %}

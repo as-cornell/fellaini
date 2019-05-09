@@ -1,15 +1,19 @@
 <header>
-    {# <nav class="" id="skip">
-        <a href="">Skip to main navigation</a>
-        <a href="">Skip to main content</a>
-    </nav> #}
+<!--
+***  SKIP NAV  ***
+-->
+<div id="skip">
+    <a href="#as-main-nav">Jump to main navigation</a>
+    <a href="#mainContent">Jump to main content</a>
+</div>
+
 {% if pl %}
     {% include "@molecules/forms/search-form.twig" %}
     {% else %}
     {{elements.pathways_search}}
 {% endif %}
 {% if pl %}
-    <nav class="nav--audience" id="audience">
+    <nav class="nav--audience" id="audience" aria-label="audience navigation">
         <ul class="audience-menu">
             <li class="audience-menu__item">
                 <a class="audience-menu__link" href="http://as.cornell.edu">
