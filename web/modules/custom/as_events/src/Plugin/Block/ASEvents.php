@@ -40,7 +40,8 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
     }
     //$events_shown = 4;
     //$keyword_params = "casfeatured";
-    $main = "";
+    $build = [];
+    $build['events_block']['#markup'] = "";
     $event_count = 0;
     $event_json = as_events_get_events_json($events_shown,$keyword_params);
 
@@ -48,7 +49,7 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
     if (!empty($event_json)) {
       foreach($event_json as $event_data) {
         if ($event_count <= $events_shown) {
-            $main = $main . as_events_generate_event_item_markup($event_data);
+            $build['events_block']['#markup'] = $build['events_block']['#markup'] . as_events_generate_event_item_markup($event_data);
           $event_count++;
         }
 
@@ -56,17 +57,12 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
 
     } // There were no events
     else {
-      $main = "<main>
+      $build['events_block']['#markup'] = "<main>
                 <h1>Events Calendar</h1>
                 <p>There are no upcoming events</p>
                 </main>";
     }
 
-
-
-
-    return array(
-      '#markup' => $this->t($main),
-    );
+    return $build;
   }
 }
