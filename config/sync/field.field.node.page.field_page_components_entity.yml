@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - as_page_components.page_component_entity_type.course_block
     - as_page_components.page_component_entity_type.events_block
     - as_page_components.page_component_entity_type.formatted_text_block
     - as_page_components.page_component_entity_type.image_figure
@@ -30,6 +31,7 @@ settings:
   handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
+      course_block: course_block
       events_block: events_block
       formatted_text_block: formatted_text_block
       image_figure: image_figure
