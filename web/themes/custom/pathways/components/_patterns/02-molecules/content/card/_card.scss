@@ -57,6 +57,7 @@
 
 // Article Cards
 .card--article{
+  grid-row: span 2;
   .card__copy{
     padding: $space;
     @include baseGrid($g-gap: 0px);
@@ -180,6 +181,7 @@
 .card--stat{
   padding: 1rem;
   text-align: center;
+  grid-row: span 1;
   .card__title{
     display: none; // really never want this to show up even for a11y
   }

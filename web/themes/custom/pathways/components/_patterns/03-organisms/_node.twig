@@ -78,13 +78,13 @@
 {% extends "@templates/_default.twig" %}
 
 {% block page_content %}
-    {# {% if url != '/home' %}
+    {% if url != '/home' %}
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
             "heading" : label,
             "heading_base_class" : 'page-title'
         } %}
-    {% endif %} #}
+    {% endif %}
     {{content}}
 {% endblock %}
 
