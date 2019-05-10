@@ -25,13 +25,12 @@ body{
 
 .container{
   grid-column: 2;
-  padding: 0 1rem;
-  @include large(){
-    padding: 0 2rem;
-  };
-  @include baseGrid();
-  max-width: $x-wide;
-  margin: 0 auto;
+  padding: 0 var(--mainGutter);
+  @include medium(){
+    @include baseGrid();
+    margin: 0 auto;
+  }
+
   &--topBar{
     grid-template-columns: auto 1fr;
     align-items: center;

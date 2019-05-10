@@ -55,13 +55,36 @@
 
 
 {# {{ kint(modifiers) }} #}
-<!-- start of _field.twig -->
-    {% if not label_hidden %}
-        {% include "@atoms/00-text/_heading.twig" with {
-                "heading_level" : 3,
-                "heading" : label
-        } %}
+<!-- start of _field-with-wrappers.twig -->
+    {% if label_hidden %}
+        {% if multiple %}
+            <!-- multiple no label -->
+            {# <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}> #}
+                {% for item in items %}
+                <div {{ item.attributes }} {% if self_tag %}class="{{item.content}}" {% endif %}>
+                    {{ item.content }}
+                </div>
+                {{ item.content }}
+            {% endfor %}
+            {# </div> #}
+        {% else %}
+            {% for item in items %}
+                {# <div{{attributes}}> #}
+                {{ item.content }}
+                {# </div> #}
+            {# {{ item.content }} #}
+        {% endfor %}
     {% endif %}
-    {% for item in items %}
-        {{ item.content }}
-    {% endfor %}
+    {% else %}
+    {% include "@atoms/00-text/_heading.twig" with {
+        "heading_level" : 3,
+        "heading" : label
+    } %}
+
+    <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
+            {% for item in items %}
+                {{ item.content }}
+            {% endfor %}
+
+    </div>
+{% endif %}

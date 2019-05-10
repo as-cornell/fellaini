@@ -106,10 +106,34 @@ $red: #b31b1b;
 
     // spacing elements
     --space: 1rem;
-    @include small(){
+    @include medium(){
         --space: 1.5rem;
-        background: red;
     }
+    
+
+    // gutter on first level wrappers; header, .container
+
+    --mainGutter: var(--space);
+    @include small(){
+        --mainGutter: calc(2 * var(--space)); // 2rem = 48px
+    }
+
+    @include medium(){
+        --mainGutter: calc(2 * var(--space)); // 3rem = 72px
+    }
+
+    // Base grid variables
+
+    --auto-grid-min-size: calc(10 * var(--space));
+    --base-grid-gap: var(--space);
+    // @include medium(){
+    //     --base-grid-gap: calc(1.5 * var(--space));
+    // }
+
+    // universal spacing variables
+
+    --component-bottom-margin: calc(5 * var(--space));
+
 }
 
 //font weight
