@@ -32,8 +32,10 @@
         &__articles:nth-child(2n+2){
             grid-area: one;
         }
+        // reset display on third column
         &__articles:nth-child(3n+3){
             grid-area: three;
+            display: block;
         }
         &__feature{
             grid-area: two;
