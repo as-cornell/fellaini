@@ -61,7 +61,6 @@
         "drupal/material_admin": "^1.0",
         "drupal/hide_revision_field": "^2.1",
         "drupal/dynamic_entity_reference": "^1.7",
-        "drupal/jsonapi": "^2.4",
         "egulias/email-validator": "^2.0"
 
     },
