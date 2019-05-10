@@ -1,7 +1,14 @@
 .columns{
-    @include baseGrid;
-    &--heavyRight{
-        grid-template-columns: 2fr 1fr;
+    @include medium(){
+        @include baseGrid;
+        &--heavyRight{
+        grid-template-columns: 1fr 2fr;
         background:red;
+        }
+        &--heavyLeft{
+        grid-template-columns: 2fr 1fr;
+        background:yellow;
+        }
     }
+    
 }
