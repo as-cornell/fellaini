@@ -1,0 +1,119 @@
+{{ title_prefix }}
+{% if label %}
+    <h2{{title_attributes.addClass('h2')}}>{{ label }}</h2>
+{% endif %}
+{{ title_suffix }}
+{% block content %}
+
+<div class="courseList">
+    {% if pl %}
+    <div class='courseList__course card course course--card'>
+        <h3 class='course__title'>
+            <a href='https://classes.cornell.edu/browse/roster/SP19/class/ANTHR/1101'>FWS: Culture, Society, and Power</a>
+        </h3>
+        <span class='course__number'>ANTHR 1101</span>
+        <span class='course__details'>
+            <span class='course__semester'>
+                Course Offered: Fall, Spring.</span>
+            <span class='course__group'>
+                Academic Group: AS</span>
+            <span class='course__career'>
+                Academic Career: UG</span>
+            <span class='course__instructor'>
+                Instructor: Eudes Lopes (ecp96) Ting Hui Lau (tl548) Natalie Nesvaderani (nnf7) Kurt Jordan (kj21)
+            </span>
+        </span>
+    </div>
+    <div class='courseList__course card course course--card'>
+        <h3 class='course__title'>
+            <a href='https://classes.cornell.edu/browse/roster/SP19/class/ANTHR/1190'>Humanity</a>
+        </h3>
+        <span class='course__number'>ANTHR 1190</span>
+        <span class='course__details'>
+            <span class='course__semester'>
+                Course Offered: Spring.</span>
+            <span class='course__group'>
+                Academic Group: AS</span>
+            <span class='course__career'>
+                Academic Career: UG</span>
+            <span class='course__instructor'>
+                Instructor: Jonathan Boyarin (jab857)
+            </span>
+        </span>
+    </div>
+    <div class='courseList__course card course course--card'>
+        <h3 class='course__title'>
+            <a href='https://classes.cornell.edu/browse/roster/SP19/class/ANTHR/1300'>Human Evolution: Genes, Behavior, and the Fossil Record</a>
+        </h3>
+        <span class='course__number'>ANTHR 1300</span>
+        <span class='course__details'>
+            <span class='course__semester'>
+                Course Offered: Spring, Summer.</span>
+            <span class='course__group'>
+                Academic Group: AS</span>
+            <span class='course__career'>
+                Academic Career: UG</span>
+            <span class='course__instructor'>
+                Instructor: Matthew Velasco (mcv47)
+            </span>
+        </span>
+    </div>
+    <div class='courseList__course card course course--card'>
+        <h3 class='course__title'>
+            <a href='https://classes.cornell.edu/browse/roster/SP19/class/ANTHR/1520'>Tamil Conversation in Context</a>
+        </h3>
+        <span class='course__number'>ANTHR 1520</span>
+        <span class='course__details'>
+            <span class='course__group'>
+                Academic Group: AS</span>
+            <span class='course__career'>
+                Academic Career: UG</span>
+            <span class='course__instructor'>
+                Instructor: Lucinda Ramberg (ler35)
+            </span>
+        </span>
+    </div>
+    <div class='courseList__course card course course--card'>
+        <h3 class='course__title'>
+            <a href='https://classes.cornell.edu/browse/roster/SP19/class/ANTHR/2021'>Viruses- Humans-Viral Politics (Social History and Cultural Politics of HIV &amp; AIDS)</a>
+        </h3>
+        <span class='course__number'>ANTHR 2021</span>
+        <span class='course__details'>
+            <span class='course__semester'>
+                Course Offered: Spring.</span>
+            <span class='course__group'>
+                Academic Group: AS</span>
+            <span class='course__career'>
+                Academic Career: UG</span>
+            <span class='course__instructor'>
+                Instructor: Christopher Roebuck (cr566)
+            </span>
+        </span>
+    </div>
+    <div class='courseList__course card course course--card'>
+        <h3 class='course__title'>
+            <a href='https://classes.cornell.edu/browse/roster/SP19/class/ANTHR/2045'>American Indian Music in Context</a>
+        </h3>
+        <span class='course__number'>ANTHR 2045</span>
+        <span class='course__details'>
+            <span class='course__semester'>
+                Course Offered: Spring.</span>
+            <span class='course__group'>
+                Academic Group: AS</span>
+            <span class='course__career'>
+                Academic Career: UG</span>
+            <span class='course__instructor'>
+                Instructor: Chad Uran (csu3)
+            </span>
+        </span>
+    </div>
+
+    <div>
+        <a href='https://classes.cornell.edu/browse/roster/SP19/subject/ANTHR'>Full Listing of ANTHR Courses for SP19 Semester</a>
+    </div>
+    {% else %}
+    {{ content }}
+    {% endif %}
+    </div>
+
+{% endblock %}
