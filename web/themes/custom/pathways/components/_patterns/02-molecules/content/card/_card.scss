@@ -86,10 +86,11 @@
     @include fontSize(4);
   }
   &.card--small{
+    grid-template-columns: 120px 1fr;
     border: none;
     margin-bottom: 2rem;
     .card__copy{
-      padding: 0;
+      padding: .5rem .5rem 1rem 0;
       @include baseGrid($g-gap: 0px);
       grid-template-columns: 1fr;
       grid-template-areas:
@@ -99,7 +100,7 @@
     .card__title{
       grid-area: title;
       margin: 0;
-      @include baseFont($size: 20px, $weight: $semi, $line-height: 6 * $quark)
+      @include baseFont($size: 20px, $weight: $semi, $line-height: 1.4em)
     }
     .label, .byline{
       display: none;
@@ -107,6 +108,10 @@
     .date{
       grid-area: date;
       text-align: left;
+      margin-bottom: .25rem;
+    }
+    img{
+      border-radius: var(--border-radius);
     }
   }
   &.card--large{
