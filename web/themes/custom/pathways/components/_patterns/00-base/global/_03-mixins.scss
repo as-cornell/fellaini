@@ -148,10 +148,11 @@
 }
 
 //buttons
-@mixin button($btn-color:$gray-dark, $bor-color: $gray-dark){
+@mixin button($btn-color:var(--black), $bor-color: var(--black)){
   @include baseBorder($bor-width: 2px, $bor-color: $bor-color);
-  padding: (4 * $quark) (6 * $quark);
+  padding: .5em 1em;
   color: $btn-color;
+  border-radius: var(--border-radius);
 }
 
 
