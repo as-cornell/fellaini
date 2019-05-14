@@ -59,7 +59,7 @@ function as_courses_generate_course_item_markup($course_data,$semester) {
             }
     //dump($instructor_markup);
     $markup = $markup . "
-                <div class='courseList__course course'>
+                <div class='courseList__course course card card--course'>
                   
                   <h3 class='course__title'>
                     <a href='https://classes.cornell.edu/browse/roster/{$semester}/class/{$course_subject}/{$course_number}'>
