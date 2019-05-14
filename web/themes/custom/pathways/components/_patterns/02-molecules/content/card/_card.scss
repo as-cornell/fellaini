@@ -4,7 +4,8 @@
 
 // set styles specifically for PL
 .card{
-  @include baseBorder();
+  @include boxShadow;
+  // @include baseBorder();
   border-radius: var(--border-radius);
   margin-bottom: var(--space);
   .pl &{
@@ -118,8 +119,6 @@
   }
 }
 
-// Large article cards
-
 // set styles specifically for PL
 .open-card{
   @include baseBorder();
@@ -192,6 +191,11 @@
   .card__body{
     font-weight: $semi;
   }
+}
+
+// COURSES
+.card--course{
+  padding: 1rem;
 }
 
 // article cards in .list--thumbnail
