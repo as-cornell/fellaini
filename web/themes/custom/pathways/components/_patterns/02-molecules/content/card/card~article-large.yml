@@ -1,6 +1,8 @@
 card_modifiers:
   1:
-    article
+    feature
+  2:
+    open
 
 # Title
 card_title:
@@ -21,6 +23,9 @@ card_byline:
 # Link
 card_link_url:
   'http://astro.cornell.edu'
+
+card_feature:
+  'true'
 
 # overwrite
 card_subtitle:

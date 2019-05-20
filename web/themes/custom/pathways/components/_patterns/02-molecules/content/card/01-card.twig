@@ -47,21 +47,27 @@
 {% set card_base_class = 'card' %}
 {% set card_byline = card_byline | default('') %}
 {% set card_dateline = card_dateline | default('') %}
-
-<div {{ bem(card_base_class, (card_modifiers), card_blockname) }}>
+{# {{nodeId}} #}
+<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %}aria-labelledby="article-title-{{card_nodeId}}"{% endif %}>
     {% block card_img %}
         {% if card_img_src %}
-            {% include "@atoms/04-images/responsive-image.twig" with {
-                "img_url": card_img_url|default(card_link_url),
-                "img_src": card_img_src,
-                "img_alt": card_img_alt,
-                "image_link_blockname": card_base_class,
-                "image_blockname": card_base_class,
-                "output_image_tag": card_image_output_image_tag,
-            } %}
+            <div class="card__image">
+                {% include "@atoms/04-images/responsive-image.twig" with {
+                    "img_url": card_img_url|default(card_link_url),
+                    "img_src": card_img_src,
+                    "img_alt": card_img_alt,
+                    "image_link_blockname": card_base_class,
+                    "image_blockname": card_base_class,
+                    "output_image_tag": card_image_output_image_tag,
+                } %}
+            </div>
+            
         {% endif %}
     {% endblock %}
-    <div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
+    {% if not card_feature %}
+<div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
+    {% endif %}
+
         {% if card_title %}
             {{ title_prefix }}
             {% include "@atoms/00-text/_heading.twig" with {
@@ -73,9 +79,11 @@
                 "heading_link_base_class": card_title_link_base_class|default('title-link'),
                 "heading_link_blockname": card_base_class,
                 "heading_base_class": card_title_base_class|default('title'),
+                "isAriaLabel" : card_nodeId
             } %}
             {{ title_suffix }}
         {% endif %}
+        
         {% if card_label %}
             <span class="card__label">
                 {{ card_label }}
@@ -105,6 +113,10 @@
                 "paragraph_base_class" : card_body_base_class | default('body')
             } %}
         {% endif %}
+
+        {# 
+            removing this for now. Most cards will have the heading be the link text. Probably need to incorporate this back in for cards like stats.
+            
         {% if card_link_url %}
             {% include "@atoms/01-links/link.twig" with {
                 "link_content" : card_link_text,
@@ -113,7 +125,7 @@
                 "link_blockname" : card_link_blockname | default(card_base_class),
                 "link_base_class" : card_link_base_class | default('link')
             } %}
-        {% endif %}
+        {% endif %} #}
         {% if card_byline %}
             <span class="card__byline">
                 by :
@@ -130,6 +142,8 @@
                 "button_blockname" : card_blockname | default(card_base_class)
             } %}
         {% endif %}
+        {% if not card_feature %}
     </div>
+    {% endif %}
     <!-- copy -->
 </div>

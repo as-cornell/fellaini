@@ -12,7 +12,7 @@ h1 {
 
 h2 {
   @include baseFont($size: (12 * $quark), $weight: $semi, $line-height: (14 * $quark));
-  @include baseMargin($margin-direction: margin-bottom, $margin-width:1rem);
+  @include baseMargin($margin-direction: margin-bottom, $margin-width:1em);
 }
 
 h3 {
@@ -28,6 +28,15 @@ h4 {
 h5,
 h6 {
   @include baseFont($size: (7 * $quark), $weight: $semi, $line-height: (8 * $quark));
+}
+h1, h2, h3, h4{
+  display: table;
+}
+.h1, .h2, .h3, .h4{
+  &--border{
+    border-bottom: 1px solid var(--teal);
+    margin: 0 auto 1em auto;
+  }
 }
 
 
