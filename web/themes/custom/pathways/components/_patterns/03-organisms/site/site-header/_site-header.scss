@@ -19,11 +19,17 @@ header{
     background-image: linear-gradient($black, $black 58px, $white 58px, $white);
     margin-bottom: (15 * $quark);
     @include baseGrid();
-    grid-template-columns: 1fr repeat(14,minmax(50px,80px)) 1fr;
+    padding: 0 var(--mainGutter);
+
+    
+    //large screen
+    
+    grid-template-columns: repeat(12,1fr);
     grid-template-areas:
-    ". search search search search search audNav audNav audNav audNav audNav audNav audNav audNav audNav ."
-    ". logo logo logo logo logo logo logo logo logo logo logo logo logo logo ."
-    "mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav";
+    "search search search search audNav audNav audNav audNav audNav audNav audNav audNav"
+    ". . . logo logo logo logo logo logo . . ."
+    "mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav";
+    
     #skip{
 
     }

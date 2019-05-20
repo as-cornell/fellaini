@@ -23,35 +23,22 @@ body{
   }
 }
 
-// main to add side gutters to main content wrapper
-main{
-  // padding: 0 1rem;
-}
-
 .container{
   grid-column: 2;
-  padding: 0 1rem;
-  @include large(){
-    padding: 0 2rem;
-  };
-  @include baseGrid();
-  max-width: $x-wide;
-  margin: 0 auto;
+  padding: 0 var(--mainGutter);
+  @include medium(){
+    @include baseGrid();
+    margin: 0 auto;
+  }
+
   &--topBar{
     grid-template-columns: auto 1fr;
     align-items: center;
     padding: .5rem 0;
   }
-  // &--content found on _page.scss for all basic page grid styles
 }
 
-// slice : the main wrapper for each main section of a page
-// examples : campfire, phototext, links
-// anything that goes edge to edge. Will eventually receive a .slice--with-sidebar addtion
-.slice{
-  // max-width: $x-wide;
-  // margin: 0 auto (19 * $quark);
-}
+
 
 // Grid helper classes prefixed with 'g-'
 

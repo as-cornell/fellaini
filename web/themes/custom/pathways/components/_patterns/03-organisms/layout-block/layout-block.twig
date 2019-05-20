@@ -1,7 +1,7 @@
 {#
     /**
      * @file
-     * Theme override for a field.
+     * Output of the colomns component.
      *
      * To override output, copy the "field.html.twig" from the templates directory
      * to your theme's directory and customize it, just like customizing other
@@ -52,16 +52,8 @@
 
 {% set self_tag = self_tag | default('') %}
 
-
-
-{# {{ kint(modifiers) }} #}
-<!-- start of _field.twig -->
-    {% if not label_hidden %}
-        {% include "@atoms/00-text/_heading.twig" with {
-                "heading_level" : 3,
-                "heading" : label
-        } %}
-    {% endif %}
-    {% for item in items %}
-        {{ item.content }}
-    {% endfor %}
+{% for item in items %}
+    <div {{ item.attributes }}>{{ item.content }}</div>
+{% endfor %}
+            
+ 

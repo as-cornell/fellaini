@@ -1,7 +1,7 @@
 /////////////////////
 // General Mixins (put specific ones in component files where applicable)
 
-@mixin baseFont($size: $base-font-size, $color: $black, $weight: $regular, $line-height: $base-line-height, $family: $font-sans){
+@mixin baseFont($size: $base-font-size, $color: var(--black), $weight: $regular, $line-height: $base-line-height, $family: $font-sans){
     font-family: $family;
     font-size: $size;
     color: $color;
@@ -34,7 +34,7 @@
 }
 
 // Mixin - Base Grid
-@mixin baseGrid($g-gap: $space, $r-gap: '0'){
+@mixin baseGrid($g-gap: var(--space), $g-row-gap: var(--space)){
   display: grid;
   grid-gap: $g-gap;
 }
@@ -119,6 +119,11 @@
     }
 }
 
+// Drop shadow
+@mixin boxShadow(){
+  box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.08);
+}
+
 
 // Margins
 @mixin baseMargin($margin-direction: "margin", $margin-width: $margin-width) {
@@ -143,10 +148,11 @@
 }
 
 //buttons
-@mixin button($btn-color:$gray-dark, $bor-color: $gray-dark){
+@mixin button($btn-color:var(--black), $bor-color: var(--black)){
   @include baseBorder($bor-width: 2px, $bor-color: $bor-color);
-  padding: (4 * $quark) (6 * $quark);
+  padding: .5em 1em;
   color: $btn-color;
+  border-radius: var(--border-radius);
 }
 
 

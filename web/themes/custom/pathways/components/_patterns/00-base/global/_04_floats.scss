@@ -34,8 +34,7 @@
 // full width stretch
 
 .full-width{
-    width: calc(100% + 208px);
-   // max-width: 500%;
-    margin-left: -104px;
+    width: calc(100% + (2 * var(--mainGutter)));
+    margin-left: calc(-1 * var(--mainGutter));
     text-align: center;
 }

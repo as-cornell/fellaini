@@ -8,4 +8,7 @@ _Title and subtext_
 Cards.. harder than they look.
 01-card is the basic card with an image and a separate content
 
-02-card is a card with now contnet just image,title etc. primarily used for campfire center main article.
+*Article
+*Article--feature -- gets an extra 'card_feature = true' to hide the body wrapper from the regular cards
+*Major/Minor
+*Department/Program
