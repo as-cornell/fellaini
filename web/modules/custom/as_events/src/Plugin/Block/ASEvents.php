@@ -24,7 +24,7 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
 
   public function build() {
     $config = $this->getConfiguration();
-    //kint($config);
+    kint($config);
     if (!empty($config['events_shown'])) {
       $events_shown = $config['events_shown'];
     }
@@ -38,8 +38,6 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
     else {
       $keyword_params = "casfeatured";
     }
-    //$events_shown = 4;
-    //$keyword_params = "casfeatured";
     $build = [];
     $build['events_block']['#markup'] = "";
     $event_count = 0;

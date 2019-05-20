@@ -120,31 +120,6 @@ function as_events_generate_event_item_markup($event_data) {
     return $markup;
   }
 
-function as_events_generate_events_view($event_json) {
-    $event_count = 1;
-    $events_shown = 0;
-    $events = array();
-
-    if (!empty($event_json)) {
-      $events[] = array('#markup' => '<main>');
-      foreach($event_json as $event_data) {
-        if ($event_count <= $events_shown || $events_shown == 0) {
-          $markup = as_events_generate_event_item_markup($event_data, $event_count);
-          $markup = "some markup";
-          // Add the markup to the render array
-          $events[] = array('#markup' => $markup);
-          $event_count++;
-        }
-
-      }
-    $events[] = array('#markup' => '</main>');
-    } // There were no events
-    else {
-      $events[] = array('#markup' => '<p>There are no upcoming events for this category.</p>');
-    }
-
-    return $events;
-  }
 
 /**
  * Implements hook_help().
