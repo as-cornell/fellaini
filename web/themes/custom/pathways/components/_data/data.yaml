@@ -100,7 +100,7 @@ cards:
     5:
       card_modifiers:
         1: "article"
-        2: "large"
+        2: "open"
       card_img_src:
         "https://as.cornell.edu/sites/as/files/field/image/avery-crop-3.jpg"
       card_title:

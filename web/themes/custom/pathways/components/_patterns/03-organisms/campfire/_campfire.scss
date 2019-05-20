@@ -1,33 +1,51 @@
 .campfire{
-    @include baseGrid($g-gap: $space * 2);
-    grid-template-columns: $space 1fr $space;
-    grid-template-areas:
-    ". two ."
-    ". one ."
-    ". three .";
-    @include componentMargin();
-    @include medium{
-    grid-template-columns: repeat(12, 1fr);
-        grid-template-areas:
-        "one one one two two two two two two three three three";
+    @include baseGrid();
+    grid-template-columns: 1fr;
+    margin-bottom: var(--component-bottom-margin);
+    
+    // Medium Plus
+    @include medium(){
+        grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+            "one one two"
+            "three three three";
+        &__articles:nth-child(2n+2){
+            grid-area: two;
+        }
+        // far right column drops down in middle range 
+        &__articles:nth-child(3n+3){
+            grid-area: three;
+            @include baseGrid();
+            grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+            grid-auto-flow: dense;
+        }
+        &__feature{
+            grid-area: one;
+        }
     }
-    @include large{
-        grid-template-columns: repeat(14, 1fr);
-        grid-template-areas:
-        "one one one one two two two two two two three three three three";
+
+    // Large Plus
+    @include large(){
+        grid-template-columns: repeat(12, 1fr);
+            grid-template-areas:
+            "one one one two two two two two two three three three";
+        &__articles:nth-child(2n+2){
+            grid-area: one;
+        }
+        // reset display on third column
+        &__articles:nth-child(3n+3){
+            grid-area: three;
+            display: block;
+        }
+        &__feature{
+            grid-area: two;
+        }
     }
+    
     @include xl{
     // gird-template-columns: repeat(14, $max-column);
     }
-    &__articles{
-        grid-area: one;
-    }
-    &__feature{
-        grid-area: two;
-    }
-    &__articles_2{
-        grid-area: three;
-    }
+    
 } 
 
 // campfire specific styles
