@@ -4,7 +4,7 @@
 
 {# BEM vars #}
 {% set list_modifiers = list_modifiers %}
-{% set list_blockname = "list" %}
+{% set list_blockname = list_blockname | default('list') %}
 {% set card_modifiers = card_modifiers | default('card.modifiers') %}
 {# As we go i might add list modifiers for different layouts #}
 
