@@ -1,6 +1,11 @@
 {{ title_prefix }}
 {% if label %}
-    <h2{{title_attributes.addClass('h2')}}>{{ label }}</h2>
+{% include "@atoms/00-text/_heading.twig" with {
+        "heading_level" : 2,
+        "heading" : label,
+        "heading_modifiers" : ['border']
+    } %}
+
 {% endif %}
 {{ title_suffix }}
 {% block content %}
@@ -61,19 +66,3 @@
 </div>
     
 {% endblock %}
-{# 
-/**
- * {{content}} html is being created in the module
-
-    <div class='eventList__event event'>
-        <span class='event__title'>Kenneth A.R. Kennedy Lecture in Human Evolution: "Tibetan adaptations to high altitude"</span>
-        <span class='event__date'>Apr 09 4:00 pm to 5:00 pm</span>
-        <span class='event__location'>Biotechnology Building: G10</span>
-
-        <span>
-            <img alt='Kenneth A.R. Kennedy Lecture in Human Evolution: "Tibetan adaptations to high altitude"' src='http://images-cf.localist.com/photos/832486/huge/3f06ad9885bda23bcf9752434ee3070d3b857fd2.jpg' />
-        </span>
-    </div>
-
-*/
-#}

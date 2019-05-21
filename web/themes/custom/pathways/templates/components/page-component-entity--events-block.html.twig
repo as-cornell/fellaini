@@ -5,7 +5,7 @@
  {% set eventsLabelValue = content.name[0]['#context']['value'] %}
  {% set eventsShownValue = content.field_events_shown[0]['#markup'] %}
  {% set eventsKeywordsValue = content.field_keyword_params[0]['#context']['value'] %}
-{{eventsLabelValue}}
+
 {# {{kint(_context)}} #}
 
     {{ drupal_block('events_block', {label: eventsLabelValue, events_shown: eventsShownValue , keyword_params: eventsKeywordsValue}) }}
