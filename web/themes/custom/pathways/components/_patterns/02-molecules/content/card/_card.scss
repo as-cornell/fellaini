@@ -60,7 +60,7 @@
 .card--article{
   grid-row: span 2;
   .card__copy{
-    padding: $space;
+    padding: 1rem;
     @include baseGrid($g-gap: 0px);
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:

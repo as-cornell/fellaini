@@ -13,18 +13,37 @@
     display: grid;
     grid-gap: var(--space);
     grid-row-gap: 0;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 80px 1fr;
     grid-template-areas: 
-    "date title title title"
-    "date location location location";
-    &__date{
+    "date content";
+    &__dateTime{
        grid-area: date;
+    }
+    &__month{
+        font-size: 1.25rem;
+        font-weight: var(--heavy);
+    }
+    &__date{
+        font-size: 1.5rem;
+        font-weight: var(--light);
+        color: var(--gray);
+        line-height: 1;
+    }
+    &__content{
+        grid-area: content;
     }
     &__title{
         grid-area: title;
+        margin-bottom: .5rem;
     }
     &__location{
         grid-area: location;
+    }
+    a{
+        color: var(--gray-dark);
+    }
+    span{
+      display: block;  
     }
 }
 
