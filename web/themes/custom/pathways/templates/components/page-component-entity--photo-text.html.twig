@@ -5,6 +5,12 @@
  if we wind up using this as a stand alone field somehwere.
 #}
 
+{# 
+
+    ****** need to make image_style a passable variable. Want these to be different from differnet places.
+
+ #}
+
 {% set link_url = content.field_link.0['#url']%}
 {% set link_text = content.field_link.0['#title']%}
 {% set base_class = 'photoText' %}
@@ -13,7 +19,7 @@
 {% embed "@molecules/content/photo-text/photo-text.twig" with {
     title: content.field_photo_text_title,
     text: content.field_formatted_text,
-    img_src : img.uri | image_style('extra_large_square'),
+    img_src : img.uri | image_style('full_content'),
     img_alt : img.alt,
     img_caption : img.caption,
     img_credit : img.credit,
