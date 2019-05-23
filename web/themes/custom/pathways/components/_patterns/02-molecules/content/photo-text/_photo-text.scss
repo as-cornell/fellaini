@@ -1,3 +1,14 @@
+// Phototext wrappers
+
+.ptWrapper{
+    &--slider{
+        background: red;
+    }
+    &--featured{
+        background: green;
+    }
+}
+
 // base styles for Photo Text blocks, elements and mods
 
 .photoText{
