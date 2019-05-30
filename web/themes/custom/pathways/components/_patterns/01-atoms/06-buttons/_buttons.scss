@@ -37,13 +37,29 @@
 .button {
   @include button;
 
-  // &--alt {
-  //   @include button;
-  //   @include button-alt;
-  // }
-
-  // &--alt-2 {
-  //   @include button;
-  //   @include button-alt-2;
-  // }
+  //previous and next buttons
+  &.prev, &.next{
+    span{
+      content: "";
+      font-size: 1rem;
+      width: 35px;
+      line-height: 35px;
+      top: 1px;
+      right: 0;
+      text-align: center;
+      text-indent: 0;
+      color: $black;
+      cursor: pointer;
+    }
+  }
+  &.prev{
+    span{
+        transform: rotate(90deg);
+    }
+  }
+  &.next{
+    span{
+        transform: rotate(-90deg);
+    }
+  }
 }

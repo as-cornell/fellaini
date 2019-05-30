@@ -15,4 +15,4 @@ sprite:
 
 carousel:
   js:
-    dist/03-organisms/photo-text/photo-text-carousel.js: {}
+    dist/03-organisms/photo-text-block/photo-text-carousel.js: {}

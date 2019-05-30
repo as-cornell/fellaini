@@ -1,0 +1,27 @@
+{# 
+    special PT layout for feature layouts like on the homepage.
+ #}
+
+{# {{kint(_context)}} #}
+
+
+<div class="PHOTOTEXT WRAPPER">
+    {% if pl %}
+        {% for photo_text in photo_texts %}
+            {% include "@molecules/content/photo-text/photo-text.twig" with {
+                        title: photo_text.title,
+                        text: photo_text.text,
+                        image: photo_text.image,
+                        link_url: photo_text.link_url,
+                        link_text: photo_text.link_text,
+                        base_class : 'slide'
+                        }
+                    %}
+            hi mark
+        {% endfor %}
+        {% else %}
+    {% for item in items %}
+        {{ item.content }}
+    {% endfor %}
+    {% endif %}
+</div>
