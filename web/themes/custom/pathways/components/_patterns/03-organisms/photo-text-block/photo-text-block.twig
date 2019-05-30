@@ -1,0 +1,33 @@
+{# 
+    Master wrapper for PT blocks.
+    each item output wit page-component-entity--photo-text.html.twig
+ #}
+
+{% set wrapperClassClean = wrapperClass|render|striptags|trim|lower %}
+
+
+
+{% if wrapperClassClean == 'slider' %}
+
+{{ attach_library('pathways/carousel') }}
+
+{% endif %}
+
+
+
+{# {{kint(wrapperClass)}} #}
+<div class="ptWrapper ptWrapper--{{ wrapperClassClean }}">
+    {{items}}
+
+
+    {% if wrapperClassClean == 'slider' %}
+
+    <fieldset aria-controls="carousel" aria-label="carousel buttons" class="navigation">
+        <button aria-label="previous" class="button prev">Prev<span class="as-icon as-icon--arrow-down"></span>
+        </button>
+        <button aria-label="next" class="button next">
+            <span class="as-icon as-icon--arrow-down"></span>Next</button>
+    </fieldset>
+    {% endif %}
+
+</div>

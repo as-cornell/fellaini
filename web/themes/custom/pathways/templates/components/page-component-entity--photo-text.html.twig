@@ -14,7 +14,6 @@
 {% set link_url = content.field_link.0['#url']%}
 {% set link_text = content.field_link.0['#title']%}
 {% set base_class = 'photoText' %}
-{# {% set classes = ['slide'] %} #}
 
 {% embed "@molecules/content/photo-text/photo-text.twig" with {
     title: content.field_photo_text_title,
