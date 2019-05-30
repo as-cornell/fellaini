@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Display a photo text block. 
+ *
+ * wrapperClass - passed to template for layout class changes. Include or exclude slider JS and Buttons
+ *
+ */
+#}
+
+
+{# {% set wrapperClass = content.field_photo_text_wrapper_class%} #}
+
+{% set wrapperClass = content.field_photo_text_wrapper_class %}
+
+{% embed "@organisms/photo-text-block/photo-text-block.twig" with {
+    "wrapperClass" : wrapperClass,
+    "items" : content.field_photo_text_reference
+}%}{% endembed %}
+
+

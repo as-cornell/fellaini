@@ -30,6 +30,7 @@
 // sections of a basic page
 .page-title{
     grid-area: page-title;
+    display: block;
 }
 
 .main-content{
