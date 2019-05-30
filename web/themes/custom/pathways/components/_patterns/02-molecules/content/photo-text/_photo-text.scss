@@ -1,29 +1,16 @@
-// Phototext wrappers
-
-.ptWrapper{
-    &--slider{
-        background: red;
-    }
-    &--featured{
-        background: green;
-    }
-}
-
-// base styles for Photo Text blocks, elements and mods
+// single Phototext
 
 .photoText{
     display: grid;
-    grid-column-gap: 20px;
-    grid-template-columns: 50% auto;
+    grid-column-gap: var(--space);
+    grid-template-columns: 60% auto;
     grid-template-rows: auto 1fr auto;
     max-width: $x-wide;
     margin: 0 auto;
     h2{
-        font-size: 1rem;
         // finds .slider .photoText ascendant slector
         .slider &{
             font-size: 3rem;
         }
     }
 }
-

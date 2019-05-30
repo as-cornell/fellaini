@@ -153,11 +153,8 @@
   padding: .5em 1em;
   color: $btn-color;
   border-radius: var(--border-radius);
+  background: none;
 }
-
-
-
-
 
 // component padding
 @mixin baseComponentPadding($b-top: $space, $b-right: $space, $b-bottom: $space, $b-left: $space){
