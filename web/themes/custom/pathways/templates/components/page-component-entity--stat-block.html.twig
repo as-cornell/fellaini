@@ -5,7 +5,14 @@
  * just a wrapper for the component Stat block
  */
 #}
+{# {{kint(content)}} #}
 
+{# {% include "@atoms/00-text/_heading.twig" with {
+        "heading_level" : 2,
+        "heading" : content.name,
+        "heading_modifiers" : ['border']
+    } %} #}
+{{content.name}}
 {% include "@atoms/_simple-container.twig" with {
     content : content.field_stats
 } %}

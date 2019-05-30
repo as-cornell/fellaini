@@ -38,8 +38,12 @@
 #}
 
 <h1>wrapper for photo text media</h1>
-{{ attach_library('pathways/carousel') }}
-{% embed "@organisms/photo-text/photo-text-slider.twig" with {
+{# {{ attach_library('pathways/carousel') }} depricating this  #}
+
+{# This probably needs to not be on the entity field, what if we want to do more than one? Can we do view modes for entities? #}
+
+
+{% embed "@organisms/photo-text/photo-text-featured.twig" with {
 
 }%}{% endembed %}
 
