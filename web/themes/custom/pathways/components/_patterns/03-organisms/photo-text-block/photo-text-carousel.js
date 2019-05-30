@@ -5,13 +5,13 @@ carousel = (function () {
         return false;
     }
 
-    var box = document.querySelector('.slider');
+    var box = document.querySelector('.ptWrapper--slider');
     // console.log(box);
     var buttons = box.querySelector('.navigation');
     var next = box.querySelector('.next');
     var prev = box.querySelector('.prev');
     var counter = 0;
-    var items = box.querySelectorAll('.slide');
+    var items = box.querySelectorAll('.photoText');
     // console.log('items');
     var amount = items.length; 
     var current = items[0];
