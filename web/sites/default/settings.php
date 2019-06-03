@@ -774,9 +774,9 @@ $settings['entity_update_backup'] = TRUE;
  * Keep this code block at the end of this file to take full effect.
  */
 #
- if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-   include $app_root . '/' . $site_path . '/settings.local.php';
- }
+# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+#   include $app_root . '/' . $site_path . '/settings.local.php';
+# }
 $config_directories['sync'] = '../config/sync';
 
 # Load environment
@@ -787,21 +787,22 @@ $servicesFile = $base_path . '/services.'.$env.'.yml';
 $settingsFile = $base_path . '/settings.'.$env.'.php';
 
 // Load services definition file.
-#if (file_exists($servicesFile)) {
-#}
+if (file_exists($servicesFile)) {
+    $settings['container_yamls'][] = $servicesFile;
+}
 
 // Load settings file.
-#if (file_exists($settingsFile)) {
- #   include $settingsFile;
-#}
+if (file_exists($settingsFile)) {
+    include $settingsFile;
+}
 
-#$databases['default']['default'] = array (
-#    'database' =>  getenv('DATABASE_NAME'),
-#    'username' => getenv('DATABASE_USER'),
-#    'password' => getenv('DATABASE_PASSWORD'),
-#    'prefix' => '',
-#    'host' => getenv('DATABASE_HOST'),
-#    'port' => getenv('DATABASE_PORT'),
-#    'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-#    'driver' => 'mysql',
-#);
+$databases['default']['default'] = array (
+    'database' =>  getenv('DATABASE_NAME'),
+    'username' => getenv('DATABASE_USER'),
+    'password' => getenv('DATABASE_PASSWORD'),
+    'prefix' => '',
+    'host' => getenv('DATABASE_HOST'),
+    'port' => getenv('DATABASE_PORT'),
+    'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+    'driver' => 'mysql',
+);
