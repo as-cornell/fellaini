@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains as_instagram.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_instagram_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_instagram module.
+    case 'help.page.as_instagram':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a block of instagram posts via Instagram json API') . '</p>';
+      return $output;
+
+    default:
+  }
+}
