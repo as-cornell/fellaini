@@ -1,0 +1,14 @@
+{
+  "name": "drupal/as_instagram",
+  "type": "drupal-module",
+  "description": "Provides a block of instagram posts via Instagram json API",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/as_instagram",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/as_instagram",
+    "source": "http://cgit.drupalcode.org/as_instagram"
+  },
+  "require": { }
+}

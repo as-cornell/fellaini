@@ -19,3 +19,10 @@ web/sites/*/settings.local.php
 *--dump.sql
 *.sql
 .DS_Store
+
+# dotenv file
+.env
+
+# backup files
+*.original
+*.backup
