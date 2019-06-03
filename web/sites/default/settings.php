@@ -780,4 +780,28 @@ $settings['entity_update_backup'] = TRUE;
 $config_directories['sync'] = '../config/sync';
 
 # Load environment
+$env = getenv('ENVIRONMENT');
 
+$base_path = $app_root . '/' . $site_path;
+$servicesFile = $base_path . '/services.'.$env.'.yml';
+$settingsFile = $base_path . '/settings.'.$env.'.php';
+
+// Load services definition file.
+#if (file_exists($servicesFile)) {
+#}
+
+// Load settings file.
+#if (file_exists($settingsFile)) {
+ #   include $settingsFile;
+#}
+
+#$databases['default']['default'] = array (
+#    'database' =>  getenv('DATABASE_NAME'),
+#    'username' => getenv('DATABASE_USER'),
+#    'password' => getenv('DATABASE_PASSWORD'),
+#    'prefix' => '',
+#    'host' => getenv('DATABASE_HOST'),
+#    'port' => getenv('DATABASE_PORT'),
+#    'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+#    'driver' => 'mysql',
+#);
