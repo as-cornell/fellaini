@@ -7,6 +7,76 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 
+function as_instagram_nameize($str,$a_char = array("'","-"," ")){
+    // adapted from http://php.net/manual/en/function.ucfirst.php
+    //$str contains the complete raw name string
+    //$a_char is an array containing the characters we use as separators for capitalization. If you don't pass anything, there are three in there as default.
+    $string = strtolower($str);
+    foreach ($a_char as $temp){
+        $pos = strpos($string,$temp);
+        if ($pos){
+            //we are in the loop because we found one of the special characters in the array, so lets split it up into chunks and capitalize each one.
+            $mend = '';
+            $a_split = explode($temp,$string);
+            foreach ($a_split as $temp2){
+                //capitalize each portion of the string which was separated at a special character
+                $mend .= ucfirst($temp2).$temp;
+                }
+            $string = substr($mend,0,-1);
+            }
+        }
+    return ucfirst($string);
+    }
+
+function as_instagram_get_instagram_json($keyword_params) {
+    //set cache id (verify parameters are safe values to use as cache id)
+    $cid = "as_instagram:" . $keyword_params;
+    $instagram_json = NULL;
+    //check cache
+    if ($cache = \Drupal::cache('data')->get($cid)) {
+        //fetch cache data
+      $instagram_json = $cache->data;
+        //check cache expiration
+    }
+       // if no data check url
+    else {
+    $url = "https://www.instagram.com/{$keyword_params}/?__a=1";
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $instagram_json = $json['graphql']['user']['edge_owner_to_timeline_media']['edges'];
+    \Drupal::cache('data')
+        ->set($cid, $instagram_json, time()+360);
+    }
+    //return data
+    return $instagram_json;
+  }
+
+function as_instagram_generate_instagram_post_markup($post_data) {
+    // Deal with instagram's funky json structure
+    //dump($post_data);
+    $markup = "";
+    //$user_full_name = $post_data['user']['full_name'];
+    $display_url = $post_data['node']['thumbnail_src'];
+    $text = $post_data['node']['edge_media_to_caption']['edges'][0]['node']['text'];
+    $markup = $markup . "
+                <div class='courseList__course course card card--course'>";
+                    //if ($course_description){
+                    //$markup = $markup . "<p>" . $course_description . "</p>";
+                    //    }
+                    if ($display_url){
+                    $markup = $markup . "<img src='" . $display_url . "'>";
+                        }
+                    if ($text){
+                    $markup = $markup . "<p>" . $text . "<p/>";
+                        }
+                    $markup = $markup ."
+            </div>
+            \n";
+
+    return $markup;
+  }
+
+
 /**
  * Implements hook_help().
  */

@@ -1,0 +1,6 @@
+
+{% set postsShownValue = content.field_posts_shown[0]['#markup'] %}
+{% set keywordParamsValue = content.field_keyword_params[0]['#context']['value'] %}
+
+  {{ drupal_block('instagram_block', {label: 'Instagram', posts_shown: postsShownValue , keyword_params: keywordParamsValue }) }}
+
