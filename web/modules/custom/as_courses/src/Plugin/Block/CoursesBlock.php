@@ -48,7 +48,7 @@ class CoursesBlock extends BlockBase {
       $keyword_params = "MATH";
     }
     if (!empty($config['major_name'])) {
-      $major_name = $config['major_name']['#markup'];
+      $major_name = $config['major_name'];
     }
     else {
       $major_name = "Major Name";
