@@ -58,20 +58,17 @@ function as_instagram_generate_instagram_post_markup($post_data) {
     //$user_full_name = $post_data['user']['full_name'];
     $display_url = $post_data['node']['thumbnail_src'];
     $text = $post_data['node']['edge_media_to_caption']['edges'][0]['node']['text'];
-    $markup = $markup . "
-                <div class='courseList__course course card card--course'>";
+    $alt_text = $post_data['node']['accessibility_caption'];
+    //$markup = $markup . ";
                     //if ($course_description){
                     //$markup = $markup . "<p>" . $course_description . "</p>";
                     //    }
                     if ($display_url){
-                    $markup = $markup . "<img src='" . $display_url . "'>";
+                    $markup = $markup . "<div class='photoText__image'><figure  class='figure figure--image'><img class='img' src='" . $display_url . "' alt='" . $alt_text . "'></figure></div>";
                         }
                     if ($text){
-                    $markup = $markup . "<p>" . $text . "<p/>";
+                    $markup = $markup . "<div  class='photoText__text'><p>" . $text . "<p/></div>";
                         }
-                    $markup = $markup ."
-            </div>
-            \n";
 
     return $markup;
   }
