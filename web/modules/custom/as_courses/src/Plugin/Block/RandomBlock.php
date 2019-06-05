@@ -33,13 +33,13 @@ $config = $this->getConfiguration();
     else {
       $semestername = "Fall 2019";
     }
-    if (!empty($config['courses_shown'])) {
-      $courses_shown = $config['courses_shown'];
-    }
-    else {
+    //if (!empty($config['courses_shown'])) {
+      //$courses_shown = $config['courses_shown'];
+    //}
+    //else {
       //1 shows 2, 2 shows 3 etc.
-      $courses_shown = 1;
-    }
+      //$courses_shown = 1;
+    //}
 
     if (!empty($config['keyword_params'])) {
       $keyword_params = $config['keyword_params'];
@@ -48,23 +48,21 @@ $config = $this->getConfiguration();
       $keyword_params = "MATH";
     }
     if (!empty($config['major_name'])) {
-      $major_name = $config['major_name']['#markup'];
+      $major_name = $config['major_name'];
     }
     else {
       $major_name = "Major Name";
     }
     $build = [];
     $build['random_block']['#markup'] = "";
-    $course_count = 0;
+    //$course_count = 0;
     $course_json = as_courses_get_courses_json($semester,$keyword_params);
+    // https://stackoverflow.com/questions/31566377/randomly-select-item-from-json-in-php
     if (!empty($course_json)) {
-      foreach($course_json as $course_data) {
-        if ($course_count <= $courses_shown) {
-            $build['random_block']['#markup'] = $build['random_block']['#markup'] . as_courses_generate_course_item_markup($course_data,$semester);
-          $course_count++;
-        }
+      $course_data = ($course_json[rand(0, count($course_json) - 1)]);
+      //dump ($course_data);
+      $build['random_block']['#markup'] = $build['random_block']['#markup'] . as_courses_generate_course_item_markup($course_data,$semester);
 
-      }
       $build['random_block']['#markup'] = $build['random_block']['#markup'] . "<div><a href='https://classes.cornell.edu/browse/roster/" . $semester . "/subject/" . $keyword_params . "'>Full Listing of " . $major_name . " courses for " . $semestername . " Semester</a></div>";
     } // There were no courses
     else {
