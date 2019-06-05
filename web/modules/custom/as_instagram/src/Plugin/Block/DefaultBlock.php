@@ -41,7 +41,7 @@ class DefaultBlock extends BlockBase {
 
     $post_count = 0;
     $instagram_json = as_instagram_get_instagram_json($keyword_params);
-    dump ($instagram_json);
+    //dump ($instagram_json);
     if (!empty($instagram_json)) {
       foreach($instagram_json as $post_data) {
         if ($post_count <= $posts_shown) {
