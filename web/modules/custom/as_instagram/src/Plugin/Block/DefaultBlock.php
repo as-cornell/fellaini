@@ -25,10 +25,10 @@ class DefaultBlock extends BlockBase {
     $config = $this->getConfiguration();
     //kint($config);
     if (!empty($config['posts_shown'])) {
-      $posts_shown = $config['posts_shown'];
+      //1 shows 2, 2 shows 3 etc. so subtract 1
+      $posts_shown = $config['posts_shown'] - 1;
     }
     else {
-      //1 shows 2, 2 shows 3 etc.
       $posts_shown = 0;
     }
 

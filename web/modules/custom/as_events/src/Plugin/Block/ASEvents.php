@@ -26,12 +26,12 @@ class ASEvents extends BlockBase implements BlockPluginInterface {
     $config = $this->getConfiguration();
 
     if (!empty($config['events_shown'])) {
-      $events_shown = $config['events_shown'];
+      //1 shows 2, 2 shows 3 etc. so subtract 1
+      $events_shown = $config['events_shown'] - 1;
     }
     else {
-      $events_shown = 1;
+      $events_shown = 0;
     }
-
     if (!empty($config['keyword_params'])) {
       $keyword_params = $config['keyword_params'];
     }

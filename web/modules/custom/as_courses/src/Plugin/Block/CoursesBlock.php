@@ -34,13 +34,12 @@ class CoursesBlock extends BlockBase {
       $semestername = "Fall 2019";
     }
     if (!empty($config['courses_shown'])) {
-      $courses_shown = $config['courses_shown'];
+      //1 shows 2, 2 shows 3 etc. so subtract 1
+      $courses_shown = $config['courses_shown'] - 1;
     }
     else {
-      //1 shows 2, 2 shows 3 etc.
-      $courses_shown = 1;
+      $courses_shown = 0;
     }
-
     if (!empty($config['keyword_params'])) {
       $keyword_params = $config['keyword_params'];
     }
