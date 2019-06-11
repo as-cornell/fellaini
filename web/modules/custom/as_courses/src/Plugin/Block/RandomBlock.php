@@ -5,21 +5,21 @@ namespace Drupal\as_courses\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides a 'CoursesBlock' block.
+ * Provides a 'RandomBlock' block.
  *
  * @Block(
- *  id = "courses_block",
- *  admin_label = @Translation("Courses Block"),
+ *  id = "random_block",
+ *  admin_label = @Translation("Random block"),
  * )
  */
-class CoursesBlock extends BlockBase {
+class RandomBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
    */
   public function build() {
 
-    $config = $this->getConfiguration();
+$config = $this->getConfiguration();
     //kint($config);
     if (!empty($config['semester'])) {
       $semester = $config['semester'];
@@ -53,29 +53,32 @@ class CoursesBlock extends BlockBase {
       $major_name = "Major Name";
     }
     $build = [];
-    $build['courses_block']['#markup'] = "";
+    $build['random_block']['#markup'] = "";
     $course_count = 0;
     $course_json = as_courses_get_courses_json($semester,$keyword_params);
     if (!empty($course_json)) {
+      //one random course with rand()
+      // https://stackoverflow.com/questions/31566377/randomly-select-item-from-json-in-php
+      //$course_data = ($course_json[rand(0, count($course_json) - 1)]);
+      //$build['random_block']['#markup'] = $build['random_block']['#markup'] . as_courses_generate_course_item_markup($course_data,$semester);
+      //multiple random courses with shuffle()
+      //https://www.w3schools.com/php/func_array_shuffle.asp
+      shuffle($course_json);
       foreach($course_json as $course_data) {
         if ($course_count <= $courses_shown) {
-            $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . as_courses_generate_course_item_markup($course_data,$semester);
+            $build['random_block']['#markup'] = $build['random_block']['#markup'] . as_courses_generate_course_item_markup($course_data,$semester);
           $course_count++;
         }
-
       }
-      $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . "<div><a href='https://classes.cornell.edu/browse/roster/" . $semester . "/subject/" . $keyword_params . "'>Full Listing of " . $major_name . " courses for " . $semestername . " Semester</a></div>";
+      $build['random_block']['#markup'] = $build['random_block']['#markup'] . "<div><a href='https://classes.cornell.edu/browse/roster/" . $semester . "/subject/" . $keyword_params . "'>Full Listing of " . $major_name . " courses for " . $semestername . " Semester</a></div>";
     } // There were no courses
     else {
-      $build['courses_block']['#markup'] = "<main>
+      $build['random_block']['#markup'] = "<main>
                 <h1>Courses</h1>
                 <p>There are no courses to list.</p>
                 </main>";
     }
-
-    //$build['courses_block']['#markup'] = 'Implement CoursesBlock.';
-
+    //$build['random_block']['#markup'] = 'Implement RandomBlock.';
     return $build;
   }
-
 }
