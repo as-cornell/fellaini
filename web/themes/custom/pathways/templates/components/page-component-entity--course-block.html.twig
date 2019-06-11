@@ -3,4 +3,11 @@
 {% set semesterName = content.field_semester[0]['#markup'] %}
 {% set coursesShownValue = content.field_courses_shown[0]['#markup'] %}
 {% set keywordParamsValue = content.field_keyword_params[0]['#context']['value'] %}
-{{ drupal_block('courses_block', {label: 'Courses', semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: drupal_title() }) }}
+{% set majorNameValue = content.field_related_major_minor[0]['#plain_text'] %}
+{% set blockType = content.field_block_type[0]['#markup'] %}
+{% if blockType == 'list' %}
+  {{ drupal_block('courses_block', {label: 'Courses', semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: majorNameValue }) }}
+{% endif %}
+{% if blockType == 'random' %}
+{{ drupal_block('random_block', {label: 'Courses', semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: majorNameValue }) }}
+{% endif %}

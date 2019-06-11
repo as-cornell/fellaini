@@ -1,0 +1,5 @@
+name: 'A&S Instagram'
+type: module
+description: 'Provides a block of instagram posts via Instagram json API'
+core: 8.x
+package: 'AS'
