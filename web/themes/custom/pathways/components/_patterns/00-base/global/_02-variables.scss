@@ -91,6 +91,10 @@ $red: #b31b1b;
     --green: #4d9b5e;
     --red: #b31b1b; 
 
+    // font size
+    --font-size: 24px;
+    --font-size--huge: 60px;
+
     //font weights
 
     --light: 300;
@@ -132,7 +136,7 @@ $red: #b31b1b;
 
     // universal spacing variables
 
-    --component-bottom-margin: calc(5 * var(--space));
+    --component-bottom-margin: calc(4 * var(--space));
 
 }
 

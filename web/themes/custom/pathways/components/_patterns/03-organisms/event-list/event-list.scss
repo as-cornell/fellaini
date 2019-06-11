@@ -1,3 +1,15 @@
+
+/* -------------------------
+
+Title: Event List
+Descr: Sets grid default ( full width ) and stacked (in columns) event lists
+        Sets all default individual event listings
+
+--------------------------- */
+
+
+// Default event list
+
 .eventList{
     @include medium(){}
     display: grid;
@@ -7,8 +19,19 @@
     // @include medium(){
     //     grid-template-columns: repeat(4, 1fr);
     // }
-   @include componentMargin();
+   margin-bottom: var(--component-bottom-margin);
 }
+
+// Event list in columns
+.columns{
+    .eventList{
+        grid-template-columns: auto;
+    }
+}
+
+
+
+// Event listing item
 .event{
     display: grid;
     grid-gap: var(--space);
