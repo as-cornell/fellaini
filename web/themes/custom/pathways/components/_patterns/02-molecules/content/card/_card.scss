@@ -1,16 +1,23 @@
-/*
-  Universal Card Styles
-*/
+/* -------------------------
 
-// set styles specifically for PL
+Title: Cards
+Descr: Sets grid default card styles
+Variations: 
+  card--small
+  card--article
+  card--feature
+  card--stat
+
+--------------------------- */
+
+
+// Devault card styles
+
 .card{
   @include boxShadow;
   // @include baseBorder();
   border-radius: var(--border-radius);
   margin-bottom: var(--space);
-  .pl &{
-    //max-width: 400px;
-  }
 }
 
 .card__title {
@@ -39,24 +46,26 @@
   @include button;
 }
 
-// Global small card can be overidden with .card--type .card--small
-  .card--small{
-    @include baseGrid();
-    grid-template-columns: $max-column 1fr;
-    .card__title{
-      @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
-    }
-    .card__label, .card__byline{
-      display: none;
-    }
-    .card__date.card__date{
-      text-align: left; // using double selctor instead of !important
-    }
-  }
 
+// Global small card can be overidden with .card--type .card--small
+
+.card--small{
+  @include baseGrid();
+  grid-template-columns: $max-column 1fr;
+  .card__title{
+    @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
+  }
+  .card__label, .card__byline{
+    display: none;
+  }
+  .card__date.card__date{
+    text-align: left; // using double selctor instead of !important
+  }
+}
 
 
 // Article Cards
+
 .card--article{
   grid-row: span 2;
   .card__copy{
@@ -114,44 +123,26 @@
       border-radius: var(--border-radius);
     }
   }
-  &.card--large{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "top top"
-    "label date"
-    "byline social";
-  }
 }
 
-// set styles specifically for PL
-.open-card{
-  @include baseBorder();
-  border-radius: $border-radius;
-  margin-bottom: 1rem;
-  .pl &{
-    max-width: 600px;
-  }
-}
+// Card Feature -- Campfire center big ole'card
 
-// Campfire center Open Card
 .card--feature{
-  
-    @include baseGrid($g-gap: 0px);
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "top top"
-    "label dateline"
-    "byline social";
-    a{
-      color: $white;
-      margin: 1rem;
-      padding: 1rem;
-      text-align: center;
-      @include baseBorder($bor-width: $quark, $bor-color: $white);
-      font-weight: $semi;
-    }
-  
+  @include baseGrid($g-gap: 0px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "top top"
+  "label dateline"
+  "byline social";
+  a{
+    color: $white;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    @include baseBorder($bor-width: $quark, $bor-color: $white);
+    font-weight: $semi;
+    font-size: var(--font-size--huge);
+  }
   .card__image{
     grid-area: top;
   }
@@ -181,7 +172,8 @@
 }
 
 
-// STATS
+// Stat Cards
+
 .card--stat{
   padding: 1rem;
   text-align: center;
@@ -202,11 +194,3 @@
 .card--course{
   padding: 1rem;
 }
-
-// article cards in .list--thumbnail
-// .list--thumbnail{
-//   .card{
-    
-//   }
-// }
-
