@@ -1,0 +1,21 @@
+{% if content.field_aside_components %}
+    {% set main_content_modifiers = ['has-aside', 'basic-page'] %}
+{% endif %}
+
+{% if content.field_sidebar_components %}
+    {% set content_wrapper_modifiers = ['has-sidebar'] %}
+{% endif %}
+
+
+{% include "@pages/basic-page/_basic-page.twig" with {
+    title : label,
+    
+    main_content : content.field_page_components_entity,
+    aside_content : content.field_aside_components,
+    sidebar_content : content.field_sidebar_components,
+
+    content_wrapper_modifiers : content_wrapper_modifiers,
+    main_content_modifiers : main_content_modifiers
+    
+    }
+%}

@@ -3,39 +3,70 @@
  #}
 {% set layout_modifiers = [] %}
 
-{# {% set main_base_class = main_base_class | default('row') %} #}
+{# 
+
+    .content-wrapper styles
+
+ #}
+
+{# {% set content_wrapper_modifiers = [] %} #}
+
+{% set content_wrapper_base_class = content_wrapper_base_class | default('container') %}
+{% set content_wrapper_modifiers = content_wrapper_modifiers | default(['']) %}
+{% set content_wrapper_extra_classes = content_wrapper_extra_classes | default(['']) %}
+
+{# 
+
+    <main> modifiers and classes
+
+ #}
+
 {% set main_modifiers = [] %}
 
-{% set main_content_base_class = main_content_base_class | default('container') %}
+{% set main_content_base_class = main_content_base_class | default('mainContent') %}
 {% set main_content_modifiers = main_content_modifiers | default(['']) %}
 {% set main_extra_classes = main_extra_classes | default(['']) %}
 
-{% if sidebar %}
-    {% set main_modifiers = main_modifiers|merge(['with-sidebar']) %}
-    {% set main_content_modifiers = main_content_modifiers|merge(['with-sidebar']) %}
-{% endif %}
+{# {% if sidebar_content %}
+    {% set main_modifiers = main_modifiers|merge(['with-sidebar-content']) %}
+    {% set main_content_modifiers = main_content_modifiers|merge(['with-sidebar-content']) %}
+{% endif %} #}
 
 {# <div {{ bem('layout-container', (layout_modifiers)) }}> #}
     {% block page_header %}{% endblock %}
 
     {% block page_system %}{% endblock %}
 
+{# need a with sidebar #}
+<div {{ bem(content_wrapper_base_class, (content_wrapper_modifiers), content_wrapper_blockname, content_wrapper_extra_classes) }}>
 
+    
+    {# sidebar nav #}
+    {# {% if sidebar_wrapper %} #}
+        {% block sidebar_content %}{% endblock %}
+    {# {% endif %} #}
+    
+    {# need with aside #}
     <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }} id="mainContent">
         
         {# <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}> #}
             {% block page_content %}{% endblock %}
 
-            {% if sidebar %}
-                <div class="sidebar" role="complementary">
-                    {% block page_sidebar %}{% endblock %}
-                    {% block other_news %}{% endblock %}
-                </div>
+            {% if aside_content %}
+                <aside role="complementary">
+                    {# sidebar content #}
+                    {% block aside_content %}{% endblock %}
+                </aside>
             {% endif %}
-
+ 
         {# </div> #}
 
     </main>
+    
+    
+    </div>
+
+    
 
     {% block page_footer %}{% endblock %}
 {# </div> #}

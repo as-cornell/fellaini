@@ -1,13 +1,26 @@
+
+/* -------------------------
+
+Title: Layout Block
+Descr: Sets grid for columns pce--layout-group.html.twig
+
+--------------------------- */
+
+
 .columns{
     @include medium(){
         @include baseGrid;
         &--heavyRight{
-        grid-template-columns: 1fr 2fr;
-        background:red;
+            grid-template-columns: 1fr 2fr;
+            >div:first-child{
+
+            }
         }
         &--heavyLeft{
-        grid-template-columns: 2fr 1fr;
-        background:yellow;
+            grid-template-columns: 2fr 1fr;
+             >div:last-child{
+
+            }
         }
     }
     

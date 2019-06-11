@@ -23,6 +23,7 @@ body{
   }
 }
 
+// 
 .container{
   grid-column: 2;
   padding: 0 var(--mainGutter);
@@ -36,6 +37,16 @@ body{
     align-items: center;
     padding: .5rem 0;
   }
+
+  &--has-sidebar{
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+
+// mainContent
+.mainContent{
+  @include baseGrid();
 }
 
 

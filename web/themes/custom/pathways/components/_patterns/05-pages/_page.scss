@@ -1,8 +1,8 @@
 // Layout for all landing and basic pages. 
 
-.container{
+.mainContent{
     // base page main conent grids
-    &--content{
+    &--landing-page{
         grid-template-columns: 1fr;
         grid-template-areas:
             "page-title"

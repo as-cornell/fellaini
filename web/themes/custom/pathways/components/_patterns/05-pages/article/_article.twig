@@ -4,17 +4,15 @@
 
  #}
 
-{% set sidebar = true %}
+{# {% set sidebar_content = true %} #}
 
 {# {% extends "@pages/_page.twig" %} #}
 {% extends "@templates/_default.twig" %}
 
 {% block page_content %}
-
     {% if article_pano_img_alt %}
     <div class="pano">
-    {% include "@atoms/04-images/figure.twig" with { 
-
+        {% include "@atoms/04-images/figure.twig" with { 
             "img_url": article_pano_img_url|default(card_link_url),
             "img_src": article_pano_img_src,
             "img_alt": article_pano_img_alt,
@@ -22,14 +20,15 @@
             "img_credit" : article_pano_img_credit,
             "figure_modifiers" : ['pano','image']
         } %}
-
     </div>
     {% endif %}
     <div class="title">
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
-            "heading" : article_title,
-            "heading_modifiers" : ["margin"]
+            "heading" : title,
+            "heading_modifiers" : ["margin"],
+            "heading_base_class" : "title"
+
         } %}
         <p class="byline">
             {{article_byline}}, {{article_mediasource}}<br/>
@@ -43,15 +42,13 @@
         {% if pl %}
             {{article_body}}
         {% endif %}
-        {{article_paragraphs}}
+        {{main_content}}
         {# {{article_body}} #}
     </div>
-
 {% endblock %}
 
-{% block page_sidebar %}
-{% include "@atoms/04-images/figure.twig" with { 
-
+{% block aside_content %}
+    {% include "@atoms/04-images/figure.twig" with { 
         "img_url": article_image_img_url|default(card_link_url),
         "img_src": article_image_img_src,
         "img_alt": article_image_img_alt,
@@ -59,30 +56,14 @@
         "img_credit" : article_image_img_credit
     } %}
 
-
     {% include "@atoms/00-text/_heading.twig" with {
         "heading_level" : 2,
         "heading" : "Related Stories",
         "heading_modifiers" : ["margin"]
     } %}
 
-    {% if pl %}
-{% include "@organisms/card-list/card-list.twig" with {
-    list_modifiers: ['articles', 'thumbnails'],
-    list_label: "hiya",
-    card_img_src: img.rectangle,
-    card_modifiers: ['article', 'small'],
-    cards: cards.articles
-  }%}
-
-    {% else %}
-        {{article_related_articles}}
-    {% endif %}
+    {{ aside_content }}
 
 {% endblock %}
 
-{% block other_news %}{% endblock %}
 
-{% set main_content_modifiers = ['article', 'content'] %}
-{% set main_extra_classes = ['slice'] %}
-{# {{kint(main_content_modifiers)}} #}
