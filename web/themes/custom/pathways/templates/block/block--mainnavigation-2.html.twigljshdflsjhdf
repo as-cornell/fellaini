@@ -33,15 +33,15 @@
 #}
 
 {# Label. If not displayed, we still provide it for screen readers. #}
-{# {% if not configuration.label_display %}
+{% if not configuration.label_display %}
   {% set title_attributes = title_attributes.addClass('visually-hidden') %}
 {% endif %}
 {{ title_prefix }}
-{% include "@atoms/02-text/00-headings/_heading.twig" with {
+{% include "@atoms/00-text/_heading.twig" with {
   "heading_level": 2,
   "heading": label,
 } %}
-{{ title_suffix }} #}
+{{ title_suffix }}
 
 {# Menu. #}
 

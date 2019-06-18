@@ -22,10 +22,13 @@
 {% endblock %}
 
 {% block sidebar_content %}
-    <div class="sidebar">
-        <p>sidebar navigation here</p>
-        {{ sidebar_content }}
-    </div>
+<div class="sidebar">
+{{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+
+{{sidebar_content}}
+</div>
+
+
 {% endblock %}
 
 {% block aside_content %}

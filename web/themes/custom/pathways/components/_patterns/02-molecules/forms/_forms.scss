@@ -7,8 +7,8 @@ header{
           margin-bottom: 0;
           &__textfield{
             border:none;
-            background: $gray-dark;
-            color: $white;
+            background: var(--gray-light);
+            //color: $white;
            // @include baseBorder($bor-color: $gray-lt);
             padding: 0;
             height: 48px;
