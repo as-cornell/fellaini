@@ -64,7 +64,8 @@
         "egulias/email-validator": "^2.0",
         "drupal/media_entity_soundcloud": "^2.0",
         "mikey179/vfsstream": "^1.6",
-        "drupal/rest_export_nested": "^1.0"
+        "drupal/rest_export_nested": "^1.0",
+        "drupal/menu_block_title": "^1.1"
 
     },
     "require-dev": {
