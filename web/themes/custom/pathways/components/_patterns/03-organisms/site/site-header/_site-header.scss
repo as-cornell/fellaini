@@ -16,7 +16,7 @@
 }
 
 header{
-    background-image: linear-gradient($black, $black 58px, $white 58px, $white);
+    background-image: linear-gradient(var(--near-white), var(--near-white) 58px, $white 58px, $white);
     margin-bottom: (15 * $quark);
     @include baseGrid();
     padding: 0 var(--mainGutter);
@@ -29,10 +29,6 @@ header{
     "search search search search audNav audNav audNav audNav audNav audNav audNav audNav"
     ". . . logo logo logo logo logo logo . . ."
     "mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav";
-    
-    #skip{
-
-    }
     .nav--audience{
         grid-area: audNav;
     }

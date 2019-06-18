@@ -40,33 +40,28 @@
 {# need a with sidebar #}
 <div {{ bem(content_wrapper_base_class, (content_wrapper_modifiers), content_wrapper_blockname, content_wrapper_extra_classes) }}>
 
-    
     {# sidebar nav #}
-    {# {% if sidebar_wrapper %} #}
-        {% block sidebar_content %}{% endblock %}
-    {# {% endif %} #}
-    
-    {# need with aside #}
-    <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }} id="mainContent">
-        
-        {# <div {{ bem(main_content_base_class, (main_content_modifiers), main_content_blockname) }}> #}
-            {% block page_content %}{% endblock %}
+    {% block sidebar_content %}{% endblock %}
 
-            {% if aside_content %}
-                <aside role="complementary">
-                    {# sidebar content #}
-                    {% block aside_content %}{% endblock %}
-                </aside>
-            {% endif %}
- 
-        {# </div> #}
+    {# {{ drupal_block('mainnavigation_2') }} #}
+
+
+    {# main content #}
+    <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }} id="mainContent">
+        {% block page_content %}{% endblock %}
+        
+        {# aside content #}
+        {% if aside_content %}
+            <aside role="complementary">
+                {# sidebar content #}
+                {% block aside_content %}{% endblock %}
+            </aside>
+        {% endif %}
 
     </main>
-    
-    
-    </div>
+
+</div>
 
     
 
-    {% block page_footer %}{% endblock %}
-{# </div> #}
+{% block page_footer %}{% endblock %}
