@@ -63,7 +63,8 @@
         "drupal/dynamic_entity_reference": "^1.7",
         "egulias/email-validator": "^2.0",
         "drupal/media_entity_soundcloud": "^2.0",
-        "mikey179/vfsstream": "^1.6"
+        "mikey179/vfsstream": "^1.6",
+        "drupal/rest_export_nested": "^1.0"
 
     },
     "require-dev": {
