@@ -1,11 +1,18 @@
-/*
- Base css for the layout and general structure of the website. All roads will lead through this.
-*/
+
+/* -------------------------
+
+Title: Layout
+Descr: sets main layout styles
+
+--------------------------- */
 
 body{
   overflow-x: hidden;
-  background: $near-white;
+  background: var(--gray-lightest);
 }
+
+
+// the main wrapper for the visual frame
 
 .wrapper{
   @include max-width(){
@@ -15,15 +22,9 @@ body{
   background: $white;
 }
 
-.row{
-  display: grid;
-  grid-template-columns: 1fr minmax(auto, $xl) 1fr;
-  &--black{
-    background: $black;
-  }
-}
 
-// 
+// These are full width 'slices' of the page
+
 .container{
   grid-column: 2;
   padding: 0 var(--mainGutter);
@@ -44,11 +45,11 @@ body{
 }
 
 
-// mainContent
+// mainContent is the <main> element of each page
+
 .mainContent{
   @include baseGrid();
 }
-
 
 
 // Grid helper classes prefixed with 'g-'

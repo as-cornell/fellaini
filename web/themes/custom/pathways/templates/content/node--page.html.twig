@@ -1,3 +1,17 @@
+
+{# 
+
+/* -------------------------
+
+Title: node--page.html.twig
+Descr: Sets up variables and content for _basic-page.twig
+Passes: has-aside and basic-page to <main>
+        has-sidebar to contentWrapper
+
+--------------------------- */ 
+
+#}
+
 {% if content.field_aside_components %}
     {% set main_content_modifiers = ['has-aside', 'basic-page'] %}
 {% endif %}
@@ -15,7 +29,9 @@
     sidebar_content : content.field_sidebar_components,
 
     content_wrapper_modifiers : content_wrapper_modifiers,
-    main_content_modifiers : main_content_modifiers
+    main_content_modifiers : main_content_modifiers,
+
+    sidebar_menu : content.field_menu
     
     }
 %}

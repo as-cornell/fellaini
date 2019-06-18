@@ -7,7 +7,7 @@ $main-menu-medium: 43em;
 
   @include breakpoint($main-menu-medium) {
     display: block;
-    @include baseBorder('border-tb', 1px, $gray-lightest);
+
   }
 
   &--open {
