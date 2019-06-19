@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eab72c3141522b85262318e12edd1fda",
+    "content-hash": "09184d0db0dea31e2b2c7707f7b8f8da",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4579,6 +4579,60 @@
             "homepage": "https://www.drupal.org/project/media_entity_soundcloud",
             "support": {
                 "source": "https://git.drupalcode.org/project/media_entity_soundcloud"
+            }
+        },
+        {
+            "name": "drupal/menu_block_title",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/menu_block_title.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_block_title-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "2261102174896a88fbc61f935b0ccfae803dad62"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1504872244",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Tancredi D'Onofrio (tanc)",
+                    "homepage": "https://www.drupal.org/u/tanc",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Finn Lewis (finn.lewis)",
+                    "homepage": "https://www.drupal.org/u/finn.lewis",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides an option on menu based blocks to show the parent menu item as the block title",
+            "homepage": "https://drupal.org/project/menu_block_title",
+            "support": {
+                "source": "https://cgit.drupalcode.org/menu_block_title",
+                "issues": "https://drupal.org/project/issues/menu_block_title"
             }
         },
         {
@@ -10416,16 +10470,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.12",
+            "version": "7.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9ba59817745b0fe0c1a5a3032dfd4a6d2994ad1c"
+                "reference": "b9278591caa8630127f96c63b598712b699e671c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9ba59817745b0fe0c1a5a3032dfd4a6d2994ad1c",
-                "reference": "9ba59817745b0fe0c1a5a3032dfd4a6d2994ad1c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b9278591caa8630127f96c63b598712b699e671c",
+                "reference": "b9278591caa8630127f96c63b598712b699e671c",
                 "shasum": ""
             },
             "require": {
@@ -10496,7 +10550,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-05-28T11:59:40+00:00"
+            "time": "2019-06-19T12:01:51+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

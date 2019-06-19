@@ -1,17 +1,8 @@
 {# 
 
-/* -------------------------
+    .container--article and .container--content
 
-Title: _basic-page.twig
-Descr: defines content and blocks for _default.twig for contenttype basic page.
-Passes: has-sidebar to contentWrapper
-        sets sidebar class to sidebar--basic-page
-        sets aside_content to be placed in main content in default.twig
-
---------------------------- */ 
-
-#}
-
+ #}
 
 {# sets sidebar wrapper classes, modifiers #}
 {% set sidebar_wrapper_base_class = sidebar_wrapper_base_class | default('sidebar') %}
@@ -35,12 +26,13 @@ Passes: has-sidebar to contentWrapper
 {% endblock %}
 
 {% block sidebar_content %}
-    <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
-        {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
-        {{sidebar_content}}
-    </div>
+<div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
+
+{{ aside_content }}
+
+
+</div>
+
+
 {% endblock %}
 
-{% block aside_content %}
-    {{ aside_content }}
-{% endblock %}

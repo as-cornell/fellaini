@@ -5,20 +5,23 @@
 
 Title: node--page.html.twig
 Descr: Sets up variables and content for _basic-page.twig
-Passes: has-aside and basic-page to <main>
+Passes: has-aside to <main>
         has-sidebar to contentWrapper
 
 --------------------------- */ 
 
 #}
 
-{% if content.field_aside_components %}
-    {% set main_content_modifiers = ['has-aside', 'basic-page'] %}
+{% if content.field_aside_components|render is not empty %}
+    {% set main_content_modifiers = ['has-aside'] %}
 {% endif %}
 
-{% if content.field_sidebar_components %}
+
+
+{# {% if content.field_sidebar_components|render is not empty %} #}
     {% set content_wrapper_modifiers = ['has-sidebar'] %}
-{% endif %}
+    {% set sidebar_wrapper_modifiers = ['basic-page'] %}
+{# {% endif %} #}
 
 
 {% include "@pages/basic-page/_basic-page.twig" with {
@@ -29,9 +32,7 @@ Passes: has-aside and basic-page to <main>
     sidebar_content : content.field_sidebar_components,
 
     content_wrapper_modifiers : content_wrapper_modifiers,
-    main_content_modifiers : main_content_modifiers,
-
-    sidebar_menu : content.field_menu
+    main_content_modifiers : main_content_modifiers
     
     }
 %}

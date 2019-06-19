@@ -48,7 +48,18 @@ body{
 // mainContent is the <main> element of each page
 
 .mainContent{
-  @include baseGrid();
+  
+  &--has-aside{
+    @include baseGrid();
+    grid-template-columns: 2.33fr 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas:
+    "title title"
+    "content aside";
+    .title{
+        grid-area: title;
+    }
+  }
 }
 
 
