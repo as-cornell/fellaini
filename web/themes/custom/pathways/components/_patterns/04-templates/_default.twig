@@ -1,13 +1,17 @@
 {# 
-    _default.twig does the <main> layout for the site. it is extended by _node.twig 
- #}
-{% set layout_modifiers = [] %}
 
-{# 
+/* -------------------------
 
-    .content-wrapper styles
+Title: _default.twig
+Descr: Gets called in to _modal-page.twig, _basic-page.twig, _article.twig 
+        steers all other page region output for default pages
+Gets: wrapper modifiers
+        main content modifiers
 
- #}
+--------------------------- */ 
+
+#}
+
 
 {# {% set content_wrapper_modifiers = [] %} #}
 
@@ -15,11 +19,7 @@
 {% set content_wrapper_modifiers = content_wrapper_modifiers | default(['']) %}
 {% set content_wrapper_extra_classes = content_wrapper_extra_classes | default(['']) %}
 
-{# 
-
-    <main> modifiers and classes
-
- #}
+{# <main> modifiers and classes #}
 
 {% set main_modifiers = [] %}
 
@@ -27,29 +27,17 @@
 {% set main_content_modifiers = main_content_modifiers | default(['']) %}
 {% set main_extra_classes = main_extra_classes | default(['']) %}
 
-{# {% if sidebar_content %}
-    {% set main_modifiers = main_modifiers|merge(['with-sidebar-content']) %}
-    {% set main_content_modifiers = main_content_modifiers|merge(['with-sidebar-content']) %}
-{% endif %} #}
+{# Start output #}
+{% block page_header %}{% endblock %}
+{% block page_system %}{% endblock %}
 
-{# <div {{ bem('layout-container', (layout_modifiers)) }}> #}
-    {% block page_header %}{% endblock %}
-
-    {% block page_system %}{% endblock %}
-
-{# need a with sidebar #}
 <div {{ bem(content_wrapper_base_class, (content_wrapper_modifiers), content_wrapper_blockname, content_wrapper_extra_classes) }}>
 
     {# sidebar nav #}
     {% block sidebar_content %}{% endblock %}
-
-    {# {{ drupal_block('mainnavigation_2') }} #}
-
-
     {# main content #}
     <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }} id="mainContent">
         {% block page_content %}{% endblock %}
-        
         {# aside content #}
         {% if aside_content %}
             <aside role="complementary">
@@ -57,11 +45,7 @@
                 {% block aside_content %}{% endblock %}
             </aside>
         {% endif %}
-
     </main>
-
 </div>
-
-    
 
 {% block page_footer %}{% endblock %}
