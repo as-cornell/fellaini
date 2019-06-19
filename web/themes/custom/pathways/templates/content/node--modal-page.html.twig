@@ -1,0 +1,32 @@
+
+{# 
+
+/* -------------------------
+
+Title: node--modal-page.html.twig
+Descr: Sets up variables and content for _modal-page.twig
+Passes: has-sidebar to contentWrapper
+
+--------------------------- */ 
+
+#}
+
+
+{# {% set main_content_modifiers = ['basic-page'] %} #}
+{% set content_wrapper_modifiers = ['has-sidebar'] %}
+{% set sidebar_wrapper_modifiers = ['modal'] %}
+
+
+
+{% include "@pages/modal-page/_modal-page.twig" with {
+    title : label,
+    
+    main_content : content.field_page_components_entity,
+    aside_content : content.field_aside_components,
+
+    content_wrapper_modifiers : content_wrapper_modifiers,
+    main_content_modifiers : main_content_modifiers,
+    sidebar_wrapper_modifiers : sidebar_wrapper_modifiers
+    
+    }
+%}
