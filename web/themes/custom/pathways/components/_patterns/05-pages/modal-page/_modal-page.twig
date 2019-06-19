@@ -1,8 +1,16 @@
 {# 
 
-    .container--article and .container--content
+/* -------------------------
 
- #}
+Title: _modal-page.twig
+Descr: Sets up variables and content blocks for modal pages' extending of _default.twig
+Passes: has-sidebar to contentWrapper
+        sets sidebar class to sidebar--modal
+
+--------------------------- */ 
+
+#}
+
 
 {# sets sidebar wrapper classes, modifiers #}
 {% set sidebar_wrapper_base_class = sidebar_wrapper_base_class | default('sidebar') %}
@@ -26,13 +34,9 @@
 {% endblock %}
 
 {% block sidebar_content %}
-<div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
-
-{{ aside_content }}
-
-
-</div>
-
-
+    <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
+        {# MOdal page navigation thinger goes here #}
+        {{ aside_content }}
+    </div>
 {% endblock %}
 
