@@ -1,0 +1,53 @@
+.menu--primary{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    @include baseFlex();
+    justify-content: space-around;
+    background: var(--gray-dark);
+    max-height: 0;
+    overflow: hidden;
+
+    // need open styles put here for small open state
+
+    a{
+        color:var(--near-white);
+    }
+
+    @include medium(){
+        background: transparent;
+        color: var(--gray-dark);
+        max-height: 10000px; // can only transform with px value
+        
+        a{
+            color: var(--gray-dark);
+        }
+        
+    }
+
+    li{
+
+        //hide sub nav ---- show on open
+        >ul{
+            max-height: 0;
+            position: absolute;
+            &[class$="open"]{
+                max-height: 1000px;
+                
+                display: flex;
+                flex-flow: column;
+            }
+        }
+
+        //show subnav on hover
+        &:hover{
+            >ul{
+                max-height: 1000px;
+                
+                display: flex;
+                flex-flow: column;
+            }
+        }
+    }
+
+}
