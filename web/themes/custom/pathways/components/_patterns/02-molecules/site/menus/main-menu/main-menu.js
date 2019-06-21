@@ -1,3 +1,80 @@
+// document is ready to go...
+(function ($) {
+
+  // console.log( "Let's do this!"  );
+
+  // close the menu--secondary
+  $('.menu--secondary a').attr('tabindex', -1);
+  $('.menu--secondary').addClass('close');
+  $(".menu--secondary").before("<button class='menu-toggle' aria-hidden='false' aria-label='menu--secondary is closed'><svg viewBox='0 0 20 20' class='icon--arrow'> <use xlink:href='#shape-icon-down-arrow'></use > </svg ></button>");
+
+  //
+  // need to make this toggle want to control visibility with aria hiddens
+  //
+  $("#toggle-menu").on({
+    click: function () {
+      $(".as-nav").toggleClass("show");
+      // $(this).parent().toggleClass("toggleFilters--active");
+    }
+  });
+  // $("#toggle-menu").click(function (e) {
+  //   $('.menu--primary').attr('aria-hidden', 'false');
+  // });
+
+  // $("#toggle-menu").click(function () {
+  //   $('.menu--primary').attr('show-hide', function (index, attr) {
+  //     return attr == 'show' ? null : 'show';
+  //   });
+  // });
+
+  // if a menu-button is clicked...
+  $('.expand-sub').click(function (e) {
+
+    var _this = $(this);
+    console.log(this);
+
+    // if the menu--secondary is hidden....
+    if (!_this.next().hasClass('display')) {
+
+      // reset menu--secondary + button arrow to start
+      $('.menu--secondary').removeClass('display');
+      $('.menu--secondary a').attr('tabindex', -1);
+      $('.fa').addClass('fa-angle-down');
+      $('.fa').removeClass('fa-angle-up');
+      $('.expand-sub').attr('aria-label', 'menu--secondary is closed');
+
+      // open menu
+      _this.next().addClass('display');
+      // _this.prev().removeAttr('aria-expanded');
+      _this.prev().attr('aria-expanded', 'true');
+      _this.next().find('a').removeAttr('tabindex', -1);
+      _this.children().removeClass('fa-angle-down');
+      _this.children().addClass('fa-angle-up');
+      _this.attr('aria-label', 'menu--secondary is open');
+
+      // if the menu is open then...   
+    } else {
+
+      // close the menu...
+      _this.next().removeClass('display');
+      _this.prev().attr('aria-expanded', 'false');
+      _this.next().find('a').attr('tabindex', -1);
+      _this.children().removeClass('fa-angle-up');
+      _this.children().addClass('fa-angle-down');
+      _this.attr('aria-label', 'menu--secondary is closed');
+
+    }
+
+  });
+
+})(jQuery);
+
+
+
+
+
+
+
 /**
  * @file
  * A JavaScript file containing the main menu functionality (small/large screen)
