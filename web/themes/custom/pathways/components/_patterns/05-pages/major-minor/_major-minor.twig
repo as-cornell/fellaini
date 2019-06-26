@@ -4,32 +4,23 @@
     <div class="title">
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
-            "heading" : mm_title,
+            "heading" : title,
             "heading_modifiers" : ["margin"]
         } %}
     </div>
-    
-    {{mm_level}}
+<div class="columns columns--heavyLeft">
 
-    {% include "@atoms/_simple-container.twig" with{
-        "content" : mm_description,
-        "base_class" : 'description'
-    } %}
-
-    {% include "@atoms/_simple-container.twig" with{
-        "content" : mm_links_list,
-        "base_class" : 'links',
-        "group_modifiers" : ['block']
-    } %}
-
-    {% include "@atoms/_simple-container.twig" with{
-        "content" : mm_image,
-        "base_class" : 'image'
-    } %}
-
-    <div class="content">
-        {{mm_body}}
+        <div>
+            {{description}}
+        </div>
+        <div>
+            {{level}}
+            {{image}}
+        </div>
     </div>
+    
+    {{body}}
+
 {% endblock %}
 
 {% set main_content_modifiers = ['major-minor', 'content'] %}

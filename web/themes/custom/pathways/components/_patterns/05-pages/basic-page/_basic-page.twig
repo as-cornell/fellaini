@@ -23,7 +23,7 @@ Passes: has-sidebar to contentWrapper
 {% extends "@templates/_default.twig" %}
 
 {% block page_content %}
-
+        
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
             "heading" : title,
@@ -36,7 +36,7 @@ Passes: has-sidebar to contentWrapper
 
 {% block sidebar_content %}
     <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
-        {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+        {# {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }} #}
         {{sidebar_content}}
     </div>
 {% endblock %}
