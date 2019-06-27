@@ -1,0 +1,11 @@
+/* -------------------------
+
+Title: Swiss Army 
+Descr: Where all little helper classes that don't go on one specific component css will live. They all must be applicable to multiple elements.
+
+--------------------------- */
+
+// Hidden, only for items that need to be hidden from everything, including screen readers
+.hidden{
+    display: none;
+}
