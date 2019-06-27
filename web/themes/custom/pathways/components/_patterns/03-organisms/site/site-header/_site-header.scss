@@ -17,7 +17,7 @@
 
 header{
     background-image: linear-gradient(var(--near-white), var(--near-white) 58px, $white 58px, $white);
-    margin-bottom: (15 * $quark);
+    margin-bottom: var(--space);
     @include baseGrid();
     padding: 0 var(--mainGutter);
 

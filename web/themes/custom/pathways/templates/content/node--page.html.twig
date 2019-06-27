@@ -14,18 +14,23 @@ Passes: has-aside to <main>
 
 {% if content.field_aside_components|render is not empty %}
     {% set main_content_modifiers = ['has-aside'] %}
+    {% set aside = true %}
 {% endif %}
 
 
 
-{# {% if content.field_sidebar_components|render is not empty %} #}
+{% if content.field_sidebar_components|render is not empty %}
     {% set content_wrapper_modifiers = ['has-sidebar'] %}
-    {% set sidebar_wrapper_modifiers = ['basic-page'] %}
-{# {% endif %} #}
+    {% set sidebar = true %}
+{% endif %}
 
+{% set sidebar_wrapper_modifiers = ['basic-page'] %}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : label,
+
+    sidebar: sidebar,
+    aside: aside,
     
     main_content : content.field_page_components_entity,
     aside_content : content.field_aside_components,
