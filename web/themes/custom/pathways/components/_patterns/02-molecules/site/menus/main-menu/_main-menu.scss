@@ -3,7 +3,7 @@
     margin:0;
     padding: 0;
     @include baseFlex();
-    justify-content: space-around;
+    justify-content: center;
     background: var(--gray-dark);
     max-height: 0;
     overflow: hidden;
@@ -16,21 +16,23 @@
 
     @include medium(){
         background: transparent;
-        color: var(--gray-dark);
+        color: var(--black);
         max-height: 10000px; // can only transform with px value
         
         a{
-            color: var(--gray-dark);
+            color: var(--black);
+            font-weight: $semi;
         }
         
     }
-
+    // menu--primary li
     li{
-
+        margin: 0 2rem;
         //hide sub nav ---- show on open
         >ul{
             max-height: 0;
             position: absolute;
+            z-index: 1;
             &[class$="open"]{
                 max-height: 1000px;
                 
