@@ -25,9 +25,14 @@
         }
         
     }
+
     // menu--primary li
     li{
         margin: 0 2rem;
+        &[class$="with-sub"]{
+            margin-right: 1rem;
+        }
+
         //hide sub nav ---- show on open
         >ul{
             max-height: 0;
@@ -48,6 +53,21 @@
                 
                 display: flex;
                 flex-flow: column;
+            }
+        }
+    }
+
+    //toggle subnav buttons
+    .expand-sub{
+        background: none;
+        border: none;
+        padding: 0;
+        svg{
+            fill: none;
+        }
+        &:focus{
+            svg{
+                fill: var(--black)
             }
         }
     }

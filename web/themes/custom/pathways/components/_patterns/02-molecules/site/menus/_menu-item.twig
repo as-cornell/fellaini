@@ -29,7 +29,11 @@
       "link_modifiers": item_modifiers,
     } %}
     {% if item.below %}
-      <button class="expand-sub">open</button>
+<button class="expand-sub">
+    <svg class='icon icon--arrow' viewbox='0 0 52 32'>
+        <use xlink:href='#chevron-down'></use>
+    </svg><span class="sr-only">open subnavigation</span></button>
+
       {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
     {% endif %}
   {% endblock %}
