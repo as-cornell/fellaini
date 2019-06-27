@@ -3,8 +3,7 @@
 /* -------------------------
 
 Title: PCE Formatted-texblock
-Descr: simple callse simple container.
-    passes a title for an h3?
+Descr: removes all containers so elements can do their job
 
 --------------------------- */
 
@@ -12,7 +11,4 @@ Descr: simple callse simple container.
 
 
 
-{% include "@atoms/_simple-container.twig" with {
-
-}
-%}
+{{content}}
