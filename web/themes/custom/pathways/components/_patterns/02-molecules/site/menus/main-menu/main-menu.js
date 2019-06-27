@@ -6,7 +6,7 @@
   // close the menu--secondary
   $('.menu--secondary a').attr('tabindex', -1);
   $('.menu--secondary').addClass('close');
-  $(".menu--secondary").before("<button class='menu-toggle' aria-hidden='false' aria-label='menu--secondary is closed'><svg viewBox='0 0 20 20' class='icon--arrow'> <use xlink:href='#shape-icon-down-arrow'></use > </svg ></button>");
+  $(".menu--secondary").before("<button class='menu-toggle' aria-hidden='false' aria-label='menu--secondary is closed'><svg viewBox='0 0 20 20' class='icon--arrow'> <use xlink:href='#shape-icon-down-arrow'></use > </svg ><span class='sr-only'>Show nested menu</span></button>");
 
   //
   // need to make this toggle want to control visibility with aria hiddens
