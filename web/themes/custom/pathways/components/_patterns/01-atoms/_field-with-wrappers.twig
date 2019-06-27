@@ -59,20 +59,16 @@
     {% if label_hidden %}
         {% if multiple %}
             <!-- multiple no label -->
-            {# <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}> #}
+            <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
                 {% for item in items %}
                 <div {{ item.attributes }} {% if self_tag %}class="{{item.content}}" {% endif %}>
                     {{ item.content }}
                 </div>
-                {{ item.content }}
             {% endfor %}
-            {# </div> #}
+            </div>
         {% else %}
             {% for item in items %}
-                {# <div{{attributes}}> #}
                 {{ item.content }}
-                {# </div> #}
-            {# {{ item.content }} #}
         {% endfor %}
     {% endif %}
     {% else %}
