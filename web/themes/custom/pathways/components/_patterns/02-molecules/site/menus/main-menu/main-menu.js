@@ -13,7 +13,7 @@
   //
   $("#toggle-menu").on({
     click: function () {
-      $(".as-nav").toggleClass("show");
+      $(".menu--primary").toggleClass("show");
       // $(this).parent().toggleClass("toggleFilters--active");
     }
   });
