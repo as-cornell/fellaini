@@ -1,16 +1,33 @@
 {% if not item_modifiers %}
   {% set item_modifiers = [] %}
 {% endif %}
+
 {% if item.in_active_trail == TRUE %}
   {% set item_modifiers = item_modifiers|merge(['active']) %}
 {% endif %}
+
 {% if menu_level > 0 %}
-  {% set item_modifiers = item_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
+  {# {% set item_modifiers = item_modifiers|merge(['subitem']) %} #}
 {% endif %}
-{% if item.below %}
-  {% set item_modifiers = item_modifiers|merge(['with-sub']) %}
-{% endif %}
+{# {{kint(menu_level)}} #}
+
+
+
+{# why won't this work? This is a pain in the ass. even though item.below array 0 still sets it.#}
+{% if item.below|length > 1 %}
+  {% set hasSub = true %}
+
+  {% if hasSub %}
+      {% set item_modifiers = item_modifiers|merge(['with-sub' ~ hasSub ]) %}
+  {% endif %}
+
+ {% endif %}
+{# {{kint(item.below)}} #}
+
+
 {# below could maybe be done without a loop? #}
+
+
 {% for modifier in item.modifiers %}
   {% set item_modifiers = item_modifiers|merge([modifier]) %}
 {% endfor %}
@@ -29,12 +46,17 @@
       "link_modifiers": item_modifiers,
     } %}
     {% if item.below %}
-<button class="expand-sub">
-    <svg class='icon icon--arrow' viewbox='0 0 52 32'>
-        <use xlink:href='#chevron-down'></use>
-    </svg><span class="sr-only">open subnavigation</span></button>
+    <button class="expand-sub">
+      <svg class='icon icon--arrow' viewbox='0 0 52 32'>
+          <use xlink:href='#chevron-down'></use>
+      </svg>
+      <span class="sr-only">open subnavigation</span>
+    </button>
 
       {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
     {% endif %}
+{{item_modifiers}}
+
   {% endblock %}
 {% endembed %}
+

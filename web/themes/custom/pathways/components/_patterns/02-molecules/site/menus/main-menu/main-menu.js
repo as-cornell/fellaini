@@ -4,13 +4,21 @@
   // console.log( "Let's do this!"  );
 
   // close the menu--secondary
-  $('.menu--secondary a').attr('tabindex', -1);
-  $('.menu--secondary').addClass('close');
-  $(".menu--secondary").before("<button class='menu-toggle' aria-hidden='false' aria-label='menu--secondary is closed'><svg viewBox='0 0 20 20' class='icon--arrow'> <use xlink:href='#shape-icon-down-arrow'></use > </svg ><span class='sr-only'>Show nested menu</span></button>");
+  // $('.menu--secondary a').attr('tabindex', -1);
+  // $('.menu--secondary').addClass('close');
+  // $(".menu--secondary").before("<button class='menu-toggle' aria-hidden='false' aria-label='menu--secondary is closed'><svg viewBox='0 0 20 20' class='icon--arrow'> <use xlink:href='#shape-icon-down-arrow'></use > </svg ><span class='sr-only'>Show nested menu</span></button>");
 
   //
   // need to make this toggle want to control visibility with aria hiddens
   //
+
+
+  // Add aria-haspopup true to links with popups
+  $('.expand-sub').prev().attr('aria-haspopup', 'true');
+
+  var linkText = $('.expand-sub').prev().text();
+  console.log(linkText);
+
   $("#toggle-menu").on({
     click: function () {
       $(".menu--primary").toggleClass("show");
@@ -31,7 +39,25 @@
   $('.expand-sub').click(function (e) {
 
     var _this = $(this);
-    console.log(this);
+    var parent = $(_this.parent());
+    var linkContent = $(_this.prev());
+    console.log(linkContent);
+
+
+
+
+    if(!parent.hasClass('sub-expanded')){
+      console.log(_this.parent());
+      //click button add sub-expanded to parent
+      $(parent).addClass('sub-expanded');
+
+      // remove sub-expaneded
+    }else{
+      $(parent).removeClass('sub-expanded');
+
+    }
+
+
 
     // if the menu--secondary is hidden....
     if (!_this.next().hasClass('display')) {
@@ -44,24 +70,24 @@
       $('.expand-sub').attr('aria-label', 'menu--secondary is closed');
 
       // open menu
-      _this.next().addClass('display');
+     // _this.next().addClass('display');
       // _this.prev().removeAttr('aria-expanded');
       _this.prev().attr('aria-expanded', 'true');
-      _this.next().find('a').removeAttr('tabindex', -1);
-      _this.children().removeClass('fa-angle-down');
-      _this.children().addClass('fa-angle-up');
-      _this.attr('aria-label', 'menu--secondary is open');
+      //_this.next().find('a').removeAttr('tabindex', -1);
+      //_this.children().removeClass('fa-angle-down');
+     // _this.children().addClass('fa-angle-up');
+      //_this.attr('aria-label', 'menu--secondary is open');
 
       // if the menu is open then...   
     } else {
 
       // close the menu...
-      _this.next().removeClass('display');
+     // _this.next().removeClass('display');
       _this.prev().attr('aria-expanded', 'false');
-      _this.next().find('a').attr('tabindex', -1);
-      _this.children().removeClass('fa-angle-up');
-      _this.children().addClass('fa-angle-down');
-      _this.attr('aria-label', 'menu--secondary is closed');
+     // _this.next().find('a').attr('tabindex', -1);
+     // _this.children().removeClass('fa-angle-up');
+     // _this.children().addClass('fa-angle-down');
+    //  _this.attr('aria-label', 'menu--secondary is closed');
 
     }
 

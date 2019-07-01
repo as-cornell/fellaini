@@ -10,6 +10,7 @@
     background: var(--gray-dark);
     max-height: 0;
  
+    // when expanded at small size
     &.show{
         max-height: 1000px;
     }
@@ -22,6 +23,7 @@
 
     a{
         color:var(--near-white);
+        display: inline-block;
     }
 
     .subnav{
@@ -42,7 +44,7 @@
         max-height: 10000px; // can only transform with px value
 
         
-        a{
+        .menu--primary__link{
             color: var(--black);
             font-weight: $semi;
             border-top: 4px solid transparent;
@@ -62,73 +64,71 @@
                 margin-right: 1rem;
             }
 
-            //hide sub nav ---- show on open
-            >ul{
+            .subnav{
+                list-style-type: none;
                 max-height: 0;
                 position: absolute;
                 z-index: 1;
                 background: var(--near-white);
                 @include boxShadow;
-                &[class$="open"]{
-                    max-height: 1000px;
-                    
-                    display: flex;
-                    flex-flow: column;
+                
+                display: flex;
+                flex-flow: column;
+
+                left: -2rem;
+                width: 200%;
+                padding-left: 0;
+                margin-top: .5rem;
+
+                li{
+                    margin: 0;
+                    padding: 0;
+                    overflow: visible;
+                }
+
+                a{
+                    padding: .5em 1em;
+                    display: block;
+                    position: relative;
+                    color: var(--black);
+                    &:hover, &:focus{
+                        color: var(--white);
+                        background: var(--red);
+                        border-top:4px solid transparent;
+                        &:after, &:before{
+                            position: absolute;
+                            content: '';
+                            width: 1rem;
+                            height: 100%;
+                            top: 0;
+                            background:var(--red);
+                        }
+                        &:after{
+                            right:  -1rem;
+                        }
+                        &:before{
+                            left: -1rem;
+                        }
+                    }
                 }
             }
 
             //show subnav on hover
-            &:hover{
+            &:hover, &.sub-expanded{
                 overflow: visible;
-                >ul{
+                .subnav{
                     max-height: 1000px;
-                    
-                    display: flex;
-                    flex-flow: column;
-
-                    left: -2rem;
-                    width: 200%;
-                    margin-top: .5rem;
-
-                    li{
-                        margin: 0;
-                        padding: 0;
-                    }
-                    a{
-                        padding: .5em 1em;
-                        display: block;
-                        &:hover{
-                            color: var(--white);
-                            background: var(--red);
-                            
-                            &:after, &:before{
-                                position: absolute;
-                                content: '';
-                                width: 1rem;
-                                height: 100%;
-                                top: 0;
-                                background:var(--red);
-                            }
-                            &:after{
-                                right:  -1rem;
-                            }
-                            &:before{
-                                left: -1rem;
-                            }
-                        }
-                    }
                 }
+
             }
 
             >.menu--primary__link--active{
                     border-top: 4px solid var(--red);
                 }
         }
-
     }
-
-
-    //toggle subnav buttons
+}  
+ //toggle subnav buttons
     .expand-sub{
         background: none;
         border: none;
@@ -148,10 +148,6 @@
         }
         
     }
-
-
-
-}   
 .main-nav-toggle{
     background: none;
     border:none;
