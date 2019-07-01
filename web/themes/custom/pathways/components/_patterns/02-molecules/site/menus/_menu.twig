@@ -32,14 +32,17 @@
 
     {# Set classes #}
     {% set menu_class = menu_class|default('menu') %}
-    {% if not menu_modifiers %}
+    
+    {# maybe reset all the time? #}
+    {# {% if not menu_modifiers %} #}
       {% set menu_modifiers = [] %}
-    {% endif %}
+    {# {% endif %} #}
 
     {# sets modifiers for lower menus #}
-    {% if menu_level > 0 %}
+    {% if menu_level == 1 %}
       {% set menu_class = 'subnav' %}
-      {% set menu_modifiers = [menu_class ~ menu_level] %}
+      {% set menu_modifiers = ['level' ~ menu_level] %}
+      
     {% endif %}
 
     {# List #}
