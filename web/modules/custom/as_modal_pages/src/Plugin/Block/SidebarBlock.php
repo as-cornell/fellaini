@@ -19,7 +19,7 @@ class SidebarBlock extends BlockBase {
    */
   public function build() {
     $build = [];
-    $build['sidebar_block']['#markup'] = 'Implement SidebarBlock.';
+    $build['sidebar_block']['#markup'] = 'SidebarBlock.';
 
     return $build;
   }
