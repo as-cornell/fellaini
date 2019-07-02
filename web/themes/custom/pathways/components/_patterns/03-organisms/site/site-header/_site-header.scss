@@ -46,6 +46,9 @@ header{
       .main-nav-toggle{
         grid-area: navIcon;
       }
+      .img{
+        max-width: initial; // force logo full size
+      }
 
 
 
