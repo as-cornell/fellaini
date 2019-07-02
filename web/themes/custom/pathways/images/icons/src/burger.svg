@@ -1,8 +1,1 @@
-<svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
-<g id="glyph/burger">
-<path id="Rectangle 2" d="M0 2C0 0.89543 0.895431 0 2 0H32C33.1046 0 34 0.89543 34 2V5.23077H0V2Z"/>
-<rect id="Rectangle 2 Copy" y="9" width="34" height="6"/>
-<rect id="Rectangle 2 Copy 2" y="19" width="34" height="6"/>
-<path id="Rectangle 2 Copy 3" d="M0 28.7692H34V31.9999C34 33.1045 33.1046 33.9999 32 33.9999H2C0.89543 33.9999 0 33.1045 0 31.9999V28.7692Z"/>
-</g>
-</svg>
+<svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><g id="glyph/burger"><path id="Rectangle 2" d="M0 2a2 2 0 0 1 2-2h30a2 2 0 0 1 2 2v3.23H0V2z"/><path id="Rectangle 2 Copy" d="M0 9h34v6H0z"/><path id="Rectangle 2 Copy 2" d="M0 19h34v6H0z"/><path id="Rectangle 2 Copy 3" d="M0 28.77h34V32a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-3.23z"/></g></svg>
