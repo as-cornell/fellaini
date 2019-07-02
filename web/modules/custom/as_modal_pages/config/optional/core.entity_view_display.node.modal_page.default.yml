@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.modal_page.field_aside_components
+    - field.field.node.modal_page.field_page_components_entity
+    - node.type.modal_page
+  module:
+    - user
+id: node.modal_page.default
+targetEntityType: node
+bundle: modal_page
+mode: default
+content:
+  field_aside_components:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_page_components_entity:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  links: true
