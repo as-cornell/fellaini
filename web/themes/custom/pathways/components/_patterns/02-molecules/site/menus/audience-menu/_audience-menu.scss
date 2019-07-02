@@ -4,12 +4,12 @@
     align-items: center;
     justify-content: flex-end;
 }
-.audience-menu{
+.audienceNav{
     @include list-reset;
     @include baseFlex;
     justify-content: flex-end;
 }
-.audience-menu__link{
+.audienceNav__link{
     color: var(--gray-dark);
     margin-right: 1rem;
 }

@@ -1,6 +1,6 @@
 
 
-.menu--primary{
+.mainNav{
     list-style-type: none;
     margin:0;
     padding: 0;
@@ -26,7 +26,7 @@
         display: inline-block;
     }
 
-    .subnav{
+    .subNav{
         max-height: 0;
         &.display{
             max-height: 1000px;
@@ -44,7 +44,7 @@
         max-height: 10000px; // can only transform with px value
 
         
-        .menu--primary__link{
+        .mainNav__link{
             color: var(--black);
             font-weight: $semi;
             border-top: 4px solid transparent;
@@ -63,68 +63,66 @@
             &[class$="with-sub"]{
                 margin-right: 1rem;
             }
-
-            .subnav{
-                list-style-type: none;
-                max-height: 0;
-                position: absolute;
-                z-index: 1;
-                background: var(--near-white);
-                @include boxShadow;
-                
-                display: flex;
-                flex-flow: column;
-
-                left: -2rem;
-                width: 200%;
-                padding-left: 0;
-                margin-top: .5rem;
-
-                li{
-                    margin: 0;
-                    padding: 0;
-                    overflow: visible;
-                }
-
-                a{
-                    padding: .5em 1em;
-                    display: block;
-                    position: relative;
-                    color: var(--black);
-                    &:hover, &:focus{
-                        color: var(--white);
-                        background: var(--red);
-                        border-top:4px solid transparent;
-                        &:after, &:before{
-                            position: absolute;
-                            content: '';
-                            width: 1rem;
-                            height: 100%;
-                            top: 0;
-                            background:var(--red);
-                        }
-                        &:after{
-                            right:  -1rem;
-                        }
-                        &:before{
-                            left: -1rem;
-                        }
-                    }
-                }
-            }
-
             //show subnav on hover
             &:hover, &.sub-expanded{
                 overflow: visible;
-                .subnav{
+                .subNav{
                     max-height: 1000px;
                 }
 
             }
 
-            >.menu--primary__link--active{
+            >.mainNav__link--active{
                     border-top: 4px solid var(--red);
                 }
+        }
+        .subNav{
+            list-style-type: none;
+            max-height: 0;
+            position: absolute;
+            z-index: 1;
+            background: var(--near-white);
+            @include boxShadow;
+            
+            display: flex;
+            flex-flow: column;
+
+            left: -2rem;
+            width: 200%;
+            padding-left: 0;
+            margin-top: .5rem;
+
+            li{
+                margin: 0;
+                padding: 0;
+                overflow: visible;
+            }
+
+            a{
+                padding: .5em 1em;
+                display: block;
+                position: relative;
+                color: var(--black);
+                &:hover, &:focus{
+                    color: var(--white);
+                    background: var(--red);
+                    border-top:4px solid transparent;
+                    &:after, &:before{
+                        position: absolute;
+                        content: '';
+                        width: 1rem;
+                        height: 100%;
+                        top: 0;
+                        background:var(--red);
+                    }
+                    &:after{
+                        right:  -1rem;
+                    }
+                    &:before{
+                        left: -1rem;
+                    }
+                }
+            }
         }
     }
 }  

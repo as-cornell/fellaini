@@ -1,3 +1,14 @@
+{# 
+
+/* -------------------------
+
+Title: main-menu.twig
+Descr: adds main nav burger icon calls _menu.twig and passes all the conent
+
+--------------------------- */ 
+
+#}
+
 <button href="#" id="toggle-menu" class="main-nav-toggle">
   <span class="toggle-expand__open">
     {% include "@atoms/04-images/icons/_icon.twig" with {
@@ -14,7 +25,7 @@
 </button>
 <nav id="main-nav" class="main-nav" aria-label="main navigation">
   {% include "@molecules/site/menus/_menu.twig" with {
-    menu_class: "menu--primary",
+    menu_class: "mainNav",
     items: menu_items,
   } %}
 </nav>
