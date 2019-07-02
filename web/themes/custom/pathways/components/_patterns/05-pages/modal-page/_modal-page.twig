@@ -1,4 +1,4 @@
-{# 
+{#
 
 /* -------------------------
 
@@ -7,7 +7,7 @@ Descr: Sets up variables and content blocks for modal pages' extending of _defau
 Passes: has-sidebar to contentWrapper
         sets sidebar class to sidebar--modal
 
---------------------------- */ 
+--------------------------- */
 
 #}
 
@@ -35,7 +35,8 @@ Passes: has-sidebar to contentWrapper
 
 {% block sidebar_content %}
     <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
-        {# MOdal page navigation thinger goes here #}
+        {# Modal page navigation thinger goes here #}
+        {{ drupal_entity('block', 'sidebar_block',  check_access=false) }}
         {{ aside_content }}
     </div>
 {% endblock %}
