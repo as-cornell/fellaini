@@ -16,24 +16,16 @@
   // Add aria-haspopup true to links with popups
   $('.expand-sub').prev().attr('aria-haspopup', 'true');
 
-  var linkText = $('.expand-sub').prev().text();
-  console.log(linkText);
+  $('.subNav a').attr('tabindex', -1);
+
+  // var linkText = $('.expand-sub').prev().text();
+  // // console.log(linkText);
 
   $("#toggle-menu").on({
     click: function () {
       $(".mainNav").toggleClass("show");
-      // $(this).parent().toggleClass("toggleFilters--active");
     }
   });
-  // $("#toggle-menu").click(function (e) {
-  //   $('.menu--primary').attr('aria-hidden', 'false');
-  // });
-
-  // $("#toggle-menu").click(function () {
-  //   $('.menu--primary').attr('show-hide', function (index, attr) {
-  //     return attr == 'show' ? null : 'show';
-  //   });
-  // });
 
   // if a menu-button is clicked...
   $('.expand-sub').click(function (e) {
@@ -43,53 +35,58 @@
     var linkContent = $(_this.prev());
     console.log(linkContent);
 
-
-
-
     if(!parent.hasClass('sub-expanded')){
-      console.log(_this.parent());
-      //click button add sub-expanded to parent
+
       $(parent).addClass('sub-expanded');
+      _this.next().find('a').removeAttr('tabindex', -1);
 
       // remove sub-expaneded
     }else{
       $(parent).removeClass('sub-expanded');
+      _this.next().find('a').attr('tabindex', -1);
 
     }
 
 
 
-    // if the menu--secondary is hidden....
-    if (!_this.next().hasClass('display')) {
+    // $('.subNav__link').focus(function(){
+    //   $(this).addClass('sub-expanded');
+    //   console.log('hiya');
+    // });
 
-      // reset menu--secondary + button arrow to start
-      $('.menu--secondary').removeClass('display');
-      $('.menu--secondary a').attr('tabindex', -1);
-      $('.fa').addClass('fa-angle-down');
-      $('.fa').removeClass('fa-angle-up');
-      $('.expand-sub').attr('aria-label', 'menu--secondary is closed');
 
-      // open menu
-     // _this.next().addClass('display');
-      // _this.prev().removeAttr('aria-expanded');
-      _this.prev().attr('aria-expanded', 'true');
-      //_this.next().find('a').removeAttr('tabindex', -1);
-      //_this.children().removeClass('fa-angle-down');
-     // _this.children().addClass('fa-angle-up');
-      //_this.attr('aria-label', 'menu--secondary is open');
 
-      // if the menu is open then...   
-    } else {
+    // // if the menu--secondary is hidden....
+    // if (!_this.next().hasClass('display')) {
 
-      // close the menu...
-     // _this.next().removeClass('display');
-      _this.prev().attr('aria-expanded', 'false');
-     // _this.next().find('a').attr('tabindex', -1);
-     // _this.children().removeClass('fa-angle-up');
-     // _this.children().addClass('fa-angle-down');
-    //  _this.attr('aria-label', 'menu--secondary is closed');
+    //   // reset menu--secondary + button arrow to start
+    //   $('.menu--secondary').removeClass('display');
+    //   $('.menu--secondary a').attr('tabindex', -1);
+    //   $('.fa').addClass('fa-angle-down');
+    //   $('.fa').removeClass('fa-angle-up');
+    //   $('.expand-sub').attr('aria-label', 'menu--secondary is closed');
 
-    }
+    //   // open menu
+    //  // _this.next().addClass('display');
+    //   // _this.prev().removeAttr('aria-expanded');
+    //   _this.prev().attr('aria-expanded', 'true');
+    //   //_this.next().find('a').removeAttr('tabindex', -1);
+    //   //_this.children().removeClass('fa-angle-down');
+    //  // _this.children().addClass('fa-angle-up');
+    //   //_this.attr('aria-label', 'menu--secondary is open');
+
+    //   // if the menu is open then...   
+    // } else {
+
+    //   // close the menu...
+    //  // _this.next().removeClass('display');
+    //   _this.prev().attr('aria-expanded', 'false');
+    //  // _this.next().find('a').attr('tabindex', -1);
+    //  // _this.children().removeClass('fa-angle-up');
+    //  // _this.children().addClass('fa-angle-down');
+    // //  _this.attr('aria-label', 'menu--secondary is closed');
+
+    // }
 
   });
 
