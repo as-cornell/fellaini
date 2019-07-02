@@ -14,12 +14,6 @@
     &.show{
         max-height: 1000px;
     }
-    
-    //position: relative;
-    //overflow: hidden;
-
-    // need open styles put here for small open state
-
 
     a{
         color:var(--near-white);
@@ -35,6 +29,12 @@
 
     li{
         overflow: hidden;
+        &.sub-expanded{
+            overflow: visible;
+            .subNav{
+                max-height: 1000px;
+            }
+        }
     }
 
     @include medium(){
@@ -64,12 +64,11 @@
                 margin-right: 1rem;
             }
             //show subnav on hover
-            &:hover, &.sub-expanded{
+            &:hover{
                 overflow: visible;
                 .subNav{
                     max-height: 1000px;
                 }
-
             }
 
             >.mainNav__link--active{
@@ -126,26 +125,26 @@
         }
     }
 }  
- //toggle subnav buttons
-    .expand-sub{
-        background: none;
-        border: none;
-        padding: 0;
+ 
+//toggle subnav buttons
+.expand-sub{
+    background: none;
+    border: none;
+    padding: 0;
+    svg{
+        fill: var(--white);
+    }
+    @include medium(){
         svg{
-            fill: var(--white);
+            fill:none;
         }
-        @include medium(){
-            svg{
-                fill:none;
-            }
-            &:focus{
+        &:focus{
             svg{
                 fill: var(--black)
             }
         }
-        }
-        
     }
+}
 .main-nav-toggle{
     background: none;
     border:none;
