@@ -24,14 +24,19 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
+{# {{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }} #}
+
+
+{# remove the defaults from macro on second pass to clear classes #}
+{{ menus.menu_links(items, attributes, 0) }}
+
 
 {% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
   {% import _self as menus %}
   {% if items %}
 
     {# Set classes #}
-    {% set menu_class = menu_class|default('menu') %}
+    {% set menu_class = menu_class|default('mainNav') %}
     
     {# maybe reset all the time? #}
     {# {% if not menu_modifiers %} #}
@@ -40,7 +45,7 @@
 
     {# sets modifiers for lower menus #}
     {% if menu_level == 1 %}
-      {% set menu_class = 'subnav' %}
+      {% set menu_class = 'subNav' %}
       {% set menu_modifiers = ['level' ~ menu_level] %}
       
     {% endif %}
