@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains as_modal_pages.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_modal_pages_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_modal_pages module.
+    case 'help.page.as_modal_pages':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Contains configurations for Modal Page content type and block plugin to provide in-page navigation.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function as_modal_pages_theme() {
+  return [
+    'as_modal_pages' => [
+      'render element' => 'children',
+    ],
+  ];
+}

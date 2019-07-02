@@ -1,0 +1,13 @@
+{
+    "name": "as_modal_pages",
+    "type": "drupal-module",
+    "description": "Contains configurations for Modal Page content type and block plugin to provide in-page navigation.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/as_modal_pages",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/as_modal_pages",
+        "source": "http://cgit.drupalcode.org/as_modal_pages",
+    },
+}
