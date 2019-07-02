@@ -64,7 +64,7 @@
                 margin-right: 1rem;
             }
             //show subnav on hover
-            &:hover{
+            &:hover, &:focus{
                 overflow: visible;
                 .subNav{
                     max-height: 1000px;
@@ -94,7 +94,7 @@
             li{
                 margin: 0;
                 padding: 0;
-                overflow: visible;
+                //overflow: visible;
             }
 
             a{
@@ -102,10 +102,11 @@
                 display: block;
                 position: relative;
                 color: var(--black);
+                border-top: none;
                 &:hover, &:focus{
                     color: var(--white);
                     background: var(--red);
-                    border-top:4px solid transparent;
+                    // border-top:4px solid transparent;
                     &:after, &:before{
                         position: absolute;
                         content: '';
