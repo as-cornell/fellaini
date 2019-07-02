@@ -21,7 +21,7 @@
 
   $("#toggle-menu").on({
     click: function () {
-      $(".menu--primary").toggleClass("show");
+      $(".mainNav").toggleClass("show");
       // $(this).parent().toggleClass("toggleFilters--active");
     }
   });
