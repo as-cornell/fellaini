@@ -26,31 +26,21 @@
 #}
 {{ menus.menu_links(items, attributes, 0, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
 
-
-{# remove the defaults from macro on second pass to clear classes #}
-{# {{ menus.menu_links(items, attributes, 0) }} #}
-
-
 {% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
   {% import _self as menus %}
   {% if items %}
 
     {# Set classes #}
-    {% set menu_class = menu_class|default('mainNav') %}
-    
-
-    {% set menu_modifiers = [] %}
-
-
-    {# sets modifiers for lower menus #}
-    {% if menu_level == 1 %}
-      {% set menu_class = 'subNav' %}
-      {% set menu_modifiers = ['level' ~ menu_level] %}
-      
+    {% set menu_class = menu_class|default('menu') %}
+    {% if not menu_modifiers %}
+      {% set menu_modifiers = [] %}
+    {% endif %}
+    {% if menu_level > 0 %}
+      {% set menu_modifiers = menu_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
     {% endif %}
 
     {# List #}
-    {% embed "@atoms/lists/ul.twig" with {
+    {% embed "@atoms/lists/00-ul.twig" with {
       ul_base_class: menu_class,
       ul_modifiers: menu_modifiers,
       ul_blockname: menu_blockname
