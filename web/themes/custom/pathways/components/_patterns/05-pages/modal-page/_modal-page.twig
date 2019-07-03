@@ -36,7 +36,7 @@ Passes: has-sidebar to contentWrapper
 {% block sidebar_content %}
     <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
         {# Modal page navigation thinger goes here #}
-        {{ drupal_entity('block', 'sidebar_block',  check_access=false) }}
+        {{ drupal_block('modal_aside_block', {label: asideLabelValue}) }}
         {{ aside_content }}
     </div>
 {% endblock %}
