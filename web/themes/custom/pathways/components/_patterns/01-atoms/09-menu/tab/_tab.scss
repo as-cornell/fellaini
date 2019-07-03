@@ -1,44 +1,35 @@
 .tabs__link,
 .tabs__link--local-tasks {
-  background-color: $gray-lightest;
+  background-color: var(--black);
   border: 1px solid $gray-lt;
   border-bottom: none;
-  color: $gray-lt;
+  color: var(--white);
   display: block;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 1em 2.4em;
+  font-size: .75rem;
+  font-weight: 400;
+  padding: .5em;
   text-align: center;
   text-decoration: none;
   transition: color 0.3s;
 
-  @include large {
-    border-bottom: 1px solid $gray-lightest;
-    border-left: none;
-    display: inline-block;
-    font-size: 1rem;
-    padding: 0.6em 1.7em;
-    position: relative;
-    top: 1px;
-    width: auto;
-  }
+  // @include large {
+  //   border-bottom: 1px solid $gray-lightest;
+  //   border-left: none;
+  //   display: inline-block;
+  //   padding: .25em .5em;
+  //   position: relative;
+  //   top: 1px;
+  //   width: auto;
+  // }
 
   &:hover {
-    background-color: $gray-lightest;
-    color: $gray-med;
+    text-decoration: underline;
   }
 
   &.is-active {
-    background-color: $gray-lt;
+    background-color: var(--white);
     border: 1px solid $gray-lt;
-    color: $white;
+    color: var(--black);
 
-    @include large {
-      background-color: $white;
-      border: 1px solid $gray-lightest;
-      border-bottom: 1px solid $gray-lt;
-      border-left: none;
-      color: $gray-lt;
-    }
   }
 }
