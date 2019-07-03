@@ -21,28 +21,62 @@ header{
     @include baseGrid();
     padding: 0 var(--mainGutter);
 
+    //base layout
+    grid-template-columns: repeat(6,1fr);
+      grid-template-areas:
+      "logo logo logo logo searchIcon navIcon"
+      "mainNav mainNav mainNav mainNav mainNav mainNav"
+      "audNav audNav audNav audNav audNav audNav"
+      "search search search search search search";
+      .nav--audience{
+          grid-area: audNav;
+      }
+      form{
+          grid-area: search;
+      }
+      .siteLogo{
+          grid-area: logo;
+          display:flex;
+          justify-content: center;
+          padding: (7 * $quark) 0;
+      }
+      .main-nav{
+          grid-area: mainNav;
+      }
+      .main-nav-toggle{
+        grid-area: navIcon;
+      }
+      .img{
+        max-width: initial; // force logo full size
+      }
+
+
+
     
     //large screen
-    
-    grid-template-columns: repeat(12,1fr);
-    grid-template-areas:
-    "search search search search audNav audNav audNav audNav audNav audNav audNav audNav"
-    ". . . logo logo logo logo logo logo . . ."
-    "mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav";
-    .nav--audience{
-        grid-area: audNav;
+    @include medium(){
+      grid-template-columns: repeat(12,1fr);
+      grid-template-areas:
+      "search search search search audNav audNav audNav audNav audNav audNav audNav audNav"
+      ". . . logo logo logo logo logo logo . . ."
+      "mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav";
+      .nav--audience{
+          grid-area: audNav;
+      }
+      form{
+          grid-area: search;
+      }
+      .siteLogo{
+          grid-area: logo;
+          display:flex;
+          justify-content: center;
+          padding: (7 * $quark) 0;
+      }
+      .main-nav{
+          grid-area: mainNav;
+      }
+      .main-nav-toggle{
+        display: none;
+      }
     }
-    form{
-        grid-area: search;
-    }
-    .siteLogo{
-        grid-area: logo;
-        display:flex;
-        justify-content: center;
-        padding: (7 * $quark) 0;
-    }
-    .main-nav{
-        grid-area: mainNav;
-    }
-
 }

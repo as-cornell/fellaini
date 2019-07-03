@@ -34,8 +34,8 @@
 .tabs__nav--local-tasks {
   margin: 1em 0 0.5em;
   padding: 0;
-  position: fixed;
-  top: 50px;
+    position: absolute;
+    top: 150px;
   z-index: 10;
 }
 

@@ -1,16 +1,15 @@
 {% if not item_modifiers %}
   {% set item_modifiers = [] %}
 {% endif %}
+
 {% if item.in_active_trail == TRUE %}
   {% set item_modifiers = item_modifiers|merge(['active']) %}
 {% endif %}
-{% if menu_level > 0 %}
-  {% set item_modifiers = item_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
-{% endif %}
-{% if item.below %}
+
+{% if item.below|length > 1 %}
   {% set item_modifiers = item_modifiers|merge(['with-sub']) %}
 {% endif %}
-{# below could maybe be done without a loop? #}
+
 {% for modifier in item.modifiers %}
   {% set item_modifiers = item_modifiers|merge([modifier]) %}
 {% endfor %}
@@ -21,6 +20,7 @@
   "li_modifiers": item_modifiers,
   "li_blockname": item_blockname,
 } %}
+
   {% block list_item_content %}
     {% include "@atoms/01-links/link.twig" with {
       "link_content": item.title,
@@ -29,8 +29,16 @@
       "link_modifiers": item_modifiers,
     } %}
     {% if item.below %}
-      <span class="expand-sub"></span>
-      {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) }}
+    <button class="expand-sub">
+      <svg class='icon icon--arrow' viewbox='0 0 52 32'>
+          <use xlink:href='#chevron-down'></use>
+      </svg>
+      <span class="sr-only">open subnavigation</span>
+    </button>
+
+    {# removed item_modifiers so when the macro reruns it starts fresh. #}
+    {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_class, menu_modifiers, menu_blockname, item_base_class, item_blockname) }}
     {% endif %}
   {% endblock %}
 {% endembed %}
+
