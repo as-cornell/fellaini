@@ -181,10 +181,9 @@ function pathways_theme_suggestions_field_alter(array &$suggestions, array $vari
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
     //do some special stuff for section names on modal page
     if ($node->bundle() == 'modal_page') {
-
-            $content_type = $node->bundle();
-            $suggestions[] = $suggestions[4] .'__' . $content_type;
-
+        $content_type = $node->bundle();
+        $suggestions[] = $suggestions[4] .'__' . $content_type;
+        //dump($suggestions);
     }
   }
 }
