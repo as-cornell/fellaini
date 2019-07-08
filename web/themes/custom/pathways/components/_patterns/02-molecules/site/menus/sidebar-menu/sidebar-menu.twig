@@ -1,11 +1,12 @@
 <a class="toggle-expand" href="#" id="toggle-expand">
     <span class="toggle-expand__open">
-        {% include "@atoms/04-images/icons/_icon.twig" with {
+    {% include "@atoms/04-images/icons/_icon.twig" with {
       icon_base_class: "icon",
-      icon_blockname: "toggle-expand",
-      icon_name: "bars",
+      icon_name: "burger",
+      icon_modifiers: ['bars']
     } %}
-        <span class="toggle-expand__text">Main Menu</span>
+
+        <span class="toggle-expand__text">Menu</span>
     </span>
     <span class="toggle-expand__close">
         <span class="toggle-expand__text">Close</span>
@@ -17,4 +18,3 @@
     items: menu_items,
   } %}
 </nav>
-

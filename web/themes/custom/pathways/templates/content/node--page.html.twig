@@ -17,14 +17,15 @@ Passes: has-aside to <main>
     {% set aside = true %}
 {% endif %}
 
-
-
-{% if content.field_sidebar_components|render is not empty %}
-    {% set content_wrapper_modifiers = ['has-sidebar'] %}
-    {% set sidebar = true %}
-{% endif %}
+{% set content_wrapper_modifiers = ['has-sidebar'] %}
+{% set sidebar = true %}
 
 {% set sidebar_wrapper_modifiers = ['basic-page'] %}
+
+{% set sidebar_content %}
+    {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+    {{ content.field_sidebar_components }}
+{% endset %}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : label,
@@ -34,7 +35,7 @@ Passes: has-aside to <main>
     
     main_content : content.field_page_components_entity,
     aside_content : content.field_aside_components,
-    sidebar_content : content.field_sidebar_components,
+    sidebar_content : sidebar_content,
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers

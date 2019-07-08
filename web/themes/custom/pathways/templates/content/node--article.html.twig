@@ -10,10 +10,11 @@ Passes: Images - pano and image
 --------------------------- */ 
 
 #}
-
-{% if content.field_aside_components %}
-    {% set main_content_modifiers = ['article', 'has-aside'] %}
+{% if content.field_aside_components|render is not empty %}
+    {% set main_content_modifiers = ['article'] %}
+    {% set aside = true %}
 {% endif %}
+
 
 {% include "@pages/article/_article.twig" with {
 
@@ -33,7 +34,6 @@ Passes: Images - pano and image
     title: label,
     main_content : content.field_article_components_entity,
     aside_content : content.field_aside_components,
-
 
     article_dateline: content.field_dateline,
     article_byline: content.field_byline,
