@@ -17,8 +17,10 @@ Passes: has-aside to <main>
     {% set aside = true %}
 {% endif %}
 
-{% set content_wrapper_modifiers = ['has-sidebar'] %}
-{% set sidebar = true %}
+{% if content.field_sidebar_components|render is not empty %}
+    {% set content_wrapper_modifiers = ['has-sidebar'] %}
+    {% set sidebar = true %}
+{% endif %}
 
 {% set sidebar_wrapper_modifiers = ['basic-page'] %}
 
