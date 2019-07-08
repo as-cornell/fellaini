@@ -25,14 +25,13 @@ class ModalAsideBlock extends BlockBase {
       $link_values = $config['link_values'];
     }
     else {
-      $link_values = 'not passing anything';
+      $link_values = 'not passing anything in link values';
     }
 
     $build['modal_aside_block']['#markup'] = '<ul>';
 
     if (!empty($link_values)) {
       foreach($link_values as $link_title) {
-        //dump($section_label_data);
             $build['modal_aside_block']['#markup'] = $build['modal_aside_block']['#markup'] .as_modal_pages_generate_link_markup($link_title);
       }
 
