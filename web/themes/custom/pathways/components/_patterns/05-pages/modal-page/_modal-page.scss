@@ -1,18 +1,11 @@
 
 /* -------------------------
 
-Title: Basic Page
-Descr: Sets layouts for _basic-page.twig
+Title: Modal page specials
+Descr: changes grid grid gap
 
 --------------------------- */
 
-// .mainContent--has-aside{
-//     grid-template-columns: 2.33fr 1fr;
-//     grid-template-rows: min-content 1fr;
-//     grid-template-areas:
-//     "title title"
-//     "content aside";
-//     .title{
-//         grid-area: title;
-//     }
-// }
+.container--modal{
+    grid-gap: calc(2 * var(--space));
+}

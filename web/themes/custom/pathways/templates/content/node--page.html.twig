@@ -17,8 +17,11 @@ Passes: has-aside to <main>
     {% set aside = true %}
 {% endif %}
 
-{% set content_wrapper_modifiers = ['has-sidebar'] %}
-{% set sidebar = true %}
+{# Pages with nothing in sidebar don't see this so the sidebar doesn't show up and you can't see the side nav. Need a better check here. #}
+{# {% if content.field_sidebar_components|render is not empty %} #}
+    {% set content_wrapper_modifiers = ['has-sidebar'] %}
+    {% set sidebar = true %}
+{# {% endif %} #}
 
 {% set sidebar_wrapper_modifiers = ['basic-page'] %}
 
