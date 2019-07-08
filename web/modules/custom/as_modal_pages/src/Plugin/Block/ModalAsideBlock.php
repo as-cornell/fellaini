@@ -19,7 +19,28 @@ class ModalAsideBlock extends BlockBase {
    */
   public function build() {
     $build = [];
-    $build['modal_aside_block']['#markup'] = 'Implement ModalAsideBlock.';
+    $config = $this->getConfiguration();
+
+    if (!empty($config['link_values'])) {
+      $link_values = $config['link_values'];
+    }
+    else {
+      $link_values = 'not passing anything';
+    }
+
+    $build['modal_aside_block']['#markup'] = '<ul>';
+
+    if (!empty($link_values)) {
+      foreach($link_values as $link_title) {
+        //dump($section_label_data);
+            $build['modal_aside_block']['#markup'] = $build['modal_aside_block']['#markup'] .as_modal_pages_generate_link_markup($link_title);
+      }
+
+    } // There were no links
+    else {
+      $build['modal_aside_block']['#markup'] = "<li>There are no modal links</li>";
+    }
+        $build['modal_aside_block']['#markup'] = $build['modal_aside_block']['#markup'] .'</ul>';
 
     return $build;
   }
