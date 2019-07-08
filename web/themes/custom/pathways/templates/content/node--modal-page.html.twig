@@ -15,6 +15,12 @@ Passes: has-sidebar to contentWrapper
 {# {% set main_content_modifiers = ['basic-page'] %} #}
 {% set content_wrapper_modifiers = ['has-sidebar'] %}
 {% set sidebar_wrapper_modifiers = ['modal'] %}
+{% set asideLabelValue = drupal_token('node:title', {node: node}) %}
+{% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
+{% set linkValues = [] %}
+  {% for item in node.field_page_components_entity %}
+    {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
+  {% endfor %}
 
 
 
@@ -30,5 +36,12 @@ Passes: has-sidebar to contentWrapper
 
     }
 %}
-node
- {{ drupal_block('sidebar_block') }}
+ {{ drupal_block('modal_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
+
+{# another twig based modal menu option #}
+{# node.field_page_components_entity.0.entity.name.0.value #}
+  {# for item in node.field_page_components_entity #}
+    {#<li><a href="#{{ item.entity.name.0.value|lower|replace({' ': "-"}) }}">{{ item.entity.name.0.value }}</a></li>#}
+  {#endfor #}
+
+
