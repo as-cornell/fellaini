@@ -11,7 +11,7 @@ function as_modal_pages_generate_link_markup($link_title) {
   $markup = NULL;
     // get variables from array being passed to this function
     //dump($section_label_data);
-    $link_name = preg_replace('/\W+/','-',strtolower(strip_tags($section_label_data)));;
+    $link_name = preg_replace('/\W+/','-',strtolower(strip_tags($link_title)));;
     // Create the markup
     $markup = $markup . "<li><a href='#" . $link_name . "'>" . $link_title . "</a></li>";
 
