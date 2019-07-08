@@ -13,14 +13,24 @@ Passes: has-sidebar to contentWrapper
 
 
 {# {% set main_content_modifiers = ['basic-page'] %} #}
-{% set content_wrapper_modifiers = ['has-sidebar'] %}
+{% set content_wrapper_modifiers = ['has-sidebar', 'modal'] %}
 {% set sidebar_wrapper_modifiers = ['modal'] %}
 {% set asideLabelValue = drupal_token('node:title', {node: node}) %}
 {% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
+
+{# link values for the modal items #}
 {% set linkValues = [] %}
   {% for item in node.field_page_components_entity %}
     {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
   {% endfor %}
+
+{# set aside content #}
+{% set aside_content %}
+{{ drupal_block('modal_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
+{{ content.field_aside_components }}
+{% endset %}
+
+{% set sidebar = true %}
 
 
 
@@ -28,7 +38,7 @@ Passes: has-sidebar to contentWrapper
     title : label,
 
     main_content : content.field_page_components_entity,
-    aside_content : content.field_aside_components,
+    aside_content : aside_content,
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers,
@@ -36,7 +46,9 @@ Passes: has-sidebar to contentWrapper
 
     }
 %}
- {{ drupal_block('modal_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
+
+
+ {# {{ drupal_block('modal_aside_block', {label: asideLabelValue, link_values:linkValues}) }} #}
 
 {# another twig based modal menu option #}
 {# node.field_page_components_entity.0.entity.name.0.value #}
