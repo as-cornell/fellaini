@@ -6,7 +6,7 @@
 }
 .course{
     @include baseGrid();
-    grid-template-rows: repeat(2, minmax(2rem, 1fr));
+    grid-template-rows: auto 1fr;
 
     span{
         flex-basis: 100%;
