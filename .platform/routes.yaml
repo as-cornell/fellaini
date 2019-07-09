@@ -26,8 +26,7 @@ http://asd8.as.cornell.edu/:
   cache:
     enabled: true
     default_ttl: 0
-    cookies:
-    - '*'
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
     headers:
     - Accept
     - Accept-Language
