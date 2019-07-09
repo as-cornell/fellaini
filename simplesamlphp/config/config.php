@@ -1057,7 +1057,7 @@ $config = array(
      *
      * (This option replaces the old 'session.handler'-option.)
      */
-    'store.type'                    => 'sql',
+    'store.type'                    => 'phpsession',
 
     /*
      * The DSN the sql datastore should connect to.
