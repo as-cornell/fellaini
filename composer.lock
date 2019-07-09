@@ -6155,6 +6155,7 @@
                 "translation",
                 "twig"
             ],
+            "abandoned": "simplesamlphp/twig-configurable-i18n",
             "time": "2019-06-07T11:03:28+00:00"
         },
         {
