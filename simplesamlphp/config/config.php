@@ -1103,8 +1103,8 @@ $config['metadata.sources'] = [
 ];
 
 // Setup the database connection for all parts of SimpleSAML.
-if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
-  $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
+if (getenv('PLATFORM_RELATIONSHIPS')) {
+  $relationships = json_decode(base64_decode(getenv('PLATFORM_RELATIONSHIPS')), TRUE);
   foreach ($relationships['database'] as $instance) {
     if (!empty($instance['query']['is_master'])) {
       $dsn = sprintf("%s:host=%s;dbname=%s",
