@@ -10,6 +10,7 @@ dependencies:
     - field.field.page_component_entity.campfire.field_formatted_text
     - field.field.page_component_entity.campfire.field_main_article
   module:
+    - dynamic_entity_reference
     - text
 id: page_component_entity.campfire.default
 targetEntityType: page_component_entity
@@ -29,19 +30,83 @@ content:
     weight: 4
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      node:
+        view_mode: card
+      page_component_entity:
+        view_mode: card_small
+      contact_message:
+        view_mode: default
+        link: false
+      crop:
+        view_mode: default
+        link: false
+      block_content:
+        view_mode: default
+        link: false
+      menu_link_content:
+        view_mode: default
+        link: false
+      file:
+        view_mode: default
+        link: false
+      media:
+        view_mode: default
+        link: false
+      paragraph:
+        view_mode: default
+        link: false
+      shortcut:
+        view_mode: default
+        link: false
+      taxonomy_term:
+        view_mode: default
+        link: false
+      user:
+        view_mode: default
+        link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: dynamic_entity_reference_entity_view
     region: content
   field_campfire_before:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      node:
+        view_mode: card
+      page_component_entity:
+        view_mode: card_small
+      contact_message:
+        view_mode: default
+        link: false
+      crop:
+        view_mode: default
+        link: false
+      block_content:
+        view_mode: default
+        link: false
+      menu_link_content:
+        view_mode: default
+        link: false
+      file:
+        view_mode: default
+        link: false
+      media:
+        view_mode: default
+        link: false
+      paragraph:
+        view_mode: default
+        link: false
+      shortcut:
+        view_mode: default
+        link: false
+      taxonomy_term:
+        view_mode: default
+        link: false
+      user:
+        view_mode: default
+        link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: dynamic_entity_reference_entity_view
     region: content
   field_formatted_text:
     weight: 2
@@ -51,7 +116,7 @@ content:
     type: text_default
     region: content
   field_main_article:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: card_large

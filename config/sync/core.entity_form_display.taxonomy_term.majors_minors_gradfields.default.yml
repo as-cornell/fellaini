@@ -4,21 +4,63 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser
-    - field.field.taxonomy_term.majors_minors_gradfields.field_classes
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
-    - field.field.taxonomy_term.majors_minors_gradfields.field_links
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
-    - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
-    - field.field.taxonomy_term.majors_minors_gradfields.field_things
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
     - entity_browser
     - entity_browser_entity_form
+    - field_group
     - inline_entity_form
-    - link
     - path
     - text
+third_party_settings:
+  field_group:
+    group_standard:
+      children:
+        - group_basic_information
+        - group_body_content
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Standard
+      region: content
+    group_basic_information:
+      children:
+        - field_images
+        - field_level
+        - description
+        - path
+      parent_name: group_standard
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Basic Information'
+      region: content
+    group_body_content:
+      children:
+        - field_page_components
+      parent_name: group_standard
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Body Content'
+      region: content
 _core:
   default_config_hash: RnvuAg1vH_2RkNjXFRi4v3tpu4hkgcfcRnaPnygP_s8
 id: taxonomy_term.majors_minors_gradfields.default
@@ -28,22 +70,14 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 3
+    weight: 23
     region: content
     settings:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
-  field_classes:
-    weight: 5
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_images:
-    weight: 2
+    weight: 21
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -58,21 +92,13 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_level:
-    weight: 1
+    weight: 22
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
-  field_links:
-    weight: 7
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   field_page_components:
-    weight: 4
+    weight: 5
     settings:
       form_mode: default
       label_singular: ''
@@ -89,23 +115,6 @@ content:
         entity_browser_id: _none
     type: inline_entity_form_complex
     region: content
-  field_student_careers:
-    weight: 6
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_things:
-    weight: 8
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   name:
     type: string_textfield
     weight: 0
@@ -116,7 +125,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }

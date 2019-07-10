@@ -5,15 +5,19 @@ dependencies:
   config:
     - core.entity_view_mode.node.card_large
     - field.field.node.article.body
-    - field.field.node.article.field_article_body
+    - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_byline
+    - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
-    - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
+    - field.field.node.article.field_newsletter_image
+    - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_people
+    - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
@@ -72,10 +76,14 @@ content:
     region: content
 hidden:
   body: true
-  field_article_body: true
+  field_article_components_entity: true
+  field_byline_reference: true
   field_department_program: true
-  field_featured_audio_video: true
   field_media_source: true
+  field_newsletter_image: true
+  field_pano_image: true
+  field_related_people: true
+  field_summary: true
   field_tags: true
   field_topics_and_disciplines: true
   links: true

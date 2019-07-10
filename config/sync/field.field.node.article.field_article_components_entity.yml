@@ -16,7 +16,7 @@ id: node.article.field_article_components_entity
 field_name: field_article_components_entity
 entity_type: node
 bundle: article
-label: 'Article Components-entity'
+label: 'Article Components'
 description: ''
 required: false
 translatable: false

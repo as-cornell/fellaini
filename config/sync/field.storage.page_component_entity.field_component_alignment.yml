@@ -22,6 +22,9 @@ settings:
     -
       value: stretch
       label: Stretch
+    -
+      value: pano
+      label: Pano
   allowed_values_function: ''
 module: options
 locked: false
