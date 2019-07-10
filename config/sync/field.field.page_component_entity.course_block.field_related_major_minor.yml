@@ -1,0 +1,29 @@
+uuid: cbcd1146-984a-410d-887e-67d33828ebb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - field.storage.page_component_entity.field_related_major_minor
+    - taxonomy.vocabulary.majors_minors_gradfields
+id: page_component_entity.course_block.field_related_major_minor
+field_name: field_related_major_minor
+entity_type: page_component_entity
+bundle: course_block
+label: 'Related Major/Minor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      majors_minors_gradfields: majors_minors_gradfields
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

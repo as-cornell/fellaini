@@ -1,0 +1,20 @@
+uuid: 44cc3e73-0bab-4ed7-8a07-8a5003c7b292
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - taxonomy
+id: page_component_entity.field_related_major_minor
+field_name: field_related_major_minor
+entity_type: page_component_entity
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

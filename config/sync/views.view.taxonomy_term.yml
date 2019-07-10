@@ -1,6 +1,6 @@
 uuid: 8728a534-b521-4223-897d-eaeb4914b780
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.card
@@ -102,16 +102,20 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: 'not found'
+          default_action: default
           exception:
             value: ''
             title_enable: false
             title: All
           title_enable: true
           title: '{{ arguments.tid }}'
-          default_argument_type: fixed
+          default_argument_type: taxonomy_tid
           default_argument_options:
-            argument: ''
+            term_page: '1'
+            anyall: ','
+            node: false
+            limit: false
+            vids: {  }
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -124,13 +128,13 @@ display:
             format: default_summary
           specify_validation: true
           validate:
-            type: 'entity:taxonomy_term'
+            type: taxonomy_term_name_into_id
             fail: 'not found'
           validate_options:
-            access: true
             operation: view
-            multiple: 0
+            transform: '1'
             bundles: {  }
+            access: 0
           break_phrase: false
           add_table: false
           require_value: false

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.page.field_page_components
+    - field.field.node.page.field_page_components_entity
     - node.type.page
   module:
     - user
@@ -21,4 +21,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_page_components: true
+  field_page_components_entity: true

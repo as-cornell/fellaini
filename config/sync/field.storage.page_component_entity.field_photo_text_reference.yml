@@ -1,0 +1,19 @@
+uuid: fa3bb82b-da62-45e1-891b-eb08dba609ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.field_photo_text_reference
+field_name: field_photo_text_reference
+entity_type: page_component_entity
+type: entity_reference
+settings:
+  target_type: page_component_entity
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

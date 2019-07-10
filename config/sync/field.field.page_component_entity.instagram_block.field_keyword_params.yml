@@ -1,0 +1,21 @@
+uuid: 5c1ce638-d783-4010-9873-6415b4c1ca92
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.instagram_block
+    - field.storage.page_component_entity.field_keyword_params
+id: page_component_entity.instagram_block.field_keyword_params
+field_name: field_keyword_params
+entity_type: page_component_entity
+bundle: instagram_block
+label: 'Keyword Params'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: cornellcas
+default_value_callback: ''
+settings: {  }
+field_type: string

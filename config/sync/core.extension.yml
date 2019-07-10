@@ -3,9 +3,11 @@ module:
   as_courses: 0
   as_departments_programs: 0
   as_events: 0
+  as_instagram: 0
   as_majors_minors: 0
   as_manage_vocabularies: 0
   as_migrate_articles: 0
+  as_modal_pages: 0
   as_page_components: 0
   as_people_stub: 0
   as_stats: 0
@@ -29,6 +31,7 @@ module:
   datetime: 0
   dblog: 0
   devel: 0
+  dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
   embed: 0
@@ -51,6 +54,7 @@ module:
   link: 0
   media: 0
   media_entity_browser: 0
+  menu_block_title: 0
   menu_ui: 0
   migrate: 0
   migrate_plus: 0
@@ -61,7 +65,10 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  rest: 0
+  rest_export_nested: 0
   search: 0
+  serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0
@@ -73,6 +80,7 @@ module:
   unified_twig_ext: 0
   update: 0
   user: 0
+  views_field_view: 0
   views_taxonomy_term_name_into_id: 0
   views_ui: 0
   viewsreference: 0

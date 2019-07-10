@@ -1,14 +1,11 @@
-uuid: 99803d49-7085-4964-81f5-8f61059855f9
+uuid: 689ee3cd-472a-4e88-9dcd-8c2a7436d138
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_level
+    - taxonomy.vocabulary.level
     - taxonomy.vocabulary.majors_minors_gradfields
-  module:
-    - options
-_core:
-  default_config_hash: PFide97xX9wF8W5pj0jlIho3ZL0aRbZlJ6MQ8yWiKdA
 id: taxonomy_term.majors_minors_gradfields.field_level
 field_name: field_level
 entity_type: taxonomy_term
@@ -19,5 +16,14 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      level: level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
