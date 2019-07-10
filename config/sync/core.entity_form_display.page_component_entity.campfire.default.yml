@@ -10,7 +10,7 @@ dependencies:
     - field.field.page_component_entity.campfire.field_formatted_text
     - field.field.page_component_entity.campfire.field_main_article
   module:
-    - inline_entity_form
+    - dynamic_entity_reference
     - text
 id: page_component_entity.campfire.default
 targetEntityType: page_component_entity
@@ -30,33 +30,19 @@ content:
     weight: 5
     settings:
       match_operator: CONTAINS
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      allow_duplicate: false
+      size: 40
+      placeholder: ''
     third_party_settings: {  }
-    type: inline_entity_form_complex
+    type: dynamic_entity_reference_default
     region: content
   field_campfire_before:
     weight: 1
     settings:
       match_operator: CONTAINS
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      allow_duplicate: false
+      size: 40
+      placeholder: ''
     third_party_settings: {  }
-    type: inline_entity_form_complex
+    type: dynamic_entity_reference_default
     region: content
   field_formatted_text:
     weight: 3

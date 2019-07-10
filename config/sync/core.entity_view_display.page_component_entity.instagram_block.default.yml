@@ -1,0 +1,31 @@
+uuid: 41de30f2-c057-47e8-8632-d5cdea6f59a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.instagram_block
+    - field.field.page_component_entity.instagram_block.field_keyword_params
+    - field.field.page_component_entity.instagram_block.field_posts_shown
+id: page_component_entity.instagram_block.default
+targetEntityType: page_component_entity
+bundle: instagram_block
+mode: default
+content:
+  field_keyword_params:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_posts_shown:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: number_unformatted
+    region: content
+hidden:
+  name: true
+  user_id: true

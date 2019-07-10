@@ -1,29 +1,16 @@
-uuid: 32f8eed7-d417-4527-bcad-fda43f222c69
+uuid: 10aacd67-db0d-449e-a616-38733cc0cb95
 langcode: en
 status: true
 dependencies:
   module:
-    - options
     - taxonomy
-_core:
-  default_config_hash: sPw6Xb1x2nRUS7dtuPkFZzcnCsX053EEEDZUv3d3SII
 id: taxonomy_term.field_level
 field_name: field_level
 entity_type: taxonomy_term
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: major
-      label: Major
-    -
-      value: minor
-      label: Minor
-    -
-      value: graduate
-      label: Graduate
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: -1
 translatable: true

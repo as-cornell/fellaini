@@ -1,0 +1,23 @@
+uuid: e66e6652-61b0-4127-a52c-a85154a3a79a
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.events_block
+    - field.storage.page_component_entity.field_link
+  module:
+    - link
+id: page_component_entity.events_block.field_link
+field_name: field_link
+entity_type: page_component_entity
+bundle: events_block
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

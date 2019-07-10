@@ -14,7 +14,7 @@ bundle: layout_group
 mode: default
 content:
   field_columns:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       link: true
@@ -23,19 +23,12 @@ content:
     type: entity_reference_entity_view
     region: content
   field_layout:
-    weight: 1
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
     region: content
-  name:
-    label: above
-    type: string
-    weight: 0
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
+  name: true
   user_id: true
