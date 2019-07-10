@@ -27,6 +27,7 @@ relationships:
     first: 'mysqldb:first'
     second: 'mysqldb:second'
     people: 'mysqldb:people'
+    saml: 'mysqldb:saml'
 #    solr: 'solrsearch:solr'
 #    redis: 'rediscache:redis'
 

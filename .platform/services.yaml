@@ -11,6 +11,7 @@ mysqldb:
             - firstdb
             - seconddb
             - peopledb
+            - samldb
         endpoints:
             first:
                 default_schema: firstdb
@@ -22,6 +23,10 @@ mysqldb:
                     seconddb: admin
             people:
                 default_schema: peopledb
+                privileges:
+                    peopledb: admin
+            saml:
+                default_schema: samldb
                 privileges:
                     peopledb: admin
 
