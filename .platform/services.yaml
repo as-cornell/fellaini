@@ -28,7 +28,7 @@ mysqldb:
             saml:
                 default_schema: samldb
                 privileges:
-                    peopledb: admin
+                    samldb: admin
 
 #rediscache:
 #    type: "redis:3.0"
