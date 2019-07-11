@@ -66,7 +66,8 @@
         "mikey179/vfsstream": "^1.6",
         "drupal/rest_export_nested": "^1.0",
         "drupal/menu_block_title": "^1.1",
-        "drupal/views_field_view": "^1.0"
+        "drupal/views_field_view": "^1.0",
+        "drupal/devel_entity_updates": "^1.0"
 
     },
     "require-dev": {
