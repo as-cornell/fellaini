@@ -2,6 +2,7 @@ name: Pathways
 type: theme
 description: Theme based on <a href="http://emulsify.info">Emulsify</a>.
 base theme: stable
+logo: 'images/as-logo-trans-600.png'
 # core: 8.x
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
