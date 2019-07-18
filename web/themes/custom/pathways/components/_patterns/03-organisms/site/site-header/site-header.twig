@@ -50,8 +50,9 @@
     } %}
 
     {% else %}
+
     <a href="/" title="The College of Arts & Sciences" class="siteLogo">
-        {{elements.sitebranding.content.site_logo}}
+        <img src="{{ elements.sitebranding.content.site_logo['#uri'] }}" alt="The College of Arts & Sciences" typeof="foaf:Image" class="img"/>
     </a>
 {% endif %}
 {% if pl %}
