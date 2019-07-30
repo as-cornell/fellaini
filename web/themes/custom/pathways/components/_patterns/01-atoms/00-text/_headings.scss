@@ -1,5 +1,3 @@
-
-
 //
 // Generic header styles:
 // All arguments are optional. If not defined, the defaults below will be used
@@ -14,26 +12,18 @@ h1,h2,h3,h4{
 
 h1 {
   font-size: calc(2.5 * var(--font-size));
-  // @include baseFont($size: (15 * $quark), $weight: $semi, $line-height: (16 * $quark));
-  // @include baseMargin($margin-direction: margin-bottom, $margin-width:3rem);
 }
 
 h2 {
   font-size: calc(2 * var(--font-size));
-  // @include baseFont($size: (12 * $quark), $weight: $semi, $line-height: (14 * $quark));
-  // @include baseMargin($margin-direction: margin-bottom, $margin-width:1em);
 }
 
 h3 {
   font-size: calc(1.75 * var(--font-size));
-  // @include baseFont($size: (10 * $quark), $weight: $semi, $line-height: (10 * $quark));
-  // @include baseMargin($margin-direction: margin-bottom, $margin-width:1rem);
 }
 
 h4 {
   font-size: calc(1.5 * var(--font-size));
-  // @include baseFont($size: (8 * $quark), $weight: $semi, $line-height: (10 * $quark));
-  // @include baseMargin($margin-direction: margin-bottom, $margin-width:1rem);
 }
 
 h5,
@@ -59,8 +49,6 @@ h6 {
     font-size: calc(1.25 * var(--font-size));
   }
 }
-
-
 
 @mixin heading-xl($font-family: $font-heading, $font-size: 2rem, $line-height: 1.4, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
   color: #{$color};

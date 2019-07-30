@@ -4,17 +4,20 @@
     get wrapperClass then includes in container class, and shows slider specific items for slider
  #}
 
-{% set wrapperClassClean = wrapperClass|render|striptags|trim|lower %}
+{# {{ wrapperClass }} #}
 
-{% if wrapperClassClean == 'slider' %}
-{{ attach_library('pathways/carousel') }}
+{# {% set wrapperClass = wrapperClass %} #}
+
+{% if wrapperClass == 'slider' %}
+lsjhfljshddfljhasdf;jha;dlfhj
+{{ wrapperClass }}
+    {# {{ attach_library('pathways/carousel') }} #}
 {% endif %}
-<h2>{{ wrapperClassClean }}</h2>
 
-{# {{kint(wrapperClass)}} #}
-<div class="ptWrapper ptWrapper--{{ wrapperClassClean }}">
+
+<div class="ptWrapper ptWrapper--{{ wrapperClass }}">
     {{items}}
-    {% if wrapperClassClean == 'slider' %}
+    {% if wrapperClass == 'slider' %}
     <fieldset aria-controls="carousel" aria-label="carousel buttons" class="navigation">
         <button aria-label="previous" class="button prev">Prev<span class="as-icon as-icon--arrow-down"></span>
         </button>
