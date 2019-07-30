@@ -10,10 +10,8 @@ Descr: Set main wrapper for photo text item
 
 #}
 
-
-{# {% set wrapperClass = content.field_photo_text_wrapper_class%} #}
-
-{% set wrapperClass = content.field_photo_text_wrapper_class %}
+{# {{ kint(content) }} #}
+{% set wrapperClass = content.field_photo_text_wrapper_class.0 %}
 
 {% embed "@organisms/photo-text-block/photo-text-block.twig" with {
     "wrapperClass" : wrapperClass,
