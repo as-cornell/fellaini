@@ -67,7 +67,10 @@
         "drupal/rest_export_nested": "^1.0",
         "drupal/menu_block_title": "^1.1",
         "drupal/views_field_view": "^1.0",
-        "drupal/devel_entity_updates": "^1.0"
+        "drupal/devel_entity_updates": "^1.0",
+        "drupal/focal_point": "^1.0",
+        "simplesamlphp/twig-configurable-i18n": "^2.2",
+        "drupal/twitter_tweets": "^1.5"
 
     },
     "require-dev": {
