@@ -1,0 +1,11 @@
+{% for tweet in params.tweets %}
+{# tweet.created_at|date("n/j/Y g:i a") #}
+{%set tweets_date=tweet.created_at|time_diff %}
+  <div>
+    <div>
+      <p>{{ tweet.text }}</p>
+      <p>{{ tweets_date }}</p>
+    </div>
+  </div>
+
+{% endfor %}
