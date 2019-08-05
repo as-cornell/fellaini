@@ -3,7 +3,8 @@
 {%set tweets_date=tweet.created_at|time_diff %}
   <div>
     <div>
-      <p>{{ tweet.text }}</p>
+      <p><img src='{{tweet.extended_entities.media.0.media_url }}'></p>
+      <p>{{ tweet.full_text }}</p>
       <p>{{ tweets_date }}</p>
     </div>
   </div>

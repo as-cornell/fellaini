@@ -59,16 +59,14 @@ function as_instagram_generate_instagram_post_markup($post_data) {
     $display_url = $post_data['node']['thumbnail_src'];
     $text = $post_data['node']['edge_media_to_caption']['edges'][0]['node']['text'];
     $alt_text = $post_data['node']['accessibility_caption'];
-    //$markup = $markup . ";
-                    //if ($course_description){
-                    //$markup = $markup . "<p>" . $course_description . "</p>";
-                    //    }
-                    if ($display_url){
-                    $markup = $markup . "<div class='photoText__image'><figure  class='figure figure--image'><img class='img' src='" . $display_url . "' alt='" . $alt_text . "'></figure></div>";
-                        }
-                    if ($text){
-                    $markup = $markup . "<div  class='photoText__text'><p>" . $text . "<p/></div>";
-                        }
+    $insta_link = $post_data['node']['shortcode'];
+    $insta_link = "https://www.instagram.com/p/" . $insta_link . "/";
+        if ($display_url){
+        $markup = $markup . "<li><a href='" . $insta_link . "'><figure  class='figure figure--image'><img class='img' src='" . $display_url . "' alt='" . $alt_text . "'></figure></a></li>";
+            }
+        //if ($text){
+        //$markup = $markup . "<div  class='photoText__text'><p>" . $text . "<p/></div>";
+           // }
 
     return $markup;
   }
