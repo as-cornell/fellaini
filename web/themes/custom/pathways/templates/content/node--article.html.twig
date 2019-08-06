@@ -1,4 +1,4 @@
-{# 
+{#
 
 /* -------------------------
 
@@ -7,7 +7,7 @@ Descr: Sets up variables and content for _article.twig
 Passes: Images - pano and image
         article and has-aside passed to <main>
 
---------------------------- */ 
+--------------------------- */
 
 #}
 {% if content.field_aside_components|render is not empty %}
@@ -36,7 +36,7 @@ Passes: Images - pano and image
     aside_content : content.field_aside_components,
 
     article_dateline: content.field_dateline,
-    article_byline: content.field_byline,
+    article_byline: content.field_byline_reference,
     article_mediasource: content.field_media_source,
 
 } %}
