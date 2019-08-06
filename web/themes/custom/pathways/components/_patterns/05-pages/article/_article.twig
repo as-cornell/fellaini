@@ -1,4 +1,4 @@
-{# 
+{#
 
     .container--article and .container--content
 
@@ -12,7 +12,7 @@
 {% block page_content %}
     {% if article_pano_img_alt %}
     <div class="pano">
-        {% include "@atoms/04-images/figure.twig" with { 
+        {% include "@atoms/04-images/figure.twig" with {
             "img_url": article_pano_img_url|default(card_link_url),
             "img_src": article_pano_img_src,
             "img_alt": article_pano_img_alt,
@@ -31,7 +31,10 @@
 
         } %}
         <p class="byline">
-            {{article_byline}}, {{article_mediasource}}<br/>
+            {% if article_byline is null %}
+            {{ article_byline }},
+            {% endif %}
+            {{article_mediasource}}<br/>
             {{article_dateline}}
         </p>
     </div>
@@ -48,7 +51,7 @@
 {% endblock %}
 
 {% block aside_content %}
-    {% include "@atoms/04-images/figure.twig" with { 
+    {% include "@atoms/04-images/figure.twig" with {
         "img_url": article_image_img_url|default(card_link_url),
         "img_src": article_image_img_src,
         "img_alt": article_image_img_alt,
