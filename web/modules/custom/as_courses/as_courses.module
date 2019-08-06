@@ -73,13 +73,13 @@ function as_courses_generate_course_item_markup($course_data,$semester) {
     //dump($instructor_markup);
     $markup = $markup . "
                 <div class='courseList__course course card card--course'>
-                  
+
                   <h3 class='course__title'>
                     <a href='https://classes.cornell.edu/browse/roster/{$semester}/class/{$course_subject}/{$course_number}'>
                       <span class='course__number'>{$course_subject} {$course_number}</span>{$course_title}
                       </a>
                     </h3>
-                  
+
                   <span class='course__details'>";
                     //if ($course_description){
                     //$markup = $markup . "<p>" . $course_description . "</p>";
@@ -93,10 +93,10 @@ function as_courses_generate_course_item_markup($course_data,$semester) {
                     // if ($course_acadCareer){
                     // $markup = $markup . "<span class='course__career'> Academic Career: " . $course_acadCareer . "</span>";
                     //     }
-                    if ($instructor_markup){
-                    $markup = $markup . "<span class='course__instructor'> Instructor: " . $instructor_markup . "</span>
-                    </span>";
-                        }
+                    //if ($instructor_markup){
+                    //$markup = $markup . "<span class='course__instructor'> Instructor: " . $instructor_markup . "</span>
+                    //</span>";
+                        //}
                     $markup = $markup ."
             </div>
             \n";
