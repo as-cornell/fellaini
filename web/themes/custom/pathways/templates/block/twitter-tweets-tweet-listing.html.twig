@@ -6,9 +6,10 @@
       {% if tweet.extended_entities.media.0.media_url is not empty %}
         <p><img src='{{tweet.extended_entities.media.0.media_url }}'></p>
       {% endif %}
+      <a href='https://twitter.com/i/web/status/{{ tweet.id }}'>
       <p>{{ tweet.full_text }}{{ tweet.text }}</p>
+      </a>
       <p>{{ tweets_date }}</p>
     </div>
   </div>
-
 {% endfor %}
