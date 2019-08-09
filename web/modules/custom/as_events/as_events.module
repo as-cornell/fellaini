@@ -96,8 +96,7 @@ function as_events_generate_event_item_markup($event_data) {
     // $markup = $markup . $event_formatted_date['start_month'];
     $markup = "<div class='eventList__event event'  itemscope itemtype='http://schema.org/Event'>
                 <span class='event__dateTime'  itemprop='startDate'>
-                  <span class='event__month'>" . $event_formatted_date['start_month'] . "</span>
-                  <span class='event__date'>" . $event_formatted_date['start_date'] . "</span>
+                  <span class='event__date'>" . $event_formatted_date['start_month'] . " " . $event_formatted_date['start_date'] . "</span>
                   <span class='event__time'>" . $event_formatted_date['start_time'] . "</span>
                 </span>
                 <span class='event__content'>
