@@ -1,0 +1,14 @@
+/* -------------------------
+
+Title: componentWrappers
+Descr: 
+    Takes care of any universal component wrapper stylings
+
+--------------------------- */
+
+.components{
+    >span{
+        display: block;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,27 @@
+
+/* -------------------------
+
+Title: base-layout
+Descr: styles for <body> and the wrapper around the main frame.
+
+--------------------------- */
+
+body{
+  overflow-x: hidden;
+  background: var(--gray-lightest);
+}
+
+// the main wrapper for the visual frame
+
+.wrapper{
+  background: $white;
+  margin: 1rem;
+  @include max-width(){
+    max-width: $xx-wide;
+    margin: 0 auto;
+  }
+}
+
+.g-center{
+    justify-content: center;
+}
