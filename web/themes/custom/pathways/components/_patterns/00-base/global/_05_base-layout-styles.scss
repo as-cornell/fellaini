@@ -18,7 +18,7 @@ body{
   margin: 1rem;
   @include max-width(){
     max-width: $xx-wide;
-    margin: 0 auto;
+    margin: 2rem auto;
   }
 }
 
