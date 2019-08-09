@@ -1,4 +1,11 @@
-// Layout for all landing and basic pages. 
+/* -------------------------
+
+Title: mainContent layouts.
+Descr: 
+    main content is the <main> tag. It is where the main components are. It is a child of the .container.
+
+--------------------------- */
+
 
 .mainContent{
     // base page main conent grids
@@ -23,6 +30,17 @@
             // gird-template-columns: repeat(14, $max-column);
         }
     }
+    &--has-aside{
+        @include baseGrid();
+        grid-template-columns: 2.33fr 1fr;
+        grid-template-rows: min-content 1fr;
+        grid-template-areas:
+        "title title"
+        "content aside";
+        .title{
+            grid-area: title;
+        }
+  }
 }
 
 //if additional sidebar grid needs to be created, it will go here.
