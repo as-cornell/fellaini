@@ -1,3 +1,11 @@
+/* -------------------------
+
+Title: course-list
+Descr: styles for course lists
+
+--------------------------- */
+
+
 .courseList{
     @include baseGrid();
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

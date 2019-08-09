@@ -11,24 +11,28 @@ Passes: has-aside to <main>
 --------------------------- */ 
 
 #}
+{# {{ kint(content) }} #}
 
+{# Add aside if aside components are present #}
 {% if content.field_aside_components|render is not empty %}
     {% set main_content_modifiers = ['has-aside'] %}
     {% set aside = true %}
 {% endif %}
 
-{# Pages with nothing in sidebar don't see this so the sidebar doesn't show up and you can't see the side nav. Need a better check here. #}
-{# {% if content.field_sidebar_components|render is not empty %} #}
+
+
+{# set sidebar  #}
+{% set sidebarType = node.field_sidebar_type.value %}
+
+ {% if sidebarType != 'none' %}
     {% set content_wrapper_modifiers = ['has-sidebar'] %}
     {% set sidebar = true %}
-{# {% endif %} #}
+    {% set sidebar_content %}
+        {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+        {{ content.field_sidebar_components }}
+    {% endset %}
+ {% endif %}
 
-{% set sidebar_wrapper_modifiers = ['basic-page'] %}
-
-{% set sidebar_content %}
-    {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
-    {{ content.field_sidebar_components }}
-{% endset %}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : label,
