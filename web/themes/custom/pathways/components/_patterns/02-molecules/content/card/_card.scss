@@ -143,6 +143,18 @@ Variations:
     @include baseBorder($bor-width: $quark, $bor-color: $white);
     font-weight: $semi;
     font-size: var(--font-size--huge);
+    position: relative;
+    &:before{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: var(--fog);
+      content: '';
+      mix-blend-mode: color-burn;
+      opacity: .5;
+    }
   }
   .card__image{
     grid-area: top;
@@ -151,7 +163,7 @@ Variations:
     grid-area: top;
     display: flex;
     align-items: center;
-    z-index: 1;
+    //z-index: 1;
   }
   .card__label{
     grid-area: label;
