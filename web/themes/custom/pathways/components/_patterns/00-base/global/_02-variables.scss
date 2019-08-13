@@ -123,16 +123,14 @@ $near-white: #fbfbfb; // depricate
 
     --mainGutter: var(--space);
     @include small(){
-        --mainGutter: calc(2 * var(--space)); // 2rem = 48px
+        --mainGutter: var(--space); // 1 rem 
     }
 
     @include medium(){
-        --mainGutter: calc(2 * var(--space)); // 2rem = 72px
+        --mainGutter: calc(2 * var(--space)); // 2rem 
     }
 
-    @include large(){
-        --mainGutter: calc(3 * var(--space)); // 3rem = 108px
-    }
+
 
     // Base grid variables
 

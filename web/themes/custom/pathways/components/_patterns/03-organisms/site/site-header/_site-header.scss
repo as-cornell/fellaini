@@ -24,7 +24,7 @@ header{
 
     //base layout
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: 70px 200px 70px;
+    grid-template-rows: 70px 180px 70px;
       grid-template-areas:
       "logo logo logo logo searchIcon navIcon"
       "mainNav mainNav mainNav mainNav mainNav mainNav"
