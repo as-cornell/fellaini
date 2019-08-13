@@ -16,13 +16,15 @@
 }
 
 header{
-    background-image: linear-gradient(var(--near-white), var(--near-white) 58px, $white 58px, $white);
+    background-image: linear-gradient(var(--near-white), var(--near-white) 68px, $white 68px, $white);
     margin-bottom: var(--space);
     @include baseGrid();
+    grid-gap: 0;
     padding: 0 var(--mainGutter);
 
     //base layout
     grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 70px 200px 70px;
       grid-template-areas:
       "logo logo logo logo searchIcon navIcon"
       "mainNav mainNav mainNav mainNav mainNav mainNav"
@@ -58,7 +60,7 @@ header{
       grid-template-columns: repeat(12,1fr);
       grid-template-areas:
       "search search search search audNav audNav audNav audNav audNav audNav audNav audNav"
-      ". . . logo logo logo logo logo logo . . ."
+      ". logo logo logo logo logo logo logo logo logo logo ."
       "mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav";
       .nav--audience{
           grid-area: audNav;
@@ -79,4 +81,40 @@ header{
         display: none;
       }
     }
+}
+
+.cu-logo{
+  display: block;
+  text-indent: -9999px;
+  width: 100px;
+  height: 100px;
+  background: url(/themes/custom/pathways/images/CU-insignia.svg);
+  background-size: 100px 100px;
+  grid-area: logo;
+  align-self: center;
+  justify-self: center;
+  margin-right: 272px;
+}
+
+.as-logo{
+  display: block;
+  text-indent: -9999px;
+  width: 238px;
+  height: 71px;
+  background: url(/themes/custom/pathways/images/college.svg);
+  background-size: 238px 71px;
+  grid-area: logo;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  margin-left: 168px;
+  &:before{
+    position: absolute;
+    width: 1px;
+    background: var(--gray-lt);
+    height: 100%;
+    top: 0;
+    left: -24px;
+    content:'';
+  }
 }

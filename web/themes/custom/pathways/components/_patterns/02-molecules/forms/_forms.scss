@@ -7,18 +7,26 @@ header{
           margin-bottom: 0;
           &__textfield{
             border:none;
-            border-radius: var(--border-radius);
-            background: var(--gray-lightest);
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: var(--gray-light);
             //color: $white;
            // @include baseBorder($bor-color: $gray-lt);
-            padding: 0;
-            height: 48px;
+            padding: .5em;
           }
       }
       .button{
-        @include fontSize(4);
-        padding: 0 .5rem;
-        background: var(--gray-light);
+        padding: .5em;
+        // background: var(--teal);
+        background: url('/images/icons/src/search.svg') center center no-repeat;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        color: white;
+        font-size: .75rem;
+        &:before{
+          content: '
+            <svg class="icon icon--red">
+              <use xlink:href="#search"></use>
+            </svg>';
+        }
       }
   }
 }
@@ -30,6 +38,7 @@ header{
   color: $gray;
   margin-bottom: 1em;
   max-width: 32em;
+  font-size: .75rem;
 
   @include clearfix;
 }
@@ -47,7 +56,7 @@ header{
 
 .form-item__textfield {
   border: 1px solid $gray-lightest;
-  padding: 0.6em;
+  padding: 0.5rem;
 
   &:focus {
     border-color: $black;
