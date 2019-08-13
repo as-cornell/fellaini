@@ -2,7 +2,7 @@ header{
   form{
       display: flex;
       align-items: center;
-      height: 58px;
+      height: 68px;
       .form-item{
           margin-bottom: 0;
           &__textfield{
@@ -16,17 +16,10 @@ header{
       }
       .button{
         padding: .5em;
-        // background: var(--teal);
-        background: url('/images/icons/src/search.svg') center center no-repeat;
+        background: var(--teal);
         border-radius: 0 var(--border-radius) var(--border-radius) 0;
         color: white;
         font-size: .75rem;
-        &:before{
-          content: '
-            <svg class="icon icon--red">
-              <use xlink:href="#search"></use>
-            </svg>';
-        }
       }
   }
 }
