@@ -54,13 +54,13 @@ $space-one-eighth: $space/8;
 $white: white;
 $black: #35363f;
 $dark-text: #35363f;
-$gray-dark: #5d5d5d;
-$gray-med: #999;
-$gray: #999; // depricate
-$gray-lt: #d9d9d9;
-$gray-light: #d9d9d9; // depricate
+$gray-dark: #707070;
+$gray-med: #959595;
+
+$gray-lt: #c2c0c0;
+
 $gray-lightest:#eee;
-$near-white: #fbfbfb; // depricate
+
 $dusk: #435363;
 $fog: #607774;
 $storm: #4f869f;
@@ -69,20 +69,20 @@ $gold: #ffd91f;
 $green: #4d9b5e;
 $red: #b31b1b;
 
+$gray: #999; // depricate
+$gray-light: #d9d9d9; // depricate
+$near-white: #fbfbfb; // depricate
 //bold new world of variables
 
 
 :root{
     --white: white;
-    --black: #35363f;
+    --black: #2c2c2c;
     --dark-text: #35363f;
-    --gray-dark: #5d5d5d;
-    --gray-med: #999;
-    --gray: #999; // depricate
-    --gray-lt: #d9d9d9;
-    --gray-light: #d9d9d9; // depricate
-    --gray-lightest:#f3f3f3;
-    --near-white: #fbfbfb; // depricate
+    --gray-dark: #707070;
+    --gray-med: #959595;
+    --gray-lt: #c2c0c0;    
+    --gray-lightest:#fbfbfb;
     --dusk: #435363;
     --fog: #607774;
     --storm: #4f869f;
@@ -90,6 +90,10 @@ $red: #b31b1b;
     --gold: #ffd91f;
     --green: #4d9b5e;
     --red: #b31b1b; 
+    
+    --gray: #c2c0c0; // depricate
+    --gray-light: #d9d9d9; // depricate
+    --near-white: #fbfbfb; // depricate
 
     // font size
     --font-size: 24px;
