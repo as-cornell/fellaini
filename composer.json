@@ -72,7 +72,8 @@
         "simplesamlphp/twig-configurable-i18n": "^2.2",
         "drupal/twitter_tweets": "^1.5",
         "twig/extensions": "^1.5",
-        "drupal/twig_extensions": "^2.0"
+        "drupal/twig_extensions": "^2.0",
+        "drupal/twig_field_value": "^1.2"
 
     },
     "require-dev": {

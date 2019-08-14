@@ -50,10 +50,15 @@
 
 // campfire specific styles
 .campfire__support{
-    @include baseBorder();
+    @include boxShadow;
+    border-radius: var(--border-radius);
+    background: var(--gray-lightest);
     padding: $space;
+    p{
+        font-size: 1.25rem;
+    }
     h2{
-        text-align: center;
-        margin-top: 3 * $quark;
+        font-weight: var(--heavy);
+        margin-top: .5rem;
     }
 }
