@@ -6,9 +6,11 @@ Descr:
 
 --------------------------- */
 
+// Might want to make margin-bottom different for landing and basic pages...
+
 .components{
     >span{
         display: block;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
 }
