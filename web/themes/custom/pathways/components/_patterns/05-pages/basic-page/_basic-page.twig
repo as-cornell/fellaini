@@ -18,18 +18,21 @@ Passes: has-sidebar to contentWrapper
 {% set sidebar_wrapper_modifiers = sidebar_wrapper_modifiers | default(['']) %}
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
-{# {% set content_wrapper_modifiers = ['big', 'fat', 'tyres'] %} #}
-
 {# {% extends "@pages/_page.twig" %} #}
 {% extends "@templates/_default.twig" %}
 
 {% block page_content %}
+        {# if not homepage #}
+        {# {% set sitename_tag = is_front ? 'h1' : 'div' %} #}
+        {% if not is_front %}
+
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
             "heading" : title,
             "heading_modifiers" : ["margin"],
             "heading_base_class" : "title"
         } %}
+        {% endif %}
     {{main_content}}
 {% endblock %}
 
