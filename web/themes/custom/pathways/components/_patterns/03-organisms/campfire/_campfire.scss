@@ -26,7 +26,7 @@
 
     // Large Plus
     @include large(){
-        grid-template-columns: repeat(12, 1fr);
+            grid-template-columns: repeat(3, 1fr) repeat(6, .75fr) repeat(3, 1fr);
             grid-template-areas:
             "one one one two two two two two two three three three";
         &__articles:nth-child(2n+2){
@@ -43,7 +43,7 @@
     }
     
     @include xl{
-    // gird-template-columns: repeat(14, $max-column);
+    gird-template-columns: repeat(12, 1fr);
     }
     
 } 
@@ -55,7 +55,9 @@
     background: var(--gray-lightest);
     padding: $space;
     p{
-        font-size: 1.25rem;
+        @include xl{
+            font-size: 1.25rem;
+        }
     }
     h2{
         font-weight: var(--heavy);
