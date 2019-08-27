@@ -1,0 +1,7 @@
+name: 'A&S TOC Pages'
+type: module
+description: 'Contains configurations for TOC page content type and plugins for blocks to display in asides and cards.  Replaces Modal Pages.'
+core: 8.x
+package: AS
+dependencies:
+  - menu_ui
