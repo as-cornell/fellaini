@@ -183,7 +183,10 @@ function pathways_theme_suggestions_field_alter(array &$suggestions, array $vari
     if ($node->bundle() == 'modal_page') {
         $content_type = $node->bundle();
         $suggestions[] = $suggestions[4] .'__' . $content_type;
-        //dump($suggestions);
+    }
+    if ($node->bundle() == 'toc_page') {
+        $content_type = $node->bundle();
+        $suggestions[] = $suggestions[4] .'__' . $content_type;
     }
   }
 }
