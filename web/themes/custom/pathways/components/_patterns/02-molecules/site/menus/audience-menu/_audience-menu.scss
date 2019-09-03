@@ -10,6 +10,7 @@
     justify-content: flex-end;
 }
 .audienceNav__link{
-    color: var(--gray-dark);
+    color: var(--dark-text);
+    text-decoration-color: var(--gray-lt);
     margin-right: 1rem;
 }

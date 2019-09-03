@@ -1,7 +1,16 @@
 {# 
-    - campfire_center - special paragraph for the center news cluster for campfire layouts
+/* -------------------------
+
+Title: PCE--campfire
+Descr:  - campfire_center
+            campfire_center_ftb, campfire_other_news
+        
+ campfire articles
     - campfire_articles_1 and campfire_articles_2 are reference fields and the items are displayed with standard article-card components
- #}
+
+--------------------------- */ 
+#}
+
 
 <div class="campfire">
     {% if pl %}
@@ -29,48 +38,41 @@
                     <li><a href="">Student y</a></li>
                 </ul>
             </div>
-            
         </div>
-        
-        {% else %}
-<div class="campfire__feature">
-    {{campfire_center}}
-    <div class="campfire__support">
-        {{campfire_center_ftb}}
-        <ul>
-            {{campfire_other_news}}
-        </ul>
+    {% else %}
+    <div class="campfire__feature">
+        {{campfire_center}}
+        <div class="campfire__support">
+            {{campfire_center_ftb}}
+            <ul>
+                {{campfire_other_news}}
+            </ul>
+        </div>
     </div>
-
-</div>{% endif %}
-    {# {{campfire_center}}
-    {{campfire_center_ftb}}
-    {{campfire_other_news}} #}
-
-
-
+    {% endif %}
 
     <div class="campfire__articles">
         {% if pl %}
             {% for card in cards.articles|slice(0,2) %}
-            {% include "@molecules/content/card/01-card.twig" with {
-            "card_blockname" : card.blockname,
-            "card_modifiers" : card.card_modifiers,
-            "card_img_src" : card.card_img_src,
-            "card_title" : card.card_title,
-            "card_label" : card.card_label,
-            "card_dateline" : card.card_dateline,
-            "card_byline" : card.card_byline,
-            "card_body" : card.card_body,
-            "card_link_url" : card.card_link_url,
-            "card_image_output_image_tag" : card.card_image_output_image_tag,
-
-            grid_modifiers: grid_modifiers
-        } %}{% endfor %}
+                {% include "@molecules/content/card/01-card.twig" with {
+                "card_blockname" : card.blockname,
+                "card_modifiers" : card.card_modifiers,
+                "card_img_src" : card.card_img_src,
+                "card_title" : card.card_title,
+                "card_label" : card.card_label,
+                "card_dateline" : card.card_dateline,
+                "card_byline" : card.card_byline,
+                "card_body" : card.card_body,
+                "card_link_url" : card.card_link_url,
+                "card_image_output_image_tag" : card.card_image_output_image_tag,
+                grid_modifiers: grid_modifiers
+            } %}
+            {% endfor %}
         {% else %}
         {{campfire_articles_1}}
         {% endif %}
     </div>
+
     <div class="campfire__articles">
     {% if pl %}
         {% for card in cards.articles|slice(2,2) %}
@@ -87,7 +89,8 @@
                 "card_image_output_image_tag" : card.card_image_output_image_tag,
 
                 grid_modifiers: grid_modifiers
-            } %}{% endfor %}
+            } %}
+        {% endfor %}
         {% else %}
         {{campfire_articles_2}}
     {% endif %}

@@ -1,4 +1,13 @@
-{# {{kint(content)}} #}
+{# 
+
+/* -------------------------
+
+Title: PCE-course-block
+Descr: outputs custom module blocks for courses based on list or random
+
+--------------------------- */
+
+ #}
 
 {% set semesterValue = content.field_semester['#items'].getString() %}
 {% set semesterName = content.field_semester[0]['#markup'] %}
