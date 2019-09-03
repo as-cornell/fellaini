@@ -7,6 +7,7 @@
   @include large {
     border-left: 1px solid $gray-lightest;
     display: flex;
+    flex-direction: column;
   }
 }
 
@@ -36,6 +37,7 @@
   padding: 0;
     position: absolute;
     top: 150px;
+    left: 0;
   z-index: 10;
 }
 
