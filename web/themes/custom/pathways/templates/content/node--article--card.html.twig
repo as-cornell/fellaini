@@ -70,6 +70,13 @@
  *   in different view modes.
  */
 #}
+
+{# {{kint(content.field_byline_reference|render)}} #}
+
+{% set card_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : false %}
+
+
+
 {% embed "@molecules/content/card/01-card.twig" with {
     card_modifiers : ["article"],
     card_title: label,
@@ -79,7 +86,7 @@
     card_img_src : field_image_img.uri | image_style('full_content'),
     card_img_alt : field_image_img.alt,
 
-    card_byline: content.field_byline_reference,
+    card_byline: card_byline,
     card_dateline: content.field_dateline,
 
     card_nodeId : node.id

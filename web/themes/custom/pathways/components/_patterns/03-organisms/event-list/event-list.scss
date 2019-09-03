@@ -36,34 +36,33 @@ Descr: Sets grid default ( full width ) and stacked (in columns) event lists
     display: grid;
     grid-gap: var(--space);
     grid-row-gap: 0;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 84px 1fr;
     grid-template-areas: 
     "date content";
     &__dateTime{
        grid-area: date;
+       text-align: center;
     }
     &__month{
-        font-size: 1.25rem;
         font-weight: var(--heavy);
     }
     &__date{
-        font-size: 1.5rem;
-        font-weight: var(--light);
-        color: var(--gray);
-        line-height: 1;
+        font-weight: var(--semi);
+        border-bottom: 1px solid var(--gray-lt);
+        margin-bottom: .25rem;
+        padding-bottom: .25rem;
     }
     &__content{
         grid-area: content;
     }
     &__title{
         grid-area: title;
-        margin-bottom: .5rem;
     }
     &__location{
         grid-area: location;
     }
     a{
-        color: var(--gray-dark);
+        // color: var(--gray-dark);
     }
     span{
       display: block;  

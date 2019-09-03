@@ -15,6 +15,14 @@ Passes: Images - pano and image
     {% set aside = true %}
 {% endif %}
 
+ {# {{kint(content.field_byline_reference|render)}} #}
+{#
+{% set article_byline = content.field_byline_reference %} #}
+{# {% set article_byline = content.field_byline_reference|field_target_entity.label %} #}
+
+{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
+
+
 
 {% include "@pages/article/_article.twig" with {
 
@@ -36,7 +44,7 @@ Passes: Images - pano and image
     aside_content : content.field_aside_components,
 
     article_dateline: content.field_dateline,
-    article_byline: content.field_byline_reference,
+    article_byline: article_byline,
     article_mediasource: content.field_media_source,
 
 } %}
