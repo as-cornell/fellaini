@@ -73,7 +73,8 @@
         "drupal/twitter_tweets": "^1.5",
         "twig/extensions": "^1.5",
         "drupal/twig_extensions": "^2.0",
-        "drupal/twig_field_value": "^1.2"
+        "drupal/twig_field_value": "^1.2",
+        "drupal/sitemap": "^1.5"
 
     },
     "require-dev": {
