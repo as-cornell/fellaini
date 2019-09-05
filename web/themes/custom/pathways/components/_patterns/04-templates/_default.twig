@@ -34,6 +34,11 @@ Gets: wrapper modifiers
 <div {{ bem(content_wrapper_base_class, (content_wrapper_modifiers), content_wrapper_blockname, content_wrapper_extra_classes) }}>
 
     {# sidebar nav #}
+    {% if sidebarNav %}
+        {% block sidebar_nav %}{% endblock %}
+    {% endif %}
+    
+    
     {% if sidebar %} 
         {% block sidebar_content %}{% endblock %}
     {% endif %}

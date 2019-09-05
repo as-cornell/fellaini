@@ -8,12 +8,14 @@ Descr: Wrapper for related articles, header, and intro
 --------------------------- */
 
  #}
+<div class="related-articles">
+    {% include "@atoms/00-text/_heading.twig" with {
+                "heading_level" : 3,
+                "heading" : header,
+                "heading_modifiers" : ["margin"]
+    } %}
 
-{% include "@atoms/00-text/_heading.twig" with {
-            "heading_level" : 2,
-            "heading" : header,
-            "heading_modifiers" : ["margin"]
-} %}
+    {{intro}}
+    {{articles}}
+</div>
 
-{{intro}}
-{{articles}}

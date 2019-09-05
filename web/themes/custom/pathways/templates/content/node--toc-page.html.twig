@@ -24,10 +24,17 @@ Passes: has-sidebar to contentWrapper
     {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
   {% endfor %}
 
+
+{# set sidebar_nav = toc nav #}
+{% set sidebar_nav %}
+  {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
+{% endset %}
+{% set sidebarNav = true %}
+
+
 {# set aside content #}
 {% set aside_content %}
-{{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
-{{ content.field_aside_components }}
+  {{ content.field_aside_components }}
 {% endset %}
 
 {% set sidebar = true %}

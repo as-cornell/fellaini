@@ -1,7 +1,7 @@
 /////////////////////
 // General Mixins (put specific ones in component files where applicable)
 
-@mixin baseFont($size: $base-font-size, $color: var(--black), $weight: $regular, $line-height: $base-line-height, $family: $font-sans){
+@mixin baseFont($size: var(--base-font-size), $color: var(--black), $weight: var(--regular), $line-height: $base-line-height, $family: $font-sans){
     font-family: $family;
     font-size: $size;
     color: $color;
