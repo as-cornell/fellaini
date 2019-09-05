@@ -12,7 +12,7 @@ Passes: has-sidebar to contentWrapper
 #}
 
 {% set content_wrapper_modifiers = [ 'toc'] %}
-{% set asideLabelValue = drupal_token('node:title', {node: node}) %}
+{% set cardLabel = drupal_token('node:title', {node: node}) %}
 {% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
 
 {# link values for the modal items #}
@@ -24,14 +24,13 @@ Passes: has-sidebar to contentWrapper
 
 {# set main content #}
 {% set main_content %}
-{{ drupal_block('toc_card_block', {label: asideLabelValue, link_values:linkValues, page_value:linkPage}) }}
-{{ content.field_aside_components }}
+{{ drupal_block('toc_card_block', {label: cardLabel, link_values:linkValues, page_value:linkPage}) }}
 {% endset %}
 
 
 
 
-{% include "@pages/toc-page/_toc-page.twig" with {
+{% include "@pages/toc-page/_toc-page--card.twig" with {
 
     main_content : main_content,
     content_wrapper_modifiers : content_wrapper_modifiers,

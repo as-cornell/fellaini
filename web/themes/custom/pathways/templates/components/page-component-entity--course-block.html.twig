@@ -21,7 +21,7 @@ Descr: outputs custom module blocks for courses based on list or random
 {% endif %}
 {% set title = content.name %}
 
-
+<div class="course-list">
 {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 3,
             "heading" : title,
@@ -36,3 +36,4 @@ Descr: outputs custom module blocks for courses based on list or random
 {% if blockType == 'random' %}
 {{ drupal_block('random_block', {semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: majorNameValue }) }}
 {% endif %}
+</div>

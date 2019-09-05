@@ -36,6 +36,12 @@ Passes: has-sidebar to contentWrapper
     {{main_content}}
 {% endblock %}
 
+{# set in sidebar nav block to the conent of main navigation 2 #}
+{% block sidebar_nav %}
+    {{ sidebar_nav }}
+{% endblock %}
+
+
 
 {% block sidebar_content %}
     <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>

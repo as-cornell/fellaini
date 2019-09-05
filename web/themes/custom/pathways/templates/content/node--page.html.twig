@@ -19,16 +19,22 @@ Passes: has-aside to <main>
     {% set aside = true %}
 {% endif %}
 
+{# Set sidebar_nav #}
+{% set sidebar_nav %}
+    {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+{% endset %}
+{% set sidebarNav = true %}
+
 
 
 {# set sidebar  #}
 {% set sidebarType = node.field_sidebar_type.value %}
 
- {% if sidebarType != 'none' %}
+{% if sidebarType != 'none' %}
+
     {% set content_wrapper_modifiers = ['has-sidebar'] %}
     {% set sidebar = true %}
     {% set sidebar_content %}
-        {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
         {{ content.field_sidebar_components }}
     {% endset %}
  {% endif %}
