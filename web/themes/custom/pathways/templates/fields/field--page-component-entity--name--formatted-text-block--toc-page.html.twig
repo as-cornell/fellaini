@@ -37,6 +37,6 @@ Descr: Shows the FTB name field as an anchor for TOC pages
 
 {%- for item in items -%}
   {% set linky = item.content['#context']['value']|lower|replace({' ': "-"}) %}
-  <h3 name="#"{{ attributes.setAttribute('id', linky) }}>{{ item.content }}</h3>
+  <h2 name="#"{{ attributes.setAttribute('id', linky) }}>{{ item.content }}</h2>
 {%- endfor -%}
 

@@ -11,19 +11,20 @@ h1,h2,h3,h4{
 }
 
 h1 {
-  font-size: calc(2.5 * var(--font-size));
+  font-size: calc(2.5 * var(--base-font-size));
 }
 
 h2 {
-  font-size: calc(2 * var(--font-size));
+  font-size: calc(2 * var(--base-font-size));
 }
 
 h3 {
-  font-size: calc(1.75 * var(--font-size));
+  font-size: calc(1.75 * var(--base-font-size));
+  font-weight: var(--regular);
 }
 
 h4 {
-  font-size: calc(1.5 * var(--font-size));
+  font-size: calc(1.5 * var(--base-font-size));
 }
 
 h5,
@@ -42,12 +43,12 @@ h6 {
 // Sidebar sizes for component headers
 .sidebar{
   h2 {
-    font-size: calc(1.5 * var(--font-size));
+    font-size: calc(1.5 * var(--base-font-size));
   }
 
-  h3 {
-    font-size: calc(1.25 * var(--font-size));
-  }
+  // h3 {
+  //   font-size: calc(1.25 * var(--base-font-size));
+  // }
 }
 
 @mixin heading-xl($font-family: $font-heading, $font-size: 2rem, $line-height: 1.4, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {

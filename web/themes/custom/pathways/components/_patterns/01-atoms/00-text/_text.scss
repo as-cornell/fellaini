@@ -9,7 +9,7 @@ Descr:
 --------------------------- */
 
 html{
-  font-size: var(--font-size);
+  font-size: var(--base-font-size);
 }
 
 body {
@@ -19,7 +19,6 @@ body {
 p{
   @include baseMargin($margin-direction: margin-bottom, $margin-width: 1em);
 }
-
 
 .blockquote {
   font-style: italic;
