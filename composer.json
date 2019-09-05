@@ -74,7 +74,8 @@
         "twig/extensions": "^1.5",
         "drupal/twig_extensions": "^2.0",
         "drupal/twig_field_value": "^1.2",
-        "drupal/sitemap": "^1.5"
+        "drupal/sitemap": "^1.5",
+        "drupal/custom_search": "^1.0"
 
     },
     "require-dev": {
