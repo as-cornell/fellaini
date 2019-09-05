@@ -64,12 +64,12 @@ function as_courses_generate_course_item_markup($course_data,$semester) {
     $course_offered = $course_data['catalogWhenOffered'];
     $course_acadGroup = $course_data['acadGroup'];
     $course_acadCareer = $course_data['acadCareer'];
-    $course_instructors = $course_data['enrollGroups'];
-        foreach ($course_instructors as $instructors) {
-            $instructor_markup = $instructor_markup . $instructors['classSections'][0]['meetings'][0]['instructors'][0]['firstName'];
-            $instructor_markup = $instructor_markup . " " .$instructors['classSections'][0]['meetings'][0]['instructors'][0]['lastName'];
-            $instructor_markup = $instructor_markup . " (" . $instructors['classSections'][0]['meetings'][0]['instructors'][0]['netid'] . ") <br /> ";
-            }
+    //$course_instructors = $course_data['enrollGroups'];
+        //foreach ($course_instructors as $instructors) {
+            //$instructor_markup = $instructor_markup . $instructors['classSections'][0]['meetings'][0]['instructors'][0]['firstName'];
+            //$instructor_markup = $instructor_markup . " " .$instructors['classSections'][0]['meetings'][0]['instructors'][0]['lastName'];
+            //$instructor_markup = $instructor_markup . " (" . $instructors['classSections'][0]['meetings'][0]['instructors'][0]['netid'] . ") <br /> ";
+            //}
     //dump($instructor_markup);
     $markup = $markup . "
                 <div class='courseList__course course card card--course'>
