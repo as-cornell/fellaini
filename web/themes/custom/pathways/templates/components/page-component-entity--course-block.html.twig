@@ -9,6 +9,7 @@ Descr: outputs custom module blocks for courses based on list or random
 
  #}
 
+{# set block variables #}
 {% set semesterValue = content.field_semester['#items'].getString() %}
 {% set semesterName = content.field_semester[0]['#markup'] %}
 {% set coursesShownValue = content.field_courses_shown[0]['#markup'] %}
@@ -16,24 +17,34 @@ Descr: outputs custom module blocks for courses based on list or random
 {% set majorNameValue = content.field_related_major_minor[0]['#plain_text'] %}
 {% set blockType = content.field_block_type[0]['#markup'] %}
 
+{# set wrapper stuff #}
+{% set group_base_class = 'courses' %}
+{% set group_modifiers = ['pageComponent'] %}
+
+
+
+{# set intro #}
 {% if content.field_formatted_text %}
   {% set intro = content.field_formatted_text %}
 {% endif %}
+
+{# set title #}
 {% set title = content.name %}
 
-<div class="course-list">
-{% include "@atoms/00-text/_heading.twig" with {
-            "heading_level" : 3,
-            "heading" : title,
-            "heading_modifiers" : ["margin"]
-        } %}
 
-
-{{intro}}
+{# set content based on blockType #}
 {% if blockType == 'list' %}
-  {{ drupal_block('courses_block', {semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: majorNameValue }) }}
+  {% set content %}
+    {{ drupal_block('courses_block', {semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: majorNameValue }) }}
+  {% endset %}
+  {% elseif blockType == 'random' %}
+  {% set content %}
+    {{ drupal_block('random_block', {semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: majorNameValue }) }}
+  {% endset %}
 {% endif %}
-{% if blockType == 'random' %}
-{{ drupal_block('random_block', {semester: semesterValue , semestername: semesterName, courses_shown: coursesShownValue , keyword_params: keywordParamsValue, major_name: majorNameValue }) }}
-{% endif %}
-</div>
+
+{% include "@organisms/course-list/course-list.twig" with {
+  content : content,
+  intro : intro,
+  title : title
+} %}
