@@ -1,0 +1,12 @@
+/* -------------------------
+
+Title: components
+Descr: sets any styles for page components in general and in different locations on the page.
+
+--------------------------- */ 
+.components--main{
+    div[class*="--pageComponent"]{
+        margin-bottom: var(--component-bottom-margin);
+    }
+}
+
