@@ -12,6 +12,16 @@
         "heading_modifiers" : ['border']
     } %} #}
 {# {{content.name}} #}
-{% include "@atoms/_simple-container.twig" with {
+
+{% set group_base_class = 'statList' %}
+{% set group_modifiers = ['pageComponent'] %}
+
+{# {% include "@atoms/_simple-container.twig" with {
     content : content.field_stats
+} %} #}
+
+{% include "@organisms/stat-list/_stat-list.twig" with {
+"items" : content.field_stats
+
+
 } %}
