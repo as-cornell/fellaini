@@ -56,20 +56,18 @@ Descr: Set main wrapper for photo text bocks
 
         // medium
         @include medium() {
-           // background: red;
             .photoText{
-                margin-top: -1rem;
+                //margin-top: -1rem;
                 margin-bottom: 0;
                 display: grid;
                 grid-template-columns: repeat(12, 1fr);
                 grid-template-rows: 1fr (5*$space) min-content;
-                margin-top:-1rem;
             }
             .photoText__image {
                 grid-column: 1 / span 10;
             }
             .photoText__text {
-                grid-column: 7 / span 6;
+                grid-column: 8 / span 6;
             }
             .photoText:nth-of-type(2n + 2) {
                 .photoText__image {
@@ -93,19 +91,19 @@ Descr: Set main wrapper for photo text bocks
         // large size
         @include large() {
            .photoText{
-                margin-top: -1rem;
+                // margin-top: -1rem;
                 margin-bottom: 0;
                 display: grid;
                 grid-template-columns: repeat(12, 1fr);
                 grid-template-rows: 1fr (5*$space) min-content;
-                margin-top:-1rem;
+                //margin-top:-1rem;
             }
             .photoText__image {
                 grid-column: 1 / span 8;
                 grid-row: 1 / span 2;
             }
             .photoText__text {
-                grid-column: 7 / span 5;
+                grid-column: 8 / span 5;
                 grid-row: 2 / span 2;
             }
             .photoText:nth-of-type(2n + 2) {
