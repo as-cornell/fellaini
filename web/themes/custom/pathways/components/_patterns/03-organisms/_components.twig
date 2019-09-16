@@ -20,8 +20,7 @@
     {% if multiple %}
         <div{{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
             {% for item in items %}
-            {# {{ kint(_context) }} #}
-            <span {{ item.attributes }} {% if self_tag %}class="{{item.content}}" {% endif %}>{{ item.content }}</span>
+            {{ item.content }}
         {% endfor %}
         </div>
     {% else %}

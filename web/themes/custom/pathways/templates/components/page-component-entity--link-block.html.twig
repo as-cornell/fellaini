@@ -16,6 +16,7 @@
 {% include "@organisms/link-list/_link-block.twig" with{
     heading : content.field_block_title,
     links : content.field_link,
-    group_base_class : 'link-bar',
+    group_base_class : 'linkBlock',
+    group_modifiers : ['pageComponent', 'full-width'],
     group_classes : ['full-width']
 }%}
