@@ -61,7 +61,7 @@ Variations:
   .card__date.card__date{
     text-align: left; // using double selctor instead of !important
   }
-  box-shadow: none;
+  //box-shadow: none;
 }
 
 
@@ -97,7 +97,7 @@ Variations:
     @include fontSize(4);
   }
   &.card--small{
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 180px 1fr;
     border: none;
     margin-bottom: 2rem;
     .card__copy{
