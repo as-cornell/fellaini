@@ -2,11 +2,16 @@
 
 /* -------------------------
 
-Title: PCE Formatted-texblock
-Descr: removes all containers so elements can do their job
+Title: page-component-entity--formatted-text-block
+Descr: includes formatted-text-block.twig.
 
 --------------------------- */
 
  #}
+{% set group_base_class = 'ftb' %}
+{% set group_modifiers = ['pageComponent'] %}
 
-{{content}}
+{% include "@molecules/formatted-text-block/formatted-text-block.twig" with {
+    group_base_class : group_base_class,
+    group_modifiers : group_modifiers
+} %}

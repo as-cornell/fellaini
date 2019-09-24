@@ -62,7 +62,7 @@ function as_instagram_generate_instagram_post_markup($post_data) {
     $insta_link = $post_data['node']['shortcode'];
     $insta_link = "https://www.instagram.com/p/" . $insta_link . "/";
         if ($display_url){
-        $markup = $markup . "<li><a href='" . $insta_link . "'><figure  class='figure figure--image'><img class='img' src='" . $display_url . "' alt='" . $alt_text . "'></figure></a></li>";
+        $markup = $markup . "<span class='insta__item'><a href='" . $insta_link . "'><img class='img' src='" . $display_url . "' alt='" . $alt_text . "'></a></span>";
             }
         //if ($text){
         //$markup = $markup . "<div  class='photoText__text'><p>" . $text . "<p/></div>";

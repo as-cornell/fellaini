@@ -18,6 +18,10 @@ Passes: has-sidebar to contentWrapper
 {% set sidebar_wrapper_modifiers = sidebar_wrapper_modifiers | default(['']) %}
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
+{# sets main content variables #}
+{% set main_content_modifiers = ['basic-page'] %}
+
+
 {# {% extends "@pages/_page.twig" %} #}
 {% extends "@templates/_default.twig" %}
 

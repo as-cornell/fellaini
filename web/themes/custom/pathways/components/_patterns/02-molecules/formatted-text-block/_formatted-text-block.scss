@@ -1,0 +1,11 @@
+.ftb{
+    &--pageComponent{
+       display: flex;
+       flex-direction: column;
+    }
+}
+.mainContent--landing-page{
+    .ftb--pageComponent{
+        align-items: center;
+    }
+}
