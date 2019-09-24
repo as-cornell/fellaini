@@ -144,6 +144,9 @@ $near-white: #fbfbfb; // depricate
 
     --auto-grid-min-size: calc(10 * var(--space));
     --base-grid-gap: var(--space);
+
+    --base-grid-column: 84px;
+
     // @include medium(){
     //     --base-grid-gap: calc(1.5 * var(--space));
     // }

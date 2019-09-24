@@ -1,11 +1,12 @@
 {{ title_prefix }}
+<span {{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
 {% if label %}
-{% include "@atoms/00-text/_heading.twig" with {
-        "heading_level" : 2,
-        "heading" : label,
-        "heading_modifiers" : ['border']
-    } %}
-
+    {% include "@atoms/00-text/_heading.twig" with {
+            "heading_level" : 2,
+            "heading" : label,
+            "heading_modifiers" : ['border']
+        } 
+    %}
 {% endif %}
 {{ title_suffix }}
 {% block content %}
@@ -59,10 +60,10 @@
         <span class='event__location'>Bailey Hall:
         </span>
     </div>
-{% else %}
-    {{ content }}
-{% endif %}
-
+    {% else %}
+        {{ content }}
+    {% endif %}
 </div>
-    
+</span>
+
 {% endblock %}
