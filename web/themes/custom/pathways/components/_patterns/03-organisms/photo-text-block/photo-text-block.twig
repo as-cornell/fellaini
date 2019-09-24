@@ -9,13 +9,13 @@
 {# {% set wrapperClass = wrapperClass %} #}
 
 {% if wrapperClass == 'slider' %}
-lsjhfljshddfljhasdf;jha;dlfhj
 {{ wrapperClass }}
     {# {{ attach_library('pathways/carousel') }} #}
 {% endif %}
 
 
-<div class="ptWrapper ptWrapper--{{ wrapperClass }}">
+<div {{bem(group_base_class,(group_modifiers),'',group_classes)}} >
+
     {{items}}
     {% if wrapperClass == 'slider' %}
     <fieldset aria-controls="carousel" aria-label="carousel buttons" class="navigation">

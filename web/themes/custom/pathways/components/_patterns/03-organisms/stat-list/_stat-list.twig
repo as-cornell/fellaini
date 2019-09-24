@@ -8,10 +8,10 @@
 {% set group_classes = group_classes | default(['']) %}
 
 <div{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
-    
-
-  {% for item in items %}
+    {{items}}
+{# {{content}} #}
+  {# {% for item in items %}
     {{item.content}}
-  {% endfor %}
+  {% endfor %} #}
 
 </div>
