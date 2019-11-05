@@ -75,7 +75,8 @@
         "drupal/twig_extensions": "^2.0",
         "drupal/twig_field_value": "^1.2",
         "drupal/sitemap": "^1.5",
-        "drupal/custom_search": "^1.0"
+        "drupal/custom_search": "^1.0",
+        "fourkitchens/emulsify": "^3.1"
 
     },
     "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e0a7f205ed14c723ce1a5c5e2967e40",
+    "content-hash": "c9e25a8c0e03dc278aa0a53d6f5d869c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6064,16 +6064,64 @@
             "time": "2019-08-13T17:33:27+00:00"
         },
         {
+            "name": "fourkitchens/emulsify",
+            "version": "v3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fourkitchens/emulsify.git",
+                "reference": "82c50bfbfc0338b703a79df2364a22e549e066f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fourkitchens/emulsify/zipball/82c50bfbfc0338b703a79df2364a22e549e066f6",
+                "reference": "82c50bfbfc0338b703a79df2364a22e549e066f6",
+                "shasum": ""
+            },
+            "require": {
+                "drupal-pattern-lab/add-attributes-twig-extension": "^1.0",
+                "drupal-pattern-lab/attach-library-twig-extension": "^1.0",
+                "drupal-pattern-lab/bem-twig-extension": "^1.0",
+                "drupal-pattern-lab/unified-twig-extensions": "^0.1",
+                "drupal/components": "^1.0"
+            },
+            "type": "drupal-theme",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Lewis",
+                    "email": "brian@fourkitchens.com"
+                },
+                {
+                    "name": "Chris Martin",
+                    "email": "chris.martin@fourkitchens.com"
+                },
+                {
+                    "name": "Evan Willhite",
+                    "email": "evan@fourkitchens.com"
+                },
+                {
+                    "name": "Randy Oest",
+                    "email": "randy@fourkitchens.com"
+                }
+            ],
+            "description": "Project template for Drupal 8 themes",
+            "homepage": "http://emulsify.info",
+            "time": "2018-12-15T04:46:36+00:00"
+        },
+        {
             "name": "gettext/gettext",
             "version": "v4.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/oscarotero/Gettext.git",
+                "url": "https://github.com/php-gettext/Gettext.git",
                 "reference": "739c935503853759b1607f375960c73a5b03909b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Gettext/zipball/739c935503853759b1607f375960c73a5b03909b",
+                "url": "https://api.github.com/repos/php-gettext/Gettext/zipball/739c935503853759b1607f375960c73a5b03909b",
                 "reference": "739c935503853759b1607f375960c73a5b03909b",
                 "shasum": ""
             },
