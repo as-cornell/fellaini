@@ -20,7 +20,7 @@ mysqldb:
             departments:
                 default_schema: departmentsdb
                 privileges:
-                    seconddb: admin
+                    departmentsdb: admin
             people:
                 default_schema: peopledb
                 privileges:
