@@ -158,7 +158,7 @@ disk: 2048
 # 'shared:files/NAME', where NAME is just a unique name for the mount.
 mounts:
     '/web/sites/default/files': 'shared:files/files-first'
-    '/web/sites/second/files': 'shared:files/files-second'
+    '/web/sites/departments/files': 'shared:files/files-departments'
     '/web/sites/people/files': 'shared:files/files-people'
     '/tmp': 'shared:files/tmp'
     '/private': 'shared:files/private'
