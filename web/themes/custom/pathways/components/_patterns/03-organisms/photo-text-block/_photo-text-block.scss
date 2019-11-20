@@ -92,7 +92,7 @@ Descr: Set main wrapper for photo text bocks
         @include large() {
            .photoText{
                 // margin-top: -1rem;
-                margin-bottom: 0;
+                margin-bottom: -2rem !important;
                 display: grid;
                 grid-template-columns: repeat(12, 1fr);
                 grid-template-rows: 1fr (5*$space) min-content;

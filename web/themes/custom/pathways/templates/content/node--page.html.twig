@@ -13,35 +13,59 @@ Passes: has-aside to <main>
 #}
 {# {{ kint(content) }} #}
 
-{# Add aside if aside components are present #}
+{# Add main modifier #}
+{% set main_element_modifiers = ['basicPage'] %}
+
+{# 
+    - Add aside to content_wrapper_modifiers if aside components are present
+#}
+
 {% if content.field_aside_components|render is not empty %}
-    {% set main_content_modifiers = ['has-aside'] %}
+    {% set content_wrapper_modifiers = ['has-aside'] %}
     {% set aside = true %}
 {% endif %}
 
 {# Set sidebar_nav #}
+{# ****** need to fix output for this look at main nav ********* #}
 {% set sidebar_nav %}
     {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
 {% endset %}
+
 {% set sidebarNav = true %}
 
 
 
-{# set sidebar  #}
-{% set sidebarType = node.field_sidebar_type.value %}
+{# 
+    - turn on sidebar
+    - add has-sideber to main_element_modifiers
+    - set location of siebar
+    - set sidebar content to field_sidebar_components    
+#}
 
-{% if sidebarType != 'none' %}
+{% if content.field_sidebar_components|render is not empty %}
+	{% set sidebar = true %}
+    {% set sidebarType = node.field_sidebar_type.value %}
+    {% if sidebarType != 'none' %}
+        {% set main_element_modifiers = main_element_modifiers|merge(['has-sidebar']) %}
+        {% set sidebar_content %}
+            {{ content.field_sidebar_components }}
+        {% endset %}
+        {% if sidebarType == 'right' %}
+            {% set sidebar_wrapper_modifiers = ['right'] %}
+        {% elseif sidebarType == 'left' %}
+            {% set sidebar_wrapper_modifiers = ['left'] %}
+        {% endif %}
+    {% endif %}
+{% endif %}
 
-    {% set content_wrapper_modifiers = ['has-sidebar'] %}
-    {% set sidebar = true %}
-    {% set sidebar_content %}
-        {{ content.field_sidebar_components }}
-    {% endset %}
- {% endif %}
+
+
 
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : label,
+
+    main_element_modifiers : main_element_modifiers,
 
     sidebar: sidebar,
     aside: aside,

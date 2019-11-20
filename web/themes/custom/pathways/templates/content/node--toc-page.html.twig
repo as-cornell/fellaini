@@ -11,9 +11,15 @@ Passes: has-sidebar to contentWrapper
 
 #}
 
+{# Add main modifier #}
+{% set main_element_modifiers = ['tocPage', 'has-sidebar'] %}
+
+{# Content wrapper modifiers #}
+{% set content_wrapper_modifiers = ['toc'] %}
+
 
 {# {% set main_content_modifiers = ['basic-page'] %} #}
-{% set content_wrapper_modifiers = ['has-sidebar', 'toc'] %}
+{# {% set content_wrapper_modifiers = ['has-sidebar', 'toc'] %} #}
 {% set sidebar_wrapper_modifiers = ['toc'] %}
 {% set asideLabelValue = drupal_token('node:title', {node: node}) %}
 {% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
@@ -26,26 +32,38 @@ Passes: has-sidebar to contentWrapper
 
 
 {# set sidebar_nav = toc nav #}
-{% set sidebar_nav %}
+{# {% set sidebar_nav %}
   {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
 {% endset %}
-{% set sidebarNav = true %}
+{% set sidebarNav = true %} #}
 
 
-{# set aside content #}
-{% set aside_content %}
-  {{ content.field_aside_components }}
-{% endset %}
-
+{# 
+  - add siebar_nav to sidebar
+  - if aside content set aside_content
+  - set sidebar = true
+  - add aside into sidebar if defined
+ #}
+ 
 {% set sidebar = true %}
+{% set sidebar_content %}
+  {% set sidebar_nav %}
+    {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
+  {% endset %}
+    {{sidebar_nav}}
+  {% set sidebarNav = true %}
+  {% if content.field_aside_components|render is not empty %}
+    {{content.field_aside_components}}
+  {% endif %}
 
+{% endset %}
 
 
 {% include "@pages/toc-page/_toc-page.twig" with {
     title : label,
 
     main_content : content.field_page_components_entity,
-    aside_content : aside_content,
+    sidebar_content : sidebar_content,
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers,
