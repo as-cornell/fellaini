@@ -26,17 +26,16 @@ Passes: has-sidebar to contentWrapper
 {% extends "@templates/_default.twig" %}
 
 {% block page_content %}
-        {# if not homepage #}
-        {# {% set sitename_tag = is_front ? 'h1' : 'div' %} #}
-        {% if not is_front %}
-
+    {# if not homepage #}
+    {# {% set sitename_tag = is_front ? 'h1' : 'div' %} #}
+    {% if not is_front %}
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
             "heading" : title,
             "heading_modifiers" : ["margin"],
             "heading_base_class" : "title"
         } %}
-        {% endif %}
+    {% endif %}
     {{main_content}}
 {% endblock %}
 
@@ -48,9 +47,9 @@ Passes: has-sidebar to contentWrapper
 
 
 {% block sidebar_content %}
-    <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
+    {# <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}> #}
         {{sidebar_content}}
-    </div>
+    {# </div> #}
 {% endblock %}
 
 
