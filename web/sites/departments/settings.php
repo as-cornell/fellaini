@@ -18,6 +18,8 @@ $settings['file_scan_ignore_directories'] = [
   'node_modules',
   'bower_components',
 ];
+$settings['install_profile'] = 'standard';
+$settings['hash_salt'] = '72nz6twHiwbogRuebNUFamnIkLBayEpb2AsAqcqZurAd2555JUO55fpxgxV-u0KGkCOw2TsHcA';
 
 // The hash_salt should be a unique random value for each application.
 // If left unset, the settings.platformsh.php file will attempt to provide one.
@@ -42,15 +44,4 @@ if (file_exists($app_root . '/' . $site_path . '/../settings.platformsh.php')) {
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
-$settings['install_profile'] = 'standard';
-$databases['default']['default'] = array (
-  'database' => 'second',
-  'username' => 'second',
-  'password' => 'drupal',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['hash_salt'] = '72nz6twHiwbogRuebNUFamnIkLBayEpb2AsAqcqZurAd2555JUO55fpxgxV-u0KGkCOw2TsHcA';
+
