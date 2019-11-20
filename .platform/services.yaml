@@ -9,7 +9,7 @@ mysqldb:
     configuration:
         schemas:
             - firstdb
-            - seconddb
+            - departmentsdb
             - peopledb
             - samldb
         endpoints:
@@ -17,8 +17,8 @@ mysqldb:
                 default_schema: firstdb
                 privileges:
                     firstdb: admin
-            second:
-                default_schema: seconddb
+            departments:
+                default_schema: departmentsdb
                 privileges:
                     seconddb: admin
             people:
