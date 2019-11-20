@@ -27,6 +27,9 @@ https://{default}/:
 https://departments.asd8.as.cornell.edu/:
   type: upstream
   upstream: app:http
+https://anthro.asd8.as.cornell.edu/:
+  type: upstream
+  upstream: app:http
 https://people.asd8.as.cornell.edu/:
   type: upstream
   upstream: app:http
