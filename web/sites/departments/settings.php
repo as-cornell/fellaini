@@ -22,7 +22,7 @@ $settings['hash_salt'] = 'eY4Nown9w_UoQAC08vp60Qdzfs0bZDufkvz47GOWBP4bb3td2-Ozyc
 // Set up a config sync directory.
 //
 // This is defined inside the read-only "config" directory, deployed via Git.
-//$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
+$config_directories[CONFIG_SYNC_DIRECTORY] = '../config/departments';
 
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/../settings.platformsh.php')) {
