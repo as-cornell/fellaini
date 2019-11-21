@@ -1,19 +1,21 @@
 /* -------------------------
 
-Title: mainContent layouts.
+Title: <main> layouts.
 Descr: 
     main content is the <main> tag. It is where the main components are. It is a child of the .container.
 
 --------------------------- */
 
 
-.mainContent{
+.main{
     // base page main conent grids
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    grid-template-areas:
+        "page-title"
+        "content";
     &--landing-page{
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "page-title"
-            "content";
         @include medium{
             // grid-template-columns: repeat(12, 1fr);
             // grid-template-areas:
@@ -28,6 +30,28 @@ Descr:
         }
         @include xl{
             // gird-template-columns: repeat(14, $max-column);
+        }
+    }
+    &--has-sidebar{
+        background: pink;
+        @include medium{
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto minmax(200px, 1fr);
+            grid-template-areas:
+            "nav content"
+            "sidebar content";
+            #block-mainnavigation-2{
+                grid-area: nav;
+            }
+            .sidebar{
+                grid-area: sidebar;
+            }
+            #pageContent{
+                grid-area: content;
+                grid-row: span 2;
+            }
+
+            
         }
     }
     &--has-aside{
