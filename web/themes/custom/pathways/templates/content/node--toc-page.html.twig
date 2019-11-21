@@ -17,9 +17,6 @@ Passes: has-sidebar to contentWrapper
 {# Content wrapper modifiers #}
 {% set content_wrapper_modifiers = ['toc'] %}
 
-
-{# {% set main_content_modifiers = ['basic-page'] %} #}
-{# {% set content_wrapper_modifiers = ['has-sidebar', 'toc'] %} #}
 {% set sidebar_wrapper_modifiers = ['toc'] %}
 {% set asideLabelValue = drupal_token('node:title', {node: node}) %}
 {% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
@@ -31,14 +28,8 @@ Passes: has-sidebar to contentWrapper
   {% endfor %}
 
 
-{# set sidebar_nav = toc nav #}
-{# {% set sidebar_nav %}
-  {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
-{% endset %}
-{% set sidebarNav = true %} #}
-
-
 {# 
+  - TOC sidebar has nav, and aside components if present
   - add siebar_nav to sidebar
   - if aside content set aside_content
   - set sidebar = true
