@@ -9,6 +9,8 @@ Descr:
 
 .main{
     // base page main conent grids
+    max-width: var(--xl);
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2rem;
@@ -35,27 +37,42 @@ Descr:
     &--basic-page{
         background: pink;
         &.main--has-sidebar{
-            background: blue;
+            // background: blue;
         }
     }
     &--has-sidebar{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "nav"
+        "content"
+        "sidebar";
+        nav{
+            grid-area: nav;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+        .container{
+            grid-area: content;
+            // grid-row: span 2;
+        } 
         @include medium{
             grid-template-columns: 1fr 3fr;
             grid-template-rows: auto minmax(200px, 1fr);
             grid-template-areas:
             "nav content"
             "sidebar content";
-            #block-mainnavigation-2{
-                grid-area: nav;
-            }
-            nav{
-                grid-area: nav;
-            }
-            .sidebar{
-                grid-area: sidebar;
-            }
-            #pageContent{
-                grid-area: content;
+            // #block-mainnavigation-2{
+            //     grid-area: nav;
+            // }
+            // nav{
+            //     grid-area: nav;
+            // }
+            // .sidebar{
+            //     grid-area: sidebar;
+            // }
+            .container{
+                // grid-area: content;
                 grid-row: span 2;
             }   
         }
