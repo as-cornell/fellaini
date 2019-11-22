@@ -26,11 +26,13 @@ Passes: has-sidebar to contentWrapper
   {% for item in node.field_page_components_entity %}
     {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
   {% endfor %}
+{% set sidebar_nav %}
+  {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
+{% endset %}
 
 
 {# 
   - TOC sidebar has nav, and aside components if present
-  - add siebar_nav to sidebar
   - if aside content set aside_content
   - set sidebar = true
   - add aside into sidebar if defined
@@ -38,10 +40,7 @@ Passes: has-sidebar to contentWrapper
  
 {% set sidebar = true %}
 {% set sidebar_content %}
-  {% set sidebar_nav %}
-    {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
-  {% endset %}
-    {{sidebar_nav}}
+  
   {% set sidebarNav = true %}
   {% if content.field_aside_components|render is not empty %}
     {{content.field_aside_components}}
