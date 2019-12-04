@@ -1,0 +1,14 @@
+uuid: eee76692-4eeb-433c-b8d4-e0bf8d0658e0
+langcode: en
+status: true
+dependencies: {  }
+id: people
+label: People
+channel_entity_type: node
+channel_bundle: person
+channel_langcode: und
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+authorized_users:
+  146d4e57-2a8e-4319-a22f-a88ee486ce7b: 146d4e57-2a8e-4319-a22f-a88ee486ce7b

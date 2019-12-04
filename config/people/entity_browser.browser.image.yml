@@ -1,9 +1,9 @@
-uuid: f00a5c4a-223a-47d4-b319-d0ad6c0e73d5
+uuid: b7936b8a-eb93-46aa-983c-43f68fcf2f00
 langcode: en
 status: true
 dependencies: {  }
-name: images
-label: Images
+name: image
+label: Image
 display: modal
 display_configuration:
   width: '650'
@@ -15,14 +15,14 @@ selection_display_configuration: {  }
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
-  056f24b4-3a1e-4256-8924-96aa6202992a:
+  b8c310ac-8092-4a7e-af05-0de0e5d40d40:
     settings:
       extensions: 'jpg jpeg png gif'
       media_type: image
       upload_location: 'public://'
       multiple: '1'
       submit_text: 'Select files'
-    uuid: 056f24b4-3a1e-4256-8924-96aa6202992a
-    weight: 2
+    uuid: b8c310ac-8092-4a7e-af05-0de0e5d40d40
+    weight: 1
     label: media_image_upload
     id: media_image_upload
