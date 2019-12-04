@@ -1,0 +1,45 @@
+uuid: c24bc73e-948f-430f-8614-31ff37806bbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.departments_and_programs.field_department_website
+    - field.field.taxonomy_term.departments_and_programs.field_images
+    - taxonomy.vocabulary.departments_and_programs
+  module:
+    - link
+    - text
+id: taxonomy_term.departments_and_programs.default
+targetEntityType: taxonomy_term
+bundle: departments_and_programs
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_department_website:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_images:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }
