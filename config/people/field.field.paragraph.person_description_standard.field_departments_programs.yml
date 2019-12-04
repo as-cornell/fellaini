@@ -1,10 +1,11 @@
-uuid: ddb373c8-37ed-4c7a-9a05-26abc0f10a04
+uuid: 4b9007da-b0e8-44c4-909c-ac6f58cde313
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_departments_programs
     - paragraphs.paragraphs_type.person_description_standard
+    - taxonomy.vocabulary.departments_and_programs
 _core:
   default_config_hash: tFq8p6FJpJjgczuesNRe1ww-NWvMrSRYeTFC0vkYYqw
 id: paragraph.person_description_standard.field_departments_programs
@@ -20,7 +21,8 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      departments_and_programs: departments_and_programs
     sort:
       field: name
       direction: asc

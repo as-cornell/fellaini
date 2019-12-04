@@ -1,4 +1,4 @@
-uuid: acd39251-ea71-4f78-b6f2-b45ff93c4ed6
+uuid: d6017a42-5d9f-4451-90c6-a73c90858203
 langcode: en
 status: true
 dependencies: {  }
@@ -7,5 +7,4 @@ _core:
 name: 'People Categories'
 vid: people_categories
 description: 'Taxonomy for Person content type'
-hierarchy: 0
 weight: 0
