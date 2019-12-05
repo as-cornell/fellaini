@@ -113,13 +113,13 @@ $config = array(
      * metadata listing and diagnostics pages.
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
-    'auth.adminpassword' => 'bobross',
+    'auth.adminpassword' => 'qZm^64n#4l$C',
 
     /*
      * Set this options to true if you want to require administrator password to access the web interface
      * or the metadata pages, respectively.
      */
-    'admin.protectindexpage' => false,
+    'admin.protectindexpage' => true,
     'admin.protectmetadata' => false,
 
     /*
@@ -1115,7 +1115,6 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
       $config['database.dsn'] = $dsn;
       $config['database.username'] = $instance['username'];
       $config['database.password'] = $instance['password'];
-
       $config['store.type'] = 'sql';
       $config['store.sql.dsn'] = $dsn;
       $config['store.sql.username'] = $instance['username'];
