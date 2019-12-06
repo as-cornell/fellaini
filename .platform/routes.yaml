@@ -30,6 +30,9 @@ https://departments.asd8.as.cornell.edu/:
 https://anthro.asd8.as.cornell.edu/:
   type: upstream
   upstream: app:http
+https://history.asd8.as.cornell.edu/:
+  type: upstream
+  upstream: app:http
 https://people.asd8.as.cornell.edu/:
   type: upstream
   upstream: app:http
