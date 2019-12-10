@@ -1,8 +1,10 @@
-uuid: aeea25df-38cc-4cd2-a7b3-97acbe39025e
+uuid: 7370b247-943f-4c88-be78-03e32fb3bcba
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
@@ -22,6 +24,22 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_caption:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_credit:
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_media_image:
     settings:
       progress_indicator: throbber
@@ -58,6 +76,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden: {  }
