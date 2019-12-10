@@ -38,10 +38,10 @@ Descr:
   
   &--has-sidebar{
     // grid-row-gap: var(--space); 
-    grid-template-areas: // set up areas to fill
-      "menu"
-      "main"
-      "sidebar";
+    // grid-template-areas: // set up areas to fill
+    //   "menu"
+    //   "main"
+    //   "sidebar";
     .toc-menu,.sidebar-nav{
       grid-area: menu;
     }
@@ -52,21 +52,21 @@ Descr:
       grid-area: main;
     }
     @include medium{
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: minmax(100px, auto);
-      grid-gap: calc( 2 * var(--space));
-      grid-row-gap: var(--space);
-      grid-template-areas: // set up areas to fill
-      "sidebar main"
-      "sidebar main";
-        .toc-menu,.sidebar-nav{
-          grid-area: sidebar;
-          grid-row: 1;
-        }
-        .sidebar{
-          grid-area: sidebar;
-          grid-row: 2;
-        }
+      // grid-template-columns: 1fr 2fr;
+      // grid-template-rows: minmax(100px, auto);
+      // grid-gap: calc( 2 * var(--space));
+      // grid-row-gap: var(--space);
+      // grid-template-areas: // set up areas to fill
+      // "sidebar main"
+      // "sidebar main";
+      //   .toc-menu,.sidebar-nav{
+      //     grid-area: sidebar;
+      //     grid-row: 1;
+      //   }
+      //   .sidebar{
+      //     grid-area: sidebar;
+      //     grid-row: 2;
+      //   }
       }
     @include xxl{
         grid-gap: calc( 3 * var(--space));

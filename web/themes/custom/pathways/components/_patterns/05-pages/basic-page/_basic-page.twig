@@ -16,31 +16,28 @@ Passes: has-sidebar to contentWrapper
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
 
-{# {% extends "@pages/_page.twig" %} #}
-{% extends "@templates/_default.twig" %}
-
-{% block page_content %}
-    {# if not homepage #}
-    {% if not is_front %}
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+    
+    <div class="title">
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
             "heading" : title,
             "heading_modifiers" : ["margin"],
             "heading_base_class" : "title"
         } %}
+    </div>
+    <div class="content">
+        {{main_content}}
+    </div>
+    <div class="nav">
+        {{ sidebar_nav }}
+    </div>
+    <div class="sidebar">
+        {{sidebar_content}}
+    </div>
+    {% if aside %}
+        <aside>
+            {{ aside_content }}
+        </aside>
     {% endif %}
-    {{main_content}}
-{% endblock %}
-
-{# set in sidebar nav block to the conent of main navigation 2 #}
-{% block sidebar_nav %}
-    {{ sidebar_nav }}
-{% endblock %}
-
-{% block sidebar_content %}
-    {{sidebar_content}}
-{% endblock %}
-
-{% block aside_content %}
-    {{ aside_content }}
-{% endblock %}
+</main>
