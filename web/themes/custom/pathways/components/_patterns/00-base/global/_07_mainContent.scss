@@ -15,8 +15,11 @@ Descr:
     grid-template-columns: 1fr;
     grid-gap: 2rem;
     grid-template-areas:
-        "page-title"
+        "title"
         "content";
+    @include medium{
+        grid-template-columns: repeat(12,calc(8.333% - 2rem));
+    }
     &--landing-page{
         @include medium{
             // grid-template-columns: repeat(12, 1fr);
@@ -25,6 +28,7 @@ Descr:
             // "content content content content content content content content content content content content";
         }
         @include large{
+            
             // grid-template-columns: repeat(14, 1fr);
             // grid-template-areas:
             //     "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
@@ -36,36 +40,46 @@ Descr:
     }
     &--basic-page{
         background: pink;
+        
         &.main--has-sidebar{
-        }
-    }
-    &--has-sidebar{
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "nav"
-        "content"
-        "sidebar";
-        nav{
-            grid-area: nav;
-        }
-        .sidebar{
-            grid-area: sidebar;
-        }
-        .container{
-            grid-area: content;
-        } 
-        @include medium{
-            grid-template-columns: 1fr 3fr;
-            grid-template-rows: auto minmax(200px, 1fr);
             grid-template-areas:
-            "nav content"
-            "sidebar content";
-            .container{
-                grid-row: span 2;
-            }   
+            "nav"
+            "content"
+            "sidebar";
+            .nav{
+                grid-area: nav;
+            }
+            .title{
+                grid-area: title;
+            }
+            .sidebar{
+                grid-area: sidebar;
+            }
+            .content{
+                grid-area: content;
+            } 
+
+            @include medium{
+                grid-template-areas:
+                "nav nav nav nav title title title title title title title title"
+                "nav nav nav nav content content content content content content content content"
+                "sidebar sidebar sidebar sidebar content content content content content content content content";
+            }
+        }
+        &.main--has-aside{            
+            aside{
+                grid-area: aside;
+            }
+            @include medium{
+                grid-template-areas:
+                "nav nav nav nav title title title title title title title title"
+                "nav nav nav nav content content content content content content aside aside"
+                "sidebar sidebar sidebar sidebar content content content content content content aside aside";
+            }
         }
     }
-    // Article 
+    
+    // ----- Article 
     &--articlePage{
         grid-template-columns: repeat(12,calc(8.333% - 2rem));
         grid-template-rows: auto auto;
@@ -89,7 +103,7 @@ Descr:
             grid-area: aside;
         }
     }
-    // Article with pano
+    // ----- Article with pano
     &--articlePano{
         grid-template-rows: auto auto auto 1fr;
         grid-template-areas: 
