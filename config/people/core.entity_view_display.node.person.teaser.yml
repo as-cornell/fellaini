@@ -1,12 +1,12 @@
-uuid: 388f034d-995e-403f-850b-c37f72a2f1e4
+uuid: b16687ce-f1da-4592-82e3-222204a0627a
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.person.body
     - field.field.node.person.field_departments_programs
     - field.field.node.person.field_image
+    - field.field.node.person.field_images
     - field.field.node.person.field_keywords
     - field.field.node.person.field_links
     - field.field.node.person.field_person_affiliation
@@ -20,47 +20,110 @@ dependencies:
     - field.field.node.person.field_person_title
     - field.field.node.person.field_person_type
     - field.field.node.person.field_regions
-    - field.field.node.person.field_summary
     - node.type.person
   module:
-    - image
+    - link
+    - text
     - user
 id: node.person.teaser
 targetEntityType: node
 bundle: person
 mode: teaser
 content:
-  field_image:
-    type: image
-    weight: 0
-    region: content
+  field_departments_programs:
+    weight: 1
     label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_images:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_keywords:
+    type: text_default
+    weight: 3
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_links:
+    type: link
+    weight: 4
+    region: content
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_person_affiliation:
+    type: string
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_categories:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_person_education:
+    type: text_default
+    weight: 9
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_person_graduate_fields:
+    type: string
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_person_publications:
+    type: text_default
+    weight: 10
+    region: content
+    label: above
+    settings: {  }
     third_party_settings: {  }
   field_person_title:
     type: string
-    weight: 1
+    weight: 2
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_regions:
+    type: entity_reference_label
+    weight: 8
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
 hidden:
-  body: true
-  field_departments_programs: true
-  field_keywords: true
-  field_links: true
-  field_person_affiliation: true
-  field_person_categories: true
-  field_person_education: true
+  field_image: true
   field_person_first_name: true
-  field_person_graduate_fields: true
   field_person_last_name: true
   field_person_netid: true
-  field_person_publications: true
   field_person_type: true
-  field_regions: true
-  field_summary: true
   links: true

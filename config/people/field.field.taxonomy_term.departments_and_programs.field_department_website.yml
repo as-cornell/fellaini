@@ -1,4 +1,4 @@
-uuid: 9d90919b-f21d-4555-9e5b-6f41d61350ee
+uuid: ed4a3ab6-28ea-4634-821a-0c79391269e0
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,6 @@ dependencies:
     - taxonomy.vocabulary.departments_and_programs
   module:
     - link
-_core:
-  default_config_hash: r3Z3J9t9aAXFNXIJVeYFhRdv1KlIuVsoNQ-UsuJ_e28
 id: taxonomy_term.departments_and_programs.field_department_website
 field_name: field_department_website
 entity_type: taxonomy_term
@@ -20,6 +18,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  title: 1
   link_type: 17
+  title: 1
 field_type: link

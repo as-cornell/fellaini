@@ -1,4 +1,4 @@
-uuid: 8e2c5001-8b83-4e2c-93f0-19b87c981418
+uuid: 84be60c8-f8b7-4fa6-ab58-01866f9f5ed1
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - image
     - taxonomy
 _core:
-  default_config_hash: 8Dt6PtJs1OOIYIQ-AFt1QewS02ddVzzxBA9J4d5kgPw
+  default_config_hash: SWleCGeXN0U-_Si55Q-IBOwSXFMVfUeqbl5HgHOQAes
 id: taxonomy_term.field_image
 field_name: field_image
 entity_type: taxonomy_term

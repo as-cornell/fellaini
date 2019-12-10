@@ -1,4 +1,4 @@
-uuid: 43f6ec80-d969-4ea3-b288-dd7ab1116a1d
+uuid: 8a5d0146-6d5d-4146-b8b8-2e3a8d087b94
 langcode: en
 status: true
 dependencies: {  }
@@ -7,5 +7,4 @@ _core:
 name: Regions
 vid: regions
 description: 'Taxonomy per department for categorizing people and research into regions'
-hierarchy: 0
 weight: 0
