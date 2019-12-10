@@ -1,4 +1,4 @@
-uuid: d157bcab-0111-4fe2-8fe5-371b3b5d3fea
+uuid: 0fec4fad-6cae-461b-9da1-0ec8e02fab6e
 langcode: en
 status: true
 dependencies:
@@ -49,6 +49,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden:
