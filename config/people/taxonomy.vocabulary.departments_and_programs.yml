@@ -1,4 +1,4 @@
-uuid: b9d40b08-a065-4e77-b69c-f03b6e6e45f3
+uuid: 1b195188-6ff0-4683-abfe-a5a58f288cc5
 langcode: en
 status: true
 dependencies: {  }
@@ -7,5 +7,4 @@ _core:
 name: 'Departments and Programs'
 vid: departments_and_programs
 description: 'Departments and Programs in the College of Arts and Sciences'
-hierarchy: 0
 weight: 0

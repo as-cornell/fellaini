@@ -1,17 +1,9 @@
-https://first.{default}/:
+https://{default}/:
   type: upstream
   upstream: app:http
-https://second.asd8.as.cornell.edu/:
-  type: upstream
-  upstream: app:http
-https://people.asd8.as.cornell.edu/:
-  type: upstream
-  upstream: app:http
-http://asd8.as.cornell.edu/:
   primary: null
   id: null
   attributes: {}
-  type: upstream
   redirects:
     expires: -1s
     paths: {}
@@ -32,4 +24,15 @@ http://asd8.as.cornell.edu/:
     - Accept-Language
   ssi:
     enabled: false
+https://departments.asd8.as.cornell.edu/:
+  type: upstream
+  upstream: app:http
+https://anthro.asd8.as.cornell.edu/:
+  type: upstream
+  upstream: app:http
+https://history.asd8.as.cornell.edu/:
+  type: upstream
+  upstream: app:http
+https://people.asd8.as.cornell.edu/:
+  type: upstream
   upstream: app:http
