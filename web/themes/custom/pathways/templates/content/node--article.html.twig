@@ -21,7 +21,7 @@ Passes: Images - pano and image
 {# if pano add to content_wrapper_modifiers #}
 {% if field_pano_image_img.uri | image_style('full_content') %}
     {% set hasPano = true %}
-    {% set main_element_modifiers = main_element_modifiers|merge(['hasPano']) %}
+    {% set main_element_modifiers = main_element_modifiers|merge(['articlePano']) %}
 {% endif %}
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}

@@ -67,21 +67,14 @@ Descr:
     }
     // Article 
     &--articlePage{
-        grid-template-columns: 200px auto 400px;
-        grid-template-rows: auto auto auto 1fr;
+        grid-template-columns: repeat(12,calc(8.333% - 2rem));
+        grid-template-rows: auto auto;
         grid-template-areas: 
-            "pano pano pano"
-            "title title title"
-            "social content thumbnail"
-            "social content aside";
-        .pano{
-            grid-area: pano;
-            justify-self: center;
-        }
+            ". title title title title title thumbnail thumbnail thumbnail thumbnail thumbnail ."
+            "social social content content content content content content content aside aside aside";
         .title{
             grid-area: title;
-            padding: 0 4rem;
-            text-align: center;
+            align-self: center;
         }
         .social{
             grid-area: social;
@@ -94,6 +87,22 @@ Descr:
         }
         aside{
             grid-area: aside;
+        }
+    }
+    // Article with pano
+    &--articlePano{
+        grid-template-rows: auto auto auto 1fr;
+        grid-template-areas: 
+            ". pano pano pano pano pano pano pano pano pano pano ."
+            ". . title title title title title title title title . ."
+            "social social content content content content content content content thumbnail thumbnail thumbnail"
+            "social social content content content content content content content aside aside aside";
+        .pano{
+            grid-area: pano;
+            justify-self: center;
+        }
+        .title{
+            text-align: center;
         }
     }
 }
