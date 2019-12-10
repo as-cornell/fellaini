@@ -1,0 +1,39 @@
+uuid: 2f2d2f3e-0db7-45cb-aed1-80230fa00e49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.person_description_standard.field_departments_programs
+    - field.field.paragraph.person_description_standard.field_description
+    - field.field.paragraph.person_description_standard.field_person_research_focus
+    - paragraphs.paragraphs_type.person_description_standard
+  module:
+    - text
+id: paragraph.person_description_standard.default
+targetEntityType: paragraph
+bundle: person_description_standard
+mode: default
+content:
+  field_departments_programs:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_description:
+    type: text_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_person_research_focus:
+    type: text_default
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
