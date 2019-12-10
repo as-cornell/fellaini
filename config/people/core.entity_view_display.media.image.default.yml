@@ -1,8 +1,10 @@
-uuid: 04ffdc22-e186-4df4-9044-5c0b09f524b1
+uuid: 7741f0ef-0e42-4753-b3ea-eaab18041880
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
     - media.type.image
   module:
@@ -14,8 +16,24 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
+  field_caption:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_credit:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_media_image:
-    label: visually_hidden
+    label: hidden
     settings:
       image_style: ''
       image_link: file

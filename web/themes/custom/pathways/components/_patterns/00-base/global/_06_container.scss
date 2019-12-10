@@ -4,22 +4,11 @@ Title: container layouts.
 Descr: 
     this is the container that spans from the <header> to <footer>. It establishes columns for sidebars etc. .mainContent(--modifier) is a child of .container.
 
+    - --has-aside and has--sidebar are the base models. Basic page, and TOC both use them
+
+    -- article and --hasPano are for articles, more complicated grids
+
 --------------------------- */
-
-// .container{
-//   grid-column: 2;
-//   padding: 0 var(--mainGutter);
-
-//   @include medium(){
-//     @include baseGrid();
-//     margin: 0 auto;
-//   }
-  
-//   &--has-sidebar{
-//     grid-template-columns: 1fr 2fr;
-//     grid-gap: calc( 4 * var(--space));
-//   }
-// }
 
 .container{
   grid-column: 2;
@@ -48,7 +37,7 @@ Descr:
   }
   
   &--has-sidebar{
-    grid-row-gap: var(--space); 
+    // grid-row-gap: var(--space); 
     grid-template-areas: // set up areas to fill
       "menu"
       "main"

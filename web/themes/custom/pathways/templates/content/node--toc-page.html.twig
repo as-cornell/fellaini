@@ -21,7 +21,12 @@ Passes: has-sidebar to contentWrapper
 {% set asideLabelValue = drupal_token('node:title', {node: node}) %}
 {% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
 
-{# link values for the toc items #}
+{# 
+  - set up TOC nav
+  - link values for the toc items
+  - set sidebar_nav to the menu block
+#}
+
 {% set linkValues = [] %}
   {% for item in node.field_page_components_entity %}
     {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
@@ -29,7 +34,6 @@ Passes: has-sidebar to contentWrapper
 {% set sidebar_nav %}
   {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
 {% endset %}
-
 
 {# 
   - TOC sidebar has nav, and aside components if present
@@ -40,12 +44,10 @@ Passes: has-sidebar to contentWrapper
  
 {% set sidebar = true %}
 {% set sidebar_content %}
-  
   {% set sidebarNav = true %}
   {% if content.field_aside_components|render is not empty %}
     {{content.field_aside_components}}
   {% endif %}
-
 {% endset %}
 
 

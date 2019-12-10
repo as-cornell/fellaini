@@ -37,7 +37,6 @@ Descr:
     &--basic-page{
         background: pink;
         &.main--has-sidebar{
-            // background: blue;
         }
     }
     &--has-sidebar{
@@ -54,7 +53,6 @@ Descr:
         }
         .container{
             grid-area: content;
-            // grid-row: span 2;
         } 
         @include medium{
             grid-template-columns: 1fr 3fr;
@@ -62,39 +60,42 @@ Descr:
             grid-template-areas:
             "nav content"
             "sidebar content";
-            // #block-mainnavigation-2{
-            //     grid-area: nav;
-            // }
-            // nav{
-            //     grid-area: nav;
-            // }
-            // .sidebar{
-            //     grid-area: sidebar;
-            // }
             .container{
-                // grid-area: content;
                 grid-row: span 2;
             }   
         }
     }
-    &--has-aside{
-        @include baseGrid();
-        grid-template-columns: 1fr;
-        grid-template-rows: min-content 1fr;
-        grid-template-areas:
-        "title"
-        "content"
-        "aside";
+    // Article 
+    &--articlePage{
+        grid-template-columns: 200px auto 400px;
+        grid-template-rows: auto auto auto 1fr;
+        grid-template-areas: 
+            "pano pano pano"
+            "title title title"
+            "social content thumbnail"
+            "social content aside";
+        .pano{
+            grid-area: pano;
+            justify-self: center;
+        }
         .title{
             grid-area: title;
+            padding: 0 4rem;
+            text-align: center;
         }
-        .components--main{
-            grid-area:content;
+        .social{
+            grid-area: social;
+        }
+        .content{
+            grid-area: content;
+        }
+        .thumbnail{
+            grid-area: thumbnail;
         }
         aside{
             grid-area: aside;
         }
-  }
+    }
 }
 
 //if additional sidebar grid needs to be created, it will go here.

@@ -56,10 +56,10 @@
 
 $sites = array(
   'fellaini.local' => 'default',
-  'second.fellaini.local' => 'second',
-  'people.fellaini.local' => 'people',
-  '8c.fellaini.local' => '8c',
-  '8d.fellaini.local' => '8d',
+  'departments.fellaini.local' => 'departments',
+  'anthro.fellaini.local' => 'departments',
+  'history.fellaini.local' => 'departments',
+  'people.fellaini.local' => 'people'
 );
 
 if (!empty($_ENV['PLATFORM_ROUTES'])) {
@@ -84,5 +84,7 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 // specify your production domains.
 
 $sites['asd8.as.cornell.edu'] = 'default';
-$sites['second.asd8.as.cornell.edu'] = 'second';
+$sites['departments.asd8.as.cornell.edu'] = 'departments';
+$sites['anthro.asd8.as.cornell.edu'] = 'departments';
+$sites['history.asd8.as.cornell.edu'] = 'departments';
 $sites['people.asd8.as.cornell.edu'] = 'people';
