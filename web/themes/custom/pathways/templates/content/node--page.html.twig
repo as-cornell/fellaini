@@ -5,8 +5,6 @@
 
 Title: node--page.html.twig
 Descr: Sets up variables and content for _basic-page.twig
-Passes: has-aside to content container
-        has-sidebar to <main>
 
 --------------------------- */ 
 
@@ -19,27 +17,7 @@ Passes: has-aside to content container
 {% set main_element_modifiers = ['basic-page'] %}
 
 {# 
-    - Add aside to content_wrapper_modifiers if aside components are present
-#}
-
-{% if content.field_aside_components|render is not empty %}
-    {% set content_wrapper_modifiers = ['has-aside'] %}
-    {% set aside = true %}
-{% endif %}
-
-{# 
-    - need some way to see if there should be a sidebar
-    - Set sidebar_nav 
-    - ****** need to fix output for this look at main nav
-#}
-
-{# {% set sidebar_nav %}
-    {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
-{% endset %}
-
-{% set sidebarNav = true %} #}
-
-{# 
+    - set sidebar type
     - if sidebar != none turn on sidebar
     - set up sidebar_nav
     - add has-sideber to main_element_modifiers
@@ -49,7 +27,6 @@ Passes: has-aside to content container
 #}
 
 {% set sidebarType = node.field_sidebar_type.value %}
-{% set aside = false %}
 
 {% if sidebarType != 'none' %}
 
@@ -60,7 +37,7 @@ Passes: has-aside to content container
     {% set sidebarNav = true %}
 
     {# set sidebar content and classes #}
-    {% if content.field_sidebar_components|render is not empty %}
+    {% if node.field_sidebar_components.target_id %}
         {% set sidebar = true %}
         {% set main_element_modifiers = main_element_modifiers|merge(['has-sidebar']) %}
         {% set sidebar_content %}
@@ -74,16 +51,20 @@ Passes: has-aside to content container
         {% set sidebar_wrapper_base_class = 'sidebar' %}
         {% set sidebar_wrapper_modifiers = ['basic-page'] %}
     {% endif %}
+{% endif %}
 
-{# set aside to true, and add has-aside to main #}
+{# 
+    - set aside to false
+    - if aside_components set to ture, and add has-aside to main 
+#}
+
+{% set aside = false %}
+
 {% if node.field_aside_components.target_id %}
     {% set aside = true %}
     {% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
 {% endif %}
 
-
-
-{% endif %}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : label,
@@ -95,6 +76,5 @@ Passes: has-aside to content container
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers
-    
     }
 %}
