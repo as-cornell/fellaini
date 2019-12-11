@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.field_aside_components
     - field.field.node.page.field_page_components_entity
     - field.field.node.page.field_sidebar_components
+    - field.field.node.page.field_sidebar_type
     - node.type.page
   module:
     - entity_browser_entity_form
@@ -76,6 +77,12 @@ content:
         entity_browser_id: _none
     type: inline_entity_form_complex
     region: content
+  field_sidebar_type:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   path:
     type: path
     weight: 8
@@ -119,5 +126,6 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
 hidden: {  }

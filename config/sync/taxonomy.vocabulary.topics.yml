@@ -7,4 +7,4 @@ _core:
 name: 'Topics and Disciplines'
 vid: topics
 description: 'Categories to map nodes to top-level pages like Academics, Student Services, Research, etc.'
-weight: -9
+weight: -4

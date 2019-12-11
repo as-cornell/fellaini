@@ -17,6 +17,8 @@ dependencies:
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_disciplines
+    - field.field.node.article.field_related_functions
     - field.field.node.article.field_related_people
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -68,8 +70,9 @@ third_party_settings:
       region: content
     group_tags:
       children:
+        - field_related_disciplines
+        - field_related_functions
         - field_department_program
-        - field_topics_and_disciplines
         - field_tags
       parent_name: group_article
       weight: 14
@@ -195,6 +198,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -214,12 +218,13 @@ content:
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
   field_image:
     weight: 29
@@ -245,7 +250,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_newsletter_image:
-    weight: 30
+    weight: 31
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -280,8 +285,21 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_related_disciplines:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_related_functions:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   field_related_people:
     weight: 5
@@ -289,6 +307,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -302,21 +321,13 @@ content:
     region: content
   field_tags:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 21
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_topics_and_disciplines:
-    type: entity_reference_autocomplete
-    weight: 18
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
   path:
     type: path
@@ -360,7 +371,9 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden:
   body: true
+  field_topics_and_disciplines: true

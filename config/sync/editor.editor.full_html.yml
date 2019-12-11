@@ -38,6 +38,7 @@ settings:
           name: Media
           items:
             - Blockquote
+            - article_entity_embed
             - media_entity_embed
             - Table
             - HorizontalRule
