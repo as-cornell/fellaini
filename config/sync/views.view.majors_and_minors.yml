@@ -25,7 +25,6 @@ description: ''
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -148,6 +147,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         vid:
           id: vid
@@ -159,6 +160,9 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
       sorts:
         name:
           id: name
@@ -213,6 +217,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         vid:
           id: vid
@@ -224,6 +230,9 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
         field_level_target_id:
           id: field_level_target_id
           table: taxonomy_term__field_level
@@ -250,6 +259,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -649,6 +660,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         vid:
           id: vid
@@ -660,6 +673,9 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1098,6 +1114,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         vid:
           id: vid
@@ -1109,6 +1127,9 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
       filter_groups:
         operator: AND
         groups:

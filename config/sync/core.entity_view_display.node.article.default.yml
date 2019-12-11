@@ -16,6 +16,8 @@ dependencies:
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_disciplines
+    - field.field.node.article.field_related_functions
     - field.field.node.article.field_related_people
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -42,11 +44,12 @@ content:
     region: content
   field_aside_components:
     weight: 14
-    label: above
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_byline:
     type: string
@@ -82,12 +85,13 @@ content:
       format_type: m_d_y
     third_party_settings: {  }
   field_department_program:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 11
     region: content
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
   field_image:
     type: entity_reference_entity_view
@@ -124,13 +128,30 @@ content:
       view_mode: card_small
       link: false
     third_party_settings: {  }
-  field_related_people:
-    weight: 13
+  field_related_disciplines:
+    weight: 15
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_related_functions:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_people:
+    weight: 13
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_tags:
     type: entity_reference_label
@@ -141,12 +162,13 @@ content:
       link: true
     third_party_settings: {  }
   field_topics_and_disciplines:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 12
     region: content
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
 hidden:
   body: true

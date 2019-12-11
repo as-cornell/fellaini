@@ -1,6 +1,6 @@
 uuid: 5ab711d7-47c5-40b7-8bf1-ffab6b6d2b39
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -15,7 +15,7 @@ third_party_settings:
 id: mainnavigation_2
 theme: pathways
 region: content
-weight: -2
+weight: -3
 provider: null
 plugin: 'system_menu_block:main'
 settings:

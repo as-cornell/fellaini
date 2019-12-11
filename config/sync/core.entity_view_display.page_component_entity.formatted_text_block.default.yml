@@ -15,7 +15,7 @@ bundle: formatted_text_block
 mode: default
 content:
   field_formatted_text:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }

@@ -15,7 +15,7 @@ third_party_settings:
 id: mainnavigation
 theme: pathways
 region: header
-weight: -1
+weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:

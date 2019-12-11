@@ -6,8 +6,10 @@ dependencies:
     - field.field.node.page.field_aside_components
     - field.field.node.page.field_page_components_entity
     - field.field.node.page.field_sidebar_components
+    - field.field.node.page.field_sidebar_type
     - node.type.page
   module:
+    - options
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -42,6 +44,13 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_sidebar_type:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden:
   links: true

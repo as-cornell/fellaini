@@ -11,6 +11,7 @@ dependencies:
     - as_page_components.page_component_entity_type.related_articles
     - as_page_components.page_component_entity_type.small_text
     - as_page_components.page_component_entity_type.stat
+    - as_page_components.page_component_entity_type.stat_block
     - field.storage.node.field_aside_components
     - node.type.article
 id: node.article.field_aside_components
@@ -35,6 +36,7 @@ settings:
       related_articles: related_articles
       small_text: small_text
       stat: stat
+      stat_block: stat_block
     sort:
       field: _none
     auto_create: false

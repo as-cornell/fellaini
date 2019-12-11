@@ -16,7 +16,6 @@ description: ''
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -283,6 +282,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
       sorts: {  }
       header: {  }
@@ -370,6 +371,8 @@ display:
           id: status
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
           group: 1
         vid:
           id: vid
@@ -396,6 +399,8 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

@@ -15,18 +15,19 @@ mode: default
 content:
   field_photo_text_reference:
     weight: 1
-    label: above
+    label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_photo_text_wrapper_class:
     weight: 2
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    type: list_key
     region: content
   name:
     label: hidden
