@@ -32,9 +32,11 @@ Passes: has-sidebar to contentWrapper
     <div class="nav">
         {{ sidebar_nav }}
     </div>
+    {% if sidebarContent %}
     <div class="sidebar">
         {{sidebar_content}}
     </div>
+    {% endif %}
     {% if aside %}
         <aside>
             {{ aside_content }}

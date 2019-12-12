@@ -11,10 +11,16 @@ Passes: Images - pano and image
 
 #}
 
-{# Add main modifier #}
-{% set main_element_base_class = main_element_base_class | default('main') %}
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic, toc, has-sidebar
+ #}
 
-{% set main_element_modifiers = ['articlePage'] %}
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = main_element_base_class | default('page') %}
+{% set main_element_modifiers = ['article'] %}
+
 
 {# Content wrapper modifiers #}
 {% set content_wrapper_modifiers = ['article'] %}

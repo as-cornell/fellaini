@@ -11,29 +11,45 @@ Passes: has-sidebar to contentWrapper
 
 #}
 
-{# Add main modifier #}
-{% set main_element_modifiers = ['tocPage', 'has-sidebar'] %}
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic, toc, has-sidebar
+ #}
 
-{# Content wrapper modifiers #}
-{% set content_wrapper_modifiers = ['toc'] %}
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = main_element_base_class | default('page') %}
+{% set main_element_modifiers = ['toc', 'basic', 'has-sidebar'] %}
 
-{% set sidebar_wrapper_modifiers = ['toc'] %}
-{% set asideLabelValue = drupal_token('node:title', {node: node}) %}
-{% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
+
 
 {# 
   - set up TOC nav
   - link values for the toc items
   - set sidebar_nav to the menu block
 #}
-
+{% set asideLabelValue = drupal_token('node:title', {node: node}) %}
+{% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
 {% set linkValues = [] %}
   {% for item in node.field_page_components_entity %}
     {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
   {% endfor %}
+
 {% set sidebar_nav %}
   {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
 {% endset %}
+
+{# 
+    - set aside to false
+    - if aside_components set to ture, and add has-aside to page 
+#}
+
+{% set aside = false %}
+{% if node.field_aside_components.target_id %}
+	{% set aside = true %}
+	{% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
+{% endif %}
+
 
 {# 
   - TOC sidebar has nav, and aside components if present
@@ -41,14 +57,15 @@ Passes: has-sidebar to contentWrapper
   - set sidebar = true
   - add aside into sidebar if defined
  #}
- 
-{% set sidebar = true %}
-{% set sidebar_content %}
-  {% set sidebarNav = true %}
-  {% if content.field_aside_components|render is not empty %}
-    {{content.field_aside_components}}
-  {% endif %}
-{% endset %}
+
+
+{# If sidebarContent #}
+{# {% if node.field_sidebar_components.target_id %}
+	{% set sidebarContent = true %}
+{% endif %} #}
+
+
+
 
 
 {% include "@pages/toc-page/_toc-page.twig" with {
@@ -56,6 +73,8 @@ Passes: has-sidebar to contentWrapper
 
     main_content : content.field_page_components_entity,
     sidebar_content : sidebar_content,
+    aside_content : content.field_aside_components,
+
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers,
