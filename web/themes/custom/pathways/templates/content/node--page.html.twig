@@ -11,10 +11,14 @@ Descr: Sets up variables and content for _basic-page.twig
 #}
 
 
-{# Add main modifier #}
-{% set main_element_base_class = main_element_base_class | default('main') %}
-
-{% set main_element_modifiers = ['basic-page'] %}
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic
+ #}
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = main_element_base_class | default('page') %}
+{% set main_element_modifiers = ['basic'] %}
 
 {# 
     - set sidebar type
@@ -28,29 +32,18 @@ Descr: Sets up variables and content for _basic-page.twig
 
 {% set sidebarType = node.field_sidebar_type.value %}
 
-{% if sidebarType != 'none' %}
+{% if sidebarType != "none" %}
+    {# If sidebarContent #}
+    {% if node.field_sidebar_components.target_id %}
+        {% set sidebarContent = true %}
+    {% endif %}
 
+    {% set main_element_modifiers = main_element_modifiers|merge(['has-sidebar']) %}
+    
     {# Set sidebar_nav #}
     {% set sidebar_nav %}
-    {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+        {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
     {% endset %}
-    {% set sidebarNav = true %}
-
-    {# set sidebar content and classes #}
-    {% if node.field_sidebar_components.target_id %}
-        {% set sidebar = true %}
-        {% set main_element_modifiers = main_element_modifiers|merge(['has-sidebar']) %}
-        {% set sidebar_content %}
-            {{ content.field_sidebar_components }}
-        {% endset %}
-        {% if sidebarType == 'right' %}
-            {% set sidebar_wrapper_modifiers = ['right'] %}
-        {% elseif sidebarType == 'left' %}
-            {% set sidebar_wrapper_modifiers = ['left'] %}
-        {% endif %}
-        {% set sidebar_wrapper_base_class = 'sidebar' %}
-        {% set sidebar_wrapper_modifiers = ['basic-page'] %}
-    {% endif %}
 {% endif %}
 
 {# 
@@ -65,14 +58,14 @@ Descr: Sets up variables and content for _basic-page.twig
     {% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
 {% endif %}
 
-
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : label,
     main_element_modifiers : main_element_modifiers,
     
     main_content : content.field_page_components_entity,
     aside_content : content.field_aside_components,
-    sidebar_content : sidebar_content,
+    sidebar_content : content.field_sidebar_components,
+
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers
