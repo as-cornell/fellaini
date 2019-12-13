@@ -17,12 +17,12 @@ Descr: Sets up variables and content for _basic-page.twig
     - modifier basic
  #}
 {% set main_element_extra_classes = ['main'] %}
-{% set main_element_base_class = main_element_base_class | default('page') %}
-{% set main_element_modifiers = ['basic'] %}
+{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_modifiers = [''] %}
 
 {# 
     - set sidebar type
-    - if sidebar != none turn on sidebar
+    - if sidebar = none make base class 'basic'
     - set up sidebar_nav
     - add has-sideber to main_element_modifiers
     - set location of sidebar
@@ -32,20 +32,20 @@ Descr: Sets up variables and content for _basic-page.twig
 
 {% set sidebarType = node.field_sidebar_type.value %}
 
-{% if sidebarType != "none" %}
+{% if sidebarType == "none" %}
+    {% set main_element_base_class = 'basic' %}
+{% endif %}
     {# If sidebarContent #}
-    {% if node.field_sidebar_components.target_id %}
-        {% set sidebarContent = true %}
-    {% endif %}
-
-    {% set main_element_modifiers = main_element_modifiers|merge(['has-sidebar']) %}
-    
-    {# Set sidebar_nav #}
-    {% set sidebar_nav %}
-        {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
-    {% endset %}
+{% if node.field_sidebar_components.target_id %}
+    {% set sidebarContent = true %}
 {% endif %}
 
+
+
+{# Set sidebar_nav #}
+{% set sidebar_nav %}
+    {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+{% endset %}
 {# 
     - set aside to false
     - if aside_components set to ture, and add has-aside to main 

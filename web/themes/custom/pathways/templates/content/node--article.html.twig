@@ -18,16 +18,16 @@ Passes: Images - pano and image
  #}
 
 {% set main_element_extra_classes = ['main'] %}
-{% set main_element_base_class = main_element_base_class | default('page') %}
-{% set main_element_modifiers = ['article'] %}
+{% set main_element_base_class = main_element_base_class | default('article') %}
+{% set main_element_modifiers = [''] %}
 
 
-{# Content wrapper modifiers #}
-{% set content_wrapper_modifiers = ['article'] %}
+{# Content wrapper modifiers
+{% set content_wrapper_modifiers = ['article'] %} #}
 {# if pano add to content_wrapper_modifiers #}
 {% if field_pano_image_img.uri | image_style('full_content') %}
     {% set hasPano = true %}
-    {% set main_element_modifiers = main_element_modifiers|merge(['articlePano']) %}
+    {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
 {% endif %}
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
