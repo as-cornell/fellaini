@@ -70,4 +70,10 @@
  *   in different view modes.
  */
 #}
-{% include "@organisms/_node.twig" %}
+{% embed "@organisms/_node.twig" 
+    with {
+        pageTitle: label
+    }
+%}
+{% endembed %}
+
