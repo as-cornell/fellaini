@@ -1,0 +1,39 @@
+
+{# 
+
+/* -------------------------
+
+Title: node--landing-page.html.twig
+Descr: Sets up variables and content for _landing-page.twig
+
+--------------------------- */ 
+
+#}
+
+
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic
+    - turn off sidebarNav
+ #}
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = 'landingPage' %}
+{% set main_element_modifiers = [''] %}
+{# landing page has no sideber nav aside or sidebarcontent #}
+{% set sidebarNav = false %}
+{% set aside = false %}
+{% set sidebarContent = false %}
+
+
+
+{% include "@pages/basic-page/_basic-page.twig" with {
+    title : label,
+    main_element_modifiers : main_element_modifiers,
+    
+    main_content : content.field_landing_page_component_ent,
+
+    content_wrapper_modifiers : content_wrapper_modifiers,
+    main_content_modifiers : main_content_modifiers
+    }
+%}
