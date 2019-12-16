@@ -3,10 +3,7 @@
 /* -------------------------
 
 Title: _basic-page.twig
-Descr: defines content and blocks for _default.twig for contenttype basic page.
-Passes: has-sidebar to contentWrapper
-        sets sidebar class to sidebar--basic-page
-        sets aside_content to be placed in main content in default.twig
+Descr: defines content and blocks for _default.twig for contenttype basic page
 
 --------------------------- */ 
 
@@ -17,7 +14,8 @@ Passes: has-sidebar to contentWrapper
 
 
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
-    
+
+    {% if not is_front %}
     <div class="title">
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
@@ -26,6 +24,7 @@ Passes: has-sidebar to contentWrapper
             "heading_base_class" : "title"
         } %}
     </div>
+    {% endif %}
     <div class="content">
         {{main_content}}
     </div>
