@@ -15,15 +15,15 @@ Passes: has-sidebar to contentWrapper
     - extra class main
     - base class page
     - modifier basic, toc, has-sidebar
+    - turn on sidebarNav
  #}
 
 {% set main_element_extra_classes = ['main'] %}
-{% set main_element_base_class = main_element_base_class | default('basicSidebar') %}
+{% set main_element_base_class = 'basicSidebar' %}
 {% set main_element_modifiers = ['toc'] %}
+{# set defaults #}
 {% set sidebarNav = true %}
-
-
-
+{% set aside = false %}
 
 {# 
   - set up TOC nav
@@ -42,33 +42,14 @@ Passes: has-sidebar to contentWrapper
 {% endset %}
 
 {# 
-    - set aside to false
     - if aside_components set to ture, and add has-aside to page 
 #}
 
-{% set aside = false %}
+
 {% if node.field_aside_components.target_id %}
 	{% set aside = true %}
 	{% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
 {% endif %}
-
-
-{# 
-  - TOC sidebar has nav, and aside components if present
-  - if aside content set aside_content
-  - set sidebar = true
-  - add aside into sidebar if defined
- #}
-
-
-{# If sidebarContent #}
-{# {% if node.field_sidebar_components.target_id %}
-	{% set sidebarContent = true %}
-{% endif %} #}
-
-
-
-
 
 {% include "@pages/basic-page/_basic-page.twig" with {
 
