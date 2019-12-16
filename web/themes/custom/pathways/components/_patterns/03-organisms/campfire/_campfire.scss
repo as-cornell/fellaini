@@ -2,7 +2,10 @@
     @include baseGrid();
     grid-template-columns: 1fr;
     margin-bottom: var(--component-bottom-margin);
-    
+    > div{
+        display: flex;
+        flex-direction: column;
+    }
     // Medium Plus
     @include medium(){
         grid-template-columns: repeat(3, 1fr);
@@ -35,7 +38,6 @@
         // reset display on third column
         &__articles:nth-child(3n+3){
             grid-area: three;
-            display: block;
         }
         &__feature{
             grid-area: two;
