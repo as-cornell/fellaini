@@ -3,57 +3,44 @@
 /* -------------------------
 
 Title: _basic-page.twig
-Descr: defines content and blocks for _default.twig for contenttype basic page.
-Passes: has-sidebar to contentWrapper
-        sets sidebar class to sidebar--basic-page
-        sets aside_content to be placed in main content in default.twig
+Descr: defines content and blocks for _default.twig for contenttype basic page
 
 --------------------------- */ 
 
 #}
 
 
-{# sets sidebar wrapper classes, modifiers #}
-{% set sidebar_wrapper_base_class = sidebar_wrapper_base_class | default('sidebar') %}
-{% set sidebar_wrapper_modifiers = sidebar_wrapper_modifiers | default(['']) %}
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
-{# sets main content variables #}
-{% set main_content_modifiers = ['basic-page'] %}
 
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 
-{# {% extends "@pages/_page.twig" %} #}
-{% extends "@templates/_default.twig" %}
-
-{% block page_content %}
-        {# if not homepage #}
-        {# {% set sitename_tag = is_front ? 'h1' : 'div' %} #}
-        {% if not is_front %}
-
+    {% if not is_front %}
+    <div class="title">
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
             "heading" : title,
             "heading_modifiers" : ["margin"],
             "heading_base_class" : "title"
         } %}
-        {% endif %}
-    {{main_content}}
-{% endblock %}
-
-{# set in sidebar nav block to the conent of main navigation 2 #}
-{% block sidebar_nav %}
-    {{ sidebar_nav }}
-{% endblock %}
-
-
-
-{% block sidebar_content %}
-    <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
+    </div>
+    {% endif %}
+    <div class="content">
+        {{main_content}}
+    </div>
+    {% if sidebarNav != false %}
+    <div class="nav">
+        {{ sidebar_nav }}
+    </div>
+    {% endif %}
+    {% if sidebarContent %}
+    <div class="sidebar">
         {{sidebar_content}}
     </div>
-{% endblock %}
-
-
-{% block aside_content %}
-    {{ aside_content }}
-{% endblock %}
+    {% endif %}
+    {% if aside %}
+        <aside>
+            {{ aside_content }}
+        </aside>
+    {% endif %}
+</main>

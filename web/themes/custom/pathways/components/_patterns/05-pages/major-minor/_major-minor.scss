@@ -28,32 +28,33 @@
     .slice{
       margin-bottom: 0;
     }
+  .pano{
+  grid-area: pano;
+  }
+  .title{
+    // grid-area: title;     
+  }
+  .jellyBeans{
+    grid-area: jellyBeans;
+  }
+  .description{
+    grid-area: description;
+  }
+  .image{
+    grid-area: image;
+  }
+  .links{
+    grid-area: links;
+  }
+  .social{
+    grid-area: social;
+  }
+  .content{
+    grid-area: content;
+  }
 }
 
-.pano{
-  grid-area: pano;
-}
-.title{
-  grid-area: title;     
-}
-.jellyBeans{
-  grid-area: jellyBeans;
-}
-.description{
-  grid-area: description;
-}
-.image{
-  grid-area: image;
-}
-.links{
-  grid-area: links;
-}
-.social{
-  grid-area: social;
-}
-.content{
-  grid-area: content;
-}
+
 
 .grid > p,blockquote {
   grid-column: main ;
