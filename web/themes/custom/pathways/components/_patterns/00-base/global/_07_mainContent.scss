@@ -17,8 +17,8 @@ Descr:
 }
 
 // Basic
-.basic{
-    div{
+.basic, .landingPage{
+    > div{
         grid-column: 1 / -1;
     }
 }
@@ -124,54 +124,7 @@ Descr:
             // gird-template-columns: repeat(14, $max-column);
         }
     }
-    &--basic{
-        @include base12GridColumns();
-        div{
-            grid-column: 1 / -1;
-        }
-        &.page--has-sidebar{
-        background: pink;
-        grid-template-rows: auto auto 1fr;
-        grid-template-areas:
-        "nav"
-        "title"
-        "content";
-        .nav{
-            grid-area: nav;
-        }
-        .title{
-            grid-area: title;
-        }
-        .sidebar{
-            grid-area: sidebar;
-        }
-        .content{
-            grid-area: content;
-        } 
-        aside{
-            grid-area: aside;
-        }
-        grid-template-areas:
-        "nav"
-        "title"
-        "content"
-        "sidebar";
-        @include medium{
-            grid-template-areas:
-            "nav nav nav nav title title title title title title title title"
-            "nav nav nav nav content content content content content content content content"
-            "sidebar sidebar sidebar sidebar content content content content content content content content";
-            }
-        }
-        &.page--has-aside{
-            @include medium{
-                grid-template-areas:
-                "nav nav nav nav title title title title title title title title"
-                "nav nav nav nav content content content content content content aside aside"
-                "sidebar sidebar sidebar sidebar content content content content content content aside aside";
-            }
-        }
-    }
+   
     
    
     // ----- TOC

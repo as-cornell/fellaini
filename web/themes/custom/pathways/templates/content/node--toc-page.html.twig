@@ -20,6 +20,8 @@ Passes: has-sidebar to contentWrapper
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('basicSidebar') %}
 {% set main_element_modifiers = ['toc'] %}
+{% set sidebarNav = true %}
+
 
 
 
@@ -68,7 +70,8 @@ Passes: has-sidebar to contentWrapper
 
 
 
-{% include "@pages/toc-page/_toc-page.twig" with {
+{% include "@pages/basic-page/_basic-page.twig" with {
+
     title : label,
 
     main_content : content.field_page_components_entity,
