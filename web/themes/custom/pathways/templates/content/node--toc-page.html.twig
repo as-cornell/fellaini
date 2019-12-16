@@ -11,41 +11,54 @@ Passes: has-sidebar to contentWrapper
 
 #}
 
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic, toc, has-sidebar
+    - turn on sidebarNav
+ #}
 
-{# {% set main_content_modifiers = ['basic-page'] %} #}
-{% set content_wrapper_modifiers = ['has-sidebar', 'toc'] %}
-{% set sidebar_wrapper_modifiers = ['toc'] %}
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_modifiers = ['toc'] %}
+{# set defaults #}
+{% set sidebarNav = true %}
+{% set aside = false %}
+
+{# 
+  - set up TOC nav
+  - link values for the toc items
+  - set sidebar_nav to the menu block
+#}
 {% set asideLabelValue = drupal_token('node:title', {node: node}) %}
 {% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
-
-{# link values for the toc items #}
 {% set linkValues = [] %}
   {% for item in node.field_page_components_entity %}
     {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
   {% endfor %}
 
-
-{# set sidebar_nav = toc nav #}
 {% set sidebar_nav %}
   {{ drupal_block('toc_aside_block', {label: asideLabelValue, link_values:linkValues}) }}
 {% endset %}
-{% set sidebarNav = true %}
+
+{# 
+    - if aside_components set to ture, and add has-aside to page 
+#}
 
 
-{# set aside content #}
-{% set aside_content %}
-  {{ content.field_aside_components }}
-{% endset %}
+{% if node.field_aside_components.target_id %}
+	{% set aside = true %}
+	{% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
+{% endif %}
 
-{% set sidebar = true %}
+{% include "@pages/basic-page/_basic-page.twig" with {
 
-
-
-{% include "@pages/toc-page/_toc-page.twig" with {
     title : label,
 
     main_content : content.field_page_components_entity,
-    aside_content : aside_content,
+    sidebar_content : sidebar_content,
+    aside_content : content.field_aside_components,
+
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers,
