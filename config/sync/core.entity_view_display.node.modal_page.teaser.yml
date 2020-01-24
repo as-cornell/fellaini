@@ -1,0 +1,20 @@
+uuid: 66d54665-165b-46df-9a77-74b3f6fc51da
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.modal_page
+  module:
+    - user
+id: node.modal_page.teaser
+targetEntityType: node
+bundle: modal_page
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

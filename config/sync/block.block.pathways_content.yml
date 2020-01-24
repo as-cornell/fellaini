@@ -11,7 +11,11 @@ _core:
 id: pathways_content
 theme: pathways
 region: content
+<<<<<<< HEAD
 weight: -6
+=======
+weight: -5
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 provider: null
 plugin: system_main_block
 settings:

@@ -25,6 +25,10 @@ description: ''
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
+<<<<<<< HEAD
+=======
+core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -147,8 +151,11 @@ display:
           id: status
           expose:
             operator: ''
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         vid:
           id: vid
@@ -160,9 +167,12 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       sorts:
         name:
           id: name
@@ -217,8 +227,11 @@ display:
           id: status
           expose:
             operator: ''
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         vid:
           id: vid
@@ -230,9 +243,12 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
         field_level_target_id:
           id: field_level_target_id
           table: taxonomy_term__field_level
@@ -259,8 +275,11 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -660,8 +679,11 @@ display:
           id: status
           expose:
             operator: ''
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         vid:
           id: vid
@@ -673,9 +695,12 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       filter_groups:
         operator: AND
         groups:
@@ -1114,8 +1139,11 @@ display:
           id: status
           expose:
             operator: ''
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         vid:
           id: vid
@@ -1127,9 +1155,12 @@ display:
           entity_field: vid
           plugin_id: bundle
           group: 1
+<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       filter_groups:
         operator: AND
         groups:

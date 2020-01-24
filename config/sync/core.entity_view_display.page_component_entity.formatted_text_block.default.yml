@@ -15,7 +15,11 @@ bundle: formatted_text_block
 mode: default
 content:
   field_formatted_text:
+<<<<<<< HEAD
     weight: 1
+=======
+    weight: 2
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     label: hidden
     settings: {  }
     third_party_settings: {  }

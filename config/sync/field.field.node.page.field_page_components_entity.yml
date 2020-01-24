@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+<<<<<<< HEAD
     - as_page_components.page_component_entity_type.course_block
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - as_page_components.page_component_entity_type.events_block
     - as_page_components.page_component_entity_type.formatted_text_block
     - as_page_components.page_component_entity_type.image_figure
@@ -11,9 +14,13 @@ dependencies:
     - as_page_components.page_component_entity_type.link_block
     - as_page_components.page_component_entity_type.list_block
     - as_page_components.page_component_entity_type.photo_text_block
+<<<<<<< HEAD
     - as_page_components.page_component_entity_type.quote_block
     - as_page_components.page_component_entity_type.stat_block
     - as_page_components.page_component_entity_type.toc_block
+=======
+    - as_page_components.page_component_entity_type.stat_block
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - as_page_components.page_component_entity_type.video_figure
     - field.storage.node.field_page_components_entity
     - node.type.page
@@ -33,7 +40,10 @@ settings:
   handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
+<<<<<<< HEAD
       course_block: course_block
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       events_block: events_block
       formatted_text_block: formatted_text_block
       image_figure: image_figure
@@ -41,9 +51,13 @@ settings:
       link_block: link_block
       list_block: list_block
       photo_text_block: photo_text_block
+<<<<<<< HEAD
       quote_block: quote_block
       stat_block: stat_block
       toc_block: toc_block
+=======
+      stat_block: stat_block
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       video_figure: video_figure
     sort:
       field: _none
