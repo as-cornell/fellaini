@@ -1,0 +1,19 @@
+uuid: fdf736a3-5303-4989-8cad-920506609940
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_video_embed_code
+field_name: field_video_embed_code
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

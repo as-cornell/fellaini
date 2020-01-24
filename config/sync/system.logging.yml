@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 error_level: hide
+=======
+error_level: verbose
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 _core:
   default_config_hash: u3-njszl92FaxjrCMiq0yDcjAfcdx72w1zT1O9dx6aA

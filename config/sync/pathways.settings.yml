@@ -5,7 +5,11 @@ features:
   favicon: 1
 logo:
   use_default: 0
+<<<<<<< HEAD
   path: themes/custom/pathways/images/as-logo-trans-600.png
+=======
+  path: 'public://as-logo-trans-600.png'
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 favicon:
   use_default: 0
   path: 'public://favicon.ico'

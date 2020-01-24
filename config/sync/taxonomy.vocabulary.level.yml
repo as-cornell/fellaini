@@ -5,4 +5,8 @@ dependencies: {  }
 name: Level
 vid: level
 description: 'Used for sorting Majors Minors Gradfields'
+<<<<<<< HEAD
 weight: -6
+=======
+weight: 0
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6

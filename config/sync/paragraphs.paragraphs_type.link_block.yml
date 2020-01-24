@@ -1,0 +1,9 @@
+uuid: 4abc8bae-8129-4be0-aa42-25e8662b037c
+langcode: en
+status: true
+dependencies: {  }
+id: link_block
+label: 'Link Block'
+icon_uuid: null
+description: 'primarily used for horizontal link slices'
+behavior_plugins: {  }

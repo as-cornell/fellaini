@@ -1,4 +1,3 @@
-git pull platform master
 platform mount:download --mount=web/sites/default/files --target=web/sites/default/files -y
 platform db:dump --relationship first -y
 drush @drupalvm.fellaini sql-drop -y

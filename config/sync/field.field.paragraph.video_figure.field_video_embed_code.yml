@@ -1,0 +1,19 @@
+uuid: e636c169-29f4-4f10-8c00-63c02694100a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_embed_code
+    - paragraphs.paragraphs_type.video_figure
+id: paragraph.video_figure.field_video_embed_code
+field_name: field_video_embed_code
+entity_type: paragraph
+bundle: video_figure
+label: 'Video embed code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

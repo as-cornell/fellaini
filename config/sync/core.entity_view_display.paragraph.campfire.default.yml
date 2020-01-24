@@ -1,0 +1,53 @@
+uuid: c5bc50b4-ed1a-466f-91bc-c4ce205bfeee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.campfire.field_campfire_center
+    - field.field.paragraph.campfire.field_related_articles
+    - field.field.paragraph.campfire.field_related_articles_2
+    - field.field.paragraph.campfire.field_stat_1
+    - paragraphs.paragraphs_type.campfire
+  module:
+    - entity_reference_revisions
+id: paragraph.campfire.default
+targetEntityType: paragraph
+bundle: campfire
+mode: default
+content:
+  field_campfire_center:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_related_articles:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_related_articles_2:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_stat_1:
+    weight: 4
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

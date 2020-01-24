@@ -13,6 +13,10 @@ description: ''
 tag: ''
 base_table: page_component_entity_field_data
 base_field: nid
+<<<<<<< HEAD
+=======
+core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -151,16 +155,22 @@ display:
           entity_type: page_component_entity
           entity_field: type
           plugin_id: bundle
+<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       sorts: {  }
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
+<<<<<<< HEAD
       display_extenders: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     cache_metadata:
       max-age: -1
       contexts:

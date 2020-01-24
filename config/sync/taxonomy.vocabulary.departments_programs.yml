@@ -7,4 +7,8 @@ _core:
 name: 'Departments and Programs'
 vid: departments_programs
 description: 'Departments and Programs in the College of Arts & Sciences'
+<<<<<<< HEAD
 weight: -9
+=======
+weight: 0
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
