@@ -14,6 +14,10 @@ description: 'Recent log messages'
 tag: ''
 base_table: watchdog
 base_field: wid
+<<<<<<< HEAD
+=======
+core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -584,8 +588,11 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -625,8 +632,11 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''

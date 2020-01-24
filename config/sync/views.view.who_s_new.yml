@@ -13,6 +13,10 @@ description: 'Shows a list of the newest user accounts on the site.'
 tag: default
 base_table: users_field_data
 base_field: uid
+<<<<<<< HEAD
+=======
+core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -97,8 +101,11 @@ display:
           id: status
           expose:
             operator: '0'
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
           plugin_id: boolean
           entity_type: user
@@ -130,8 +137,11 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''

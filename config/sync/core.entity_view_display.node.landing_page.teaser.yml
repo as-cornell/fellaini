@@ -5,6 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing_page.field_landing_page_component_ent
+<<<<<<< HEAD
+=======
+    - field.field.node.landing_page.field_landing_page_components
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - field.field.node.landing_page.field_pano_image
     - node.type.landing_page
   module:
@@ -21,4 +25,8 @@ content:
     region: content
 hidden:
   field_landing_page_component_ent: true
+<<<<<<< HEAD
+=======
+  field_landing_page_components: true
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   field_pano_image: true

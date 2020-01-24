@@ -9,7 +9,11 @@ _core:
 id: pathways_local_tasks
 theme: pathways
 region: content
+<<<<<<< HEAD
 weight: -4
+=======
+weight: -3
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 provider: null
 plugin: local_tasks_block
 settings:

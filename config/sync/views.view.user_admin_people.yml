@@ -13,6 +13,10 @@ description: 'Find and manage people interacting with your site.'
 tag: default
 base_table: users_field_data
 base_field: uid
+<<<<<<< HEAD
+=======
+core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -603,8 +607,11 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -646,8 +653,11 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: true
           group_info:
             label: Status
@@ -697,8 +707,11 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -739,8 +752,11 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -778,8 +794,11 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -821,8 +840,11 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''

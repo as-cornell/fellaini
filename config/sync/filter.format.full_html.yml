@@ -15,31 +15,51 @@ filters:
     id: filter_align
     provider: filter
     status: true
+<<<<<<< HEAD
     weight: -50
+=======
+    weight: 8
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
+<<<<<<< HEAD
     weight: -49
+=======
+    weight: 9
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: true
+<<<<<<< HEAD
     weight: -48
+=======
+    weight: 10
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: true
+<<<<<<< HEAD
     weight: -46
+=======
+    weight: 11
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     settings: {  }
   filter_html:
     id: filter_html
     provider: filter
     status: false
+<<<<<<< HEAD
     weight: -45
+=======
+    weight: -10
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     settings:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
       filter_html_help: true
@@ -48,6 +68,7 @@ filters:
     id: entity_embed
     provider: entity_embed
     status: true
+<<<<<<< HEAD
     weight: -47
     settings: {  }
   filter_autop:
@@ -75,3 +96,7 @@ filters:
     weight: -42
     settings:
       filter_url_length: 72
+=======
+    weight: 0
+    settings: {  }
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
