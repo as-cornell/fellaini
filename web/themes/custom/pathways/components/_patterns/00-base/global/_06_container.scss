@@ -37,11 +37,6 @@ Descr:
   }
   
   &--has-sidebar{
-    // grid-row-gap: var(--space); 
-    // grid-template-areas: // set up areas to fill
-    //   "menu"
-    //   "main"
-    //   "sidebar";
     .toc-menu,.sidebar-nav{
       grid-area: menu;
     }
