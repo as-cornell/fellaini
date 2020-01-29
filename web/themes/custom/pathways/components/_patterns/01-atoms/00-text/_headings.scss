@@ -1,7 +1,11 @@
-//
-// Generic header styles:
-// All arguments are optional. If not defined, the defaults below will be used
-//
+/* -------------------------
+
+Title: headings.
+Descr: 
+    Sets basic styles for h1-h4
+
+--------------------------- */
+
 
 h1,h2,h3,h4{
   font-family: $font-sans;
@@ -44,28 +48,5 @@ h6 {
 .sidebar{
   h2 {
     font-size: calc(1.5 * var(--base-font-size));
-  }
-
-  // h3 {
-  //   font-size: calc(1.25 * var(--base-font-size));
-  // }
-}
-
-@mixin heading-xl($font-family: $font-heading, $font-size: 2rem, $line-height: 1.4, $color: inherit, $color-link: inherit, $color-link-hover: inherit, $font-weight: 700, $margin: 0 0 0.5em) {
-  color: #{$color};
-  font-family: #{$font-family};
-  font-weight: #{$font-weight};
-  font-style: normal;
-  font-size: #{$font-size};
-  line-height: #{$line-height};
-  margin: #{$margin};
-  width: auto;
-
-  &__link {
-    color: $color-link;
-
-    &:hover {
-      color: $color-link-hover;
-    }
   }
 }

@@ -11,15 +11,13 @@ Descr:
 html{
   font-size: var(--base-font-size);
 }
-
 body {
   @include baseFont();
+  overflow-x: hidden;
 }
-
 p{
-  @include baseMargin($margin-direction: margin-bottom, $margin-width: 1em);
+  margin: 0 0 1em;
 }
-
 .blockquote {
   font-style: italic;
   border-left: solid 3px var(--gray-lt);
@@ -32,12 +30,8 @@ p{
   border-width: 1px 0 0;
   color: currentColor;
 }
-
-
 /*
-
   Intros
-
 */
 .intro{
   font-size: 1.5rem;

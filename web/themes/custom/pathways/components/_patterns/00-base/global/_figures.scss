@@ -12,34 +12,31 @@
 
 
 figure{
-    display: inline-block;
-    @include baseBorder();
-    @include baseComponentMargin($m-top: 0, $m-right: 0, $m-bottom: (5 * $quark), $m-left: 0);
-    // &.pullLeft, &.pullRight{
-    //     width: calc(100% + 3rem); //100% + the value of the pull left or right
-    // }
+  display: inline-block;
+  @include baseBorder();
+  margin: 1rem 0;
+  // &.pullLeft, &.pullRight{
+  //     width: calc(100% + 3rem); //100% + the value of the pull left or right
+  // }
 }
 
 .figure{
-    &--pano{
-        margin: 0;
-    }
-    &--image{
-        //max-width: $quark * 100;
-        display: table;
-        @include baseBorder(border-no-bottom);
-        figcaption{
-            display: table-caption;
-            caption-side: bottom;
-            @include baseBorder(border-no-top);
-        }
-    }
-    &--video{
-        display: block;
-    }
+  border-radius: var(--border-radius);
+  &--pano{
+    margin: 0;
+  }
+  &--image{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+  }
+  &--video{
+    display: block;
+  }
 }
 
 figcaption{
-    @include baseFont($family: $font-serif, $size: (5 * $quark));
-    padding: (5 * $quark);
+  font-weight: var(--light);
+  font-size: var(--medium-font-size);
+  padding: 1rem;
 }

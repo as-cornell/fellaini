@@ -110,7 +110,13 @@ $near-white: #fbfbfb; // depricate
     --font-curly: "Alisha";
 
     // font size
-    --base-font-size: 24px;
+    --base-font-size: 20px;
+    @include large{
+      --base-font-size: 24px;
+    }
+    
+    --medium-font-size: 20px;
+    --small-font-size: 16px;
     --sidebar-font-size: 20px;
     --main-font-size: 28px;
     --font-size--huge: 60px;
@@ -125,7 +131,7 @@ $near-white: #fbfbfb; // depricate
     // border-variables
 
     --border-width: 1px;
-    --border-color: var(--gray-lightest);
+    --border-color: var(--gray-light);
     --border-radius: 2px;
 
     // spacing elements
@@ -151,7 +157,7 @@ $near-white: #fbfbfb; // depricate
     // Base grid variables
 
     --auto-grid-min-size: calc(10 * var(--space));
-    --base-grid-gap: var(--space);
+    --grid-gap: var(--mainGutter);
 
     --base-grid-column: 84px;
 

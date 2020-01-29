@@ -1,15 +1,13 @@
-@mixin img {
+/* -------------------------
+
+Title: image
+Descr: 
+    Most basic universal image styles
+
+--------------------------- */
+img,
+picture {
   display: block;
   height: auto;
   max-width: 100%;
-}
-
-img,
-picture {
-  @include img;
-}
-
-
-.logo{
-  justify-self: center;
 }

@@ -8,62 +8,64 @@ Descr:
 
 
 .main{
-    // base page main conent grids
-    max-width: var(--xl);
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 2rem;
+  // base page main conent grids
+  max-width: var(--xl);
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 2rem;
+  padding: 0 1rem;
+  @include medium{
     @include base12GridColumns();
+  } 
 }
-
 // Basic
 .basic, .landingPage{
-    > div{
-        grid-column: 1 / -1;
-    }
+  > div{
+    grid-column: 1 / -1;
+  }
 }
 // Basic sidebar
 .basicSidebar{
-    background: pink;
-    grid-template-rows: auto auto 1fr;
-    grid-template-areas:
+  background: pink;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
     "nav"
     "title"
     "content";
-    .nav{
-        grid-area: nav;
-    }
-    .title{
-        grid-area: title;
-    }
-    .sidebar{
-        grid-area: sidebar;
-    }
-    .content{
-        grid-area: content;
-    } 
-    aside{
-        grid-area: aside;
-    }
-    grid-template-areas:
+  .nav{
+    grid-area: nav;
+  }
+  .title{
+    grid-area: title;
+  }
+  .sidebar{
+    grid-area: sidebar;
+  }
+  .content{
+    grid-area: content;
+  } 
+  aside{
+    grid-area: aside;
+  }
+  grid-template-areas:
     "nav"
     "title"
     "content"
     "sidebar";
+  @include medium{
+    grid-template-areas:
+      "nav nav nav nav title title title title title title title title"
+      "nav nav nav nav content content content content content content content content"
+      "sidebar sidebar sidebar sidebar content content content content content content content content";
+  }
+  &--has-aside{
     @include medium{
-        grid-template-areas:
+      grid-template-areas:
         "nav nav nav nav title title title title title title title title"
-        "nav nav nav nav content content content content content content content content"
-        "sidebar sidebar sidebar sidebar content content content content content content content content";
+        "nav nav nav nav content content content content content content aside aside"
+        "sidebar sidebar sidebar sidebar content content content content content content aside aside";
     }
-    &--has-aside{
-        @include medium{
-            grid-template-areas:
-            "nav nav nav nav title title title title title title title title"
-            "nav nav nav nav content content content content content content aside aside"
-            "sidebar sidebar sidebar sidebar content content content content content content aside aside";
-        }
-    }
+  }
 }
 // Article
 .article{
@@ -73,71 +75,67 @@ Descr:
         ". title title title title title thumbnail thumbnail thumbnail thumbnail thumbnail ."
         "social social content content content content content content content aside aside aside";
     .title{
-        grid-area: title;
-        align-self: center;
+      grid-area: title;
+      align-self: center;
     }
     .social{
-        grid-area: social;
+      grid-area: social;
     }
     .content{
-        grid-area: content;
+      grid-area: content;
     }
     .thumbnail{
-        grid-area: thumbnail;
+      grid-area: thumbnail;
     }
     aside{
-        grid-area: aside;
+      grid-area: aside;
     }
     &--pano{
-        grid-template-rows: auto auto auto 1fr;
-        grid-template-areas: 
-            ". pano pano pano pano pano pano pano pano pano pano ."
-            ". . title title title title title title title title . ."
-            "social social content content content content content content content thumbnail thumbnail thumbnail"
-            "social social content content content content content content content aside aside aside";
-        .pano{
-            grid-area: pano;
-            justify-self: center;
-        }
-        .title{
-            text-align: center;
-        }
+      grid-template-rows: auto auto auto 1fr;
+      grid-template-areas: 
+        ". pano pano pano pano pano pano pano pano pano pano ."
+        ". . title title title title title title title title . ."
+        "social social content content content content content content content thumbnail thumbnail thumbnail"
+        "social social content content content content content content content aside aside aside";
+      .pano{
+        grid-area: pano;
+        justify-self: center;
+      }
+      .title{
+        text-align: center;
+      }
     }
 }
 
 .page{
-    &--landing-page{
-        @include medium{
-            // grid-template-columns: repeat(12, 1fr);
-            // grid-template-areas:
-            // "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
-            // "content content content content content content content content content content content content";
-        }
-        @include large{
-            
-            // grid-template-columns: repeat(14, 1fr);
-            // grid-template-areas:
-            //     "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
-            //     "content content content content content content content content content content content content content content";
-        }
-        @include xl{
-            // gird-template-columns: repeat(14, $max-column);
-        }
+  &--landing-page{
+    @include medium{
+      // grid-template-columns: repeat(12, 1fr);
+      // grid-template-areas:
+      // "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
+      // "content content content content content content content content content content content content";
     }
-   
-    
-   
-    // ----- TOC
-    &--toc{
-        &.page--has-aside{
-            @include medium{
-                grid-template-areas:
-                "nav nav nav nav title title title title title title title title"
-                "nav nav nav nav content content content content content content content content"
-                "aside aside aside aside content content content content content content content content";
-            }
-        }
+    @include large{
+      // grid-template-columns: repeat(14, 1fr);
+      // grid-template-areas:
+      //     "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
+      //     "content content content content content content content content content content content content content content";
     }
+    @include xl{
+      // gird-template-columns: repeat(14, $max-column);
+    }
+  }
+  // ----- TOC
+  &--toc{
+    &.page--has-aside{
+      @include medium{
+        grid-template-areas:
+          "nav nav nav nav title title title title title title title title"
+          "nav nav nav nav content content content content content content content content"
+          "aside aside aside aside content content content content content content content content";
+      }
+    }
+  }
 }
 
 
@@ -145,11 +143,10 @@ Descr:
 
 // sections of a basic page
 .page-title{
-    grid-area: page-title;
-    display: block;
+  grid-area: page-title;
+  display: block;
 }
-
 .main-content{
-    grid-area: content;
+  grid-area: content;
 }
 
