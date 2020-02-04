@@ -85,7 +85,8 @@
         "drupal/slick_views": "^2.0",
         "laminas/laminas-feed": "^2.12",
         "psr/container": "^1.0",
-        "drupal/simplify": "^1.1"
+        "drupal/simplify": "^1.1",
+        "drupal/entity_clone": "^1.0"
 
 
     },
