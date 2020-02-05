@@ -86,7 +86,8 @@
         "laminas/laminas-feed": "^2.12",
         "psr/container": "^1.0",
         "drupal/simplify": "^1.1",
-        "drupal/entity_clone": "^1.0"
+        "drupal/entity_clone": "^1.0",
+        "drupal/schema_metatag": "^1.4"
 
 
     },
