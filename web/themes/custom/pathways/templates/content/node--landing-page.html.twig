@@ -4,7 +4,9 @@
 /* -------------------------
 
 Title: node--landing-page.html.twig
-Descr: Sets up variables and content for _landing-page.twig
+Descr: Sets up variables and content for _basic-page.twig 
+        landing pages do not have sidebars or asides.
+        they do have campfires and panos.
 
 --------------------------- */ 
 
@@ -25,12 +27,27 @@ Descr: Sets up variables and content for _landing-page.twig
 {% set aside = false %}
 {% set sidebarContent = false %}
 
+{# If pano image #}
+{% if node.field_pano_image.target_id %}
+	{% set panoImage = true %}
+  {% set main_element_modifiers = main_element_modifiers|merge(['has-pano']) %}
+  {% set pano_img_src = field_pano_image_img.uri | image_style('full_content') %}
+  {% set pano_img_alt = field_pano_image_img.alt %}
+  {% set pano_img_caption = field_pano_image_img.caption %}
+  {% set pano_img_credit = field_pano_image_img.credit %}
+{% endif %}
+
 
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : label,
     main_element_modifiers : main_element_modifiers,
     
+    pano_img_src : pano_img_src,
+    pano_img_alt : pano_img_alt,
+    pano_img_caption : pano_img_caption,
+    pano_img_credit : pano_img_credit,
+
     main_content : content.field_landing_page_component_ent,
 
     content_wrapper_modifiers : content_wrapper_modifiers,
