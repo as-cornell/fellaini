@@ -36,7 +36,7 @@
  * @ingroup themeable
  */
 #}
-{# {{kint()}} #}
+{{kint(img)}}
 
 {% include "@atoms/04-images/figure.twig" with {
     "img_src" : img.uri | image_style('full_content'),

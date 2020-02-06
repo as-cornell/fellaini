@@ -5,8 +5,8 @@ Descr: sets any styles for page components in general and in different locations
 
 --------------------------- */ 
 .components--landing-page{
-    div[class*="--pageComponent"]{
-        margin-bottom: calc(4 * var(--component-bottom-margin));
-    }
+  div[class*="--pageComponent"]{
+    margin-bottom: calc(4 * var(--component-bottom-margin));
+  }
 }
 
