@@ -8,7 +8,11 @@
     Article does not use default because of fancy laouts
  #}
 
+{% set isTitle = true %}
+
+
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+
     {% if hasPano %}
         <div class="pano">
             {% include "@atoms/04-images/figure.twig" with {
@@ -17,7 +21,8 @@
                 "img_alt": article_pano_img_alt,
                 "img_caption" : article_pano_img_caption,
                 "img_credit" : article_pano_img_credit,
-                "figure_modifiers" : ['pano','image']
+                "figure_modifiers" : ['pano','image'],
+                
             } %}
         </div>
     {% endif %}
