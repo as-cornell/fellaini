@@ -11,50 +11,16 @@
 {% set modifiers = modifiers | default(['']) %}
 {% set classes = classes | default(['']) %}
 
-
-{% if pl %}
-    <div {{ bem('block', (modifiers)) }}>
-        {% include "@atoms/00-text/_heading.twig" with {
-            "heading_level" : 2,
-            "heading" : title,
-            "heading_modifiers" : ["margin"]
-        } %}
-        {% include "@atoms/04-images/figure.twig" with {
-            "img_src" : image,
-            "img_alt" : img_alt
-        } %}
-        {{text}}
-        {% if link %}
-            {% include "@atoms/01-links/link.twig" with {
-                "link_content" : link_text,
-                "link_url" : link_url
-            } %}
-        {% endif %}
-    </div>
-{% else %}
-    <div {{ bem(base_class, (modifiers),'', classes) }}>
-        <div {{ bem('image','', base_class) }}>
-            {% include "@atoms/04-images/figure.twig" with {
-                "img_src" : img_src,
-                "img_alt" : img_alt,
-                "img_caption" : img_caption,
-                "img_credit" : img_credit
-            } %}
-        </div>
-        <div {{ bem('text','', base_class) }}>
-            {% include "@atoms/00-text/_heading.twig" with {
-                "heading_level" : 2,
-                "heading" : title,
-                "heading_modifiers" : ["margin"]
-            } %}
-            {{text}}
-            {% if link %}
-                {% include "@atoms/01-links/link.twig" with {
-                    "link_content" : link_text,
-                    "link_url" : link_url
-                } %}
-            {% endif %}
-        </div>
-
-    </div>
-{% endif %}
+<div {{ bem(base_class, (modifiers),'', classes) }}>
+  <div {{ bem('image','', base_class) }}>
+    {% include "@atoms/04-images/figure.twig" with {
+    "img_src" : img_src,
+    "img_alt" : img_alt,
+    "img_caption" : img_caption,
+    "img_credit" : img_credit
+    } %}
+  </div>
+  <div {{ bem('text','', base_class) }}>
+    {{text}}
+  </div>
+</div>

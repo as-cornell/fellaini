@@ -59,7 +59,6 @@ $sites = array(
   'departments.fellaini.local' => 'departments',
   'anthro.fellaini.local' => 'departments',
   'history.fellaini.local' => 'departments',
-
   'people.fellaini.local' => 'people'
 );
 

@@ -30,7 +30,7 @@ Variations:
 }
 
 .card__label {
-  @include no-bottom;
+  margin-bottom: 0;
   color: var(--gray-dark);
 }
 
@@ -53,7 +53,7 @@ Variations:
   @include baseGrid();
   grid-template-columns: $max-column 1fr;
   .card__title{
-    @include baseFont($size: (6 * $quark), $weight: $regular, $line-height: (7 * $quark));
+    @include baseFont($size: var(--medium-font-size), $weight: var(--regular), $line-height: 1.4);
   }
   .card__label, .card__byline{
     display: none;
@@ -85,19 +85,19 @@ Variations:
   }
   .card__label{
     grid-area: label;
-    @include baseFont($family: $font-serif, $size: 5 * $quark);
+    @include baseFont($family: var(--font-serif), $size: var(--medium-font-size));
   }
   .card__date{
     grid-area: date;
     text-align: right;
-    @include fontSize(4);
+    font-size: var(--small-font-size);
   }
   .card__byline{
     grid-area: byline;
-    @include fontSize(4);
+    font-size: var(--small-font-size);
   }
   &.card--small{
-    grid-template-columns: 180px 1fr;
+    // grid-template-columns: 180px 1fr;
     border: none;
     margin-bottom: 2rem;
     .card__copy{
@@ -111,7 +111,7 @@ Variations:
     .card__title{
       grid-area: title;
       margin: 0;
-      @include baseFont($size: 20px, $weight: $semi, $line-height: 1.4em)
+      @include baseFont($size: var(--medium-font-size), $weight: var(--semi), $line-height: 1.4em)
     }
     .label, .byline{
       display: none;
@@ -127,7 +127,7 @@ Variations:
   }
 }
 
-// Card Feature -- Campfire center big ole'card
+// Card Feature -- Campfire center big ole'card will be changing
 
 .card--feature{
   @include baseGrid($g-gap: 0px);
@@ -171,19 +171,19 @@ Variations:
   }
   .card__label{
     grid-area: label;
-    @include baseFont($family: $font-serif);
-    @include fontSize(5);
+    @include baseFont($family: var(--font-serif));
+    font-size: var(--medium-font-size);
     margin: (5 * $quark) 1rem;  
   }
   .card__date{
     grid-area: dateline;
     text-align: right;
-    @include fontSize(4);
-    margin: (5 * $quark) 1rem;
+    font-size: var(--small-font-size);
+    margin: 20px 1rem;
   }
   .card__byline{
     grid-area: byline;
-    @include fontSize(4);
+    font-size: var(--small-font-size);
     margin: 0 1rem 1rem;
   }
 }
@@ -199,11 +199,11 @@ Variations:
     display: none; // really never want this to show up even for a11y
   }
   .card__label{
-    @include baseFont($size: 12 * $quark, $weight: $heavy);
-    @include baseBorder($bor-direction: border-bottom, $bor-width: $quark, $bor-color: $green);
+    @include baseFont($size: 2rem, $weight: var(--heavy));
+    border-bottom: solid 4px var(--green);
   }
   .card__body{
-    font-weight: $semi;
+    font-weight: var(--semi);
   }
 }
 
