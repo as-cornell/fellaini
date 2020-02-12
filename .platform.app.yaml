@@ -168,10 +168,6 @@ mounts:
 hooks:
     build: |
       curl -sS https://platform.sh/cli/installer | php
-      set -e
-      cd web/themes/custom/pathways
-      npm install
-      npm start
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
       set -e
@@ -179,8 +175,6 @@ hooks:
       cd web
       drush -y cache-rebuild
       drush -y updatedb
-      drush -y config-import
-      drush -y entup
 
 # The configuration of scheduled execution.
 crons:
