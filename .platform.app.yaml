@@ -120,29 +120,6 @@ web:
                 '^/sites/default/files/(css|js)':
                     expires: 2w
 
-        '/styleguide':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/pathways/pattern-lab/public'
-            index:
-                - index.html
-            # Do not execute PHP scripts.
-            scripts: false
-        '/dist':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/pathways/dist'
-            scripts: false
-        '/pattern-lab':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/pathways/pattern-lab'
-            scripts: false
-        '/fonts':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/pathways/fonts'
-            scripts: false
 
 
 
