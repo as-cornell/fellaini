@@ -1,0 +1,21 @@
+uuid: f661d5e4-6aa2-4ef3-855a-2482049888ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.figure_image
+    - field.storage.page_component_entity.field_component_alignment
+  module:
+    - options
+id: page_component_entity.figure_image.field_component_alignment
+field_name: field_component_alignment
+entity_type: page_component_entity
+bundle: figure_image
+label: 'Component Alignment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,9 +1,0 @@
-uuid: a601c16d-265a-4f0e-8dce-cddda2e74330
-langcode: en
-status: true
-dependencies: {  }
-id: campfire
-label: Campfire
-icon_uuid: null
-description: 'Builds main campfire on A&S homepage'
-behavior_plugins: {  }
