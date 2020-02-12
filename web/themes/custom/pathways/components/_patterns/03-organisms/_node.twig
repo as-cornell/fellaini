@@ -81,8 +81,7 @@
     {% if not is_front %}
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
-            "heading" : title,
-            "heading_modifiers" : ["margin"],
+            "heading" : pageTitle,
             "heading_base_class" : "title"
         } %}
     {% endif %}
@@ -90,4 +89,4 @@
 {% endblock %}
 
 
-{% set main_content_modifiers = ['landing-page'] %}
+{% set main_element_modifiers = ['landing-page'] %}

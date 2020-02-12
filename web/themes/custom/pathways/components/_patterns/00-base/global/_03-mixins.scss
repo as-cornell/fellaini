@@ -38,6 +38,9 @@
   display: grid;
   grid-gap: $g-gap;
 }
+@mixin base12GridColumns(){
+  grid-template-columns: repeat(12,calc(8.59% - 2rem));
+}
 
 
 

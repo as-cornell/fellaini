@@ -4,23 +4,27 @@
 
  #}
 
-{# {% set sidebar_content = true %} #}
+{# 
+    Article does not use default because of fancy laouts
+ #}
 
-{# {% extends "@pages/_page.twig" %} #}
-{% extends "@templates/_default.twig" %}
+{% set isTitle = true %}
 
-{% block page_content %}
-    {% if article_pano_img_alt %}
-    <div class="pano">
-        {% include "@atoms/04-images/figure.twig" with {
-            "img_url": article_pano_img_url|default(card_link_url),
-            "img_src": article_pano_img_src,
-            "img_alt": article_pano_img_alt,
-            "img_caption" : article_pano_img_caption,
-            "img_credit" : article_pano_img_credit,
-            "figure_modifiers" : ['pano','image']
-        } %}
-    </div>
+
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+
+    {% if hasPano %}
+        <div class="pano">
+            {% include "@atoms/04-images/figure.twig" with {
+                "img_url": article_pano_img_url|default(card_link_url),
+                "img_src": article_pano_img_src,
+                "img_alt": article_pano_img_alt,
+                "img_caption" : article_pano_img_caption,
+                "img_credit" : article_pano_img_credit,
+                "figure_modifiers" : ['pano','image'],
+                
+            } %}
+        </div>
     {% endif %}
     <div class="title">
         {% include "@atoms/00-text/_heading.twig" with {
@@ -35,35 +39,24 @@
             {{article_dateline}}
         </p>
     </div>
-    <div class="social">Twitter
+    <div class="social">
+        <a href="">Twitter</a>
         <br/>
-        Facebook</div>
-    <div class="content">
-        {% if pl %}
-            {{article_body}}
-        {% endif %}
-        {{main_content}}
-        {# {{article_body}} #}
+        <a href="">Facebook</a>
     </div>
-{% endblock %}
-
-{% block aside_content %}
-    {% include "@atoms/04-images/figure.twig" with {
-        "img_url": article_image_img_url|default(card_link_url),
-        "img_src": article_image_img_src,
-        "img_alt": article_image_img_alt,
-        "img_caption" : article_image_img_caption,
-        "img_credit" : article_image_img_credit
-    } %}
-
-    {% include "@atoms/00-text/_heading.twig" with {
-        "heading_level" : 2,
-        "heading" : "Related Stories",
-        "heading_modifiers" : ["margin"]
-    } %}
-
-    {{ aside_content }}
-
-{% endblock %}
-
-
+    <div class="content">
+        {{main_content}}
+    </div>
+    <div class="thumbnail">
+        {% include "@atoms/04-images/figure.twig" with {
+            "img_url": article_image_img_url|default(card_link_url),
+            "img_src": article_image_img_src,
+            "img_alt": article_image_img_alt,
+            "img_caption" : article_image_img_caption,
+            "img_credit" : article_image_img_credit
+        } %}
+    </div>
+    <aside role="complimentary">
+        {{ aside_content }}
+    </aside>
+</main>

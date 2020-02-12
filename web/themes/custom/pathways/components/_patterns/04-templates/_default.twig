@@ -12,39 +12,39 @@ Gets: wrapper modifiers
 
 #}
 
+{# <main> vars #}
 
-{# {% set content_wrapper_modifiers = [] %} #}
+{% set main_modifiers = [] %}
+
+{% set main_element_base_class = main_element_base_class | default('main') %}
+{% set main_element_modifiers = main_element_modifiers | default(['']) %}
+{% set main_element_extra_classes = main_extra_classes | default(['']) %}
+
+{# set page content vars #}
 
 {% set content_wrapper_base_class = content_wrapper_base_class | default('container') %}
 {% set content_wrapper_modifiers = content_wrapper_modifiers | default(['']) %}
 {% set content_wrapper_extra_classes = content_wrapper_extra_classes | default(['']) %}
 
-{# <main> modifiers and classes #}
 
-{% set main_modifiers = [] %}
-
-{% set main_content_base_class = main_content_base_class | default('mainContent') %}
-{% set main_content_modifiers = main_content_modifiers | default(['']) %}
-{% set main_extra_classes = main_extra_classes | default(['']) %}
 
 {# Start output #}
 {% block page_header %}{% endblock %}
 {% block page_system %}{% endblock %}
-
-<div {{ bem(content_wrapper_base_class, (content_wrapper_modifiers), content_wrapper_blockname, content_wrapper_extra_classes) }}>
-
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
     {# sidebar nav #}
     {% if sidebarNav %}
         {% block sidebar_nav %}{% endblock %}
     {% endif %}
-    
-    
-    {% if sidebar %} 
-        {% block sidebar_content %}{% endblock %}
-    {% endif %}
-    {# main content #}
 
-    <main {{ bem(main_content_base_class, (main_content_modifiers), main_blockname, main_extra_classes) }} id="mainContent">
+    {% if sidebar %}
+        <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
+            {% block sidebar_content %}{% endblock %}
+        </div>
+    {% endif %}
+
+    {# main content #}
+    <div {{ bem(content_wrapper_base_class, (content_wrapper_modifiers), content_wrapper_blockname, content_wrapper_extra_classes) }} id="pageContent">
         {% block page_content %}{% endblock %}
         {# aside content #}
         {% if aside %}
@@ -53,7 +53,7 @@ Gets: wrapper modifiers
                 {% block aside_content %}{% endblock %}
             </aside>
         {% endif %}
-    </main>
-</div>
+    </div>
+</main>
 
 {% block page_footer %}{% endblock %}
