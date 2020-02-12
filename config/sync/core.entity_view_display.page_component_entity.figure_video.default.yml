@@ -1,0 +1,47 @@
+uuid: f65a3b25-639e-40f4-a4bd-11743bc4a8af
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.figure_video
+    - field.field.page_component_entity.figure_video.field_component_alignment
+    - field.field.page_component_entity.figure_video.field_video_caption
+    - field.field.page_component_entity.figure_video.field_video_embed_code
+  module:
+    - options
+id: page_component_entity.figure_video.default
+targetEntityType: page_component_entity
+bundle: figure_video
+mode: default
+content:
+  field_component_alignment:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_video_caption:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_video_embed_code:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  user_id: true

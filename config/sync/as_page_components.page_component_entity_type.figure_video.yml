@@ -1,0 +1,8 @@
+uuid: cbe167f5-0c29-4408-b1f7-64a06ac5895f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eTNSY3CJF6GF_TNtUhyt32NLWWvssbzgIJJGDUxILNU
+id: figure_video
+label: 'Figure - Video'

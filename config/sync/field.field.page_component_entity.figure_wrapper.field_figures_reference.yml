@@ -1,0 +1,30 @@
+uuid: 5d117848-d242-40c0-afc0-b94186b1632f
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.figure_image
+    - as_page_components.page_component_entity_type.figure_video
+    - as_page_components.page_component_entity_type.figure_wrapper
+    - field.storage.page_component_entity.field_figures_reference
+id: page_component_entity.figure_wrapper.field_figures_reference
+field_name: field_figures_reference
+entity_type: page_component_entity
+bundle: figure_wrapper
+label: 'Figures Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:page_component_entity'
+  handler_settings:
+    target_bundles:
+      figure_image: figure_image
+      figure_video: figure_video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: figure_image
+field_type: entity_reference

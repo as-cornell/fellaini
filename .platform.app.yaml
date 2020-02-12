@@ -170,9 +170,8 @@ hooks:
       curl -sS https://platform.sh/cli/installer | php
       set -e
       cd web/themes/custom/pathways
-      yarn install
-      gulp build
-      gulp pl
+      npm install
+      npm start
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
       set -e

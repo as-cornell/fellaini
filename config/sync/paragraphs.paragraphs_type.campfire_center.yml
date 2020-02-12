@@ -1,9 +1,0 @@
-uuid: ab91abc0-427f-4358-8358-bc4a897029b9
-langcode: en
-status: true
-dependencies: {  }
-id: campfire_center
-label: 'Campfire Center'
-icon_uuid: null
-description: 'Builds the large campfire center image and related articles.'
-behavior_plugins: {  }

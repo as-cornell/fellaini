@@ -13,8 +13,8 @@ id: page_component_entity.list_block.field_list_reference
 field_name: field_list_reference
 entity_type: page_component_entity
 bundle: list_block
-label: 'List Reference'
-description: ''
+label: 'Content type'
+description: 'What type of list do you want to include?'
 required: false
 translatable: false
 default_value: {  }
@@ -27,20 +27,30 @@ settings:
   plugin_types:
     block: block
     default: 0
-    page: 0
-    feed: 0
     entity_browser: 0
+    page: 0
+    entity_reference: 0
+    feed: 0
+    rest_export: 0
+    rest_export_nested: 0
   preselect_views:
+    majors_and_minors: majors_and_minors
+    news: news
+    article_browser: 0
     block_content: 0
+    component_browser: 0
     content: 0
     content_recent: 0
+    entity_references: 0
     files: 0
     frontpage: 0
+    manage_as_vocabularies: 0
     media: 0
     media_entity_browser: 0
-    news: 0
-    taxonomy_term: 0
+    nested_references: 0
+    stat_reference: 0
     user_admin_people: 0
+    vue_filters: 0
     watchdog: 0
     who_s_new: 0
     who_s_online: 0

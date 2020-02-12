@@ -1,0 +1,8 @@
+uuid: 8f89b41b-936c-484a-9206-218563a00507
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bU-F7xcLL28hCwo5e1xNnz2qsTo5zQ_4lpR6cTywhgM
+id: figure_image
+label: 'Figure - Image'

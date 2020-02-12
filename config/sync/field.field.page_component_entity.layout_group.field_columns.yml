@@ -10,7 +10,6 @@ dependencies:
     - as_page_components.page_component_entity_type.list_block
     - as_page_components.page_component_entity_type.person
     - as_page_components.page_component_entity_type.photo_text_block
-    - as_page_components.page_component_entity_type.stat_block
     - as_page_components.page_component_entity_type.video_figure
     - field.storage.page_component_entity.field_columns
 id: page_component_entity.layout_group.field_columns
@@ -33,7 +32,6 @@ settings:
       list_block: list_block
       person: person
       photo_text_block: photo_text_block
-      stat_block: stat_block
       video_figure: video_figure
     sort:
       field: _none

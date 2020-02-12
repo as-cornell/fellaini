@@ -9,7 +9,6 @@ dependencies:
     - field.field.page_component_entity.list_block.field_list_reference
   module:
     - link
-    - text
     - viewsreference
 _core:
   default_config_hash: 1kxv7K15cU_ceFFDmR8Y9ulr9nVtJG3Rn0DNT8lLD6U
@@ -18,34 +17,19 @@ targetEntityType: page_component_entity
 bundle: list_block
 mode: default
 content:
-  field_formatted_text:
-    weight: 1
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_link:
-    weight: 26
+    type: link_default
+    weight: 2
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_list_reference:
-    weight: 2
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-<<<<<<< HEAD
-      match_limit: 10
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
+    weight: 1
+    settings: {  }
     third_party_settings: {  }
-    type: viewsreference_autocomplete
+    type: viewsreference_select
     region: content
   name:
     type: string_textfield
@@ -56,4 +40,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_formatted_text: true
   user_id: true
