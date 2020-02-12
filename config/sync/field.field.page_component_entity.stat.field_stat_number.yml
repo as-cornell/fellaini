@@ -1,4 +1,4 @@
-uuid: b5b195bb-1ff0-4668-8639-c1fb4b72439b
+uuid: bc276cfe-06bb-4ca8-a41e-89021366c3a0
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_stat_number
 entity_type: page_component_entity
 bundle: stat
 label: 'Stat Number'
-description: 'The big number for stats.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

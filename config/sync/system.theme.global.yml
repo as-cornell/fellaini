@@ -9,11 +9,7 @@ features:
   favicon: true
   node_user_picture: false
 logo:
-<<<<<<< HEAD
   path: 'public://as-logo-trans-600.png'
-=======
-  path: 'public://as-logo-trans-1x.png'
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   url: ''
   use_default: false
 _core:
