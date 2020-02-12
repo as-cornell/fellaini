@@ -40,14 +40,15 @@
 
 {% set mycategory = items.0.content.title['#title'] |split('-', 2)[0] | lower |trim  %}
 {% set mytitle = items.0.content.title['#title'] |replace({'-': 'from'}) |  lower  %}
+
 {% set mylink = items.0.content.title['#title'] |replace({'-': '/',' ': ''}) |  lower %}
 
 
 
 {% include "@atoms/_field.twig" %}
 
-{% if mycategory == 'news' %}
+{# {% if mycategory == 'news' %}
     <a href='{{mylink}}'>More {{mytitle}}</a>
-{% endif %}
+{% endif %} #}
 
 
