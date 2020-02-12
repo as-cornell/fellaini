@@ -10,6 +10,7 @@ dependencies:
     - field.field.page_component_entity.photo_text.field_link
   module:
     - entity_browser
+    - link
     - text
 id: page_component_entity.photo_text.default
 targetEntityType: page_component_entity
@@ -39,6 +40,14 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   name:
     type: string_textfield
     weight: 0
@@ -48,5 +57,4 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  field_link: true
   user_id: true

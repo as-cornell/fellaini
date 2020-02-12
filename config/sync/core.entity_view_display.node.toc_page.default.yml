@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.toc_page.field_aside_components
+    - field.field.node.toc_page.field_menu_link
     - field.field.node.toc_page.field_page_components_entity
     - field.field.node.toc_page.field_toc_summary
     - node.type.toc_page
   module:
+    - menu_link
     - text
     - user
 id: node.toc_page.default
@@ -23,6 +25,14 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_menu_link:
+    weight: 3
+    label: above
+    settings:
+      link_to_target: true
+    third_party_settings: {  }
+    type: menu_link
     region: content
   field_page_components_entity:
     weight: 2

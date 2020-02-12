@@ -8,6 +8,7 @@ dependencies:
     - field.field.page_component_entity.photo_text.field_image
     - field.field.page_component_entity.photo_text.field_link
   module:
+    - link
     - text
 id: page_component_entity.photo_text.default
 targetEntityType: page_component_entity
@@ -30,6 +31,18 @@ content:
       link: false
     third_party_settings: {  }
     region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   name:
     label: hidden
     type: string
@@ -39,5 +52,4 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
-  field_link: true
   user_id: true
