@@ -123,7 +123,7 @@ web:
         '/styleguide':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/pattern-lab/public'
+            root: 'web/themes/custom/pablo_pogbita/pattern-lab/public'
             index:
                 - index.html
             # Do not execute PHP scripts.
@@ -131,22 +131,22 @@ web:
         '/dist':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/dist'
+            root: 'web/themes/custom/pablo_pogbita/dist'
             scripts: false
         '/pattern-lab':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/pattern-lab'
+            root: 'web/themes/custom/pablo_pogbita/pattern-lab'
             scripts: false
         '/fonts':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/fonts'
+            root: 'web/themes/custom/pablo_pogbita/fonts'
             scripts: false
         '/images':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/images'
+            root: 'web/themes/custom/pablo_pogbita/images'
             scripts: false
 
 
