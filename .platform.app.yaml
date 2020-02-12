@@ -143,11 +143,7 @@ web:
             expires: 5m
             root: 'web/themes/custom/pathways/fonts'
             scripts: false
-        '/images':
-            allow: true
-            expires: 5m
-            root: 'web/themes/custom/pathways/images'
-            scripts: false
+
 
 
 # The size of the persistent disk of the application (in MB).
