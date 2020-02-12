@@ -22,6 +22,10 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+<<<<<<< HEAD
+      show_summary: false
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     third_party_settings: {  }
   info:
     type: string_textfield

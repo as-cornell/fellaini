@@ -12,3 +12,7 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+<<<<<<< HEAD
+mail_notification: ''
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6

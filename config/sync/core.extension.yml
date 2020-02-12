@@ -7,10 +7,17 @@ module:
   as_majors_minors: 0
   as_manage_vocabularies: 0
   as_migrate_articles: 0
+<<<<<<< HEAD
+  as_page_components: 0
+  as_people_stub: 0
+  as_stats: 0
+  as_toc_pages: 0
+=======
   as_modal_pages: 0
   as_page_components: 0
   as_people_stub: 0
   as_stats: 0
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   as_topics: 0
   automated_cron: 0
   better_exposed_filters: 0
@@ -23,7 +30,10 @@ module:
   components: 0
   config: 0
   config_delete: 0
+<<<<<<< HEAD
+=======
   contact: 0
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   contextual: 0
   crop: 0
   ctools: 0
@@ -63,6 +73,10 @@ module:
   options: 0
   page_cache: 0
   path: 0
+<<<<<<< HEAD
+  path_alias: 0
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   quickedit: 0
   rdf: 0
   rest: 0
@@ -76,7 +90,14 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+<<<<<<< HEAD
+  twig_extensions: 0
+  twig_field_value: 0
   twig_tweak: 0
+  twitter_tweets: 0
+=======
+  twig_tweak: 0
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   unified_twig_ext: 0
   update: 0
   user: 0
@@ -86,8 +107,14 @@ module:
   viewsreference: 0
   menu_link_content: 1
   pathauto: 1
+<<<<<<< HEAD
+  externalauth: 10
+  views: 10
+  custom_search: 50
+=======
   views: 10
   paragraphs: 11
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   standard: 1000
 theme:
   stable: 0

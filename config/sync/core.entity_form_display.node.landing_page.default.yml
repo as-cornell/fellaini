@@ -5,7 +5,10 @@ dependencies:
   config:
     - entity_browser.browser.media_entity_browser
     - field.field.node.landing_page.field_landing_page_component_ent
+<<<<<<< HEAD
+=======
     - field.field.node.landing_page.field_landing_page_components
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - field.field.node.landing_page.field_pano_image
     - node.type.landing_page
   module:
@@ -99,7 +102,14 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+<<<<<<< HEAD
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }
+=======
     region: content
     third_party_settings: {  }
 hidden:
   field_landing_page_components: true
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6

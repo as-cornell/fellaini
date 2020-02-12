@@ -1,0 +1,31 @@
+uuid: 3e321047-6a47-43aa-a6d8-50a3cf8e1d3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.article_browser
+  module:
+    - views
+name: component_entity_browser
+label: 'Component Entity Browser'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  9bdc96ac-e381-4de9-b6fb-495dd81cef87:
+    settings:
+      view: article_browser
+      view_display: entity_browser_2
+      submit_text: 'Select components'
+      auto_select: false
+    uuid: 9bdc96ac-e381-4de9-b6fb-495dd81cef87
+    weight: 1
+    label: view
+    id: view
