@@ -4,7 +4,7 @@
 /* -------------------------
 
 Title: node--page.html.twig
-Descr: Sets up variables and content for _basic-page.twig
+Descr: This is the framework for a basic page contnet type. Sets up variables and content for _basic-page.twig
 
 --------------------------- */ 
 
@@ -65,7 +65,7 @@ Descr: Sets up variables and content for _basic-page.twig
 {% endif %}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
-    title : label,
+    title : node.label,
     main_element_modifiers : main_element_modifiers,
     
     main_content : content.field_page_components_entity,

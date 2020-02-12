@@ -1,5 +1,5 @@
 .nav--audience{
-  @include fontSize(4);
+  font-size: var(--medium-font-size);
   display: flex;
   align-items: center;
   justify-content: flex-end;

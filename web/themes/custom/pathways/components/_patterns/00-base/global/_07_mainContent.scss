@@ -13,6 +13,8 @@ Descr:
   margin: 0 auto;
   display: grid;
   grid-gap: 2rem;
+  // row gap 0 circle back
+  grid-row-gap: 0;
   padding: 0 1rem;
   @include medium{
     @include base12GridColumns();
@@ -26,7 +28,7 @@ Descr:
 }
 // Basic sidebar
 .basicSidebar{
-  background: pink;
+//   background: pink;
   grid-template-rows: auto auto 1fr;
   grid-template-areas:
     "nav"
