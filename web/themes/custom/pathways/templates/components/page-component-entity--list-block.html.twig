@@ -1,4 +1,15 @@
 {#
+
+/* -------------------------
+
+Title: pce - list-block
+Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens on views-view-list.html.twig because the content here is jus
+
+--------------------------- */
+
+#}
+
+{#
 /**
  * @file page_component_entity.html.twig
  * Default theme implementation to present Item data.
@@ -15,13 +26,19 @@
  * @ingroup themeable
  */
 #}
-
+{# {{kint(attributes)}}
 {{label}}
-<div{{ attributes.addClass('viewList') }}>
-    {% if content %}
-    {{- content -}}
-    {% endif %}
+{{attributes}}
+{{content.name}} #}
+{# <div{{ attributes.addClass('viewList') }}> #}
+{% set title = content.name %}
+{% include "@atoms/00-text/_heading.twig" with {
+      "heading_level" : 2,
+      "heading" : title,
+      "heading_modifiers" : ['border']
+  } %}
 
-
-
-    </div>
+  {% if content %}
+  {{ content }}
+  {% endif %}
+{# </div> #}
