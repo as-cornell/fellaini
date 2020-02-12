@@ -129,7 +129,7 @@
         {% if card_byline %}
             <span class="card__byline">
                 by :
-                {{ card_byline }}
+                {{ card_byline_content }} mark help
             </span>
         {% endif %}
         {% if card_button_url %}
@@ -145,9 +145,4 @@
         {% if not card_feature %}
     </div>
     {% endif %}
-    <!-- copy -->
-{# <svg class="icon shape-codepen" viewbox="0 0 100 100">
-    <use xlink:href="#instagram"></use>
-</svg> #}
-
 </div>

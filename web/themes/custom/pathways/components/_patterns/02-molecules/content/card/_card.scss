@@ -97,7 +97,7 @@ Variations:
     font-size: var(--small-font-size);
   }
   &.card--small{
-    grid-template-columns: 180px 1fr;
+    // grid-template-columns: 180px 1fr;
     border: none;
     margin-bottom: 2rem;
     .card__copy{
