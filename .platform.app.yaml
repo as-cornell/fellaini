@@ -120,6 +120,36 @@ web:
                 '^/sites/default/files/(css|js)':
                     expires: 2w
 
+        '/styleguide':
+            allow: true
+            expires: 5m
+            root: 'web/themes/custom/pablo_pogbita/pattern-lab/public'
+            index:
+                - index.html
+            # Do not execute PHP scripts.
+            scripts: false
+        '/dist':
+            allow: true
+            expires: 5m
+            root: 'web/themes/custom/pablo_pogbita/dist'
+            scripts: false
+        '/pattern-lab':
+            allow: true
+            expires: 5m
+            root: 'web/themes/custom/pablo_pogbita/pattern-lab'
+            scripts: false
+        '/fonts':
+            allow: true
+            expires: 5m
+            root: 'web/themes/custom/pablo_pogbita/fonts'
+            scripts: false
+        '/images':
+            allow: true
+            expires: 5m
+            root: 'web/themes/custom/pablo_pogbita/images'
+            scripts: false
+
+
 # The size of the persistent disk of the application (in MB).
 disk: 2048
 
@@ -139,6 +169,10 @@ hooks:
     build: |
       curl -sS https://platform.sh/cli/installer | php
       set -e
+      cd web/themes/custom/pablo_pogbita
+      npm install
+      gulp compile
+      gulp theme
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
       set -e
@@ -146,6 +180,8 @@ hooks:
       cd web
       drush -y cache-rebuild
       drush -y updatedb
+      drush -y config-import
+      drush -y entup
 
 # The configuration of scheduled execution.
 crons:
