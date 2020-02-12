@@ -4,54 +4,76 @@
 /* -------------------------
 
 Title: node--page.html.twig
-Descr: Sets up variables and content for _basic-page.twig
-Passes: has-aside to <main>
-        has-sidebar to contentWrapper
+Descr: This is the framework for a basic page contnet type. Sets up variables and content for _basic-page.twig
 
 --------------------------- */ 
 
 #}
-{# {{ kint(content) }} #}
 
-{# Add aside if aside components are present #}
-{% if content.field_aside_components|render is not empty %}
-    {% set main_content_modifiers = ['has-aside'] %}
-    {% set aside = true %}
+
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic
+    - turn on sidebarNav
+ #}
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_modifiers = [''] %}
+{# set defaults #}
+{% set sidebarNav = true %}
+{% set aside = false %}
+{% set sidebarContent = false %}
+
+
+{# 
+    - set sidebar type
+    - if sidebar = none make base class 'basic'
+    - set up sidebar_nav
+    - add has-sideber to main_element_modifiers
+    - set location of sidebar
+    - set sidebar content to field_sidebar_components 
+    - add sidebar base class and modifier basic-page   
+#}
+
+{% set sidebarType = node.field_sidebar_type.value %}
+
+{% if sidebarType == "none" %}
+    {% set main_element_base_class = 'basic' %}
+{% endif %}
+
+{# If sidebarContent #}
+{% if node.field_sidebar_components.target_id %}
+    {% set sidebarContent = true %}
 {% endif %}
 
 {# Set sidebar_nav #}
 {% set sidebar_nav %}
     {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
 {% endset %}
-{% set sidebarNav = true %}
+
+{# 
+    - set aside to false
+    - if aside_components set to ture, and add has-aside to main 
+#}
 
 
 
-{# set sidebar  #}
-{% set sidebarType = node.field_sidebar_type.value %}
-
-{% if sidebarType != 'none' %}
-
-    {% set content_wrapper_modifiers = ['has-sidebar'] %}
-    {% set sidebar = true %}
-    {% set sidebar_content %}
-        {{ content.field_sidebar_components }}
-    {% endset %}
- {% endif %}
-
+{% if node.field_aside_components.target_id %}
+    {% set aside = true %}
+    {% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
+{% endif %}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
-    title : label,
-
-    sidebar: sidebar,
-    aside: aside,
+    title : node.label,
+    main_element_modifiers : main_element_modifiers,
     
     main_content : content.field_page_components_entity,
     aside_content : content.field_aside_components,
-    sidebar_content : sidebar_content,
+    sidebar_content : content.field_sidebar_components,
+
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers
-    
     }
 %}

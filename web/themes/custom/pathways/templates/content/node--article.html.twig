@@ -10,18 +10,27 @@ Passes: Images - pano and image
 --------------------------- */
 
 #}
-{% if content.field_aside_components|render is not empty %}
-    {% set main_content_modifiers = ['article'] %}
-    {% set aside = true %}
+
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic, toc, has-sidebar
+ #}
+
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = main_element_base_class | default('article') %}
+{% set main_element_modifiers = [''] %}
+
+
+{# Content wrapper modifiers
+{% set content_wrapper_modifiers = ['article'] %} #}
+{# if pano add to content_wrapper_modifiers #}
+{% if field_pano_image_img.uri | image_style('full_content') %}
+    {% set hasPano = true %}
+    {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
 {% endif %}
 
- {# {{kint(content.field_byline_reference|render)}} #}
-{#
-{% set article_byline = content.field_byline_reference %} #}
-{# {% set article_byline = content.field_byline_reference|field_target_entity.label %} #}
-
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
-
 
 
 {% include "@pages/article/_article.twig" with {
@@ -39,7 +48,7 @@ Passes: Images - pano and image
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers,
 
-    title: label,
+    title: node.label,
     main_content : content.field_article_components_entity,
     aside_content : content.field_aside_components,
 
