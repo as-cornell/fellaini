@@ -1,0 +1,30 @@
+uuid: 16a9cf14-a863-46cd-acaa-9af20f7be61b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_link
+    - node.type.toc_page
+  module:
+    - menu_link
+id: node.toc_page.field_menu_link
+field_name: field_menu_link
+entity_type: node
+bundle: toc_page
+label: 'Menu Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_menus:
+    main: main
+    admin: '0'
+    audience: '0'
+    devel: '0'
+    footer: '0'
+    tools: '0'
+    account: '0'
+  default_menu_parent: 'main:'
+field_type: menu_link

@@ -399,8 +399,8 @@ display:
               departments_programs: departments_programs
               topics: topics
             operation: view
-            transform: true
-            access: false
+            transform: '1'
+            access: 0
           break_phrase: false
           add_table: false
           require_value: false
@@ -484,81 +484,6 @@ display:
         options:
           relationship: none
           view_mode: card_small
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  block_2:
-    display_plugin: block
-    id: block_2
-    display_title: 'Article Block'
-    position: 2
-    display_options:
-      display_extenders: {  }
-      pager:
-        type: some
-        options:
-          items_per_page: 6
-          offset: 0
-      defaults:
-        pager: false
-        filters: false
-        filter_groups: false
-        header: false
-        style: false
-        row: false
-      filters:
-        status:
-          value: '1'
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          value:
-            article: article
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          group: 1
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      header: {  }
-      style:
-        type: html_list
-        options:
-          row_class: ''
-          default_row_class: false
-          uses_fields: false
-          type: ul
-          wrapper_class: group--articles
-          class: 'view__list view__list--article'
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: card_small
-      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:

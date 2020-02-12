@@ -5,14 +5,16 @@ dependencies:
   config:
     - as_page_components.page_component_entity_type.course_block
     - as_page_components.page_component_entity_type.events_block
-    - as_page_components.page_component_entity_type.figure_wrapper
     - as_page_components.page_component_entity_type.formatted_text_block
+    - as_page_components.page_component_entity_type.image_figure
     - as_page_components.page_component_entity_type.layout_group
     - as_page_components.page_component_entity_type.link_block
     - as_page_components.page_component_entity_type.list_block
-    - as_page_components.page_component_entity_type.photo_text_wrapper
-    - as_page_components.page_component_entity_type.stat_wrapper
+    - as_page_components.page_component_entity_type.photo_text_block
+    - as_page_components.page_component_entity_type.quote_block
+    - as_page_components.page_component_entity_type.stat_block
     - as_page_components.page_component_entity_type.toc_block
+    - as_page_components.page_component_entity_type.video_figure
     - field.storage.node.field_page_components_entity
     - node.type.page
 _core:
@@ -33,14 +35,16 @@ settings:
     target_bundles:
       course_block: course_block
       events_block: events_block
-      figure_wrapper: figure_wrapper
       formatted_text_block: formatted_text_block
+      image_figure: image_figure
       layout_group: layout_group
       link_block: link_block
       list_block: list_block
-      photo_text_wrapper: photo_text_wrapper
-      stat_wrapper: stat_wrapper
+      photo_text_block: photo_text_block
+      quote_block: quote_block
+      stat_block: stat_block
       toc_block: toc_block
+      video_figure: video_figure
     sort:
       field: _none
     auto_create: false
