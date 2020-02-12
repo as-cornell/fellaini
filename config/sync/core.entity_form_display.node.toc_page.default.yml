@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.toc_page.field_aside_components
+    - field.field.node.toc_page.field_menu_link
     - field.field.node.toc_page.field_page_components_entity
     - field.field.node.toc_page.field_toc_summary
     - node.type.toc_page
   module:
     - entity_browser_entity_form
     - inline_entity_form
+    - menu_link
     - path
     - text
 id: node.toc_page.default
@@ -38,8 +40,14 @@ content:
       allow_duplicate: false
     third_party_settings:
       entity_browser_entity_form:
-        entity_browser_id: _none
+        entity_browser_id: component_entity_browser
     type: inline_entity_form_complex
+    region: content
+  field_menu_link:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: menu_link_default
     region: content
   field_page_components_entity:
     weight: 3
@@ -56,7 +64,7 @@ content:
       allow_duplicate: false
     third_party_settings:
       entity_browser_entity_form:
-        entity_browser_id: _none
+        entity_browser_id: component_entity_browser
     type: inline_entity_form_complex
     region: content
   field_toc_summary:

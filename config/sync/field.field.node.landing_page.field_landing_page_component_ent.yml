@@ -13,7 +13,9 @@ dependencies:
     - as_page_components.page_component_entity_type.list_block
     - as_page_components.page_component_entity_type.photo_text
     - as_page_components.page_component_entity_type.photo_text_block
+    - as_page_components.page_component_entity_type.quote_block
     - as_page_components.page_component_entity_type.small_text
+    - as_page_components.page_component_entity_type.stat_block
     - as_page_components.page_component_entity_type.toc_block
     - as_page_components.page_component_entity_type.twitter_block
     - as_page_components.page_component_entity_type.video_figure
@@ -43,7 +45,9 @@ settings:
       list_block: list_block
       photo_text: photo_text
       photo_text_block: photo_text_block
+      quote_block: quote_block
       small_text: small_text
+      stat_block: stat_block
       toc_block: toc_block
       twitter_block: twitter_block
       video_figure: video_figure

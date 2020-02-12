@@ -5,4 +5,4 @@ dependencies: {  }
 _core:
   default_config_hash: bU-F7xcLL28hCwo5e1xNnz2qsTo5zQ_4lpR6cTywhgM
 id: image_figure
-label: 'Z-DEPR Image Figure'
+label: 'Image Figure'
