@@ -1,0 +1,8 @@
+uuid: 2b738736-fbe4-4ee7-bbe6-f6269bf09431
+langcode: en
+status: true
+dependencies: {  }
+name: 'Department/Program Type'
+vid: department_type
+description: 'Used to categorize departments, programs, institutes, centers, etc.'
+weight: -8

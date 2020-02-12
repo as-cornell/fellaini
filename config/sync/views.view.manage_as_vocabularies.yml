@@ -17,7 +17,10 @@ description: ''
 tag: ''
 base_table: taxonomy_term_field_data
 base_field: tid
+<<<<<<< HEAD
+=======
 core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -172,6 +175,11 @@ display:
           id: status
           expose:
             operator: ''
+<<<<<<< HEAD
+            operator_limit_selection: false
+            operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         vid:
           id: vid
@@ -182,6 +190,12 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
+<<<<<<< HEAD
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       sorts:
         name:
           id: name
@@ -263,6 +277,11 @@ display:
           id: status
           expose:
             operator: ''
+<<<<<<< HEAD
+            operator_limit_selection: false
+            operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         vid:
           id: vid
@@ -289,6 +308,11 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+<<<<<<< HEAD
+            operator_limit_selection: false
+            operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''

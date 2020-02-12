@@ -6,6 +6,10 @@ dependencies:
     - field.field.node.page.field_aside_components
     - field.field.node.page.field_page_components_entity
     - field.field.node.page.field_sidebar_components
+<<<<<<< HEAD
+    - field.field.node.page.field_sidebar_type
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - node.type.page
   module:
     - entity_browser_entity_form
@@ -76,6 +80,15 @@ content:
         entity_browser_id: _none
     type: inline_entity_form_complex
     region: content
+<<<<<<< HEAD
+  field_sidebar_type:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   path:
     type: path
     weight: 8
@@ -119,5 +132,9 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+<<<<<<< HEAD
+      match_limit: 10
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     third_party_settings: {  }
 hidden: {  }
