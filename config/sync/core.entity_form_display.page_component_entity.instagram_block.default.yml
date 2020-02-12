@@ -41,10 +41,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-<<<<<<< HEAD
       match_limit: 10
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     region: content
     third_party_settings: {  }
 hidden: {  }

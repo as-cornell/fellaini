@@ -1,0 +1,19 @@
+uuid: ee0a7bc7-c404-4c5b-8a27-e5720f9d8c85
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.field_figures_reference
+field_name: field_figures_reference
+entity_type: page_component_entity
+type: entity_reference
+settings:
+  target_type: page_component_entity
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

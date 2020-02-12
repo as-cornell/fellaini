@@ -22,10 +22,6 @@ description: ''
 tag: ''
 base_table: node_field_data
 base_field: nid
-<<<<<<< HEAD
-=======
-core: 8.x
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -175,11 +171,8 @@ display:
           id: status
           expose:
             operator: ''
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         type:
           id: type
@@ -190,12 +183,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
         field_dateline_value:
           id: field_dateline_value
           table: node__field_dateline
@@ -228,11 +218,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -278,11 +265,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -322,11 +306,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -418,8 +399,8 @@ display:
               departments_programs: departments_programs
               topics: topics
             operation: view
-            transform: '1'
-            access: 0
+            transform: true
+            access: false
           break_phrase: false
           add_table: false
           require_value: false
@@ -468,11 +449,8 @@ display:
           id: status
           expose:
             operator: ''
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         type:
           id: type
@@ -484,12 +462,9 @@ display:
           entity_field: type
           plugin_id: bundle
           group: 1
-<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       filter_groups:
         operator: AND
         groups:
@@ -509,6 +484,81 @@ display:
         options:
           relationship: none
           view_mode: card_small
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Article Block'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      pager:
+        type: some
+        options:
+          items_per_page: 6
+          offset: 0
+      defaults:
+        pager: false
+        filters: false
+        filter_groups: false
+        header: false
+        style: false
+        row: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            article: article
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header: {  }
+      style:
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
+          type: ul
+          wrapper_class: group--articles
+          class: 'view__list view__list--article'
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: card_small
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -546,11 +596,8 @@ display:
           id: status
           expose:
             operator: ''
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         type:
           id: type
@@ -561,12 +608,9 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-<<<<<<< HEAD
           expose:
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
         field_dateline_value:
           id: field_dateline_value
           table: node__field_dateline
@@ -599,11 +643,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -649,11 +690,8 @@ display:
             placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''
@@ -693,11 +731,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
-<<<<<<< HEAD
             operator_limit_selection: false
             operator_list: {  }
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''

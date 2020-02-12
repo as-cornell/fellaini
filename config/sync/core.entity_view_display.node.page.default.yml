@@ -6,15 +6,10 @@ dependencies:
     - field.field.node.page.field_aside_components
     - field.field.node.page.field_page_components_entity
     - field.field.node.page.field_sidebar_components
-<<<<<<< HEAD
     - field.field.node.page.field_sidebar_type
     - node.type.page
   module:
     - options
-=======
-    - node.type.page
-  module:
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -50,7 +45,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-<<<<<<< HEAD
   field_sidebar_type:
     weight: 3
     label: above
@@ -58,7 +52,5 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 hidden:
   links: true
