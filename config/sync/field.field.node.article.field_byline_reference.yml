@@ -24,6 +24,10 @@ settings:
     sort:
       field: name
       direction: asc
+<<<<<<< HEAD
+    auto_create: true
+=======
     auto_create: false
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     auto_create_bundle: ''
 field_type: entity_reference

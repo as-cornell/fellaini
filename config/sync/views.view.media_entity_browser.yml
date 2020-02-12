@@ -18,7 +18,10 @@ description: ''
 tag: ''
 base_table: media_field_data
 base_field: mid
+<<<<<<< HEAD
+=======
 core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -359,6 +362,11 @@ display:
               anonymous: '0'
               administrator: '0'
             placeholder: ''
+<<<<<<< HEAD
+            operator_limit_selection: false
+            operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           is_grouped: false
           group_info:
             label: ''

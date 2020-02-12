@@ -38,6 +38,10 @@ settings:
           name: Media
           items:
             - Blockquote
+<<<<<<< HEAD
+            - article_entity_embed
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
             - media_entity_embed
             - Table
             - HorizontalRule

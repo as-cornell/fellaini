@@ -14,7 +14,10 @@ description: 'Various entity references for entity reference field selection'
 tag: ''
 base_table: node_field_data
 base_field: nid
+<<<<<<< HEAD
+=======
 core: 8.x
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 display:
   default:
     display_plugin: default
@@ -138,6 +141,11 @@ display:
           id: status
           expose:
             operator: ''
+<<<<<<< HEAD
+            operator_limit_selection: false
+            operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
           group: 1
         type:
           id: type
@@ -148,6 +156,12 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
+<<<<<<< HEAD
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
       sorts:
         created:
           id: created

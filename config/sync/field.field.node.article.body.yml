@@ -21,4 +21,8 @@ default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: true
+<<<<<<< HEAD
+  required_summary: false
+=======
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 field_type: text_with_summary

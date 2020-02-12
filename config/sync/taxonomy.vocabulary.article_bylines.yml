@@ -7,4 +7,8 @@ _core:
 name: 'Article Bylines'
 vid: article_bylines
 description: 'Bylines to Articles as tags to allow aggregating articles by author'
+<<<<<<< HEAD
+weight: -10
+=======
 weight: -9
+>>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
