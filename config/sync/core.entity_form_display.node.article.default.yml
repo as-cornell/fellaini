@@ -17,11 +17,8 @@ dependencies:
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
-<<<<<<< HEAD
     - field.field.node.article.field_related_disciplines
     - field.field.node.article.field_related_functions
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - field.field.node.article.field_related_people
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -73,14 +70,9 @@ third_party_settings:
       region: content
     group_tags:
       children:
-<<<<<<< HEAD
         - field_related_disciplines
         - field_related_functions
         - field_department_program
-=======
-        - field_department_program
-        - field_topics_and_disciplines
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
         - field_tags
       parent_name: group_article
       weight: 14
@@ -206,10 +198,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-<<<<<<< HEAD
       match_limit: 10
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -229,20 +218,13 @@ content:
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_autocomplete
-<<<<<<< HEAD
     weight: 20
-=======
-    weight: 17
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-<<<<<<< HEAD
       match_limit: 10
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     third_party_settings: {  }
   field_image:
     weight: 29
@@ -268,11 +250,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_newsletter_image:
-<<<<<<< HEAD
     weight: 31
-=======
-    weight: 30
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -307,7 +285,6 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-<<<<<<< HEAD
       match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
@@ -324,21 +301,13 @@ content:
     third_party_settings: {  }
     type: options_buttons
     region: content
-=======
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
   field_related_people:
     weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-<<<<<<< HEAD
       match_limit: 10
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -352,29 +321,13 @@ content:
     region: content
   field_tags:
     type: entity_reference_autocomplete
-<<<<<<< HEAD
     weight: 21
-=======
-    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_topics_and_disciplines:
-    type: entity_reference_autocomplete
-    weight: 18
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-<<<<<<< HEAD
       match_limit: 10
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     third_party_settings: {  }
   path:
     type: path
@@ -418,15 +371,9 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-<<<<<<< HEAD
       match_limit: 10
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     region: content
     third_party_settings: {  }
 hidden:
   body: true
-<<<<<<< HEAD
   field_topics_and_disciplines: true
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6

@@ -11,10 +11,6 @@ dependencies:
     - as_page_components.page_component_entity_type.related_articles
     - as_page_components.page_component_entity_type.small_text
     - as_page_components.page_component_entity_type.stat
-<<<<<<< HEAD
-    - as_page_components.page_component_entity_type.stat_block
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     - field.storage.node.field_aside_components
     - node.type.article
 id: node.article.field_aside_components
@@ -39,10 +35,6 @@ settings:
       related_articles: related_articles
       small_text: small_text
       stat: stat
-<<<<<<< HEAD
-      stat_block: stat_block
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
     sort:
       field: _none
     auto_create: false

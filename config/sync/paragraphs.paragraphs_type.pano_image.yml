@@ -1,9 +1,0 @@
-uuid: d53345b2-7dd1-434d-9030-4ae53db02b36
-langcode: en
-status: true
-dependencies: {  }
-id: pano_image
-label: 'Pano Image'
-icon_uuid: null
-description: 'To be used when pano images are added to pages.'
-behavior_plugins: {  }

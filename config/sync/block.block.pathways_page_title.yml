@@ -11,11 +11,7 @@ _core:
 id: pathways_page_title
 theme: pathways
 region: content
-<<<<<<< HEAD
-weight: -2
-=======
-weight: -1
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
+weight: 0
 provider: null
 plugin: page_title_block
 settings:

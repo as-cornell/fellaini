@@ -1,11 +1,6 @@
 allow_insecure_uploads: false
 default_scheme: public
-<<<<<<< HEAD
 path: {  }
-=======
-path:
-  temporary: /tmp
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 temporary_maximum_age: 21600
 _core:
   default_config_hash: t48gCU9DzYfjb3bAOIqHLzhL0ChBlXh6_5B5Pyo9t8g

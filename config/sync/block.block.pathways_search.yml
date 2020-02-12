@@ -11,11 +11,7 @@ _core:
 id: pathways_search
 theme: pathways
 region: header
-<<<<<<< HEAD
 weight: -4
-=======
-weight: -3
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 provider: null
 plugin: search_form_block
 settings:
@@ -23,8 +19,5 @@ settings:
   label: Search
   provider: search
   label_display: '0'
-<<<<<<< HEAD
   page_id: ''
-=======
->>>>>>> 22ab91281b03d7a5e0498c74536110f0afa4f8f6
 visibility: {  }

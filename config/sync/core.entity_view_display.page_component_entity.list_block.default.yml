@@ -9,7 +9,6 @@ dependencies:
     - field.field.page_component_entity.list_block.field_list_reference
   module:
     - link
-    - text
     - viewsreference
 _core:
   default_config_hash: Bq4ylgdRSay39KeCOVuW6dGjiJYxWqi-DDGupXkcLd0
@@ -18,15 +17,8 @@ targetEntityType: page_component_entity
 bundle: list_block
 mode: default
 content:
-  field_formatted_text:
-    weight: 0
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_link:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       trim_length: 80
@@ -38,7 +30,7 @@ content:
     type: link
     region: content
   field_list_reference:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       plugin_types:
@@ -46,6 +38,14 @@ content:
     third_party_settings: {  }
     type: viewsreference_formatter
     region: content
+  name:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
-  name: true
+  field_formatted_text: true
   user_id: true
