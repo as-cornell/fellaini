@@ -5,6 +5,8 @@ web/core
 web/modules/contrib
 web/themes/contrib
 web/profiles/contrib
+#ignore package-lock
+*package-lock.json
 
 # Ignore Drupal's file directory
 web/sites/*/files
