@@ -177,7 +177,8 @@ hooks:
       set -e
       cd web/themes/custom/pablo_pogbita
       npm install
-      npm start
+      gulp build
+      gulp pl
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
       unset NPM_CONFIG_PREFIX
