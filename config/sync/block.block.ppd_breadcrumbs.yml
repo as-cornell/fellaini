@@ -1,0 +1,22 @@
+uuid: fb0af986-6e5f-4139-a176-043d9e8f6ddf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ppd
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: ppd_breadcrumbs
+theme: ppd
+region: header
+weight: -2
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: aed260a3-abc3-437a-97fb-c4f7a5e8974d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block_title
+    - system
+  theme:
+    - pathways
+third_party_settings:
+  menu_block_title:
+    modify_title: false
+id: pathways_mainnavigation
+theme: pathways
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }
