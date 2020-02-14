@@ -1,15 +1,15 @@
-uuid: 364b6843-3dc1-4f03-97fa-694754f28789
+uuid: a709c441-b733-466d-be2f-8d87a2d5cb95
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - pablo_pogbita
 _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
-id: stark_breadcrumbs
-theme: stark
+id: pablo_pogbita_breadcrumbs
+theme: pablo_pogbita
 region: header
 weight: -2
 provider: null

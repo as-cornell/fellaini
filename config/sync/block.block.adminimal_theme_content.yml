@@ -1,17 +1,17 @@
-uuid: d1f2fa41-c872-444b-b3bc-6cbadd21b4a0
+uuid: eeba75bb-e10f-44b4-8808-ff71cfb17021
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - adminimal_theme
 _core:
-  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: stark_content
-theme: stark
+  default_config_hash: 80N66GdzEvwqi1m-_GZ-ulkk8AJG9beoXcZ4-pMVKjI
+id: adminimal_theme_content
+theme: adminimal_theme
 region: content
-weight: -6
+weight: 0
 provider: null
 plugin: system_main_block
 settings:

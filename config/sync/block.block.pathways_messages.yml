@@ -1,0 +1,22 @@
+uuid: 2a5bbb12-25d1-4bfd-bcf8-938e0ee13a48
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pathways
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: pathways_messages
+theme: pathways
+region: header
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

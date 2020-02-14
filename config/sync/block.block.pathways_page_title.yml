@@ -1,15 +1,15 @@
-uuid: cdabcbd9-5a42-4d2f-a9db-3eb5806638c5
+uuid: e37b291f-6e68-410d-a120-9af9f6cd8be6
 langcode: en
 status: false
 dependencies:
   module:
     - ctools
   theme:
-    - stark
+    - pathways
 _core:
   default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
-id: stark_page_title
-theme: stark
+id: pathways_page_title
+theme: pathways
 region: content
 weight: -2
 provider: null

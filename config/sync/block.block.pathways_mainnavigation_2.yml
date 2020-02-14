@@ -1,0 +1,29 @@
+uuid: 7ba1584c-955a-4cac-92ec-8a0f91d949bb
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block_title
+    - system
+  theme:
+    - pathways
+third_party_settings:
+  menu_block_title:
+    modify_title: true
+id: pathways_mainnavigation_2
+theme: pathways
+region: content
+weight: -3
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Sidebar nav level 2'
+  provider: system
+  label_display: '0'
+  level: 2
+  depth: 3
+  expand_all_items: true
+visibility: {  }

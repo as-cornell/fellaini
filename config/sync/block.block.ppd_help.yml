@@ -1,0 +1,22 @@
+uuid: ce1120c2-8e94-40cc-99a0-5a5dba3071dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - ppd
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: ppd_help
+theme: ppd
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }
