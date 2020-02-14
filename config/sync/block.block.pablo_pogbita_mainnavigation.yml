@@ -1,4 +1,4 @@
-uuid: 07ecab37-4d48-44bc-a5cd-7b72d6ecf5a1
+uuid: 14bbd21f-8832-4da3-830d-2e0f8912a99a
 langcode: en
 status: true
 dependencies:
@@ -8,12 +8,12 @@ dependencies:
     - menu_block_title
     - system
   theme:
-    - stark
+    - pablo_pogbita
 third_party_settings:
   menu_block_title:
     modify_title: false
-id: stark_mainnavigation
-theme: stark
+id: pablo_pogbita_mainnavigation
+theme: pablo_pogbita
 region: header
 weight: 0
 provider: null
