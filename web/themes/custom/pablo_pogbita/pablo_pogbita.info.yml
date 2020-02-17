@@ -1,6 +1,6 @@
-name: pablo_pogbita
+name: Pogba
 type: theme
-description: Theme based on <a href="http://emulsify.info">Emulsify</a>.
+description: Theme based on <a href="http://emulsify.info">Emulsify</a>. Composer-based and built with emulsify-gulp 4.0.
 base theme: stable
 core: 8.x
 
@@ -61,3 +61,6 @@ component-libraries:
   pages:
     paths:
       - components/_patterns/05-pages
+version: '8.x-4.0'
+core: '8.x'
+project: 'pablo_pogbita'
