@@ -1,0 +1,32 @@
+uuid: 03567646-bbe4-4265-8c19-567a5da316f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.participant_roles.field_compensation_type
+    - taxonomy.vocabulary.participant_roles
+  module:
+    - entity_reference_revisions
+    - text
+id: taxonomy_term.participant_roles.default
+targetEntityType: taxonomy_term
+bundle: participant_roles
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_compensation_type:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,11 @@
+uuid: 304a3a15-fd96-4f89-b498-047c9956bf1a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:f95b0ba1-977e-4f7d-90d3-01623c66db14'
+id: educator_info
+label: 'Educator Site Contact Info'
+icon_uuid: f95b0ba1-977e-4f7d-90d3-01623c66db14
+description: 'Contact information for an educator related to a Study Site.'
+behavior_plugins: {  }

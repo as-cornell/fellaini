@@ -1,0 +1,19 @@
+uuid: e4b11fa3-a802-46ef-9824-a851a68bbcf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_label
+    - paragraphs.paragraphs_type.educator_info
+id: paragraph.educator_info.field_contact_label
+field_name: field_contact_label
+entity_type: paragraph
+bundle: educator_info
+label: Location
+description: 'Used to distinguish 2 offices or other differing contact info.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

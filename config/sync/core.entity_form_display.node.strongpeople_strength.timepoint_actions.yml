@@ -1,0 +1,88 @@
+uuid: 33279366-7fe4-4643-8b5d-58c7620354c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.timepoint_actions
+    - field.field.node.strongpeople_strength.feeds_item
+    - field.field.node.strongpeople_strength.field_active
+    - field.field.node.strongpeople_strength.field_age
+    - field.field.node.strongpeople_strength.field_compensation_data
+    - field.field.node.strongpeople_strength.field_end_date
+    - field.field.node.strongpeople_strength.field_enrolled_consented
+    - field.field.node.strongpeople_strength.field_gender
+    - field.field.node.strongpeople_strength.field_hcp_date
+    - field.field.node.strongpeople_strength.field_hcp_notes
+    - field.field.node.strongpeople_strength.field_incedental_findings_consen
+    - field.field.node.strongpeople_strength.field_intervention_group
+    - field.field.node.strongpeople_strength.field_need_hcp
+    - field.field.node.strongpeople_strength.field_photo_video_consent
+    - field.field.node.strongpeople_strength.field_response_id
+    - field.field.node.strongpeople_strength.field_start_date
+    - field.field.node.strongpeople_strength.field_study_image
+    - field.field.node.strongpeople_strength.field_study_site
+    - field.field.node.strongpeople_strength.field_survey_link
+    - field.field.node.strongpeople_strength.field_timepoint_actions
+    - field.field.node.strongpeople_strength.field_user
+    - field.field.node.strongpeople_strength.field_why_inactive
+    - node.type.strongpeople_strength
+  module:
+    - paragraphs
+id: node.strongpeople_strength.timepoint_actions
+targetEntityType: node
+bundle: strongpeople_strength
+mode: timepoint_actions
+content:
+  field_timepoint_actions:
+    type: paragraphs
+    weight: 3
+    settings:
+      title: 'Timepoint Data'
+      title_plural: 'Timepoint Datum'
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: strongpeople_timepoint_actions
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  feeds_item: true
+  field_active: true
+  field_age: true
+  field_compensation_data: true
+  field_end_date: true
+  field_enrolled_consented: true
+  field_gender: true
+  field_hcp_date: true
+  field_hcp_notes: true
+  field_incedental_findings_consen: true
+  field_intervention_group: true
+  field_need_hcp: true
+  field_photo_video_consent: true
+  field_response_id: true
+  field_start_date: true
+  field_study_image: true
+  field_study_site: true
+  field_survey_link: true
+  field_user: true
+  field_why_inactive: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

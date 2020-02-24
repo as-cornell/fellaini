@@ -1,0 +1,11 @@
+uuid: 7b7c8dc8-7f5c-4be7-8a1e-ed2ff3b6a270
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:20c587b8-0cad-4df1-a356-bcd8fccddd16'
+id: change_club_timepoints
+label: 'Change Club Timepoint'
+icon_uuid: 20c587b8-0cad-4df1-a356-bcd8fccddd16
+description: 'Timepoint data cloned from Strong People and customized for Change Club study records.'
+behavior_plugins: {  }

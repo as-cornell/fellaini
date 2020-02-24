@@ -1,0 +1,24 @@
+uuid: 9269d03c-631e-47d9-adf0-dc3b1a81d05c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - node
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: taxonomy_term.field_educator
+field_name: field_educator
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

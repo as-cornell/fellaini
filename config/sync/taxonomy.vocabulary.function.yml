@@ -1,8 +1,0 @@
-uuid: 79674b1b-44db-410e-9c99-b82e9e908557
-langcode: en
-status: true
-dependencies: {  }
-name: Function
-vid: function
-description: 'Functional Areas'
-weight: 0

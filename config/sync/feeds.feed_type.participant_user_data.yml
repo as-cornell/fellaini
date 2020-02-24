@@ -1,0 +1,108 @@
+uuid: 7b4a0105-b45b-4bb4-ac80-089a9dab2637
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_displa
+    - field.field.user.user.field_email
+    - field.field.user.user.field_preferred_contact
+    - field.field.user.user.field_primary_phone
+    - field.field.user.user.field_response_id
+  module:
+    - feeds_tamper
+    - user
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      a24a9abd-10fd-453e-b64c-43080c638d96:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: contactpreference
+        weight: 0
+        label: Explode
+        uuid: a24a9abd-10fd-453e-b64c-43080c638d96
+label: 'Participant User Data'
+id: participant_user_data
+description: 'Creates a Study Participant account and imports user data'
+help: "Creates a Study Participant account and imports user data:\r\n- Response ID\r\n- Email\r\n- Phone number\r\n- Preferred Contact"
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:user'
+processor_configuration:
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  skip_hash_check: false
+  owner_id: 0
+  values: {  }
+  authorize: false
+  owner_feed_author: false
+custom_sources:
+  q2_1_text:
+    label: Q2_1_TEXT
+    value: Q2_1_TEXT
+    machine_name: q2_1_text
+  q2_3_text:
+    label: Q2_3_TEXT
+    value: Q2_3_TEXT
+    machine_name: q2_3_text
+  q2_2_text:
+    label: Q2_2_TEXT
+    value: Q2_2_TEXT
+    machine_name: q2_2_text
+  contactpreference:
+    label: ContactPreference
+    value: ContactPreference
+    machine_name: contactpreference
+  q55_4:
+    label: Q55_4
+    value: Q55_4
+    machine_name: q55_4
+mappings:
+  -
+    target: name
+    map:
+      value: q2_1_text
+    unique:
+      value: '1'
+  -
+    target: field_displa
+    map:
+      value: q2_1_text
+    unique: {  }
+  -
+    target: mail
+    map:
+      value: q2_3_text
+    unique: {  }
+    settings:
+      defuse: '1'
+  -
+    target: field_primary_phone
+    map:
+      value: q2_2_text
+  -
+    target: field_preferred_contact
+    map:
+      value: contactpreference
+  -
+    target: field_response_id
+    map:
+      value: q55_4
+    unique: {  }
+  -
+    target: field_email
+    map:
+      value: q2_3_text
+    unique: {  }
+    settings:
+      defuse: false

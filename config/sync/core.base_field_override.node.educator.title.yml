@@ -1,0 +1,18 @@
+uuid: d72c0f1c-c785-4263-ae89-e8ccd7249e54
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.educator
+id: node.educator.title
+field_name: title
+entity_type: node
+bundle: educator
+label: 'Educator Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

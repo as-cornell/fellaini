@@ -1,0 +1,10 @@
+uuid: 1c7db58c-8979-4ee4-b4cd-a9c04a650455
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.update_compensation
+label: 'Compensation Data'
+targetEntityType: node
+cache: true

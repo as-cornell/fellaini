@@ -1,0 +1,50 @@
+uuid: null
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.change_club_site_timepoints.field_change_club_timepoint_date
+    - field.field.paragraph.change_club_site_timepoints.field_change_club_timepoints
+    - paragraphs.paragraphs_type.change_club_site_timepoints
+  module:
+    - datetime_range
+id: paragraph.change_club_site_timepoints.default
+targetEntityType: paragraph
+bundle: change_club_site_timepoints
+mode: default
+content:
+  field_change_club_timepoint_date:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_change_club_timepoints:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_date:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_label:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_timepoint:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,14 @@
+uuid: a749b7c7-f7f2-41e9-ab8f-b3fb900384a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.survey_administrator
+  module:
+    - user
+id: user_add_role_action.survey_administrator
+label: 'Add the Survey Administrator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: survey_administrator

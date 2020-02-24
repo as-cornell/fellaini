@@ -1,0 +1,60 @@
+uuid: 50d5c87d-5ba2-4f2a-a0ec-a7a137341f05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.educator_info.field_contact_label
+    - field.field.paragraph.educator_info.field_educator_address
+    - field.field.paragraph.educator_info.field_educator_email
+    - field.field.paragraph.educator_info.field_educator_mailing_address
+    - field.field.paragraph.educator_info.field_educator_phone
+    - paragraphs.paragraphs_type.educator_info
+  module:
+    - telephone
+id: paragraph.educator_info.default
+targetEntityType: paragraph
+bundle: educator_info
+mode: default
+content:
+  field_contact_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_educator_address:
+    weight: 3
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_educator_email:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_educator_mailing_address:
+    weight: 4
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_educator_phone:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+hidden:
+  created: true
+  status: true

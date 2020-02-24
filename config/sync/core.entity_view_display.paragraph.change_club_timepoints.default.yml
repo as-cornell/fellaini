@@ -1,0 +1,82 @@
+uuid: 1975d8b1-47bc-438b-953c-bd8b75395446
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.change_club_timepoints.field_accelerometer_status
+    - field.field.paragraph.change_club_timepoints.field_date_recorded
+    - field.field.paragraph.change_club_timepoints.field_notes
+    - field.field.paragraph.change_club_timepoints.field_survey_completed
+    - field.field.paragraph.change_club_timepoints.field_timepoint_change_club
+    - field.field.paragraph.change_club_timepoints.field_visit_completed
+    - field.field.paragraph.change_club_timepoints.field_visit_scheduled
+    - paragraphs.paragraphs_type.change_club_timepoints
+  module:
+    - datetime
+    - options
+id: paragraph.change_club_timepoints.default
+targetEntityType: paragraph
+bundle: change_club_timepoints
+mode: default
+content:
+  field_accelerometer_status:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_date_recorded:
+    weight: 3
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: month_day_year
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_notes:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_survey_completed:
+    weight: 1
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_timepoint_change_club:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_visit_completed:
+    weight: 4
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_visit_scheduled:
+    weight: 2
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden: {  }

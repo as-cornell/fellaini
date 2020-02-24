@@ -1,0 +1,23 @@
+uuid: efc0dd65-59a1-43a2-826e-3ef471172fc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accelerometer_returned
+    - paragraphs.paragraphs_type.strongpeople_timepoint_actions
+id: paragraph.strongpeople_timepoint_actions.field_accelerometer_returned
+field_name: field_accelerometer_returned
+entity_type: paragraph
+bundle: strongpeople_timepoint_actions
+label: 'Accelerometer Returned'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

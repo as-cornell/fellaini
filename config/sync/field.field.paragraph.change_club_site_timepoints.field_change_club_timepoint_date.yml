@@ -1,0 +1,29 @@
+uuid: a07cc6e6-6e6a-4d6a-a60a-af9bff48d157
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_change_club_timepoint_date
+    - paragraphs.paragraphs_type.change_club_site_timepoints
+  module:
+    - datetime_range
+id: paragraph.change_club_site_timepoints.field_change_club_timepoint_date
+field_name: field_change_club_timepoint_date
+entity_type: paragraph
+bundle: change_club_site_timepoints
+label: 'Change Club Timepoint Date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+10 days'
+    default_end_date_type: relative
+    default_end_date: '+101 days'
+    field_defaults:
+      update_defaults: 0
+      no_overwrite: 0
+default_value_callback: ''
+settings: {  }
+field_type: daterange

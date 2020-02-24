@@ -1,0 +1,19 @@
+uuid: 9bc8b0ba-e919-4a90-ad57-39d5e5379d47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_why_inactive
+    - node.type.strongpeople_strength
+id: node.strongpeople_strength.field_why_inactive
+field_name: field_why_inactive
+entity_type: node
+bundle: strongpeople_strength
+label: 'Why Inactive'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

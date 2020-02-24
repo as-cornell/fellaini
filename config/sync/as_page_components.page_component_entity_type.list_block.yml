@@ -1,8 +1,0 @@
-uuid: 20b3fc91-4cd7-479d-a7f3-2c8b431ef211
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: dtv7phTWJaV_-rM2s3MsVSbVCxfc9R0N8_m6IqJFwd4
-id: list_block
-label: 'List Block'

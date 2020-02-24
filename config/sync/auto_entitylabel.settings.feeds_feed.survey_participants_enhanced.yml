@@ -1,0 +1,6 @@
+status: 1
+pattern: 'Survey Participants Enhanced - [feeds_feed:created]'
+escape: false
+dependencies:
+  config:
+    - feeds.feed_type.survey_participants_enhanced

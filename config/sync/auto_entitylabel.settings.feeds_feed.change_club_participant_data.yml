@@ -1,0 +1,6 @@
+status: 0
+pattern: ''
+escape: false
+dependencies:
+  config:
+    - feeds.feed_type.change_club_participant_data

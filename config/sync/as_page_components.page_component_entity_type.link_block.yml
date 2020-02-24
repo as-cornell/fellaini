@@ -1,8 +1,0 @@
-uuid: a4c21e95-0fd9-4121-a183-0f936070d93a
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: yjvWQsRlleIjc42-1TxTvyxy2wtRFy_x3U_gEys8mE4
-id: link_block
-label: 'Link Block'

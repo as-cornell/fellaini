@@ -1,0 +1,43 @@
+uuid: aeca9ade-2648-4a44-a961-0b2c6bd9f582
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_educator_info
+    - node.type.educator
+    - paragraphs.paragraphs_type.educator_info
+  module:
+    - entity_reference_revisions
+id: node.educator.field_educator_info
+field_name: field_educator_info
+entity_type: node
+bundle: educator
+label: 'Educator Contact Info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      educator_info: educator_info
+    target_bundles_drag_drop:
+      compensation_data:
+        weight: 6
+        enabled: false
+      educator_info:
+        enabled: true
+        weight: 7
+      strongpeople_timepoint_actions:
+        weight: 8
+        enabled: false
+      study:
+        weight: 9
+        enabled: false
+      study_site_dates:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,8 +1,0 @@
-uuid: add71379-93e4-4f6f-97d5-5a6deca59ead
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: yzDnxJwa7MWzZtcQO13TZo3Qi3JJsTjrBxkTjyd8s9o
-id: photo_text_block
-label: 'Photo Text Block'

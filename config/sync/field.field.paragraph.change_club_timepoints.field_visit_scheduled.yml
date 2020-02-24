@@ -1,0 +1,23 @@
+uuid: 5bcfe2ba-9b87-4b33-a534-742b2590fa68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_visit_scheduled
+    - paragraphs.paragraphs_type.change_club_timepoints
+id: paragraph.change_club_timepoints.field_visit_scheduled
+field_name: field_visit_scheduled
+entity_type: paragraph
+bundle: change_club_timepoints
+label: 'Visit Scheduled'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -1,0 +1,39 @@
+uuid: 9a7f3a2f-0f87-4cbc-92c5-50e6cd59ddbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.study_site_dates.field_date
+    - field.field.paragraph.study_site_dates.field_date_label
+    - field.field.paragraph.study_site_dates.field_timepoint
+    - paragraphs.paragraphs_type.study_site_dates
+  module:
+    - datetime
+id: paragraph.study_site_dates.default
+targetEntityType: paragraph
+bundle: study_site_dates
+mode: default
+content:
+  field_date:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_label:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_timepoint:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

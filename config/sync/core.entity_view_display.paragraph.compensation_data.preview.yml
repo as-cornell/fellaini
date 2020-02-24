@@ -1,0 +1,51 @@
+uuid: 17ef674e-0fc8-450a-ba84-fd44c435ed9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.compensation_data.field_amount_earned
+    - field.field.paragraph.compensation_data.field_amount_redeemed
+    - field.field.paragraph.compensation_data.field_balance
+    - field.field.paragraph.compensation_data.field_confirmation_number
+    - field.field.paragraph.compensation_data.field_how_sent
+    - field.field.paragraph.compensation_data.field_sent_by
+    - field.field.paragraph.compensation_data.field_sent_to
+    - field.field.paragraph.compensation_data.field_timepoint_change_club
+    - field.field.paragraph.compensation_data.field_w
+    - paragraphs.paragraphs_type.compensation_data
+id: paragraph.compensation_data.preview
+targetEntityType: paragraph
+bundle: compensation_data
+mode: preview
+content:
+  field_amount_earned:
+    weight: 0
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_amount_redeemed:
+    weight: 1
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden:
+  field_balance: true
+  field_confirmation_number: true
+  field_how_sent: true
+  field_sent_by: true
+  field_sent_to: true
+  field_timepoint_change_club: true
+  field_w: true
