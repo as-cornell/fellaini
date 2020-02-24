@@ -1,0 +1,10 @@
+uuid: a8d0b985-11d4-416c-9803-7f7f9c918c84
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: NVHhz8ECPx8LOw7jgVY2y0itByENnAcwKg3LHngg6qA
+name: 'Majors Minors Gradfields'
+vid: majors_minors_gradfields
+description: 'Taxonomy to feature Majors Minors and Grad fields. Filtered by Level field and Discipline taxonomies.'
+weight: -7

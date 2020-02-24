@@ -1,0 +1,51 @@
+uuid: cc2ea3aa-95fd-4926-963e-accbb62cb88c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - as_migrate_articles
+_core:
+  default_config_hash: QSWXhhXcexF9HxNtIMLqV_HvF9hI1RsaqEobwIOw21M
+id: import_as_article_pano_image
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: articles
+label: 'Migrate pano images from D7 articles to D8'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'http://as.cornell.edu'
+  urls: 'http://as.cornell.edu/articles-asd8-json-depts'
+  ids:
+    id:
+      type: integer
+  item_selector: data/
+  fields:
+    -
+      name: id
+      label: id
+      selector: /attributes/nid
+    -
+      name: uri
+      label: Uri
+      selector: /attributes/field_pano_image_uri
+    -
+      name: url
+      label: Url
+      selector: /attributes/field_pano_image/src
+process:
+  uri:
+    plugin: download
+    source:
+      - url
+      - uri
+    guzzle_options:
+      base_uri: url
+destination:
+  plugin: 'entity:file'
+migration_dependencies: {  }

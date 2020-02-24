@@ -1,0 +1,30 @@
+uuid: 0f75db9c-2f3a-450f-988f-1d28246c921d
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.stat
+    - field.storage.page_component_entity.field_related_content
+    - node.type.article
+    - node.type.page
+id: page_component_entity.stat.field_related_content
+field_name: field_related_content
+entity_type: page_component_entity
+bundle: stat
+label: 'Related Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

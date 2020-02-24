@@ -1,12 +1,12 @@
-uuid: 71571971-1659-48aa-89b0-5ecb729b9f83
+uuid: fad771bb-4f13-46e1-ace7-f3ed626488d0
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'Authenticated user'
-weight: -9
+weight: 1
 is_admin: false
 permissions:
   - 'access comments'
@@ -17,27 +17,4 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
-  - 'view article revisions'
-  - 'view change_club revisions'
-  - 'view educator revisions'
-  - 'view field_accelerometer_returned'
-  - 'view field_accelerometer_status'
-  - 'view field_accelerometer_worn'
-  - 'view field_baseline_accelerometer_id'
-  - 'view field_completed_on_paper'
-  - 'view field_date_recorded'
-  - 'view field_notes'
-  - 'view field_outcome_accelerometer_id'
-  - 'view field_survey_completed'
-  - 'view field_visit_completed'
-  - 'view own field_accelerometer_status'
-  - 'view own field_accelerometer_worn'
-  - 'view own field_baseline_accelerometer_id'
-  - 'view own field_completed_on_paper'
-  - 'view own field_date_recorded'
-  - 'view own field_notes'
-  - 'view own field_outcome_accelerometer_id'
-  - 'view own field_survey_completed'
-  - 'view own field_visit_completed'
-  - 'view page revisions'
-  - 'view strongpeople_strength revisions'
+  - 'view media'

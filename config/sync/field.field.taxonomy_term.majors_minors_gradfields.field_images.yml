@@ -1,0 +1,30 @@
+uuid: 89c8a22a-acb7-41d4-bc37-7907c79bb969
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_images
+    - media.type.image
+    - taxonomy.vocabulary.majors_minors_gradfields
+_core:
+  default_config_hash: 5WigyWdh1cH5TcSRfwie7R5kaYw7dAyZQSzPQDvcVQA
+id: taxonomy_term.majors_minors_gradfields.field_images
+field_name: field_images
+entity_type: taxonomy_term
+bundle: majors_minors_gradfields
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

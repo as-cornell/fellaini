@@ -1,10 +1,10 @@
-uuid: f3ae0514-53a4-4d5d-86c6-6ed4e676dc08
+uuid: 98bbb97e-e75b-47d8-9f81-6e5c4866f9cc
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.rss
-    - core.entity_view_mode.node.teaser
   module:
     - node
     - user
@@ -200,7 +200,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: card
       sorts:
         sticky:
           admin_label: ''

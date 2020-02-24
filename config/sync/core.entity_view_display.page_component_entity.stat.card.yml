@@ -1,0 +1,29 @@
+uuid: 091984d8-c8cc-413c-8d41-510cc92ba74f
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.stat
+    - core.entity_view_mode.page_component_entity.card
+    - field.field.page_component_entity.stat.field_related_content
+    - field.field.page_component_entity.stat.field_stat_description
+    - field.field.page_component_entity.stat.field_stat_number
+  module:
+    - text
+id: page_component_entity.stat.card
+targetEntityType: page_component_entity
+bundle: stat
+mode: card
+content:
+  field_stat_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_related_content: true
+  field_stat_number: true
+  name: true
+  user_id: true

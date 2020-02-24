@@ -1,0 +1,19 @@
+uuid: 0742b040-e64f-4d7d-81af-86f7fc9d9eac
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.figure_video
+    - field.storage.page_component_entity.field_video_caption
+id: page_component_entity.figure_video.field_video_caption
+field_name: field_video_caption
+entity_type: page_component_entity
+bundle: figure_video
+label: 'Video caption'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

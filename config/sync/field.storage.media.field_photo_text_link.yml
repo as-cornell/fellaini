@@ -1,0 +1,21 @@
+uuid: 622f433f-f83a-4d4d-b601-d8a1f4c3eb22
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - media
+_core:
+  default_config_hash: dBXtYKuKKuMuWu7eKUrYBXKPAP0TEHroFamP5gWSHws
+id: media.field_photo_text_link
+field_name: field_photo_text_link
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

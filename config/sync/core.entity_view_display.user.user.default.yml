@@ -1,60 +1,9 @@
-uuid: e388be5d-0312-4d1d-93de-3cc928e7b723
+uuid: a1575fea-e9f6-41dd-8d31-57921d65310d
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.field.user.user.feeds_item
-    - field.field.user.user.field_address_city
-    - field.field.user.user.field_address_state
-    - field.field.user.user.field_address_zip
-    - field.field.user.user.field_displa
-    - field.field.user.user.field_email
-    - field.field.user.user.field_mobile_phone_carrier
-    - field.field.user.user.field_preferred_contact
-    - field.field.user.user.field_primary_phone
-    - field.field.user.user.field_response_id
-    - field.field.user.user.field_street_address
-    - field.field.user.user.field_study_data
   module:
-    - field_group
-    - options
-    - telephone
     - user
-    - viewsreference
-third_party_settings:
-  field_group:
-    group_contact_info:
-      children:
-        - field_displa
-        - field_email
-        - field_street_address
-        - field_address_city
-        - field_address_state
-        - field_address_zip
-        - field_primary_phone
-        - field_mobile_phone_carrier
-        - field_preferred_contact
-      parent_name: ''
-      weight: 0
-      format_type: fieldset
-      format_settings:
-        id: ''
-        classes: ''
-        description: ''
-      label: 'Contact Info'
-      region: content
-    group_survey_info:
-      children:
-        - field_study_data
-      parent_name: ''
-      weight: 1
-      format_type: fieldset
-      format_settings:
-        description: ''
-        id: ''
-        classes: ''
-      label: 'Study Info'
-      region: content
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -62,85 +11,9 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_address_city:
-    weight: 4
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_address_state:
+  member_for:
     weight: 5
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
-  field_address_zip:
-    weight: 6
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_displa:
-    weight: 1
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_email:
-    weight: 2
-    label: inline
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_mobile_phone_carrier:
-    weight: 8
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_preferred_contact:
-    weight: 9
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_primary_phone:
-    weight: 7
-    label: inline
-    settings:
-      title: ''
-    third_party_settings: {  }
-    type: telephone_link
-    region: content
-  field_street_address:
-    weight: 3
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_study_data:
-    weight: 15
-    label: hidden
-    settings:
-      plugin_types:
-        - block
-    third_party_settings: {  }
-    type: viewsreference_formatter
-    region: content
-hidden:
-  feeds_item: true
-  field_response_id: true
-  member_for: true
+hidden: {  }

@@ -1,8 +1,0 @@
-uuid: 5b8f897b-13f9-4e57-b781-ea14cf3f9d9a
-langcode: en
-status: true
-dependencies: {  }
-name: 'Study Sites'
-vid: study_sites
-description: 'Study sites and their related dates, etc.'
-weight: 0

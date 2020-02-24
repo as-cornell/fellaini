@@ -1,0 +1,6 @@
+uuid: 88aa0f1c-39e8-470a-8af2-deb7b5ba89a7
+langcode: en
+status: true
+dependencies: {  }
+id: stat
+label: Stat

@@ -1,0 +1,21 @@
+uuid: 324894bb-fe52-4c23-950b-0020b128a277
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.link_block
+    - field.storage.page_component_entity.field_block_title
+_core:
+  default_config_hash: NH-2Pfynii1PLf11ubHsinTvB6Nq4krP0b8Hd_-EiQ8
+id: page_component_entity.link_block.field_block_title
+field_name: field_block_title
+entity_type: page_component_entity
+bundle: link_block
+label: 'Block Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

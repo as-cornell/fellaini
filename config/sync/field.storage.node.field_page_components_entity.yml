@@ -1,0 +1,22 @@
+uuid: a5f83139-a57a-49df-8d57-57da0f53e459
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - node
+_core:
+  default_config_hash: JEgQpaqi2lYe1Lve2gjv_6E0Repfb3VjCcqYUqxqWj0
+id: node.field_page_components_entity
+field_name: field_page_components_entity
+entity_type: node
+type: entity_reference
+settings:
+  target_type: page_component_entity
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

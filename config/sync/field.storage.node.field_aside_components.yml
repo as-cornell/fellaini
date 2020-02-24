@@ -1,0 +1,20 @@
+uuid: 8506b96d-b4e0-43ac-8ee1-dece85168619
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - node
+id: node.field_aside_components
+field_name: field_aside_components
+entity_type: node
+type: entity_reference
+settings:
+  target_type: page_component_entity
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

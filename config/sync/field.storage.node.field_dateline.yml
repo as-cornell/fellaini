@@ -1,0 +1,22 @@
+uuid: 9cc85299-9012-4958-bea0-23c5a0f458e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: jdIe2x1_rjM_FZhKkdAXOxVk8Ijq8RFqhkQfXGyXD3I
+id: node.field_dateline
+field_name: field_dateline
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

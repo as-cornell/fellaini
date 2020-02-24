@@ -1,0 +1,23 @@
+uuid: d7db2880-d8a6-4762-9918-068ee138c65e
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: departments_programs
+label: 'Departments Programs'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'department_program/[term:name]'
+selection_criteria:
+  6c254606-e4b9-4cd6-83a0-e31102110a28:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      departments_programs: departments_programs
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 6c254606-e4b9-4cd6-83a0-e31102110a28
+selection_logic: and
+weight: -7
+relationships: {  }

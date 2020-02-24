@@ -1,0 +1,24 @@
+uuid: f2ed4d84-e08b-4f3a-9cd4-fe85bfe0566a
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - dynamic_entity_reference
+    - node
+id: page_component_entity.field_campfire_before
+field_name: field_campfire_before
+entity_type: page_component_entity
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    node: node
+    page_component_entity: page_component_entity
+module: dynamic_entity_reference
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

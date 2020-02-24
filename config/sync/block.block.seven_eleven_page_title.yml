@@ -1,0 +1,29 @@
+uuid: b158d1ae-aabf-49aa-ac33-92d6f6e0bf8f
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - seven_eleven
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: seven_eleven_page_title
+theme: seven_eleven
+region: content
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
