@@ -1,0 +1,23 @@
+uuid: 44f758da-2c85-48c2-8852-bb763a4f6e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_video_consent
+    - node.type.strongpeople_strength
+id: node.strongpeople_strength.field_photo_video_consent
+field_name: field_photo_video_consent
+entity_type: node
+bundle: strongpeople_strength
+label: 'Photo/Video Consent'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

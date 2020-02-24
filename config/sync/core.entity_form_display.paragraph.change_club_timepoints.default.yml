@@ -1,0 +1,113 @@
+uuid: null
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.change_club_timepoints.field_accelerometer_status
+    - field.field.paragraph.change_club_timepoints.field_date_recorded
+    - field.field.paragraph.change_club_timepoints.field_notes
+    - field.field.paragraph.change_club_timepoints.field_survey_completed
+    - field.field.paragraph.change_club_timepoints.field_timepoint_change_club
+    - field.field.paragraph.change_club_timepoints.field_visit_completed
+    - field.field.paragraph.change_club_timepoints.field_visit_scheduled
+    - paragraphs.paragraphs_type.change_club_timepoints
+  module:
+    - datetime
+id: paragraph.change_club_timepoints.default
+targetEntityType: paragraph
+bundle: change_club_timepoints
+mode: default
+content:
+  field_accelerometer_returned:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_accelerometer_status:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_accelerometer_worn:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_baseline_accelerometer_id:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_completed_on_paper:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_date_recorded:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_notes:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_outcome_accelerometer_id:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_survey_completed:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_timepoint:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_timepoint_change_club:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_visit_completed:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_visit_scheduled:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  created: true
+  status: true

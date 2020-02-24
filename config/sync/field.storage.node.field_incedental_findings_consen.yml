@@ -1,0 +1,18 @@
+uuid: fde64073-be91-406f-82ca-55d9f1b9ad5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_incedental_findings_consen
+field_name: field_incedental_findings_consen
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 60231c47-4c3f-4aca-bc3a-504da02af841
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_educator_email
+    - paragraphs.paragraphs_type.educator_info
+id: paragraph.educator_info.field_educator_email
+field_name: field_educator_email
+entity_type: paragraph
+bundle: educator_info
+label: 'Educator Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

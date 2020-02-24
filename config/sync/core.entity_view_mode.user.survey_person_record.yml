@@ -1,0 +1,10 @@
+uuid: 124c7702-19a3-4c4f-ad6f-6df33eaecf10
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.survey_person_record
+label: 'Survey Person Record'
+targetEntityType: user
+cache: true

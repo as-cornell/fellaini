@@ -1,0 +1,27 @@
+uuid: 58a32ff6-2234-4b43-a2a3-a75f51c21a22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_recorded
+    - paragraphs.paragraphs_type.strongpeople_timepoint_actions
+  module:
+    - datetime
+id: paragraph.strongpeople_timepoint_actions.field_date_recorded
+field_name: field_date_recorded
+entity_type: paragraph
+bundle: strongpeople_timepoint_actions
+label: 'Date Recorded'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+    field_defaults:
+      update_defaults: 0
+      no_overwrite: 0
+default_value_callback: ''
+settings: {  }
+field_type: datetime

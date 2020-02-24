@@ -1,0 +1,21 @@
+uuid: 412ccc41-b8be-48f6-98bd-9fa0803f01f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date
+    - paragraphs.paragraphs_type.study_site_dates
+  module:
+    - datetime
+id: paragraph.study_site_dates.field_date
+field_name: field_date
+entity_type: paragraph
+bundle: study_site_dates
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

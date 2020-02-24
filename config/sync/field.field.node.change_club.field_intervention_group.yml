@@ -1,0 +1,23 @@
+uuid: d5139edc-87f6-4e3a-ab11-b99e407ed878
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intervention_group
+    - node.type.change_club
+  module:
+    - options
+id: node.change_club.field_intervention_group
+field_name: field_intervention_group
+entity_type: node
+bundle: change_club
+label: 'Intervention Group'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

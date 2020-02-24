@@ -1,0 +1,23 @@
+uuid: 6521dc59-c8a3-4f16-bbab-c5bcff814789
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active
+    - node.type.change_club
+id: node.change_club.field_active
+field_name: field_active
+entity_type: node
+bundle: change_club
+label: Active
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

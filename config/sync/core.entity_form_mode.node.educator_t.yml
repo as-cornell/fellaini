@@ -1,0 +1,10 @@
+uuid: e8b1038a-dc3d-417d-9483-5ef18444d897
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.educator_t
+label: 'Educator Timepoint Data'
+targetEntityType: node
+cache: true

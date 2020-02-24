@@ -1,0 +1,23 @@
+uuid: 87902544-5c17-46bd-885c-fe62f5065978
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_survey_completed
+    - paragraphs.paragraphs_type.strongpeople_timepoint_actions
+id: paragraph.strongpeople_timepoint_actions.field_survey_completed
+field_name: field_survey_completed
+entity_type: paragraph
+bundle: strongpeople_timepoint_actions
+label: 'Survey Completed'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

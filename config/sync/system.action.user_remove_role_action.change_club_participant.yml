@@ -1,0 +1,14 @@
+uuid: 16b84166-c8b8-4dcd-8436-fbe56bc1dd5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.change_club_participant
+  module:
+    - user
+id: user_remove_role_action.change_club_participant
+label: 'Remove the Change Club Participant role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: change_club_participant

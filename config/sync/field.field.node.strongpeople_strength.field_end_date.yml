@@ -1,0 +1,21 @@
+uuid: 5fbb2632-7983-48eb-919e-1e9c302c2b89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_end_date
+    - node.type.strongpeople_strength
+  module:
+    - datetime
+id: node.strongpeople_strength.field_end_date
+field_name: field_end_date
+entity_type: node
+bundle: strongpeople_strength
+label: 'End Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

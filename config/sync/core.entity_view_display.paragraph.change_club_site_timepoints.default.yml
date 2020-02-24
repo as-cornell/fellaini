@@ -1,0 +1,34 @@
+uuid: e93d38bb-a2c6-47aa-9025-36f11d354bbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.change_club_site_timepoints.field_change_club_timepoint_date
+    - field.field.paragraph.change_club_site_timepoints.field_change_club_timepoints
+    - paragraphs.paragraphs_type.change_club_site_timepoints
+  module:
+    - datetime_range
+    - options
+id: paragraph.change_club_site_timepoints.default
+targetEntityType: paragraph
+bundle: change_club_site_timepoints
+mode: default
+content:
+  field_change_club_timepoint_date:
+    weight: 4
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: month_day_year
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_change_club_timepoints:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

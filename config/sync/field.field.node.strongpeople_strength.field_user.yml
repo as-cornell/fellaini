@@ -1,0 +1,28 @@
+uuid: 633b9ddb-0a27-48a1-a710-1b88c48c79db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user
+    - node.type.strongpeople_strength
+id: node.strongpeople_strength.field_user
+field_name: field_user
+entity_type: node
+bundle: strongpeople_strength
+label: 'Survey Participant'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

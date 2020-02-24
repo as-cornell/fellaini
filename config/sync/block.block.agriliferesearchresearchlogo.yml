@@ -1,0 +1,31 @@
+uuid: 84be0284-78e6-4214-bf7b-39d989d88dbe
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:70e52bee-0617-4506-bb97-ee75479c818d'
+  module:
+    - block_content
+    - system
+  theme:
+    - bootstrap
+id: agriliferesearchresearchlogo
+theme: bootstrap
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:70e52bee-0617-4506-bb97-ee75479c818d'
+settings:
+  id: 'block_content:70e52bee-0617-4506-bb97-ee75479c818d'
+  label: 'AgriLife Research Research Logo'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

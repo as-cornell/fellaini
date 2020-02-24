@@ -1,0 +1,19 @@
+uuid: 8729a5d5-a8f8-4109-8cc4-e016af45ec61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_response_id
+    - node.type.change_club
+id: node.change_club.field_response_id
+field_name: field_response_id
+entity_type: node
+bundle: change_club
+label: 'Participant ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

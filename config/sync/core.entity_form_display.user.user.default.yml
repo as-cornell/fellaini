@@ -1,10 +1,96 @@
-uuid: b764eda1-fcae-4bdb-b803-69af1810a9d6
+uuid: 3346f85c-45ae-47f2-97c7-d0d2738a1f3f
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.feeds_item
+    - field.field.user.user.field_address_city
+    - field.field.user.user.field_address_state
+    - field.field.user.user.field_address_zip
+    - field.field.user.user.field_displa
+    - field.field.user.user.field_email
+    - field.field.user.user.field_mobile_phone_carrier
+    - field.field.user.user.field_preferred_contact
+    - field.field.user.user.field_primary_phone
+    - field.field.user.user.field_response_id
+    - field.field.user.user.field_street_address
+    - field.field.user.user.field_study_data
   module:
-    - path
+    - field_group
+    - telephone
     - user
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_contact_info:
+      children:
+        - field_displa
+        - field_email
+        - field_street_address
+        - field_address_city
+        - field_address_state
+        - field_address_zip
+        - field_primary_phone
+        - field_mobile_phone_carrier
+        - field_preferred_contact
+      parent_name: group_user_account
+      weight: 4
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: closed
+        id: ''
+        classes: ''
+        required_fields: false
+      label: 'Contact Info'
+      region: content
+    group_survey_info:
+      children:
+        - field_response_id
+        - field_study_data
+      parent_name: group_user_account
+      weight: 5
+      format_type: tab
+      format_settings:
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+        description: ''
+      label: 'User Survey Data'
+      region: content
+    group_account_info:
+      children:
+        - account
+      parent_name: group_user_account
+      weight: 3
+      format_type: tab
+      format_settings:
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+        description: ''
+      label: 'User Account, Email and Roles'
+      region: content
+    group_user_account:
+      children:
+        - group_account_info
+        - group_contact_info
+        - group_survey_info
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        effect: none
+        direction: vertical
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'User Account'
+      region: content
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
 id: user.user.default
@@ -13,29 +99,98 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
-  contact:
+  field_address_city:
     weight: 5
-    region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-  language:
-    weight: 0
+    type: string_textfield
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  timezone:
+  field_address_state:
     weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
+  field_address_zip:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_displa:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_email:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_mobile_phone_carrier:
+    weight: 9
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+    type: options_select
+    region: content
+  field_preferred_contact:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_primary_phone:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_response_id:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_street_address:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_study_data:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+    region: content
+hidden:
+  contact: true
+  feeds_item: true
+  language: true
+  path: true
+  timezone: true

@@ -1,0 +1,21 @@
+uuid: b26025d1-2e27-4844-8b65-b14d0b37f420
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hcp_date
+    - node.type.strongpeople_strength
+  module:
+    - datetime
+id: node.strongpeople_strength.field_hcp_date
+field_name: field_hcp_date
+entity_type: node
+bundle: strongpeople_strength
+label: 'HCP Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

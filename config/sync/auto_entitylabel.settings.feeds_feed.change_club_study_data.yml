@@ -1,0 +1,6 @@
+status: 3
+pattern: 'Change Club Study Data - Member - [current-date:month_day_year]'
+escape: false
+dependencies:
+  config:
+    - feeds.feed_type.change_club_study_data

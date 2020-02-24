@@ -1,0 +1,19 @@
+uuid: a64ac260-0ae7-4541-a8af-b0111ba94538
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hcp_notes
+    - node.type.strongpeople_strength
+id: node.strongpeople_strength.field_hcp_notes
+field_name: field_hcp_notes
+entity_type: node
+bundle: strongpeople_strength
+label: 'HCP Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

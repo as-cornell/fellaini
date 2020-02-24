@@ -1,0 +1,19 @@
+uuid: 32762c24-f0ca-4ac4-b770-a8c051a3ae1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_response_id
+    - node.type.strongpeople_strength
+id: node.strongpeople_strength.field_response_id
+field_name: field_response_id
+entity_type: node
+bundle: strongpeople_strength
+label: 'Participant ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,8 +1,0 @@
-uuid: 7fb47dd0-2b84-4a8f-96b1-f668f59c4a09
-langcode: en
-status: true
-dependencies: {  }
-id: m_d_y
-label: M/D/Y
-locked: false
-pattern: n/j/Y

@@ -1,0 +1,140 @@
+uuid: 24940ff1-29af-4288-9f02-e9aec72e9b82
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.timepoint_actions
+    - field.field.node.change_club.feeds_item
+    - field.field.node.change_club.field_active
+    - field.field.node.change_club.field_age
+    - field.field.node.change_club.field_compensation_data
+    - field.field.node.change_club.field_end_date
+    - field.field.node.change_club.field_enrolled_consented
+    - field.field.node.change_club.field_gender
+    - field.field.node.change_club.field_incedental_findings_consen
+    - field.field.node.change_club.field_intervention_group
+    - field.field.node.change_club.field_participant_id_previous
+    - field.field.node.change_club.field_participant_role_reference
+    - field.field.node.change_club.field_photo_video_consent
+    - field.field.node.change_club.field_response_id
+    - field.field.node.change_club.field_start_date
+    - field.field.node.change_club.field_study_image
+    - field.field.node.change_club.field_study_site
+    - field.field.node.change_club.field_survey_link
+    - field.field.node.change_club.field_timepoint_actions
+    - field.field.node.change_club.field_user
+    - field.field.node.change_club.field_why_inactive
+    - node.type.change_club
+  module:
+    - field_group
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_participant_data:
+      children:
+        - field_active
+        - field_need_hcp
+        - field_user
+        - field_survey_link
+        - field_study_site
+        - field_start_date
+        - field_response_id
+        - field_photo_video_consent
+        - field_intervention_group
+        - field_age
+        - field_incedental_findings_consen
+        - field_hcp_notes
+        - field_hcp_date
+        - field_gender
+        - field_enrolled_consented
+        - field_end_date
+        - field_why_inactive
+      parent_name: group_edit_survey_records
+      weight: 2
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: open
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Participant Data'
+      region: hidden
+    group_compensation:
+      children:
+        - field_compensation_data
+      parent_name: group_edit_survey_records
+      weight: 3
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Compensation Data'
+      region: hidden
+    group_edit_survey_records:
+      children:
+        - group_participant_data
+        - group_compensation
+      parent_name: ''
+      weight: 12
+      format_type: tabs
+      format_settings:
+        direction: horizontal
+        id: ''
+        classes: ''
+        effect: none
+      label: 'Edit Survey Records'
+      region: hidden
+id: node.change_club.timepoint_actions
+targetEntityType: node
+bundle: change_club
+mode: timepoint_actions
+content:
+  field_timepoint_actions:
+    type: paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  feeds_item: true
+  field_active: true
+  field_age: true
+  field_compensation_data: true
+  field_end_date: true
+  field_enrolled_consented: true
+  field_gender: true
+  field_incedental_findings_consen: true
+  field_intervention_group: true
+  field_participant_id_previous: true
+  field_participant_role_reference: true
+  field_photo_video_consent: true
+  field_response_id: true
+  field_start_date: true
+  field_study_image: true
+  field_study_site: true
+  field_survey_link: true
+  field_user: true
+  field_why_inactive: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

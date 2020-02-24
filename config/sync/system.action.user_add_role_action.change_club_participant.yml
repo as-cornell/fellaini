@@ -1,0 +1,14 @@
+uuid: 54468206-3891-45c9-9ce2-3c4388b4886e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.change_club_participant
+  module:
+    - user
+id: user_add_role_action.change_club_participant
+label: 'Add the Change Club Participant role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: change_club_participant

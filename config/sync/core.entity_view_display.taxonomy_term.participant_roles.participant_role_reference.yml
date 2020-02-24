@@ -1,0 +1,26 @@
+uuid: f2169ea1-871b-44ae-897c-003b9bd52c3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.participant_role_reference
+    - field.field.taxonomy_term.participant_roles.field_compensation_type
+    - taxonomy.vocabulary.participant_roles
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.participant_roles.participant_role_reference
+targetEntityType: taxonomy_term
+bundle: participant_roles
+mode: participant_role_reference
+content:
+  field_compensation_type:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  description: true

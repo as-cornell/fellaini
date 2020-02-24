@@ -1,0 +1,23 @@
+uuid: b961b017-c49e-4797-b84a-b22a1c47e0ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timepoint
+    - paragraphs.paragraphs_type.strongpeople_timepoint_actions
+  module:
+    - options
+id: paragraph.strongpeople_timepoint_actions.field_timepoint
+field_name: field_timepoint
+entity_type: paragraph
+bundle: strongpeople_timepoint_actions
+label: Timepoint
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

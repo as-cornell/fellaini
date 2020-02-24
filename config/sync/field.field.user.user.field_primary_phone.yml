@@ -1,0 +1,21 @@
+uuid: 91aa8df9-cfed-4806-bf45-5df887803998
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_primary_phone
+  module:
+    - telephone
+    - user
+id: user.user.field_primary_phone
+field_name: field_primary_phone
+entity_type: user
+bundle: user
+label: 'Primary Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

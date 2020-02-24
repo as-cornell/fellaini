@@ -1,0 +1,23 @@
+uuid: cf3ffb51-13c1-4a57-9ed4-fd0d4256eca8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_completed_on_paper
+    - paragraphs.paragraphs_type.strongpeople_timepoint_actions
+id: paragraph.strongpeople_timepoint_actions.field_completed_on_paper
+field_name: field_completed_on_paper
+entity_type: paragraph
+bundle: strongpeople_timepoint_actions
+label: 'Completed on paper'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

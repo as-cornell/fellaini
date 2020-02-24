@@ -1,0 +1,23 @@
+uuid: 08bfaad9-3015-48da-8a74-ce2e3b3f500d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.feeds_item
+    - node.type.change_club
+  module:
+    - feeds
+id: node.change_club.feeds_item
+field_name: feeds_item
+entity_type: node
+bundle: change_club
+label: 'Feeds item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:feeds_feed'
+  handler_settings: {  }
+field_type: feeds_item

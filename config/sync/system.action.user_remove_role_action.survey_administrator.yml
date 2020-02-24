@@ -1,0 +1,14 @@
+uuid: 840c3f4c-eaad-4698-b2c4-32ca208afde0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.survey_administrator
+  module:
+    - user
+id: user_remove_role_action.survey_administrator
+label: 'Remove the Survey Administrator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: survey_administrator

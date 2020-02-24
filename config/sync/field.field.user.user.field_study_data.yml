@@ -1,0 +1,58 @@
+uuid: a33ff6e1-37c0-4b92-a3e8-26d9bf015138
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_study_data
+    - views.view.user_dashboard
+  module:
+    - user
+    - viewsreference
+id: user.user.field_study_data
+field_name: field_study_data
+entity_type: user
+bundle: user
+label: 'Study Data'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    options:
+      title: 0
+      argument: ''
+    display_id: block_1
+    argument: null
+    title: 0
+    data: null
+    target_uuid: ed0afc00-8862-42f6-af54-0ffe7716af46
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+    data_export: 0
+  preselect_views:
+    user_dashboard: user_dashboard
+    block_content: 0
+    content: 0
+    content_recent: 0
+    educators: 0
+    emails: 0
+    feeds_feed: 0
+    files: 0
+    frontpage: 0
+    study_sites: 0
+    survey_participant_dashboard: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+field_type: viewsreference
