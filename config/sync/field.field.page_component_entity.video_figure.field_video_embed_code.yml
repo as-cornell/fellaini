@@ -1,0 +1,21 @@
+uuid: 6468e976-7e72-40c7-9f4e-f8a24732b218
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.video_figure
+    - field.storage.page_component_entity.field_video_embed_code
+_core:
+  default_config_hash: 9K3a4rKjoAb3pH0FMccjLIDp1wmCBIxjNb1Yq7tzQOI
+id: page_component_entity.video_figure.field_video_embed_code
+field_name: field_video_embed_code
+entity_type: page_component_entity
+bundle: video_figure
+label: 'Video embed code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

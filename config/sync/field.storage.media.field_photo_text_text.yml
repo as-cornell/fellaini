@@ -1,0 +1,21 @@
+uuid: 4d6a0058-338f-432c-b350-ba3903ef9357
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - text
+_core:
+  default_config_hash: 0_6sRhbkB0EjYjwdVEjgz2LOuKXTOtmRbwKWRZZAAqo
+id: media.field_photo_text_text
+field_name: field_photo_text_text
+entity_type: media
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

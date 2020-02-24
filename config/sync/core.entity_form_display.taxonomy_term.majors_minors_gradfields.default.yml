@@ -1,0 +1,132 @@
+uuid: c5545330-9a03-41ee-83fa-0c9092ae4942
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_entity_browser
+    - field.field.taxonomy_term.majors_minors_gradfields.field_images
+    - field.field.taxonomy_term.majors_minors_gradfields.field_level
+    - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
+    - taxonomy.vocabulary.majors_minors_gradfields
+  module:
+    - entity_browser
+    - entity_browser_entity_form
+    - field_group
+    - inline_entity_form
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_standard:
+      children:
+        - group_basic_information
+        - group_body_content
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Standard
+      region: content
+    group_basic_information:
+      children:
+        - field_images
+        - field_level
+        - description
+        - path
+      parent_name: group_standard
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Basic Information'
+      region: content
+    group_body_content:
+      children:
+        - field_page_components
+      parent_name: group_standard
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Body Content'
+      region: content
+_core:
+  default_config_hash: RnvuAg1vH_2RkNjXFRi4v3tpu4hkgcfcRnaPnygP_s8
+id: taxonomy_term.majors_minors_gradfields.default
+targetEntityType: taxonomy_term
+bundle: majors_minors_gradfields
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 23
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_images:
+    weight: 21
+    settings:
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: card_small
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  field_level:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_page_components:
+    weight: 5
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

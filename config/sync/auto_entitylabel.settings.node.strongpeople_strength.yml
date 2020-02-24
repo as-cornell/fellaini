@@ -1,6 +1,0 @@
-status: 1
-pattern: '[node:field_user] - [node:field_study_site]'
-escape: false
-dependencies:
-  config:
-    - node.type.strongpeople_strength

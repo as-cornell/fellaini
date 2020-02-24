@@ -1,0 +1,23 @@
+uuid: 60c0c8b5-a1d9-47c9-9446-1a86b88cd791
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+_core:
+  default_config_hash: jOJspa2g4Ek1B4aQronSO2ck1VIBIe6Q4OJf4RTfL0g
+id: page_component_entity.field_block_title
+field_name: field_block_title
+entity_type: page_component_entity
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

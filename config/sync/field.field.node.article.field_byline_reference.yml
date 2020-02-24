@@ -1,0 +1,29 @@
+uuid: 33711f1d-6d55-4de3-beff-413fc98a21cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_byline_reference
+    - node.type.article
+    - taxonomy.vocabulary.article_bylines
+id: node.article.field_byline_reference
+field_name: field_byline_reference
+entity_type: node
+bundle: article
+label: 'Byline Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_bylines: article_bylines
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

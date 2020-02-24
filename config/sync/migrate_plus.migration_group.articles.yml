@@ -1,0 +1,12 @@
+uuid: f573c0a9-6df8-4db2-9fcd-6c17f714dcc1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: MqMeOKNul1dWO4vvlJl1cxjhW7fqE1CZsb7qmfF8c0s
+id: articles
+label: Articles
+description: 'Migrate Articles content from Drupal 7 to Drupal 8'
+source_type: 'Drupal 7'
+module: null
+shared_configuration: null

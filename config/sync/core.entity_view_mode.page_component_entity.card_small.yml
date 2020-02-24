@@ -1,0 +1,10 @@
+uuid: 749673fd-631f-4dd4-8394-8170f9c22400
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.card_small
+label: 'Card Small'
+targetEntityType: page_component_entity
+cache: true

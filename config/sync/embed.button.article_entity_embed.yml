@@ -1,0 +1,26 @@
+uuid: f8db8930-d9ea-4e3d-b066-783ce915875f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card_small
+    - entity_browser.browser.article_entity_browser
+    - node.type.article
+  content:
+    - 'file:file:bb123350-2957-4c5e-9cd8-8b85feda5ca6'
+  module:
+    - entity_embed
+    - node
+label: 'Article Entity Embed'
+id: article_entity_embed
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles:
+    - article
+  display_plugins:
+    - 'view_mode:node.card_small'
+  entity_browser: article_entity_browser
+  entity_browser_settings:
+    display_review: true
+icon_uuid: bb123350-2957-4c5e-9cd8-8b85feda5ca6

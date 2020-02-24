@@ -1,0 +1,42 @@
+uuid: c3e36761-ace8-4a8a-ac1e-fbb064850ebf
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.video_figure
+    - field.field.page_component_entity.video_figure.field_component_alignment
+    - field.field.page_component_entity.video_figure.field_video_caption
+    - field.field.page_component_entity.video_figure.field_video_embed_code
+  module:
+    - options
+_core:
+  default_config_hash: h2H3eeYHGOUsh1K0A0Pu6_bQ7Sl4Bm0eM8OzYcs012Y
+id: page_component_entity.video_figure.default
+targetEntityType: page_component_entity
+bundle: video_figure
+mode: default
+content:
+  field_component_alignment:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_video_caption:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_video_embed_code:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  name: true
+  user_id: true

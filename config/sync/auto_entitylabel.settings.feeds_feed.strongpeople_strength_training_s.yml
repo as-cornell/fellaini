@@ -1,6 +1,0 @@
-status: 1
-pattern: 'StrongPeople Strength Training Study - [current-date:month_day_year]'
-escape: false
-dependencies:
-  config:
-    - feeds.feed_type.strongpeople_strength_training_s

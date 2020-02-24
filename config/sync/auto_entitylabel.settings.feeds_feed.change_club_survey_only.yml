@@ -1,6 +1,0 @@
-status: 3
-pattern: 'Change Club Study Data - Community Resident - Survey Only - [current-date:month_day_year]'
-escape: false
-dependencies:
-  config:
-    - feeds.feed_type.change_club_survey_only

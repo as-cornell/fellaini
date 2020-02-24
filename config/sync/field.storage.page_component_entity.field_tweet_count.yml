@@ -1,0 +1,20 @@
+uuid: 2d0daaa9-1d3c-40f0-b8ae-daa593536b3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.field_tweet_count
+field_name: field_tweet_count
+entity_type: page_component_entity
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

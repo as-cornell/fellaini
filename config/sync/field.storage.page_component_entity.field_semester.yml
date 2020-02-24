@@ -1,0 +1,39 @@
+uuid: 1577a49e-d8a9-4201-b483-356c435aa295
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - options
+id: page_component_entity.field_semester
+field_name: field_semester
+entity_type: page_component_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: SP18
+      label: 'Spring 2018'
+    -
+      value: FA18
+      label: 'Fall 2018'
+    -
+      value: SP19
+      label: 'Spring 2019'
+    -
+      value: FA19
+      label: 'Fall 2019'
+    -
+      value: SP20
+      label: 'Spring 2020'
+    -
+      value: FA20
+      label: 'Fall 2020'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

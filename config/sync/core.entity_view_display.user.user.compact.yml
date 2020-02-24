@@ -1,21 +1,9 @@
-uuid: c6765dc3-d150-4165-afce-dda249a7cb5e
+uuid: aa1ed440-a211-4bf6-852c-ee4a05887fe5
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.feeds_item
-    - field.field.user.user.field_address_city
-    - field.field.user.user.field_address_state
-    - field.field.user.user.field_address_zip
-    - field.field.user.user.field_displa
-    - field.field.user.user.field_email
-    - field.field.user.user.field_mobile_phone_carrier
-    - field.field.user.user.field_preferred_contact
-    - field.field.user.user.field_primary_phone
-    - field.field.user.user.field_response_id
-    - field.field.user.user.field_street_address
-    - field.field.user.user.field_study_data
   module:
     - user
 _core:
@@ -26,16 +14,4 @@ bundle: user
 mode: compact
 content: {  }
 hidden:
-  feeds_item: true
-  field_address_city: true
-  field_address_state: true
-  field_address_zip: true
-  field_displa: true
-  field_email: true
-  field_mobile_phone_carrier: true
-  field_preferred_contact: true
-  field_primary_phone: true
-  field_response_id: true
-  field_street_address: true
-  field_study_data: true
   member_for: true

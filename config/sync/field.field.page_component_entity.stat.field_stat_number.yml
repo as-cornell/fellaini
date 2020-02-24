@@ -1,0 +1,19 @@
+uuid: bc276cfe-06bb-4ca8-a41e-89021366c3a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.stat
+    - field.storage.page_component_entity.field_stat_number
+id: page_component_entity.stat.field_stat_number
+field_name: field_stat_number
+entity_type: page_component_entity
+bundle: stat
+label: 'Stat Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

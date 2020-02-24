@@ -1,15 +1,15 @@
-uuid: c3f7f96e-3cec-4aa4-8828-618c8e22e73c
+uuid: b598d018-d318-4695-8fc9-9dfbd7805029
 langcode: en
 status: true
 dependencies:
   theme:
     - seven
 _core:
-  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
+  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
 id: seven_page_title
 theme: seven
 region: header
-weight: 0
+weight: -30
 provider: null
 plugin: page_title_block
 settings:

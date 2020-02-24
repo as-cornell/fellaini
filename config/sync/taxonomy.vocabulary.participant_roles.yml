@@ -1,8 +1,0 @@
-uuid: f3855a6e-7bcc-463b-ba88-e35e297827c5
-langcode: en
-status: true
-dependencies: {  }
-name: 'Participant Roles'
-vid: participant_roles
-description: 'Roles assigned to Study Participants with fields for attributes like compensation types.'
-weight: 0

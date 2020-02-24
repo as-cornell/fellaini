@@ -1,0 +1,25 @@
+uuid: b7ee1cef-2afc-437f-ac18-3219c1b4425f
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.link_block
+    - field.storage.page_component_entity.field_link
+  module:
+    - link
+_core:
+  default_config_hash: yf7w4fBFbtj9ppvhPaFgwxUcZGoNGwFTgV1X42Hy6js
+id: page_component_entity.link_block.field_link
+field_name: field_link
+entity_type: page_component_entity
+bundle: link_block
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

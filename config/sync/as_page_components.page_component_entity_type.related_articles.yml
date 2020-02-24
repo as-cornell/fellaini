@@ -1,0 +1,6 @@
+uuid: 99528ac3-ff85-42b9-90d6-4bc478bc1e29
+langcode: en
+status: true
+dependencies: {  }
+id: related_articles
+label: 'Related Articles'

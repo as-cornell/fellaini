@@ -1,0 +1,50 @@
+uuid: 782dc0b9-0692-4a71-9938-66fd4e38bbb5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - as_topics
+_core:
+  default_config_hash: J4U1NFYwj7AY8aOtmr3uq-jtwWrDNWTatYV_9MsybSs
+id: topics
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: topics
+label: 'Import topics as terms'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'https://as.cornell.edu'
+  urls: 'https://as.cornell.edu/topics-json'
+  ids:
+    uuid:
+      type: string
+  item_selector: data/
+  fields:
+    -
+      name: uuid
+      label: uuid
+      selector: attributes/uuid
+    -
+      name: tid
+      label: 'term id'
+      selector: attributes/tid
+    -
+      name: name
+      label: name
+      selector: attributes/name
+process:
+  uuid: uuid
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: topics
+  name: name
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: {  }
