@@ -1,0 +1,23 @@
+uuid: c9ecb747-e70b-41cf-a46d-082596a14272
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_visit_completed
+    - paragraphs.paragraphs_type.change_club_timepoints
+id: paragraph.change_club_timepoints.field_visit_completed
+field_name: field_visit_completed
+entity_type: paragraph
+bundle: change_club_timepoints
+label: 'Visit Completed'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

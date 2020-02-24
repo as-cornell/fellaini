@@ -1,0 +1,70 @@
+uuid: 65f03cfe-771b-4342-8f8b-3e26ace7bd6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.study_sites.field_educator
+    - field.field.taxonomy_term.study_sites.field_studies
+    - field.field.taxonomy_term.study_sites.field_study_site_dates
+    - field.field.taxonomy_term.study_sites.field_study_type
+    - taxonomy.vocabulary.study_sites
+  module:
+    - paragraphs
+id: taxonomy_term.study_sites.default
+targetEntityType: taxonomy_term
+bundle: study_sites
+mode: default
+content:
+  field_educator:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_study_site_dates:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      closed_mode: summary
+      autocollapse: none
+      add_mode: dropdown
+      form_display_mode: default
+      edit_mode: closed
+      closed_mode_threshold: 0
+      default_paragraph_type: ''
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+    third_party_settings: {  }
+    region: content
+  field_study_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_studies: true
+  path: true

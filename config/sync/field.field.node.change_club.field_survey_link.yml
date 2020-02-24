@@ -1,0 +1,28 @@
+uuid: 775b5275-d428-4db1-8b83-37f2bc4ac76e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_survey_link
+    - node.type.change_club
+  module:
+    - link
+id: node.change_club.field_survey_link
+field_name: field_survey_link
+entity_type: node
+bundle: change_club
+label: 'Survey Link'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://cornell.qualtrics.com/jfe/form/SV_d5aU6KjwILkcTVr?PPTID=XXXX'
+    title: '- baseline survey link -'
+    options: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

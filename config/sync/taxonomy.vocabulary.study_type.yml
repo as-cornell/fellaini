@@ -1,0 +1,8 @@
+uuid: 9a3d7de3-08c3-47a4-80a2-6efca12addb8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Study Type'
+vid: study_type
+description: ''
+weight: 0

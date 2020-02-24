@@ -1,0 +1,25 @@
+uuid: 19b0412b-f635-4ce0-83d3-9367638984b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amount_redeemed
+    - paragraphs.paragraphs_type.compensation_data
+id: paragraph.compensation_data.field_amount_redeemed
+field_name: field_amount_redeemed
+entity_type: paragraph
+bundle: compensation_data
+label: 'Amount Redeemed'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: '$ '
+  suffix: ''
+field_type: decimal

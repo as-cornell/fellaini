@@ -1,0 +1,59 @@
+uuid: 2551dc5c-4725-425b-ac6f-176c6620bd2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.strongpeople_timepoint_actions.field_accelerometer_returned
+    - field.field.paragraph.strongpeople_timepoint_actions.field_accelerometer_status
+    - field.field.paragraph.strongpeople_timepoint_actions.field_accelerometer_worn
+    - field.field.paragraph.strongpeople_timepoint_actions.field_baseline_accelerometer_id
+    - field.field.paragraph.strongpeople_timepoint_actions.field_completed_on_paper
+    - field.field.paragraph.strongpeople_timepoint_actions.field_date_recorded
+    - field.field.paragraph.strongpeople_timepoint_actions.field_outcome_accelerometer_id
+    - field.field.paragraph.strongpeople_timepoint_actions.field_survey_completed
+    - field.field.paragraph.strongpeople_timepoint_actions.field_timepoint
+    - field.field.paragraph.strongpeople_timepoint_actions.field_visit_completed
+    - paragraphs.paragraphs_type.strongpeople_timepoint_actions
+  module:
+    - options
+id: paragraph.strongpeople_timepoint_actions.preview
+targetEntityType: paragraph
+bundle: strongpeople_timepoint_actions
+mode: preview
+content:
+  field_survey_completed:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_timepoint:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_visit_completed:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  field_accelerometer_returned: true
+  field_accelerometer_status: true
+  field_accelerometer_worn: true
+  field_baseline_accelerometer_id: true
+  field_completed_on_paper: true
+  field_date_recorded: true
+  field_outcome_accelerometer_id: true

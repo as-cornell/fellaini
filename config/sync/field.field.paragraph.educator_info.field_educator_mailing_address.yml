@@ -1,0 +1,19 @@
+uuid: b77414a5-6081-45a5-8f0d-3f01df626b12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_educator_mailing_address
+    - paragraphs.paragraphs_type.educator_info
+id: paragraph.educator_info.field_educator_mailing_address
+field_name: field_educator_mailing_address
+entity_type: paragraph
+bundle: educator_info
+label: 'Educator Mailing Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

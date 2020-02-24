@@ -1,158 +1,40 @@
-uuid: 6152e971-ef69-460f-a132-ebad5c62f5f9
+uuid: 1d5b07f0-a9e6-4c66-8e02-26f0f24fe26a
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_article_components_entity
-    - field.field.node.article.field_aside_components
-    - field.field.node.article.field_byline
-    - field.field.node.article.field_byline_reference
-    - field.field.node.article.field_card_label
-    - field.field.node.article.field_dateline
-    - field.field.node.article.field_department_program
     - field.field.node.article.field_image
-    - field.field.node.article.field_media_source
-    - field.field.node.article.field_newsletter_image
-    - field.field.node.article.field_pano_image
-    - field.field.node.article.field_related_articles
-    - field.field.node.article.field_related_disciplines
-    - field.field.node.article.field_related_functions
-    - field.field.node.article.field_related_people
-    - field.field.node.article.field_summary
     - field.field.node.article.field_tags
-    - field.field.node.article.field_topics_and_disciplines
+    - image.style.large
     - node.type.article
   module:
-    - datetime
+    - image
+    - text
     - user
 _core:
-  default_config_hash: DAKDfoFGR-H0Z-UvxEAktiEZqnZLucdqy9C4hV5Mn78
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
 id: node.article.default
 targetEntityType: node
 bundle: article
 mode: default
 content:
-  field_article_components_entity:
-    weight: 8
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  field_aside_components:
-    weight: 14
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  field_byline:
-    type: string
-    weight: 4
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_byline_reference:
-    weight: 5
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_card_label:
-    type: string
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_dateline:
-    type: datetime_default
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: m_d_y
-    third_party_settings: {  }
-  field_department_program:
-    type: entity_reference_entity_view
-    weight: 11
-    region: content
-    label: above
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-  field_image:
-    type: entity_reference_entity_view
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_media_source:
-    type: string
-    weight: 6
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_pano_image:
-    type: entity_reference_entity_view
+  body:
+    type: text_default
     weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
     label: hidden
-    settings:
-      view_mode: full
-      link: false
-    third_party_settings: {  }
-  field_related_articles:
-    type: entity_reference_entity_view
-    weight: 9
+  field_image:
+    type: image
+    weight: -1
     region: content
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
     label: hidden
-    settings:
-      view_mode: card_small
-      link: false
-    third_party_settings: {  }
-  field_related_disciplines:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_related_functions:
-    weight: 16
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_related_people:
-    weight: 13
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   field_tags:
     type: entity_reference_label
     weight: 10
@@ -161,17 +43,9 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-  field_topics_and_disciplines:
-    type: entity_reference_entity_view
-    weight: 12
+  links:
+    weight: 100
     region: content
-    label: above
-    settings:
-      link: true
-      view_mode: default
+    settings: {  }
     third_party_settings: {  }
-hidden:
-  body: true
-  field_newsletter_image: true
-  field_summary: true
-  links: true
+hidden: {  }

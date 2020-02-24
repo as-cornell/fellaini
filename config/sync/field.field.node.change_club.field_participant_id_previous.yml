@@ -1,0 +1,19 @@
+uuid: 1cc364db-24e1-4c57-8ff0-eff087541020
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_id_previous
+    - node.type.change_club
+id: node.change_club.field_participant_id_previous
+field_name: field_participant_id_previous
+entity_type: node
+bundle: change_club
+label: 'Previous Participant ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 10045714-e320-407c-bc46-b890cc000485
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.educator.field_educator_info
+    - node.type.educator
+  module:
+    - user
+id: node.educator.teaser
+targetEntityType: node
+bundle: educator
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_educator_info: true

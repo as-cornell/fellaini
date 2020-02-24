@@ -1,0 +1,22 @@
+uuid: a3404a9a-73bf-4539-85c2-326ea0c2ab2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: survey_alias
+label: 'Survey Alias'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]-[node:field_user]'
+selection_criteria:
+  7796694b-28d9-43cf-842e-c8b2a89ac822:
+    id: node_type
+    bundles:
+      strongpeople_strength: strongpeople_strength
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 7796694b-28d9-43cf-842e-c8b2a89ac822
+selection_logic: and
+weight: -5
+relationships: {  }

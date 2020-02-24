@@ -1,0 +1,10 @@
+uuid: 13b3c975-1525-4064-b2f3-16b30e044139
+langcode: en
+status: true
+dependencies: {  }
+id: change_club_participant
+label: 'Change Club Participant'
+weight: -2
+is_admin: null
+permissions:
+  - 'access toolbar'

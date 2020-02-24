@@ -1,9 +1,9 @@
-uuid: 8728a534-b521-4223-897d-eaeb4914b780
+uuid: 1d30cac8-a764-4b3f-a06b-d42caba6dee9
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - taxonomy
@@ -101,20 +101,16 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: default
+          default_action: 'not found'
           exception:
             value: ''
             title_enable: false
             title: All
           title_enable: true
           title: '{{ arguments.tid }}'
-          default_argument_type: taxonomy_tid
+          default_argument_type: fixed
           default_argument_options:
-            term_page: '1'
-            anyall: ','
-            node: false
-            limit: false
-            vids: {  }
+            argument: ''
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -127,13 +123,13 @@ display:
             format: default_summary
           specify_validation: true
           validate:
-            type: taxonomy_term_name_into_id
+            type: 'entity:taxonomy_term'
             fail: 'not found'
           validate_options:
+            access: true
             operation: view
-            transform: '1'
+            multiple: 0
             bundles: {  }
-            access: 0
           break_phrase: false
           add_table: false
           require_value: false
@@ -230,8 +226,7 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: none
-          view_mode: card
+          view_mode: teaser
       header:
         entity_taxonomy_term:
           id: entity_taxonomy_term

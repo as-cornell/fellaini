@@ -1,8 +1,0 @@
-uuid: 41ddfca9-d9f0-4724-8151-08bfe62bc792
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: bU-F7xcLL28hCwo5e1xNnz2qsTo5zQ_4lpR6cTywhgM
-id: image_figure
-label: 'Image Figure'

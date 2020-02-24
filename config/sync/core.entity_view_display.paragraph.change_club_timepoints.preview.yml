@@ -1,0 +1,45 @@
+uuid: 4e73584e-97ed-469c-a9ff-2c0257cb058c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.change_club_timepoints.field_accelerometer_status
+    - field.field.paragraph.change_club_timepoints.field_date_recorded
+    - field.field.paragraph.change_club_timepoints.field_notes
+    - field.field.paragraph.change_club_timepoints.field_survey_completed
+    - field.field.paragraph.change_club_timepoints.field_timepoint_change_club
+    - field.field.paragraph.change_club_timepoints.field_visit_completed
+    - field.field.paragraph.change_club_timepoints.field_visit_scheduled
+    - paragraphs.paragraphs_type.change_club_timepoints
+id: paragraph.change_club_timepoints.preview
+targetEntityType: paragraph
+bundle: change_club_timepoints
+mode: preview
+content:
+  field_survey_completed:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_visit_completed:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  field_accelerometer_status: true
+  field_date_recorded: true
+  field_notes: true
+  field_timepoint_change_club: true
+  field_visit_scheduled: true

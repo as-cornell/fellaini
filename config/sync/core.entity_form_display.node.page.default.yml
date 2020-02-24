@@ -1,21 +1,13 @@
-uuid: e585462f-f350-4375-88e9-023a3cf16f6a
+uuid: 23f8ac1c-7c52-455b-bf80-981bbfa85925
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.field_aside_components
-    - field.field.node.page.field_menu_link
-    - field.field.node.page.field_metatags
-    - field.field.node.page.field_page_components_entity
-    - field.field.node.page.field_sidebar_components
-    - field.field.node.page.field_sidebar_type
+    - field.field.node.page.body
     - node.type.page
   module:
-    - entity_browser_entity_form
-    - inline_entity_form
-    - menu_link
-    - metatag
     - path
+    - text
 _core:
   default_config_hash: sb0qCkzU_8mNq29NehYAU8jCBXWPLeX0UN8sYFVGVcw
 id: node.page.default
@@ -23,87 +15,25 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
+  body:
+    type: text_textarea_with_summary
+    weight: 31
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_aside_components:
-    weight: 4
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: component_entity_browser
-    type: inline_entity_form_complex
-    region: content
-  field_menu_link:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: menu_link_default
-    region: content
-  field_metatags:
-    weight: 26
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
-    region: content
-  field_page_components_entity:
-    type: inline_entity_form_complex
-    weight: 2
-    region: content
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: component_entity_browser
-  field_sidebar_components:
-    weight: 3
-    settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: component_entity_browser
-    type: inline_entity_form_complex
-    region: content
-  field_sidebar_type:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   path:
     type: path
-    weight: 9
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -111,26 +41,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 15
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 120
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 16
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60

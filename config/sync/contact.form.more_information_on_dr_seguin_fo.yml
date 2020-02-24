@@ -1,0 +1,12 @@
+uuid: ff5f4d2d-b0f5-417a-9f71-df8117c2fb2b
+langcode: en
+status: true
+dependencies: {  }
+id: more_information_on_dr_seguin_fo
+label: 'More information on Dr. Seguin-Fowler’s studies'
+recipients:
+  - r.seguin-fowler@ag.tamu.edu
+reply: ''
+weight: 0
+message: 'Thank you for inquiring about more information on Dr. Seguin-Fowler’s studies.'
+redirect: /node/2

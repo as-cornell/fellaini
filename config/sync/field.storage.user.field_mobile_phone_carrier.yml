@@ -1,0 +1,33 @@
+uuid: 573c655b-5a5e-467c-bdd9-be6739d0b84b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_mobile_phone_carrier
+field_name: field_mobile_phone_carrier
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'AT&T'
+    -
+      value: '2'
+      label: Sprint
+    -
+      value: '3'
+      label: T-Mobile
+    -
+      value: '4'
+      label: Verizon
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: 2ac2950d-7011-4623-bafd-1e9e1c235b20
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.change_club
+id: node.change_club.title
+field_name: title
+entity_type: node
+bundle: change_club
+label: Respondant
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

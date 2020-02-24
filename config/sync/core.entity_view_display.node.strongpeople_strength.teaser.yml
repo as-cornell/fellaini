@@ -1,0 +1,62 @@
+uuid: 9c7bd354-4b61-4f34-9011-bea2b2dbbaf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.strongpeople_strength.feeds_item
+    - field.field.node.strongpeople_strength.field_active
+    - field.field.node.strongpeople_strength.field_age
+    - field.field.node.strongpeople_strength.field_compensation_data
+    - field.field.node.strongpeople_strength.field_end_date
+    - field.field.node.strongpeople_strength.field_enrolled_consented
+    - field.field.node.strongpeople_strength.field_gender
+    - field.field.node.strongpeople_strength.field_hcp_date
+    - field.field.node.strongpeople_strength.field_hcp_notes
+    - field.field.node.strongpeople_strength.field_incedental_findings_consen
+    - field.field.node.strongpeople_strength.field_intervention_group
+    - field.field.node.strongpeople_strength.field_need_hcp
+    - field.field.node.strongpeople_strength.field_photo_video_consent
+    - field.field.node.strongpeople_strength.field_response_id
+    - field.field.node.strongpeople_strength.field_start_date
+    - field.field.node.strongpeople_strength.field_study_image
+    - field.field.node.strongpeople_strength.field_study_site
+    - field.field.node.strongpeople_strength.field_survey_link
+    - field.field.node.strongpeople_strength.field_timepoint_actions
+    - field.field.node.strongpeople_strength.field_user
+    - field.field.node.strongpeople_strength.field_why_inactive
+    - node.type.strongpeople_strength
+  module:
+    - user
+id: node.strongpeople_strength.teaser
+targetEntityType: node
+bundle: strongpeople_strength
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  feeds_item: true
+  field_active: true
+  field_age: true
+  field_compensation_data: true
+  field_end_date: true
+  field_enrolled_consented: true
+  field_gender: true
+  field_hcp_date: true
+  field_hcp_notes: true
+  field_incedental_findings_consen: true
+  field_intervention_group: true
+  field_need_hcp: true
+  field_photo_video_consent: true
+  field_response_id: true
+  field_start_date: true
+  field_study_image: true
+  field_study_site: true
+  field_survey_link: true
+  field_timepoint_actions: true
+  field_user: true
+  field_why_inactive: true

@@ -1,0 +1,30 @@
+schemas:
+  bootstrap: 8000
+_core:
+  default_config_hash: 1uFogeFphl0Hg6oVCacZZ8mM_0wMZ7PS_RrmLbK5tf0
+favicon:
+  mimetype: image/png
+  path: 'public://change-club-logo-sq.png'
+  url: 'https://stronghealthycommunities.org/sites/default/files/StrongCommunity-75_0.png'
+  use_default: false
+logo:
+  path: 'public://StrongCommunity-75.png'
+  url: ''
+  use_default: false
+table_responsive: '-1'
+cdn_theme: bootstrap
+cdn_cache_ttl_versions: '604800'
+cdn_cache_ttl_themes: '604800'
+cdn_cache_ttl_assets: '0'
+cdn_cache_ttl_library: '0'
+reset_http_request_cache: ''
+table: ''
+table_bordered: 0
+table_condensed: 1
+table_hover: 1
+table_striped: 1
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true

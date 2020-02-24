@@ -1,0 +1,17 @@
+uuid: 95c122d4-0025-41b3-afa7-2282dcc03707
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Educator
+type: educator
+description: 'An educator''s name and contact info that can be related to a Study Site.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

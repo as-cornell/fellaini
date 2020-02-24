@@ -1,0 +1,21 @@
+uuid: 91db0e93-4fba-4be6-97cc-c8dff2175928
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.strongpeople_strength
+  module:
+    - options
+id: node.strongpeople_strength.field_gender
+field_name: field_gender
+entity_type: node
+bundle: strongpeople_strength
+label: Gender
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

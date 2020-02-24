@@ -1,8 +1,0 @@
-uuid: 34e358fb-e3ba-4d58-ae11-c0035d08e2a5
-langcode: en
-status: true
-dependencies: {  }
-name: Level
-vid: level
-description: 'Used for sorting Majors Minors Gradfields'
-weight: -6

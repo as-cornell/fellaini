@@ -1,0 +1,10 @@
+uuid: 2ca85819-753c-4bef-8e03-c3418d71bd7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.study_site_refer
+label: 'Study Site Reference'
+targetEntityType: taxonomy_term
+cache: true

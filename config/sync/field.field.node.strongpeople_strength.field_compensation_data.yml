@@ -1,0 +1,43 @@
+uuid: 015a5c16-0278-4e8a-8723-4b5cd4f2c6df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_compensation_data
+    - node.type.strongpeople_strength
+    - paragraphs.paragraphs_type.compensation_data
+  module:
+    - entity_reference_revisions
+id: node.strongpeople_strength.field_compensation_data
+field_name: field_compensation_data
+entity_type: node
+bundle: strongpeople_strength
+label: 'Compensation Data'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      compensation_data: compensation_data
+    target_bundles_drag_drop:
+      compensation_data:
+        enabled: true
+        weight: 6
+      educator_info:
+        weight: 7
+        enabled: false
+      strongpeople_timepoint_actions:
+        weight: 8
+        enabled: false
+      study:
+        weight: 9
+        enabled: false
+      study_site_dates:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,14 @@
+uuid: 3a8ac940-8877-4d0c-9df1-4430b7ba2175
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.change_club_administrator
+  module:
+    - user
+id: user_remove_role_action.change_club_administrator
+label: 'Remove the Change Club Administrator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: change_club_administrator
