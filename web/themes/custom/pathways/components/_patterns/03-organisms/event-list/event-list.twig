@@ -1,0 +1,69 @@
+{{ title_prefix }}
+<span {{attributes}}{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
+{% if label %}
+    {% include "@atoms/00-text/_heading.twig" with {
+            "heading_level" : 2,
+            "heading" : label,
+            "heading_modifiers" : ['border']
+        } 
+    %}
+{% endif %}
+{{ title_suffix }}
+{% block content %}
+<div class="eventList">
+    {% if pl %}
+    <div class='eventList__event event'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/the_odyssey_in_ithaca'>The Odyssey in Ithaca</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>Apr</span>
+            <span class='event__date'>26</span>
+            <span class='event__time'>8:00</span>
+        </span>
+        <span class='event__location'>Klarman Hall: Atrium</span>
+    </div>
+    <div class='eventList__event event'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/disaster_cyclone_idai_climate_change_climate_migration'>Disaster: Cyclone Idai, Climate Change & Climate Migration</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>Apr</span>
+            <span class='event__date'>30</span>
+            <span class='event__time'>4:30</span>
+        </span>
+        <span class='event__location'>Goldwin Smith Hall: Lewis Auditorium</span>
+    </div>
+    <div class='eventList__event event'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/last_day_of_classes_5418'>Last Day of Classes</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>May</span>
+            <span class='event__date'>07</span>
+            <span class='event__time'>12:00</span>
+        </span>
+        <span class='event__location'>Campus-wide:
+        </span>
+    </div>
+
+
+    <div class='eventList__event event'>
+        <span class='event__title'>
+            <a href='http://events.cornell.edu/event/glee_club_and_chorus_commencement_concert_9305'>Glee Club and Chorus Commencement Concert</a>
+        </span>
+        <span class='event__date'>
+            <span class='event__month'>May</span>
+            <span class='event__date'>25</span>
+            <span class='event__time'>8:00</span>
+        </span>
+        <span class='event__location'>Bailey Hall:
+        </span>
+    </div>
+    {% else %}
+        {{ content }}
+    {% endif %}
+</div>
+</span>
+
+{% endblock %}

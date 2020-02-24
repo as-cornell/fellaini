@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Wrapper field for page_components. This is the field that gets added to tcontent types that all the body of the page is built with.
+ */
+#}
+
+{% embed "@organisms/components/_components.twig" with {
+    group_base_class : 'components',
+    group_modifiers : ['main']
+} %}{% endembed %}

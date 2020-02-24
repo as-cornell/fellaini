@@ -1,0 +1,30 @@
+{#
+
+/* -------------------------
+
+Title: npage-component-entity--instagram-block
+Descr: Sets up variables and content for instagram.twig
+Passes: postsShownValue, keywordParamsValue, intagramContent
+
+--------------------------- */
+
+#}
+
+{# nuber show to set list or sinle format #}
+{% set postsShownValue = content.field_posts_shown[0]['#markup'] %}
+{% set format = "list" %}
+{% if postsShownValue == 1 %}
+  {% set format = "single" %}
+{% endif %}
+
+{% set keywordParamsValue = content.field_keyword_params[0]['#context']['value'] %}
+{% set instagramContent %}
+  {{ drupal_block('instagram_block', {posts_shown: postsShownValue , keyword_params: keywordParamsValue }) }}
+{% endset %}
+
+
+{% embed "@molecules/instagram/instagram.twig" with {
+  keyword: keywordParamsValue,
+  content: instagramContent,
+  format: format
+} %}{% endembed %}

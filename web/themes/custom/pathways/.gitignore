@@ -1,5 +1,5 @@
-pl# Ignore compiled files.
-#dist
+# Ignore compiled files.
+dist
 vendor
 build
 

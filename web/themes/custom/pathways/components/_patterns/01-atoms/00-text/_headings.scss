@@ -1,0 +1,52 @@
+/* -------------------------
+
+Title: headings.
+Descr: 
+    Sets basic styles for h1-h4
+
+--------------------------- */
+
+
+h1,h2,h3,h4{
+  font-family: $font-sans;
+  font-weight: $semi;
+  line-height: 1;
+  margin: .5em 0 .5em 0;
+}
+
+h1 {
+  font-size: calc(2.5 * var(--base-font-size));
+}
+
+h2 {
+  font-size: calc(2 * var(--base-font-size));
+}
+
+h3 {
+  font-size: calc(1.75 * var(--base-font-size));
+  font-weight: var(--regular);
+}
+
+h4 {
+  font-size: calc(1.5 * var(--base-font-size));
+}
+
+h5,
+h6 {
+  @include baseFont($size: (7 * $quark), $weight: $semi, $line-height: (8 * $quark));
+}
+
+.h1, .h2, .h3, .h4{
+  &--border{
+    border-bottom: 1px solid var(--teal);
+    margin: 0 auto 1em auto;
+    // display: table;
+  }
+}
+
+// Sidebar sizes for component headers
+.sidebar{
+  h2 {
+    font-size: calc(1.5 * var(--base-font-size));
+  }
+}

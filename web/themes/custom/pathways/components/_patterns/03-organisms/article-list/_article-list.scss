@@ -1,0 +1,25 @@
+
+/* -------------------------
+
+Title: Article List
+Descr: Sets grid default ( full width ) and stacked (in columns) article list / small cards.
+        Sets all default individual event listings
+
+--------------------------- */
+
+
+// Default article list
+
+.articleList{
+    @include medium(){}
+    display: flex;
+    flex-wrap: wrap;
+    // display: grid;
+    // grid-gap: var(--space);
+    // grid-row-gap: var(--space);
+    // grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+    // @include medium(){
+    //     grid-template-columns: repeat(4, 1fr);
+    // }
+   margin-bottom: var(--component-bottom-margin);
+}

@@ -1,0 +1,88 @@
+header{
+  form{
+      display: flex;
+      align-items: center;
+      height: 68px;
+      .form-item{
+          margin-bottom: 0;
+          &__textfield{
+            border:none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: var(--gray-light);
+            //color: $white;
+           // @include baseBorder($bor-color: $gray-lt);
+            padding: .5em;
+          }
+      }
+      .button{
+        padding: .5em;
+        background: var(--teal);
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        color: white;
+        font-size: .75rem;
+      }
+  }
+}
+
+
+// Text fields
+
+.form-item {
+  color: $gray;
+  margin-bottom: 1em;
+  max-width: 32em;
+  font-size: .75rem;
+
+  @include clearfix;
+}
+
+.form-item__label {
+  display: block;
+  font-weight: 600;
+
+  @include xs {
+    display: block;
+    margin-right: 2%;
+    padding: 0.6em 0;
+  }
+}
+
+.form-item__textfield {
+  border: 1px solid $gray-lightest;
+  padding: 0.5rem;
+
+  &:focus {
+    border-color: $black;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $gray-light;
+  }
+
+  &:-moz-placeholder {
+    color: $gray-light;
+  }
+
+  &::-moz-placeholder {
+    color: $gray-light;
+  }
+
+  &:-ms-input-placeholder {
+    color: $gray-light;
+  }
+}
+
+.form-item__description {
+  margin-top: 0.3em;
+}
+
+.form-fieldset {
+  border: none;
+  margin-bottom: 2em;
+  padding: 0;
+
+  .form-item {
+    margin-left: 1em;
+    max-width: 31em;
+  }
+}

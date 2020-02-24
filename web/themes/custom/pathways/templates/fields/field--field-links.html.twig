@@ -1,0 +1,9 @@
+{# 
+    field template for link fields. individual templates outputting this field take care of the wrapper.
+    See major-minor and paragraph link block for examples.
+ #}
+
+{% include "@organisms/link-list/link-slice.twig" with{
+        links: items,
+        group_base_class : 'theLinks'
+    } %}

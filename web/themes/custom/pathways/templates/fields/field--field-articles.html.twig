@@ -1,0 +1,19 @@
+{#
+
+/* -------------------------
+
+Title: Field field articles
+Descr: Wrapper for related articles fields on any component. Simply adds a wrapper to create a grid.
+
+--------------------------- */
+
+ #}
+
+{% include "@atoms/_simple-container.twig" with {
+    'content' : items,
+    'base_class' : 'articleList'
+}
+%}
+
+
+

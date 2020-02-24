@@ -1,0 +1,7 @@
+
+{% set tweetsShownValue = content.field_tweets_shown[0]['#markup'] %}
+{% set screenNameValue = content.field_twitter_screen_name[0]['#context']['value'] %}
+<ul>
+  {{ drupal_block('twitter_tweets_block', {label: 'Twitter', tweets_shown: tweetsShownValue , screen_name: scereenNameValue }) }}
+</ul>
+

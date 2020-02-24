@@ -1,0 +1,60 @@
+.mainContent--article{    
+  @include baseGrid();
+  grid-template-columns: repeat(6, minmax(50px, $max-column));
+  grid-template-areas:
+    "pano pano pano pano pano pano"
+    ". title title title title ."
+    ". social social social social ."
+    ". content content content content ."
+    ". aside aside aside aside .";
+  @include medium{
+    grid-template-columns: repeat(12, minmax(50px, $max-column));
+      grid-template-areas:
+    ". pano pano pano pano pano pano pano pano pano pano ."
+    ". title title title title title title title title title title ."
+    ". content content content content content content content content content social ."
+    ". aside aside aside aside aside aside aside aside aside aside .";
+  }
+  @include large{
+    grid-template-columns: repeat(14, minmax(50px, $max-column));
+      grid-template-areas:
+    ". . pano pano pano pano pano pano pano pano pano pano . ."
+    ". . title title title title title title title title title title . ."
+    " social . content content content content content content content content . aside aside aside";
+    h1{
+      font-weight: $regular;
+      text-align: center;
+    }
+    .byline{
+      @include baseFont($family: $font-serif);
+      text-align: center;
+    }
+  }
+  .pano{
+    grid-area: pano;
+    margin-bottom: 2rem;
+  }
+  .title{
+    grid-area: title;     
+  }
+  .social{
+    grid-area: social;
+  }
+  .content{
+    grid-area: content;
+  }
+  aside{
+    grid-area: aside;
+    h2{
+      font-size: calc(1.5 * var(--font-size));
+    }
+  }
+  .grid > p,blockquote {
+    grid-column: main ;
+  }
+  .full {
+    grid-column: full;
+    background: pink;
+  }
+}
+

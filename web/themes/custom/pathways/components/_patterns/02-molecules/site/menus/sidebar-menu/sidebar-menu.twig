@@ -1,0 +1,20 @@
+<a class="toggle-expand" href="#" id="toggle-expand">
+    <span class="toggle-expand__open">
+    {% include "@atoms/04-images/icons/_icon.twig" with {
+      icon_base_class: "icon",
+      icon_name: "burger",
+      icon_modifiers: ['bars']
+    } %}
+
+        <span class="toggle-expand__text">Menu</span>
+    </span>
+    <span class="toggle-expand__close">
+        <span class="toggle-expand__text">Close</span>
+    </span>
+</a>
+<nav aria-label="secondary navigation" class="secondary-nav" id="secondary-nav">
+    {% include "@molecules/site/menus/_menu.twig" with {
+    menu_class: "sidebarNav",
+    items: menu_items,
+  } %}
+</nav>

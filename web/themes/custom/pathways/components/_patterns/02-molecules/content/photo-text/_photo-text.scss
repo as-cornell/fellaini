@@ -1,0 +1,21 @@
+/* -------------------------
+
+Title: Photo Text 
+Descr: Set main wrapper for photo text 
+
+--------------------------- */
+
+.photoText{
+    display: grid;
+    grid-gap: var(--grid-gap);
+    grid-template-columns: 57% 1fr;
+    // grid-template-rows: auto 1fr auto;
+    // max-width: $x-wide;
+    // margin: 0 auto;
+    h2{
+        // finds .slider .photoText ascendant slector
+        .slider &{
+            font-size: 3rem;
+        }
+    }
+}

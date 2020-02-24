@@ -1,0 +1,59 @@
+{# 
+
+/* -------------------------
+
+Title: _default.twig
+Descr: Gets called in to _modal-page.twig, _basic-page.twig, _article.twig 
+        steers all other page region output for default pages
+Gets: wrapper modifiers
+        main content modifiers
+
+--------------------------- */ 
+
+#}
+
+{# <main> vars #}
+
+{% set main_modifiers = [] %}
+
+{% set main_element_base_class = main_element_base_class | default('main') %}
+{% set main_element_modifiers = main_element_modifiers | default(['']) %}
+{% set main_element_extra_classes = main_extra_classes | default(['']) %}
+
+{# set page content vars #}
+
+{% set content_wrapper_base_class = content_wrapper_base_class | default('container') %}
+{% set content_wrapper_modifiers = content_wrapper_modifiers | default(['']) %}
+{% set content_wrapper_extra_classes = content_wrapper_extra_classes | default(['']) %}
+
+
+
+{# Start output #}
+{% block page_header %}{% endblock %}
+{% block page_system %}{% endblock %}
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+    {# sidebar nav #}
+    {% if sidebarNav %}
+        {% block sidebar_nav %}{% endblock %}
+    {% endif %}
+
+    {% if sidebar %}
+        <div {{ bem(sidebar_wrapper_base_class, (sidebar_wrapper_modifiers), sidebar_wrapper_blockname, sidebar_wrapper_extra_classes) }}>
+            {% block sidebar_content %}{% endblock %}
+        </div>
+    {% endif %}
+
+    {# main content #}
+    <div {{ bem(content_wrapper_base_class, (content_wrapper_modifiers), content_wrapper_blockname, content_wrapper_extra_classes) }} id="pageContent">
+        {% block page_content %}{% endblock %}
+        {# aside content #}
+        {% if aside %}
+            <aside role="complementary">
+                {# sidebar content #}
+                {% block aside_content %}{% endblock %}
+            </aside>
+        {% endif %}
+    </div>
+</main>
+
+{% block page_footer %}{% endblock %}

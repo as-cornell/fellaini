@@ -1,0 +1,38 @@
+{#
+
+/* -------------------------
+
+Title: _toc-page.twig
+Descr: Sets up variables and content blocks for toc pages' extending of _default.twig
+Passes: has-sidebar to contentWrapper
+        sets sidebar class to sidebar--toc
+
+--------------------------- */
+
+#}
+
+
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+
+<div class="title">
+    {% include "@atoms/00-text/_heading.twig" with {
+        "heading_level" : 1,
+        "heading" : title,
+        "heading_modifiers" : ["margin"],
+        "heading_base_class" : "title"
+    } %}
+</div>
+<div class="content">
+    {{main_content}}
+</div>
+
+<div class="nav">
+    {{ sidebar_nav }}
+</div>
+{% if aside %}
+    <aside>
+        {{ aside_content }}
+    </aside>
+{% endif %}
+</main>
+

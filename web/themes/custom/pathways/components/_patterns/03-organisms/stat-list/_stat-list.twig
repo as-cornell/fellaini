@@ -1,0 +1,17 @@
+{# 
+  template to show a div wrapped around plain text links
+  Used in - landing page slices
+ #}
+{# Group/container bem #}
+{% set group_base_class = group_base_class | default('') %}
+{% set group_modifiers = group_modifiers | default(['']) %}
+{% set group_classes = group_classes | default(['']) %}
+
+<div{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
+    {{items}}
+{# {{content}} #}
+  {# {% for item in items %}
+    {{item.content}}
+  {% endfor %} #}
+
+</div>

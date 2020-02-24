@@ -1,0 +1,44 @@
+
+{#
+
+/* -------------------------
+
+Title: node--toc-page--card.html.twig
+Descr: Sets up variables and content for _toc-page.twig
+Passes: has-sidebar to contentWrapper
+
+--------------------------- */
+
+#}
+
+{% set content_wrapper_modifiers = [ 'toc'] %}
+{% set cardLabel = drupal_token('node:title', {node: node}) %}
+{% set asideLabelValue = asideLabelValue |check_markup('restricted_html') %}
+
+{# link values for the modal items #}
+{% set linkValues = [] %}
+  {% for item in node.field_page_components_entity %}
+    {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
+  {% endfor %}
+{% set linkPage = drupal_token('node:url:absolute', {node: node}) %}
+
+{# set main content #}
+{% set main_content %}
+{{ drupal_block('toc_card_block', {label: cardLabel, link_values:linkValues, page_value:linkPage}) }}
+{% endset %}
+
+
+
+
+{% include "@pages/toc-page/_toc-page--card.twig" with {
+    label : cardLabel,
+    main_content : main_content,
+    content_wrapper_modifiers : content_wrapper_modifiers,
+
+    }
+%}
+
+
+
+
+

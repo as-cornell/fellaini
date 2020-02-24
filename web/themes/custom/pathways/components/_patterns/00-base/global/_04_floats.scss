@@ -1,0 +1,43 @@
+/* -------------------------
+
+Title: floats
+Descr: 
+    floats, pulls and full widths. Basically anything that will need to make a component or page item break out of the flow of the page or its container
+
+--------------------------- */
+.floatLeft{
+  float: left;
+  margin-left: 0;
+}
+.floatRight{
+  float: right;
+  margin-right: 0;
+}
+// special float for entity embed
+.align-left{
+  margin-right: 1rem;
+}
+.align-right{
+  margin-left: 1rem;
+}
+@include medium{
+  .pullLeft{
+    float: left;
+    margin-left: -2rem;
+    margin-right: 2rem;
+  }
+  .pullRight{
+    float: right;
+    margin-right: -2rem;
+    margin-left: 2rem;
+  }
+  .stretch{
+    margin: 1rem -3rem;
+  }
+}
+// full width stretch
+.full-width{
+  width: calc(100% + (2 * var(--mainGutter)));
+  margin-left: calc(-1 * var(--mainGutter));
+  text-align: center;
+}

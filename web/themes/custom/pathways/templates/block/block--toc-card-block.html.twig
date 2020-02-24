@@ -1,0 +1,19 @@
+
+{#
+
+/* -------------------------
+
+Title: Block as TOC pages
+Descr: block to show side bar nav for TOC pages.
+    includes header and ul
+
+--------------------------- */
+
+ #}
+
+<div class="toc-menu">
+    <h3>{{ label }}</h3>
+    {% block content %}
+    {{ content }}
+    {% endblock %}
+</div>

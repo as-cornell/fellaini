@@ -1,0 +1,20 @@
+
+/* -------------------------
+
+Title: Layout Block
+Descr: Sets grid for columns pce--layout-group.html.twig
+
+--------------------------- */
+
+.columns{
+  @include medium(){
+    display: grid;
+    grid-gap: var(--grid-gap);
+    &--heavyRight{
+      grid-template-columns: 1fr 57%;
+    }
+    &--heavyLeft{
+      grid-template-columns: 57% 1fr;
+    }
+  }
+}

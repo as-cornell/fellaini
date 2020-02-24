@@ -1,0 +1,36 @@
+card_modifiers:
+  1:
+    major-minor
+
+# Title
+card_title:
+  'Economics'
+
+# Subtitle
+card_subtitle:
+  ''
+
+# Link
+card_link_url:
+  'http://astro.cornell.edu'
+
+# Image
+card_img_modifiers:
+card_img_blockname:
+card_img_src:
+  "https://as.cornell.edu/sites/as/files/styles/card/public/majorminor_image/Film400.jpg"
+card_img_alt:
+  "This is the card image's alt text"
+card_image_output_image_tag: TRUE
+
+# overrides
+card_body:
+  ''
+card_button_url:
+  ''
+card_button_content:
+  ''
+card_label:
+  ''
+card_link_text:
+  ''

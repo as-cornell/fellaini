@@ -1,0 +1,60 @@
+{#
+
+/* -------------------------
+
+Title: node--article.html.twig
+Descr: Sets up variables and content for _article.twig
+Passes: Images - pano and image
+        article and has-aside passed to <main>
+
+--------------------------- */
+
+#}
+
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic, toc, has-sidebar
+ #}
+
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = main_element_base_class | default('article') %}
+{% set main_element_modifiers = [''] %}
+
+
+{# Content wrapper modifiers
+{% set content_wrapper_modifiers = ['article'] %} #}
+{# if pano add to content_wrapper_modifiers #}
+{% if field_pano_image_img.uri | image_style('full_content') %}
+    {% set hasPano = true %}
+    {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
+{% endif %}
+
+{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
+
+
+{% include "@pages/article/_article.twig" with {
+
+    article_pano_img_src : field_pano_image_img.uri | image_style('full_content'),
+    article_pano_img_alt : field_pano_image_img.alt,
+    article_pano_img_caption : field_pano_image_img.caption,
+    article_pano_img_credit : field_pano_image_img.credit,
+
+    article_image_img_src : field_image_img.uri | image_style('full_content'),
+    article_image_img_alt : field_image_img.alt,
+    article_image_img_caption : field_image_img.caption,
+    article_image_img_credit : field_image_img.credit,
+
+    content_wrapper_modifiers : content_wrapper_modifiers,
+    main_content_modifiers : main_content_modifiers,
+
+    title: node.label,
+    main_content : content.field_article_components_entity,
+    aside_content : content.field_aside_components,
+
+    article_dateline: content.field_dateline,
+    article_byline: article_byline,
+    article_mediasource: content.field_media_source,
+
+} %}
+

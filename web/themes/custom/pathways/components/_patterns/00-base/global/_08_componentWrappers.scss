@@ -1,0 +1,16 @@
+/* -------------------------
+
+Title: componentWrappers
+Descr: 
+    Takes care of any universal component wrapper stylings
+
+--------------------------- */
+
+// Might want to make margin-bottom different for landing and basic pages...
+
+.components{
+  >span{
+    display: block;
+    margin-bottom: 4rem;
+  }
+}

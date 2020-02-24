@@ -1,0 +1,62 @@
+{#
+
+    .container--article and .container--content
+
+ #}
+
+{# 
+    Article does not use default because of fancy laouts
+ #}
+
+{% set isTitle = true %}
+
+
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+
+    {% if hasPano %}
+        <div class="pano">
+            {% include "@atoms/04-images/figure.twig" with {
+                "img_url": article_pano_img_url|default(card_link_url),
+                "img_src": article_pano_img_src,
+                "img_alt": article_pano_img_alt,
+                "img_caption" : article_pano_img_caption,
+                "img_credit" : article_pano_img_credit,
+                "figure_modifiers" : ['pano','image'],
+                
+            } %}
+        </div>
+    {% endif %}
+    <div class="title">
+        {% include "@atoms/00-text/_heading.twig" with {
+            "heading_level" : 1,
+            "heading" : title,
+            "heading_modifiers" : ["margin"],
+            "heading_base_class" : "title"
+
+        } %}
+        <p class="byline">
+            {{ article_byline }},{{article_mediasource}}<br/>
+            {{article_dateline}}
+        </p>
+    </div>
+    <div class="social">
+        <a href="">Twitter</a>
+        <br/>
+        <a href="">Facebook</a>
+    </div>
+    <div class="content">
+        {{main_content}}
+    </div>
+    <div class="thumbnail">
+        {% include "@atoms/04-images/figure.twig" with {
+            "img_url": article_image_img_url|default(card_link_url),
+            "img_src": article_image_img_src,
+            "img_alt": article_image_img_alt,
+            "img_caption" : article_image_img_caption,
+            "img_credit" : article_image_img_credit
+        } %}
+    </div>
+    <aside role="complimentary">
+        {{ aside_content }}
+    </aside>
+</main>

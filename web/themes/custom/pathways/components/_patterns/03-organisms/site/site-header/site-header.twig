@@ -1,0 +1,72 @@
+<header>
+<!--
+***  SKIP NAV  ***
+-->
+<div id="skip">
+    <a href="#as-main-nav">Jump to main navigation</a>
+    <a href="#mainContent">Jump to main content</a>
+</div>
+
+{% if pl %}
+    {% include "@molecules/forms/search-form.twig" %}
+    {% else %}
+    {{elements.pathways_search}}
+{% endif %}
+{% if pl %}
+    <nav class="nav--audience" id="audience" aria-label="audience navigation">
+        <ul class="audience-menu">
+            <li class="audience-menu__item">
+                <a class="audience-menu__link" href="http://as.cornell.edu">
+                    Current Students
+                </a>
+            </li>
+            <li class="audience-menu__item">
+                <a class="audience-menu__link" href="http://as.cornell.edu">
+                    Faculty
+                </a>
+            </li>
+            <li class="audience-menu__item">
+                <a class="audience-menu__link" href="http://as.cornell.edu">
+                    Prospective Students
+                </a>
+            </li>
+            <li class="audience-menu__item">
+                <a class="audience-menu__link" href="http://as.cornell.edu">
+                    Staff
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% else %}
+    {{elements.audience}}
+{% endif %}
+{% if pl %}
+{% include "@atoms/04-images/00-image/_image.twig" with {
+        "img_src" : img.full_logo.src,
+        "img_alt" : img.full_logo.alt,
+        "image_modifiers" : ['mainLogo'],
+        "link_href" : '/',
+        "link_class" : 'siteLogo'
+    } %}
+
+    {% else %}
+
+    <a href="http://cornell.edu" title="Cornell University" class="cu-logo">
+        Cornell University
+    </a>
+
+    <a class="as-logo" href="/" title="College of Arts & Sciences">
+        The College of Arts & Sciences
+    </a>
+
+
+
+{% endif %}
+{% if pl %}
+    {% include "@molecules/site/menus/main-menu/main-menu.twig" with {
+                    menu_items: menu_items,
+                } %}
+    {% else %}
+    {{elements.mainnavigation}}
+{% endif %}
+</header>

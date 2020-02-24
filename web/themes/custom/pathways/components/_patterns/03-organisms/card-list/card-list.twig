@@ -1,0 +1,37 @@
+{# 
+    Main card list.
+ #}
+
+{# BEM vars #}
+{% set list_modifiers = list_modifiers %}
+{% set list_blockname = list_blockname | default('list') %}
+{% set card_modifiers = card_modifiers | default('card.modifiers') %}
+{# As we go i might add list modifiers for different layouts #}
+
+{# list_label #}
+{% if list_label %}
+    {% include "@atoms/00-text/_heading.twig" with {
+        "heading_level" : 2,
+        "heading" : list_label
+    } %}
+{% endif %}
+
+{# output the list #}
+<div {{ bem(list_blockname, (list_modifiers)) }}>
+    {% block list_content %}
+        {% for card in cards %}
+            {% include "@molecules/content/card/01-card.twig" with {
+                "card_blockname" : card.blockname,
+                "card_modifiers" : card_modifiers,
+                "card_img_src" : card.card_img_src,
+                "card_title" : card.card_title,
+                "card_label" : card.card_label,
+                "card_dateline" : card.card_dateline,
+                "card_byline" : card.card_byline,
+                "card_body" : card.card_body,
+                "card_link_url" : card.card_link_url,
+                "card_image_output_image_tag" : card.card_image_output_image_tag,
+            } %}
+        {% endfor %}
+    {% endblock %}
+</div>

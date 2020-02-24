@@ -1,0 +1,34 @@
+/* -------------------------
+
+Title: course-list
+Descr: styles for course lists
+
+--------------------------- */
+
+
+.courseList{
+    @include baseGrid();
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-row-gap: 2rem;
+   @include componentMargin();
+}
+.course{
+    @include baseGrid();
+    grid-template-rows: auto 1fr;
+
+    span{
+        flex-basis: 100%;
+    }
+    &__title{
+       @include baseFont();
+    }
+    &__number{
+        @include baseFont($size: 1.25rem, $weight: $semi);
+        display: block;
+    }
+    &__details{
+        >span{
+            display: block;
+        }
+    }
+}
