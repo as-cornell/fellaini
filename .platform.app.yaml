@@ -123,7 +123,7 @@ web:
         '/styleguide':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pablo_pogbita/pattern-lab/public'
+            root: 'web/themes/custom/pathways/pattern-lab/public'
             index:
                 - index.html
             # Do not execute PHP scripts.
@@ -131,22 +131,22 @@ web:
         '/dist':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pablo_pogbita/dist'
+            root: 'web/themes/custom/pathways/dist'
             scripts: false
         '/pattern-lab':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pablo_pogbita/pattern-lab'
+            root: 'web/themes/custom/pathways/pattern-lab'
             scripts: false
         '/fonts':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pablo_pogbita/fonts'
+            root: 'web/themes/custom/pathways/fonts'
             scripts: false
         '/images':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pablo_pogbita/images'
+            root: 'web/themes/custom/pathways/images'
             scripts: false
 
 
@@ -175,7 +175,7 @@ hooks:
       nvm install 11.15.0
       curl -sS https://platform.sh/cli/installer | php
       set -e
-      cd web/themes/custom/pablo_pogbita
+      cd web/themes/custom/pathways
       npm install
       gulp build
       gulp pl
