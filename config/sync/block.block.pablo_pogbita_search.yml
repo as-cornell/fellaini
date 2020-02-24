@@ -1,0 +1,23 @@
+uuid: 11f76ffd-701b-4403-9640-9722fb9981bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - pablo_pogbita
+_core:
+  default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
+id: pablo_pogbita_search
+theme: pablo_pogbita
+region: header
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+  page_id: ''
+visibility: {  }

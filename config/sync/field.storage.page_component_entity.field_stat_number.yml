@@ -1,4 +1,4 @@
-uuid: 0c6bf818-63cd-48f1-9480-4d3cde9e87d3
+uuid: 6c9aad22-9619-4ff9-8d02-1ddc46c45587
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ field_name: field_stat_number
 entity_type: page_component_entity
 type: string
 settings:
-  max_length: 15
+  max_length: 255
   is_ascii: false
   case_sensitive: false
 module: core

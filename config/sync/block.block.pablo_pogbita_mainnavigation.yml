@@ -1,0 +1,29 @@
+uuid: 14bbd21f-8832-4da3-830d-2e0f8912a99a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block_title
+    - system
+  theme:
+    - pablo_pogbita
+third_party_settings:
+  menu_block_title:
+    modify_title: false
+id: pablo_pogbita_mainnavigation
+theme: pablo_pogbita
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

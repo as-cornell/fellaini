@@ -123,7 +123,7 @@ web:
         '/styleguide':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/pattern-lab/public'
+            root: 'web/themes/custom/pablo_pogbita/pattern-lab/public'
             index:
                 - index.html
             # Do not execute PHP scripts.
@@ -131,22 +131,22 @@ web:
         '/dist':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/dist'
+            root: 'web/themes/custom/pablo_pogbita/dist'
             scripts: false
         '/pattern-lab':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/pattern-lab'
+            root: 'web/themes/custom/pablo_pogbita/pattern-lab'
             scripts: false
         '/fonts':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/fonts'
+            root: 'web/themes/custom/pablo_pogbita/fonts'
             scripts: false
         '/images':
             allow: true
             expires: 5m
-            root: 'web/themes/custom/pathways/images'
+            root: 'web/themes/custom/pablo_pogbita/images'
             scripts: false
 
 
@@ -167,21 +167,28 @@ mounts:
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     build: |
+      unset NPM_CONFIG_PREFIX
+      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | dash
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      nvm current
+      nvm install 11.15.0
       curl -sS https://platform.sh/cli/installer | php
       set -e
-      cd web/themes/custom/pathways
+      cd web/themes/custom/pablo_pogbita
       npm install
       gulp build
       gulp pl
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
+      unset NPM_CONFIG_PREFIX
+      export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
+      nvm use 11.15.0
       set -e
       ./drush/platformsh_generate_drush_yml.php
       cd web
       drush -y cache-rebuild
       drush -y updatedb
-      drush -y config-import
-      drush -y entup
 
 # The configuration of scheduled execution.
 crons:

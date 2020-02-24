@@ -1,0 +1,41 @@
+uuid: b757ce97-5624-4298-a51a-87425a475514
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.quote
+    - field.field.page_component_entity.quote.field_image
+    - field.field.page_component_entity.quote.field_quote_text
+  module:
+    - text
+id: page_component_entity.quote.default
+targetEntityType: page_component_entity
+bundle: quote
+mode: default
+content:
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_quote_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  user_id: true

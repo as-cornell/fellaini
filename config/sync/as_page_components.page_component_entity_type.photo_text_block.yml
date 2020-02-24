@@ -5,4 +5,4 @@ dependencies: {  }
 _core:
   default_config_hash: yzDnxJwa7MWzZtcQO13TZo3Qi3JJsTjrBxkTjyd8s9o
 id: photo_text_block
-label: 'Z-DEPR Photo Text Block'
+label: 'Photo Text Block'

@@ -153,17 +153,19 @@ content:
   field_article_components_entity:
     weight: 2
     settings:
-      match_operator: CONTAINS
       form_mode: default
-      override_labels: false
       label_singular: ''
       label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
       collapsible: false
       collapsed: false
-      allow_new: true
-      allow_existing: false
       allow_duplicate: false
-    third_party_settings: {  }
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: component_entity_browser
     type: inline_entity_form_complex
     region: content
   field_aside_components:
@@ -181,7 +183,7 @@ content:
       allow_duplicate: false
     third_party_settings:
       entity_browser_entity_form:
-        entity_browser_id: _none
+        entity_browser_id: component_entity_browser
     type: inline_entity_form_complex
     region: content
   field_byline:

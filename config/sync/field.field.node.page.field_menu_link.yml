@@ -1,0 +1,30 @@
+uuid: 8f2dc94e-8919-4d8b-9c98-b4e53bfe9a30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_link
+    - node.type.page
+  module:
+    - menu_link
+id: node.page.field_menu_link
+field_name: field_menu_link
+entity_type: node
+bundle: page
+label: 'Menu Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_menus:
+    main: main
+    admin: '0'
+    audience: '0'
+    devel: '0'
+    footer: '0'
+    tools: '0'
+    account: '0'
+  default_menu_parent: 'main:'
+field_type: menu_link
