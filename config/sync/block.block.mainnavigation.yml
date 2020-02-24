@@ -1,16 +1,20 @@
-uuid: 85d12c99-ecdb-453d-a104-722feb9a9937
+uuid: 9ed4fa1f-8132-4997-9587-07b24b5f834b
 langcode: en
 status: true
 dependencies:
   config:
     - system.menu.main
   module:
+    - menu_block_title
     - system
   theme:
-    - bootstrap
+    - pathways
+third_party_settings:
+  menu_block_title:
+    modify_title: false
 id: mainnavigation
-theme: bootstrap
-region: navigation_collapsible
+theme: pathways
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
@@ -18,8 +22,8 @@ settings:
   id: 'system_menu_block:main'
   label: 'Main navigation'
   provider: system
-  label_display: '0'
+  label_display: visible
   level: 1
-  depth: 0
-  expand_all_items: false
+  depth: 2
+  expand_all_items: true
 visibility: {  }

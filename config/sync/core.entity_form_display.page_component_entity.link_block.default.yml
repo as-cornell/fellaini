@@ -1,0 +1,43 @@
+uuid: e15cb494-0e0d-4b74-8b6f-59d2567743bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.link_block
+    - field.field.page_component_entity.link_block.field_block_title
+    - field.field.page_component_entity.link_block.field_link
+  module:
+    - link
+_core:
+  default_config_hash: 0QNKRvWtvRakR3t4VtBmzjdO-L_atjF3dzoS21WURa0
+id: page_component_entity.link_block.default
+targetEntityType: page_component_entity
+bundle: link_block
+mode: default
+content:
+  field_block_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

@@ -1,0 +1,35 @@
+uuid: f9599a42-cc35-411d-9aa4-f069d60f56c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - options
+_core:
+  default_config_hash: c4FiFekRQ_egttAJsZ6E_KrHPQF663_v6_9Njr1pe5U
+id: page_component_entity.field_component_alignment
+field_name: field_component_alignment
+entity_type: page_component_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pullLeft
+      label: 'Pull Left'
+    -
+      value: pullRight
+      label: 'Pull Right'
+    -
+      value: stretch
+      label: Stretch
+    -
+      value: pano
+      label: Pano
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

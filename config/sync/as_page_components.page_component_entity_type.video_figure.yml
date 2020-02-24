@@ -1,0 +1,8 @@
+uuid: f2e57530-faf9-4fda-8931-37d06c012254
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: eTNSY3CJF6GF_TNtUhyt32NLWWvssbzgIJJGDUxILNU
+id: video_figure
+label: 'Z-DEPR Video Figure'

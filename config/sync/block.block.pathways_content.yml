@@ -1,0 +1,22 @@
+uuid: c9d55cc4-8ef4-49f8-8fd3-3941830d87cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pathways
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: pathways_content
+theme: pathways
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

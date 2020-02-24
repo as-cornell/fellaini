@@ -1,0 +1,50 @@
+uuid: be5df037-467a-4bbc-8061-ae8849ad36a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.layout_group
+    - field.field.page_component_entity.layout_group.field_columns
+    - field.field.page_component_entity.layout_group.field_layout
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+id: page_component_entity.layout_group.default
+targetEntityType: page_component_entity
+bundle: layout_group
+mode: default
+content:
+  field_columns:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_layout:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

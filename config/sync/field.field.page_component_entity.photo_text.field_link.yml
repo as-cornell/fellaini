@@ -1,0 +1,23 @@
+uuid: f6cce927-1772-4881-9060-8185015e41b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.photo_text
+    - field.storage.page_component_entity.field_link
+  module:
+    - link
+id: page_component_entity.photo_text.field_link
+field_name: field_link
+entity_type: page_component_entity
+bundle: photo_text
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

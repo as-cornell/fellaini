@@ -1,0 +1,6 @@
+uuid: 5786de8c-927a-4f02-a370-e2e7b22bec06
+langcode: en
+status: true
+dependencies: {  }
+id: campfire
+label: Campfire

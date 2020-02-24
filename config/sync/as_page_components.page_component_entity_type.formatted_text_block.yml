@@ -1,0 +1,8 @@
+uuid: 4fd577a0-c63f-402d-8c3d-479da1c8bcb1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Jmq4Ml06Sd0oTXHX-YFGdq26xcQUD5pMgH1FmN8Rwuc
+id: formatted_text_block
+label: 'Formatted Text Block'

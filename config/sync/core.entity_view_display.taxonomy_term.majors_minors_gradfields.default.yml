@@ -1,0 +1,52 @@
+uuid: da8e6c17-20f5-4764-93f4-9cffbc990d85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.majors_minors_gradfields.field_images
+    - field.field.taxonomy_term.majors_minors_gradfields.field_level
+    - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
+    - taxonomy.vocabulary.majors_minors_gradfields
+  module:
+    - text
+_core:
+  default_config_hash: paiqNyvsE8e77KNcqFe4dOybjvPdaUmEAFX_tv3_edE
+id: taxonomy_term.majors_minors_gradfields.default
+targetEntityType: taxonomy_term
+bundle: majors_minors_gradfields
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_images:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_level:
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_page_components:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

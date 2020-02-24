@@ -1,0 +1,57 @@
+uuid: 9c1bcd37-70f8-43cc-873c-cfa2452b2e32
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.list_block
+    - field.storage.page_component_entity.field_list_reference
+  module:
+    - viewsreference
+_core:
+  default_config_hash: 5axWmuMgJXYdRgULfIUij-i2FcVzOqeOA4AEXVgZLu0
+id: page_component_entity.list_block.field_list_reference
+field_name: field_list_reference
+entity_type: page_component_entity
+bundle: list_block
+label: 'Content type'
+description: 'What type of list do you want to include?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    entity_browser: 0
+    page: 0
+    entity_reference: 0
+    feed: 0
+    rest_export: 0
+    rest_export_nested: 0
+  preselect_views:
+    majors_and_minors: majors_and_minors
+    news: news
+    article_browser: 0
+    block_content: 0
+    component_browser: 0
+    content: 0
+    content_recent: 0
+    entity_references: 0
+    files: 0
+    frontpage: 0
+    manage_as_vocabularies: 0
+    media: 0
+    media_entity_browser: 0
+    nested_references: 0
+    stat_reference: 0
+    user_admin_people: 0
+    vue_filters: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+field_type: viewsreference

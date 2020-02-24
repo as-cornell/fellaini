@@ -1,0 +1,51 @@
+uuid: 2b02fd2c-46e5-4406-9ee2-e70749232ff9
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.list_block
+    - field.field.page_component_entity.list_block.field_formatted_text
+    - field.field.page_component_entity.list_block.field_link
+    - field.field.page_component_entity.list_block.field_list_reference
+  module:
+    - link
+    - viewsreference
+_core:
+  default_config_hash: Bq4ylgdRSay39KeCOVuW6dGjiJYxWqi-DDGupXkcLd0
+id: page_component_entity.list_block.default
+targetEntityType: page_component_entity
+bundle: list_block
+mode: default
+content:
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_list_reference:
+    weight: 0
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+  name:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_formatted_text: true
+  user_id: true

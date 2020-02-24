@@ -1,0 +1,21 @@
+uuid: 162ecc00-0d5c-4acb-bac1-ee2a5ecfc973
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - link
+_core:
+  default_config_hash: 88nw_tbRY0HCMyQVbBR6DOBnR7opHcRhFh46G96fN6k
+id: page_component_entity.field_link
+field_name: field_link
+entity_type: page_component_entity
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
