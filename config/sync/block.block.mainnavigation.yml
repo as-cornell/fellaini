@@ -1,4 +1,4 @@
-druuuid: 9ed4fa1f-8132-4997-9587-07b24b5f834b
+uuid: 9ed4fa1f-8132-4997-9587-07b24b5f834b
 langcode: en
 status: true
 dependencies:
@@ -15,7 +15,7 @@ third_party_settings:
 id: mainnavigation
 theme: pathways
 region: header
-weight: -1
+weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:
