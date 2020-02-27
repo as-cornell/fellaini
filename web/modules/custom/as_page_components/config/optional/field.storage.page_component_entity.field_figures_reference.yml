@@ -1,3 +1,7 @@
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/field.storage.page_component_entity.field_figures_reference.yml
+=======
+uuid: ee0a7bc7-c404-4c5b-8a27-e5720f9d8c85
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/field.storage.page_component_entity.field_figures_reference.yml
 langcode: en
 status: true
 dependencies:
