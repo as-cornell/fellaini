@@ -1,8 +1,42 @@
+<<<<<<< HEAD
 uuid: 2d4dd8cb-be80-4c7b-a9eb-52eb1b04a0ee
+=======
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_form_display.page_component_entity.photo_text.default.yml
+=======
+uuid: 2d4dd8cb-be80-4c7b-a9eb-52eb1b04a0ee
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_form_display.page_component_entity.figure_image.default.yml
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
 langcode: en
 status: true
 dependencies:
   config:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_form_display.page_component_entity.photo_text.default.yml
+    - as_page_components.page_component_entity_type.photo_text
+    - entity_browser.browser.media_entity_browser
+    - field.field.page_component_entity.photo_text.field_formatted_text
+    - field.field.page_component_entity.photo_text.field_image
+    - field.field.page_component_entity.photo_text.field_link
+  module:
+    - entity_browser
+    - text
+id: page_component_entity.photo_text.default
+targetEntityType: page_component_entity
+bundle: photo_text
+mode: default
+content:
+  field_formatted_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+=======
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     - as_page_components.page_component_entity_type.figure_image
     - entity_browser.browser.media_entity_browser
     - field.field.page_component_entity.figure_image.field_component_alignment
@@ -15,6 +49,10 @@ bundle: figure_image
 mode: default
 content:
   field_component_alignment:
+<<<<<<< HEAD
+=======
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_form_display.page_component_entity.figure_image.default.yml
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     weight: 1
     settings: {  }
     third_party_settings: {  }
@@ -25,6 +63,7 @@ content:
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
+<<<<<<< HEAD
       field_widget_display_settings:
         view_mode: default
       field_widget_edit: true
@@ -32,6 +71,21 @@ content:
       open: true
       selection_mode: selection_append
       field_widget_replace: false
+=======
+      field_widget_edit: true
+      field_widget_remove: true
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_form_display.page_component_entity.photo_text.default.yml
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_replace: false
+      open: false
+=======
+      open: true
+      selection_mode: selection_append
+      field_widget_replace: false
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_form_display.page_component_entity.figure_image.default.yml
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
@@ -44,4 +98,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+<<<<<<< HEAD
+=======
+  field_link: true
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
   user_id: true

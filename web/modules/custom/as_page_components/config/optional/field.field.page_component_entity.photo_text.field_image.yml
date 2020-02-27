@@ -1,7 +1,12 @@
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/field.field.page_component_entity.photo_text.field_image.yml
+=======
+uuid: b9a25306-54d8-4b0c-849c-225f59d3be76
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/field.field.page_component_entity.figure_image.field_figure_image.yml
 langcode: en
 status: true
 dependencies:
   config:
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/field.field.page_component_entity.photo_text.field_image.yml
     - as_page_components.page_component_entity_type.photo_text
     - field.storage.page_component_entity.field_image
     - media.type.image
@@ -10,6 +15,16 @@ field_name: field_image
 entity_type: page_component_entity
 bundle: photo_text
 label: Image
+=======
+    - as_page_components.page_component_entity_type.figure_image
+    - field.storage.page_component_entity.field_figure_image
+    - media.type.image
+id: page_component_entity.figure_image.field_figure_image
+field_name: field_figure_image
+entity_type: page_component_entity
+bundle: figure_image
+label: 'Figure Image'
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/field.field.page_component_entity.figure_image.field_figure_image.yml
 description: ''
 required: false
 translatable: false

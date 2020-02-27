@@ -1,7 +1,12 @@
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_view_display.page_component_entity.photo_text.default.yml
+=======
+uuid: 8a3af20e-0362-4d97-8f44-5f97ccb410dd
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.photo_text_wrapper.default.yml
 langcode: en
 status: true
 dependencies:
   config:
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_view_display.page_component_entity.photo_text.default.yml
     - as_page_components.page_component_entity_type.photo_text
     - field.field.page_component_entity.photo_text.field_formatted_text
     - field.field.page_component_entity.photo_text.field_image
@@ -23,11 +28,36 @@ content:
   field_image:
     type: entity_reference_entity_view
     weight: 1
+=======
+    - as_page_components.page_component_entity_type.photo_text_wrapper
+    - field.field.page_component_entity.photo_text_wrapper.field_photo_text_reference
+    - field.field.page_component_entity.photo_text_wrapper.field_photo_text_wrapper_class
+  module:
+    - options
+id: page_component_entity.photo_text_wrapper.default
+targetEntityType: page_component_entity
+bundle: photo_text_wrapper
+mode: default
+content:
+  field_photo_text_reference:
+    weight: 2
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.photo_text_wrapper.default.yml
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_view_display.page_component_entity.photo_text.default.yml
+=======
+    type: entity_reference_entity_view
+    region: content
+  field_photo_text_wrapper_class:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.photo_text_wrapper.default.yml
     region: content
   name:
     label: hidden

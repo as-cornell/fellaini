@@ -1,13 +1,35 @@
+<<<<<<< HEAD
 uuid: f0bebd34-bb93-47d7-b1e5-eb8b9c7851db
+=======
+<<<<<<< HEAD:config/sync/core.entity_view_display.page_component_entity.stat_wrapper.default.yml
+uuid: 55b9d663-c03d-44c6-961d-0da12b500308
+=======
+uuid: f0bebd34-bb93-47d7-b1e5-eb8b9c7851db
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.figure_wrapper.default.yml
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
 langcode: en
 status: true
 dependencies:
   config:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:config/sync/core.entity_view_display.page_component_entity.stat_wrapper.default.yml
+    - as_page_components.page_component_entity_type.stat_wrapper
+    - field.field.page_component_entity.stat_wrapper.field_stats
+id: page_component_entity.stat_wrapper.default
+targetEntityType: page_component_entity
+bundle: stat_wrapper
+=======
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     - as_page_components.page_component_entity_type.figure_wrapper
     - field.field.page_component_entity.figure_wrapper.field_figures_reference
 id: page_component_entity.figure_wrapper.default
 targetEntityType: page_component_entity
 bundle: figure_wrapper
+<<<<<<< HEAD
+=======
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.figure_wrapper.default.yml
+>>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
 mode: default
 content:
   field_figures_reference:
