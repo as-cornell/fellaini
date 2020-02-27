@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.figure_image
+    - entity_browser.browser.media_entity_browser
+    - field.field.page_component_entity.figure_image.field_component_alignment
+    - field.field.page_component_entity.figure_image.field_figure_image
+  module:
+    - entity_browser
+id: page_component_entity.figure_image.default
+targetEntityType: page_component_entity
+bundle: figure_image
+mode: default
+content:
+  field_component_alignment:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_figure_image:
+    weight: 2
+    settings:
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_display_settings:
+        view_mode: default
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

@@ -3,7 +3,8 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.photo_text_block
-    - field.field.page_component_entity.photo_text_block.field_photo_text_entity
+    - field.field.page_component_entity.photo_text_block.field_photo_text_reference
+    - field.field.page_component_entity.photo_text_block.field_photo_text_wrapper_class
   module:
     - entity_browser_entity_form
     - inline_entity_form
@@ -12,23 +13,29 @@ targetEntityType: page_component_entity
 bundle: photo_text_block
 mode: default
 content:
-  field_photo_text_entity:
+  field_photo_text_reference:
     weight: 26
     settings:
       form_mode: default
       label_singular: ''
       label_plural: ''
-      collapsible: true
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
       override_labels: false
+      collapsible: false
       collapsed: false
       allow_duplicate: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: _none
     type: inline_entity_form_complex
+    region: content
+  field_photo_text_wrapper_class:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   name:
     type: string_textfield

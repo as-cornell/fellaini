@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - field.storage.page_component_entity.field_courses_shown
+id: page_component_entity.course_block.field_courses_shown
+field_name: field_courses_shown
+entity_type: page_component_entity
+bundle: course_block
+label: 'Courses Shown'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

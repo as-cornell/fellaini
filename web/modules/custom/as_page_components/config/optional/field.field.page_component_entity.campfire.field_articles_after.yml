@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.campfire
+    - field.storage.page_component_entity.field_articles_after
+    - node.type.article
+id: page_component_entity.campfire.field_articles_after
+field_name: field_articles_after
+entity_type: page_component_entity
+bundle: campfire
+label: 'Articles After'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,5 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: stat_block
-label: 'Stat Block'

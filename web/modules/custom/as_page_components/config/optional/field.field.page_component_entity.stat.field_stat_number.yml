@@ -9,7 +9,7 @@ field_name: field_stat_number
 entity_type: page_component_entity
 bundle: stat
 label: 'Stat Number'
-description: 'The big number for stats.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

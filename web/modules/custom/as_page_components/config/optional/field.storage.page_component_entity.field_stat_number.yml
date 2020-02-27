@@ -8,7 +8,7 @@ field_name: field_stat_number
 entity_type: page_component_entity
 type: string
 settings:
-  max_length: 255
+  max_length: 15
   is_ascii: false
   case_sensitive: false
 module: core

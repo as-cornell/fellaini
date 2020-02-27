@@ -1,0 +1,5 @@
+langcode: en
+status: true
+dependencies: {  }
+id: figure_image
+label: 'Figure - Image'

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - options
+id: page_component_entity.field_layout
+field_name: field_layout
+entity_type: page_component_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: heavyRight
+      label: 'Heavy Right'
+    -
+      value: heavyLeft
+      label: 'Heavy Left'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

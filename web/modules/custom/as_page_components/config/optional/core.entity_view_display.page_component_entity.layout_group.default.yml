@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.layout_group
+    - field.field.page_component_entity.layout_group.field_columns
+    - field.field.page_component_entity.layout_group.field_layout
+  module:
+    - options
+id: page_component_entity.layout_group.default
+targetEntityType: page_component_entity
+bundle: layout_group
+mode: default
+content:
+  field_columns:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_layout:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden:
+  name: true
+  user_id: true

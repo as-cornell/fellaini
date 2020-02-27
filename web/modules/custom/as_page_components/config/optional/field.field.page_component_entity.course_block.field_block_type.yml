@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - field.storage.page_component_entity.field_block_type
+  module:
+    - options
+id: page_component_entity.course_block.field_block_type
+field_name: field_block_type
+entity_type: page_component_entity
+bundle: course_block
+label: 'Block Type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: list
+default_value_callback: ''
+settings: {  }
+field_type: list_string

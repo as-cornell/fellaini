@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.card
+label: Card
+targetEntityType: page_component_entity
+cache: true

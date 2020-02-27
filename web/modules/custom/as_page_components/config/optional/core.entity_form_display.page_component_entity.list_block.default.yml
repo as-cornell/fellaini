@@ -3,22 +3,30 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.list_block
+    - field.field.page_component_entity.list_block.field_formatted_text
+    - field.field.page_component_entity.list_block.field_link
     - field.field.page_component_entity.list_block.field_list_reference
   module:
+    - link
     - viewsreference
 id: page_component_entity.list_block.default
 targetEntityType: page_component_entity
 bundle: list_block
 mode: default
 content:
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_list_reference:
     weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: viewsreference_autocomplete
+    type: viewsreference_select
     region: content
   name:
     type: string_textfield
@@ -29,4 +37,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_formatted_text: true
   user_id: true

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.stat
+    - as_page_components.page_component_entity_type.stat_wrapper
+    - field.storage.page_component_entity.field_stats
+id: page_component_entity.stat_wrapper.field_stats
+field_name: field_stats
+entity_type: page_component_entity
+bundle: stat_wrapper
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:page_component_entity'
+  handler_settings:
+    target_bundles:
+      stat: stat
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

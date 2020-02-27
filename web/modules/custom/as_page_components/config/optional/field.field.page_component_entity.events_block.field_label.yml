@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.events_block
+    - field.storage.page_component_entity.field_label
+id: page_component_entity.events_block.field_label
+field_name: field_label
+entity_type: page_component_entity
+bundle: events_block
+label: Label
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

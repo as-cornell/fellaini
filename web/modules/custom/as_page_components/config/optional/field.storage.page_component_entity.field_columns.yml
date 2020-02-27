@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.field_columns
+field_name: field_columns
+entity_type: page_component_entity
+type: entity_reference
+settings:
+  target_type: page_component_entity
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.toc_block
+    - field.storage.page_component_entity.field_toc_page_reference
+    - node.type.toc_page
+  module:
+    - dynamic_entity_reference
+id: page_component_entity.toc_block.field_toc_page_reference
+field_name: field_toc_page_reference
+entity_type: page_component_entity
+bundle: toc_block
+label: 'TOC Page Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  node:
+    handler: 'default:node'
+    handler_settings:
+      target_bundles:
+        toc_page: toc_page
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  crop:
+    handler: 'default:crop'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  entity_embed_fake_entity:
+    handler: 'default:entity_embed_fake_entity'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  page_component_entity:
+    handler: 'default:page_component_entity'
+    handler_settings: {  }
+  media:
+    handler: 'default:media'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

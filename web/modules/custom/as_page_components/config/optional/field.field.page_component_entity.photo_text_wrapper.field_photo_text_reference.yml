@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.photo_text
+    - as_page_components.page_component_entity_type.photo_text_wrapper
+    - field.storage.page_component_entity.field_photo_text_reference
+id: page_component_entity.photo_text_wrapper.field_photo_text_reference
+field_name: field_photo_text_reference
+entity_type: page_component_entity
+bundle: photo_text_wrapper
+label: 'Photo Text Reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:page_component_entity'
+  handler_settings:
+    target_bundles:
+      photo_text: photo_text
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

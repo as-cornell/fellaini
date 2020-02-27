@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.toc_block
+    - field.field.page_component_entity.toc_block.field_toc_page_reference
+  module:
+    - dynamic_entity_reference
+id: page_component_entity.toc_block.default
+targetEntityType: page_component_entity
+bundle: toc_block
+mode: default
+content:
+  field_toc_page_reference:
+    weight: 1
+    label: hidden
+    settings:
+      node:
+        view_mode: card
+      crop:
+        view_mode: default
+        link: false
+      block_content:
+        view_mode: default
+        link: false
+      menu_link_content:
+        view_mode: default
+        link: false
+      entity_embed_fake_entity:
+        view_mode: default
+        link: false
+      file:
+        view_mode: default
+        link: false
+      page_component_entity:
+        view_mode: default
+        link: false
+      media:
+        view_mode: default
+        link: false
+      shortcut:
+        view_mode: default
+        link: false
+      taxonomy_term:
+        view_mode: default
+        link: false
+      user:
+        view_mode: default
+        link: false
+    third_party_settings: {  }
+    type: dynamic_entity_reference_entity_view
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  user_id: true

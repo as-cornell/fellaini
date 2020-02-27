@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.stat_wrapper
+    - field.field.page_component_entity.stat_wrapper.field_stats
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+id: page_component_entity.stat_wrapper.default
+targetEntityType: page_component_entity
+bundle: stat_wrapper
+mode: default
+content:
+  field_stats:
+    weight: 1
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

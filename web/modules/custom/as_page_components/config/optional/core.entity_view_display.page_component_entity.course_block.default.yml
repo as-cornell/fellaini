@@ -1,0 +1,89 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - field.field.page_component_entity.course_block.field_block_type
+    - field.field.page_component_entity.course_block.field_courses_shown
+    - field.field.page_component_entity.course_block.field_formatted_text
+    - field.field.page_component_entity.course_block.field_keyword_params
+    - field.field.page_component_entity.course_block.field_link
+    - field.field.page_component_entity.course_block.field_related_major_minor
+    - field.field.page_component_entity.course_block.field_semester
+  module:
+    - link
+    - options
+    - text
+id: page_component_entity.course_block.default
+targetEntityType: page_component_entity
+bundle: course_block
+mode: default
+content:
+  field_block_type:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_courses_shown:
+    weight: 4
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_formatted_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_keyword_params:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_related_major_minor:
+    weight: 5
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_semester:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  name:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  user_id: true

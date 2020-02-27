@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.events_block
+    - field.storage.page_component_entity.field_events_shown
+id: page_component_entity.events_block.field_events_shown
+field_name: field_events_shown
+entity_type: page_component_entity
+bundle: events_block
+label: 'Events Shown'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
