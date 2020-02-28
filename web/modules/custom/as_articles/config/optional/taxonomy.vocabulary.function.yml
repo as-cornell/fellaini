@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Function
+vid: function
+description: 'Functional Areas'
+weight: 0

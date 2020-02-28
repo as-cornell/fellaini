@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_byline_reference
+    - field.storage.node.field_department_program
     - node.type.article
-    - taxonomy.vocabulary.article_bylines
-id: node.article.field_byline_reference
-field_name: field_byline_reference
+    - taxonomy.vocabulary.departments_programs
+id: node.article.field_department_program
+field_name: field_department_program
 entity_type: node
 bundle: article
-label: 'Byline Reference'
+label: 'Departments and Programs'
 description: ''
 required: false
 translatable: false
@@ -19,10 +19,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      article_bylines: article_bylines
+      departments_programs: departments_programs
     sort:
       field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

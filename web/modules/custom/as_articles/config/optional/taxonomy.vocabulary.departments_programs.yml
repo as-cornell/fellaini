@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Departments and Programs'
+vid: departments_programs
+description: 'Departments and Programs in the College of Arts & Sciences'
+weight: -9

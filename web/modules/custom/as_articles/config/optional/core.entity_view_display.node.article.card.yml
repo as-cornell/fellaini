@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.article.body
+    - field.field.node.article.field_article_components_entity
+    - field.field.node.article.field_byline
+    - field.field.node.article.field_byline_reference
+    - field.field.node.article.field_card_label
+    - field.field.node.article.field_dateline
+    - field.field.node.article.field_department_program
+    - field.field.node.article.field_image
+    - field.field.node.article.field_media_source
+    - field.field.node.article.field_newsletter_image
+    - field.field.node.article.field_pano_image
+    - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_people
+    - field.field.node.article.field_summary
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_topics_and_disciplines
+    - node.type.article
+  module:
+    - datetime
+    - user
+id: node.article.card
+targetEntityType: node
+bundle: article
+mode: card
+content:
+  field_byline:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_card_label:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_dateline:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: m_d_y
+    third_party_settings: {  }
+  field_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_article_components_entity: true
+  field_byline_reference: true
+  field_department_program: true
+  field_media_source: true
+  field_newsletter_image: true
+  field_pano_image: true
+  field_related_articles: true
+  field_related_people: true
+  field_summary: true
+  field_tags: true
+  field_topics_and_disciplines: true
+  links: true

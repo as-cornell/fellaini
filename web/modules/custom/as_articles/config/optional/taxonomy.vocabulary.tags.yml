@@ -1,8 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'Article Tags'
+name: Tags
 vid: tags
-description: 'Tags used to provide ad-hoc categorization of Articles'
-hierarchy: 0
-weight: 0
+description: 'Use tags to group articles on similar topics into categories.'
+weight: -3

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Bylines'
+vid: article_bylines
+description: 'Bylines to Articles as tags to allow aggregating articles by author'
+weight: -10

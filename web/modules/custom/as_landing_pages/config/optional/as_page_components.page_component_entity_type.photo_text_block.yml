@@ -1,0 +1,5 @@
+langcode: en
+status: true
+dependencies: {  }
+id: photo_text_block
+label: 'Z-DEPR Photo Text Block'

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Discipline
+vid: discipline
+description: 'Discipline Areas'
+weight: -5

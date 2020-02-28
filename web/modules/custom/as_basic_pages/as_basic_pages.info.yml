@@ -1,0 +1,5 @@
+name: 'A&S Basic Pages'
+type: module
+description: 'Contains configurations for A&S Basic Pages'
+core: 8.x
+package: 'AS'
