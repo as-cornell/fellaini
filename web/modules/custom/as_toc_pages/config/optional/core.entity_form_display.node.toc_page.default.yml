@@ -4,9 +4,13 @@ dependencies:
   config:
     - field.field.node.toc_page.field_aside_components
     - field.field.node.toc_page.field_page_components_entity
+    - field.field.node.toc_page.field_toc_summary
     - node.type.toc_page
   module:
+    - entity_browser_entity_form
+    - inline_entity_form
     - path
+    - text
 id: node.toc_page.default
 targetEntityType: node
 bundle: toc_page
@@ -14,31 +18,57 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_aside_components:
-    weight: 121
+    weight: 2
     settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
     region: content
   field_page_components_entity:
-    weight: 122
+    weight: 3
     settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_toc_summary:
+    weight: 1
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: text_textarea
     region: content
   path:
     type: path
-    weight: 30
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -46,26 +76,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -73,11 +103,12 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden: {  }
