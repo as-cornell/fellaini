@@ -2,4 +2,4 @@ langcode: en
 status: true
 dependencies: {  }
 id: image_figure
-label: 'Image Figure'
+label: 'Z-DEPR Image Figure'
