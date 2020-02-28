@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.course_block
+    - as_page_components.page_component_entity_type.events_block
+    - as_page_components.page_component_entity_type.link_block
+    - as_page_components.page_component_entity_type.list_block
+    - as_page_components.page_component_entity_type.person
+    - as_page_components.page_component_entity_type.related_articles
+    - as_page_components.page_component_entity_type.small_text
+    - as_page_components.page_component_entity_type.stat
+    - field.storage.node.field_aside_components
+    - node.type.article
+id: node.article.field_aside_components
+field_name: field_aside_components
+entity_type: node
+bundle: article
+label: 'Aside Components'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:page_component_entity'
+  handler_settings:
+    target_bundles:
+      course_block: course_block
+      events_block: events_block
+      link_block: link_block
+      list_block: list_block
+      person: person
+      related_articles: related_articles
+      small_text: small_text
+      stat: stat
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: small_text
+field_type: entity_reference

@@ -1,0 +1,7 @@
+name: 'A&S Landing Pages'
+type: module
+description: 'Contains configurations for Landing Page content type as used on as.cornell.edu'
+core: 8.x
+package: AS
+dependencies:
+  - menu_ui

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pano_image
+    - media.type.image
+    - media.type.video
+    - node.type.landing_page
+id: node.landing_page.field_pano_image
+field_name: field_pano_image
+entity_type: node
+bundle: landing_page
+label: 'Pano Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

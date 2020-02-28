@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.campfire
+    - as_page_components.page_component_entity_type.course_block
+    - as_page_components.page_component_entity_type.events_block
+    - as_page_components.page_component_entity_type.formatted_text_block
+    - as_page_components.page_component_entity_type.image_figure
+    - as_page_components.page_component_entity_type.instagram_block
+    - as_page_components.page_component_entity_type.link_block
+    - as_page_components.page_component_entity_type.list_block
+    - as_page_components.page_component_entity_type.photo_text
+    - as_page_components.page_component_entity_type.photo_text_block
+    - as_page_components.page_component_entity_type.small_text
+    - as_page_components.page_component_entity_type.toc_block
+    - as_page_components.page_component_entity_type.twitter_block
+    - as_page_components.page_component_entity_type.video_figure
+    - field.storage.node.field_landing_page_component_ent
+    - node.type.landing_page
+id: node.landing_page.field_landing_page_component_ent
+field_name: field_landing_page_component_ent
+entity_type: node
+bundle: landing_page
+label: 'Landing Page Components'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:page_component_entity'
+  handler_settings:
+    target_bundles:
+      campfire: campfire
+      course_block: course_block
+      events_block: events_block
+      formatted_text_block: formatted_text_block
+      image_figure: image_figure
+      instagram_block: instagram_block
+      link_block: link_block
+      list_block: list_block
+      photo_text: photo_text
+      photo_text_block: photo_text_block
+      small_text: small_text
+      toc_block: toc_block
+      twitter_block: twitter_block
+      video_figure: video_figure
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: campfire
+field_type: entity_reference

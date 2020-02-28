@@ -4,26 +4,31 @@ dependencies:
   config:
     - entity_browser.browser.media_entity_browser
     - field.field.node.article.body
-    - field.field.node.article.field_article_body
+    - field.field.node.article.field_article_components_entity
+    - field.field.node.article.field_aside_components
     - field.field.node.article.field_byline
     - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
-    - field.field.node.article.field_featured_audio_video
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
+    - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_disciplines
+    - field.field.node.article.field_related_functions
     - field.field.node.article.field_related_people
+    - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
     - datetime
     - entity_browser
+    - entity_browser_entity_form
     - field_group
-    - paragraphs
+    - inline_entity_form
     - path
 third_party_settings:
   field_group:
@@ -50,6 +55,7 @@ third_party_settings:
         - field_dateline
         - field_card_label
         - field_media_source
+        - field_summary
       parent_name: group_article
       weight: 13
       format_type: tab
@@ -63,8 +69,9 @@ third_party_settings:
       region: content
     group_tags:
       children:
+        - field_related_disciplines
+        - field_related_functions
         - field_department_program
-        - field_topics_and_disciplines
         - field_tags
       parent_name: group_article
       weight: 14
@@ -81,6 +88,7 @@ third_party_settings:
       children:
         - field_pano_image
         - field_image
+        - field_newsletter_image
       parent_name: group_article
       weight: 15
       format_type: tab
@@ -94,7 +102,8 @@ third_party_settings:
       region: content
     group_body:
       children:
-        - field_article_body
+        - field_article_components_entity
+        - field_aside_components
         - field_related_articles
         - field_related_people
       parent_name: group_article
@@ -127,8 +136,6 @@ third_party_settings:
         required_fields: true
       label: Authoring
       region: content
-_core:
-  default_config_hash: sTc8hdGRgKE6fkfgXRRXoS-ILXJL-mdhCQgYO8IlC5c
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -136,28 +143,44 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_article_body:
-    type: paragraphs
-    weight: 0
-    region: content
+  field_article_components_entity:
+    weight: 2
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
+      match_operator: CONTAINS
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      allow_new: true
+      allow_existing: false
+      allow_duplicate: false
     third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_aside_components:
+    weight: 3
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
   field_byline:
     type: string_textfield
     weight: 11
@@ -172,6 +195,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -191,15 +215,16 @@ content:
     third_party_settings: {  }
   field_department_program:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
   field_image:
-    weight: 30
+    weight: 29
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -221,6 +246,21 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_newsletter_image:
+    weight: 31
+    settings:
+      entity_browser: media_entity_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: default
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_pano_image:
     weight: 28
     settings:
@@ -237,44 +277,58 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_related_articles:
-    weight: 1
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_related_disciplines:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_related_functions:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_related_people:
-    weight: 2
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_summary:
+    weight: 16
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
     region: content
   field_tags:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 21
     region: content
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_topics_and_disciplines:
-    type: entity_reference_autocomplete
-    weight: 18
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -282,21 +336,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -314,8 +368,9 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden:
   body: true
-  field_featured_audio_video: true
+  field_topics_and_disciplines: true
