@@ -36,6 +36,26 @@ function as_menu_plug_generate_card_link_markup($link_title,$page_value) {
   }
 
 /**
+ * Generates link for menu entry().
+ */
+function as_menu_plug_generate_menu_link($link_title,$page_value) {
+
+    // get variables from array being passed to this function
+    //dump($section_label_data);
+    //clean up text
+    $link_uri = preg_replace('/\W+/','-',strtolower(strip_tags($link_title)));;
+    //build path
+    $link_uri = $page_value . "#" . $link_uri;
+    // populate the array
+    $link = array();
+    $link["uri"] = $link_uri;
+    $link["title"] = $link_title;
+    $link["page_value"] = $page_value;
+
+    return $link;
+  }
+
+/**
  * Implements hook_help().
  */
 function as_menu_plug_help($route_name, RouteMatchInterface $route_match) {
