@@ -1,0 +1,5 @@
+name: 'A&S Menu Spackle'
+type: module
+description: 'Provides am ordered list of in-page menu items as a field associated with a given page''s menu items'
+core: 8.x
+package: 'AS'

@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Contains as_menu_plug.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function as_menu_plug_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_menu_plug module.
+    case 'help.page.as_menu_plug':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Configurations, fucntions and templates to add in-page anchor links as link fields under that page&#039;&#039;s menu item.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function as_menu_plug_theme() {
+  return [
+    'as_menu_plug' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function as_menu_plug_theme() {
+  return [
+    'default_block' => [
+      'variables' => [
+        'content' => NULL
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}
