@@ -11,7 +11,9 @@ Descr: block to show side bar nav for TOC pages.
  #}
 
 <nav class="secondary toc-menu">
-    <h3>On this page</h3>
+{% if label %}
+    <h3>{{ label }}</h3>
+{% endif %}
     {% block content %}
     {{ content }}
     {% endblock %}

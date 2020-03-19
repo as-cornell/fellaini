@@ -93,7 +93,8 @@
         "drupal/simplify": "^1.1",
         "drupal/feeds": "^3.0",
         "drupal/menu_breadcrumb": "^1.12",
-        "drupal/menu_item_extras": "^2.10"
+        "drupal/menu_item_extras": "^2.10",
+        "drupal/menu_link_attributes": "^1.0"
 
 
     },

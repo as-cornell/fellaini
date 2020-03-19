@@ -55,6 +55,19 @@ function as_menu_plug_generate_menu_link($link_title,$page_value) {
     return $link;
   }
 
+
+/**
+* Implements hook_preprocess_HOOK() for menu.html.twig.
+*/
+function as_menu_plug_preprocess_menu(&$variables) {
+  // If there is not an existing class array, create an empty array.
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+  // Merge with any classes that may have been set by other hook_preprocess_menu invocations
+  $variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['doortyweefooker']);
+}
+
 /**
  * Implements hook_help().
  */

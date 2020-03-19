@@ -30,6 +30,7 @@ function as_toc_pages_generate_card_link_markup($link_title,$page_value) {
     return $markup;
   }
 
+
 /**
  * Implements hook_help().
  */

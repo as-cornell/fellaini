@@ -6,14 +6,14 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Provides a 'DefaultBlock' block.
+ * Provides a 'MenuPlugBlock' block.
  *
  * @Block(
- *  id = "default_block",
- *  admin_label = @Translation("Default block"),
+ *  id = "menu_plug_block",
+ *  admin_label = @Translation("Menu Plug block"),
  * )
  */
-class DefaultBlock extends BlockBase {
+class MenuPlugBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -47,10 +47,29 @@ class DefaultBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
-  public function build() {
+public function build() {
     $build = [];
-    $build['#theme'] = 'default_block';
-    $build['#conten'][] = $this->configuration['related_entity'];
+    $config = $this->getConfiguration();
+
+    if (!empty($config['link_values'])) {
+      $link_values = $config['link_values'];
+    }
+    else {
+      $link_values = 'not passing anything in link values';
+    }
+
+    $build['menu_plug_block']['#markup'] = '<ul>';
+
+    if (!empty($link_values)) {
+      foreach($link_values as $link_title) {
+            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .as_toc_pages_generate_link_markup($link_title);
+      }
+
+    } // There were no links
+    else {
+      $build['menu_plug_block']['#markup'] = "<li>There are no modal links</li>";
+    }
+        $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .'</ul>';
 
     return $build;
   }
