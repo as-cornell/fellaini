@@ -21,38 +21,33 @@ function as_menu_plug_generate_link_markup($link_title) {
     return $markup;
   }
 
-/**
- * Generates links for card view().
- */
-function as_menu_plug_generate_card_link_markup($link_title,$page_value) {
-  $markup = NULL;
-    // get variables from array being passed to this function
-    //dump($section_label_data);
-    $link_name = preg_replace('/\W+/','-',strtolower(strip_tags($link_title)));;
-    // Create the markup
-    $markup = $markup . "<li><a href='". $page_value . "#" . $link_name . "'>" . $link_title . "</a></li>";
 
-    return $markup;
+/**
+* Strips menu URI string anc converts to menu_link_id or nid.
+*/
+function as_menu_plug_strip_id($string) {
+
+    if (!empty($string)) {
+      $string = strstr($string, '/');
+      $string = str_replace('/', '', $string);
+      return $string;
+    }
   }
 
 /**
- * Generates link for menu entry().
- */
-function as_menu_plug_generate_menu_link($link_title,$page_value) {
+* Turns menu link id into parent node id.
+*/
+function as_menu_plug_menulinkid_nid($menu_link_id) {
 
-    // get variables from array being passed to this function
-    //dump($section_label_data);
-    //clean up text
-    $link_uri = preg_replace('/\W+/','-',strtolower(strip_tags($link_title)));;
-    //build path
-    $link_uri = $page_value . "#" . $link_uri;
-    // populate the array
-    $link = array();
-    $link["uri"] = $link_uri;
-    $link["title"] = $link_title;
-    $link["page_value"] = $page_value;
+    $database =  \Drupal::database();
+    $sql = "SELECT link__uri FROM menu_link_content_data WHERE id = :menulinkid";
+    $query = $database->query($sql, [':menulinkid' => $menu_link_id]);
+    $result = $query->fetchObject();
+    if ($result !== false) {
+      //$node = Node::load($result->nid);
+      return $result->link__uri;
+    }
 
-    return $link;
   }
 
 

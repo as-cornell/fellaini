@@ -23,23 +23,32 @@
     elements['#menu_level'] is defined ? 'menu-dropdown-' ~ elements['#menu_level'],
     elements['#view_mode'] ? 'menu-type-' ~ elements['#view_mode'],
   ] %}
+  {% set menuLinkID = attributes.storage['data-quickedit-entity-id'] %}
   {% set linkValues = [] %}
-  {% set linkValues = linkValues|merge(['In page link 1','In page link 2', content.title.0['#context']['value']]) %}
+  {% set linkTitle = 'pppp' %}
+  {% set linkValues = linkValues|merge([linkTitle ~ ' page link 1', linkTitle ~ ' page link 2', linkTitle  ~ ' page link 3']) %}
 
 
 
+{# dumpers #}
 
+{#<ol>
+  {% for key, value in _context  %}
+    <li>{{ key }}</li>
+    {% if loop.index == 1 %}
+      <li>{{kint(attributes)}}</li>
+    {% endif %}
+  {% endfor %}
+</ol> #}
 
-
-
-
-{{dump(attributes)}}
+{# {{dump()}} #}
+{#{{kint(attributes.storage['data-quickedit-entity-id'])}}#}
 
     {% if show_item_link %}
       {{ link(menu_link_content.getTitle(), menu_link_content.getUrlObject()) }}
     {% endif %}
     {% if content %}
-      {{ drupal_block('toc_aside_block', {link_values:linkValues}) }}
+      {{ drupal_block('menu_plug_block', {link_values:linkValues, menu_link_id:menuLinkID}) }}
       {{ content }}
 
     {% endif %}
