@@ -53,7 +53,7 @@ class MenuPlugBlock extends BlockBase {
       $index = 0;
       foreach($node->field_page_components_entity->getValue() as $pcc) {
             //print_r($pcc);
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  "<li>HI I'm a page component !!! ". $node->field_page_components_entity[$index]->entity->label() ."</li>";
+            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  "<li><a href='#'>". $node->field_page_components_entity[$index]->entity->label() ."</a></li>";
         $index++;
         }
       }
@@ -61,15 +61,16 @@ class MenuPlugBlock extends BlockBase {
         $index = 0;
       foreach($node->field_landing_page_component_ent->getValue() as $pcc) {
             //print_r($pcc);
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  "<li>HI I'm a landing page component !!! ". $node->field_landing_page_component_ent[$index]->entity->label() ."</li>";
+            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  "<li><a href='#'>". $node->field_landing_page_component_ent[$index]->entity->label() ."</a></li>";
         $index++;
         }
       }
     if (!empty($menu_link_id)) {
-           $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<li>menu link id " . $menu_link_id ."</li>";
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<li>nid " . $nid ."</li>";
+           //$build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<li>menu link id " . $menu_link_id ."</li>";
+            //$build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<li>nid " . $nid ."</li>";
+    }
         $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .'</ul>';
-      }
+
     return $build;
   }
 
