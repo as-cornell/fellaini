@@ -6,8 +6,6 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 
-
-
 /**
  * Provides a 'MenuPlugBlock' block.
  *
@@ -23,55 +21,42 @@ class MenuPlugBlock extends BlockBase {
    */
   public function build() {
     $build = [];
+    $build['menu_plug_block']['#markup'] = "";
     $config = $this->getConfiguration();
-
-
     if (!empty($config['menu_link_id'])) {
       $menu_link_id = $config['menu_link_id'];
     }
-    if (!empty($config['link_values'])) {
-      //$link_values = $config['link_values'];
-    }
-    //strip $menu_link_id
+    // strip $menu_link_id
     $menu_link_id = as_menu_plug_strip_id($menu_link_id);
-    //go get the $nid from the uri for $menu_link_id
+    // get $nid from $menu_link_id uri
     $nid = as_menu_plug_menulinkid_nid($menu_link_id);
-    //strip $nid
+    // strip $nid
     $nid = as_menu_plug_strip_id($nid);
-    //load node
+    // get node alias
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nid);
+    // load node
     $node =\Drupal::entityTypeManager()->getStorage('node')->load($nid);
-
-
-    $build['menu_plug_block']['#markup'] = '<ul>';
-
-    if (!empty($link_values)) {
-      foreach($link_values as $link_title) {
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .as_menu_plug_generate_link_markup($link_title);
-        }
-      }
+    // build markup
+    $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul>';
+    // get page component entities
     if (!empty($node->field_page_components_entity)) {
       $index = 0;
-      foreach($node->field_page_components_entity->getValue() as $pcc) {
-            //print_r($pcc);
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  "<li><a href='#'>". $node->field_page_components_entity[$index]->entity->label() ."</a></li>";
+      foreach($node->field_page_components_entity->getValue() as $pce) {
+            $link_title = $node->field_page_components_entity[$index]->entity->label();
+            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . as_menu_plug_generate_link_markup($link_title,$alias);
         $index++;
         }
       }
-      if (!empty($node->field_landing_page_component_ent)) {
-        $index = 0;
-      foreach($node->field_landing_page_component_ent->getValue() as $pcc) {
-            //print_r($pcc);
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  "<li><a href='#'>". $node->field_landing_page_component_ent[$index]->entity->label() ."</a></li>";
-        $index++;
-        }
+    // get landing page component entities
+    if (!empty($node->field_landing_page_component_ent)) {
+      $index = 0;
+    foreach($node->field_landing_page_component_ent->getValue() as $lpce) {
+          $link_title = $node->field_landing_page_component_ent[$index]->entity->label();
+          $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . as_menu_plug_generate_link_markup($link_title,$alias);
+      $index++;
       }
-    if (!empty($menu_link_id)) {
-           //$build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<li>menu link id " . $menu_link_id ."</li>";
-            //$build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<li>nid " . $nid ."</li>";
     }
-        $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .'</ul>';
-
+    $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .'</ul>';
     return $build;
   }
-
 }

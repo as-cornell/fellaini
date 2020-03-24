@@ -8,22 +8,20 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
- * Generates markup around link title on the page().
+ * Generates markup around link title().
  */
-function as_menu_plug_generate_link_markup($link_title) {
-  $markup = NULL;
-    // get variables from array being passed to this function
-    //dump($section_label_data);
+function as_menu_plug_generate_link_markup($link_title,$alias) {
+    $markup = NULL;
     $link_name = preg_replace('/\W+/','-',strtolower(strip_tags($link_title)));;
     // Create the markup
-    $markup = $markup . "<li><a href='#" . $link_name . "'>" . $link_title . "</a></li>";
+    $markup = $markup . "<li id='" . $link_name . "'><a href='" . $alias . "#" . $link_name . "'>" . $link_title . "</a></li>";
 
     return $markup;
   }
 
 
 /**
-* Strips menu URI string anc converts to menu_link_id or nid.
+* Strips menu URI or node id string and converts to menu_link_id or nid.
 */
 function as_menu_plug_strip_id($string) {
 
@@ -35,7 +33,7 @@ function as_menu_plug_strip_id($string) {
   }
 
 /**
-* Turns menu link id into parent node id.
+* Gets parent node id from menu link id.
 */
 function as_menu_plug_menulinkid_nid($menu_link_id) {
 
@@ -44,7 +42,6 @@ function as_menu_plug_menulinkid_nid($menu_link_id) {
     $query = $database->query($sql, [':menulinkid' => $menu_link_id]);
     $result = $query->fetchObject();
     if ($result !== false) {
-      //$node = Node::load($result->nid);
       return $result->link__uri;
     }
 
@@ -57,10 +54,10 @@ function as_menu_plug_menulinkid_nid($menu_link_id) {
 function as_menu_plug_preprocess_menu(&$variables) {
   // If there is not an existing class array, create an empty array.
   if (!isset($variables['attributes']['class'])) {
-    $variables['attributes']['class'] = [];
+    //$variables['attributes']['class'] = [];
   }
   // Merge with any classes that may have been set by other hook_preprocess_menu invocations
-  $variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['doortyweefooker']);
+  //$variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['doortyweefooker']);
 }
 
 /**
@@ -72,7 +69,7 @@ function as_menu_plug_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.as_menu_plug':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Configurations, fucntions and templates to add in-page anchor links as link fields under that page&#039;&#039;s menu item.') . '</p>';
+      $output .= '<p>' . t('Configurations, functions and templates to add in-page anchor links as links under that page&#039;s main navigation menu item.') . '</p>';
       return $output;
 
     default:
@@ -84,7 +81,7 @@ function as_menu_plug_help($route_name, RouteMatchInterface $route_match) {
  */
 function as_menu_plug_theme() {
   return [
-    'default_block' => [
+    'menu_plug_block' => [
       'variables' => [
         'content' => NULL
       ],

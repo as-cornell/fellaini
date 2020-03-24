@@ -24,9 +24,6 @@ class TOCAsideBlock extends BlockBase {
     if (!empty($config['link_values'])) {
       $link_values = $config['link_values'];
     }
-    else {
-      $link_values = 'not passing anything in link values';
-    }
 
     $build['toc_aside_block']['#markup'] = '<ul>';
 
