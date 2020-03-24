@@ -22,6 +22,7 @@ class MenuPlugBlock extends BlockBase {
   public function build() {
     $build = [];
     $build['menu_plug_block']['#markup'] = "";
+    $menu_link_id = "";
     $config = $this->getConfiguration();
     if (!empty($config['menu_link_id'])) {
       $menu_link_id = $config['menu_link_id'];
@@ -35,7 +36,9 @@ class MenuPlugBlock extends BlockBase {
     // get node alias
     $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nid);
     // load node
+    if (!empty($nid)) {
     $node =\Drupal::entityTypeManager()->getStorage('node')->load($nid);
+      }
     // build markup
     $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul>';
     // get page component entities

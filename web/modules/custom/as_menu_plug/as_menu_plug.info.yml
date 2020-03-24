@@ -3,3 +3,5 @@ type: module
 description: 'Configurations, functions and templates to add in-page anchor links as link fields under that page''s menu item.'
 core: 8.x
 package: 'AS'
+dependencies:
+  - menu_item_extras:menu_item_extras
