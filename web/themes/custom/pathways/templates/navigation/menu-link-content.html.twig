@@ -24,33 +24,13 @@
     elements['#view_mode'] ? 'menu-type-' ~ elements['#view_mode'],
   ] %}
   {% set menuLinkID = attributes.storage['data-quickedit-entity-id'] %}
-  {% set linkValues = [] %}
-  {% set linkTitle = 'pppp' %}
-  {% set linkValues = linkValues|merge([linkTitle ~ ' page link 1', linkTitle ~ ' page link 2', linkTitle  ~ ' page link 3']) %}
-
-
-
-{# dumpers #}
-
-{#<ol>
-  {% for key, value in _context  %}
-    <li>{{ key }}</li>
-    {% if loop.index == 1 %}
-      <li>{{kint(attributes)}}</li>
-    {% endif %}
-  {% endfor %}
-</ol> #}
-
-{# {{dump()}} #}
-{#{{kint(attributes.storage['data-quickedit-entity-id'])}}#}
-
     {% if show_item_link %}
       {{ link(menu_link_content.getTitle(), menu_link_content.getUrlObject()) }}
     {% endif %}
     {% if content %}
-      {{ drupal_block('menu_plug_block', {link_values:linkValues, menu_link_id:menuLinkID}) }}
+      {# implements as_menu_plug #}
+      {{ drupal_block('menu_plug_block', {menu_link_id:menuLinkID}) }}
       {{ content }}
-
     {% endif %}
 
 {% endmacro %}
