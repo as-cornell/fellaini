@@ -45,8 +45,13 @@ class MenuPlugBlock extends BlockBase {
     if (!empty($node->field_page_components_entity)) {
       $index = 0;
       foreach($node->field_page_components_entity->getValue() as $pce) {
-            $link_title = $node->field_page_components_entity[$index]->entity->label();
+            // this uses the component entity label as the link text
+            //$link_title = $node->field_page_components_entity[$index]->entity->label();
+            // this uses only field_page_section_title from a page section entity
+            if (!empty($node->field_page_components_entity[$index]->entity->field_page_section_title[0])) {
+            $link_title = $node->field_page_components_entity[$index]->entity->field_page_section_title[0]->value;
             $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . as_menu_plug_generate_link_markup($link_title,$alias);
+               }
         $index++;
         }
       }
@@ -54,8 +59,13 @@ class MenuPlugBlock extends BlockBase {
     if (!empty($node->field_landing_page_component_ent)) {
       $index = 0;
     foreach($node->field_landing_page_component_ent->getValue() as $lpce) {
-          $link_title = $node->field_landing_page_component_ent[$index]->entity->label();
+          // this uses the component entity label as the link text
+          //$link_title = $node->field_landing_page_component_ent[$index]->entity->label();
+          // this uses only field_page_section_title from a page section entity
+            if (!empty($node->field_landing_page_component_ent[$index]->entity->field_page_section_title[0])) {
+          $link_title = $node->field_landing_page_component_ent[$index]->entity->field_page_section_title[0]->value;
           $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . as_menu_plug_generate_link_markup($link_title,$alias);
+          }
       $index++;
       }
     }
