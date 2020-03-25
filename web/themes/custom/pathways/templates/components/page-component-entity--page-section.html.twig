@@ -1,0 +1,28 @@
+{#
+
+/* -------------------------
+
+Title: entity--stats
+Descr: determines if stats should show one or multiple
+
+--------------------------- */
+
+#}
+
+{% set group_modifiers = ['figure'] %}
+
+{% set items = content.field_page_components %}
+{% set items_length = items|length %}
+{% set divid = content.field_page_section_title.0["#context"]["value"] |lower |replace({" ": "-"}) %}
+
+{% if items.1 %}
+  {% set multiple = true %}
+{% endif %}
+
+<div class ="navItem" id="{{divid}}">
+{% embed "@organisms/grouping/_grouping.twig" with{
+  items: items,
+  title: content.field_page_section_title
+} %}
+{% endembed %}
+</div>
