@@ -23,13 +23,23 @@
     elements['#menu_level'] is defined ? 'menu-dropdown-' ~ elements['#menu_level'],
     elements['#view_mode'] ? 'menu-type-' ~ elements['#view_mode'],
   ] %}
-  {% set menuLinkID = attributes.storage['data-quickedit-entity-id'] %}
+
+  {# vardumper(elements) #}
+
+  {# provide a menu link id to pass to menu plug block functions #}
+  {# set menuLinkID = attributes.storage['data-quickedit-entity-id'] #}
+  {# get menu link id from cache keys #}
+  {% set menuLinkID = elements['#cache']['keys'][2] %}
     {% if show_item_link %}
       {{ link(menu_link_content.getTitle(), menu_link_content.getUrlObject()) }}
     {% endif %}
-    {% if content %}
-      {# implements as_menu_plug #}
+    {# implements as_menu_plug #}
+    {% if menuLinkID %}
       {{ drupal_block('menu_plug_block', {menu_link_id:menuLinkID}) }}
+    {% endif %}
+    {% if content %}
+
+
       {{ content }}
     {% endif %}
 

@@ -3,8 +3,8 @@
 namespace Drupal\as_menu_plug\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\node\Entity\Node;
+//use Drupal\Core\Form\FormStateInterface;
+//use Drupal\node\Entity\Node;
 
 /**
  * Provides a 'MenuPlugBlock' block.
@@ -28,7 +28,7 @@ class MenuPlugBlock extends BlockBase {
       $menu_link_id = $config['menu_link_id'];
     }
     // strip $menu_link_id
-    $menu_link_id = as_menu_plug_strip_id($menu_link_id);
+    //$menu_link_id = as_menu_plug_strip_id($menu_link_id);
     // get $nid from $menu_link_id uri
     $nid = as_menu_plug_menulinkid_nid($menu_link_id);
     // strip $nid
@@ -38,13 +38,21 @@ class MenuPlugBlock extends BlockBase {
     // load node
     if (!empty($nid)) {
     $node =\Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    }
+    //get field values
+    if (!empty($node->field_page_components_entity)) {
+    $fpce = $node->field_page_components_entity;
       }
+    if (!empty($node->field_landing_page_component_ent)) {
+    $flpce = $node->field_landing_page_component_ent;
+      }
+
     // build markup
     $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul>';
     // get page component entities
-    if (!empty($node->field_page_components_entity)) {
+    if (!empty($fpce)) {
       $index = 0;
-      foreach($node->field_page_components_entity->getValue() as $pce) {
+      foreach($fpce as $pce) {
             // this uses the component entity label as the link text
             //$link_title = $node->field_page_components_entity[$index]->entity->label();
             // this uses only field_page_section_title from a page section entity
@@ -56,9 +64,9 @@ class MenuPlugBlock extends BlockBase {
         }
       }
     // get landing page component entities
-    if (!empty($node->field_landing_page_component_ent)) {
+    if (!empty($flpce)) {
       $index = 0;
-    foreach($node->field_landing_page_component_ent->getValue() as $lpce) {
+    foreach($flpce as $lpce) {
           // this uses the component entity label as the link text
           //$link_title = $node->field_landing_page_component_ent[$index]->entity->label();
           // this uses only field_page_section_title from a page section entity
@@ -73,3 +81,5 @@ class MenuPlugBlock extends BlockBase {
     return $build;
   }
 }
+
+
