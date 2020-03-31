@@ -53,12 +53,14 @@ function as_menu_plug_menulinkid_nid($menu_link_id) {
 */
 function as_menu_plug_preprocess_menu(&$variables) {
   // If there is not an existing class array, create an empty array.
-  if (!isset($variables['attributes']['class'])) {
-    //$variables['attributes']['class'] = [];
-  }
+  //if (!isset($variables['attributes']['class'])) {
+   // $variables['attributes']['class'] = [];
+  //}
   // Merge with any classes that may have been set by other hook_preprocess_menu invocations
   //$variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['doortyweefooker']);
 }
+
+
 
 /**
  * Implements hook_help().
