@@ -27,6 +27,9 @@ class MenuPlugBlock extends BlockBase {
     if (!empty($config['menu_link_id'])) {
       $menu_link_id = $config['menu_link_id'];
     }
+    if (!empty($config['menu_children'])) {
+      $menu_children = $config['menu_children'];
+    }
     // strip $menu_link_id
     //$menu_link_id = as_menu_plug_strip_id($menu_link_id);
     // get $nid from $menu_link_id uri
@@ -49,6 +52,7 @@ class MenuPlugBlock extends BlockBase {
 
     // build markup
     $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul>';
+
     // get page component entities
     if (!empty($fpce)) {
       $index = 0;
@@ -77,7 +81,9 @@ class MenuPlugBlock extends BlockBase {
       $index++;
       }
     }
+    if ($menu_children != TRUE){
     $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .'</ul>';
+   }
     return $build;
   }
 }
