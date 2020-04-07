@@ -17,9 +17,7 @@
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
       'subSubNav__item',
-      item.is_expanded ? 'menu-item--expanded',
-      item.is_collapsed ? 'menu-item--collapsed',
-      item.in_active_trail ? 'menu-item--active-trail',
+      item.in_active_trail ? 'active-trail',
     ] %}
 
     <li{{ item.attributes.addClass(menu_item_classes) }}>
