@@ -23,6 +23,7 @@ class MenuPlugBlock extends BlockBase {
     $build = [];
     $build['menu_plug_block']['#markup'] = "";
     $menu_link_id = "";
+    $menu_children = "";
     $config = $this->getConfiguration();
     if (!empty($config['menu_link_id'])) {
       $menu_link_id = $config['menu_link_id'];
