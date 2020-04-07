@@ -12,12 +12,12 @@
 {# vardumper(items['#render_children']) #}
   {% import _self as menu_links %}
   {% if items['#render_children'] == null %}
-  <ul class="sidebarNavigation">
+  <ul class="SubNav">
   {% endif %}
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
       'subNav__item',
-      item.in_active_trail ? 'subNav__item--active-trail',
+      item.in_active_trail ? 'active-trail',
     ] %}
 
     <li{{ item.attributes.addClass(menu_item_classes) }}>
