@@ -1,4 +1,13 @@
-//  Empty
+/* -------------------------
+
+Title: Site header styles
+Descr: Set 
+        - #skip
+        - header
+        - .cu-logo
+        - .as-logo
+
+--------------------------- */
 #skip{
   position: absolute;
   top: 50px;
@@ -16,34 +25,25 @@
 }
 
 header{
-  background-image: linear-gradient(var(--near-white), var(--near-white) 68px, $white 68px, $white);
-  margin-bottom: var(--space);
-  @include baseGrid();
-  grid-gap: 0;
-  padding: 0 var(--mainGutter);
-
-  //base layout
-  grid-template-columns: repeat(6,1fr);
-  grid-template-rows: 70px 180px 70px;
-  grid-template-areas:
-    "logo logo logo logo searchIcon navIcon"
-    "mainNav mainNav mainNav mainNav mainNav mainNav"
-    "audNav audNav audNav audNav audNav audNav"
-    "search search search search search search";
-  .nav--audience{
-      grid-area: audNav;
-  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--xl);
+  margin:0 auto;
   form{
       grid-area: search;
   }
-  .siteLogo{
-      grid-area: logo;
+  .header__lockup{
       display:flex;
       justify-content: center;
-      padding: (7 * $quark) 0;
+      align-items: center;
   }
-  .main-nav{
-      grid-area: mainNav;
+  .header__mainNav{
+      width: 100%;
+      @include medium(){
+        width: auto;
+      }
   }
   .main-nav-toggle{
     grid-area: navIcon;
@@ -54,57 +54,28 @@ header{
 
   //large screen
   @include medium(){
-    grid-template-columns: repeat(12,1fr);
-    grid-template-areas:
-      "search search search search audNav audNav audNav audNav audNav audNav audNav audNav"
-      ". logo logo logo logo logo logo logo logo logo logo ."
-      "mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav mainNav";
-    .nav--audience{
-      grid-area: audNav;
-    }
-    form{
-      grid-area: search;
-    }
-    .siteLogo{
-      grid-area: logo;
-      display:flex;
-      justify-content: center;
-      padding: (7 * $quark) 0;
-    }
-    .main-nav{
-      grid-area: mainNav;
-    }
-    .main-nav-toggle{
-      display: none;
-    }
+    flex-direction: row;
   }
 }
 
 .cu-logo{
-  display: block;
   text-indent: -9999px;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: url(/themes/custom/pathways/images/CU-insignia.svg);
-  background-size: 100px 100px;
-  grid-area: logo;
-  align-self: center;
-  justify-self: center;
-  margin-right: 272px;
+  background-size: 80px 80px;
 }
 
 .as-logo{
-  display: block;
   text-indent: -9999px;
   width: 238px;
   height: 71px;
   background: url(/themes/custom/pathways/images/college.svg);
   background-size: 238px 71px;
   grid-area: logo;
-  align-self: center;
-  justify-self: center;
+
   position: relative;
-  margin-left: 168px;
+  margin-left: 48px;
   &:before{
     position: absolute;
     width: 1px;
