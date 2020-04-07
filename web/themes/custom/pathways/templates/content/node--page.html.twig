@@ -1,12 +1,12 @@
 
-{# 
+{#
 
 /* -------------------------
 
 Title: node--page.html.twig
 Descr: This is the framework for a basic page contnet type. Sets up variables and content for _basic-page.twig
 
---------------------------- */ 
+--------------------------- */
 
 #}
 
@@ -26,14 +26,14 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 {% set sidebarContent = false %}
 
 
-{# 
+{#
     - set sidebar type
     - if sidebar = none make base class 'basic'
     - set up sidebar_nav
     - add has-sideber to main_element_modifiers
     - set location of sidebar
-    - set sidebar content to field_sidebar_components 
-    - add sidebar base class and modifier basic-page   
+    - set sidebar content to field_sidebar_components
+    - add sidebar base class and modifier basic-page
 #}
 
 {% set sidebarType = node.field_sidebar_type.value %}
@@ -50,13 +50,11 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 {# Set sidebar_nav #}
 {% set sidebar_nav %}
     {{ drupal_entity('block', 'mainnavigation',  check_access=false) }}
-    {# {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }} #}
-
 {% endset %}
 
-{# 
+{#
     - set aside to false
-    - if aside_components set to ture, and add has-aside to main 
+    - if aside_components set to ture, and add has-aside to main
 #}
 
 
@@ -69,7 +67,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : node.label,
     main_element_modifiers : main_element_modifiers,
-    
+
     main_content : content.field_page_components_entity,
     aside_content : content.field_aside_components,
     sidebar_content : content.field_sidebar_components,
