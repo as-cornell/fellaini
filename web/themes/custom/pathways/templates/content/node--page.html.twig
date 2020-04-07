@@ -49,7 +49,9 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 
 {# Set sidebar_nav #}
 {% set sidebar_nav %}
-    {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }}
+    {{ drupal_entity('block', 'mainnavigation',  check_access=false) }}
+    {# {{ drupal_entity('block', 'mainnavigation_2',  check_access=false) }} #}
+
 {% endset %}
 
 {# 
