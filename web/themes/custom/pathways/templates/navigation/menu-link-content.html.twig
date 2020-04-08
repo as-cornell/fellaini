@@ -24,12 +24,14 @@
     elements['#view_mode'] ? 'menu-type-' ~ elements['#view_mode'],
   ] %}
 
-  {# vardumper(elements.children) #}
+  {# vardumper(elements['#menu_link_content'].id.value) #}
+
 
   {# provide a menu link id to pass to menu plug block functions #}
   {# set menuLinkID = attributes.storage['data-quickedit-entity-id'] #}
-  {# get menu link id from cache keys #}
-  {% set menuLinkID = elements['#cache']['keys'][2] %}
+  {# get menu link id #}
+  {# set menuLinkID = elements['#cache']['keys'][2] #}
+  {% set menuLinkID = elements['#menu_link_content'].id.value %}
   {# check for children #}
   {% if elements.children %}
   {% set menuChildren = TRUE %}
