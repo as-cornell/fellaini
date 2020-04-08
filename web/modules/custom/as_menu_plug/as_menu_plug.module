@@ -10,13 +10,58 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Generates markup around link title().
  */
-function as_menu_plug_generate_link_markup($link_title,$alias) {
+function as_menu_plug_generate_link_markup($link_title,$alias,$link_class) {
     $markup = NULL;
     $link_name = preg_replace('/\W+/','-',strtolower(strip_tags($link_title)));;
     // Create the markup
-    $markup = $markup . "<li id='" . $link_name . "'><a href='" . $alias . "#" . $link_name . "'>" . $link_title . "</a></li>";
+    $markup = $markup . "<li class='" . $link_class . "' id='" . $link_name . "'><a href='" . $alias . "#" . $link_name . "'>" . $link_title . "</a></li>";
 
     return $markup;
+  }
+
+    /**
+ * Generates markup around link title().
+ */
+function as_menu_plug_generate_list_class($menu_level) {
+    $list_class = NULL;
+
+    // build link class one level down from current link
+    if ($menu_level == 0) {
+    $list_class = "sidebarNav";
+    }
+    if ($menu_level == 1) {
+    $list_class = "SubNav";
+    }
+    if ($menu_level == 2) {
+    $list_class = "subSubNav";
+    }
+
+    return $list_class;
+  }
+
+  /**
+ * Generates markup around link title().
+ */
+function as_menu_plug_generate_link_class($menu_level,$menu_children) {
+    $link_class = NULL;
+    $child = NULL;
+
+    // build link class one level down from current link
+    if ($menu_level == 0) {
+    $link_class = "sidebarNav__item";
+    }
+    if ($menu_level == 1) {
+    $link_class = "SubNav__item";
+    }
+    if ($menu_level == 2) {
+    $link_class = "subSubNav__item";
+    }
+    if ($menu_children){
+      $child = $link_class . "--withSubNav";
+      $link_class = $link_class . " ". $child;
+    }
+
+    return $link_class;
   }
 
 
