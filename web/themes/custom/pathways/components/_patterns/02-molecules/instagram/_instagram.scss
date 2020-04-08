@@ -5,8 +5,10 @@ Title: _instagram.scss
 Descr: Sets up containers for instagram lists, and single instagram conents
 
 --------------------------- */
+
+// temporarily broken for layout testing
 .insta{
-    @include baseGrid();
+    // @include baseGrid();
     grid-template-columns: repeat(12, minmax(var(--base-grid-column), 1fr));
     grid-template-rows: repeat(12, minmax(var(--base-grid-column), 1fr));
     background: radial-gradient(var(--teal), transparent 600px);

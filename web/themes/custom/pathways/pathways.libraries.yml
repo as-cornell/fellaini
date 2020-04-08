@@ -3,11 +3,11 @@ global:
     theme:
       dist/style.css: {}
 
-main_menu:
+global-scripts:
   js:
     dist/02-molecules/site/menus/main-menu/main-menu.js: {}
   dependencies:
-    - core/drupal
+    - core/jquery
 
 sprite:
   js:

@@ -38,7 +38,51 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
   </div>
   {% if sidebarNav != false %}
   <div class="nav">
-    {{ sidebar_nav }}
+  {# temporary sidebarNav #}
+    {# <ul class="sidebarNavigation">
+      <li class="sidebarNavigation__root">
+        <a href="#" class="sidebarNav__link">Career Development</a>
+        <ul class="sidebarNav">
+          <li class="sidebarNav__item">
+            <a href="" class="sidebarNav__link">Summer Experiece Grants</a>
+          </li>
+          <li class="sidebarNav__item">
+            <a href="" class="sidebarNav__link">Pathways Internship Program </a>
+          </li>
+          <li class="sidebarNav__item withSubNav">
+            <a href="" class="sidebarNav__link">Resources for Students</a>
+            <ul class="subNav">
+              <li class="subNav__item withSubNav">
+                <a href="" class="subNav__link">Researching Employers (with sections)</a>
+                <ul class="subSubNav">
+                  <li class="subSubNav__item">
+                    <a href="" class="subSubNav__link">Section #1</a>
+                  </li>
+                  <li class="subSubNav__item">
+                    <a href="" class="subSubNav__link">Section #2</a>
+                  </li>
+                  <li class="subSubNav__item">
+                    <a href="" class="subSubNav__link">Section #3</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="subNav__item">
+                <a href="" class="subNav__link">Explore Careers</a>
+              </li>
+              <li class="subNav__item">
+                <a href="" class="subNav__link">Networking</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebarNav__item">
+            <a href="" class="sidebarNav__link">New York Recruiting Consortium</a>
+          </li>
+        </ul>
+      </li>
+      
+    </ul> #}
+
+    {# {{ sidebar_nav }} #}
   </div>
   {% endif %}
   {% if sidebarContent %}
