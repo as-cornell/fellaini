@@ -45,11 +45,13 @@ Still needs: expand toggle for showing main nav on mobile
     background: transparent;
     color: var(--black);
     flex-direction: row;
+    padding: 0;
     .mainNav__link{
       color: var(--black);
       border-top: 4px solid transparent;
       padding: .5rem;
       width: auto;
+      font-weight: var(--semi);
       &:hover{
         border-top: 4px solid var(--red);
       }
@@ -60,10 +62,14 @@ Still needs: expand toggle for showing main nav on mobile
       overflow: hidden;
       display: inline-block;
       z-index: 1;
-      margin: 0 1rem;
+      margin: 0 .5rem;
       padding: .5rem;
-      &[class$="withSubNav"]{
-        margin-right: 1rem;
+      &[class$="with-sub"]{
+        margin-right: 0;
+      }
+      &:last-of-type{
+        margin-right: 0;
+        padding-right: 0;
       }
       //show subnav on hover
       &:hover, &:focus, &.withSubNav--expanded{
@@ -96,7 +102,7 @@ Still needs: expand toggle for showing main nav on mobile
       width: 100%;
     }
     padding-left: 0;
-    margin-top: .5rem;
+    // margin-top: .5rem;
     opacity: 0;
     transition: opacity 200ms ease-in;
     li{
