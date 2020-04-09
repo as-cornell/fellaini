@@ -21,9 +21,30 @@ class PageMenuBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+
+    $link_class = 'asideNav__item';
+    $list_class = 'asideNav';
+    $alias = '';
     $build = [];
     $build['#theme'] = 'page_menu_block';
-     $build['page_menu_block']['#markup'] = 'Implement PageMenuBlock.';
+    $config = $this->getConfiguration();
+    //get link values in an array
+    if (!empty($config['link_values'])) {
+      $link_values = $config['link_values'];
+    }
+
+    $build['page_menu_block']['#markup'] = '<ul class="'.$list_class.'">';
+
+    if (!empty($link_values)) {
+      foreach($link_values as $link_title) {
+            $build['page_menu_block']['#markup'] = $build['page_menu_block']['#markup'] . as_menu_plug_generate_link_markup($link_title,$alias,$link_class);
+      }
+
+    } // There were no links
+    else {
+      $build['page_menu_block']['#markup'] = $build['page_menu_block']['#markup'] ."<li>There are no in-page links</li></ul>";
+    }
+        $build['page_menu_block']['#markup'] = $build['page_menu_block']['#markup'] .'</ul>';
 
     return $build;
   }

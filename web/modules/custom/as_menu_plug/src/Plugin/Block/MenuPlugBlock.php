@@ -58,7 +58,7 @@ class MenuPlugBlock extends BlockBase {
     if (!empty($node->field_landing_page_component_ent)) {
     $flpce = $node->field_landing_page_component_ent;
       }
-    $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<ul class = '".$list_class."''>";
+    $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<ul class='".$list_class."''>";
     // get page component entities
     if (!empty($fpce)) {
       $index = 0;
