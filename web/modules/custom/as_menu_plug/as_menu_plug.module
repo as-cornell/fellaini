@@ -136,17 +136,3 @@ function as_menu_plug_theme() {
     ],
   ];
 }
-
-/**
- * Implements hook_theme().
- */
-function as_menu_plug_theme() {
-  return [
-    'page_menu_block' => [
-      'variables' => [
-        'content' => NULL
-      ],
-      'render element' => 'children',
-    ],
-  ];
-}
