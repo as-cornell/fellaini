@@ -51,6 +51,7 @@ class MenuPlugBlock extends BlockBase {
     if (!empty($nid)) {
     $node =\Drupal::entityTypeManager()->getStorage('node')->load($nid);
     }
+    // TODOTODO check for node type?  fletten to just field_page_components_entity?
     //get field values
     if (!empty($node->field_page_components_entity)) {
     $fpce = $node->field_page_components_entity;

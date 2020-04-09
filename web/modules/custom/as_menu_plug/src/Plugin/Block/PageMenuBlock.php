@@ -42,7 +42,7 @@ class PageMenuBlock extends BlockBase {
 
     } // There were no links
     else {
-      $build['page_menu_block']['#markup'] = $build['page_menu_block']['#markup'] ."<li>There are no in-page links</li></ul>";
+      $build['page_menu_block']['#markup'] = $build['page_menu_block']['#markup'] ."<li>There are no in-page links</li>";
     }
         $build['page_menu_block']['#markup'] = $build['page_menu_block']['#markup'] .'</ul>';
 
