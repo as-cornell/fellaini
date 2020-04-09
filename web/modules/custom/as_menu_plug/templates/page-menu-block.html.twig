@@ -8,11 +8,8 @@
 * @ingroup themeable
 */
 #}
-{% set classes = [
-    'clear-both',
-] %}
-<div{{ attributes.addClass(classes) }}>
+
     {% for value in content %}
         <p>{{value}}</p>
     {% endfor %}
-</div>
+

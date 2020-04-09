@@ -54,15 +54,37 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 
 {#
     - set aside to false
-    - if aside_components set to ture, and add has-aside to main
+    - if aside_components set to true, and add has-aside to main
+#}
+
+{#
+  - set up aside in-page nav
+  - link values for the nav items
+  - set aside_nav to the menu block
+#}
+
+{% set linkValues = [] %}
+  {% for item in node.field_page_components_entity %}
+    {% if item.entity.field_page_section_title.0.value %}
+    {% set linkValues = linkValues|merge([item.entity.field_page_section_title.0.value]) %}
+    {% endif %}
+  {% endfor %}
+
+{% set aside_nav %}
+  {{ drupal_block('page_menu_block', {link_values:linkValues}) }}
+{% endset %}
+
+{#
+    - if aside_components set to true, and add has-aside to page
 #}
 
 
 
-{% if node.field_aside_components.target_id %}
+
+{# if node.field_aside_components.target_id #}
     {% set aside = true %}
     {% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
-{% endif %}
+{# endif #}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : node.label,
@@ -70,6 +92,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 
     main_content : content.field_page_components_entity,
     aside_content : content.field_aside_components,
+    aside_content : aside_nav,
     sidebar_content : content.field_sidebar_components,
 
 
