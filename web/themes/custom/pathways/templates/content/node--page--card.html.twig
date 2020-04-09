@@ -17,7 +17,7 @@ Passes: has-sidebar to contentWrapper
 
 {# link values for the modal items #}
 {% set linkValues = [] %}
-  {% for item in node.field_page_components_entity %}
+  {% for item in node.field_page_components %}
     {% set linkValues = linkValues|merge([item.entity.name.0.value]) %}
   {% endfor %}
 {% set linkPage = drupal_token('node:url:absolute', {node: node}) %}
