@@ -96,7 +96,8 @@
         "drupal/menu_item_extras": "^2.10",
         "drupal/menu_link_attributes": "^1.0",
         "drupal/yaml_editor": "^1.0",
-        "drupal/twig_vardumper": "^1.2"
+        "drupal/twig_vardumper": "^1.2",
+        "drupal/menu_block": "^1.5"
 
 
     },

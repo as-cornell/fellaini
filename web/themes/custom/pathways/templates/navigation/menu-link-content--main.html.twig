@@ -26,12 +26,8 @@
 
   {# vardumper(elements.item) #}
 
-
-  {# provide a menu link id to pass to menu plug block functions #}
-  {# set menuLinkID = attributes.storage['data-quickedit-entity-id'] #}
   {# get menu link id #}
-  {# set menuLinkID = elements['#cache']['keys'][2] #}
-  {% set menuLinkID = elements['#menu_link_content'].id.value %}
+  {# set menuLinkID = elements['#menu_link_content'].id.value #}
   {# get menu level #}
   {% set menuLevel = elements['#menu_level'] %}
   {# check for children #}
@@ -45,7 +41,7 @@
     {% if menuLinkID %}
       {% set blocky = drupal_block('menu_plug_block', {menu_link_id:menuLinkID, menu_children:menuChildren, menu_level:menuLevel}) %}
       {% if blocky  %}
-        {{ blocky }}
+        {# blocky #}
       {% endif %}
     {% endif %}
     {% if content %}

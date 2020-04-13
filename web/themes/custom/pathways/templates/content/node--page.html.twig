@@ -47,9 +47,12 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
     {% set sidebarContent = true %}
 {% endif %}
 
+
+{% set sidebarContent = true %}
 {# Set sidebar_nav #}
 {% set sidebar_nav %}
-    {{ drupal_entity('block', 'mainnavigation',  check_access=false) }}
+    {# drupal_entity('block', 'mainnavigation',  check_access=false) #}
+    {{ drupal_menu('main', 1, 3, TRUE) }}
 {% endset %}
 
 {#
@@ -93,7 +96,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
     main_content : content.field_page_components,
     aside_content : content.field_aside_components,
     aside_content : aside_nav,
-    sidebar_content : content.field_sidebar_components,
+    sidebar_content : sidebar_nav,
 
 
     content_wrapper_modifiers : content_wrapper_modifiers,
