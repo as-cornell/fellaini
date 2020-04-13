@@ -14,15 +14,19 @@
     {% if item.menu_level == 0 %}
       {% set ulClass = 'sidebarNavigation' %}
       {% set liClass = 'sidebarNavigation__root' %}
+      {% set aClass = 'sidebarNavigation__link' %}
     {% elseif item.menu_level == 1 %}
       {% set ulClass = 'sidebarNav' %}
       {% set liClass = 'sidebarNav__item' %}
+      {% set aClass = 'sidebarNav__link' %}
     {% elseif item.menu_level == 2 %}
       {% set ulClass = 'SubNav' %}
       {% set liClass = 'SubNav__item' %}
+      {% set aClass = 'SubNav__link' %}
     {% elseif item.menu_level == 3 %}
       {% set ulClass = 'subSubNav' %}
       {% set liClass = 'subSubNav__item' %}
+      {% set aClass = 'subSubNav__link' %}
     {% endif %}
     {% set menu_item_classes = [
       liClass,
@@ -34,7 +38,7 @@
     <ul class="{{ulClass}}">
   {% endif %}
     <li{{ item.attributes.addClass(menu_item_classes) }}>
-      {{ link(item.title, item.url) }}
+      {{ link(item.title, item.url, { 'class':[aClass], 'data-drupal-link-system-path':[NULL]}) }}
       {% if item.in_active_trail %}
         {# implements as_menu_plug #}
         {#vardumper(item.content.children)#}
@@ -48,12 +52,13 @@
           {{drupal_block('menu_plug_block', {menu_link_id:menuLinkID, menu_children:menuChildren, menu_level:menuLevel}) }}
         {% endif %}
       {% endif %}
-    </li>
-{# endif #}
-      {% set rendered_content = item.content|without('') %}
+    {% set rendered_content = item.content|without('') %}
       {% if rendered_content|render %}
         {{ rendered_content }}
       {% endif %}
+    </li>
+{# endif #}
+
 
   {% endfor %}
   </ul>
