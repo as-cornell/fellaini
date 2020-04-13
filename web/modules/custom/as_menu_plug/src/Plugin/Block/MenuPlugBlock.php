@@ -21,13 +21,14 @@ class MenuPlugBlock extends BlockBase {
    */
   public function build() {
     $build = [];
-    $build['menu_plug_block']['#markup'] = "";
-    $menu_link_id = "";
-    $nid = "";
-    $menu_children = "";
-    $menu_level = "";
-    $link_class = "";
-    $list_class = "";
+    $build['#theme'] = 'menu_plug_block';
+    $build['menu_plug_block']['#markup'] = '';
+    $menu_link_id = '';
+    $nid = '';
+    $menu_children = '';
+    $menu_level = '';
+    $link_class = '';
+    $list_class = '';
     $config = $this->getConfiguration();
     if (!empty($config['menu_link_id'])) {
       $menu_link_id = $config['menu_link_id'];
@@ -66,7 +67,9 @@ class MenuPlugBlock extends BlockBase {
     // get page components
     if (!empty($fpce)) {
       $index = 0;
-      $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "<ul class='".$list_class."''>";
+      // make sure we need a wrapper
+      if (!empty($node->field_page_components[0]->entity->field_page_section_title[0])) {
+      $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul class="'.$list_class.'">';
       foreach($fpce as $pce) {
             // this uses the component entity label as the link text
             //$link_title = $node->field_page_components_entity[$index]->entity->label();
@@ -78,8 +81,8 @@ class MenuPlugBlock extends BlockBase {
         $index++;
         }
                 //if (empty($menu_children)){
-        $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "</ul>";
-        //}
+        $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '</ul>';
+        }
       }
 }
 

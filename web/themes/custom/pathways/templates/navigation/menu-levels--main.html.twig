@@ -10,35 +10,46 @@
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menu_links %}
-
-  {% if items['#render_children'] == null %}
-  <ul class="sidebarNavigation">
-  {% endif %}
   {% for key, item in items if key|first != '#' %}
+    {% if item.menu_level == 0 %}
+      {% set ulClass = 'sidebarNavigation' %}
+      {% set liClass = 'sidebarNavigation__root' %}
+    {% elseif item.menu_level == 1 %}
+      {% set ulClass = 'sidebarNav' %}
+      {% set liClass = 'sidebarNav__item' %}
+    {% elseif item.menu_level == 2 %}
+      {% set ulClass = 'SubNav' %}
+      {% set liClass = 'SubNav__item' %}
+    {% elseif item.menu_level == 3 %}
+      {% set ulClass = 'subSubNav' %}
+      {% set liClass = 'subSubNav__item' %}
+    {% endif %}
     {% set menu_item_classes = [
-      'sidebarNavigation__root',
-      item.in_active_trail ? 'sidebarNavigation__root--active-trail',
-      item.content.children ? 'sidebarNavigation__root--withSubNav',
+      liClass,
+      item.in_active_trail ? liClass ~ '--active-trail',
+      item.content.children ? liClass ~ '--withSubNav',
     ] %}
-
+{# if item.in_active_trail #}
+  {% if loop.first %}
+    <ul class="{{ulClass}}">
+  {% endif %}
     <li{{ item.attributes.addClass(menu_item_classes) }}>
       {{ link(item.title, item.url) }}
       {% if item.in_active_trail %}
-      {# implements as_menu_plug #}
-      {#vardumper(item.content['#menu_link_content'].id.value)#}
-      {#vardumper(item.content['#menu_link_content'].link.0.uri)#}
-      {#vardumper(item.content.children)#}
-      {% set menuLinkID = item.content['#menu_link_content'].id.value %}
-      {% set nid = item.content['#menu_link_content'].link.0.uri %}
-      {% if item.content.children %}
-        {% set menuChildren = TRUE %}
-      {% endif %}
-      {% set menuLevel = item.menu_level %}
-      {% if menuLinkID %}
-        {{drupal_block('menu_plug_block', {menu_link_id:menuLinkID, menu_children:menuChildren, menu_level:menuLevel}) }}
-      {% endif %}
+        {# implements as_menu_plug #}
+        {#vardumper(item.content.children)#}
+        {% set menuLinkID = item.content['#menu_link_content'].id.value %}
+        {% set nid = item.content['#menu_link_content'].link.0.uri %}
+        {% if item.content.children %}
+          {% set menuChildren = TRUE %}
+        {% endif %}
+        {% set menuLevel = item.menu_level %}
+        {% if menuLinkID %}
+          {{drupal_block('menu_plug_block', {menu_link_id:menuLinkID, menu_children:menuChildren, menu_level:menuLevel}) }}
+        {% endif %}
       {% endif %}
     </li>
+{# endif #}
       {% set rendered_content = item.content|without('') %}
       {% if rendered_content|render %}
         {{ rendered_content }}
