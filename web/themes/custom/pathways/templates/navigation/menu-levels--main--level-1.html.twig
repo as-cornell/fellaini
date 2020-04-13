@@ -22,6 +22,11 @@
 
     <li{{ item.attributes.addClass(menu_item_classes) }}>
       {{ link(item.title, item.url) }}
+      {% set menuLinkID = item.content['#menu_link_content'].id.value %}
+      {% set nid = item.content['#menu_link_content'].link.0.uri %}
+      {% set menuChildren = TRUE %}
+      {% set menuLevel = item.menu_level %}
+      {{drupal_block('menu_plug_block', {menu_link_id:menuLinkID, menu_children:menuChildren, menu_level:menuLevel}) }}
     </li>
       {% set rendered_content = item.content|without('') %}
       {% if rendered_content|render %}

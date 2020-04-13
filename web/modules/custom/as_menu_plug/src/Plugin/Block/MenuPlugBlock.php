@@ -23,6 +23,7 @@ class MenuPlugBlock extends BlockBase {
     $build = [];
     $build['menu_plug_block']['#markup'] = "";
     $menu_link_id = "";
+    $nid = "";
     $menu_children = "";
     $menu_level = "";
     $link_class = "";
@@ -30,6 +31,9 @@ class MenuPlugBlock extends BlockBase {
     $config = $this->getConfiguration();
     if (!empty($config['menu_link_id'])) {
       $menu_link_id = $config['menu_link_id'];
+    }
+    if (!empty($config['nid'])) {
+      $nid = $config['nid'];
     }
     if (!empty($config['menu_level'])) {
       $menu_level = $config['menu_level'];
@@ -50,8 +54,10 @@ class MenuPlugBlock extends BlockBase {
     // load node
     if (!empty($nid)) {
     $node =\Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    $typeName = $node->bundle();
     }
     // TODOTODO check for node type?
+    if ($typeName == 'page') {
     //get field values
     if (!empty($node->field_page_components)) {
     $fpce = $node->field_page_components;
@@ -67,7 +73,7 @@ class MenuPlugBlock extends BlockBase {
             // this uses only field_page_section_title from a page section entity
             if (!empty($node->field_page_components[$index]->entity->field_page_section_title[0])) {
             $link_title = $node->field_page_components[$index]->entity->field_page_section_title[0]->value;
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . as_menu_plug_generate_link_markup($link_title,$alias,$link_class);
+            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  as_menu_plug_generate_link_markup($link_title,$alias,$link_class);
                }
         $index++;
         }
@@ -75,7 +81,7 @@ class MenuPlugBlock extends BlockBase {
         $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . "</ul>";
         //}
       }
-
+}
 
 
     return $build;
