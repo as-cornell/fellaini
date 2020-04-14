@@ -15,8 +15,8 @@
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
       liClass,
-      item.in_active_trail ? liClass ~ '__item--active-trail',
-      item.content.children ? liClass ~ '__item--withSubNav',
+      item.in_active_trail ? listClass ~ '__item--active-trail',
+      item.content.children ? listClass ~ '__item--withSubNav',
     ] %}
 
     <li{{ item.attributes.addClass(menu_item_classes) }}>
