@@ -14,7 +14,7 @@
   <ul class="sidebarNavigation">
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
-      listClass,
+      listClass ~ '__root',
       item.in_active_trail ? listClass ~ '__root--active-trail',
       item.content.children ? listClass ~ '__root--withSubNav',
     ] %}
