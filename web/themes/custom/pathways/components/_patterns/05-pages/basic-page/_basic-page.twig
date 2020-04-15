@@ -37,7 +37,7 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
     {{main_content}}
   </div>
   {% if sidebarNav != false %}
-  <div class="nav">
+  <nav class="nav">
   {# temporary sidebarNav #}
     <ul class="sidebarNavigation">
       <li class="sidebarNavigation__root">
@@ -82,8 +82,8 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
       
     </ul>
 
-    {{ sidebar_nav }}
-  </div>
+    {# {{ sidebar_nav }} #}
+  </nav>
   {% endif %}
   {% if sidebarContent %}
   <div class="sidebar">
