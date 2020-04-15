@@ -11,21 +11,24 @@ Still needs: expand toggle for showing sidebar nav on mobile
   .sidebarNavigation{
     list-style-type: none;
     padding-left: 0;
-    &__root > a{
-      color: var(--black);
-      font-weight: var(--semi);
+    // &__root > a{
+    //   color: var(--black);
+    //   font-weight: var(--semi);
+    // }
+    a{
+      display: block;
     }
   }
   .sidebarNav{
     list-style-type: none;
     padding-left: 0;
-    .sidebarNav__item{
-      &--active-trail{
-        a{
-          color: pink;
-        }
-      }
-    }
+    // .sidebarNav__item{
+    //   &--active-trail{
+    //     a{
+    //       color: pink;
+    //     }
+    //   }
+    // }
   }
   .subNav, .subSubNav{
     list-style-type: none;
