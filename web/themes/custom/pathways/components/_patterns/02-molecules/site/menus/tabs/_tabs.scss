@@ -7,9 +7,12 @@
   @include large {
     border-left: 1px solid $gray-lightest;
     display: flex;
-    flex-direction: column;
-    float: left;
-    position: fixed;
+    background: var(--gray-lightest);
+    // flex-direction: column;
+    // float: left;
+    position: absolute;
+    left: 1rem;
+    top: 3rem
   }
 }
 

@@ -1,9 +1,9 @@
 .tabs__link,
 .tabs__link--local-tasks {
-  background-color: var(--black);
-  border: 1px solid $gray-lt;
-  border-bottom: none;
-  color: var(--white);
+  // background-color: var(--black);
+  // border: 1px solid $gray-lt;
+  // border-bottom: none;
+  // color: var(--white);
   display: block;
   font-size: .75rem;
   font-weight: 400;
@@ -27,8 +27,8 @@
   }
 
   &.is-active {
-    background-color: var(--white);
-    border: 1px solid $gray-lt;
+    // background-color: var(--white);
+    // border: 1px solid $gray-lt;
     color: var(--black);
 
   }
