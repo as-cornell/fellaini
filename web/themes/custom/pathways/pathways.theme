@@ -202,3 +202,4 @@ function pathways_preprocess(&$variables, $hook) {
   // Ensure the cache varies correctly (new in Drupal 8.3).
   $variables['#cache']['contexts'][] = 'url.path.is_front';
 }
+

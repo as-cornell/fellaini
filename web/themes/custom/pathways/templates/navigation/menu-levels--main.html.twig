@@ -10,24 +10,37 @@
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menu_links %}
-
-  {% if items['#render_children'] == null %}
+  {% set listClass = 'sidebarNavigation' %}
   <ul class="sidebarNavigation">
-  {% endif %}
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
-      'sidebarNavigation__root',
-      item.in_active_trail ? 'sidebarNavigation__root--active-trail',
-      item.content.children ? 'sidebarNavigation__root--withSubNav',
+      listClass ~ '__root',
+      item.in_active_trail ? listClass ~ '__root--active-trail',
+      item.content.children ? listClass ~ '__root--withSubNav',
     ] %}
-
-    <li{{ item.attributes.addClass(menu_item_classes) }}>
-      {{ link(item.title, item.url) }}
-    </li>
+    {# display only active trail starting from top level link #}
+    {% if item.in_active_trail %}
+      <li{{ item.attributes.addClass(menu_item_classes) }}>
+        {{ link(item.title, item.url, { 'class':[listClass ~ '__link'], 'data-drupal-link-system-path':[NULL]}) }}
+        {% if item.in_active_trail %}
+          {# implements as_menu_plug #}
+          {# vardumper(item.below)#}
+          {% set menuLinkID = item.content['#menu_link_content'].id.value %}
+          {# set nid = item.content['#menu_link_content'].link.0.uri #}
+          {% if item.content.children %}
+            {% set menuChildren = TRUE %}
+          {% endif %}
+          {% set menuLevel = item.menu_level %}
+          {% if menuLinkID %}
+            {{drupal_block('menu_plug_block', {menu_link_id:menuLinkID, menu_level:menuLevel}) }}
+          {% endif %}
+        {% endif %}
       {% set rendered_content = item.content|without('') %}
-      {% if rendered_content|render %}
-        {{ rendered_content }}
-      {% endif %}
+        {% if rendered_content|render %}
+          {{ rendered_content }}
+        {% endif %}
+      </li>
+    {% endif %}
 
   {% endfor %}
   </ul>

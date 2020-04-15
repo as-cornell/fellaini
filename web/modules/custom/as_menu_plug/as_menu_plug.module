@@ -122,17 +122,3 @@ function as_menu_plug_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
-
-/**
- * Implements hook_theme().
- */
-function as_menu_plug_theme() {
-  return [
-    'menu_plug_block' => [
-      'variables' => [
-        'content' => NULL
-      ],
-      'render element' => 'children',
-    ],
-  ];
-}
