@@ -10,23 +10,32 @@
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menu_links %}
-
-  <ul class="subNav">
-
+  {% set listClass = 'SubNav' %}
+  <ul class="{{listClass}}">
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
-      'SubNav__item',
-      item.in_active_trail ? 'SubNav__item--active-trail',
-      item.content.children ? 'SubNav__item--withSubNav',
+      listClass ~ '__item',
+      item.in_active_trail ? listClass ~ '__item--active-trail',
+      item.content.children ? listClass ~ '__item--withSubNav',
     ] %}
 
     <li{{ item.attributes.addClass(menu_item_classes) }}>
-      {{ link(item.title, item.url) }}
-    </li>
-      {% set rendered_content = item.content|without('') %}
+      {{ link(item.title, item.url, { 'class':[listClass ~ '__link'], 'data-drupal-link-system-path':[NULL]}) }}
+      {% if item.in_active_trail %}
+        {# implements as_menu_plug #}
+        {#vardumper(item.content.children)#}
+        {% set menuLinkID = item.content['#menu_link_content'].id.value %}
+        {# set nid = item.content['#menu_link_content'].link.0.uri #}
+        {% set menuLevel = item.menu_level %}
+        {% if menuLinkID %}
+          {{drupal_block('menu_plug_block', {menu_link_id:menuLinkID, menu_level:menuLevel}) }}
+        {% endif %}
+      {% endif %}
+    {% set rendered_content = item.content|without('') %}
       {% if rendered_content|render %}
         {{ rendered_content }}
       {% endif %}
+    </li>
 
   {% endfor %}
   </ul>
