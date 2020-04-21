@@ -14,7 +14,7 @@
   <ul class="{{listClass}}">
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
-      listClass,
+      listClass ~ '__item',
       item.in_active_trail ? listClass ~ '__item--active-trail',
       item.content.children ? listClass ~ '__item--withsubSubSubNav',
     ] %}
