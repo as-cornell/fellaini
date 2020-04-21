@@ -1,0 +1,10 @@
+entity.page_component_entity.edit_form:
+  route_name: entity.page_component_entity.edit_form
+  group: page_component_entity
+  title: Edit
+
+entity.page_component_entity.delete_form:
+  route_name: entity.page_component_entity.delete_form
+  group: page_component_entity
+  title: Delete
+  weight: 10

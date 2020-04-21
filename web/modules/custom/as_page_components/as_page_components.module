@@ -59,6 +59,24 @@ function as_page_components_theme_suggestions_page_component_entity(array $varia
 }
 
 /**
+ * Prepares variables for certification log entry templates.
+ *
+ * Default template: certification-log-entry.html.twig.
+ *
+ * @param $variables
+ */
+function as_page_components_template_preprocess_page_component_entity(&$variables) {
+  $variables['page_component_entity'] = $entity = $variables['elements']['#page_component_entity'];
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+
+  // Helpful $content variable for templates.
+  $variables += ['content' => []];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
  * Implements hook_entity_base_field_info_alter().
  *
  * Sets the revision field to use our custom formatter and to be configurable.
