@@ -13,7 +13,7 @@ Descr:  - campfire_center
 
 
 <div class="campfire">
-    {% if pl %}
+    {# {% if pl %}
         <div class="campfire__feature">
             {% for card in cards.articles|slice(4, 1) %}
                 {% include "@molecules/content/card/01-card.twig" with {
@@ -39,7 +39,7 @@ Descr:  - campfire_center
                 </ul>
             </div>
         </div>
-    {% else %}
+    {% else %} #}
     <div class="campfire__feature">
         {{campfire_center}}
         <div class="campfire__support">
@@ -49,10 +49,10 @@ Descr:  - campfire_center
             </ul>
         </div>
     </div>
-    {% endif %}
+    {# {% endif %} #}
 
     <div class="campfire__articles">
-        {% if pl %}
+        {# {% if pl %}
             {% for card in cards.articles|slice(0,2) %}
                 {% include "@molecules/content/card/01-card.twig" with {
                 "card_blockname" : card.blockname,
@@ -68,13 +68,13 @@ Descr:  - campfire_center
                 grid_modifiers: grid_modifiers
             } %}
             {% endfor %}
-        {% else %}
+        {% else %} #}
         {{campfire_articles_1}}
-        {% endif %}
+        {# {% endif %} #}
     </div>
 
     <div class="campfire__articles">
-    {% if pl %}
+    {# {% if pl %}
         {% for card in cards.articles|slice(2,2) %}
             {% include "@molecules/content/card/01-card.twig" with {
                 "card_blockname" : card.blockname,
@@ -91,8 +91,8 @@ Descr:  - campfire_center
                 grid_modifiers: grid_modifiers
             } %}
         {% endfor %}
-        {% else %}
+        {% else %} #}
         {{campfire_articles_2}}
-    {% endif %}
+    {# {% endif %} #}
     </div>
 </div>
