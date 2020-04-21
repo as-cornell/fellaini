@@ -49,6 +49,7 @@
 {% set card_dateline = card_dateline | default('') %}
 {# {{nodeId}} #}
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %}aria-labelledby="article-title-{{card_nodeId}}"{% endif %}>
+{{ title_suffix }}
     {% block card_img %}
         {% if card_img_src %}
             <div class="card__image">
@@ -61,7 +62,7 @@
                     "output_image_tag": card_image_output_image_tag,
                 } %}
             </div>
-            
+
         {% endif %}
     {% endblock %}
     {% if not card_feature %}
@@ -83,7 +84,7 @@
             } %}
             {{ title_suffix }}
         {% endif %}
-        
+
         {% if card_label %}
             <span class="card__label">
                 {{ card_label }}
@@ -114,9 +115,9 @@
             } %}
         {% endif %}
 
-        {# 
+        {#
             removing this for now. Most cards will have the heading be the link text. Probably need to incorporate this back in for cards like stats.
-            
+
         {% if card_link_url %}
             {% include "@atoms/01-links/link.twig" with {
                 "link_content" : card_link_text,
@@ -129,7 +130,7 @@
         {% if card_byline %}
             <span class="card__byline">
                 by :
-                {{ card_byline_content }} mark help
+                {{ card_byline_content }}
             </span>
         {% endif %}
         {% if card_button_url %}

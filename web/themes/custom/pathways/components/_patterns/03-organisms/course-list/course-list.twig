@@ -1,16 +1,16 @@
-{# 
+{#
 
 /* -------------------------
 
 Title: course-list.twig
-Descr: outputs course list with h3 header, 
+Descr: outputs course list with h3 header,
 
 --------------------------- */
 
  #}
 
 <div{{bem(group_base_class,(group_modifiers),'',group_classes)}}>
-
+{{ title_suffix }}
 
 {% include "@atoms/00-text/_heading.twig" with {
     "heading_level" : 3,
@@ -131,5 +131,5 @@ Descr: outputs course list with h3 header,
         {% endif %}
     </div>
 </div>
-{# 
+{#
 {% endblock %} #}
