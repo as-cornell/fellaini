@@ -8,36 +8,33 @@ Still needs: expand toggle for showing sidebar nav on mobile
 --------------------------- */
 
 .nav{
-  ul{
-    list-style-type: none;
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  .sidebarNavigation{
-    &__root{
-      >a {
-        color: var(--black);
-      }
-    }
-    a{
-      display: block;
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  &__root{
+    >a {
+      color: var(--black);
     }
   }
-
+  a{
+    display: block;
+  }
   // ul included in __root
-  .sidebarNav{
+  .nav-1{
+    background: pink;
     a{
       padding-left: .5rem;
     }
-
   }
-  .subNav{
+  .nav-2{
+    background: yellow;
+    padding-left: 1rem;
     a{
       padding-left: 1rem;
     }
   }
-  .subSubNav{
+  .nav-3{
+    background: seagreen;
     a{
       padding-left: 1.5rem;
     }
