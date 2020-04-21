@@ -10,13 +10,13 @@
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menu_links %}
-  {% set listClass = 'sidebarNavigation' %}
-  <ul class="sidebarNavigation">
+  {% set listClass = 'nav' %}
+  <ul class="{{ listClass }}">
   {% for key, item in items if key|first != '#' %}
     {% set menu_item_classes = [
       listClass ~ '__root',
       item.in_active_trail ? listClass ~ '__root--active-trail',
-      item.content.children ? listClass ~ '__root--withSubNav',
+      item.content.children ? listClass ~ '__root--with-nav-1',
     ] %}
     {# display only active trail starting from top level link #}
     {% if item.in_active_trail %}
