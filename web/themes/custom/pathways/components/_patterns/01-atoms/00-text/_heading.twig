@@ -18,7 +18,7 @@
 #}
 {% set heading_base_class = heading_base_class|default('h' ~ heading_level) %}
 
-<h{{heading_level}} {{ bem(heading_base_class, (heading_modifiers), heading_blockname) }} {% if isTitle %} id="article-title-{{heading}}" itemprop="name" {% endif %}>
+<h{{heading_level}} {{ bem(heading_base_class, (heading_modifiers), heading_blockname, heading_class) }} {% if isTitle %} id="article-title-{{heading}}" itemprop="name" {% endif %}>
 
   {% if heading_url %}
     {% include "@atoms/01-links/link.twig" with {
