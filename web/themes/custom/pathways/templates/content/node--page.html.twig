@@ -42,13 +42,14 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
     {% set main_element_base_class = 'basic' %}
 {% endif %}
 
-{# If sidebarContent #}
+{# If sidebarContent set siebarContent to true and set content value #}
 {% if node.field_sidebar_components.target_id %}
     {% set sidebarContent = true %}
+    {% set sidebar_content = content.field_sidebar_components %}
 {% endif %}
 
-
-{% set sidebarContent = true %}
+{# 
+{% set sidebarContent = true %} #}
 {# Set sidebar_nav #}
 {% set sidebar_nav %}
     {{ drupal_menu('main', 1, 0, FALSE) }}
@@ -60,42 +61,46 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 #}
 
 {#
+  Page Section links
   - set up aside in-page nav
   - link values for the nav items
   - set aside_nav to the menu block
 #}
 
 {% set linkValues = [] %}
-  {% for item in node.field_page_components %}
-    {% if item.entity.field_page_section_title.0.value %}
-    {% set linkValues = linkValues|merge([item.entity.field_page_section_title.0.value]) %}
-    {% endif %}
-  {% endfor %}
+{% for item in node.field_page_components %}
+  {% if item.entity.field_page_section_title.0.value %}
+  {% set linkValues = linkValues|merge([item.entity.field_page_section_title.0.value]) %}
+  {% endif %}
+{% endfor %}
 
-{% set aside_nav %}
-  {{ drupal_block('page_menu_block', {link_values:linkValues}) }}
-{% endset %}
+{# if page sectin values set aside_nav to the page menu block #}
+{# {% if linkValues %}
+  {% set aside_nav %}
+    {{ drupal_block('page_menu_block', {link_values:linkValues}) }}
+  {% endset %}
+{% endif %} #}
 
 {#
-    - if aside_components set to true, and add has-aside to page
+    - if aside_components or aside_nav set aside to true, and add has-aside to page
 #}
 
-
-
-
-{# if node.field_aside_components.target_id #}
-    {% set aside = true %}
-    {% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
-{# endif #}
+{% if node.field_aside_components.target_id or aside_nav %}
+  {% set aside = true %}
+  {% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
+{% endif %}
 
 {% include "@pages/basic-page/_basic-page.twig" with {
     title : node.label,
     main_element_modifiers : main_element_modifiers,
 
     main_content : content.field_page_components,
+    
     aside_content : content.field_aside_components,
-    aside_content : aside_nav,
-    sidebar_content : sidebar_nav,
+    aside_nav : aside_nav,
+    
+    sidebar_nav : sidebar_nav,
+    sidebar_content : sidebar_content,
 
 
     content_wrapper_modifiers : content_wrapper_modifiers,
