@@ -94,7 +94,7 @@ function as_events_generate_event_item_markup($event_data) {
 
     // $markup = kint($event_formatted_date);
     // $markup = $markup . $event_formatted_date['start_month'];
-    $markup = "<div class='eventList__event event'  itemscope itemtype='http://schema.org/Event'>
+    $markup = "<li class='eventList__event event'  itemscope itemtype='http://schema.org/Event'>
                 <span class='event__dateTime'  itemprop='startDate'>
                   <span class='event__date'>" . $event_formatted_date['start_month'] . " " . $event_formatted_date['start_date'] . "</span>
                   <span class='event__time'>" . $event_formatted_date['start_time'] . "</span>
@@ -107,7 +107,7 @@ function as_events_generate_event_item_markup($event_data) {
                   $markup = $markup . "<span class='event__location'  itemprop='location'>" . $event_location . ": " .$event_room. "</span>
                   \n";
                 }
-                $markup = $markup . "</span></div>";
+                $markup = $markup . "</span></li>";
     // if ($event_description){
     // $markup = $markup . "<p class='event__description'>" . $event_description . "</p>";
     //     }
