@@ -11,12 +11,16 @@
 
  */
 #}
-{# {{kint(content)}} #}
+{% set group_modifiers = ['links'] %}
 
-{% include "@organisms/link-list/_link-block.twig" with{
-    heading : content.field_block_title,
-    links : content.field_link,
-    group_base_class : 'pageComponent',
-    group_modifiers : ['linkBlock', 'full-width'],
-    group_classes : ['full-width']
-}%}
+{% set items = content.field_link %}
+{% set items_length = items|length %}
+
+{% if items.1 %}
+	{% set multiple = true %}
+{% endif %}
+
+{% embed "@organisms/grouping/_grouping.twig" with{
+  items: items,
+  title: content.field_block_title
+} %}{% endembed %}
