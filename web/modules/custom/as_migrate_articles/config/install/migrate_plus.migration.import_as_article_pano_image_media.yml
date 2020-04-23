@@ -3,10 +3,6 @@ id: import_as_article_pano_image_media
 label: Import article pano images into media entities
 migration_group: articles
 migration_dependencies: {}
-dependencies:
-  enforced:
-    module:
-      - as_migrate_articles
 
 source:
   plugin: url

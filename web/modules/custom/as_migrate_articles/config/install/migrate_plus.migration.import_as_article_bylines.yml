@@ -3,10 +3,6 @@ id: import_as_article_bylines
 label: Import article bylines into taxonomy terms
 migration_group: articles
 migration_dependencies: {}
-dependencies:
-  enforced:
-    module:
-      - as_migrate_articles
 
 source:
   plugin: url

@@ -3,10 +3,7 @@ id: import_as_article_body
 label: Import article bodies into page component entities
 migration_group: articles
 migration_dependencies: {}
-dependencies:
-  enforced:
-    module:
-      - as_migrate_articles
+
 
 destination:
   plugin: entity:page_component_entity

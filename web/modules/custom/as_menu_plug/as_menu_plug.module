@@ -26,15 +26,8 @@ function as_menu_plug_generate_list_class($menu_level) {
     $list_class = NULL;
 
     // build link class one level down from current link
-    if ($menu_level == 0) {
-    $list_class = "sidebarNav";
-    }
-    if ($menu_level == 1) {
-    $list_class = "SubNav";
-    }
-    if ($menu_level == 2) {
-    $list_class = "subSubNav";
-    }
+    $menu_level = $menu_level + 1;
+    $list_class = "nav-" . $menu_level;
 
     return $list_class;
   }
@@ -42,24 +35,13 @@ function as_menu_plug_generate_list_class($menu_level) {
   /**
  * Generates markup around link title().
  */
-function as_menu_plug_generate_link_class($menu_level,$menu_children) {
+function as_menu_plug_generate_link_class($menu_level) {
     $link_class = NULL;
     $child = NULL;
 
     // build link class one level down from current link
-    if ($menu_level == 0) {
-    $link_class = "sidebarNav__item";
-    }
-    if ($menu_level == 1) {
-    $link_class = "SubNav__item";
-    }
-    if ($menu_level == 2) {
-    $link_class = "subSubNav__item";
-    }
-    if ($menu_children){
-      $child = $link_class . "--withSubNav";
-      $link_class = $link_class . " ". $child;
-    }
+    $menu_level += 1;
+    $link_class = "nav-" .$menu_level. "__item";
 
     return $link_class;
   }
