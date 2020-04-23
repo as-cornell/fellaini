@@ -24,8 +24,7 @@ class MenuPlugBlock extends BlockBase {
     $build['#theme'] = 'menu_plug_block';
     $build['menu_plug_block']['#markup'] = '';
     $menu_link_id = '';
-    $nid = '';
-    $menu_children = '';
+    $entity_id = '';
     $menu_level = '';
     $link_class = '';
     $list_class = '';
@@ -33,23 +32,17 @@ class MenuPlugBlock extends BlockBase {
     if (!empty($config['menu_link_id'])) {
       $menu_link_id = $config['menu_link_id'];
     }
-    if (!empty($config['nid'])) {
-      $nid = $config['nid'];
-    }
     if (!empty($config['menu_level'])) {
       $menu_level = $config['menu_level'];
     }
-    if (!empty($config['menu_children'])) {
-      $menu_children = $config['menu_children'];
-    }
     // get link class
-    $link_class = as_menu_plug_generate_link_class($menu_level,$menu_children);
+    $link_class = as_menu_plug_generate_link_class($menu_level);
     // get link class
     $list_class = as_menu_plug_generate_list_class($menu_level);
     // get $nid from $menu_link_id uri
-    $nid = as_menu_plug_menulinkid_nid($menu_link_id);
+    $entity_id = as_menu_plug_menulinkid_nid($menu_link_id);
     // strip $nid
-    $nid = as_menu_plug_strip_id($nid);
+    $nid = as_menu_plug_strip_id($entity_id);
     // get node alias
     $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nid);
     // load node
@@ -57,7 +50,7 @@ class MenuPlugBlock extends BlockBase {
     $node =\Drupal::entityTypeManager()->getStorage('node')->load($nid);
     $typeName = $node->bundle();
     }
-    // TODOTODO check for node type?
+    // check for node type
     if ($typeName == 'page') {
     //get field values
     if (!empty($node->field_page_components)) {
@@ -68,7 +61,7 @@ class MenuPlugBlock extends BlockBase {
     if (!empty($fpce)) {
       $index = 0;
       // make sure we need a wrapper
-      if (!empty($node->field_page_components[0]->entity->field_page_section_title[0])) {
+      //if (!empty($node->field_page_components[0]->entity->field_page_section_title[0])) {
       $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul class="'.$list_class.'">';
       foreach($fpce as $pce) {
             // this uses the component entity label as the link text
@@ -83,7 +76,7 @@ class MenuPlugBlock extends BlockBase {
                 //if (empty($menu_children)){
         $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '</ul>';
         }
-      }
+      //}
 }
 
 

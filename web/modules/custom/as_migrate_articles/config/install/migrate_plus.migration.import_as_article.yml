@@ -2,14 +2,7 @@
 id: import_as_article
 label: Migrate A&S articles from Drupal 7 to Drupal 8
 migration_group: articles
-migration_dependencies:
-  require:
-    - import_as_article_images
-    - import_as_article_images_media
-dependencies:
-  enforced:
-    module:
-      - as_migrate_articles
+migration_dependencies: {}
 
 destination:
   plugin: entity:node
