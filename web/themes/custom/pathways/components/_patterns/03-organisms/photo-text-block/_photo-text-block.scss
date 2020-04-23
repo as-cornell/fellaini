@@ -1,6 +1,6 @@
 /* -------------------------
 
-Title: Photo Text Wrappers
+Title: Photo Text group Wrappers
 Descr: Set main wrapper for photo text bocks
         --slider
         --featured
@@ -8,7 +8,7 @@ Descr: Set main wrapper for photo text bocks
 
 --------------------------- */
 
-.ptWrapper{
+.group--photoText{
   margin-bottom: var(--component-bottom-margin);
   &--slider{
     overflow: hidden;
