@@ -4,11 +4,6 @@ label: Migrate images from D7 articles to D8
 migration_group: articles
 migration_dependencies: {}
 
-dependencies:
-  enforced:
-    module:
-      - as_migrate_articles
-
 source:
   plugin: url
   data_fetcher_plugin: http
