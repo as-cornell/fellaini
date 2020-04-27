@@ -10,25 +10,28 @@ Descr:
 .simpleGroup{
   display: grid;
   grid-gap: var(--grid-gap);
+  .items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+  }
   &--row{
-    grid-template-columns: 60% 1fr;
-    
-    align-items: center;
-    .text{
-      grid-column: 1 / 1;
-    }
-    .items{
-      grid-column: 2 / 3;
-      display: grid;
+    @include medium(){
       grid-template-columns: 1fr 1fr;
-      grid-gap: 1rem;
+      align-items: center;
+      .text{
+        grid-column: 1 / 1;
+      }
+      .items{
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+      }
     }
   }
-  &--stack{
-    .items{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      grid-gap: 1rem;
-    }
-  }
+  // &--stack{
+    
+  // }
+  
 }

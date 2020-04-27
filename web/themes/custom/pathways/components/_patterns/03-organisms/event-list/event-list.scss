@@ -11,13 +11,12 @@ Descr: Sets grid default ( full width ) and stacked (in columns) event lists
 // Default event list
 
 .eventList{
-    @include medium(){}
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-gap: var(--grid-gap);
     @include medium(){
-       flex-direction: row;
+       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
-   margin-bottom: var(--component-bottom-margin);
+   margin: 0 0 var(--component-bottom-margin) 0;
 }
 
 // Event list in columns
@@ -31,7 +30,7 @@ Descr: Sets grid default ( full width ) and stacked (in columns) event lists
 
 // Event listing item
 .event{
-    flex: 1;
+    // flex: 0 0 30%;
     display: grid;
     grid-gap: var(--space);
     grid-row-gap: 0;
