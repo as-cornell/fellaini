@@ -1,0 +1,21 @@
+uuid: 1b635522-2d69-4e23-9a74-eced568cb163
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.field_page_section_title
+field_name: field_page_section_title
+entity_type: page_component_entity
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 uuid: 3ca17289-9283-401b-b1dd-b553ba15b5fa
-=======
-<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_form_display.page_component_entity.figure_wrapper.default.yml
-=======
-uuid: 3ca17289-9283-401b-b1dd-b553ba15b5fa
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_form_display.page_component_entity.figure_wrapper.default.yml
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
 langcode: en
 status: true
 dependencies:

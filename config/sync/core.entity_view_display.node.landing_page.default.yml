@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_landing_page_component_ent
+    - field.field.node.landing_page.field_page_components
     - field.field.node.landing_page.field_pano_image
     - node.type.landing_page
   module:
@@ -13,8 +13,8 @@ targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  field_landing_page_component_ent:
-    weight: 1
+  field_page_components:
+    weight: 2
     label: hidden
     settings:
       link: true

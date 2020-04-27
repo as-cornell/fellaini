@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.page.field_page_components_entity
+    - field.field.node.page.field_aside_components
+    - field.field.node.page.field_page_components
+    - field.field.node.page.field_sidebar_components
+    - field.field.node.page.field_sidebar_type
     - node.type.page
   module:
     - user
@@ -21,4 +24,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_page_components_entity: true
+  field_aside_components: true
+  field_page_components: true
+  field_sidebar_components: true
+  field_sidebar_type: true
