@@ -4,12 +4,13 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser
-    - field.field.node.landing_page.field_landing_page_component_ent
+    - field.field.node.landing_page.field_page_components
     - field.field.node.landing_page.field_pano_image
     - node.type.landing_page
   module:
     - entity_browser
     - entity_browser_entity_form
+    - hide_revision_field
     - inline_entity_form
     - path
 id: node.landing_page.default
@@ -19,21 +20,22 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_landing_page_component_ent:
-    weight: 8
+  field_page_components:
+    weight: 2
     settings:
       form_mode: default
       label_singular: ''
       label_plural: ''
-      collapsible: true
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
+      revision: false
       override_labels: false
+      collapsible: false
       collapsed: false
       allow_duplicate: false
     third_party_settings:
@@ -42,7 +44,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_pano_image:
-    weight: 7
+    weight: 1
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -58,7 +60,7 @@ content:
     region: content
   path:
     type: path
-    weight: 5
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -66,21 +68,33 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 5
     region: content
+    third_party_settings: {  }
+  revision_log:
+    type: hide_revision_field_log_widget
+    weight: 9
+    region: content
+    settings:
+      show: true
+      default: ''
+      permission_based: false
+      allow_user_settings: true
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 8
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -93,7 +107,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

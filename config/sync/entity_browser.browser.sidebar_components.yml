@@ -1,0 +1,42 @@
+uuid: 62bba7e6-87cf-4c76-bdd4-ccaff018c37c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.page_component_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: sidebar_components
+label: 'Sidebar Components'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select existing components'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  76ef2a2c-a729-4ca3-9cc1-cc1594f9d3a3:
+    settings:
+      view: page_component_browser
+      view_display: entity_browser_4
+      submit_text: 'Select sidebar components'
+      auto_select: false
+    uuid: 76ef2a2c-a729-4ca3-9cc1-cc1594f9d3a3
+    weight: 1
+    label: 'Select by name'
+    id: view
+  e8ec8924-ef11-4822-8de8-061491633afd:
+    settings:
+      entity_type: page_component_entity
+      bundle: page_section
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: e8ec8924-ef11-4822-8de8-061491633afd
+    weight: 2
+    label: entity_form
+    id: entity_form

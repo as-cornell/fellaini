@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.landing_page.field_landing_page_component_ent
+    - field.field.node.landing_page.field_page_components
     - field.field.node.landing_page.field_pano_image
     - node.type.landing_page
   module:
@@ -20,5 +20,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_landing_page_component_ent: true
+  field_page_components: true
   field_pano_image: true
