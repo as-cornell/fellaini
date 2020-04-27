@@ -1,0 +1,41 @@
+{#
+
+/* -------------------------
+
+Title: text-selection-group
+Descr: outputs a FTB with a block for a selection of content or items shown as cards.
+
+--------------------------- */
+
+#}
+{# {% set group_base_class = 'pageComponent' %} #}
+
+{% set group_modifiers = [''] %}
+
+{% set item1 = content.field_formatted_text %}
+{% set item2 = content.field_multi_reference %}
+{% set direction = content.field_layout_directions %}
+
+{% if content.field_layout_directions %}
+	{% set layoutDirection = content.field_layout_directions[0]['#markup'] %}
+	{% set group_modifiers = group_modifiers|merge([layoutDirection]) %}
+{% endif %}
+
+
+{# {% set group_modifiers = direction %} #}
+{# {{ item1 }}
+{{ item2 }}
+{{ direction }} #}
+{# {% set items = content.field_stats %}
+{% set items_length = items|length %}
+
+{% if items.1 %}
+  {% set multiple = true %}
+{% endif %} #}
+
+{% embed "@organisms/grouping/_grouping--simple.twig" with{
+  items1: item1,
+  items2: item2
+} %}
+
+{% endembed %}
