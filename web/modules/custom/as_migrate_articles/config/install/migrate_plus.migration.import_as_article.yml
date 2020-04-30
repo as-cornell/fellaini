@@ -100,18 +100,6 @@ source:
       label: 'Image Alt tag'
       selector: /attributes/field_image/alt
     -
-      name: field_pano_image_url
-      label: 'Image URL'
-      selector: /attributes/field_pano_image/src
-    -
-      name: field_pano_image_uri
-      label: 'Image URI'
-      selector: /attributes/field_pano_image_uri
-    -
-      name: field_pano_image_alt
-      label: 'Image Alt tag'
-      selector: /attributes/field_pano_image/alt
-    -
       name: field_related_articles
       label: 'Related Articles'
       selector: /attributes/field_related_articles
@@ -163,7 +151,7 @@ process:
   field_media_source: field_media_source
   field_dateline: field_dateline
   field_card_label: field_card_label
-  'field_related_articles/target_id':
+  field_related_articles:
     -
       plugin: skip_on_empty
       method: process
@@ -173,7 +161,9 @@ process:
       source: field_related_articles
       delimiter: +
     -
-      plugin: entity_lookup
+      plugin: migration_lookup
+      migration: import_as_article
+      no_stub: true
       source: field_related_articles
   field_related_people:
     -
