@@ -35,9 +35,9 @@ class InlineMediaMigrate extends ProcessPluginBase {
 
           preg_match_all('/(alt|src)=("[^"]*")/i', $img_tag, $tag_attributes);
 
-          $filepath = str_replace('"', '', $tag_attributes[2][1]);
+          $filepath = str_replace('"', '', $tag_attributes[1][0]);
 
-          if (!empty($tag_attributes[2][1])) {
+          if (!empty($tag_attributes[1][0])) {
 
             // Create file object from a locally copied file.
             $filename = basename($filepath);
@@ -63,7 +63,8 @@ class InlineMediaMigrate extends ProcessPluginBase {
                     'langcode'    => 'en',
                     'field_media_image' => [
                       'target_id' => $file->id(),
-                      'alt'       =>  !empty($tag_attributes[0][0]) ? Unicode::truncate(substr(str_replace('"', '', $tag_attributes[0][0]), 4), 512) : '',
+                      //'alt'       =>  !empty($tag_attributes[0][0]) ? Unicode::truncate(substr(str_replace('"', '', $tag_attributes[0][0]), 4), 512) : '',
+                      'alt'       => 'Alt tag'
                     ],
                   ]);
 
