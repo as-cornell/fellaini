@@ -35,9 +35,9 @@ class InlineMediaMigrate extends ProcessPluginBase {
 
           preg_match_all('/(alt|src)=("[^"]*")/i', $img_tag, $tag_attributes);
 
-          $filepath = str_replace('"', '', $tag_attributes[1][0]);
+          $filepath = str_replace('"', '', $tag_attributes[2][1]);
 
-          if (!empty($tag_attributes[1][0])) {
+          if (!empty($tag_attributes[2][1])) {
 
             // Create file object from a locally copied file.
             $filename = basename($filepath);
