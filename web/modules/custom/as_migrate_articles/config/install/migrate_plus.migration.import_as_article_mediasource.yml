@@ -14,7 +14,7 @@ source:
   urls: https://as.cornell.edu/articles-asd8-json-media-sources
 
   ids:
-    bylineid:
+    mediasourceid:
       type: integer
 
   item_selector: data/
