@@ -149,6 +149,9 @@ process:
     plugin: entity_lookup
     source: field_byline
   field_media_source: field_media_source
+  field_media_source_reference:
+    plugin: entity_lookup
+    source: field_media_source
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_related_articles:
