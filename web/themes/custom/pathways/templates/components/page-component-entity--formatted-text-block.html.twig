@@ -8,8 +8,8 @@ Descr: includes formatted-text-block.twig.
 --------------------------- */
 
  #}
-{% set group_base_class = 'ftb' %}
-{% set group_modifiers = ['pageComponent'] %}
+{% set group_base_class = 'pageComponent' %}
+{% set group_modifiers = ['ftb'] %}
 
 {% include "@molecules/formatted-text-block/formatted-text-block.twig" with {
     group_base_class : group_base_class,
