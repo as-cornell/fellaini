@@ -12,16 +12,27 @@
 
 
 figure{
-  display: inline-block;
+  // display: inline-block;
   @include baseBorder();
   margin: 1rem 0;
+  background: pink;
+  // float: right;
+  width: min-content;
   // &.pullLeft, &.pullRight{
   //     width: calc(100% + 3rem); //100% + the value of the pull left or right
   // }
+  // display: table;
+  // div{
+  //   display: inline;
+  // }
+  img{
+    max-width: initial;
+  }
 }
 
 .figure{
   border-radius: var(--border-radius);
+  
   &--pano{
     margin: 0;
   }
@@ -39,4 +50,5 @@ figcaption{
   font-weight: var(--light);
   font-size: var(--medium-font-size);
   padding: 1rem;
+  // display: inline;
 }
