@@ -1,0 +1,12 @@
+uuid: 2ca5b290-de03-4e07-a4fa-62f711b8d527
+langcode: en
+status: true
+dependencies: {  }
+label: 'TEST CROP'
+id: manuel_crops
+description: 'A manual crop'
+aspect_ratio: ''
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

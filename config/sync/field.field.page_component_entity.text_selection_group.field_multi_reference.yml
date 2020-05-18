@@ -1,0 +1,83 @@
+uuid: 05f980f1-de51-4824-b690-5ddf65381083
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.person
+    - as_page_components.page_component_entity_type.stat
+    - as_page_components.page_component_entity_type.text_selection_group
+    - field.storage.page_component_entity.field_multi_reference
+    - node.type.article
+    - taxonomy.vocabulary.departments_programs
+    - taxonomy.vocabulary.majors_minors_gradfields
+  module:
+    - dynamic_entity_reference
+id: page_component_entity.text_selection_group.field_multi_reference
+field_name: field_multi_reference
+entity_type: page_component_entity
+bundle: text_selection_group
+label: 'Selected Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  node:
+    handler: 'default:node'
+    handler_settings:
+      target_bundles:
+        article: article
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: ''
+  page_component_entity:
+    handler: 'default:page_component_entity'
+    handler_settings:
+      target_bundles:
+        person: person
+        stat: stat
+      sort:
+        field: _none
+      auto_create: false
+      auto_create_bundle: person
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings:
+      target_bundles:
+        departments_programs: departments_programs
+        majors_minors_gradfields: majors_minors_gradfields
+      sort:
+        field: name
+        direction: asc
+      auto_create: false
+      auto_create_bundle: departments_programs
+  crop:
+    handler: 'default:crop'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  entity_embed_fake_entity:
+    handler: 'default:entity_embed_fake_entity'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  media:
+    handler: 'default:media'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
+  path_alias:
+    handler: 'default:path_alias'
+    handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

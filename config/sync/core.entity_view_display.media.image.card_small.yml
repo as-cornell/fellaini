@@ -1,16 +1,13 @@
 uuid: 413b0205-2aa4-493a-b0f7-d068589b3063
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.card_small
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
-    - image.style.medium
     - media.type.image
-  module:
-    - image
 _core:
   default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
 id: media.image.card_small
@@ -34,17 +31,9 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_media_image:
-    label: hidden
-    settings:
-      image_style: medium
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    weight: 1
-    region: content
 hidden:
   created: true
+  field_media_image: true
   name: true
   thumbnail: true
   uid: true

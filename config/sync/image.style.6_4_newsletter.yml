@@ -1,0 +1,25 @@
+uuid: d11dc025-c74d-4e6b-ad14-00712a45d13f
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.6_4
+  module:
+    - crop
+name: 6_4_newsletter
+label: '6-4 newsletter'
+effects:
+  bc4153fe-8c23-4d01-b3a4-9b461cf07b14:
+    uuid: bc4153fe-8c23-4d01-b3a4-9b461cf07b14
+    id: image_scale
+    weight: -9
+    data:
+      width: 600
+      height: null
+      upscale: true
+  5d3caa32-b7ab-4840-b050-4716d27bb699:
+    uuid: 5d3caa32-b7ab-4840-b050-4716d27bb699
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: '6_4'

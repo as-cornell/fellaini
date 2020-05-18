@@ -1,0 +1,6 @@
+uuid: ac287131-d768-44a4-ab1b-10f5af8dac6e
+langcode: en
+status: true
+dependencies: {  }
+id: text_selection_group
+label: 'Text and Selection Group'

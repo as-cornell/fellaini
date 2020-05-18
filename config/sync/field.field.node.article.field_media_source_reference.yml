@@ -1,0 +1,29 @@
+uuid: c3a59d85-8760-434b-970d-3801dffc3fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_source_reference
+    - node.type.article
+    - taxonomy.vocabulary.article_mediasources
+id: node.article.field_media_source_reference
+field_name: field_media_source_reference
+entity_type: node
+bundle: article
+label: 'Media Source Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_mediasources: article_mediasources
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
