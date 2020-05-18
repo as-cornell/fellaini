@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Display a paragraph pano image. Will be specific to the top pano images for pages. 
+ * Display a paragraph pano image. Will be specific to the top pano images for pages.
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -39,7 +39,7 @@
 {# {{kint()}} #}
 {% set alignment = content.field_component_alignment[0]%}
 {% include "@atoms/04-images/figure.twig" with {
-    "img_src" : img.uri | image_style('full_content'),
+    "img_src" : img.uri | image_style('6_4_large'),
     "img_alt" : img.alt,
     "img_caption" : img.caption,
     "img_credit" : img.credit,
