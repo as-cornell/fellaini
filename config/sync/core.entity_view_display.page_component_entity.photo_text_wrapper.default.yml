@@ -1,41 +1,8 @@
-<<<<<<< HEAD
 uuid: 8a3af20e-0362-4d97-8f44-5f97ccb410dd
-=======
-<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_view_display.page_component_entity.photo_text.default.yml
-=======
-uuid: 8a3af20e-0362-4d97-8f44-5f97ccb410dd
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.photo_text_wrapper.default.yml
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
 langcode: en
 status: true
 dependencies:
   config:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_view_display.page_component_entity.photo_text.default.yml
-    - as_page_components.page_component_entity_type.photo_text
-    - field.field.page_component_entity.photo_text.field_formatted_text
-    - field.field.page_component_entity.photo_text.field_image
-    - field.field.page_component_entity.photo_text.field_link
-  module:
-    - text
-id: page_component_entity.photo_text.default
-targetEntityType: page_component_entity
-bundle: photo_text
-mode: default
-content:
-  field_formatted_text:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_image:
-    type: entity_reference_entity_view
-    weight: 1
-=======
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     - as_page_components.page_component_entity_type.photo_text_wrapper
     - field.field.page_component_entity.photo_text_wrapper.field_photo_text_reference
     - field.field.page_component_entity.photo_text_wrapper.field_photo_text_wrapper_class
@@ -48,20 +15,11 @@ mode: default
 content:
   field_photo_text_reference:
     weight: 2
-<<<<<<< HEAD
-=======
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.photo_text_wrapper.default.yml
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:web/modules/custom/as_page_components/config/optional/core.entity_view_display.page_component_entity.photo_text.default.yml
-=======
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     type: entity_reference_entity_view
     region: content
   field_photo_text_wrapper_class:
@@ -70,10 +28,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
-<<<<<<< HEAD
-=======
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8:config/sync/core.entity_view_display.page_component_entity.photo_text_wrapper.default.yml
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
     region: content
   name:
     label: hidden
@@ -84,8 +38,4 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
-<<<<<<< HEAD
-=======
-  field_link: true
->>>>>>> 5bc2068a0f426fa45f89c27733118a3d1322afa8
   user_id: true

@@ -1,0 +1,31 @@
+uuid: d2f7720a-38a8-471b-badf-1dd59c17027f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.page_component_browser
+  module:
+    - views
+name: aside_components
+label: 'Aside Components'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select existing components'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  83a9aa58-8ff4-4a00-91fa-70591d8729bb:
+    settings:
+      view: page_component_browser
+      view_display: entity_browser_3
+      submit_text: 'Select aside components'
+      auto_select: false
+    uuid: 83a9aa58-8ff4-4a00-91fa-70591d8729bb
+    weight: 1
+    label: 'Select by name'
+    id: view

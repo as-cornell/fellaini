@@ -1,0 +1,6 @@
+uuid: fa22502d-3986-41b0-833c-2e18dfac21b2
+langcode: en
+status: true
+dependencies: {  }
+id: page_section
+label: 'Page Section'

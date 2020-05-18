@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_aside_components
-    - field.field.node.page.field_page_components_entity
+    - field.field.node.page.field_page_components
     - field.field.node.page.field_sidebar_components
     - field.field.node.page.field_sidebar_type
     - node.type.page
@@ -21,12 +21,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_aside_components:
-    weight: 3
+    weight: 4
     settings:
       form_mode: default
       label_singular: ''
@@ -34,32 +34,17 @@ content:
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
+      revision: false
       override_labels: false
       collapsible: false
       collapsed: false
       allow_duplicate: false
     third_party_settings:
       entity_browser_entity_form:
-        entity_browser_id: _none
+        entity_browser_id: aside_components
     type: inline_entity_form_complex
     region: content
-  field_page_components_entity:
-    type: inline_entity_form_complex
-    weight: 1
-    region: content
-    settings:
-      match_operator: CONTAINS
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      allow_duplicate: false
-    third_party_settings: {  }
-  field_sidebar_components:
+  field_page_components:
     weight: 2
     settings:
       form_mode: default
@@ -68,24 +53,44 @@ content:
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
+      revision: false
       override_labels: false
       collapsible: false
       collapsed: false
       allow_duplicate: false
     third_party_settings:
       entity_browser_entity_form:
-        entity_browser_id: _none
+        entity_browser_id: component_entity_browser
+    type: inline_entity_form_complex
+    region: content
+  field_sidebar_components:
+    weight: 3
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: sidebar_components
     type: inline_entity_form_complex
     region: content
   field_sidebar_type:
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -93,21 +98,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -120,7 +125,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
