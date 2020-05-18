@@ -23,12 +23,15 @@ Passes:
 {% set main_element_modifiers = [''] %}
 
 
-{# Content wrapper modifiers #}
+{# Content wrapper modifiers#}
 {% set content_wrapper_modifiers = ['article'] %}
 
 {# *mark* still important just commented to make sure it doesn't mess things up.#}
 {# if field_pano_image add to content_wrapper_modifiers #}
-
+{# {% if content.field_pano_image %}
+    {% set hasPano = true %}
+    {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
+{% endif %} #}
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
 
