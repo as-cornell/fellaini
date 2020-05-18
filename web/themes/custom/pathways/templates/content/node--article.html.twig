@@ -26,19 +26,18 @@ Passes:
 {# Content wrapper modifiers#}
 {% set content_wrapper_modifiers = ['article'] %}
 
-{# *mark* still important just commented to make sure it doesn't mess things up.#}
 {# if field_pano_image add to content_wrapper_modifiers #}
-{# {% if content.field_pano_image %}
+{% if content.field_pano %}
     {% set hasPano = true %}
     {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
-{% endif %} #}
+{% endif %}
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
-
+{{content.field_pano}}
 {% include "@pages/article/_article.twig" with {
 
     article_image : content.field_image,
-
+    article_pano_image : content.field_pano,
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers,
 
@@ -56,7 +55,7 @@ Passes:
 
 {# {{kint(content.field_image)}} #}
 {#
-    article_pano_img_src : field_pano_image_img.uri | image_style('full_content'),
+    article_pano_img_src : field_pno.uri | image_style('6_4_large'),
     article_pano_img_alt : field_pano_image_img.alt,
     article_pano_img_caption : field_pano_image_img.caption,
     article_pano_img_credit : field_pano_image_img.credit,
