@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_pano_image
-    - media.type.image
+    - media.type.pano_image
     - node.type.article
 id: node.article.field_pano_image
 field_name: field_pano_image
@@ -20,9 +20,9 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      pano_image: pano_image
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference

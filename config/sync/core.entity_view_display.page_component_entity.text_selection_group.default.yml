@@ -1,0 +1,75 @@
+uuid: 00aec1c5-5ac0-44b8-a0c3-af541708a3d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.text_selection_group
+    - field.field.page_component_entity.text_selection_group.field_formatted_text
+    - field.field.page_component_entity.text_selection_group.field_layout_directions
+    - field.field.page_component_entity.text_selection_group.field_multi_reference
+  module:
+    - dynamic_entity_reference
+    - options
+    - text
+id: page_component_entity.text_selection_group.default
+targetEntityType: page_component_entity
+bundle: text_selection_group
+mode: default
+content:
+  field_formatted_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_layout_directions:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_multi_reference:
+    weight: 4
+    label: hidden
+    settings:
+      node:
+        view_mode: card
+      page_component_entity:
+        view_mode: default
+      taxonomy_term:
+        view_mode: default
+      crop:
+        view_mode: default
+        link: false
+      block_content:
+        view_mode: default
+        link: false
+      menu_link_content:
+        view_mode: default
+        link: false
+      entity_embed_fake_entity:
+        view_mode: default
+        link: false
+      file:
+        view_mode: default
+        link: false
+      media:
+        view_mode: default
+        link: false
+      shortcut:
+        view_mode: default
+        link: false
+      path_alias:
+        view_mode: default
+        link: false
+      user:
+        view_mode: default
+        link: false
+    third_party_settings: {  }
+    type: dynamic_entity_reference_entity_view
+    region: content
+hidden:
+  name: true
+  user_id: true

@@ -4,7 +4,7 @@
 
 Title: node--article.html.twig
 Descr: Sets up variables and content for _article.twig
-Passes: 
+Passes:
   --- Images - pano and image get output as figures by meida--image--default.html.twig so they can now just be passed to _article.twig as a field.
   --- article and has-aside passed to <main>
 
@@ -23,15 +23,12 @@ Passes:
 {% set main_element_modifiers = [''] %}
 
 
-{# Content wrapper modifiers#}
-{% set content_wrapper_modifiers = ['article'] %} #}
+{# Content wrapper modifiers #}
+{% set content_wrapper_modifiers = ['article'] %}
 
 {# *mark* still important just commented to make sure it doesn't mess things up.#}
 {# if field_pano_image add to content_wrapper_modifiers #}
-{# {% if content.field_pano_image %}
-    {% set hasPano = true %}
-    {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
-{% endif %} #}
+
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
 
@@ -55,7 +52,7 @@ Passes:
 {# This is all the old junk for images #}
 
 {# {{kint(content.field_image)}} #}
-{# 
+{#
     article_pano_img_src : field_pano_image_img.uri | image_style('full_content'),
     article_pano_img_alt : field_pano_image_img.alt,
     article_pano_img_caption : field_pano_image_img.caption,

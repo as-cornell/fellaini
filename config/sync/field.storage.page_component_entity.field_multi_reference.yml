@@ -1,0 +1,26 @@
+uuid: 5bc6b001-5cff-452a-b8b0-5ec186fb5e58
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - dynamic_entity_reference
+    - node
+    - taxonomy
+id: page_component_entity.field_multi_reference
+field_name: field_multi_reference
+entity_type: page_component_entity
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    node: node
+    page_component_entity: page_component_entity
+    taxonomy_term: taxonomy_term
+module: dynamic_entity_reference
+locked: false
+cardinality: 4
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

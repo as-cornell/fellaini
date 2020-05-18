@@ -1,0 +1,10 @@
+uuid: de5ed82c-5eb5-4061-ac5d-a9dc5564da40
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.1_1
+label: '1-1 photoText'
+targetEntityType: media
+cache: true

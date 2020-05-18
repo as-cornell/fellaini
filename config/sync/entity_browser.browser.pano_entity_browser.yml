@@ -1,0 +1,42 @@
+uuid: d8879ff8-1736-4fca-a234-343522fd78d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser
+  module:
+    - views
+name: pano_entity_browser
+label: 'Pano Entity Browser'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  6b7bbda7-80f7-4e96-b94d-218530c40e97:
+    settings:
+      view: media_entity_browser
+      view_display: entity_browser_2
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: 6b7bbda7-80f7-4e96-b94d-218530c40e97
+    weight: -10
+    label: view
+    id: view
+  ce719079-7494-43db-a44a-f3dcdee569ce:
+    settings:
+      extensions: 'jpg jpeg png gif'
+      media_type: pano_image
+      upload_location: 'public://'
+      multiple: 0
+      submit_text: 'Select files'
+    uuid: ce719079-7494-43db-a44a-f3dcdee569ce
+    weight: 3
+    label: media_image_upload
+    id: media_image_upload

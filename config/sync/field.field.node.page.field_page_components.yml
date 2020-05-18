@@ -13,6 +13,7 @@ dependencies:
     - as_page_components.page_component_entity_type.page_section
     - as_page_components.page_component_entity_type.photo_text_wrapper
     - as_page_components.page_component_entity_type.stat_wrapper
+    - as_page_components.page_component_entity_type.text_selection_group
     - field.storage.node.field_page_components
     - node.type.page
 id: node.page.field_page_components
@@ -39,6 +40,7 @@ settings:
       page_section: page_section
       photo_text_wrapper: photo_text_wrapper
       stat_wrapper: stat_wrapper
+      text_selection_group: text_selection_group
     sort:
       field: _none
     auto_create: false

@@ -1,12 +1,13 @@
 uuid: 1a9ef68b-2e2b-4e2c-a692-a7763b424d11
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.full
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
+    - image.style.4_5
     - media.type.image
   module:
     - image
@@ -36,7 +37,7 @@ content:
   field_media_image:
     label: hidden
     settings:
-      image_style: ''
+      image_style: '4_5'
       image_link: ''
     third_party_settings: {  }
     type: image
