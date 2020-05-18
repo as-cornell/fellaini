@@ -1,0 +1,23 @@
+uuid: 30178eb3-ad84-45ca-9b69-c2e2bee1020e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_links
+    - system.menu.main
+  module:
+    - link
+id: menu_link_content.main.field_menu_links
+field_name: field_menu_links
+entity_type: menu_link_content
+bundle: main
+label: 'Menu Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

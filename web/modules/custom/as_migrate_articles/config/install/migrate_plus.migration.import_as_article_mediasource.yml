@@ -1,0 +1,40 @@
+# Migration configuration for imported images.
+id: import_as_article_mediasource
+label: Import article media sources into taxonomy terms
+migration_group: articles
+migration_dependencies: {}
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'https://as.cornell.edu'
+
+  urls: https://as.cornell.edu/articles-asd8-json-media-sources
+
+  ids:
+    mediasourceid:
+      type: integer
+
+  item_selector: data/
+
+  fields:
+    -
+      name: mediasourceid
+      label: 'Media Source ID'
+      selector: attributes/mediasourceid
+    -
+      name: mediasource
+      label: 'Media Source'
+      selector: attributes/mediasource
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  uuid: mediasourceid
+  vid:
+    plugin: default_value
+    default_value: article_mediasources
+  name: mediasource

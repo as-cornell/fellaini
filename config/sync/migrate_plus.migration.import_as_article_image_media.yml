@@ -1,12 +1,9 @@
-uuid: 645b32a7-91e8-47d7-a68b-91053f09414c
+uuid: 84ff8c6c-b6e6-43b4-b947-176d2e6cae71
 langcode: en
 status: true
-dependencies:
-  enforced:
-    module:
-      - as_migrate_articles
+dependencies: {  }
 _core:
-  default_config_hash: Wc2UARgNRHPGAKItt_xSPQNDqFgaHJNaB4_pof0a8Mw
+  default_config_hash: aJ58vKEsypIfe7FF9v2krstTewX_MEfwlV6AvmnrU1Y
 id: import_as_article_image_media
 class: null
 field_plugin_method: null

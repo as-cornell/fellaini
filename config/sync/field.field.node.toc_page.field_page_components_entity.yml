@@ -5,8 +5,6 @@ dependencies:
   config:
     - as_page_components.page_component_entity_type.events_block
     - as_page_components.page_component_entity_type.formatted_text_block
-    - as_page_components.page_component_entity_type.image_figure
-    - as_page_components.page_component_entity_type.video_figure
     - field.storage.node.field_page_components_entity
     - node.type.toc_page
 id: node.toc_page.field_page_components_entity
@@ -25,8 +23,6 @@ settings:
     target_bundles:
       events_block: events_block
       formatted_text_block: formatted_text_block
-      image_figure: image_figure
-      video_figure: video_figure
     sort:
       field: _none
     auto_create: false

@@ -28,6 +28,10 @@ source:
       name: field_byline
       label: 'Byline'
       selector: attributes/field_byline
+    -
+      name: field_byline_person_title
+      label: 'Byline'
+      selector: attributes/personTitle
 
 destination:
   plugin: entity:taxonomy_term
@@ -38,3 +42,4 @@ process:
     plugin: default_value
     default_value: article_bylines
   name: field_byline
+  field_byline_person_title: field_byline_person_title
