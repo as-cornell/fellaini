@@ -33,13 +33,14 @@ Passes:
 {% endif %}
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
-{{content.field_pano}}
+
+
 {% include "@pages/article/_article.twig" with {
 
     article_image : content.field_image,
-    article_pano_image : content.field_pano,
+    article_pano : content.field_pano,
     content_wrapper_modifiers : content_wrapper_modifiers,
-    main_content_modifiers : main_content_modifiers,
+    main_element_modifiers : main_element_modifiers,
 
     title: node.label,
     main_content : content.field_article_components_entity,
@@ -51,16 +52,3 @@ Passes:
 
 } %}
 
-{# This is all the old junk for images #}
-
-{# {{kint(content.field_image)}} #}
-{#
-    article_pano_img_src : field_pno.uri | image_style('6_4_large'),
-    article_pano_img_alt : field_pano_image_img.alt,
-    article_pano_img_caption : field_pano_image_img.caption,
-    article_pano_img_credit : field_pano_image_img.credit,
-
-    article_image_img_src : field_image_img.uri | image_style('full_content'),
-    article_image_img_alt : field_image_img.alt,
-    article_image_img_caption : field_image_img.caption,
-    article_image_img_credit : field_image_img.credit, #}
