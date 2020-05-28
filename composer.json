@@ -98,7 +98,8 @@
         "drupal/yaml_editor": "^1.0",
         "drupal/twig_vardumper": "^1.2",
         "drupal/menu_block": "^1.5",
-        "drupal/ckeditor_a11ychecker": "^1.0"
+        "drupal/ckeditor_a11ychecker": "^1.0",
+        "drupal/search_api": "^1.16"
 
 
     },
