@@ -4,12 +4,12 @@
 
 Title: _article.twig
 Descr: Layout for default articles.
-details: 
+details:
   --- updates <main> based on article and has pano values
   --- shows pano if available
   --- shows aside for related information
 
-Needed? : 
+Needed? :
   --- probably need to add a default 4 card news thing with links to all news to bottom of page.
 
 --------------------------- */
@@ -19,8 +19,12 @@ Needed? :
 {% set isTitle = true %}
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
     {% if hasPano %}
-    {# {{article_pano}} #}
+    <div class="pano">
+      {{article_pano}}
+    </div>
+     
     {% endif %}
+{# {{vardumper($content)}} #}
     <div class="title">
         {% include "@atoms/00-text/_heading.twig" with {
             "heading_level" : 1,
@@ -43,7 +47,7 @@ Needed? :
         {{main_content}}
     </div>
     <div class="thumbnail">
-        {{article_image}}
+      {{article_card}}
     </div>
     <aside role="complimentary">
         {{ aside_content }}

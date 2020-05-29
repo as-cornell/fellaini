@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
+    - entity_browser.browser.pano_entity_browser
     - field.field.node.article.body
     - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_aside_components
@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
+    - field.field.node.article.field_media_source_reference
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
@@ -56,6 +57,7 @@ third_party_settings:
         - field_dateline
         - field_card_label
         - field_media_source
+        - field_media_source_reference
         - field_summary
       parent_name: group_article
       weight: 13
@@ -163,6 +165,7 @@ content:
       allow_new: true
       allow_existing: false
       allow_duplicate: false
+      revision: false
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content
@@ -179,6 +182,7 @@ content:
       collapsible: false
       collapsed: false
       allow_duplicate: false
+      revision: false
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: _none
@@ -231,11 +235,11 @@ content:
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
+      field_widget_display_settings:
+        view_mode: '4_5'
       field_widget_edit: true
       field_widget_remove: true
       selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: default
       field_widget_replace: false
       open: false
     third_party_settings: {  }
@@ -249,17 +253,27 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_media_source_reference:
+    weight: 16
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_newsletter_image:
-    weight: 31
+    weight: 30
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
+      field_widget_display_settings:
+        view_mode: 6_4_newsletter
       field_widget_edit: true
       field_widget_remove: true
       field_widget_replace: true
       selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: default
       open: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
@@ -267,13 +281,13 @@ content:
   field_pano_image:
     weight: 28
     settings:
-      entity_browser: media_entity_browser
+      entity_browser: pano_entity_browser
       field_widget_display: rendered_entity
+      field_widget_display_settings:
+        view_mode: default
       field_widget_edit: true
       field_widget_remove: true
       selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: default
       field_widget_replace: false
       open: false
     third_party_settings: {  }
@@ -302,7 +316,7 @@ content:
     type: options_buttons
     region: content
   field_related_people:
-    weight: 5
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -312,7 +326,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_summary:
-    weight: 16
+    weight: 17
     settings:
       rows: 5
       placeholder: ''

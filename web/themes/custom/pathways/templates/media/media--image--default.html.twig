@@ -18,6 +18,8 @@ Passes:
 {% set caption = content.field_caption %}
 {% set fullImage = content.field_media_image %}
 
+{# {% set figure_modifiers = ['thumbnail'] %} #}
+
 {% include "@atoms/04-images/figure.twig" with { 
   img_caption : caption,
   fullImage : fullImage 

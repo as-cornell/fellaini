@@ -1,0 +1,30 @@
+uuid: 3a89f892-e7a9-4a9a-9021-a445c6f59e9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.article_bylines.field_byline_person_title
+    - taxonomy.vocabulary.article_bylines
+  module:
+    - text
+id: taxonomy_term.article_bylines.default
+targetEntityType: taxonomy_term
+bundle: article_bylines
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_byline_person_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

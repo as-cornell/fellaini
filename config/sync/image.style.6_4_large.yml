@@ -1,0 +1,25 @@
+uuid: 5ba4c5f9-650c-41ef-afbc-1a0bb954089a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.6_4
+  module:
+    - crop
+name: 6_4_large
+label: '6-4 large'
+effects:
+  012845c9-25bd-4225-be0a-172522ea5869:
+    uuid: 012845c9-25bd-4225-be0a-172522ea5869
+    id: image_scale
+    weight: -9
+    data:
+      width: 1044
+      height: null
+      upscale: true
+  86469f0a-01f0-4c22-9e08-75fdd610a380:
+    uuid: 86469f0a-01f0-4c22-9e08-75fdd610a380
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: '6_4'

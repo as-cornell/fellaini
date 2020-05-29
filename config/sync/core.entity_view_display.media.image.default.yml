@@ -6,6 +6,7 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
+    - image.style.4_5
     - media.type.image
   module:
     - image
@@ -35,7 +36,7 @@ content:
   field_media_image:
     label: hidden
     settings:
-      image_style: ''
+      image_style: '4_5'
       image_link: ''
     third_party_settings: {  }
     type: image

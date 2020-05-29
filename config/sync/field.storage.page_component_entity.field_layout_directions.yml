@@ -1,0 +1,27 @@
+uuid: 737e529b-bcfe-45e6-afd2-4563f233c318
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - options
+id: page_component_entity.field_layout_directions
+field_name: field_layout_directions
+entity_type: page_component_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: stack
+      label: Stacked
+    -
+      value: row
+      label: Row
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

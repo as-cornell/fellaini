@@ -1,9 +1,7 @@
-uuid: 90c08bee-7775-46bf-8adc-47ac0e3712b7
+uuid: 011790d7-68c4-42a6-bc65-1bb6f4146572
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: ezOdgbzBrkuEgocIyT8BrZ4NdZeWpx_wKjWNcXt3PE8
 id: import_as_article_body
 class: null
 field_plugin_method: null

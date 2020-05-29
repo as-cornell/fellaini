@@ -1,0 +1,51 @@
+uuid: 8d0d79c7-b2dc-4904-9174-bbeb6a7c5c38
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.text_selection_group
+    - field.field.page_component_entity.text_selection_group.field_formatted_text
+    - field.field.page_component_entity.text_selection_group.field_layout_directions
+    - field.field.page_component_entity.text_selection_group.field_multi_reference
+  module:
+    - dynamic_entity_reference
+    - text
+id: page_component_entity.text_selection_group.default
+targetEntityType: page_component_entity
+bundle: text_selection_group
+mode: default
+content:
+  field_formatted_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_layout_directions:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_multi_reference:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 40
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: dynamic_entity_reference_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true
