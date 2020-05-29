@@ -52,6 +52,7 @@ Variations:
 .card--small{
   @include baseGrid();
   grid-template-columns: $max-column 1fr;
+  max-width: 400px;
   .card__title{
     @include baseFont($size: var(--medium-font-size), $weight: var(--regular), $line-height: 1.4);
   }

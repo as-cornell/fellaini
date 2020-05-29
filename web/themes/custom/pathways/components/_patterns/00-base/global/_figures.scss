@@ -14,7 +14,7 @@
 figure{
   // @include baseBorder();
   margin: 1rem 0;
-  background: pink;
+  background: var(--gray-lightest);
   width: min-content;
   img{
     max-width: initial;
@@ -25,7 +25,7 @@ figure{
     &--pano{
     margin: 0;
     width: 100%;
-    background: yellow;
+    background: var(--gray-lightest);
     img{
       max-width: 100%;
     }
@@ -37,8 +37,15 @@ figure{
       display: block;
     }
     &--card{
-      background: seagreen;
+      background: var(--gray-lightest);
       width: 100%;
+      img{
+        max-width: 100%;
+      }
+    }
+    &--thumbnail{
+      width: 100%;
+      background: none;
       img{
         max-width: 100%;
       }
