@@ -4,7 +4,7 @@
 
 Title: node--article.html.twig
 Descr: Sets up variables and content for _article.twig
-Passes: 
+Passes:
   --- Images - pano and image get output as figures by meida--image--default.html.twig so they can now just be passed to _article.twig as a field.
   --- article and has-aside passed to <main>
 
@@ -24,23 +24,25 @@ Passes:
 
 
 {# Content wrapper modifiers#}
-{% set content_wrapper_modifiers = ['article'] %} #}
+{% set content_wrapper_modifiers = ['article'] %}
 
-{# *mark* still important just commented to make sure it doesn't mess things up.#}
-{# if field_pano_image add to content_wrapper_modifiers #}
-{# {% if content.field_pano_image %}
+{# if field_pano not empty add to content_wrapper_modifiers #}
+{% if content.field_pano|render is not empty %}
     {% set hasPano = true %}
+
     {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
-{% endif %} #}
+    
+{% endif %}
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
 
 {% include "@pages/article/_article.twig" with {
 
-    article_image : content.field_image,
-
+    article_pano : content.field_pano,
+    article_card : content.field_image,
+   
     content_wrapper_modifiers : content_wrapper_modifiers,
-    main_content_modifiers : main_content_modifiers,
+    main_element_modifiers : main_element_modifiers,
 
     title: node.label,
     main_content : content.field_article_components_entity,
@@ -52,16 +54,12 @@ Passes:
 
 } %}
 
-{# This is all the old junk for images #}
+{# {% set article_pano_caption = content.field_pano|field_target_entity.field_caption.value %}
+{% set article_pano_alt = content.field_pano|field_target_entity.field_media_image_1.alt %}
+{% set article_pano_src = node.field_pano|file_url %}article_thumbnail_src : article_thumbnail_src,
+    article_thumbnail_alt : article_thumbnail_alt,
+    article_thumbnail_caption : article_thumbnail_caption,
+{% set article_thumbnail_caption = (content.field_image|field_target_entity.field_caption.value) %}
+{% set article_thumbnail_alt = (content.field_image|field_target_entity.field_media_image.alt) %}
+{% set article_thumbnail_src = (node.field_image|file_url) %}#}
 
-{# {{kint(content.field_image)}} #}
-{# 
-    article_pano_img_src : field_pano_image_img.uri | image_style('full_content'),
-    article_pano_img_alt : field_pano_image_img.alt,
-    article_pano_img_caption : field_pano_image_img.caption,
-    article_pano_img_credit : field_pano_image_img.credit,
-
-    article_image_img_src : field_image_img.uri | image_style('full_content'),
-    article_image_img_alt : field_image_img.alt,
-    article_image_img_caption : field_image_img.caption,
-    article_image_img_credit : field_image_img.credit, #}

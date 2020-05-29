@@ -1,0 +1,25 @@
+uuid: 7bc40e78-f218-44ed-ae28-ea064fe986b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.4_5
+  module:
+    - crop
+name: '4_5'
+label: 4-5
+effects:
+  d6c547e5-6cea-49b6-a2b9-9121f26c16c9:
+    uuid: d6c547e5-6cea-49b6-a2b9-9121f26c16c9
+    id: image_scale
+    weight: -9
+    data:
+      width: 500
+      height: null
+      upscale: true
+  4f0f9ca6-6988-4af3-9a9f-999640748d48:
+    uuid: 4f0f9ca6-6988-4af3-9a9f-999640748d48
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: '4_5'

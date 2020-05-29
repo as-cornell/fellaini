@@ -1,0 +1,10 @@
+uuid: 57130094-34f3-43ac-b653-940009c1f7be
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.6_4_newsletter
+label: '6-4 newsletter'
+targetEntityType: media
+cache: true

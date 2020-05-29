@@ -1,0 +1,12 @@
+uuid: 9e8a2359-e0df-437e-b35a-cbdbd2e1fc9b
+langcode: en
+status: true
+dependencies: {  }
+label: 1-1
+id: '1_1'
+description: 'thumbnail - 1:1 crop, max width 200, photoText - 1:1 crop, max width 800'
+aspect_ratio: '1:1'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

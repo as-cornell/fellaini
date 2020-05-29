@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
     - field.field.node.article.field_media_source
+    - field.field.node.article.field_media_source_reference
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano_image
     - field.field.node.article.field_related_articles
@@ -110,6 +111,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_media_source_reference:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_pano_image:
     type: entity_reference_entity_view
     weight: 0

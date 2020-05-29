@@ -1,0 +1,27 @@
+uuid: c1d416eb-3b3d-470a-bda4-020c32d9ccf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.figure_image
+    - core.entity_view_mode.page_component_entity.card_small
+    - field.field.page_component_entity.figure_image.field_component_alignment
+    - field.field.page_component_entity.figure_image.field_figure_image
+id: page_component_entity.figure_image.card_small
+targetEntityType: page_component_entity
+bundle: figure_image
+mode: card_small
+content:
+  field_figure_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: card_small
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_component_alignment: true
+  name: true
+  user_id: true

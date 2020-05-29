@@ -1,0 +1,21 @@
+uuid: 298ffd9a-6f86-4f23-8bb6-f3bdaf913419
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.text_selection_group
+    - field.storage.page_component_entity.field_layout_directions
+  module:
+    - options
+id: page_component_entity.text_selection_group.field_layout_directions
+field_name: field_layout_directions
+entity_type: page_component_entity
+bundle: text_selection_group
+label: 'Layout directions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

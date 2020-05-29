@@ -1,11 +1,11 @@
-{# 
+{#
 
 /* -------------------------
 
 Title: node--article--card-small
 Descr: defines content for a small article card. Generally in sidebar.
 
---------------------------- */ 
+--------------------------- */
 
 #}
 
@@ -14,7 +14,7 @@ Descr: defines content for a small article card. Generally in sidebar.
     card_title: label,
     card_label: content.field_card_label,
     card_link_url: url,
-    card_img_src : field_image_img.uri | image_style('full_content'),
+    card_img_src : content.field_image_img.uri,
     card_img_alt : field_image_img.alt,
     card_img: content.field_image,
     card_byline: content.field_byline_reference,

@@ -12,43 +12,45 @@
 
 
 figure{
-  // display: inline-block;
-  @include baseBorder();
+  // @include baseBorder();
   margin: 1rem 0;
   background: pink;
-  // float: right;
   width: min-content;
-  // &.pullLeft, &.pullRight{
-  //     width: calc(100% + 3rem); //100% + the value of the pull left or right
-  // }
-  // display: table;
-  // div{
-  //   display: inline;
-  // }
   img{
     max-width: initial;
   }
+  border-radius: var(--border-radius);
+  // background: blue;
+  &.figure{
+    &--pano{
+    margin: 0;
+    width: 100%;
+    background: yellow;
+    img{
+      max-width: 100%;
+    }
+    }
+    &--image{
+      border: 1px solid var(--border-color);
+    }
+    &--video{
+      display: block;
+    }
+    &--card{
+      background: seagreen;
+      width: 100%;
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+  
 }
 
-.figure{
-  border-radius: var(--border-radius);
-  
-  &--pano{
-    margin: 0;
-  }
-  &--image{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-color);
-  }
-  &--video{
-    display: block;
-  }
-}
+
 
 figcaption{
   font-weight: var(--light);
   font-size: var(--medium-font-size);
   padding: 1rem;
-  // display: inline;
 }
