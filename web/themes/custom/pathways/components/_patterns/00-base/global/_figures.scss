@@ -1,62 +1,37 @@
 /* 
-    Base styles for all figures
-    -specific styles will be in atom directores 
-    -image
-    -video
+  Base styles for all figures
+  - basic figure
+  - figure based on different view modes
+  - extra class based on image style to set max widths
+*/
 
-    display:table, and display:table-caption,caption-side:bottom to allow for sizing to the image not the caption
-
-    PANOS -- really these should be constrained like slices but want to consider the possibility of full width panos?
-
-    */
-
-
-figure{
-  // @include baseBorder();
+figure {
   margin: 1rem 0;
   background: var(--gray-lightest);
-  width: min-content;
-  img{
-    max-width: initial;
-  }
+  width: 100%;
   border-radius: var(--border-radius);
-  // background: blue;
-  &.figure{
-    &--pano{
-    margin: 0;
-    width: 100%;
-    background: var(--gray-lightest);
-    img{
-      max-width: 100%;
+  &.figure {
+    &--pano {
+      margin: 0;
     }
+    &--image {
     }
-    &--image{
-      border: 1px solid var(--border-color);
+    &--video {
+      // display: block;
     }
-    &--video{
-      display: block;
+    &--card {
     }
-    &--card{
-      background: var(--gray-lightest);
-      width: 100%;
-      img{
-        max-width: 100%;
-      }
-    }
-    &--thumbnail{
-      width: 100%;
+    &--thumbnail {
       background: none;
-      img{
-        max-width: 100%;
-      }
     }
+    &--6_4_newsletter {
+      max-width: 600px;
+    }
+    // other styles here....
   }
-  
 }
 
-
-
-figcaption{
+figcaption {
   font-weight: var(--light);
   font-size: var(--medium-font-size);
   padding: 1rem;
