@@ -24,9 +24,11 @@
  */
 #}
  {#vardumper(term.id)#}
-<h1>{{ name }}</h1>
+<h1>Articles by {{ name }}</h1>
 <div{{ attributes }}>
   {{ content }}
 </div>
+<h3>Articles</h3>
+{{ drupal_view('article_blocks', 'block_bylines', term.id) }}
 
 

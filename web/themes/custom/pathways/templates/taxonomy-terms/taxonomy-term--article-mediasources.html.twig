@@ -24,9 +24,11 @@
  */
 #}
  {#vardumper(term.id)#}
-<h1>{{ name }}</h1>
+<h1>Articles appearing in {{ name }}</h1>
 <div{{ attributes }}>
   {{ content }}
 </div>
+
+{{ drupal_view('article_blocks', 'block_mediasource', term.id) }}
 
 
