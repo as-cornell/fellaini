@@ -25,9 +25,13 @@ Passes:
 {% set figure_modifiers = figure_modifiers|merge([image_style]) %}
 
 
+<<<<<<< HEAD
 
 {# #}{{image_style}}
 {{vardumper(content.field_media_image.0['#image_style'])}} 
+=======
+{# {{image_style}}  #}
+>>>>>>> 97e2e222a735c04f3e085e2712cd37ded60167c2
 
 {% include "@atoms/04-images/figure.twig" with {
   img_caption : caption,

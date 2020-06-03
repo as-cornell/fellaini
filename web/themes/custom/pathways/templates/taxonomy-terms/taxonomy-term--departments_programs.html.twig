@@ -28,5 +28,8 @@
 <div{{ attributes }}>
   {{ content }}
 </div>
+<h3>{{name}} News</h3>
+
+{{ drupal_view('article_blocks', 'block_departments', term.id) }}
 
 
