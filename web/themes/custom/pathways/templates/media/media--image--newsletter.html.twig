@@ -4,7 +4,7 @@
 
 Title: media--image--newsletter.html.twig
 Descr: Sets up variables and content for to get passed to figure.twig. This makes it nice and tidy to include media images as default. Can create for different view modes if needed.
-Passes: 
+Passes:
   --- caption
   --- fullImage
 
@@ -20,7 +20,7 @@ Passes:
 
 {% set figure_modifiers = ['newsletter'] %}
 
-{% include "@atoms/04-images/figure.twig" with { 
+{% include "@atoms/04-images/figure.twig" with {
   img_caption : caption,
-  fullImage : fullImage 
+  fullImage : fullImage
 }%}

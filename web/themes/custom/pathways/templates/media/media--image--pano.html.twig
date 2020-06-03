@@ -4,7 +4,7 @@
 
 Title: media--image--pano.html.twig
 Descr: Sets up variables and content for to get passed to figure.twig. This makes it nice and tidy to include media images as default. Can create for different view modes if needed.
-Passes: 
+Passes:
   --- caption
   --- fullImage
 
@@ -19,8 +19,8 @@ Passes:
 {% set fullImage = content.field_media_image %}
 
 {% set figure_modifiers = ['pano'] %}
-
-{% include "@atoms/04-images/figure.twig" with { 
+{{vardumper(content.field_media_image.0['#image_style'])}}
+{% include "@atoms/04-images/figure.twig" with {
   img_caption : caption,
-  fullImage : fullImage 
+  fullImage : fullImage
 }%}
