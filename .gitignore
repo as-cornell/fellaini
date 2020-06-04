@@ -18,6 +18,7 @@ web/sites/*/files
 
 # Ignore configuration files that may contain sensitive information.
 web/sites/*/settings.local.php
+web/sites/*/default.settings.php
 
 # Ignore SQL dump files
 *--dump.sql

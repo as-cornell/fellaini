@@ -56,4 +56,19 @@
  * @see template_preprocess_search_result()
  */
 #}
+
+
+<pre>
+plugin id
+  {{ vardumper(plugin_id) }}
+
+info
+
+  {{ vardumper(info) }}
+
+info_split.date
+
+  {{ vardumper(info_split.date) }}
+</pre>
+
 {% include "@molecules/_search-result.twig" %}
