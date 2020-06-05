@@ -1,12 +1,12 @@
 {#
 /**
  * @file
- * Theme override for displaying a single search result.
+ * Default theme implementation for displaying a single search result.
  *
  * This template renders a single search result. The list of results is
  * rendered using '#theme' => 'item_list', with suggestions of:
- * - item_list__search_results__(plugin_id)
- * - item_list__search_results
+ * - item_list__custom_search_results__(plugin_id)
+ * - item_list__custom_search_results
  *
  * Available variables:
  * - url: URL of the result.
@@ -54,17 +54,8 @@
  * @endcode
  *
  * @see template_preprocess_search_result()
+ *
  */
 #}
-{{ title_prefix }}
-<h3{{ title_attributes.addClass('h3') }}>
-  <a href="{{ url }}">{{ title }}</a>
-</h3>
-{{ title_suffix }}
-{% if snippet %}
-  <p{{ content_attributes }}>{{ snippet }}</p>
-{% endif %}
-{{vardumper(plugin_id)}}
-{% if info %}
-  <p>{{ info }}</p>
-{% endif %}
+
+{% include "@molecules/_search-result.twig" %}
