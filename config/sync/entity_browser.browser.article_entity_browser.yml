@@ -5,7 +5,6 @@ dependencies:
   config:
     - views.view.article_browser
   module:
-    - entity_browser_entity_form
     - views
 name: article_entity_browser
 label: 'Article Entity Browser'
@@ -13,11 +12,17 @@ display: iframe
 display_configuration:
   width: '650'
   height: '500'
-  link_text: 'Select entities'
-  auto_open: false
-selection_display: no_display
-selection_display_configuration: {  }
-widget_selector: tabs
+  link_text: 'Select articles'
+  auto_open: true
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: node
+  display: rendered_entity
+  display_settings:
+    view_mode: card_small
+  select_text: 'Use selected'
+  selection_hidden: false
+widget_selector: single
 widget_selector_configuration: {  }
 widgets:
   fa136cf7-8fbd-4390-bff1-8a44ed9a9f1f:
@@ -25,18 +30,8 @@ widgets:
       view: article_browser
       view_display: entity_browser_2
       submit_text: 'Select article'
-      auto_select: false
+      auto_select: true
     uuid: fa136cf7-8fbd-4390-bff1-8a44ed9a9f1f
     weight: 1
-    label: List
+    label: 'Use Existing'
     id: view
-  17ddd648-dd68-446d-a646-663d43e04f16:
-    settings:
-      entity_type: page_component_entity
-      bundle: ''
-      form_mode: default
-      submit_text: 'Save entity'
-    uuid: 17ddd648-dd68-446d-a646-663d43e04f16
-    weight: 2
-    label: entity_form
-    id: entity_form

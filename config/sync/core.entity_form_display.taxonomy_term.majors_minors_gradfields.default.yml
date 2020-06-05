@@ -3,13 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
-    - entity_browser
     - entity_browser_entity_form
     - field_group
     - inline_entity_form
@@ -76,21 +74,6 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
-  field_images:
-    weight: 21
-    settings:
-      entity_browser: media_entity_browser
-      field_widget_display: rendered_entity
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: true
-      selection_mode: selection_append
-      field_widget_display_settings:
-        view_mode: card_small
-      open: false
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_level:
     weight: 22
     settings: {  }
@@ -129,4 +112,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_images: true

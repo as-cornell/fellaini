@@ -1,0 +1,48 @@
+uuid: 0514b65c-dd0e-4d51-a14c-8c960da877eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser_media_library
+  module:
+    - entity_browser_entity_form
+    - views
+name: thumbnail_entity_browser
+label: 'Thumbnail Entity Browser'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select thumbnail image'
+  auto_open: false
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: thumbnail
+  select_text: 'Use selected '
+  selection_hidden: true
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  c51daa51-e952-4232-98db-e5979134798d:
+    settings:
+      view: media_entity_browser_media_library
+      view_display: entity_browser_2
+      submit_text: 'Select thumbnail image'
+      auto_select: true
+    uuid: c51daa51-e952-4232-98db-e5979134798d
+    weight: 1
+    label: 'Use Existing'
+    id: view
+  b0e79e04-3828-4603-a55e-4afb4f6dbc6e:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: thumbnail_image
+      submit_text: 'Save entity'
+    uuid: b0e79e04-3828-4603-a55e-4afb4f6dbc6e
+    weight: 2
+    label: 'Add New'
+    id: entity_form

@@ -6,11 +6,10 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
-    - image.style.4_5
+    - image.style.6_4_newsletter
     - media.type.image
   module:
     - image_widget_crop
-    - path
 _core:
   default_config_hash: nZlttO4YMwMCpkhYMz7bQ1ZMjABGc59YY1us3eSfvTY
 id: media.image.default
@@ -18,14 +17,8 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_caption:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -33,7 +26,7 @@ content:
     type: string_textfield
     region: content
   field_credit:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -42,18 +35,24 @@ content:
     region: content
   field_media_image:
     settings:
+      show_crop_area: true
       show_default_crop: true
       warn_multiple_usages: true
-      preview_image_style: '4_5'
-      crop_preview_image_style: 1_1_phototext
+      preview_image_style: 6_4_newsletter
+      crop_preview_image_style: 6_4_newsletter
       crop_list:
         - '1_1'
         - '4_5'
         - '5_4'
         - '6_4'
+        - pano_crop
+      crop_types_required:
+        - '1_1'
+        - '4_5'
+        - '5_4'
+        - '6_4'
+        - pano_crop
       progress_indicator: throbber
-      crop_types_required: {  }
-      show_crop_area: false
     third_party_settings: {  }
     type: image_widget_crop
     weight: 1
@@ -66,27 +65,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 7
-    region: content
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  path: true
+  status: true
+  uid: true

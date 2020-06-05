@@ -1,6 +1,6 @@
 uuid: 98bbb97e-e75b-47d8-9f81-6e5c4866f9cc
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.card

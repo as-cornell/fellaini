@@ -1,49 +1,48 @@
-uuid: bc6e02a4-403b-483a-bec2-228010d26a3d
+uuid: b5f89a8f-0b20-4714-8afb-84794bd3bae2
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.media_entity_browser
+    - views.view.media_entity_browser_media_library
   module:
+    - entity_browser_entity_form
     - views
-_core:
-  default_config_hash: UoGZLPH_DEy28wDjCYqiBKYsKoHlf6l6deygJjqdgPc
 name: media_entity_browser
 label: 'Media Entity Browser'
 display: modal
 display_configuration:
-  width: '800'
-  height: '800'
-  link_text: 'Select images'
+  width: ''
+  height: ''
+  link_text: 'Select image'
   auto_open: false
 selection_display: multi_step_display
 selection_display_configuration:
-  entity_type: node
-  display: label
-  display_settings: {  }
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: card
   select_text: 'Use selected'
-  selection_hidden: false
+  selection_hidden: true
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
-  6586703a-6976-4124-8a49-cbb07ceaa3b1:
+  0f83ee99-0c3a-4a0a-82d6-5268fcf67ab9:
     settings:
-      view: media_entity_browser
-      view_display: entity_browser_1
-      submit_text: 'Select entities'
+      view: media_entity_browser_media_library
+      view_display: media_browser_all
+      submit_text: 'Select image'
       auto_select: true
-    uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
+    uuid: 0f83ee99-0c3a-4a0a-82d6-5268fcf67ab9
     weight: 1
-    label: List
+    label: 'Use Existing'
     id: view
-  add99f49-86e5-466b-a30c-63251d259581:
+  f69e354b-3b0a-40b6-80c3-1216b3c5574c:
     settings:
-      extensions: 'jpg jpeg png gif'
-      media_type: image
-      upload_location: 'public://'
-      multiple: 0
-      submit_text: 'Select files'
-    uuid: add99f49-86e5-466b-a30c-63251d259581
+      entity_type: media
+      bundle: image
+      form_mode: card_image
+      submit_text: 'Save image'
+    uuid: f69e354b-3b0a-40b6-80c3-1216b3c5574c
     weight: 2
     label: Upload
-    id: media_image_upload
+    id: entity_form

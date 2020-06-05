@@ -1,0 +1,64 @@
+uuid: 7234879b-8645-4f58-9099-c2885ed4bf1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.card_image
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_credit
+    - field.field.media.image.field_media_image
+    - image.style.4_5
+    - media.type.image
+  module:
+    - image_widget_crop
+_core:
+  default_config_hash: nZlttO4YMwMCpkhYMz7bQ1ZMjABGc59YY1us3eSfvTY
+id: media.image.card_image
+targetEntityType: media
+bundle: image
+mode: card_image
+content:
+  field_caption:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_credit:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_media_image:
+    settings:
+      show_crop_area: true
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: '4_5'
+      crop_preview_image_style: '4_5'
+      crop_list:
+        - '4_5'
+      progress_indicator: throbber
+      crop_types_required: {  }
+    third_party_settings: {  }
+    type: image_widget_crop
+    weight: 1
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  status: true
+  uid: true
