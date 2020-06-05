@@ -8,5 +8,5 @@ description: '16:9 crop, max width 1440 '
 aspect_ratio: '16:9'
 soft_limit_width: null
 soft_limit_height: null
-hard_limit_width: 1440
+hard_limit_width: null
 hard_limit_height: null

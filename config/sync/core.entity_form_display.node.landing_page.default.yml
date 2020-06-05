@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_page_components
-    - field.field.node.landing_page.field_pano_image
     - node.type.landing_page
   module:
     - entity_browser_entity_form
@@ -40,18 +39,6 @@ content:
         entity_browser_id: component_entity_browser
     type: inline_entity_form_complex
     region: content
-  field_pano_image:
-    weight: 1
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: component_entity_browser
-    type: entity_reference_autocomplete
-    region: content
   path:
     type: path
     weight: 6
@@ -65,14 +52,6 @@ content:
     weight: 4
     region: content
     third_party_settings: {  }
-  revision_log:
-    weight: 9
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
   status:
     type: boolean_checkbox
     settings:
