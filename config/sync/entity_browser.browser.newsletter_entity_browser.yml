@@ -1,0 +1,48 @@
+uuid: 4cbe5bd6-4ee2-4784-8985-46a9ca65d462
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser_media_library
+  module:
+    - entity_browser_entity_form
+    - views
+name: newsletter_entity_browser
+label: 'Newsletter Entity Browser'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select newsletter image'
+  auto_open: false
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: newsletter
+  select_text: 'Use selected'
+  selection_hidden: true
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  73824ea1-3de9-4404-b919-3e5dacfa1194:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: newsletter_image
+      submit_text: 'Save newsletter image'
+    uuid: 73824ea1-3de9-4404-b919-3e5dacfa1194
+    weight: -9
+    label: Upload
+    id: entity_form
+  b1876ec2-5ba9-46a1-bf45-47769db77f1a:
+    settings:
+      view: media_entity_browser_media_library
+      view_display: entity_browser_3
+      submit_text: 'Select newsletter image'
+      auto_select: true
+    uuid: b1876ec2-5ba9-46a1-bf45-47769db77f1a
+    weight: -10
+    label: 'Use Existing'
+    id: view

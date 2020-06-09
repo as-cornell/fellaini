@@ -53,6 +53,8 @@ module:
   link: 0
   media: 0
   media_entity_browser: 0
+  media_entity_browser_media_library: 0
+  media_library: 0
   menu_block_title: 0
   menu_item_extras: 0
   menu_link_attributes: 0

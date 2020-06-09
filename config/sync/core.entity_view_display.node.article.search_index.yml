@@ -1,0 +1,189 @@
+uuid: 254bd2f6-a5d0-4426-8d51-61783db50d8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.article.body
+    - field.field.node.article.field_article_components_entity
+    - field.field.node.article.field_aside_components
+    - field.field.node.article.field_byline
+    - field.field.node.article.field_byline_reference
+    - field.field.node.article.field_card_label
+    - field.field.node.article.field_dateline
+    - field.field.node.article.field_department_program
+    - field.field.node.article.field_image
+    - field.field.node.article.field_media_source
+    - field.field.node.article.field_media_source_reference
+    - field.field.node.article.field_newsletter_image
+    - field.field.node.article.field_pano
+    - field.field.node.article.field_related_articles
+    - field.field.node.article.field_related_disciplines
+    - field.field.node.article.field_related_functions
+    - field.field.node.article.field_related_people
+    - field.field.node.article.field_summary
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_thumbnail_image
+    - field.field.node.article.field_topics_and_disciplines
+    - node.type.article
+  module:
+    - datetime
+    - user
+_core:
+  default_config_hash: DAKDfoFGR-H0Z-UvxEAktiEZqnZLucdqy9C4hV5Mn78
+id: node.article.search_index
+targetEntityType: node
+bundle: article
+mode: search_index
+content:
+  field_article_components_entity:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_aside_components:
+    weight: 14
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_byline:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_byline_reference:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_card_label:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_dateline:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: m_d_y
+    third_party_settings: {  }
+  field_department_program:
+    type: entity_reference_entity_view
+    weight: 11
+    region: content
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: '4_5'
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_media_source:
+    type: string
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_media_source_reference:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_pano:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: pano
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_related_articles:
+    type: entity_reference_entity_view
+    weight: 9
+    region: content
+    label: hidden
+    settings:
+      view_mode: card_small
+      link: false
+    third_party_settings: {  }
+  field_related_disciplines:
+    weight: 15
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_functions:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_related_people:
+    weight: 13
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_tags:
+    type: entity_reference_label
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_topics_and_disciplines:
+    type: entity_reference_entity_view
+    weight: 12
+    region: content
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_newsletter_image: true
+  field_summary: true
+  field_thumbnail_image: true
+  links: true

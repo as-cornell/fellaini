@@ -1,0 +1,64 @@
+uuid: 4f3d7f9d-ba95-4019-9406-7a451bafe834
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.pano_image
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_credit
+    - field.field.media.image.field_media_image
+    - image.style.pano
+    - media.type.image
+  module:
+    - image_widget_crop
+_core:
+  default_config_hash: nZlttO4YMwMCpkhYMz7bQ1ZMjABGc59YY1us3eSfvTY
+id: media.image.pano_image
+targetEntityType: media
+bundle: image
+mode: pano_image
+content:
+  field_caption:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_credit:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_media_image:
+    settings:
+      show_crop_area: true
+      show_default_crop: true
+      warn_multiple_usages: true
+      preview_image_style: pano
+      crop_preview_image_style: pano
+      crop_list:
+        - pano_crop
+      progress_indicator: throbber
+      crop_types_required: {  }
+    third_party_settings: {  }
+    type: image_widget_crop
+    weight: 1
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  status: true
+  uid: true
