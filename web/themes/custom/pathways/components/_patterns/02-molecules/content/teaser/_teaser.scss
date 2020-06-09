@@ -1,0 +1,14 @@
+/* -------------------------
+
+Title: teasers
+Descr: Sets grid default teaser styles
+Variations: 
+  teaser
+
+--------------------------- */
+.teaser {
+  display: flex;
+  figure {
+    margin-right: 1rem;
+  }
+}
