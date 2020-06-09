@@ -11,12 +11,18 @@ name: figure_entity_browser
 label: 'Figure Entity Browser'
 display: modal
 display_configuration:
-  width: '650'
-  height: '500'
+  width: ''
+  height: ''
   link_text: 'Add figures'
   auto_open: false
-selection_display: no_display
-selection_display_configuration: {  }
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: '5_4'
+  select_text: 'Use selected'
+  selection_hidden: false
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
@@ -28,25 +34,25 @@ widgets:
       auto_select: false
     uuid: a2999db8-c688-4926-af37-00f6dc9f61b6
     weight: 1
-    label: 'Select Existing'
+    label: 'Select existing figures'
     id: view
   2ed92fa5-1ca2-46ae-8dd4-4c1912cf3be5:
     settings:
       entity_type: page_component_entity
       bundle: figure_image
       form_mode: default
-      submit_text: 'Save entity'
+      submit_text: 'Save image'
     uuid: 2ed92fa5-1ca2-46ae-8dd4-4c1912cf3be5
     weight: 2
-    label: 'Add New Image'
+    label: 'Add new image'
     id: entity_form
   03db1abf-97ad-4701-9887-bd1125166c20:
     settings:
       entity_type: page_component_entity
       bundle: figure_video
       form_mode: default
-      submit_text: 'Save entity'
+      submit_text: 'Save video'
     uuid: 03db1abf-97ad-4701-9887-bd1125166c20
     weight: 3
-    label: 'Add New Video'
+    label: 'Add new video'
     id: entity_form

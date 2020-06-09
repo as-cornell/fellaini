@@ -1,0 +1,36 @@
+uuid: c0c5d6d7-5b48-433c-a7b7-d3c50092ff04
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.component_browser
+  module:
+    - views
+name: person_entity_browser
+label: 'Person Entity Browser'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select people'
+  auto_open: false
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: page_component_entity
+  display: label
+  display_settings: {  }
+  select_text: 'Use selected'
+  selection_hidden: true
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  84b51c00-5433-4961-833c-ffedf7ac0e14:
+    settings:
+      view: component_browser
+      view_display: entity_browser_3
+      submit_text: 'Select people'
+      auto_select: true
+    uuid: 84b51c00-5433-4961-833c-ffedf7ac0e14
+    weight: 1
+    label: 'Use existing'
+    id: view

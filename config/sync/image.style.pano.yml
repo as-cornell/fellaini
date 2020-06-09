@@ -15,10 +15,10 @@ effects:
     weight: -10
     data:
       crop_type: pano_crop
-  7aafa6f2-9518-4e52-a762-4564242b847e:
-    uuid: 7aafa6f2-9518-4e52-a762-4564242b847e
+  561d7054-817d-4074-a2c7-cb91c2642677:
+    uuid: 561d7054-817d-4074-a2c7-cb91c2642677
     id: image_scale
-    weight: -9
+    weight: 2
     data:
       width: 1440
       height: null

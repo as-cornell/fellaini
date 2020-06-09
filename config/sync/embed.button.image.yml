@@ -1,0 +1,29 @@
+uuid: 083e3f60-2cc7-4db4-897d-af220b327f12
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.1_1
+    - core.entity_view_mode.media.5_4
+    - core.entity_view_mode.media.6_4
+    - entity_browser.browser.media_entity_browser_media_library
+    - media.type.image
+  module:
+    - entity_embed
+    - media
+label: Image
+id: image
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - image
+  display_plugins:
+    - 'view_mode:media.1_1'
+    - 'view_mode:media.5_4'
+    - 'view_mode:media.6_4'
+  entity_browser: media_entity_browser_media_library
+  entity_browser_settings:
+    display_review: true
+icon: null
+icon_uuid: null

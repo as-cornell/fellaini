@@ -1,10 +1,10 @@
-uuid: de5ed82c-5eb5-4061-ac5d-a9dc5564da40
+uuid: 7e4d546f-40e2-4663-8766-b6b2b015dc53
 langcode: en
 status: true
 dependencies:
   module:
     - media
 id: media.1_1
-label: '1-1 photoText'
+label: '1_1'
 targetEntityType: media
 cache: true

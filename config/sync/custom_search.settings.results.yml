@@ -1,10 +1,10 @@
 node_search:
   path: node
-  search: true
+  search: 1
   advanced:
-    visibility: true
-    collapsible: true
-    collapsed: true
+    visibility: 1
+    collapsible: 1
+    collapsed: 1
     criteria:
       or: or
       phrase: phrase
@@ -13,16 +13,14 @@ node_search:
       article: article
       landing_page: landing_page
       page: page
-      toc_page: toc_page
     languages:
       en: en
       und: und
       zxx: zxx
   info:
-    type: type
-    user: user
     date: date
-    comment: comment
+    type: 0
+    user: 0
   filter:
     position: disabled
     label: 'Filter the results'

@@ -1,0 +1,28 @@
+uuid: 25077765-ad68-4ab0-9458-ea82868049f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thumbnail_image
+    - media.type.image
+    - node.type.article
+id: node.article.field_thumbnail_image
+field_name: field_thumbnail_image
+entity_type: node
+bundle: article
+label: 'Thumbnail Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

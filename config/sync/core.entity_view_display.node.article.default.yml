@@ -15,13 +15,14 @@ dependencies:
     - field.field.node.article.field_media_source
     - field.field.node.article.field_media_source_reference
     - field.field.node.article.field_newsletter_image
-    - field.field.node.article.field_pano_image
+    - field.field.node.article.field_pano
     - field.field.node.article.field_related_articles
     - field.field.node.article.field_related_disciplines
     - field.field.node.article.field_related_functions
     - field.field.node.article.field_related_people
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
+    - field.field.node.article.field_thumbnail_image
     - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
@@ -99,7 +100,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      view_mode: default
+      view_mode: '4_5'
       link: false
     third_party_settings: {  }
     region: content
@@ -119,15 +120,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_pano_image:
+  field_pano:
     type: entity_reference_entity_view
     weight: 0
-    region: content
     label: hidden
     settings:
-      view_mode: full
+      view_mode: pano
       link: false
     third_party_settings: {  }
+    region: content
   field_related_articles:
     type: entity_reference_entity_view
     weight: 9
@@ -183,4 +184,5 @@ hidden:
   body: true
   field_newsletter_image: true
   field_summary: true
+  field_thumbnail_image: true
   links: true
