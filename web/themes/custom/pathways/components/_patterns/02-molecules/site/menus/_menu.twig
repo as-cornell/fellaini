@@ -31,39 +31,38 @@
 {# {{ menus.menu_links(items, attributes, 0) }} #}
 
 
-{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
-  {% import _self as menus %}
-  {% if items %}
+	{% macro menu_links(items, attributes, menu_level, menu_class, menu_modifiers, menu_blockname, item_base_class, item_modifiers, item_blockname) %}
+	{% import _self as menus %}
+		{% if items %}
 
-    {# Set classes #}
-    {% set menu_class = menu_class|default('mainNav') %}
-    
-
-    {% set menu_modifiers = [] %}
+		{# Set classes #}
+		{% set menu_class = menu_class|default('mainNav') %}
 
 
-    {# sets modifiers for lower menus #}
-    {% if menu_level == 1 %}
-      {% set menu_class = 'subNav' %}
-      {% set menu_modifiers = ['level' ~ menu_level] %}
-      
-    {% endif %}
+		{% set menu_modifiers = [] %}
 
-    {# List #}
-    {% embed "@atoms/lists/ul.twig" with {
+
+		{# sets modifiers for lower menus #}
+			{% if menu_level == 1 %}
+			{% set menu_class = 'subNav' %}
+		{% set menu_modifiers = ['level' ~ menu_level] %}
+
+		{% endif %}
+
+		{# List #}
+			{% embed "@atoms/lists/ul.twig" with {
       ul_base_class: menu_class,
       ul_modifiers: menu_modifiers,
       ul_blockname: menu_blockname
     } %}
-      {% block list_content %}
-        {% for item in items %}
-          {% include "@molecules/site/menus/_menu-item.twig" with {
+				{% block list_content %}
+					{% for item in items %}
+				{% include "@molecules/site/menus/_menu-item.twig" with {
             li_base_class: item_base_class,
             li_modifiers: item_modifiers,
             li_blockname: item_blockname,
           } %}
-        {% endfor %}
-      {% endblock %}
-    {% endembed %}
-  {% endif %}
-{% endmacro %}
+			{% endfor %}
+		{% endblock %}
+	{% endembed %}
+{% endif %}{% endmacro %}
