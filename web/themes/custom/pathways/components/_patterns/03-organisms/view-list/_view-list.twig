@@ -1,0 +1,41 @@
+{#
+
+/* -------------------------
+
+Title: _view-list.twig
+Descr: output for view listings
+receives:
+  --- view_content
+Setting up new block class of 'teaser' 
+
+--------------------------- */
+
+#}
+
+{# 
+{{ title_prefix }}
+{% if label %}
+	<h2{{title_attributes.addClass('h2')}}>
+		{{ label }}
+	</h2>
+{% endif %}
+{{ title_suffix }}
+{% block content %} #}
+{# {% set main_element_base_class = 'basicSidebar' %} #}
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+  <div class="title">
+  {% include "@atoms/00-text/_heading.twig" with {
+    "heading_level" : 1,
+    "heading" : view_title,
+    "heading_modifiers" : ["margin"],
+    "heading_base_class" : "title"
+  } %}  
+  </div>
+  <div class="content">
+    {{ view_content }}
+  </div>
+  <div class="sidebar">
+    this is where the sidebar filters etc go
+  </div>
+</main>
+

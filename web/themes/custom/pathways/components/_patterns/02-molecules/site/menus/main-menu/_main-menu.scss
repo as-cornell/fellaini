@@ -6,75 +6,77 @@ Descr: mainNav small and large, hovers and toggles for subNav
 Still needs: expand toggle for showing main nav on mobile
 
 --------------------------- */
-.mainNav{
-  font-size:.75rem;
+.mainNav {
+  font-size: 0.75rem;
   list-style-type: none;
-  margin:0;
+  margin: 0;
   padding: 0;
   @include baseFlex();
   flex-direction: column;
   justify-content: center;
   background: var(--gray-dark);
   padding: 0 1rem;
-  .mainNav__link{
-    color:var(--near-white);
+  .mainNav__link {
+    color: var(--near-white);
     display: inline-block;
     width: calc(100% - 2rem);
-    padding: .5rem 0;
+    padding: 0.5rem 0;
   }
-  .mainNav__subNavToggle{
+  .mainNav__subNavToggle {
     width: 1rem;
-    padding:0;
-    @include medium(){
+    padding: 0;
+    @include medium() {
       opacity: 0;
     }
-    &:focus{
+    &:focus {
       opacity: 1;
     }
   }
 
-  li{
+  li {
     display: flex;
     justify-content: space-between;
-    &.withSubNav{
+    &.withSubNav {
       position: relative;
     }
   }
   //big maiNav
-  @include medium(){
+  @include medium() {
     background: transparent;
     color: var(--black);
     flex-direction: row;
     padding: 0;
-    .mainNav__link{
+    .mainNav__link {
       color: var(--black);
       border-top: 4px solid transparent;
-      padding: .5rem;
+      padding: 0.5rem;
       width: auto;
       font-weight: var(--semi);
-      &:hover{
+      &:hover {
         border-top: 4px solid var(--red);
       }
-    }    
+    }
     // Base for all lis in nav
-    li{
+    li {
       position: relative;
       overflow: hidden;
       display: inline-block;
       z-index: 1;
-      margin: 0 .5rem;
-      padding: .5rem;
-      &[class$="with-sub"]{
+      margin: 0 0.5rem;
+      // padding: .5rem;
+      &[class$="with-sub"] {
         margin-right: 0;
       }
-      &:last-of-type{
+      &:last-of-type {
         margin-right: 0;
         padding-right: 0;
       }
       //show subnav on hover
-      &:hover, &:focus, &.withSubNav--expanded{
+      &:hover,
+      &:focus,
+      &.withSubNav--expanded {
         overflow: visible;
-        .subNav{
+        .subNav {
           max-height: 1000px;
           opacity: 1;
           left: 0;
@@ -82,13 +84,13 @@ Still needs: expand toggle for showing main nav on mobile
           z-index: 10;
         }
       }
-      >.mainNav__link--active{
+      > .mainNav__link--active {
         border-top: 4px solid var(--red);
       }
     }
   }
   // subNav
-  .subNav{
+  .subNav {
     max-height: 0;
     list-style-type: none;
     position: absolute;
@@ -98,68 +100,69 @@ Still needs: expand toggle for showing main nav on mobile
     flex-flow: column;
     left: -2rem;
     width: 100%;
-    @include medium(){
+    @include medium() {
       width: 100%;
     }
     padding-left: 0;
     // margin-top: .5rem;
     opacity: 0;
     transition: opacity 200ms ease-in;
-    li{
+    li {
       margin: 0;
       padding: 0;
     }
-    a{
-      padding: .5em 1em;
+    a {
+      padding: 0.5em 1em;
       display: block;
       position: relative;
       color: var(--black);
       border-top: none;
-      &:hover, &:focus{
+      &:hover,
+      &:focus {
         color: var(--white);
         background: var(--red);
-        &:after, &:before{
+        &:after,
+        &:before {
           position: absolute;
-          content: '';
+          content: "";
           width: 1rem;
           height: 100%;
           top: 0;
-          background:var(--red);
+          background: var(--red);
           border-radius: 4px;
         }
-        &:after{
-          right:  -.5rem;
+        &:after {
+          right: -0.5rem;
         }
-        &:before{
-          left: -.5rem;
+        &:before {
+          left: -0.5rem;
         }
-      }
-    }
-  }
-}  
-
-
-//toggle subnav buttons
-.expand-sub{
-  background: none;
-  border: none;
-  padding: 0;
-  svg{
-    fill: var(--white);
-  }
-  @include medium(){
-    svg{
-      fill:none;
-    }
-    &:focus{
-      svg{
-        fill: var(--black)
       }
     }
   }
 }
 
-.main-nav-toggle{
+//toggle subnav buttons
+.expand-sub {
   background: none;
-  border:none;
+  border: none;
+  padding: 0;
+  svg {
+    fill: var(--white);
+  }
+  @include medium() {
+    svg {
+      fill: none;
+    }
+    &:focus {
+      svg {
+        fill: var(--black);
+      }
+    }
+  }
+}
+
+.main-nav-toggle {
+  background: none;
+  border: none;
 }
