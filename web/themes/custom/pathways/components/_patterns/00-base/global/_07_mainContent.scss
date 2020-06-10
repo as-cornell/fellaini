@@ -6,8 +6,7 @@ Descr:
 
 --------------------------- */
 
-
-.main{
+.main {
   // base page main conent grids
   max-width: var(--xl);
   margin: 0 auto;
@@ -16,37 +15,38 @@ Descr:
   // row gap 0 circle back
   grid-row-gap: 0;
   padding: 0 1rem;
-  @include medium{
+  @include medium {
     @include base12GridColumns();
-  } 
+  }
 }
 // Basic
-.basic, .landingPage{
-  > div{
+.basic,
+.landingPage {
+  > div {
     grid-column: 1 / -1;
   }
 }
 // Basic sidebar
-.basicSidebar{
-//   background: pink;
+.basicSidebar {
+  //   background: pink;
   grid-template-rows: auto auto 1fr;
-  grid-template-areas:
-    "nav"
-    "title"
-    "content";
-  .siteNav{
+  // grid-template-areas:
+  //   "nav"
+  //   "title"
+  //   "content";
+  .siteNav {
     grid-area: nav;
   }
-  .title{
+  .title {
     grid-area: title;
   }
-  .sidebar{
+  .sidebar {
     grid-area: sidebar;
   }
-  .content{
+  .content {
     grid-area: content;
-  } 
-  aside{
+  }
+  aside {
     grid-area: aside;
   }
   grid-template-areas:
@@ -54,14 +54,14 @@ Descr:
     "title"
     "content"
     "sidebar";
-  @include medium{
+  @include medium {
     grid-template-areas:
       "nav nav nav nav title title title title title title title title"
       "nav nav nav nav content content content content content content content content"
       "sidebar sidebar sidebar sidebar content content content content content content content content";
   }
-  &--has-aside{
-    @include medium{
+  &--has-aside {
+    @include medium {
       grid-template-areas:
         "nav nav nav nav title title title title title title title title"
         "nav nav nav nav content content content content content content aside aside"
@@ -72,11 +72,10 @@ Descr:
 
 // Article moved to _article.scss
 
-
 // .article{
 //     // grid-template-columns: repeat(12,calc(8.333% - 2rem));
 //     grid-template-rows: auto auto;
-//     grid-template-areas: 
+//     grid-template-areas:
 //         ". title title title title title title thumbnail thumbnail thumbnail thumbnail ."
 //         "social social content content content content content content content aside aside aside";
 //     .title{
@@ -97,7 +96,7 @@ Descr:
 //     }
 //     &--pano{
 //       grid-template-rows: auto auto auto 1fr;
-//       grid-template-areas: 
+//       grid-template-areas:
 //         ". pano pano pano pano pano pano pano pano pano pano ."
 //         ". . title title title title title title title title . ."
 //         "social social content content content content content content content thumbnail thumbnail thumbnail"
@@ -112,28 +111,28 @@ Descr:
 //     }
 // }
 
-.page{
-  &--landing-page{
-    @include medium{
+.page {
+  &--landing-page {
+    @include medium {
       // grid-template-columns: repeat(12, 1fr);
       // grid-template-areas:
       // "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
       // "content content content content content content content content content content content content";
     }
-    @include large{
+    @include large {
       // grid-template-columns: repeat(14, 1fr);
       // grid-template-areas:
       //     "page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title page-title"
       //     "content content content content content content content content content content content content content content";
     }
-    @include xl{
+    @include xl {
       // gird-template-columns: repeat(14, $max-column);
     }
   }
   // ----- TOC
-  &--toc{
-    &.page--has-aside{
-      @include medium{
+  &--toc {
+    &.page--has-aside {
+      @include medium {
         grid-template-areas:
           "nav nav nav nav title title title title title title title title"
           "nav nav nav nav content content content content content content content content"
@@ -143,15 +142,13 @@ Descr:
   }
 }
 
-
 //if additional sidebar grid needs to be created, it will go here.
 
 // sections of a basic page
-.page-title{
+.page-title {
   grid-area: page-title;
   display: block;
 }
-.main-content{
+.main-content {
   grid-area: content;
 }
-
