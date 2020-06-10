@@ -34,8 +34,13 @@ Setting up new block class of 'teaser'
   <div class="content">
     {{ view_content }}
   </div>
+  {% if view_pager %}
+  <div class="pager">
+    {{ view_pager }}
+  </div>
+  {% endif %}
   <div class="sidebar">
-    this is where the sidebar filters etc go
+    {{ view_sidebar }}
   </div>
 </main>
 
