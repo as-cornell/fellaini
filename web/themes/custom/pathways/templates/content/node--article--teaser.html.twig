@@ -16,31 +16,45 @@ Descr: sets up variable to pass to _teaser.twig
 Setting up new block class of 'teaser'
 
 --------------------------- */
-
 #}
+{# 
+{{vardumper(elements)}}#}
+{# {{elements['#search_api_excerpt']}}   #}
 
 {# {{vardumper(content.field_article_components_entity.0['#page_component_entity'])}} #}
 {# {{content.field_media_source}} #}
 {# {{content.field_media_source_reference}}
 {{content.field_byline_reference}} #}
 {# {{content.field_summary}} #}
+{# {{content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags('<p>')|truncate(400, true, '...')|raw}} #}
 {% set nodeType = 'article' %}
 {% set teaser_modifiers = [''] %}
 
+
 {% set teaser_modifiers = teaser_modifiers|merge([nodeType]) %}
 {% set teaser_summary = content.field_summary %}
-{% set teaser_chopped_body = (content.field_article_components_entity|field_target_entity.field_formatted_text.value |striptags|truncate(400, true, '...')) %}
+{# {% set teaser_chopped_body = content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags('<p>')|truncate(400, true, '...')|raw %} #}
 
 
+
+{# {{extra_text}} #}
+
+{# if no summary set to chopped body #}
 {% if content.field_summary|render is not empty %}
 	{% set teaser_body = teaser_summary %}
 {% else %}
-	{% set teaser_body = teaser_chopped_body %}
+  {% set teaser_body = '<p>' ~ content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags|truncate(400, true, '...') ~ '</p>' %}
 {% endif %}
+
+{% if elements['#search_api_excerpt'] %}
+  {% set teaser_body = elements['#search_api_excerpt'] %}
+{% endif %}
+
+{# if not thumbnail set to field_image #}
 {% if content.field_thumbnail_image|render is not empty %}
-  {% set teaser_img = content.field_thumbnail_image %}
+	{% set teaser_img = content.field_thumbnail_image %}
 {% else %}
-  {% set teaser_img = content.field_image %}
+	{% set teaser_img = content.field_image %}
 {% endif %}
 
 

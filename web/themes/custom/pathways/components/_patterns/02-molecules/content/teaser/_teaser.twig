@@ -55,7 +55,8 @@ Setting up new block class of 'teaser'
       {% endif %}
     </p>
     {% if teaser_body %}
-      {{teaser_body}}
+      {{teaser_body|raw}}
+      {{extra_text|raw}}
     {% endif %}
   </div>
 </div>
