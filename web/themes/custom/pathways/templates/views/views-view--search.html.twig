@@ -15,42 +15,70 @@ Descr: main output business for views. Classes are from the view-display setting
   ]
 %}
 
-{# how can i add something here? #}
+{% set main_element_extra_classes = ['main']%}
+{% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
-<div{{ attributes.addClass(classes) }}>
+{% set main_element_base_class = 'viewContainer' %}
+{% set main_element_modifiers = ['searchList'] %}
+{% set search_terms = exposed.keywords['#value'] %}
+{# {{search_terms}} #}
+{# {{label}} #}
+{# {{vardumper(exposed)}}
 
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
+{{exposed.keywords['#value']}} #}
 
-  {% if header %}
+	{% if search_terms is not empty %}
+{% set view_sub_title = 'Search results for ' ~ '"'~search_terms~'"' %}
+{% endif %}
 
-      {{ header }}
+{% set view_title = view.storage.label %}
+{% set view_content = rows %}
+{% set view_pager = pager %}
+{% set view_sidebar = exposed %}
 
-
-  {% endif %}
-
-  {{ exposed }}
-  {{ attachment_before }}
-
-SEaRCH
-  {{ rows }}
-
-
-  {{ empty }}
-  {{ pager }}
+{% include "@organisms/view-list/_view-list.twig" with {
+  view_title : view_title,
+  view_sub_title : view_sub_title,
+  view_content : view_content,
+  view_pager : view_pager,
+  view_sidebar : view_sidebar
+}%}
 
 
-  {{ attachment_after }}
-  {{ more }}
+{# <div{{attributes.addClass(classes)}}>
 
-  {% if footer %}
-    <footer>
-      {{ footer }}
-    </footer>
-  {% endif %}
+	{{ title_prefix }}
+	{{ title }}
+	{{ title_suffix }}
 
-</div>
+	{% if header %}
+
+		{{ header }}
+
+
+	{% endif %}
+
+	{{ exposed }}
+	{{ attachment_before }}
+
+	SEaRCH
+	{{ rows }}
+
+
+	{{ empty }}
+	{{ pager }}
+
+
+	{{ attachment_after }}
+	{{ more }}
+
+	{% if footer %}
+		<footer>
+			{{ footer }}
+		</footer>
+	{% endif %}
+
+</div> #}
 
 {#
 /**
