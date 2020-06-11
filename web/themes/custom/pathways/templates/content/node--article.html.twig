@@ -11,7 +11,7 @@ Passes:
 --------------------------- */
 
 #}
-
+{# {{vardumper()}} #}
 {# Set up main
     - extra class main
     - base class page
@@ -28,10 +28,10 @@ Passes:
 
 {# if field_pano not empty add to content_wrapper_modifiers #}
 {% if content.field_pano|render is not empty %}
-    {% set hasPano = true %}
+	{% set hasPano = true %}
 
-    {% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
-    
+	{% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
+
 {% endif %}
 
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : content.field_byline %}
@@ -63,4 +63,3 @@ Passes:
 {% set article_thumbnail_caption = (content.field_image|field_target_entity.field_caption.value) %}
 {% set article_thumbnail_alt = (content.field_image|field_target_entity.field_media_image.alt) %}
 {% set article_thumbnail_src = (node.field_image|file_url) %}#}
-
