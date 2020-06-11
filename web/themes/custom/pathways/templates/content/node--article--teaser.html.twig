@@ -13,7 +13,7 @@ Descr: sets up variable to pass to _teaser.twig
 --- media source
 --- byline
 
-Setting up new block class of 'teaser' 
+Setting up new block class of 'teaser'
 
 --------------------------- */
 
@@ -29,22 +29,26 @@ Setting up new block class of 'teaser'
 
 {% set teaser_modifiers = teaser_modifiers|merge([nodeType]) %}
 {% set teaser_summary = content.field_summary %}
-{% set teaser_chopped_body = (content.field_article_components_entity|field_target_entity.field_formatted_text.value |striptags|truncate(400, true)) %}
+{% set teaser_chopped_body = (content.field_article_components_entity|field_target_entity.field_formatted_text.value |striptags|truncate(400, true, '...')) %}
 
-{# {{teaser_chopped_body}} #}
+
 {% if content.field_summary|render is not empty %}
 	{% set teaser_body = teaser_summary %}
 {% else %}
 	{% set teaser_body = teaser_chopped_body %}
 {% endif %}
+{% if content.field_thumbnail_image|render is not empty %}
+  {% set teaser_img = content.field_thumbnail_image %}
+{% else %}
+  {% set teaser_img = content.field_image %}
+{% endif %}
 
-{# {{teaser_body }} #}
 
 {% embed "@molecules/content/teaser/_teaser.twig" with {
   teaser_title: label,
   teaser_body: content.body,
   teaser_link_url: url,
-  teaser_img: content.field_thumbnail_image,
+  teaser_img: teaser_img,
   teaser_dateline: content.field_dateline,
   teaser_media_source : content.field_media_source_reference,
   teaser_byline : content.field_byline_reference,
