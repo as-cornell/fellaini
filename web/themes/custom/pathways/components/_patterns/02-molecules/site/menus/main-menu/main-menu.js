@@ -6,7 +6,11 @@
       "active"
     );
   });
-
+  $(".nav-opener").on({
+    click: function () {
+      $(".mainNav").toggleClass("shown");
+    },
+  });
   // console.log( "Let's do this!"  );
 
   // close the menu--secondary
@@ -25,12 +29,6 @@
 
   // var linkText = $('.expand-sub').prev().text();
   // // console.log(linkText);
-
-  $("#toggle-menu").on({
-    click: function () {
-      $(".mainNav").toggleClass("show");
-    },
-  });
 
   // if a menu-button is clicked...
   $(".mainNav__subNavToggle").click(function (e) {

@@ -27,7 +27,7 @@ all search form design in _forms.scss
 
 header {
   display: grid;
-  grid-template-columns: repeat(4, calc(25% - 2rem));
+  grid-template-columns: repeat(4, 25%);
   grid-template-rows: auto auto auto;
   @include medium {
     grid-template-columns: repeat(12, calc(11.66% - 2rem));
