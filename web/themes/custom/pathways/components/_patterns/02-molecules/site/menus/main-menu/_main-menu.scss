@@ -14,6 +14,7 @@ Still needs: expand toggle for showing main nav on mobile
 
   background: var(--gray-dark);
   padding: 0 1rem;
+  // overflow: visible;
 
   // toggle main nav bits
   max-height: 0;
@@ -32,31 +33,43 @@ Still needs: expand toggle for showing main nav on mobile
   .mainNav__subNavToggle {
     width: 1rem;
     padding: 0;
+    background: none;
+    border: none;
+    svg {
+      fill: var(--gray-lightest);
+    }
     @include medium() {
       opacity: 0;
     }
     &:focus {
       opacity: 1;
     }
+    &.rotated {
+      transform: rotate(180deg);
+      transform-origin: 50% 50%;
+    }
   }
 
   li {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
+    overflow: hidden;
     &.withSubNav {
-      position: relative;
+      // position: relative;
     }
   }
   //big maiNav
   @include medium() {
+    max-height: 100%;
     background: transparent;
     color: var(--black);
     // flex-direction: row;
     padding: 0;
     // justify-content: flex-end;
     @include baseFlex();
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: center;
+    overflow: visible;
     .mainNav__link {
       color: var(--black);
       border-top: 4px solid transparent;
@@ -102,17 +115,26 @@ Still needs: expand toggle for showing main nav on mobile
   }
   // subNav
   .subNav {
+    // expandable bits
     max-height: 0;
+    &.subNav--expanded {
+      max-height: 100%;
+      opacity: 1;
+      width: calc(100% - 3rem);
+    }
+
     list-style-type: none;
-    position: absolute;
+    // position: absolute;
     background: var(--near-white);
     @include boxShadow;
     display: flex;
     flex-flow: column;
-    left: -2rem;
+
+    // Medium plus styles
     width: 100%;
     @include medium() {
       width: 100%;
+      position: absolute;
     }
     padding-left: 0;
     // margin-top: .5rem;
