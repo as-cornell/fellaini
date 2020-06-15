@@ -6,6 +6,7 @@ global:
 global-scripts:
   js:
     dist/02-molecules/site/menus/main-menu/main-menu.js: {}
+    dist/02-molecules/forms/forms.js: {}
   dependencies:
     - core/jquery
 
