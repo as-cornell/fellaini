@@ -11,11 +11,18 @@ Still needs: expand toggle for showing main nav on mobile
   list-style-type: none;
   margin: 0;
   padding: 0;
-  @include baseFlex();
-  flex-direction: column;
-  justify-content: center;
+
   background: var(--gray-dark);
   padding: 0 1rem;
+
+  // toggle main nav bits
+  max-height: 0;
+  transition: max-height 0.25s ease;
+  overflow: hidden;
+  &.shown {
+    max-height: 100%;
+  }
+
   .mainNav__link {
     color: var(--near-white);
     display: inline-block;
@@ -44,9 +51,12 @@ Still needs: expand toggle for showing main nav on mobile
   @include medium() {
     background: transparent;
     color: var(--black);
-    flex-direction: row;
+    // flex-direction: row;
     padding: 0;
-    justify-content: flex-end;
+    // justify-content: flex-end;
+    @include baseFlex();
+    flex-direction: column;
+    justify-content: center;
     .mainNav__link {
       color: var(--black);
       border-top: 4px solid transparent;
