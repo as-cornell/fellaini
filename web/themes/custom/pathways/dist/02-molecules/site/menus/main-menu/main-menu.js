@@ -1,4 +1,4 @@
-"use strict";// document is ready to go...
+"use strict";// document is ready to go... or is it
 (function(a){// add active class to current item
 // console.log( "Let's do this!"  );
 // close the menu--secondary

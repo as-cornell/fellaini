@@ -6,6 +6,7 @@ Descr: Set
         - header
         - .cu-logo
         - .as-logo
+all search form design in _forms.scss
 
 --------------------------- */
 #skip {
@@ -26,22 +27,35 @@ Descr: Set
 
 header {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
-  // justify-content: space-between;
+  grid-template-columns: repeat(4, calc(25% - 2rem));
+  grid-template-rows: auto auto auto;
+  @include medium {
+    grid-template-columns: repeat(12, calc(11.66% - 2rem));
+    grid-template-rows: auto auto;
+  }
+
+  grid-template-areas:
+    "logo logo logo buttons"
+    "nav nav nav nav"
+    "search search search search";
+  @include medium {
+    grid-template-areas:
+      "logo logo nav nav nav nav nav nav nav nav nav buttons"
+      "search search search search search search search search search search search search";
+  }
   max-width: var(--xl);
   margin: 0 auto;
   form {
     grid-area: search;
   }
   .header__lockup {
+    grid-area: logo;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .header__mainNav {
+    grid-area: nav;
     width: 100%;
     @include medium() {
       width: auto;
@@ -92,9 +106,15 @@ header {
 }
 // show nav and search buttons
 .header__buttons {
+  grid-area: buttons;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
   .button--showNav {
     @include medium() {
       display: none;

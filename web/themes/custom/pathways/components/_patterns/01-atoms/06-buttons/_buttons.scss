@@ -2,14 +2,16 @@
 
 Title: Buttons
 Descr: 
-   Basic buttons, but probably going to be redone
+   - pill links
+   - js trigger buttons / icon buttons
 
 --------------------------- */
 .button {
   @include button;
   //previous and next buttons
-  &.prev, &.next{
-    span{
+  &.prev,
+  &.next {
+    span {
       content: "";
       font-size: 1rem;
       width: 35px;
@@ -22,14 +24,21 @@ Descr:
       cursor: pointer;
     }
   }
-  &.prev{
-    span{
+  &.prev {
+    span {
       transform: rotate(90deg);
     }
   }
-  &.next{
-    span{
+  &.next {
+    span {
       transform: rotate(-90deg);
     }
+  }
+}
+
+// icon buttons
+.iconButton {
+  svg {
+    width: 1rem;
   }
 }

@@ -1,9 +1,10 @@
-// document is ready to go...
+// document is ready to go... or is it
 (function ($) {
-
   // add active class to current item
   $(function () {
-    $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+    $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass(
+      "active"
+    );
   });
 
   // console.log( "Let's do this!"  );
@@ -17,11 +18,10 @@
   // need to make this toggle want to control visibility with aria hiddens
   //
 
-
   // Add aria-haspopup true to links with popups
-  $('.mainNav__toggle').prev().attr('aria-haspopup', 'true');
+  $(".mainNav__toggle").prev().attr("aria-haspopup", "true");
 
-  $('.subNav a').attr('tabindex', -1);
+  $(".subNav a").attr("tabindex", -1);
 
   // var linkText = $('.expand-sub').prev().text();
   // // console.log(linkText);
@@ -29,12 +29,11 @@
   $("#toggle-menu").on({
     click: function () {
       $(".mainNav").toggleClass("show");
-    }
+    },
   });
 
   // if a menu-button is clicked...
-  $('.mainNav__subNavToggle').click(function (e) {
-
+  $(".mainNav__subNavToggle").click(function (e) {
     var _this = $(this);
     var parent = $(_this.parent());
     var linkContent = $(_this.prev());
@@ -43,28 +42,22 @@
 
     console.log(linkContent);
 
-    if(!next.hasClass('subNav--expanded')){
-
-      $(next).addClass('subNav--expanded');
-      $(parent).addClass('withSubNav--expanded');
-      _this.prev().find('a').removeAttr('tabindex', -1);
+    if (!next.hasClass("subNav--expanded")) {
+      $(next).addClass("subNav--expanded");
+      $(parent).addClass("withSubNav--expanded");
+      _this.prev().find("a").removeAttr("tabindex", -1);
 
       // remove sub-expaneded
-    }else{
-      $(next).removeClass('subNav--expanded');
-      $(parent).removeClass('withSubNav--expanded');
-      _this.prev().find('a').attr('tabindex', -1);
-
+    } else {
+      $(next).removeClass("subNav--expanded");
+      $(parent).removeClass("withSubNav--expanded");
+      _this.prev().find("a").attr("tabindex", -1);
     }
-
-
 
     // $('.subNav__link').focus(function(){
     //   $(this).addClass('sub-expanded');
     //   console.log('hiya');
     // });
-
-
 
     // // if the menu--secondary is hidden....
     // if (!_this.next().hasClass('display')) {
@@ -85,7 +78,7 @@
     //  // _this.children().addClass('fa-angle-up');
     //   //_this.attr('aria-label', 'menu--secondary is open');
 
-    //   // if the menu is open then...   
+    //   // if the menu is open then...
     // } else {
 
     //   // close the menu...
@@ -97,16 +90,8 @@
     // //  _this.attr('aria-label', 'menu--secondary is closed');
 
     // }
-
   });
-
 })(jQuery);
-
-
-
-
-
-
 
 // /**
 //  * @file
@@ -118,7 +103,6 @@
 // // wrapping it with an "anonymous closure". See:
 // // - https://drupal.org/node/1446420
 // // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
-
 
 // // (function (Drupal) { // UNCOMMENT IF DRUPAL.
 // //

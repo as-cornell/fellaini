@@ -24,6 +24,13 @@ figure {
     &--thumbnail {
       background: none;
     }
+
+    // other styles here....
+  }
+}
+// figures in pageComponent--ftb need special width restrictions
+.pageComponent--ftb {
+  .figure {
     &--6_4_newsletter {
       max-width: 600px;
     }
@@ -33,7 +40,6 @@ figure {
     &--4_5 {
       max-width: 300px;
     }
-    // other styles here....
   }
 }
 
