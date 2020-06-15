@@ -11,6 +11,7 @@
       $(".mainNav").toggleClass("shown");
     },
   });
+
   // console.log( "Let's do this!"  );
 
   // close the menu--secondary
@@ -35,6 +36,7 @@
     var _this = $(this);
     var parent = $(_this.parent());
     var linkContent = $(_this.prev());
+    $(this).toggleClass("rotated");
 
     var next = $(_this.next());
 

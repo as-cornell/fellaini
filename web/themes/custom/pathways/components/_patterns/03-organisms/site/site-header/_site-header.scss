@@ -30,7 +30,7 @@ header {
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: auto auto auto;
   @include medium {
-    grid-template-columns: repeat(12, calc(11.66% - 2rem));
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: auto auto;
   }
 
@@ -40,8 +40,8 @@ header {
     "search search search search";
   @include medium {
     grid-template-areas:
-      "logo logo nav nav nav nav nav nav nav nav nav buttons"
-      "search search search search search search search search search search search search";
+      "logo nav buttons"
+      "search search search";
   }
   max-width: var(--xl);
   margin: 0 auto;
@@ -115,7 +115,7 @@ header {
     background: none;
     cursor: pointer;
   }
-  .button--showNav {
+  .iconButton--showNav {
     @include medium() {
       display: none;
     }
