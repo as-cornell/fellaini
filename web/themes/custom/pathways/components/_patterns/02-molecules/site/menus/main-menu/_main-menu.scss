@@ -86,6 +86,9 @@ Still needs: expand toggle for showing main nav on mobile
       display: inline-block;
       z-index: 1;
       margin: 0 0.5rem;
+      @include medium {
+        overflow: visible;
+      }
       // padding: .5rem;
       &[class$="with-sub"] {
         margin-right: 0;
