@@ -14,12 +14,10 @@ Setting up new block class of 'teaser'
 
 
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
-	<div class="title">
+	<div class="pageTitle">
 		{% include "@atoms/00-text/_heading.twig" with {
     "heading_level" : 1,
-    "heading" : view_title,
-    "heading_modifiers" : ["margin"],
-    "heading_base_class" : "title"
+    "heading" : view_title
   } %}
 		{% include "@atoms/00-text/_heading.twig" with {
     "heading_level" : 2,

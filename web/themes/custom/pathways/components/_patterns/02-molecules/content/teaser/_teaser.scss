@@ -13,3 +13,12 @@ Variations:
     margin-right: 1rem;
   }
 }
+// article specifici
+.teaser--article {
+  figure {
+    max-width: 200px;
+    img {
+      width: 8rem;
+    }
+  }
+}

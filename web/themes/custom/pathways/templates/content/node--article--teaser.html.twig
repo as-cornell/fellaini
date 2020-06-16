@@ -49,7 +49,7 @@ Setting up new block class of 'teaser'
 {% if elements['#search_api_excerpt'] %}
   {% set teaser_body = elements['#search_api_excerpt'] %}
 {% endif %}
-
+{# {{content.field_thumbnail_image}}a;dflkja;slkdfja;sldkfj #}
 {# if not thumbnail set to field_image #}
 {% if content.field_thumbnail_image|render is not empty %}
 	{% set teaser_img = content.field_thumbnail_image %}
