@@ -7,49 +7,52 @@ Still needs: expand toggle for showing sidebar nav on mobile
 
 --------------------------- */
 
-.nav{
+.nav {
   list-style-type: none;
   padding-left: 0;
   margin-left: 0;
-  &__root{
-    >a {
+  &__root {
+    > a {
       color: var(--black);
     }
   }
-  a{
+  a {
     display: block;
   }
   // ul included in __root
-  .nav-1{
-    background: pink;
-    a{
-      padding-left: .5rem;
+  .nav-1 {
+    // background: pink;
+    a {
+      padding-left: 0.5rem;
+    }
+    .active {
+      color: green;
     }
   }
-  .nav-2{
-    background: yellow;
+  .nav-2 {
+    // background: yellow;
     padding-left: 1rem;
-    a{
+    a {
       padding-left: 1rem;
     }
   }
-  .nav-3{
-    background: seagreen;
-    a{
+  .nav-3 {
+    // background: seagreen;
+    a {
       padding-left: 1.5rem;
     }
   }
 
   // base withSubNav
-  .withSubNav{
+  .withSubNav {
     position: relative;
-    &:before{
+    &:before {
       position: absolute;
       right: 0;
       top: 0;
       width: 1rem;
       height: 1rem;
-      content: 's';
+      content: "s";
     }
   }
 }

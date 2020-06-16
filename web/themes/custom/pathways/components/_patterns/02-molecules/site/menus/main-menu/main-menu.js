@@ -1,11 +1,11 @@
 // document is ready to go... or is it
 (function ($) {
   // add active class to current item
-  $(function () {
-    $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass(
-      "active"
-    );
-  });
+  // $(function () {
+  //   $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass(
+  //     "active"
+  //   );
+  // });
   $(".nav-opener").on({
     click: function () {
       $(".mainNav").toggleClass("shown");

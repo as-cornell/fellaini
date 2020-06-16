@@ -18,7 +18,7 @@ Passes:
 {% set caption = content.field_caption %}
 {% set fullImage = content.field_media_image %}
 
-{% set figure_modifiers = ['inline'] %}
+{% set figure_modifiers = [''] %}
 
 {% set image_style = content.field_media_image.0['#image_style'] %}
 {% set figure_modifiers = figure_modifiers|merge([image_style]) %}
