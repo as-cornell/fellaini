@@ -1,33 +1,28 @@
 {#
-/**
- * @file
- * Theme override to display a taxonomy term.
- *
- * Available variables:
- * - url: URL of the current term.
- * - name: Name of the current term.
- * - content: Items for the content of the term (fields and description).
- *   Use 'content' to print them all, or print a subset such as
- *   'content.description'. Use the following code to exclude the
- *   printing of a given child element:
- *   @code
- *   {{ content|without('description') }}
- *   @endcode
- * - attributes: HTML attributes for the wrapper.
- * - page: Flag for the full page state.
- * - term: The taxonomy term entity, including:
- *   - id: The ID of the taxonomy term.
- *   - bundle: Machine name of the current vocabulary.
- * - view_mode: View mode, e.g. 'full', 'teaser', etc.
- *
- * @see template_preprocess_taxonomy_term()
- */
+
+/* -------------------------
+
+Title: taxonomy-term--article-bylines
+Descr: main output business for articles by byline. 
+
+content: set to article_blocks > block_bylines
+
+Classes are from the view-display settings form. Rows gets output by views-view-list with _grouping.twig.
+
+--------------------------- */
+
 #}
- {#vardumper(term.id)#}
-<h1>Articles by {{ name }}</h1>
-<div{{ attributes }}>
-  {{ content }}
-</div>
-{{ drupal_view('article_blocks', 'block_bylines', term.id) }}
 
 
+{% set main_element_extra_classes = ['main'] %}
+{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_modifiers = ['viewContainer'] %}
+
+{% set view_term_name = term.name.value %}
+{% set view_title = 'Articles from ' ~ (view_term_name) %}
+{% set view_content = drupal_view('article_blocks', 'block_bylines', term.id) %}
+
+{% include "@organisms/view-list/_view-list.twig" with {
+  view_title : view_title,
+  view_content : view_content
+}%}
