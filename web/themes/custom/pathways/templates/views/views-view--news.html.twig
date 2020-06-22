@@ -19,8 +19,8 @@ Descr: main output business for views. Classes are from the view-display setting
 {% set main_element_extra_classes = ['main']%}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
-{% set main_element_base_class = 'viewContainer' %}
-{% set main_element_modifiers = ['newsList'] %}
+{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_modifiers = ['viewContainer'] %}
 {# {{label}}
 {{vardumper(view.storage.label)}} #}
 {% set view_title = view.storage.label %}
