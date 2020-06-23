@@ -23,7 +23,7 @@ Needed? :
     <div class="pano">
       {{article_pano}}
     </div>
-     
+
     {% endif %}
 {# {{vardumper($content)}} #}
     <div class="title">
@@ -35,7 +35,8 @@ Needed? :
 
         } %}
         <p class="byline">
-            {{ article_byline }},{{article_mediasource}}<br/>
+        <a href="{{ url('view.news.page_1') }}?byline={{ article_byline }}">{{ article_byline }}</a>
+           ,{{article_mediasource}}<br/>
             {{article_dateline}}
         </p>
     </div>
