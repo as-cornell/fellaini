@@ -11,7 +11,7 @@ receives:
 --- byline_reference and media_source_reference if article
 --- summary or trimmed
 --- link to content
-Setting up new block class of 'teaser' 
+Setting up new block class of 'teaser'
 
 --------------------------- */
 
@@ -50,7 +50,7 @@ Setting up new block class of 'teaser'
       {% endif %}
       {% if teaser_byline %}
         <span class="card__byline">
-          by : {{ teaser_byline }}
+          by : <a href="{{ url('view.news.page_1') }}?byline={{ teaser_byline }}">{{ teaser_byline }}</a>
         </span>
       {% endif %}
     </p>
