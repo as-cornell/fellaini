@@ -2,8 +2,8 @@
 
 /* -------------------------
 
-Title: views-view
-Descr: main output business for views. Classes are from the view-display settings form. Rows gets output by views-view-list with _grouping.twig.
+Title: views-view--search
+Descr: main output business for search results views. Classes are from the view-display settings form. Rows gets output by views-view-list with _grouping.twig.
 
 --------------------------- */
 
@@ -18,8 +18,8 @@ Descr: main output business for views. Classes are from the view-display setting
 {% set main_element_extra_classes = ['main']%}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
-{% set main_element_base_class = 'viewContainer' %}
-{% set main_element_modifiers = ['searchList'] %}
+{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_modifiers = ['viewContainer'] %}
 {% set search_terms = exposed.keywords['#value'] %}
 {# {{search_terms}} #}
 {# {{label}} #}
