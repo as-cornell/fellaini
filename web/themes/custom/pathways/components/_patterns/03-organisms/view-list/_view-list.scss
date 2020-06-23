@@ -5,7 +5,7 @@ Descr:
     uses the <main> 12 column grid as a base.
 
 --------------------------- */
-.viewContainer {
+.basicSidebar--viewContainer {
   grid-template-rows: auto auto 1fr;
   .sidebar {
     grid-area: sidebar;
