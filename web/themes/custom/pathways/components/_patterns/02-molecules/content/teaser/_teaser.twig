@@ -50,7 +50,7 @@ Setting up new block class of 'teaser'
       {% endif %}
       {% if teaser_byline %}
         <span class="card__byline">
-          by : <a href="{{ url('view.news.page_1') }}?byline={{ teaser_byline }}">{{ teaser_byline }}</a>
+          by : <a href="/news?byline={{ teaser_byline }}">{{ teaser_byline }}</a>
         </span>
       {% endif %}
     </p>
