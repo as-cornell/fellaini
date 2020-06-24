@@ -34,7 +34,7 @@ Passes:
 
 {% endif %}
 
-{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference.0['#plain_text'] %}
+{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
 
 
 {% include "@pages/article/_article.twig" with {
