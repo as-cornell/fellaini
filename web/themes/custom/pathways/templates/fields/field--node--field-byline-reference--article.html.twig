@@ -22,7 +22,7 @@
 {%- for item in items -%}
   {%set title = item.content['#title'] %}
   {# set link = item.content['#url'].toString()|replace({'/byline/': '/news/'}) #}
-  {% set link = title|lower|replace({' ': '-'})%}
+  {% set link = '/news/' ~ title|lower|replace({' ': '-'})%}
   {% set filter = '?byline=' ~ title %}
   <a href='{{ link ~ filter}}'>{{ title }}</a>
 {%- endfor -%}
