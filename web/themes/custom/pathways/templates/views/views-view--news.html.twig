@@ -21,9 +21,9 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% set main_element_base_class = 'basicSidebar' %}
 {% set main_element_modifiers = ['viewContainer'] %}
-{# {{label}}#}
-{{vardumper(view.element['#title'])}}
-{% set view_title = view.storage.label %}
+
+
+{# set view_title = view.storage.label #}
 {% set view_title = view.element['#title'] %}
 
 {% set view_content = rows %}
