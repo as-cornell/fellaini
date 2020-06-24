@@ -22,7 +22,7 @@
 {%- for item in items -%}
   {%set title = item.content['#title'] %}
   {# set link = item.content['#url'].toString()|replace({'/media_source/': '/news/'}) #}
-  {% set link = title|lower|replace({' ': '-'})%}
+  {% set link = '/news/' ~ title|lower|replace({' ': '-'})%}
   {% set filter = '?media_source=' ~ title|replace({'&': '%26'}) %}
   <a href='{{ link ~ filter}}'>{{ title }}</a>
 {%- endfor -%}
