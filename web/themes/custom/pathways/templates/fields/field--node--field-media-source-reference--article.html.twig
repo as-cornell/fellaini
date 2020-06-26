@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override for the article media source reference field.
+ *
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing span element.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see field.html.twig
+ */
+#}
+
+
+{%- for item in items -%}
+  {%set title = item.content['#title'] %}
+  {# set link = item.content['#url'].toString()|replace({'/media_source/': '/news/'}) #}
+  {% set link = '/news/' ~ title|lower|replace({' ': '-'})%}
+  {% set filter = '?media_source=' ~ title|replace({'&': '%26'}) %}
+  <a href='{{ link ~ filter}}'>{{ title }}</a>
+{%- endfor -%}

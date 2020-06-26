@@ -23,7 +23,13 @@ Descr: main output business for views. Classes are from the view-display setting
 {% set main_element_base_class = 'basicSidebar' %}
 {% set main_element_modifiers = ['viewContainer'] %}
 
+<<<<<<< HEAD
 {% set view_title = view.storage.label %}
+=======
+
+{# set view_title = view.storage.label #}
+{% set view_title = view.element['#title'] %}
+>>>>>>> a48e33728d4818af2d9e79f4a6f291e21105f7dc
 
 {% set view_content = rows %}
 {% set view_pager = pager %}
