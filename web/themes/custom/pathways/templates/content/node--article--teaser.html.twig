@@ -17,7 +17,7 @@ Setting up new block class of 'teaser'
 
 --------------------------- */
 #}
-{# 
+{#
 {{vardumper(elements)}}#}
 {# {{elements['#search_api_excerpt']}}   #}
 
@@ -35,6 +35,7 @@ Setting up new block class of 'teaser'
 {% set teaser_summary = content.field_summary %}
 {# {% set teaser_chopped_body = content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags('<p>')|truncate(400, true, '...')|raw %} #}
 
+{% set byline = content.field_byline_reference.0['#plain_text'] %}
 
 
 {# {{extra_text}} #}
