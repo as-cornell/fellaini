@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Majors, minors and graduate fields layout and content.
+ * Theme override to display a taxonomy term.
  *
  * Available variables:
  * - url: URL of the current term.
@@ -24,18 +24,8 @@
  */
 #}
 {# {{vardumper()}} #}
-{% set main_element_extra_classes = ['main'] %}
-{% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
-{% set main_element_modifiers = [''] %}
-
-{% include "@pages/major-minor/_major-minor.twig" with{
-  title : name,
-  level: content.field_level,
-
-  image : content.field_image,
-
-  description: content.description,
-  body: content.field_page_components,
-  outcomes: content.field_long_text_one,
-  requirements: content.field_long_text_two
+{# {{name.0}} #}
+{% set name = name.0 %}
+{% include "@atoms/jellybeans/_jellybeans-item.twig" with{
+  name : name
 } %}
