@@ -108,3 +108,7 @@
   background: var(--gray-lightest);
   border: 1px solid $gray-lightest;
 }
+
+.form-autocomplete {
+  width: calc(100% - 1rem);
+}

@@ -1,26 +1,32 @@
+{# 
 
-{% extends "@templates/_default.twig" %}
-{% block page_content %}
-    <div class="title">
-        {% include "@atoms/00-text/_heading.twig" with {
-            "heading_level" : 1,
-            "heading" : title,
-            "heading_modifiers" : ["margin"]
-        } %}
-    </div>
-<div class="columns columns--heavyLeft">
+/* -------------------------
 
-        <div>
-            {{description}}
-        </div>
-        <div>
-            {{level}}
-            {{image}}
-        </div>
-    </div>
-    
-    {{body}}
+Title: _major-minor.twig
+Descr: defines content and blocks for majors and minors detail pages
 
-{% endblock %}
+--------------------------- */ 
 
-{% set main_content_modifiers = ['major-minor', 'content'] %}
+#}
+{% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+
+	{% include "@atoms/00-text/_heading.twig" with {
+    "heading_level" : 1,
+    "heading" : title,
+    "heading_modifiers" : ["margin"],
+    "heading_base_class" : "title"
+  } %}
+	{{level}}
+	<div class="description">
+		{{description}}
+	</div>
+	<div class="image">
+		{{image}}
+	</div>
+	<div class="content">
+		{{body}}
+		{{outcomes}}
+		{{requirements}}
+	</div>
+</main>
