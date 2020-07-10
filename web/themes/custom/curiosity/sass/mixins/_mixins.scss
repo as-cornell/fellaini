@@ -1,0 +1,8 @@
+// Mixin - Base Grid
+@mixin baseGrid($g-gap: var(--space), $g-row-gap: var(--space)){
+  display: grid;
+  grid-gap: $g-gap;
+}
+@mixin base12GridColumns(){
+  grid-template-columns: repeat(12,calc(8.59% - 2rem));
+}
