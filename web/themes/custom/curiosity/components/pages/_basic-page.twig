@@ -10,8 +10,34 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 
 #}
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
-{# <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}> #}
-<main>
+
+
+
+{# {% set classes = [
+  main_element_base_class, main_extra_class
+] %}
+
+{% if main_element_modifiers %}
+  {% for item in main_element_modifiers %}
+    {% set mebc = main_element_base_class %}
+    {% set modifier = item %}
+    {% set class =  mebc~'--'~modifier %}
+    {% set classes = classes|merge([class]) %}
+  {% endfor %}
+{% endif %} #}
+{# {{output}} #}
+
+
+{# <main> #}
+  {# {% include "@base/_mainBEM.twig" with{
+    base_class : main_element_base_class,
+    extra_class : main_element_extra_class,
+    modifiers : main_element_modifiers
+  } %}
+   #}
+
+
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
   {# if pano #}
   {% if panoImage %}
   <div class="pano">
@@ -29,7 +55,7 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
     <div class="title">
       {% include "@content/atoms/_heading.twig" with {
         "heading_level" : 1,
-        "heading" : title,
+        "heading" : 'title',
         "heading_modifiers" : ["margin"],
         "heading_base_class" : "title"
       } %}

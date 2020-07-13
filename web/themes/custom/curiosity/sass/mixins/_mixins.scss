@@ -6,3 +6,17 @@
 @mixin base12GridColumns(){
   grid-template-columns: repeat(12,calc(8.59% - 2rem));
 }
+
+// Fonts
+@mixin baseFont($size: var(--base-font-size), $color: var(--black), $weight: var(--regular), $line-height: var(--line-height), $family: var(--font-sans)){
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+// Drop shadow
+@mixin boxShadow(){
+  box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,15 @@
+{# 
+
+/* -------------------------
+
+Title: field--field-page-components.html.twig
+Descr: Just outputs item.content for each of the page-components
+--------------------------- */ 
+
+#}
+
+
+{% for item in items %}
+  {{ item.content }}
+  {# {{kint(item.content.title)}} #}
+{% endfor %}

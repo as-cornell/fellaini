@@ -1,0 +1,29 @@
+{#
+
+/* -------------------------
+
+Title: node--article--card-large
+Descr: defines content  for a feature image in a campfire
+
+--------------------------- */
+
+#}
+
+{% embed "@content/molecules/card.twig" with {
+    card_modifiers : ["feature", "card"],
+    card_feature: 'true',
+    card_title: label,
+    card_label: content.field_card_label,
+    card_link_url: url,
+
+    card_img_src : field_image_img.uri | image_style('4_5'),
+    card_img_alt : field_image_img.alt,
+
+    card_byline: content.field_byline_reference,
+    card_dateline: content.field_dateline,
+
+    card_nodeId : node.id
+
+} %}
+{% endembed %}
+
