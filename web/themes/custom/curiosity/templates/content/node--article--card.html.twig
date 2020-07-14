@@ -1,0 +1,38 @@
+{#
+
+/* -------------------------
+
+Title: node--article--card
+Descr: defines content for basic article card
+
+--------------------------- */
+
+#}
+
+
+{# {% set card_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : false %} #}
+
+{# {% set card_byline = true %}
+{% set card_byline_content = content.field_byline %} #}
+
+
+{% embed "@content/molecules/card.twig" with {
+    card_modifiers : ["article"],
+    card_title: label,
+    card_label: content.field_card_label,
+    card_link_url: url,
+
+    article_card : content.field_image,
+
+
+    card_byline_content: content.field_byline,
+
+    card_dateline: content.field_dateline,
+
+    card_nodeId : node.id
+
+} %}
+
+{% endembed %}
+
+
