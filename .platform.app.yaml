@@ -173,6 +173,7 @@ hooks:
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
       nvm current
       nvm install 11.15.0
+      nvm use 11.15.0
       curl -sS https://platform.sh/cli/installer | php
       set -e
       cd web/themes/custom/pathways
