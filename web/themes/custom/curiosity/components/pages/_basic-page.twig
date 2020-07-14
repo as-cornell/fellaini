@@ -1,0 +1,83 @@
+{# 
+
+/* -------------------------
+
+Title: _basic-page.twig
+Descr: defines content and blocks for _default.twig for content type 'basic page', 'landing page'
+    * sidebar shows up basedon 
+
+--------------------------- */ 
+
+#}
+{% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
+
+
+
+{# {% set classes = [
+  main_element_base_class, main_extra_class
+] %}
+
+{% if main_element_modifiers %}
+  {% for item in main_element_modifiers %}
+    {% set mebc = main_element_base_class %}
+    {% set modifier = item %}
+    {% set class =  mebc~'--'~modifier %}
+    {% set classes = classes|merge([class]) %}
+  {% endfor %}
+{% endif %} #}
+{# {{output}} #}
+
+
+{# <main> #}
+  {# {% include "@base/_mainBEM.twig" with{
+    base_class : main_element_base_class,
+    extra_class : main_element_extra_class,
+    modifiers : main_element_modifiers
+  } %}
+   #}
+
+
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
+  {# if pano #}
+  {% if panoImage %}
+  <div class="pano">
+    {# {% include "@atoms/04-images/figure.twig" with {
+      "img_src": pano_img_src,
+      "img_alt": pano_img_alt,
+      "img_caption" : pano_img_caption,
+      "img_credit" : pano_img_credit,
+      "figure_modifiers" : ['pano','image']
+    } %} #}
+  </div>
+
+  {% endif %}
+  {% if not is_front %}
+    <div class="title">
+      {% include "@content/atoms/_heading.twig" with {
+        "heading_level" : 1,
+        "heading" : 'title',
+        "heading_modifiers" : ["margin"],
+        "heading_base_class" : "title"
+      } %}
+    </div>
+  {% endif %}
+  <div class="content">
+    {{main_content}}
+  </div>
+  {% if sidebarNav != false %}
+    <nav class="siteNav">
+      {{ sidebar_nav }}
+    </nav>
+  {% endif %}
+  {% if sidebarContent %}
+    <div class="sidebar">
+      {{sidebar_content}}
+    </div>
+  {% endif %}
+  {% if aside %}
+      <aside>
+        {{ aside_nav }}
+        {{ aside_content }}
+      </aside>
+  {% endif %}
+</main>
