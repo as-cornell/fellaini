@@ -1,0 +1,20 @@
+<?php
+use Drupal\media_entity\entity\Media;
+use Drupal\node\Entity\Node;
+
+
+/**
+ * @file
+ * Functions to support theming in the Pattern Lab theme.
+ */
+
+/**
+ * Implements template_preprocess_image().
+ */
+function curiosity_preprocess_image(&$variables)
+{
+
+    // Remove explicit width & height declaration.
+    unset($variables['width'], $variables['height'], $variables['attributes']['width'], $variables['attributes']['height']);
+
+}

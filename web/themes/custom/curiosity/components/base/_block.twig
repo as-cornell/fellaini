@@ -1,0 +1,31 @@
+{# 
+
+/* -------------------------
+
+Title: _block.twig
+Descr: outputs label as <h2> if needed
+  -outputs as list for things like a list of events or a stats list, or a single item for pretty much everything else
+--------------------------- */ 
+
+#}
+
+<!-- ##### Start of block ##### -->
+{{ title_prefix }}
+{% if label %}
+    <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
+{% endif %}
+{{ title_suffix }}
+
+
+{# if isList wrap content in list #}
+{% if isList %}
+  <ul {{ bem(list_base_class, (list_modifiers), list_blockname) }}>
+{% endif %}
+{% block content %}
+    {{ content }}
+{% endblock %}    
+{% if isList %}
+
+  </ul>
+{% endif %}
+{# </div> #}

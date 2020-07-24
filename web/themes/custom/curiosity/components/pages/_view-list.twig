@@ -1,0 +1,40 @@
+{#
+
+/* -------------------------
+
+Title: _view-list.twig
+Descr: output for view listings
+receives:
+  --- view_content
+Setting up new block class of 'teaser' 
+
+--------------------------- */
+
+#}
+
+
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+	<div class="pageTitle">
+		{% include "@content/atoms/_heading.twig" with {
+    "heading_level" : 1,
+    "heading" : view_title
+  } %}
+		{% include "@content/atoms/_heading.twig" with {
+    "heading_level" : 2,
+    "heading" : view_sub_title,
+    "heading_modifiers" : ["margin"]
+  } %}
+
+	</div>
+	<div class="content">
+		{{ view_content }}
+	</div>
+	{% if view_pager %}
+		<div class="pager">
+			{{ view_pager }}
+		</div>
+	{% endif %}
+	<div class="sidebar">
+		{{ view_sidebar }}
+	</div>
+</main>

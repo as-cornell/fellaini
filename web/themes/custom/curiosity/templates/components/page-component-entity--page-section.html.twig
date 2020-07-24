@@ -1,0 +1,29 @@
+{#
+
+/* -------------------------
+
+Title: page-component-entity--page-secton
+Descr: outputs a page section
+
+--------------------------- */
+
+#}
+{# {{vardumper()}} #}
+
+{% set group_modifiers = ['navItem'] %}
+
+{% set items = content.field_page_components %}
+{% set items_length = items|length %}
+{% set divid = content.field_page_section_title.0["#context"]["value"] |lower |replace({" ": "-"}) %}
+
+{% if items.1 %}
+	{% set multiple = true %}
+{% endif %}
+
+{% embed "@content/molecules/_grouping.twig" with{
+  items: items,
+  title: content.field_page_section_title,
+  divid : divid
+} %}
+{% endembed %}
+
