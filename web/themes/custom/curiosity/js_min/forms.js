@@ -1,0 +1,1 @@
+!function(o){console.log("hiya"),o(".search-opener").on({click:function(){o("#header__searchform").toggleClass("shown")}})}(jQuery);

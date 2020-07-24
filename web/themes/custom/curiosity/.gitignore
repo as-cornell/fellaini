@@ -1,0 +1,19 @@
+# # Ignore compiled files.
+# dist
+# vendor
+# build
+
+# NPM
+node_modules
+npm-debug.log
+
+# SASS - not really needed for production
+sass
+
+# JS - not really needed for production
+js
+
+.DS_Store
+
+# .vscode
+.vscode
