@@ -9,18 +9,20 @@ Descr: defines content for a small article card. Generally in sidebar.
 
 #}
 {# {{content.field_thumbnail_image}} #}
+{% set card_modifiers =  ["article", "small"]%}
 
+{% if  node.card_image.target_id %}
+
+  {% set card_modifiers = card_modifiers|merge(["no-image"]) %}
+{% endif %}
 
 {% embed "@content/molecules/card.twig" with {
-    card_modifiers : ["article", "small"],
+    card_modifiers : card_modifiers,
     card_title: label,
     card_label: content.field_card_label,
     card_link_url: url,
-card_image : content.field_thumbnail_image,
-
-
+    card_image : content.field_thumbnail_image,
     card_byline: content.field_byline_reference,
     card_dateline: content.field_dateline
-
 } %}
 {% endembed %}

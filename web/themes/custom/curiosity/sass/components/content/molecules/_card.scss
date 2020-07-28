@@ -8,6 +8,8 @@ Variations:
   card--feature
   card--stat
 
+  card--no-image
+
 --------------------------- */
 
 // default card styles
@@ -67,6 +69,13 @@ Variations:
   }
   //box-shadow: none;
 }
+
+.card--no-image {
+  .card__copy {
+    grid-column: 1 / -1;
+  }
+}
+
 // for embedded small cards
 [data-embed-button="article_entity_embed"] {
   .card--small {
