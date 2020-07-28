@@ -37,7 +37,7 @@ Passes:
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
 
 
-{% include "@pages/article/_article.twig" with {
+{% include "@pages/_article.twig" with {
 
     article_pano : content.field_pano,
     article_card : content.field_image,
