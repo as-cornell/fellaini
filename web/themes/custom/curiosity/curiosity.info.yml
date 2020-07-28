@@ -38,3 +38,6 @@ component-libraries:
   content:
     paths:
       - components/content
+  images:
+    paths:
+      - images

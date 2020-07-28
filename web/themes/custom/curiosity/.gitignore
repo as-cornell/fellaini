@@ -8,10 +8,10 @@ node_modules
 npm-debug.log
 
 # SASS - not really needed for production
-sass
+# sass
 
 # JS - not really needed for production
-js
+# js
 
 .DS_Store
 
