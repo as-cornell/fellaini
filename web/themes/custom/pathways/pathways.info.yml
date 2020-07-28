@@ -68,9 +68,3 @@ component-libraries:
   dist-images:
     paths:
       - dist/img
-
-# Information added by Drupal.org packaging script on 2018-06-22
-version: '8.x-2.6'
-core: '8.x'
-project: 'pathways'
-datestamp: 1529703526
