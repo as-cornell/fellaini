@@ -2,12 +2,12 @@ name: Pathways
 type: theme
 description: Theme based on <a href="http://emulsify.info">Emulsify</a>.
 base theme: stable
-# core: 8.
+core: 8.x
 
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
-  - 'pathways/global'
-  - 'pathways/global-scripts'
+  - "pathways/global"
+  - "pathways/global-scripts"
   # - 'pathways/typekit'
 
 # Libraries override allows you to remove libraries added by other projects.
@@ -25,7 +25,7 @@ ckeditor_stylesheets:
 
 regions:
   header: Header
-  content: Content  # the content region is required
+  content: Content # the content region is required
   sidebar: Sidebar
   footer: Footer
 
