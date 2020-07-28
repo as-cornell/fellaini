@@ -3,15 +3,20 @@
 # vendor
 # build
 
+
+# Twig helper functions
+**/add_attributes.function.php
+**/bem.function.php
+
 # NPM
 node_modules
 npm-debug.log
 
-# SASS - not really needed for production
-# sass
+# SASS
+sass
 
-# JS - not really needed for production
-# js
+# JS
+js
 
 .DS_Store
 
