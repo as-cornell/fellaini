@@ -1,0 +1,13 @@
+/* -------------------------
+
+Title: pageComponent--ftb
+Descr: 
+    specific styles for PC-FTB that are not specific to a cotnent type
+
+--------------------------- */
+
+.pageComponent--ftb {
+  p {
+    max-width: var(--line-width);
+  }
+}

@@ -1,0 +1,21 @@
+/* -------------------------
+
+Title: _base.scss
+Descr: sets HTML and Body styles
+
+--------------------------- */
+
+html {
+  font-size: var(--base-font-size);
+}
+body {
+  @include baseFont();
+  overflow-x: hidden;
+}
+
+p {
+  // width: var(--line-width);
+  max-width: 100%;
+  line-height: calc(1ex / 0.32);
+  margin: 0 0 1em 0;
+}

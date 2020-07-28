@@ -1,0 +1,105 @@
+body {
+}
+.layout-region-node-main {
+  float: none;
+  width: 100%;
+}
+.layout-region-node-secondary {
+  float: none;
+}
+.field--name-revision-log-message {
+  display: none;
+}
+
+.seven-details {
+  /* background: pink; */
+}
+
+.layout-node-form {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 2;
+  grid-template-areas:
+    "main secondary"
+    "footer footer";
+}
+.layout-region-node-main {
+  grid-area: main;
+}
+.layout-region-node-secondary {
+  grid-area: footer;
+}
+.layout-region-node-footer {
+  grid-area: secondary;
+  width: 100%;
+}
+.layout-region-node-footer input {
+  width: 100%;
+  margin: 0.5rem 0;
+  /* background: yellow; */
+}
+.layout-region-node-footer__content {
+  /* background: pink; */
+  position: sticky;
+  top: 2rem;
+}
+
+[open="open"] {
+  background: pink;
+}
+
+.field--name-field-sidebar-components {
+  background: pink;
+}
+.field--name-field-aside-components {
+  background: seagreen;
+}
+
+.form-wrapper {
+  /* border: 5px solid red; */
+}
+
+div[id^="edit-field-page-components"]
+  > div[class^="edit-field-page-components-form-inline-entity-form"]
+  input {
+  background: green;
+}
+
+div[id^="ief-entity-table-edit-field-page-components-entities"] {
+  background: red;
+}
+/* .ief-row-entity {
+  background: teal;
+}
+.ief-row-entity + .ief-row-form {
+  background: teal; */
+/* } */
+
+.ief-row-entity:nth-child(odd) {
+  background: teal;
+}
+.ief-row-entity:nth-child(odd) + .ief-row-form {
+  background: teal;
+}
+
+.ief-row-entity:nth-child(even) {
+  background: yellow;
+}
+.ief-row-entity:nth-child(even) + .ief-row-form {
+  background: yellow;
+}
+/* .ief-row-form .ief-row-form {
+  background: yellow;
+} */
+
+table[id^="ief-entity-table-edit"] {
+  /* background: skyblue; */
+}
+.ief-row-entity {
+  /* background: red; */
+}
+
+/* overrides */
+fieldset:not(.fieldgroup) {
+  background-color: transparent;
+}
