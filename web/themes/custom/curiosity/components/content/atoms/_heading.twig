@@ -18,11 +18,12 @@
 #}
 {% set heading_base_class = heading_base_class|default('h' ~ heading_level) %}
 
-<h{{heading_level}} {{ bem(heading_base_class, (heading_modifiers), heading_blockname, heading_class) }} >
-{# <h{{heading_level}} {% if isTitle %} id="article-title-{{heading}}" itemprop="name" {% endif %}> #}
+<h{{heading_level}}
+	{{ bem(heading_base_class, (heading_modifiers), heading_blockname, heading_class) }}>
+	{# <h{{heading_level}} {% if isTitle %} id="article-title-{{heading}}" itemprop="name" {% endif %}> #}
 
-  {# {% if heading_url %}
-    {% include "@atoms/01-links/link.twig" with {
+	{% if heading_url %}
+		{% include "@content/atoms/_link.twig" with {
       "link_content": heading,
       "link_url": heading_url,
       "link_attributes": heading_link_attributes,
@@ -30,8 +31,7 @@
       "link_modifiers": heading_link_modifiers,
       "link_blockname": heading_link_blockname|default(heading_base_class),
     } %}
-  {% else %} #}
-    {{ heading }}
-  {# {% endif %} #}
-</h{{ heading_level }}>
-
+	{% else %}
+		{{ heading }}
+	{% endif %}
+</h{{heading_level}}>
