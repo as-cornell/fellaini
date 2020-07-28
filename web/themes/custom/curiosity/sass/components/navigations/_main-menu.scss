@@ -61,7 +61,7 @@ Still needs: expand toggle for showing main nav on mobile
   @include medium() {
     max-height: 100%;
     background: transparent;
-    color: var(--black);
+    color: var(--as-black);
     // flex-direction: row;
     padding: 0;
     display: flex;
@@ -149,7 +149,7 @@ Still needs: expand toggle for showing main nav on mobile
       padding: 0.5em 1em;
       display: block;
       position: relative;
-      color: var(--black);
+      color: var(--as-black);
       border-top: none;
       &:hover,
       &:focus {
@@ -182,7 +182,7 @@ Still needs: expand toggle for showing main nav on mobile
   border: none;
   padding: 0;
   svg {
-    fill: var(--white);
+    fill: var(--as-white);
   }
   @include medium() {
     svg {
@@ -190,7 +190,7 @@ Still needs: expand toggle for showing main nav on mobile
     }
     &:focus {
       svg {
-        fill: var(--black);
+        fill: var(--as-black);
       }
     }
   }
