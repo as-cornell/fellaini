@@ -13,10 +13,10 @@ node_modules
 npm-debug.log
 
 # SASS
-sass
+# sass
 
-# JS
-js
+# # JS
+# js
 
 .DS_Store
 
