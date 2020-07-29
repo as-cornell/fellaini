@@ -165,7 +165,6 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-<<<<<<< HEAD
   build: |
     unset NPM_CONFIG_PREFIX
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | dash
@@ -185,27 +184,6 @@ hooks:
     cd web
     drush -y cache-rebuild
     drush -y updatedb
-=======
-    build: |
-      unset NPM_CONFIG_PREFIX
-      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | dash
-      export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
-      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-      nvm current
-      nvm install 11.15.0
-      curl -sS https://platform.sh/cli/installer | php
-      set -e
-    # The deploy hook runs after your application has been deployed and started.
-    deploy: |
-      unset NPM_CONFIG_PREFIX
-      export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
-      nvm use 11.15.0
-      set -e
-      ./drush/platformsh_generate_drush_yml.php
-      cd web
-      drush -y cache-rebuild
-      drush -y updatedb
->>>>>>> 4bf0a57c4e28baf86b8c4f036a730f175d2e6f61
 
 # The configuration of scheduled execution.
 crons:
