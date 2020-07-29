@@ -1,0 +1,28 @@
+{#
+
+/* -------------------------
+
+Title: page-component-entity--page-secton
+Descr: outputs a page section
+
+--------------------------- */
+
+#}
+{# {{vardumper()}} #}
+{% set group_base_class = 'pageComponent' %}
+{% set group_modifiers = ['statWrapper'] %}
+
+
+{% set items = content.field_stats %}
+{% set items_length = items|length %}
+
+
+{% if items.1 %}
+	{% set multiple = true %}
+{% endif %}
+
+{% embed "@content/molecules/_grouping.twig" with{
+  items: items,
+} %}
+{% endembed %}
+

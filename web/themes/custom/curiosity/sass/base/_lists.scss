@@ -1,0 +1,17 @@
+/* -------------------------
+
+Title: lists
+Descr: Sets grid default <ul> <ol>
+Variations: 
+
+
+--------------------------- */
+
+ul,
+ol {
+  margin-bottom: 1em;
+  li {
+    margin-bottom: 0.25em;
+    max-width: var(--line-width);
+  }
+}
