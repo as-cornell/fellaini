@@ -1,0 +1,31 @@
+/* -------------------------
+
+Title: _pageComponent--stat
+Descr: sets up all uniquie styles for Stats wrapper and cards
+  
+
+  .pcWrapper--stat
+  .card--stat - base card styles set at /molecules/_card.scss
+
+--------------------------- */
+
+// pcWrapper--stat
+// .pcWrapper--stat{
+
+// }
+
+.card--stat {
+  padding: 1rem;
+  text-align: center;
+  grid-row: span 1;
+  .card__title {
+    display: none; // really never want this to show up even for a11y
+  }
+  .card__label {
+    @include baseFont($size: 2rem, $weight: var(--heavy));
+    border-bottom: solid 4px var(--green);
+  }
+  .card__body {
+    font-weight: var(--semi);
+  }
+}

@@ -27,14 +27,10 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
  */
 #}
 
-{% set title = content.name %}
-{% include "@content/atoms/_heading.twig" with {
-  "heading_level" : 2,
-  "heading" : title,
-  "heading_modifiers" : ['border']
-} %}
-
-{% if content %}
-{{ content }}
-{% endif %}
-
+{% set group_base_class = 'pcWrapper' %}
+{% set group_modifiers = ['listBlock'] %}
+{# {{vardumper()}} #}
+{% embed "@content/molecules/_list-block.twig" with{
+  items: content.field_list_reference,
+  group_label : content.name
+} %}{% endembed %}

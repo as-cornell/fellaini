@@ -8,15 +8,14 @@ Descr: Group wrapper for layout entity item. Passes wrapper class and items.
 --------------------------- */
 
  #}
-{% set group_base_class = 'pcWrapper' %}
-{% set group_modifiers = ['layoutGroup'] %}
+
 
 {% set group_base_class = 'pcWrapper' %}
 {% set alignment = content.field_layout[0]['#markup'] %}
-{% set group_modifiers = group_modifiers|merge([alignment]) %}
+{% set group_modifiers = ['figure'] %}
 {# {{vardumper()}} #}
 {% include "@content/molecules/_grouping.twig" with {
-    items : content.field_columns,
+    items : content.field_figures_reference,
     group_base_class : group_base_class,
     group_modifiers : group_modifiers,
 
