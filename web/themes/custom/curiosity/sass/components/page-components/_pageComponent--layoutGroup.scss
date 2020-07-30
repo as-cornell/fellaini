@@ -1,11 +1,11 @@
 /* -------------------------
 
-Title: Layout Block
+Title: _pageComponent--layoutGroup.scss
 Descr: Sets grid for columns pce--layout-group.html.twig
 
 --------------------------- */
 
-.columns {
+.pcWrapper--layoutGroup {
   @include medium() {
     display: grid;
     grid-gap: var(--grid-gap);
