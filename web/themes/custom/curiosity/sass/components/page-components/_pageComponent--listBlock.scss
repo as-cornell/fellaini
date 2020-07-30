@@ -1,0 +1,27 @@
+/* -------------------------
+
+Title: _pageComponent--listBlock
+Descr: sets styles for various pce listBlocks
+  
+
+  .pcWrapper
+    --articlescards
+    --articlessmallcards
+
+--------------------------- */
+
+.pcWrapper {
+  // article cards
+  &--articlescards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .card {
+      flex: 0 0 45%;
+    }
+  }
+  &--articlessmallcards {
+    display: flex;
+    flex-direction: column;
+  }
+}

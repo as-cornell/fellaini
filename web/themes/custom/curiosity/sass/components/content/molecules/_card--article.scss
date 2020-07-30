@@ -1,0 +1,81 @@
+/* -------------------------
+
+Title: _card--article.scss
+Descr: Sets all specific styles for an article card
+
+--------------------------- */
+
+.card--article {
+  grid-row: span 2;
+  .card__copy {
+    padding: 1rem;
+    @include baseGrid($g-gap: 0px);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "label label date"
+      "title title title"
+      "byline byline social";
+  }
+  .card__title {
+    grid-area: title;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .card__label {
+    grid-area: label;
+    @include baseFont(
+      $family: var(--font-serif),
+      $size: var(--medium-font-size),
+      $color: var(--as-black)
+    );
+  }
+  .card__date {
+    grid-area: date;
+    text-align: right;
+    font-size: var(--small-font-size);
+  }
+  .card__byline {
+    grid-area: byline;
+    font-size: var(--small-font-size);
+  }
+  &.card--small {
+    // grid-template-columns: 180px 1fr;
+    border: none;
+    margin-bottom: 2rem;
+    .card__copy {
+      padding: 0.5rem 0.5rem 1rem 0;
+      @include baseGrid($g-gap: 0px);
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "date"
+        "title";
+    }
+    .card__title {
+      grid-area: title;
+      margin: 0;
+      @include baseFont(
+        $size: var(--medium-font-size),
+        $weight: var(--semi),
+        $line-height: 1.4em
+      );
+    }
+    .label,
+    .byline {
+      display: none;
+    }
+    .date {
+      grid-area: date;
+      text-align: left;
+      margin-bottom: 0.25rem;
+    }
+    img {
+      border-radius: var(--border-radius);
+    }
+  }
+  figure {
+    figcaption {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
