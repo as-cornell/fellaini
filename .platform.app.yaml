@@ -89,7 +89,6 @@ mounts:
   "/web/sites/people/files": "shared:files/files-people"
   "/tmp": "shared:files/tmp"
   "/private": "shared:files/private"
-  "/.drush': 'shared:files/.drush"
   "/drush-backups": "shared:files/drush-backups"
 
 # The hooks executed at various points in the lifecycle of the application.
