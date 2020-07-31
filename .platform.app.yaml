@@ -94,10 +94,6 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-  build: |
-    curl -sS https://platform.sh/cli/installer | php
-    set -e
-  # The deploy hook runs after your application has been deployed and started.
   deploy: |
     set -e
     ./drush/platformsh_generate_drush_yml.php
