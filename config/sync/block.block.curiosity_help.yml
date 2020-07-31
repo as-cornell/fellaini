@@ -1,0 +1,22 @@
+uuid: abd7229f-7d5d-42c6-8baf-ba74812be91e
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - curiosity
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: curiosity_help
+theme: curiosity
+region: content
+weight: -1
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

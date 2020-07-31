@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.person
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.teaser
     - node.type.article
     - taxonomy.vocabulary.article_bylines
     - taxonomy.vocabulary.article_mediasources
@@ -79,7 +79,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: teaser
       fields:
         title:
           id: title
