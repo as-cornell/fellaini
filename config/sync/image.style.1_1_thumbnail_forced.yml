@@ -1,0 +1,15 @@
+uuid: 5ae6fc9c-43c8-4613-9ec5-b56917c3bd6d
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_thumbnail_forced
+label: '1-1 thumbnail forced'
+effects:
+  09bfe078-e79b-422a-aa9f-86dd94e2524e:
+    uuid: 09bfe078-e79b-422a-aa9f-86dd94e2524e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      anchor: center-center

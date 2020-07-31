@@ -3,7 +3,7 @@ langcode: en
 status: false
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - taxonomy
@@ -111,8 +111,8 @@ display:
           default_argument_type: taxonomy_tid
           default_argument_options:
             term_page: '1'
-            anyall: ','
-            node: false
+            node: true
+            anyall: +
             limit: false
             vids: {  }
           default_argument_skip_url: false
@@ -128,12 +128,12 @@ display:
           specify_validation: true
           validate:
             type: taxonomy_term_name_into_id
-            fail: 'not found'
+            fail: empty
           validate_options:
             operation: view
-            transform: '1'
+            transform: true
             bundles: {  }
-            access: 0
+            access: false
           break_phrase: false
           add_table: false
           require_value: false
@@ -231,7 +231,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: teaser
       header:
         entity_taxonomy_term:
           id: entity_taxonomy_term
@@ -247,7 +247,20 @@ display:
           bypass_access: false
           plugin_id: entity
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'NO RESULTS'
+            format: full_html
+          plugin_id: text
       relationships: {  }
       fields: {  }
       display_extenders: {  }

@@ -1,0 +1,19 @@
+uuid: 186f20c7-ba77-4055-86a3-8d38cb5a5745
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_long_text_two
+field_name: field_long_text_two
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
