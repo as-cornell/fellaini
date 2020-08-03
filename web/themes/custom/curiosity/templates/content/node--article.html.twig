@@ -22,19 +22,28 @@ Passes:
 {% set main_element_base_class = main_element_base_class | default('article') %}
 {% set main_element_modifiers = [''] %}
 
-
+{# {{vardumper()}} #}
 {# Content wrapper modifiers#}
 {% set content_wrapper_modifiers = ['article'] %}
 
 {# if field_pano not empty add to content_wrapper_modifiers #}
 {% if content.field_pano|render is not empty %}
 	{% set hasPano = true %}
-
 	{% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
-
 {% endif %}
 
+{# article byline #}
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
+
+{# department program taxonomy #}
+{% if node.field_department_program.target_id %}
+  {% set aside_content = content.field_department_program %}
+{% endif %}
+
+
+{# {% if node.field_department_program %}
+  {% set dept_program = content.field_department_program %}
+{% endif %} #}
 
 
 {% include "@pages/_article.twig" with {
@@ -55,11 +64,3 @@ Passes:
 
 } %}
 
-{# {% set article_pano_caption = content.field_pano|field_target_entity.field_caption.value %}
-{% set article_pano_alt = content.field_pano|field_target_entity.field_media_image_1.alt %}
-{% set article_pano_src = node.field_pano|file_url %}article_thumbnail_src : article_thumbnail_src,
-    article_thumbnail_alt : article_thumbnail_alt,
-    article_thumbnail_caption : article_thumbnail_caption,
-{% set article_thumbnail_caption = (content.field_image|field_target_entity.field_caption.value) %}
-{% set article_thumbnail_alt = (content.field_image|field_target_entity.field_media_image.alt) %}
-{% set article_thumbnail_src = (node.field_image|file_url) %}#}
