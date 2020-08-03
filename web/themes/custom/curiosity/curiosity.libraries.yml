@@ -1,3 +1,7 @@
+markjs:
+  js:
+    js_min/mark.js: {}
+
 global:
   css:
     theme:
@@ -7,6 +11,8 @@ global:
     js_min/main-menu.js: {}
     js_min/forms.js: {}
     js_min/svguse.min.js: {}
+    js_min/list-filter.js: {}
 
   dependencies:
     - core/jquery
+
