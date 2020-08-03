@@ -15,6 +15,7 @@
 
 {# {{figure_modifiers}} #}
 <figure {{ bem(image_figure_base_class, (figure_modifiers), image_figure_blockname, alignment) }}>
+{{title_suffix}}
 	{% if img_url %}
 		<a {{ bem(image_link_base_class, (image_link_modifiers), image_link_blockname|default(image_figure_base_class)) }} href=" {{ img_url }} ">
 		{% endif %}

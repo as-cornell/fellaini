@@ -15,9 +15,11 @@ Needed? :
 --------------------------- */
 
 #}
-
+{{vardumper()}}
 {% set isTitle = true %}
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+{{titles_suffix}}
+{{ title_prefix }}
 	{% if hasPano %}
 		<div class="pano">
 			{{article_pano}}
@@ -60,5 +62,9 @@ Needed? :
 	</div>
 	<aside role="complimentary">
 		{{ aside_content }}
+    {% if dept_program %}
+      <h3>Related Department or Program</h3>
+      {{ dept_program }}
+    {% endif %}
 	</aside>
 </main>
