@@ -11,7 +11,7 @@ Setting up new block class of 'teaser'
 --------------------------- */
 
 #}
-
+{{ attach_library('curiosity/markjs') }}
 
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 	<div class="pageTitle">
@@ -19,12 +19,20 @@ Setting up new block class of 'teaser'
     "heading_level" : 1,
     "heading" : view_title
   } %}
+  {% if view_sub_title %}
 		{% include "@content/atoms/_heading.twig" with {
     "heading_level" : 2,
     "heading" : view_sub_title,
     "heading_modifiers" : ["margin"]
   } %}
+  {% endif %}
 
+{# Temporary show filter here. Might need to put m/m into new template #}
+
+
+  {% if show_filter %}
+    <label for='courseFilter'>Search for course number, title, instructor or keywords</label><input id='courseFilter' class='searchbox full' type='text' placeholder='search' name="keyword" data-search />
+  {% endif %}
 	</div>
 	<div class="content">
 		{{ view_content }}
