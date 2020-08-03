@@ -10,20 +10,24 @@ Descr: outputs a page section
 #}
 {# {{vardumper()}} #}
 
-{% set group_modifiers = ['navItem'] %}
+{% set group_base_class = 'pcWrapper' %}
+{% set group_modifiers = ['page-section'] %}
+
 
 {% set items = content.field_page_components %}
 {% set items_length = items|length %}
-{% set divid = content.field_page_section_title.0["#context"]["value"] |lower |replace({" ": "-"}) %}
+{% set divid = content.field_page_section_title.0["#context"]["value"]|lower|replace({" ": "-"}) %}
 
 {% if items.1 %}
 	{% set multiple = true %}
 {% endif %}
-
+{# {{vardumper()}} #}
 {% embed "@content/molecules/_grouping.twig" with{
   items: items,
   title: content.field_page_section_title,
-  divid : divid
+  divid : divid,
+group_label : content.field_page_section_title
+
 } %}
 {% endembed %}
 
