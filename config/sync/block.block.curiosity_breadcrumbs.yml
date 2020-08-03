@@ -1,0 +1,22 @@
+uuid: 745c3c81-e255-4145-a9e2-1f16c0869eb0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - curiosity
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: curiosity_breadcrumbs
+theme: curiosity
+region: header
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

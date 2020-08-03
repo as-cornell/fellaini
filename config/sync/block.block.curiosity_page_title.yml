@@ -1,0 +1,29 @@
+uuid: 17f3e057-2980-4dbf-98c3-50348986b492
+langcode: en
+status: false
+dependencies:
+  module:
+    - ctools
+  theme:
+    - curiosity
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: curiosity_page_title
+theme: curiosity
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

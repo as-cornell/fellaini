@@ -29,7 +29,7 @@ widgets:
   0f83ee99-0c3a-4a0a-82d6-5268fcf67ab9:
     settings:
       view: media_entity_browser_media_library
-      view_display: media_browser_all
+      view_display: entity_browser_1
       submit_text: 'Select image'
       auto_select: true
     uuid: 0f83ee99-0c3a-4a0a-82d6-5268fcf67ab9
