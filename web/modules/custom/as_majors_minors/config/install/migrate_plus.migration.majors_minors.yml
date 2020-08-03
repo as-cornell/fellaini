@@ -77,7 +77,7 @@ process:
   'description/format':
     plugin: default_value
     default_value: full_html
-  'field_images/target_id':
+  'field_image/target_id':
     plugin: migration
     migration: major_minor_image_media
     source: uuid
