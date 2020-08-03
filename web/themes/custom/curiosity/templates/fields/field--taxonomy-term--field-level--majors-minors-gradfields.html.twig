@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Theme override majors minors level
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{{vardumper(items)}}
+<ul>
+    {% for item in items %}
+        <li>{{ item.content|e }}</li>
+    {% endfor %}
+</ul>
