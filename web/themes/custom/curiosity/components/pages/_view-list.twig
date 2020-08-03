@@ -11,7 +11,9 @@ Setting up new block class of 'teaser'
 --------------------------- */
 
 #}
+{% if show_filter %}
 {{ attach_library('curiosity/markjs') }}
+{% endif %}
 
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 	<div class="pageTitle">
