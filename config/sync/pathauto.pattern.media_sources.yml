@@ -1,0 +1,23 @@
+uuid: ee2886bb-6a04-4a65-bd06-1715792538ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: media_sources
+label: 'Media Sources'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'media_source/[term:name]'
+selection_criteria:
+  86a48c28-6df3-46fa-9083-538b90478151:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      article_mediasources: article_mediasources
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 86a48c28-6df3-46fa-9083-538b90478151
+selection_logic: and
+weight: -5
+relationships: {  }

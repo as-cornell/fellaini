@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card_small
+    - core.entity_view_mode.node.teaser
     - node.type.article
     - system.menu.main
     - taxonomy.vocabulary.article_bylines
+    - taxonomy.vocabulary.article_mediasources
     - taxonomy.vocabulary.departments_programs
     - taxonomy.vocabulary.topics
   module:
@@ -58,27 +60,44 @@ display:
           text_input_required: 'Select any filter and click on Apply to see results'
           bef:
             general:
-              allow_secondary: false
-              secondary_label: 'Advanced options'
               autosubmit: true
               autosubmit_exclude_textfield: false
               autosubmit_hide: true
-            field_dateline_value:
-              bef_format: default
-              more_options:
-                is_secondary: false
-            field_dateline_value_1:
-              bef_format: default
-              more_options:
-                is_secondary: false
-            field_department_program_target_id:
-              bef_format: bef
-              more_options:
-                bef_select_all_none: false
-                bef_collapsible: false
-                is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
+              input_required: false
+              text_input_required: 'Select any filter and click on Apply to see results'
+              text_input_required_format: basic_html
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+            filter:
+              field_dateline_value:
+                plugin_id: default
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+              field_dateline_value_1:
+                plugin_id: default
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
+              field_department_program_target_id:
+                plugin_id: bef
+                select_all_none: false
+                select_all_none_nested: false
+                advanced:
+                  collapsible: false
+                  is_secondary: false
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  sort_options: false
           text_input_required_format: basic_html
       pager:
         type: full
@@ -111,7 +130,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card_small
+          view_mode: teaser
       fields:
         title:
           id: title
@@ -396,8 +415,8 @@ display:
           validate_options:
             bundles:
               article_bylines: article_bylines
+              article_mediasources: article_mediasources
               departments_programs: departments_programs
-              topics: topics
             operation: view
             transform: true
             access: false
@@ -611,100 +630,7 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_dateline_value:
-          id: field_dateline_value
-          table: node__field_dateline
-          field: field_dateline_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '>'
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
           group: 1
-          exposed: true
-          expose:
-            operator_id: field_dateline_value_op
-            label: After
-            description: ''
-            use_operator: false
-            operator: field_dateline_value_op
-            identifier: field_dateline_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: datetime
-        field_dateline_value_1:
-          id: field_dateline_value_1
-          table: node__field_dateline
-          field: field_dateline_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '<'
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_dateline_value_1_op
-            label: Before
-            description: ''
-            use_operator: false
-            operator: field_dateline_value_1_op
-            identifier: field_dateline_value_1
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: datetime
         field_department_program_target_id:
           id: field_department_program_target_id
           table: node__field_department_program
@@ -722,17 +648,18 @@ display:
             description: ''
             use_operator: false
             operator: field_department_program_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: field_department_program_target_id
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+              editor: '0'
             reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -752,13 +679,138 @@ display:
           hierarchy: false
           error_message: false
           plugin_id: taxonomy_index_tid
+        field_byline_reference_target_id:
+          id: field_byline_reference_target_id
+          table: node__field_byline_reference
+          field: field_byline_reference_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_byline_reference_target_id_op
+            label: Byline
+            description: ''
+            use_operator: false
+            operator: field_byline_reference_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: byline
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: article_bylines
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_media_source_reference_target_id:
+          id: field_media_source_reference_target_id
+          table: node__field_media_source_reference
+          field: field_media_source_reference_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_media_source_reference_target_id_op
+            label: 'Media Source'
+            description: ''
+            use_operator: false
+            operator: field_media_source_reference_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: media_source
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: article_mediasources
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       defaults:
         filters: false
         filter_groups: false
+        exposed_form: false
+        header: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: null
+          bef: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: true
+          content:
+            value: "<h2>News</h2>\r\n{{ title }}\r\n{{ arguments.tid }}"
+            format: basic_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

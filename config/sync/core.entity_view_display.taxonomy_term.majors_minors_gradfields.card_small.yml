@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.card_small
+    - field.field.taxonomy_term.majors_minors_gradfields.field_image
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
+    - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_one
+    - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_two
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
     - taxonomy.vocabulary.majors_minors_gradfields
 _core:
@@ -15,16 +18,28 @@ targetEntityType: taxonomy_term
 bundle: majors_minors_gradfields
 mode: card_small
 content:
-  field_images:
+  field_image:
     type: entity_reference_entity_view
     weight: 0
+    region: content
     label: hidden
     settings:
-      view_mode: 1_1_thumbnail
+      view_mode: thumbnail
       link: false
     third_party_settings: {  }
+  field_level:
+    type: entity_reference_entity_view
+    weight: 1
     region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
 hidden:
   description: true
-  field_level: true
+  field_images: true
+  field_long_text_one: true
+  field_long_text_two: true
   field_page_components: true
+  search_api_excerpt: true

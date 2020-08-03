@@ -1,0 +1,10 @@
+uuid: 63413a3b-fc81-44da-8f5e-1a92d0a02e26
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.outcomes
+label: Outcomes
+targetEntityType: taxonomy_term
+cache: true

@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.majors_minors_gradfields.field_image
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
+    - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_one
+    - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_two
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
@@ -19,29 +22,44 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_images:
+  field_image:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: '1_1'
+      link: false
+    third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_level:
     weight: 0
     label: hidden
     settings:
+      link: false
       view_mode: default
-      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
-  field_level:
-    weight: 1
+  field_long_text_one:
+    weight: 3
     label: hidden
-    settings:
-      link: false
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_label
+    type: text_default
+    region: content
+  field_long_text_two:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_page_components:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link: true
@@ -49,4 +67,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-hidden: {  }
+hidden:
+  field_images: true
+  search_api_excerpt: true

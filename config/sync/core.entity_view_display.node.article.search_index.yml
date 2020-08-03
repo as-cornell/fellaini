@@ -37,33 +37,15 @@ bundle: article
 mode: search_index
 content:
   field_article_components_entity:
-    weight: 8
-    label: hidden
+    type: entity_reference_label
+    weight: 5
+    region: content
+    label: above
     settings:
       link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  field_aside_components:
-    weight: 14
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  field_byline:
-    type: string
-    weight: 4
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
     third_party_settings: {  }
   field_byline_reference:
-    weight: 5
+    weight: 3
     label: hidden
     settings:
       link: true
@@ -72,7 +54,7 @@ content:
     region: content
   field_card_label:
     type: string
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings:
@@ -80,110 +62,45 @@ content:
     third_party_settings: {  }
   field_dateline:
     type: datetime_default
-    weight: 3
+    weight: 2
     region: content
     label: hidden
     settings:
       timezone_override: ''
       format_type: m_d_y
     third_party_settings: {  }
-  field_department_program:
-    type: entity_reference_entity_view
-    weight: 11
-    region: content
-    label: above
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
   field_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: '4_5'
       link: false
     third_party_settings: {  }
     region: content
-  field_media_source:
-    type: string
-    weight: 6
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_media_source_reference:
-    weight: 7
+    weight: 4
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_pano:
-    type: entity_reference_entity_view
-    weight: 0
-    label: hidden
-    settings:
-      view_mode: pano
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_related_articles:
-    type: entity_reference_entity_view
-    weight: 9
-    region: content
-    label: hidden
-    settings:
-      view_mode: card_small
-      link: false
-    third_party_settings: {  }
-  field_related_disciplines:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_related_functions:
-    weight: 16
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_related_people:
-    weight: 13
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
-  field_tags:
-    type: entity_reference_label
-    weight: 10
-    region: content
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-  field_topics_and_disciplines:
-    type: entity_reference_entity_view
-    weight: 12
-    region: content
-    label: above
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
 hidden:
   body: true
+  field_aside_components: true
+  field_byline: true
+  field_department_program: true
+  field_media_source: true
   field_newsletter_image: true
+  field_pano: true
+  field_related_articles: true
+  field_related_disciplines: true
+  field_related_functions: true
+  field_related_people: true
   field_summary: true
+  field_tags: true
   field_thumbnail_image: true
+  field_topics_and_disciplines: true
   links: true
+  search_api_excerpt: true

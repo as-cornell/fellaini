@@ -81,7 +81,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: ' media-library-item media-library-item--grid js-media-library-item js-click-to-select'
           default_row_class: true
       row:
         type: fields
@@ -450,12 +450,14 @@ display:
         - 'url.query_args:sort_by'
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.media.audio.media_library'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.video.media_library'
         - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
         - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
@@ -465,8 +467,6 @@ display:
         - 'config:core.entity_view_display.media.image.media_library'
         - 'config:core.entity_view_display.media.image.pano'
         - 'config:core.entity_view_display.media.image.thumbnail'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.video.default'
   entity_browser_1:
     display_plugin: entity_browser
     id: entity_browser_1
@@ -600,7 +600,7 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
             text: 'Edit {{ name }}'
@@ -828,6 +828,59 @@ display:
           view_mode: thumbnail
           entity_type: media
           plugin_id: rendered_entity
+        edit_media:
+          id: edit_media
+          table: media
+          field: edit_media
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: 'Edit {{ name }}'
+            make_link: true
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: 'Edit {{ name }}'
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: edit
+          output_url_as_text: false
+          absolute: false
+          entity_type: media
+          plugin_id: entity_link_edit
         entity_browser_select:
           id: entity_browser_select
           table: media
@@ -878,59 +931,6 @@ display:
           hide_alter_empty: true
           entity_type: media
           plugin_id: entity_browser_select
-        edit_media:
-          id: edit_media
-          table: media
-          field: edit_media
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: 'Edit {{ name }}'
-            make_link: true
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: 'Edit {{ name }}'
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          text: edit
-          output_url_as_text: false
-          absolute: false
-          entity_type: media
-          plugin_id: entity_link_edit
       defaults:
         fields: false
         style: false
