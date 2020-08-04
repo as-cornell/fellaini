@@ -9,6 +9,7 @@ base theme: stable
 # Libraries (These are loaded on every page. Use https://www.drupal.org/developing/api/8/assets#twig whenever possible.)
 libraries:
   - "curiosity/global"
+  - "curiosity/global-scripts"
 
 # Regions
 regions:

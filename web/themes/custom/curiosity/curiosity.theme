@@ -31,3 +31,15 @@ function curiosity_theme_suggestions_taxonomy_term_alter(array &$suggestions, ar
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
 }
+
+/* Allow is_front to be used on other templates */
+function pathways_preprocess(&$variables, $hook) {
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+  // Ensure the cache varies correctly (new in Drupal 8.3).
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+}
