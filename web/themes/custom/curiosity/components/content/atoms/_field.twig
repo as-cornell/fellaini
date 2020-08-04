@@ -63,6 +63,8 @@
         } %}
     {% endif %} #}
     {% for item in items %}
+    {{title_suffix}}
         {{ item.content }}
+        {{title_prefix}}
         {# {{kint(item.content.title)}} #}
     {% endfor %}
