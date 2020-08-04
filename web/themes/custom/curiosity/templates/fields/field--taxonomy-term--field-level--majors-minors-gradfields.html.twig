@@ -6,9 +6,15 @@
  * @see template_preprocess_field()
  */
 #}
-{{vardumper(items)}}
-<ul>
-    {% for item in items %}
-        <li>{{ item.content|e }}</li>
-    {% endfor %}
-</ul>
+{# {{vardumper(items)}} #}
+
+{% set ul_modifiers = ['jellyBeans'] %}
+
+{# {% for item in items %}
+  {% set li_modifiers = ['label'] %}
+{% endfor %} #}
+
+{% embed "@content/atoms/_ul.twig" with{
+  ul_items : items
+} %}
+{% endembed %}

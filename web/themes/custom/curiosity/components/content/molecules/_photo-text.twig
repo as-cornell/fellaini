@@ -12,6 +12,7 @@
 {% set classes = classes | default(['']) %}
 
 <div {{ bem(base_class, (modifiers),'', classes) }}>
+  {{ title_suffix }}
   <div {{ bem('image','', base_class) }}>
     {{image}}
   </div>

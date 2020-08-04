@@ -8,7 +8,9 @@ Descr: ouputs FTB content, label, and layout.
 --------------------------- */
 
  #}
+
 <div {{bem(group_base_class,(group_modifiers),'',group_classes)}}>
-{{ title_suffix }}
+{{title_prefix}}
     {{content}}
+    {{ title_suffix }}
 </div>
