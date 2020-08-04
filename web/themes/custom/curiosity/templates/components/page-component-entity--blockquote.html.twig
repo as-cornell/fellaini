@@ -1,0 +1,18 @@
+{#
+
+/* -------------------------
+
+Title: page-component-entity--blockquote.html.twig
+Descr: Sets up block quote 
+
+--------------------------- */
+
+#}
+
+{% set group_base_class = 'pageComponent' %}
+{% set group_modifiers = ['blockQuote'] %}
+
+{% include "@content/atoms/_formatted-text-block.twig" with {
+    group_base_class : group_base_class,
+    group_modifiers : group_modifiers
+} %}
