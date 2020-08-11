@@ -56,28 +56,27 @@
 
 {# {{vardumper()}} #}
 	<div
-	{{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}> {# {% block card_img %} #}
+	{{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
 
 
   {{card_image}}
 
-		{% if not card_feature %}
-		<div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}> {% endif %}
+
+  <div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
 
 		{% if card_title %}
-    {# {{title_prefix}} #}{{title_suffix}}
+    {{title_suffix}}
 			{% include "@content/atoms/_heading.twig" with {
-
-                "heading_level": 2,
-                "heading": card_title,
-                "heading_url": card_title_link|default(card_link_url),
-                "heading_blockname": card_title_blockname|default(card_base_class),
-                "heading_modifiers": card_title_modifiers,
-                "heading_link_base_class": card_title_link_base_class|default('title-link'),
-                "heading_link_blockname": card_base_class,
-                "heading_base_class": card_title_base_class|default('title'),
-                "isAriaLabel" : card_nodeId
-            } %}
+        "heading_level": 2,
+        "heading": card_title,
+        "heading_url": card_title_link|default(card_link_url),
+        "heading_blockname": card_title_blockname|default(card_base_class),
+        "heading_modifiers": card_title_modifiers,
+        "heading_link_base_class": card_title_link_base_class|default('title-link'),
+        "heading_link_blockname": card_base_class,
+        "heading_base_class": card_title_base_class|default('title'),
+        "isAriaLabel" : card_nodeId
+    } %}
             
 		{% endif %}
 
@@ -122,7 +121,7 @@
           "button_blockname" : card_blockname | default(card_base_class)
       } %}
   {% endif %} #}
-		{% if not card_feature %}
+
 		</div>
-	{% endif %}
+
 </div>

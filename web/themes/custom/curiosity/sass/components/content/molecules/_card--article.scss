@@ -2,6 +2,7 @@
 
 Title: _card--article.scss
 Descr: Sets all specific styles for an article card
+  sets css for card--feature as they are articles
 
 --------------------------- */
 
@@ -76,4 +77,50 @@ Descr: Sets all specific styles for an article card
     }
   }
 
+}
+
+
+.card--feature {
+  // @include baseGrid($g-gap: 0px);
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-areas:
+  //   "image image"
+  //   "label dateline"
+  //   "title title"
+  //   "byline byline";
+
+  a {
+    span {
+      display: block;
+    }
+  }
+  .figure {
+    grid-area: image;
+  }
+  .card__title {
+    // grid-area: title;
+    padding: 0 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: var(--semi);
+  }
+  .card__label {
+    // grid-area: label;
+    color: var(--as-black);
+    font-size: var(--base-18);
+    font-weight: var(--semi);
+    text-align: center;
+  }
+  .card__date {
+    // grid-area: dateline;
+    // text-align: right;
+    font-size: var(--base-16);
+    margin: 20px 1rem;
+  }
+  .card__byline {
+    // grid-area: byline;
+    // text-align: center;
+    font-size: var(--base-18);
+    margin: 0 1rem 1rem;
+  }
 }
