@@ -6,7 +6,7 @@ Descr:
 
 --------------------------- */
 .pageComponent--blockQuote{
-    blockquote{
+  blockquote{
     background: var(--gray-lightest);
     padding: 3rem;
     font-style: italic;
@@ -18,3 +18,15 @@ Descr:
   }
 }
 
+.pageComponent--ftb{
+  blockquote{
+    background: var(--gray-lightest);
+    padding: 3rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin: 3rem;
+    .attribution{
+      font-weight: var(--semi);
+    }
+  }
+}

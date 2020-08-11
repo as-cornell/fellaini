@@ -88,19 +88,19 @@ header {
 
 .as-logo {
   text-indent: -9999px;
-  width: 193px;
-  height: 47px;
+  width: 238px;
+  height: 71px;
   background: url(/themes/custom/pathways/images/college.svg);
-  background-size: 193px 47px;
+  background-size: 238px 71px;
   position: relative;
-  margin-left: 20px;
+  margin-left: 40px;
   &:before {
     position: absolute;
     width: 1px;
     background: var(--gray-lt);
     height: 100%;
     top: 0;
-    left: 0px;
+    left: -20px;
     content: "";
   }
 }
