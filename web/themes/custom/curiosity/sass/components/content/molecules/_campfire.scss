@@ -33,7 +33,8 @@ Descr:
   }
   // Large Plus
   @include large() {
-    grid-template-columns: repeat(3, 1fr) repeat(6, 0.75fr) repeat(3, 1fr);
+    // grid-template-columns: repeat(3, 1fr) repeat(6, 0.75fr) repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-template-areas: "one one one two two two two two two three three three";
     &__articles:nth-child(2n + 2) {
       grid-area: one;

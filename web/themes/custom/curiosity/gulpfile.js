@@ -12,9 +12,7 @@ var uglify = require("gulp-uglify");
 var livereload = require("gulp-livereload");
 var sass_config = {
   importer: importer,
-  includePaths: [
-    "node_modules/breakpoint-sass/stylesheets/",
-  ],
+  includePaths: ["node_modules/breakpoint-sass/stylesheets/"],
 };
 
 //Uglifies javascript
@@ -29,12 +27,12 @@ gulp.task("sass", function () {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass(sass_config).on("error", sass.logError))
-    .pipe(
-      autoprefixer({
-        browsers: ["last 2 version"],
-      })
-    )
-    .pipe(stripCssComments({ preserve: false }))
+    // .pipe(
+    //   autoprefixer({
+    //     browsers: ["last 2 version"],
+    //   })
+    // )
+    // .pipe(stripCssComments({ preserve: false }))
     .pipe(cssmin())
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./css"));
