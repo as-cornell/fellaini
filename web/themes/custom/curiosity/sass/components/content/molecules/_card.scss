@@ -5,7 +5,7 @@ Descr: Sets grid default card styles
 Variations: 
   card--small
   card--article - on _card--article.scss
-  card--feature
+  card--feature - on card--article.scss
   card--stat
 
   card--no-image
@@ -31,7 +31,8 @@ Variations:
   line-height: 1.3;
   font-weight: var(--semi);
   &-link {
-    color: var(--as-black);
+    color: var(--dusk);
+    text-decoration-color: var(--gray-lightest);
   }
 }
 
@@ -90,48 +91,7 @@ Variations:
 
 // Card Feature -- Campfire center big ole'card will be changing
 
-.card--feature {
-  @include baseGrid($g-gap: 0px);
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "image image"
-    "label dateline"
-    "title title"
-    "byline byline";
 
-  a {
-    span {
-      display: block;
-    }
-  }
-  .figure {
-    grid-area: image;
-  }
-  .card__title {
-    grid-area: title;
-    padding: 0 1rem;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: var(--semi);
-  }
-  .card__label {
-    grid-area: label;
-    @include baseFont($family: var(--font-serif));
-    font-size: var(--medium-font-size);
-    margin: 1rem 1rem;
-  }
-  .card__date {
-    grid-area: dateline;
-    text-align: right;
-    font-size: var(--small-font-size);
-    margin: 20px 1rem;
-  }
-  .card__byline {
-    grid-area: byline;
-    font-size: var(--small-font-size);
-    margin: 0 1rem 1rem;
-  }
-}
 
 // COURSES
 .card--course {
