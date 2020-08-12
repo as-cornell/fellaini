@@ -19,9 +19,9 @@ Descr: Sets all specific styles for an article card
   }
   .card__title {
     grid-area: title;
-    margin: .75em 0 1em 0;
+    margin: .75em 0 2em 0;
     font-weight: var(--regular);
-    font-size: var(--base-24);
+    font-size: var(--base-20);
     line-height: 1.25;
   }
   .card__label {
