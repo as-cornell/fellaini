@@ -54,6 +54,7 @@
   --base-28: 1.166rem;
   --base-36: 1.5rem;
   --base-48: 2rem;
+  --base-64: 2.66rem;
 
   //font weights
 
@@ -77,6 +78,12 @@
   @include medium() {
     --space: 1.5rem;
   }
+
+  --base-bottom-margin: 4rem;
+
+  // ..........
+  // trying to get away from everythinb gelow here.
+  // ..........
 
   // gutter on first level wrappers; header, .container
 

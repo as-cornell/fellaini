@@ -11,15 +11,38 @@ Descr: Sets styles for
 
 // photoText
 .photoText {
-  display: grid;
-  grid-gap: var(--grid-gap);
-  grid-template-columns: 57% 1fr;
-  // grid-template-rows: auto 1fr auto;
-  // max-width: $x-wide;
-  // margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--base-bottom-margin);
+  font-size: var(--base-28);
+  &__image,
+  &__text {
+    flex: 0 0 calc(50% - calc(var(--space) / 2));
+  }
   h2 {
+    font-size: var(--base-48);
+    @include large() {
+      font-size: var(--base-64);
+    }
+    line-height: 1;
+    margin-bottom: 0.75em;
     .slider & {
       font-size: 3rem;
+    }
+  }
+  h3 + h2 {
+    margin-top: 0;
+  }
+  h3 {
+    font-family: var(--font-serif);
+    font-size: var(--base-24);
+  }
+  @include medium() {
+    flex-direction: row;
+    &:nth-last-of-type(odd) {
+      flex-direction: row-reverse;
     }
   }
 }
