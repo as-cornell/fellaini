@@ -10,7 +10,16 @@ Still needs: expand toggle for showing main nav on mobile
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 0.8rem;
+  font-size: var(--base-18);
+  @include medium() {
+    font-size: var(--base-20);
+  }
+  @include large() {
+    font-size: var(--base24);
+  }
+  @include xl() {
+    font-size: var(--base-20);
+  }
   background: var(--gray-dark);
   padding: 0 1rem;
   max-height: 0;
