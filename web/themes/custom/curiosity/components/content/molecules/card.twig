@@ -56,13 +56,13 @@
 
 {# {{vardumper()}} #}
 {{title_suffix}}
-	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}> {{card_image}}
-
-
-	<div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
-
-		{% if card_title %}
-
+	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}> 
+  
+  {{card_image}}
+	
+  <div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
+		
+    {% if card_title %}
 			{% include "@content/atoms/_heading.twig" with {
         "heading_level": 2,
         "heading": card_title,
@@ -74,7 +74,6 @@
         "heading_base_class": card_title_base_class|default('title'),
         "isAriaLabel" : card_nodeId
     } %}
-
 		{% endif %}
 
 		{% if card_label %}
@@ -82,11 +81,13 @@
 				{{ card_label }}
 			</span>
 		{% endif %}
+
 		{% if card_dateline %}
 			<span class="card__date">
 				{{ card_dateline }}
 			</span>
 		{% endif %}
+    
 		{% block card_info %}
 		{% endblock %}
 		{% if card_subtitle %}
