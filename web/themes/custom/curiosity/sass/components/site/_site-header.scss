@@ -29,16 +29,23 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: auto auto auto;
-  @include medium {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto;
-  }
 
   grid-template-areas:
     "logo logo logo buttons"
     "nav nav nav nav"
     "search search search search";
+
   @include medium {
+    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "logo logo logo logo"
+      ". nav buttons. "
+      "search search search search";
+  }
+  @include xl {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
     grid-template-areas:
       "logo nav buttons"
       "search search search";
@@ -53,6 +60,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
+    @include xl() {
+      margin-bottom: 0;
+    }
   }
   .header__mainNav {
     grid-area: nav;
@@ -88,12 +99,22 @@ header {
 
 .as-logo {
   text-indent: -9999px;
+  background: url(/themes/custom/pathways/images/college.svg);
+  position: relative;
+
+  // @include large() {
+  //   width: 190px;
+  //   height: 57px;
+  //   background-size: 190px 57px;
+  //   margin-left: 40px;
+  // }
+  // @include xl() {
   width: 238px;
   height: 71px;
-  background: url(/themes/custom/pathways/images/college.svg);
   background-size: 238px 71px;
-  position: relative;
   margin-left: 40px;
+  // }
+
   &:before {
     position: absolute;
     width: 1px;
