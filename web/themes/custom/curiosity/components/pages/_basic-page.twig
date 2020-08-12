@@ -12,30 +12,29 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
 
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
 
-	<main
-	{{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
-  
 	{% if panoImage %}
 		<div
-			class="pano">
-      {# {% include "@atoms/04-images/figure.twig" with {
-        "img_src": pano_img_src,
-        "img_alt": pano_img_alt,
-        "img_caption" : pano_img_caption,
-        "img_credit" : pano_img_credit,
-        "figure_modifiers" : ['pano','image']
-      } %} #}
+			class="pano">{# {% include "@atoms/04-images/figure.twig" with {
+								        "img_src": pano_img_src,
+								        "img_alt": pano_img_alt,
+								        "img_caption" : pano_img_caption,
+								        "img_credit" : pano_img_credit,
+								        "figure_modifiers" : ['pano','image']
+								      } %} #}
 		</div>
 	{% endif %}
 	{% if not is_front %}
-		<div class="title">{{title_prefix}}
+		<div class="title">
+			{{title_prefix}}
 			{% include "@content/atoms/_heading.twig" with {
         "heading_level" : 1,
         "heading" : title,
         "heading_modifiers" : ["margin"],
         "heading_base_class" : "title"
-      } %}{{title_suffix}}
+      } %}
+			{{title_suffix}}
 		</div>
 	{% endif %}
 	<div class="content">
