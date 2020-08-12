@@ -55,17 +55,14 @@
 } %} #}
 
 {# {{vardumper()}} #}
-	<div
-	{{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
+{{title_suffix}}
+	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}> {{card_image}}
 
 
-  {{card_image}}
-
-
-  <div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
+	<div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
 
 		{% if card_title %}
-    {{title_suffix}}
+
 			{% include "@content/atoms/_heading.twig" with {
         "heading_level": 2,
         "heading": card_title,
@@ -77,12 +74,12 @@
         "heading_base_class": card_title_base_class|default('title'),
         "isAriaLabel" : card_nodeId
     } %}
-            
+
 		{% endif %}
 
 		{% if card_label %}
 			<span class="card__label">
-				{{ card_label }}	
+				{{ card_label }}
 			</span>
 		{% endif %}
 		{% if card_dateline %}
@@ -93,14 +90,7 @@
 		{% block card_info %}
 		{% endblock %}
 		{% if card_subtitle %}
-			{# {% include "@atoms/00-text/_heading.twig" with {
-        "heading_level" : 3,
-        "heading" : card_subtitle,
-        "heading_url" : card_subtitle_link,
-        "heading_blockname" : card_subtitle_blockname | default(card_base_class),
-        "heading_modifiers" : card_subtitle_modifiers,
-        "heading_base_class" : card_subtitle_base_class | default('subtitle')
-    } %} #}
+
 		{% endif %}
 		{% if card_body %}
 			{{card_body}}
@@ -108,10 +98,26 @@
 
 		{% if card_byline %}
 			<span class="card__byline">
+				By |
 				{{ card_byline }}
 			</span>
 		{% endif %}
-		{# {% if card_button_url %}
+
+
+	</div>
+
+</div>
+
+{# {% include "@atoms/00-text/_heading.twig" with {
+        "heading_level" : 3,
+        "heading" : card_subtitle,
+        "heading_url" : card_subtitle_link,
+        "heading_blockname" : card_subtitle_blockname | default(card_base_class),
+        "heading_modifiers" : card_subtitle_modifiers,
+        "heading_base_class" : card_subtitle_base_class | default('subtitle')
+    } %} #}
+
+{# {% if card_button_url %}
       {% include "@atoms/06-buttons/01-button.twig" with {
           "button_content" : card_button_content,
           "button_url" : card_button_url,
@@ -121,7 +127,3 @@
           "button_blockname" : card_blockname | default(card_base_class)
       } %}
   {% endif %} #}
-
-		</div>
-
-</div>
