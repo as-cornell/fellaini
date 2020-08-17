@@ -4,6 +4,8 @@
 {% set image_link_base_class = image_link_base_class | default('link') %}
 {% set figure_alignment = figure_alignment | default('') %}
 
+
+{# {{vardumper()}} #}
 {# set defaults from figrure.image in data.yaml #}
 {% set img_url = figures.image.url %}
 
@@ -14,21 +16,13 @@
 
 
 {# {{figure_modifiers}} #}
-<figure {{ bem(image_figure_base_class, (figure_modifiers), image_figure_blockname, alignment) }}>
-{{title_suffix}}
+	<figure {{ bem(image_figure_base_class, (figure_modifiers), image_figure_blockname, alignment) }}> {{title_suffix}}
 	{% if img_url %}
 		<a {{ bem(image_link_base_class, (image_link_modifiers), image_link_blockname|default(image_figure_base_class)) }} href=" {{ img_url }} ">
 		{% endif %}
-		{% if fullImage %}
-			{{fullImage}}
-		{% else %}
-			{% block figure_content %}
-				{% include "@content/atoms/_image.twig" with {
-                "img_src" : img_src,
-                "img_alt" : img_alt
-            } %}
-			{% endblock %}
-		{% endif %}
+
+		{{fullImage}}
+
 		{% if img_url %}
 		</a>
 	{% endif %}
