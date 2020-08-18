@@ -60,15 +60,21 @@ Descr:
   &--has-aside {
     @include medium {
       grid-template-areas:
-        "nav nav nav nav title title title title title title title title"
-        "nav nav nav nav content content content content content content aside aside"
-        "sidebar sidebar sidebar sidebar content content content content content content aside aside";
+        ". . . title title title title title title title . ."
+        "nav nav nav aside aside aside aside aside aside aside aside aside"
+        "nav nav nav content content content content content content content content content"
+        "sidebar sidebar sidebar content content content content content content content content content";
+    }
+    @include large {
+      grid-template-areas:
+        ". . . title title title title title title title . ."
+        "nav nav nav content content content content content content content aside aside"
+        "sidebar sidebar sidebar content content content content content content content aside aside";
     }
   }
 }
 
 // Article moved to _article.scss
-
 
 .page {
   &--landing-page {
@@ -93,50 +99,50 @@ Descr:
 
 --------------------------- */
 
-.container{
+.container {
   grid-column: 2;
   display: grid;
   align-items: flex-start;
   align-content: flex-start;
 
-  &--has-aside{
-    @include large{
+  &--has-aside {
+    @include large {
       grid-gap: 2rem;
       grid-template-columns: 1fr minmax(200px, 300px);
-      grid-template-areas: 
-      "title title"
-      "components aside";
-      .title{
+      grid-template-areas:
+        "title title"
+        "components aside";
+      .title {
         grid-area: title;
       }
-      .components{
+      .components {
         grid-area: components;
       }
-      aside{
+      aside {
         grid-area: aside;
       }
     }
   }
 
-  &--has-sidebar{
-    .toc-menu,.sidebar-nav{
+  &--has-sidebar {
+    .toc-menu,
+    .sidebar-nav {
       grid-area: menu;
     }
-    .sidebar{
+    .sidebar {
       grid-area: sidebar;
     }
-    main{
+    main {
       grid-area: main;
     }
-    @include medium{
-      }
-    @include xxl{
-        grid-gap: calc( 3 * var(--space));
-        grid-row-gap: var(--space);
-      }
+    @include medium {
     }
+    @include xxl {
+      grid-gap: calc(3 * var(--space));
+      grid-row-gap: var(--space);
+    }
+  }
 }
-
 
 // sections of a basic page
 .page-title {

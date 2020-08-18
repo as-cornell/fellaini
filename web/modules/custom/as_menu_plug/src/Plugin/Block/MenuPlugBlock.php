@@ -14,12 +14,14 @@ use Drupal\Core\Block\BlockBase;
  *  admin_label = @Translation("Menu Plug block"),
  * )
  */
-class MenuPlugBlock extends BlockBase {
+class MenuPlugBlock extends BlockBase
+{
 
   /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build()
+  {
     $build = [];
     $build['#theme'] = 'menu_plug_block';
     $build['menu_plug_block']['#markup'] = '';
@@ -44,44 +46,45 @@ class MenuPlugBlock extends BlockBase {
     // strip $nid
     $nid = as_menu_plug_strip_id($entity_id);
     // get node alias
-    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nid);
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nid);
     // load node
     if (!empty($nid)) {
-    $node =\Drupal::entityTypeManager()->getStorage('node')->load($nid);
-    $typeName = $node->bundle();
+      $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+      $typeName = $node->bundle();
     }
     // check for node type
     if ($typeName == 'page') {
-    //get field values
-    if (!empty($node->field_page_components)) {
-    $fpce = $node->field_page_components;
+      //get field values
+      if (!empty($node->field_page_components)) {
+        $fpce = $node->field_page_components;
       }
 
-    // get page components
-    if (!empty($fpce)) {
-      $index = 0;
-      // make sure we need a wrapper
-      //if (!empty($node->field_page_components[0]->entity->field_page_section_title[0])) {
-      $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul class="'.$list_class.'">';
-      foreach($fpce as $pce) {
-            // this uses the component entity label as the link text
-            //$link_title = $node->field_page_components_entity[$index]->entity->label();
-            // this uses only field_page_section_title from a page section entity
-            if (!empty($node->field_page_components[$index]->entity->field_page_section_title[0])) {
+      // get page components
+      if (!empty($fpce)) {
+        $index = 0;
+        // make sure we need a wrapper
+
+        // RTM 8/17 hiding the list with inpage navs from big view added asideNav as they can both be the same just visually hidden in sidebar. 
+
+        //if (!empty($node->field_page_components[0]->entity->field_page_section_title[0])) {
+        $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul class="' . $list_class . ' asideNav">';
+        foreach ($fpce as $pce) {
+          // this uses the component entity label as the link text
+          //$link_title = $node->field_page_components_entity[$index]->entity->label();
+          // this uses only field_page_section_title from a page section entity
+          if (!empty($node->field_page_components[$index]->entity->field_page_section_title[0])) {
             $link_title = $node->field_page_components[$index]->entity->field_page_section_title[0]->value;
-            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  as_menu_plug_generate_link_markup($link_title,$alias,$link_class);
-               }
-        $index++;
+            $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] .  as_menu_plug_generate_link_markup($link_title, $alias, $link_class);
+          }
+          $index++;
         }
-                //if (empty($menu_children)){
+        //if (empty($menu_children)){
         $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '</ul>';
-        }
+      }
       //}
-}
+    }
 
 
     return $build;
   }
 }
-
-

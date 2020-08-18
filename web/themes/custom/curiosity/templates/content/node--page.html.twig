@@ -75,11 +75,12 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 {% endfor %}
 
 {# if page sectin values set aside_nav to the page menu block #}
-{# {% if linkValues %}
+{% if linkValues %}
   {% set aside_nav %}
+    <p>On this page</p>
     {{ drupal_block('page_menu_block', {link_values:linkValues}) }}
   {% endset %}
-{% endif %} #}
+{% endif %}
 
 {#
     - if aside_components or aside_nav set aside to true, and add has-aside to page
@@ -101,7 +102,6 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
     
     sidebar_nav : sidebar_nav,
     sidebar_content : sidebar_content,
-
 
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers
