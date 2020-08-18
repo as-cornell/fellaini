@@ -11,6 +11,7 @@ Still needs: expand toggle for showing sidebar nav on mobile
   list-style-type: none;
   padding-left: 0;
   margin-left: 0;
+  font-size: var(--base-20);
   &__root {
     > a {
       color: var(--as-black);
@@ -52,6 +53,14 @@ Still needs: expand toggle for showing sidebar nav on mobile
       width: 1rem;
       height: 1rem;
       content: "s";
+    }
+  }
+  // .asideNav removed and managed on _aside-nav.scss for big screen.
+  @include medium() {
+    .asideNav {
+      @include medium() {
+        display: none;
+      }
     }
   }
 }

@@ -18,6 +18,9 @@ h4 {
 h1 {
   font-size: calc(2.5 * var(--base-font-size));
   line-height: calc(1ex / 0.5);
+  .title {
+    margin-top: 0;
+  }
 }
 
 h2 {
