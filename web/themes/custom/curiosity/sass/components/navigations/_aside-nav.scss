@@ -7,4 +7,24 @@ Descr: asideN small and large, hovers and toggles for subNav
 
 .asideNav {
   font-size: var(--base-20);
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+  flex-direction: column;
+  @include medium() {
+    flex-direction: row;
+    flex-shrink: 0;
+  }
+  @include large() {
+    flex-direction: column;
+    list-style-type: circle;
+    padding-left: 1em;
+  }
+  li {
+    margin-right: 1em;
+    @include large() {
+      margin-right: 0;
+    }
+  }
 }

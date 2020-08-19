@@ -44,7 +44,17 @@ Descr:
     grid-area: content;
   }
   aside {
+    display: none;
+    @include medium() {
+      display: block;
+    }
     grid-area: aside;
+    .page_component_entity {
+      display: none;
+      @include large() {
+        display: block;
+      }
+    }
   }
   grid-template-areas:
     "nav"
@@ -67,7 +77,7 @@ Descr:
     }
     @include large {
       grid-template-areas:
-        ". . . title title title title title title title . ."
+        "nav nav nav title title title title title title title . ."
         "nav nav nav content content content content content content content aside aside"
         "sidebar sidebar sidebar content content content content content content content aside aside";
     }

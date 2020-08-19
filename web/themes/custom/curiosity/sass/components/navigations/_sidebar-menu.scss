@@ -7,40 +7,84 @@ Still needs: expand toggle for showing sidebar nav on mobile
 
 --------------------------- */
 
-.nav {
+ul[class^="nav"] {
+  font-size: var(--base-20);
   list-style-type: none;
   padding-left: 0;
-  margin-left: 0;
-  font-size: var(--base-20);
+  margin-bottom: 0;
+  a {
+    position: relative;
+    padding-left: 0.5rem;
+    display: block;
+    &:before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 1px;
+      left: 0;
+      top: 0;
+      background: var(--gray-lt);
+    }
+  }
+  li[class$="active-trail"] {
+    a {
+      color: red;
+    }
+  }
+}
+
+.nav {
   &__root {
+    position: inherit;
+    padding-left: 0.5rem;
     > a {
+      font-size: var(--base-24);
       color: var(--as-black);
     }
   }
-  a {
-    display: block;
-  }
-  // ul included in __root
-  .nav-1 {
-    // background: pink;
-    a {
-      padding-left: 0.5rem;
+
+  .nav-1__item {
+    > a {
+      margin-left: 0.5rem;
+      &:before {
+        background-color: var(--as-green);
+      }
+      &:hover {
+        &:before {
+          background: pink;
+        }
+      }
     }
     .active {
       color: green;
     }
   }
-  .nav-2 {
-    // background: yellow;
-    padding-left: 1rem;
-    a {
-      padding-left: 1rem;
+
+  .nav-2__item {
+    > a {
+      margin-left: 0.75rem;
+      &:before {
+        background-color: var(--gold);
+      }
+      &:hover {
+        &:before {
+          background: pink;
+        }
+      }
     }
   }
-  .nav-3 {
-    // background: seagreen;
-    a {
-      padding-left: 1.5rem;
+
+  .nav-3__item {
+    > a {
+      margin-left: 1rem;
+      &:before {
+        background-color: var(--teal);
+      }
+      &:hover {
+        &:before {
+          background: pink;
+        }
+      }
     }
   }
   // base withSubNav
