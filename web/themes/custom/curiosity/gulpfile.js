@@ -8,7 +8,7 @@ var plumber = require("gulp-plumber");
 var browserSync = require("browser-sync").create();
 var cssmin = require("gulp-cssmin");
 var stripCssComments = require("gulp-strip-css-comments");
-var uglify = require("gulp-uglify");
+var uglify = require("gulp-uglify-es").default;
 var livereload = require("gulp-livereload");
 var sass_config = {
   importer: importer,
@@ -17,7 +17,13 @@ var sass_config = {
 
 //Uglifies javascript
 gulp.task("uglify", function () {
-  return gulp.src("js/*.js").pipe(uglify()).pipe(gulp.dest("js_min"));
+  return gulp
+    .src("js/*.js")
+    .pipe(uglify())
+    .on("error", function (e) {
+      console.log(e);
+    })
+    .pipe(gulp.dest("js_min"));
 });
 
 //Compiles sass

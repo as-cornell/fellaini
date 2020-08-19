@@ -17,7 +17,7 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-livereload": "^3.8.1",
     "gulp-strip-css-comments": "^1.2.0",
-    "gulp-uglify": "^1.4.1",
+    "gulp-uglify-es": "^2.0.0",
     "node-sass-globbing": "0.0.23"
   },
   "scripts": {},

@@ -13,6 +13,6 @@ global-scripts:
     js_min/forms.js: {}
     js_min/svgxuse.min.js: {}
     js_min/list-filter.js: {}
+    js_min/observers.js: {}
   dependencies:
     - core/jquery
-
