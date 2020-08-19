@@ -5,6 +5,42 @@ Descr: asideN small and large, hovers and toggles for subNav
 
 --------------------------- */
 
+.asideNavWrapper {
+  background: var(--as-white);
+  &.stuck {
+    animation-name: asideNavFader;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @include large() {
+      animation: none;
+      top: 0;
+      position: sticky;
+    }
+  }
+}
+
+@keyframes asideNavFader {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    position: fixed;
+    top: 0;
+  }
+  30% {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+  }
+  100% {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+  }
+}
+
 .asideNav {
   font-size: var(--base-20);
   display: flex;
