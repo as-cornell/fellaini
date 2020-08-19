@@ -1,0 +1,14 @@
+/* -------------------------
+
+Title: Page Section
+Descr: Specific styles for page sections wrappers, headings
+
+--------------------------- */
+
+.pcWrapper--page-section {
+  &:first-of-type {
+    .group__title {
+      margin-top: 0;
+    }
+  }
+}
