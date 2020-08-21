@@ -1,0 +1,5 @@
+name = A&S Courses JSON
+description = Fetches course JSON from classes.cornell.edu.  Transform and caches course data.  Provides a default semester and list of past semesters. Provides block displays for listing all courses , the first n courses, a random set of n courses for a given major code/semester.
+core = 7.x
+package = AS
+version = 7.x-1.0

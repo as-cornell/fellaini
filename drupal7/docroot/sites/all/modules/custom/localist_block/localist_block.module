@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_bean_types_api_info().
+ */
+function localist_block_bean_types_api_info() {
+  return array('api' => 4);
+}
+
+/**
+ * Implements hook_bean_types().
+ */
+function localist_block_bean_types() {
+  $plugins = array();
+  $plugin_path = drupal_get_path('module', 'localist_block') . '/plugins/bean';
+  $plugins['event_block'] = array(
+  'label' => t('Event'),
+  'description' => t('A listing of events, based on a json feed from localist.'),
+  'handler' => array(
+    'class' => 'EventBlockBean',
+    'parent' => 'bean',
+    'path' => $plugin_path,
+    'file' => 'bean_localist_events.event_block.inc',
+     ),
+  );
+  return $plugins;
+}
+
+/**
+ * form#sumbit handler.
+ */
+function localist_block_clear_cache(&$form){
+  // Get the correct cache key and clear the cache
+  $cache_key = EventBlockBean::get_cache_key($form['keywords']['#value']);
+  cache_clear_all('bean_localist_events-' . $cache_key, 'cache');
+}

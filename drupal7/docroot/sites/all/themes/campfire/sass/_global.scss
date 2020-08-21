@@ -1,0 +1,366 @@
+///////////////////////////// Box Sizing
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+html{
+  font-size: 14px;
+  @include small-plus(){
+    font-size: 16px;
+  };
+}
+//body
+
+body {
+  @include sans-font();
+  line-height: 1.4;
+  background-color: $as-white;
+  color: $as-text;
+  text-rendering: optimizeLegibility;
+  padding: 0;
+  margin: 0;
+}
+
+//links
+
+a {
+  color: $as-link;
+  // text-decoration: none;
+
+}
+
+a{
+    padding: 12px 0;
+    // background-image: linear-gradient(currentColor,currentColor);
+    // background-repeat: no-repeat;
+    // background-size: 100% 1px;
+    // background-position: center bottom 29%;
+    // background-origin: padding-box;
+    // text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
+    // transition: color .1s ease-out;
+    // transition: background-size .25s ease;
+    &:hover{
+        // background-size:95% 1px;
+        // background-image: linear-gradient(darken($as-red, 20),darken($as-red, 20));
+    }
+}
+
+// .as-info-bar__inner, .header__logo--large, .as-nav, .inpage_two, .card, .as-card, .card--light, .region-content-bottom, .as-footer, .fullPage__sidebarNav, .buttonLinks, .links, .listGroup, .drupal-navbar, .tabs--drupal, .shareButtons, .as-search-bar__footer, .pictureText, .as-tabloid{
+//     a{
+//         background-image: none;
+//         text-shadow: none;
+//         padding: 0;
+//     }
+    
+// }
+
+.as-page__block--gray{
+  a{
+   // text-shadow: 3px 0 #f5f5f5, 2px 0 #f5f5f5, 1px 0 #f5f5f5, -1px 0 #f5f5f5, -2px 0 #f5f5f5, -3px 0 #f5f5f5;
+  }
+}
+
+
+
+@mixin as-link($color: $as-link){
+    color: $color;
+    &:after {
+    content: "›";
+    display: inline-block;
+    height: 100%;
+    padding-left: 5px;
+    color: $color;
+  }
+}
+
+%as-link {
+  &:after {
+    content: "›";
+    display: inline-block;
+    //height: 100%;
+    padding-left: 5px;
+    color: $as-red;
+  }
+}
+
+// headers
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include font-sans;
+  line-height: 1.1em;
+}
+
+h1{
+  span{
+    //color: $as-gold;
+    //margin: 0 -.75rem;
+  }
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+h1.alt{
+  @include serif-font($size: 24px, $weight: 200, $color: $as-white);
+  text-transform: none;
+}
+h2{
+  a{
+    color: $as-text;
+    text-decoration-color: $as-link;
+  }
+}
+
+.pageTitle {
+  @include sans-font($size:32px,$weight:600);
+  @include medium-plus{
+    @include sans-font($size:63px,$weight:800);
+  }
+  line-height: 1em;
+  //margin-bottom: gutter(8);
+}
+  .pageTitle--first{
+    padding-top: gutter(2);
+    @include small-plus {
+      padding-top: gutter(4);
+    }
+  }
+  .pageTitle--short{
+    margin: 0;
+  }
+
+  .sectionTitle{
+    @include sans-font($size:33px, $weight: 800)
+  }
+
+h2{
+  margin: 1em 0;
+  font-size: 1.5rem;
+}
+
+h3{
+  @include serif-font($size:16px, $weight: 600);
+  margin-bottom: 1.25em;
+  line-height: 1.25em;
+  text-transform: uppercase;
+}
+
+// text
+
+p{
+  @include font-sans-lt;
+  letter-spacing: .2px;
+  margin-bottom: 1.5rem;
+}
+
+strong {
+  font-weight: 400;
+}
+
+em {
+  //@include font-serif-it;
+}
+
+iframe {
+  width: 100%;
+}
+
+hr {
+  margin: 2rem auto;
+  border: transparent;
+  clear: both;
+  height: 1px;
+  background: #e0e0e0;
+  &.half{
+    width: 50%;
+    margin: 3rem auto 4rem auto;
+  }
+}
+
+mark {
+  background: none;
+}
+
+
+/////////////////// Forms
+
+fieldset {
+  margin: 0 0 18px;
+  padding: 0;
+  border: none;
+}
+
+legend {
+  @include font-sans-lt;
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #a6a8a9;
+  @include tablet-desktop {
+    font-size: 24px;
+  }
+}
+
+label {
+  clear: both;
+  color: #252b2c;
+  display: block;
+  font-size: 18px;
+  margin: 0 0 6px;
+  position: relative;
+}
+
+
+// common
+
+
+
+.as-main {
+  background: $as-white;
+  @include clearfix;
+}
+
+.as-container {
+  @include mobile {
+    @include layout(6 (40 / 67));
+    @include container(768px);
+  }
+
+  @include small-plus {
+    @include layout(12 (24 / 78));
+    @include container(1200px);
+  }
+  @media screen and (max-width:1200px){
+    padding: 0 1rem;
+  }
+  .noAfter{
+
+  }
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+  .as-container__narrow{
+    max-width: calc(746px + 2rem);
+    margin: 0 auto;
+  }
+  .as-container__960{
+      padding-bottom: 3rem;
+  	@include medium-plus{
+        padding: 3rem 240px 3rem 0;
+    }
+
+  }
+header{
+  .as-container{
+    padding: 0;
+  }
+}
+.as-container--narrow{
+  @include container(800px);
+}
+
+.as-overlay {
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  @include transition(background 0.3s ease-out);
+}
+
+.as-overlay--shade {
+  background: rgba(#000, 0.85);
+  z-index: 1;
+}
+
+.as-overlay--tint {
+  background: rgba(#fff, 0.85);
+  z-index: 4;
+}
+
+.as-list {
+  li {
+    margin: gutter() 0;
+  }
+}
+
+.centered{
+  text-align: center;
+}
+
+// images
+main img{
+  max-width: 100%;
+  border-radius: 2px;
+}
+.as-page__content{
+  img{
+    margin-bottom: 1rem;
+  }
+}
+.image{
+    margin-top: 6px;
+    border-radius: 2px;
+    &--left{
+        float: left;
+        margin-right: 1rem;
+    }
+    &--right{
+        float: right;
+        margin-left: 1rem;
+    }
+}
+
+// Lists
+main ul, .mfp-container ul{
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  list-style-type: circle;
+  li{
+    margin-bottom: .5rem;
+  }
+}
+
+main ol{
+  padding-left: 1rem;
+  li{
+    margin-bottom: .5rem;
+  }
+  
+  ol{
+    list-style-type: lower-alpha;
+  }
+}
+
+/*
+	layout helper classes probably will be moved to expressiv sheet
+*/
+
+.max-960{
+	max-width: $large;
+}
+
+.curriculum-review{
+    p, h1, h2, h3, ul, ol{
+        max-width: 960px;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+}
+
+.offscreen{
+    position: absolute;
+    top: -10000px;
+    left: -10000px;
+}

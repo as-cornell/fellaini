@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Curriculum feature.
+ */
+
+include_once 'as_curriculum.features.inc';

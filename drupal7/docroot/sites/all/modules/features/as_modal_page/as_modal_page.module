@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Modal Page feature.
+ */
+
+include_once 'as_modal_page.features.inc';

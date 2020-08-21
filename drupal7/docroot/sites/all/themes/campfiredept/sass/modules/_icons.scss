@@ -1,0 +1,18 @@
+/*
+ *** new SVG based icons
+*/
+
+.svg-sprite{
+    display: none;
+}
+
+svg[class^="icon"]{
+    width: 1rem;
+    height: 1rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+    &[class*="arrow"]{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

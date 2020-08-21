@@ -1,0 +1,40 @@
+///  .as-container
+
+.as-container {
+	max-width: calc(1200px + 2rem);
+	margin: 0 auto;
+	background: #eeeeee;
+	padding: 0 1rem;
+
+	@include x-large-plus(){
+		max-width: 1200px;
+		padding: 0;
+	}
+}
+.as-container__narrow{
+	max-width: calc($medium + 2rem);
+	margin: 0 auto;
+}
+.as-container__960{
+	padding-right: 240px;
+}
+
+	// as-container exceptions
+	header{
+	  .as-container{
+	    padding: 0;
+	  }
+	}
+
+/// .as-block
+
+.as-block {
+	padding: 2rem 0;
+	overflow: hidden;
+	@include small-plus(){
+		//padding: 4rem 0;
+	};
+}
+	.as-block--gray{
+		background: $as-gray-lt;
+	}

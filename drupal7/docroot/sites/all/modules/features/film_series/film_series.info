@@ -1,0 +1,10 @@
+name = Film Series
+description = showing the film series
+core = 7.x
+package = Features
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = film_series_name
+features_exclude[dependencies][views] = views
+no autodetect = 1
+project path = sites/all/modules/features

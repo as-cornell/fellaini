@@ -1,0 +1,65 @@
+table.as-table, .webform-grid, .webform-component-matrix table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 3rem;
+
+  @include mobile {
+    border-bottom: 1px solid $as-border;
+  }
+
+  tr {
+    &:nth-of-type(even) {
+      background: #f0f0f0;
+    }
+    &:nth-of-type(odd) {
+      background: #fafafa;
+    }
+    &:first-of-type {
+      //background: $as-white;
+    }
+
+    @include mobile {
+      border-top: 1px solid $as-border;
+    }
+  }
+
+  th {
+    border-top: 1px solid $as-border;
+    border-bottom: 1px solid $as-border;
+    //color: $as-text-lt;
+    @include font-sans-semi;
+    font-size: 13px;
+    padding: gutter();
+    text-align: left;
+    text-transform: uppercase;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  td {
+    border-top: 1px solid $as-border;
+    border-bottom: 1px solid $as-border;
+    @include font-sans-lt;
+    padding: gutter();
+
+    @include mobile {
+      border-bottom: none;
+      border-top: none;
+     // display: inline-block;
+    }
+  }
+
+  thead{
+    tr{
+      background: $as-white;
+    }
+  }
+
+
+}
+tbody{
+  border-top: none;
+}
+

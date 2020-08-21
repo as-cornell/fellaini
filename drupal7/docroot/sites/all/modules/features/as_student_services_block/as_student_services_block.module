@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Student Services Block feature.
+ */
+
+include_once 'as_student_services_block.features.inc';

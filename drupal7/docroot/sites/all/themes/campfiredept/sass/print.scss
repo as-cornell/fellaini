@@ -1,0 +1,106 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+body{
+  font-size: 12px;
+}
+
+.logo:before{
+  content:url(http://sts.dd:8083/sites/all/themes/campfiredept/images/logo-3ad6166e.svg);
+  position: absolute;
+  left: 0;
+  z-index: -1;
+
+}
+.logo--cornell{
+  display: none;
+}
+.as-mobile-title{
+  margin-top: 69px;
+  margin-bottom: 2rem;
+}
+
+h1, .pageTitle{
+  font-size: 1.5rem !important;
+}
+h2, .as-page__introduction p {
+  font-size: 1.25rem !important;
+}
+
+.field-description{
+  p{
+    font-size: 1rem !important;
+  }
+} 
+
+.as-header__links, .region-content-bottom, .as-footer, .as-info-bar, .links, .as-places, .shareButtons, .as-page__sidebar, #department-news, #research-news, .filters__control-bar{
+  display: none;
+}
+
+.as-page, .as-page__block{
+  margin: 0;
+  padding: 0;
+}
+
+form{
+  max-width: auto;
+}
+
+// pano slider
+.slider{
+  border: none;
+}
+.slider--pano {
+  a{
+    display: flex;
+  }
+  h1{
+    padding: 0;
+  }
+}
+.slides li{
+  display: block !important;
+  margin-bottom: 2rem !important;
+}
+.field-pano-image{
+  margin: 0;
+  padding-right: 2rem;
+  &:after{
+    content: none;
+    background: none;
+  }
+}
+
+fieldset.navigation{
+  display:none;
+}
+
+//images
+img{
+  width: 200px !important;
+  height: auto !important;
+}
+
+// article and event listings
+.article-listing .btn, .event-listing .btn{
+  display: none;
+}
+.articleListing__link{
+  display: inline-block;
+}
+.eventListing{
+  a{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
+  } 
+}
+
+.grid{
+  display: block;
+}
+
+.card{
+  text-align: left;
+}

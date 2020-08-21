@@ -1,0 +1,104 @@
+<?php
+
+function as_people_json_block_info() {
+  // Implementation of hook_block_info():
+  $blocks['main'] = array(
+    'info' => t('People data for screens'),
+    //'status' => TRUE,
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  return $blocks;
+}
+
+function as_people_json_block_view($delta,$sourcenid) {
+  // This example is adapted from node.module.
+  $block = array();
+    switch ($delta) {
+    case 'person':
+      $block['subject'] = t('A&S People JSON');
+      $block['content'] = as_people_json_block_content($delta,$sourcenid);
+      break;
+    case 'profile':
+      $block['subject'] = t('A&S People JSON');
+      $block['content'] = as_people_json_block_content($delta,$sourcenid);
+      break;
+    }
+  return $block;
+}
+
+function as_people_json_block_content($delta,$sourcenid) {
+//Implementation of hook_block_content()
+switch ($delta) {
+    case 'person':
+// Connect to people.as.cornell.edu
+$json_string =    file_get_contents("http://people.as.cornell.edu/peoplejson/${sourcenid}");
+//put JSON into display text
+$json_string = utf8_encode($json_string);
+//parse JSON into individual variables
+$parsed_json = json_decode($json_string);
+//get the stuff we want to display
+$persondata = $parsed_json->{'people'};
+$count = count($persondata);
+  for($i = 0; $i < $count; $i++) {
+     $item = $persondata[$i];
+        $name =  $item->{'node'}->{'title'} ;
+        $image =  $item->{'node'}->{'field_image'} ;
+        $deptprog =  $item->{'node'}->{'field_departments_programs'};
+        $keywords =  $item->{'node'}->{'field_keywords'} ;
+        break;
+      }
+//display the stuff according to how it needs to appear
+    $main = "<div><img src='{$image}'/></div>\n";
+    $main = $main . "<h4>${name}</h4>\n";
+    $main = $main . "<div>${deptprog}</div>\n";
+    $main = $main . "<div>${keywords}</div>\n";
+    $result = array('#markup' => $main);
+    return $result;
+    break;
+
+    case 'profile':
+// Connect to as.cornell.edu
+$json_string =    file_get_contents("http://people.as.cornell.edu/profilesjson/${sourcenid}");
+//put JSON into display text
+$json_string = utf8_encode($json_string);
+//parse JSON into individual variables
+$parsed_json = json_decode($json_string);
+//get the stuff we want to display
+$persondata = $parsed_json->{'person_profile'};
+$count = count($persondata);
+  for($i = 0; $i < $count; $i++) {
+     $item = $persondata[$i];
+        $name =  $item->{'node'}->{'title'} ;
+        $image =  $item->{'node'}->{'field_image'} ;
+        $profiletype =  $item->{'node'}->{'field_profile_type'};
+        $persontitle =  $item->{'node'}->{'field_person_title'};
+        break;
+    }
+//display the stuff according to how it needs to appear
+    $main = "<div><img src='{$image}'/></div>\n";
+    $main = $main . "<h4>${name}</h4>\n";
+    $main = $main . "<div>${profiletype}</div>\n";
+    $main = $main . "<div>${persontitle}</div>\n";
+    $result = array('#markup' => $main);
+    return $result;
+    break;
+ }
+
+
+}
+
+
+
+function as_people_json_help($path, $arg) {
+  // Implementation of hook_help()
+    if ($path == 'admin/help#as_people_json') {
+        $txt = 'The as_people_json module uses the !as_people_json_url '
+        .'API to retrieve JSON data for A&S People and display it as block '
+        .'content.';
+        $link = l('A&S People', 'http://people.as.cornell.edu/');
+        $replace = array(
+        '!as_people_json_url' => $link
+        );
+    return '<p>'. t($txt, $replace) .'</p>';
+    }
+}

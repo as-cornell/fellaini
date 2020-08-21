@@ -1,0 +1,47 @@
+.as-page--home {
+
+  .as-page__block--grid {
+    @include mobile {
+      padding-top: 0;
+    }
+
+    @include tablet {
+      padding-top: gutter();
+    }
+  }
+
+  /*.as-page__block.as-page__block--popular-links*/.as-places {
+   // background: #f7f7f7;
+    .as-popular-links__places {
+      @include tablet {
+        .field-popular-places a {
+          @include span(2 of 10);
+          &:first-of-type {
+            @include pre(1 of 10);
+          }
+        }
+      }
+    }
+  }
+
+  .as-page__block--slider {
+    border-top: 1px solid $as-border;
+    border-bottom: 1px solid $as-border;
+    padding: 0;
+    @include tablet {
+      .as-slider__media {
+        width: percentage(8 / 14);
+      }
+      .as-slider__copy {
+        width: percentage(6 / 14);
+      }
+    }
+  }
+
+  .as-page__block--social-bar {
+
+    @include mobile {
+      padding: 0;
+    }
+  }
+}

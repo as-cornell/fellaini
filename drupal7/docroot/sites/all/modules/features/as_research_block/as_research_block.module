@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Research Block feature.
+ */
+
+include_once 'as_research_block.features.inc';

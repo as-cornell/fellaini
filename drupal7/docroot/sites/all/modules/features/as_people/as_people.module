@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS People feature.
+ */
+
+include_once 'as_people.features.inc';

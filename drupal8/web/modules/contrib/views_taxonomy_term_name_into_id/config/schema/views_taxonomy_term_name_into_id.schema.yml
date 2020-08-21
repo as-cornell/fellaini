@@ -1,0 +1,3 @@
+views.argument_validator.taxonomy_term_name_into_id:
+  type: views.argument_validator.taxonomy_term_name
+  label: 'Taxonomy term name to ID'

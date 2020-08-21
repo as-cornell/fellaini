@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Thumbnail Gallery feature.
+ */
+
+include_once 'as_thumbnail_gallery.features.inc';

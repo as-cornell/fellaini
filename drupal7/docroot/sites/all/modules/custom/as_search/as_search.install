@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function as_search_install() {
+  variable_set('as_search_google_key', '008519597213911685754:qk0vzz3julq');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function as_search_uninstall() {
+  variable_del('as_search_google_key');
+}

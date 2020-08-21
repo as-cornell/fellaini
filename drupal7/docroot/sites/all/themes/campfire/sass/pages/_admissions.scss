@@ -1,0 +1,20 @@
+.as-page--admissions {
+
+  .as-page__block--hero {
+    padding: 0;
+  }
+
+  .as-page__block--popular-links {
+
+    @include tablet {
+      background: #f7f7f7;
+    }
+  }
+
+  .as-page__block--three-up {
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+}

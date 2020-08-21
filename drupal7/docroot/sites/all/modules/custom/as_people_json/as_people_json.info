@@ -1,0 +1,6 @@
+name = A&S People from JSON
+description = Displays JSON people data in a block.
+core = 7.x
+package = AS
+php = 5.2.4
+version = 7.x-1.0

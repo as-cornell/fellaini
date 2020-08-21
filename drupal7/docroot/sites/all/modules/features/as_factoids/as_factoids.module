@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Factoids feature.
+ */
+
+include_once 'as_factoids.features.inc';

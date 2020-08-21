@@ -1,0 +1,73 @@
+/*
+    Tabbed pane styels
+*/
+
+.tabs__nav{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    position:relative;
+    margin-bottom: 2rem;
+    &:before{
+        content:'';
+        position:absolute;
+        background: $as-gray-lt;
+        width:100%;
+        height: 1px;
+        bottom:3px;
+        z-index: -1;
+    }
+    li{
+        margin-right: .5rem;
+        @include small-plus(){
+            margin-right:0;
+        }
+        &.active{
+            a{
+                border-bottom: 3px solid $as-red;
+                color: $as-text;
+            }
+        }
+    }
+    a{
+        // color: $as-text-lt;
+        border-bottom:3px solid transparent;
+        @include small-plus(){
+            padding:.5rem 1rem;
+        }
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 400;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+}
+.tab__pane{
+    display:none;
+    &.active{
+        display:block;
+    }
+}
+
+
+// Drupal tabs
+.tabs--drupal{
+  ul.primary{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  top: 100px;
+  left: 0;
+  z-index: 10;
+  }
+  ul.primary li{
+    flex: 1 0 40%;
+    a{
+      display: block;
+      margin-right: 0;
+    }
+  }
+}

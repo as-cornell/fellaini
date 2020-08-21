@@ -1,0 +1,173 @@
+// Plugins
+@import 'compass';
+//@import 'breakpoint';
+@import 'susy';
+// Global
+@import 'base';
+@import 'fonts';
+//@import 'icons';
+@import 'as-cu';
+@import 'global';
+
+.no-csstransitions, {
+	.as-nav, .as-container--nav, .filters__control-bar{
+		text-align: center;
+		width: 100%;
+		display: table;
+	}
+	.as-nav{
+		margin-top: 0px;
+	}
+}
+
+.no-js{
+	.as-nav{
+		text-align: center;
+		width: 100%;
+		display: table;
+	}
+}
+
+
+.no-csstransitions .menu--primary li, .no-js .menu--primary li {
+  display: inline-block;
+  width: 18%;
+}
+.no-csstransitions .menu--primary li:hover .menu--secondary {
+  display: inline-block;
+  left: 0;
+}
+
+.no-csstransitions .menu--secondary li{
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+.no-csstransitions{
+	.as-color-bar::after, .as-color-bar2::after,.as-color-bar3::after{
+		display: none;
+	}
+}
+
+.no-csstransitions .as-stats{
+	display: table;
+	width: 100%;
+	.as-stat{
+		float: left;
+		width: 30%;
+	}
+}
+
+/* IE9 */
+	.no-csstransitions .grid{
+		display: block;
+		width: 100%;
+	}
+	.no-csstransitions .grid > div, .no-csstransitions .grid > article{
+		display: table-cell;
+		float: left;
+		clear: none;
+	}
+
+
+/* Contact Boxes */
+
+.no-flexbox .contact-boxes div{
+	vertical-align: top;
+	width: 25%;
+}
+
+.no-flexbox .contact-boxes div span{
+	width: 20%;
+	display: block;
+	float: left;
+}
+
+.no-flexbox .contact-boxes div p{
+	width: 70%;
+	float: right;
+}
+
+.lt-ie9 .as-header, .lt-ie9 .header__logo{
+	display: block;
+}
+
+.lt-ie9 .as-mobile-title, .lt-ie9 .as-header__links{
+	display: none;
+}
+
+.lt-ie9 .as-header__brand{
+	height: 140px;
+}
+
+.lt-ie9 .as-nav .as-nav__link--primary{
+	color: black;
+}
+
+.lt-ie9 .as-nav .as-icon{
+	display: none;
+}
+
+.lt-ie9 .as-page__block, .lt-ie9 .as-container{
+	display: block;
+}
+
+/* homepage */
+.no-csstransitions .articleList--main{
+	float: left;
+}
+.no-csstransitions .articleList--main .field-image{
+	display: auto;
+	float: left;
+}
+.no-csstransitions .articleList--main article{
+	clear: both;
+}
+.no-csstransitions .container--columns--alpha .event-listing{
+	float: right;
+}
+
+/* pictureText blocks */
+
+.no-csstransitions .pictureText .pictureText__media, .no-csstransitions .pictureText .field-image{
+	width: 40%;
+	float: left;
+}
+
+.no-csstransitions .pictureText--quote.pictureText .field-description{
+	width: 50%;
+	float: right;
+}
+.no-csstransitions .pictureText--lr .field-image, .no-csstransitions .pictureText:nth-of-type(even) .field-image{
+	margin-right: 40px;
+}
+.no-csstransitions .pictureText--lr .field-image::before, .no-csstransitions .pictureText:nth-of-type(even) .field-image::before{
+	left:-95%;
+}
+
+/*CTA Block*/
+.no-csstransitions .as-cta-bar__links a{
+	display: inline-block;
+	width: 32%;
+	text-align: center;
+}
+
+/*footer*/
+.no-flexbox .as-footer__nav .menu--primary li{
+	display: inline-block;
+	width: 150px;
+}
+
+/*gallery*/
+.no-flexboxlegacy .slider--gallery .slides{
+	width:$small;
+	@include medium-large(){
+		width: $medium;
+	}
+	@include large-plus(){
+		width: $large;
+	}
+}

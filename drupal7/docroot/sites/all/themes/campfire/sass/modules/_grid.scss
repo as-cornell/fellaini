@@ -1,0 +1,117 @@
+.as-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: visible;
+
+  >div, >article, >a, >figure, >blockquote{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+
+  @include small-plus(){
+    >div, >article, >a, >figure, >blockquote{
+      flex: 0 0 48%;
+      max-width: 48%;
+      margin-bottom: 1em;
+    }
+  }
+
+  &--nocontainer{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &--oneOverOneHalf{
+   >div:first-child{
+     @include medium-plus(){
+      flex: 0 0 100%;
+      max-width: 100% !important;
+     }
+     
+   }
+   div, figure{
+    @include medium-plus(){
+      flex: 0 0 48%;
+    } 
+   }
+  }
+  &.vertCenter{
+    align-items: center;
+  }
+  &.vertBottom{
+    align-items: flex-end;
+  }
+  &.vertTop{
+    align-items: flex-start;
+  }
+}
+  .as-grid--three{
+    @include medium-plus(){
+    >div, >a, >article, >blockquote{
+      flex-basis: 29.8333333%;
+      max-width: 31.8333333%;
+      //margin: 2%;
+      }
+    };
+  }
+  .as-grid--four{
+    @include medium-plus(){
+    >div, >article, >blockquote{
+        flex: 0 0 23.333%;
+        max-width: 23.3333%;
+      }
+    };
+  }
+  .as-grid--two-one{
+    @include medium-plus(){
+      >div:first-of-type{
+        flex: 0 0 64.08%;
+        max-width: 64.08%;
+      }
+      >div:last-of-type{
+        flex: 0 0 26.833333%;
+        max-width: 26.833333%;
+      }
+    }
+  }
+  .as-grid--three-one{
+    // background: yellow;
+    @include medium-plus(){
+      >div:first-of-type{
+        flex: 0 0 66%;
+        max-width: 66%;
+        // background: pink;
+      }
+      >div:last-of-type{
+        flex: 0 0 26.833333%;
+        max-width: 26.833333%;
+        // background: red;
+      }
+    }
+  }
+  .as-grid--one-two{
+    @include medium-plus(){
+      >div:last-of-type{
+        flex: 0 0 66.08%;
+        max-width: 66.08%;
+      }
+      >div:first-of-type{
+        flex: 0 0 26.833333%;
+        max-width: 26.833333%;
+      }
+    }
+  }
+
+  @include small-plus(){
+    .as-grid--vert-ctr{
+      align-items: center;
+      p:last-of-type{
+        margin-bottom: 0;
+      }
+      >div{
+        margin-bottom: 0;
+      }
+    }
+  }

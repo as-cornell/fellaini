@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Article feature.
+ */
+
+include_once 'as_article.features.inc';

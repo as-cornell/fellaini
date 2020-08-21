@@ -1,0 +1,345 @@
+///////////////////////// Colors
+
+$as-border: #e7e7e7;
+$as-bg-alt: #f8f8f8;
+$as-black: #000000;
+$as-white: #ffffff;
+$light-gray: #eeeeee;
+// trying darker for contrast tests
+$as-red: #d03e3e;
+$as-link: #b31b1b;
+//$as-red: #e44444;
+//$as-green: #9ece78;
+$as-green: #466F25; // https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=68A437
+$as-green-lt: #9ece78;
+$as-blue: #4D747A; // https://webaim.org/resources/contrastchecker/?fcolor=FFFFFF&bcolor=489BA3
+$as-gold: #f7c73e;
+$as-gold-contrast: #564516; 
+
+$as-text: #2c2c2c;
+$as-text-lt: #737373;
+
+$as-gray-lt: #f7f7f7;
+
+// gradients
+$gold-radial: radial-gradient(circle, rgba(247,199,62,1) 0%, rgba(247,225,62,1) 100%);
+$blue-radial: radial-gradient(circle, rgba(77,116,122,1) 0%, rgba(77,122,118,1) 100%);
+
+/*
+ ** Freedom Interrupted colors
+ */
+$fi-pink: #F16B84;
+$fi-red: #EE4041;
+$fi-blue: #005B9B;
+$fi-orange: #AA9C90;
+$fi-brown: #955029;
+$fi-green: #67AA1C;
+
+// Font vars
+  $sans-serif-font: "canada-type-gibson", sans-serif;
+  $serif-font: "freight-micro-pro", serif;
+  $as-base-font-size: 18px;
+
+// Screen Sizes
+
+  $small: 608px;
+  $medium: 746px;
+  $large: 960px;
+  $x-large: 1200px;
+  $huge: 1440px;
+
+// others
+
+  $baseRadius:3px;
+
+// set font sizes to rem w/ px fallback
+
+  @function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+  }
+
+  @mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }
+
+// set base font
+
+  @mixin baseFont($size: $as-base-font-size, $line-height: 1.4, $spacing: .2px){
+    @include font-sans-lt;
+    @include font-size($size);
+    line-height: $line-height;
+    letter-spacing: $spacing;
+    margin-bottom: gutter();
+  }
+
+// set non-standard sans-fonts
+
+  @mixin sans-font($size:$as-base-font-size, $color:$as-text, $weight:300){
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-size: $size;
+    font-size: calculateRem($size);
+    color: $color;
+    font-weight: $weight;
+    letter-spacing: 0.7px;
+  }
+
+// set serif fonts
+
+  @mixin serif-font($size:$as-base-font-size, $color:$as-text, $weight:400, $txt-trans:none){
+    font-family: $serif-font;
+    font-style: normal;
+    font-size: $size;
+    font-size: calculateRem($size);
+    color: $color;
+    font-weight: $weight;
+    letter-spacing: 0.7px;
+    text-transform: $txt-trans;
+    //margin-bottom: gutter(4);
+  }
+
+// Standard drop shadow
+
+  @mixin as-box-shadow(){
+    @include box-shadow($as-gray-lt 0px 0px 5px 2px);
+  }
+
+// Buttons
+  @mixin btn(){
+    //font-family: $serif-font;
+    //@include font-size(24px);
+    border-radius: $baseRadius;
+    font-weight: 300;
+    padding: .2em 1.5em .25em .8em !important;
+    text-shadow: none !important;
+    background-image: none !important;
+    //display: inline-block;
+    //position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //z-index: -1;
+    &:after{
+      //left: 90%;
+      //top: 63%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+     // position: absolute;
+      pointer-events: none;
+      border-color: rgba(216, 174, 52, 0);
+      //margin-top: -9px;
+    }
+  }
+  @mixin btnColor($txt-color:$as-white,$color:$as-gold){
+
+    @if $txt-color == $as-white{
+        color: $as-white;
+    } else {
+        color: darken($color, 35%);
+    }
+
+    background: $color;
+    border: 1px solid darken($color, 25%);
+    @include transition(all 0.5s ease);
+    &:after{
+      border-left-color: darken($color, 15%);
+      border-width: .35em 0 .35em 0.35em;
+      @include transition(all 0.5s ease);
+    }
+    &:hover{
+      background: darken($color, 8%) !important;
+      text-decoration: none;
+      &:after{
+        border-left-color: darken($color, 20%);
+        //left: 86%;
+      }
+    }
+  }
+
+/// Colors
+@mixin gradient-radial($innerColor: #555, $outerColor: #333)  {
+  background-color: $outerColor;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor));
+  background-image: -webkit-radial-gradient(circle, $innerColor, $outerColor);
+  background-image: -moz-radial-gradient(circle, $innerColor, $outerColor);
+  background-image: -o-radial-gradient(circle, $innerColor, $outerColor);
+  background-repeat: no-repeat;
+}
+// better radial gradient
+@mixin bg-radial($start-colour, $start-position, $end-colour, $end-position) {
+    background-color: $end-colour;
+    background: -moz-radial-gradient(center, ellipse cover, $start-colour $start-position, $end-colour $end-position);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, Colour-stop($start-position,$start-colour), Colour-stop($end-position,$end-colour));
+    background: -webkit-radial-gradient(center, ellipse cover, $start-colour $start-position,$end-colour $end-position);
+    background: -o-radial-gradient(center, ellipse cover, $start-colour $start-position,$end-colour $end-position);
+    background: -ms-radial-gradient(center, ellipse cover, $start-colour $start-position,$end-colour $end-position);
+    background: radial-gradient(ellipse at center, $start-colour $start-position,$end-colour $end-position);
+}
+///////////////////////// Media query mixins
+
+// Mobile only query
+// 0px through 608px
+@mixin mobile {
+  @media screen and (max-width: $medium) {
+    @content;
+  }
+}
+
+// small+
+@mixin small-plus {
+  @media screen and (min-width: $small){
+    @content;
+  }
+}
+// medium+
+@mixin medium-plus{
+  @media screen and (min-width: $medium){
+    @content;
+  }
+}
+
+// medium-
+@mixin medium-minus{
+  @media screen and (max-width: $medium){
+    @content;
+  }
+}
+
+// medium
+@mixin medium{
+  @media screen and (min-width: $small) and (max-width: $large){
+    @content;
+  }
+}
+
+// Medium - large
+@mixin medium-large{
+  @media screen and (min-width: $medium) and (max-width: $large){
+    @content;
+  }
+}
+
+// large+
+@mixin large-plus{
+  @media screen and (min-width: $large){
+    @content;
+  }
+}
+
+// x-large+
+@mixin x-large-plus{
+  @media screen and (min-width: $x-large){
+    @content;
+  }
+}
+
+// huge+
+@mixin huge-plus{
+  @media screen and (min-width: $huge){
+    @content;
+  }
+}
+
+/////////////  FA
+      // Tablet media query
+      // 576px through 960px
+      @mixin tablet {
+        @media screen and (min-width: $small) and (max-width:$medium){
+          @content;
+        }
+      }
+
+      // Desktop media query
+      // >= 960px with a max width of 1264px
+      @mixin desktop {
+        @media screen and (min-width:960px) and (max-width: 1246px) {
+          @content;
+        }
+      }
+
+      // In some cases tablet and desktop are the same
+      @mixin tablet-desktop {
+        @include tablet {
+          @content;
+        }
+
+        @include desktop {
+          @content;
+        }
+      }
+
+
+
+///////////////////////////// Retina capable media query
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+///////////////////////////// Animation
+
+@mixin animate($prop, $time: "", $delay: "", $ease: "", $mode:"forwards") {
+  @if $time == "" {
+    $time: 0.4s;
+  }
+  @if $delay == "" {
+    $delay: 0s;
+  }
+  @if $ease == "" {
+    $ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  @include transition-property($prop);
+  @include transition-duration($time);
+  @include transition-timing-function($ease);
+  @include transition-delay($delay);
+  @include annimation-fill-mode($mode);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}

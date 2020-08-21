@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>grid</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="ACTIVE" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Majors-&amp;-Minors-(Grid)" transform="translate(-1228.000000, -1130.000000)" fill="#000000">
+            <g id="grid" transform="translate(1228.000000, 1130.000000)">
+                <rect id="Rectangle" x="0" y="0" width="10.2222222" height="10.2222222"></rect>
+                <rect id="Rectangle-Copy-2" x="0" y="12.7777778" width="10.2222222" height="10.2222222"></rect>
+                <rect id="Rectangle-Copy" x="12.7777778" y="0" width="10.2222222" height="10.2222222"></rect>
+                <rect id="Rectangle-Copy-3" x="12.7777778" y="12.7777778" width="10.2222222" height="10.2222222"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

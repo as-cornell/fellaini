@@ -1,0 +1,5 @@
+name = AS Taxonomy Jellybeans
+description = Alters output of taxonomy fields to show themed jellybeans instead of taxonomy term
+package = AS
+core = 7.x
+version = 7.x-1.0

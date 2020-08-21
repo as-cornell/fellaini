@@ -1,0 +1,41 @@
+.as-event {
+  color: #4a4a4a;
+}
+
+.as-event__date {
+  @include font-sans-semi;
+  @include span(2 of 12);
+  text-align: center;
+}
+
+.as-event__month {
+  font-size: 14px;
+}
+
+.as-event__day {
+  font-size: 18px;
+}
+
+.as-event__copy {
+  @include span(10 of 12 last);
+}
+
+.as-event__title {
+  color: $as-red;
+  @include font-sans-semi;
+  font-size: 18px;
+  letter-spacing: .25px;
+}
+
+.as-event__time {
+  @include font-sans-semi;
+  font-size: 14px;
+  letter-spacing: .25px;
+  margin-top: gutter();
+}
+
+.as-event__text {
+  font-size: 14px;
+  letter-spacing: .25px;
+  margin-top: gutter();
+}

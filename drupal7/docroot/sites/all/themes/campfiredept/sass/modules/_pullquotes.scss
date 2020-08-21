@@ -1,0 +1,17 @@
+.as-pullquote {
+  padding: gutter(8);
+}
+
+.as-pullquote__inner {
+  border-left: 1px solid $as-border;
+  border-right: 1px solid $as-border;
+  padding: gutter() gutter(4) 0;
+  margin: 0 gutter(8);
+}
+
+.as-pullquote__text {
+  color: #5dacc5;
+  @include font-sans-lt;
+  font-size: 27px;
+  line-height: 1.4;
+}

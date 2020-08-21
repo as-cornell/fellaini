@@ -1,0 +1,80 @@
+<?php
+/**
+ * @file
+ * Code for the CU Search custom module
+ */
+
+/**
+ * Implements hook_init()
+ *
+ */
+function as_search_init() {
+  if (current_path() == "search") {
+    if (variable_get('as_search_google_key')) {
+      drupal_add_js(array('as_search' => array('as_search_google_key' => variable_get('as_search_google_key'))), 'setting');
+      drupal_add_js(drupal_get_path('module','as_search') . '/as_search.js', array('type' => 'file', 'weight' => 16));
+    }
+  }
+}
+
+/**
+ * Implements hook_permission()
+ */
+function as_search_permission() {
+  return array(
+    'administer cu search' => array(
+      'title' => t('Administer A&S Search'),
+      'description' => t('Set the Google Search Engine key for the search functionality your site.'),
+    ),
+  );
+}
+
+/**
+* Implements hook_menu().
+*/
+function as_search_menu() {
+  $items = array();
+  $items['admin/config/system/as_search'] = array(
+    'title' => t('A&S Search Settings'),
+    'description' => t('Configure Google CSE Integration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('as_search_admin'),
+    'file' => 'includes/as_search.admin.inc',
+    'access arguments' => array('administer as search'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['search'] = array(
+    'page callback' => 'as_search_results_view',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+function as_search_results_view() {
+  $content = "<div class='as-page__block'>\n     ";
+  $content .= "<div class='as-container as-search-results'>\n          ";
+  $content .="<h1 class='pageTitle'>Search Results</h1>\n     ";
+
+  $content .=" <div class='as-page__block--search-bar'>
+        <div class='as-search-bar'>
+
+        <form action='/search' class='as-search-bar__form' method='get' id='cu-search-form' accept-charset='UTF-8'>
+          <div class='as-container'>
+            <div class='as-button as-button--search'>
+              <div class='as-icon as-icon--search'></div>
+            </div>
+            <input class='as-search-bar__input' name='s' placeholder='Search interests, careers, or keywords...'>
+          </div>
+        </form>
+
+        </div>
+      </div>";
+
+  $content .= "<gcse:searchresults-only resultsUrl='/search' linkTarget='_parent' queryParameterName='s'>Please make sure javascript is enabled to see the search results.</gcse:searchresults-only>\n     ";
+  $content .= "</div>\n    ";
+  $content .= "</div>";
+
+  return $content;
+}

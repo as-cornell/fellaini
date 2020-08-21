@@ -1,0 +1,169 @@
+
+/* Not really using this stuff down here. 
+.as-modal {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  @include mobile {
+    top: 49px;
+  }
+
+  @include tablet {
+    top: 257px;
+  }
+
+  .as-container {
+    background: #fff;
+    position: relative;
+  }
+
+}
+
+.as-modal--active {
+  display: block;
+}
+
+.as-modal--fixed {
+
+  @include tablet {
+    .as-modal__controls {
+      position: fixed;
+      top: 0;
+    }
+
+    .as-modal__nav {
+      position: fixed;
+    }
+  }
+}
+
+.as-modal__controls {
+
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.as-modal__control {
+  color: white;
+  width: 80px;
+  text-align: center;
+  position: absolute;
+  right: -80px;
+}
+
+.as-modal__control--close {
+  top: 0;
+  background: $as-gold;
+  cursor: pointer;
+  font-size: 21px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.as-modal__control--next, .as-modal__control--prev {
+  background: $as-blue;
+  cursor: pointer;
+  height: 108px;
+  @include font-sans-lt;
+  font-size: 60px;
+  line-height: 92px;
+}
+
+.as-modal__control--next {
+  top: 520px;
+}
+
+.as-modal__control--prev {
+  top: 630px;
+}
+
+.as-modal__nav {
+
+  @include mobile {
+    height: 48px;
+    overflow: hidden;
+  }
+
+  @include tablet {
+    color: $as-white;
+    position: absolute;
+    top: 520px;
+    z-index: 1;
+    @include translateX(-50%);
+  }
+
+}
+
+.as-modal__toggle {
+
+  @include mobile {
+    background: tint($as-green, 50%);
+    color: $as-white;
+    text-transform: uppercase;
+    position: relative;
+    height: 48px;
+    line-height: 48px;
+
+    .as-icon {
+      background: shade($as-green, 50%);
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+}
+
+.as-modal__links {
+  @include mobile {
+    @include translateY(-100%);
+  }
+}
+
+a.as-modal__link {
+  display: block;
+  @include font-serif-bold;
+  font-size: 12px;
+  letter-spacing: .3px;
+  text-decoration: none;
+
+
+  @include mobile {
+    background: shade($as-green, 25%);
+    color: $as-white;
+    padding: gutter(6);
+  }
+
+  @include tablet {
+    background: $as-green;
+    color: shade($as-green, 50%);
+    padding: gutter(3);
+    &:hover {
+      background: $as-green;
+      color: $as-white;
+    }
+  }
+}
+
+a.as-modal__link--active {
+  @include tablet {
+    background: shade($as-green, 25%);
+    color: $as-white;
+  }
+}
+*/

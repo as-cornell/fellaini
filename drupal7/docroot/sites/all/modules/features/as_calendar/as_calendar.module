@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the AS Calendar feature.
+ */
+
+include_once 'as_calendar.features.inc';

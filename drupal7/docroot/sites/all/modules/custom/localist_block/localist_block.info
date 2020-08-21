@@ -1,0 +1,9 @@
+name = Localist Event Block
+description = Provides the custom event block and permissions
+core = 7.x
+package = AS
+version = 7.x-1.0
+dependencies[] = bean
+dependencies[] = ctools
+dependencies[] = link
+files[] = plugins/bean/bean_localist_events.event_block.inc

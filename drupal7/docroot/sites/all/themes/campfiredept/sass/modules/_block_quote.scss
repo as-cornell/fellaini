@@ -1,0 +1,121 @@
+// base blockquote
+blockquote {
+  display: flex;
+  flex-direction: column;
+  //background: $as-green;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 3rem;
+  border-left: 5px solid $as-text;
+
+    line-height: 1.36;
+    @include sans-font($weight: 400, $size: 21px);
+    @include medium-plus(){
+      @include sans-font($weight: 400, $size: 28px);
+    }
+  img{
+    max-width: span(3);
+    float: left;
+    margin-right: 1rem;
+    margin-top: .25rem;
+  }
+  //;
+  p{
+    color: $as-text;
+  }
+  footer, cite{
+    //@include font-sans-semi-it;
+    //@include font-size(18px);
+
+    margin-top: gutter(4);
+  }
+  a {
+    color: $as-white;
+  }
+  cite{
+    display: block;
+    font-style: italic;
+    margin-top: gutter(6);
+    @include font-size(15px);
+  }
+}
+.red{
+  blockquote{
+    border-left: 5px solid $as-white;
+  }
+}
+
+//big colored background quotes
+.as-blockquote {
+  padding: gutter(4);
+  
+    blockquote{ 
+      text-align: center;
+      @include small-plus(){
+        margin: 0 gutter(2);
+      };
+    }
+  
+  p{
+    @include font-size(27px);
+    line-height: 1.2;
+    color: $as-white;
+  }
+  footer{
+    color: $as-white;
+    font-style: italic;
+  }
+  &:nth-of-type(3n+1){
+    background: $as-blue;
+  }
+  &:nth-of-type(3n+2){
+    background: $as-green;
+  }
+  &:nth-of-type(3n+3){
+    background: $as-gold;
+  }
+}
+
+// blockquotes on narrower columns
+.as-page__content--withSidebar{
+  blockquote{
+    margin: 0;
+  }
+}
+
+
+
+ 
+
+
+
+
+.as-blockquote--left {
+  text-align: left;
+}
+
+.as-blockquote--no-border {
+  border: 0;
+}
+
+.as-blockquote--green {
+  background: $as-green;
+  p {
+    border-color: shade($as-green, 10%);
+  }
+}
+
+.as-blockquote--gold {
+  background: $as-gold;
+  p {
+    border-color: shade($as-gold, 10%);
+  }
+}
+
+.as-blockquote--blue {
+  background: $as-blue;
+  color: $as-white;
+  p {
+    border-color: shade($as-blue, 10%);
+  }
+}

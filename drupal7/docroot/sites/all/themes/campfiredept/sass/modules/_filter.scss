@@ -1,0 +1,166 @@
+// this is the bit that makes all the check boxes and the panel itself.
+
+.as-filters {
+  background: $as-bg-alt;
+  border-bottom: 1px solid $as-border;
+  display: none;
+  font-size: 1rem;
+    position: relative;
+  padding: 2rem 0;
+  //margin: 0 2rem;
+  //padding: gutter(8);
+
+  @include small-plus {
+    border-top: 1px solid $as-border;
+
+  }
+
+  .as-filters__columns{
+    display: flex;
+  }
+
+  .as-icon--close {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: gutter();
+    width: 32px;
+    line-height: 32px;
+    color: $as-white;
+    background: $as-gold;
+    text-align: center;
+
+    @include mobile {
+      display: none;
+    }
+  }
+  &.filters--courses{
+    @include font-size(18px);
+    label{
+      display: inline-block;
+    }
+  }
+}
+
+.as-filters--expanded {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+// filters container
+    .filters{
+        display: flex;
+    }
+
+.as-filter__section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+  flex: 0 0 30%;
+
+  label{
+    //flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+
+    input{
+      margin-right: .5rem;
+      flex: 0 0 auto;
+    }
+  }
+  @include huge-plus(){
+    label{
+      //flex: 0 0 30%;
+    }
+  }
+
+}
+
+
+.as-filter__header {
+  @include clearfix;
+  border-bottom: 1px solid $as-border;
+
+  @include mobile {
+    padding: gutter(8);
+  }
+
+  @include small-plus {
+    padding: gutter(6) 0;
+  }
+}
+
+.as-filter__title {
+  display: inline-block;
+  @include font-sans-semi;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.as-filter__item {
+  @include mobile {
+    margin: gutter(8);
+  }
+
+  @include small-plus {
+    margin: gutter(6) 0;
+  }
+
+}
+
+.as-filter__checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  position: relative;
+  margin: 0 gutter();
+
+  input {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    &:checked {
+      + label {
+        background: $as-green;
+        border: 1px solid shade($as-green, 33%);
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  label {
+    background: $as-white;
+    border: 1px solid $as-border;
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+
+    //this is the little box on its side that makes the check
+    &:after {
+      content: '';
+      width: 9px;
+      height: 6px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border: 3px solid shade($as-green, 66%);
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+label{
+  font-weight: normal;
+}

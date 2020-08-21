@@ -1,0 +1,11 @@
+name: 'Entity share entity test'
+description: 'Provides entity types to use during tests.'
+type: module
+package: Testing
+dependencies:
+  - drupal:entity_test
+
+# Information added by Drupal.org packaging script on 2020-05-20
+version: '8.x-2.0-alpha11'
+project: 'entity_share'
+datestamp: 1589988223

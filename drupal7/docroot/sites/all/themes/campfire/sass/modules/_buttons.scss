@@ -1,0 +1,7 @@
+/**
+  * Buttons
+ **/
+
+ .big-blue-button{
+ 	@include button($bg-color: $as-blue, $size: ( 1.5 * $f-base-size ));
+ }

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Department Newsletters feature.
+ */
+
+include_once 'as_department_newsletters.features.inc';

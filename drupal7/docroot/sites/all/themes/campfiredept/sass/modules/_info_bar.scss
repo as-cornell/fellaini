@@ -1,0 +1,150 @@
+.as-info-bar {
+  //display: none;
+  position:absolute;
+  top: -100px;
+  z-index: 10;
+
+  @include medium-plus {
+    display: block;
+    position: relative;
+    top: 0px;
+    color: $as-white;
+    overflow: hidden;
+    @include font-size(13px);
+    padding: .5rem 2%;
+  }
+  a, i{
+    color: $as-white;
+    text-decoration: none;
+  }
+  &.as-info-bar--expanded{
+    top: -34px;
+  }
+}
+
+.as-mark--small{
+  padding-left: 1rem;
+  @include huge-plus(){
+    padding-left: 0;
+  }
+}
+
+
+.cornell-insignia{
+  width: 180px;
+  margin-top: 4px;
+}
+.as-mark{
+  .amp{
+    color: $as-red;
+    margin: 0 -6px 0 -5px;
+  }
+  &.as-mark--small{
+    @include sans-font($color: $as-white, $size: 14px, $weight: 600);
+    display: block;
+    text-decoration: none;
+    .collegeOf{
+      @include sans-font($weight: 100, $color: $as-text-lt, $size: 14px);      
+    }
+    .amp{
+      color: $as-red;
+      margin: 0 -3px;
+    }
+  } 
+  &.as-mark--big{
+    @include sans-font($color: $as-white, $size: 28px, $weight: 600);
+    margin-left: 2px;
+    display: block;
+    text-decoration: none;
+    .collegeOf{
+      @include sans-font($size: 18px, $weight: 100, $color: $as-text-lt);
+      display: block;
+      margin-bottom: -10px;
+    }
+    text-align: center;
+    width: 100%;
+    padding: 3.5% 0;
+    @include medium-plus(){
+      text-align: left;
+      //float: left;
+      width: 300px;
+      padding: 0;
+    }
+    .amp{
+      color: $as-red;
+      margin: 0 -7px 0 -6px;
+    }
+  }
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+
+.as-info-bar__mobile {
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}
+
+.as-info-bar__inner {
+  text-align: center;
+  position: relative;
+  line-height: 58px;
+  @include mobile {
+    padding-bottom: 20px;
+    text-align: left;
+    line-height: 40px;
+    .as-info-bar__label {
+      color: $as-white;
+      text-transform: uppercase;
+      margin-left: 20px;
+      margin-top: 30px;
+      font-size: 16px;
+    }
+    a {
+      color: $as-text-lt;
+      margin-left: 40px;
+      font-size: 16px;
+      display: block;
+    }
+  }
+}
+
+
+.as-info-bar__label {
+  color: $as-text-lt;
+  font-size: 13px;
+  margin-right: 20px;
+}
+
+.as-info-bar__link {
+  color: $as-white;
+  font-size: 13px;
+  margin-left: 20px;
+}
+
+.info-for--mobile{
+  ul{
+  display: block;
+  padding-left: 1em;
+  }
+  a{
+    padding: .5em 1em;
+    display: block;
+    color: $as-text-lt;
+    font-weight: 300;
+  }
+
+  h3{
+    padding: .5em 1em;
+    color:$as-text-lt;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+  @include medium-plus{
+    display: none;
+  }
+}

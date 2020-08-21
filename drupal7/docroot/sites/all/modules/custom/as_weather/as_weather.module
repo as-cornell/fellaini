@@ -1,0 +1,96 @@
+<?php
+
+function as_weather_block_info() {
+  // Implementation of hook_block_info():
+  $blocks['main'] = array(
+    'info' => t('One line weather report for footers'),
+    //'status' => TRUE,
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  return $blocks;
+}
+
+function as_weather_block_view($delta) {
+  // This example is adapted from node.module.
+  $block = array();
+    switch ($delta) {
+    case 'main':
+      $block['subject'] = t('Main');
+      $block['content'] = as_weather_block_content($delta);
+      break;
+    }
+  return $block;
+}
+
+function as_weather_nameize($str,$a_char = array("'","-"," ")){
+    // adapted from http://php.net/manual/en/function.ucfirst.php
+    //$str contains the complete raw name string
+    //$a_char is an array containing the characters we use as separators for capitalization. If you don't pass anything, there are three in there as default.
+    $string = strtolower($str);
+    foreach ($a_char as $temp){
+        $pos = strpos($string,$temp);
+        if ($pos){
+            //we are in the loop because we found one of the special characters in the array, so lets split it up into chunks and capitalize each one.
+            $mend = '';
+            $a_split = explode($temp,$string);
+            foreach ($a_split as $temp2){
+                //capitalize each portion of the string which was separated at a special character
+                $mend .= ucfirst($temp2).$temp;
+                }
+            $string = substr($mend,0,-1);
+            }
+        }
+    return ucfirst($string);
+    }
+
+
+function as_weather_block_content($delta) {
+//Implementation of hook_block_content()
+// Connect to openweathermap.org
+$json_string =    file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=Ithaca,us&appid=63901e9707c2b2ff4ec213fb4c2b9674&units=imperial");
+//put JSON into display text
+$json_string = utf8_encode($json_string);
+//parse JSON into individual variables
+$parsed_json = json_decode($json_string);
+//get the stuff we want to display
+$location =$parsed_json->{'name'};
+$weatherdescription = $parsed_json->{'weather'};
+$count = count($weatherdescription);
+  for($i = 0; $i < $count; $i++) {
+     $item = $weatherdescription[$i];
+        $weatherdescription =  $item->{'description'} ;
+        $weatherdescription = as_weather_nameize($weatherdescription);
+        break;
+    }
+$temp = $parsed_json->{'main'}->{'temp'};
+$temp = round($temp);
+$temphi = $parsed_json->{'main'}->{'temp_max'};
+$temphi = round($temphi);
+$templo = $parsed_json->{'main'}->{'temp_min'};
+$templo = round($templo);
+$humid = $parsed_json->{'main'}->{'humidity'};
+//display the stuff according to how it needs to appear
+switch ($delta) {
+    case 'main':
+    $main = "<div>Current weather in ${location} is: ${weatherdescription}, ${temp} &#8457; (high ${temphi} &#8457;, low ${templo} &#8457;)</div>\n";
+    $result = array('#markup' => $main);
+    return $result;
+    break;
+    }
+}
+
+
+
+function as_weather_help($path, $arg) {
+  // Implementation of hook_help()
+    if ($path == 'admin/help#as_weather') {
+        $txt = 'The as_weather module uses the !as_weather_url '
+        .'API to retrieve JSON data for current Ithaca weather conditions and display it as block '
+        .'content.';
+        $link = l('Open Weathermap', 'http://openweathermap.org');
+        $replace = array(
+        '!as_weather_url' => $link
+        );
+    return '<p>'. t($txt, $replace) .'</p>';
+    }
+}

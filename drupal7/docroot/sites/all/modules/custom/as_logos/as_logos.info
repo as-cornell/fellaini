@@ -1,0 +1,6 @@
+name = A&S Logos
+description = Provides site-approriate logos in a block that can be displayed in either the header or footer of a website.
+core = 7.x
+package = AS
+php = 5.2.4
+version = 7.x-1.0

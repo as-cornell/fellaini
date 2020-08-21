@@ -1,0 +1,234 @@
+/* RTM
+1. Updated path to __brand images
+2. Hide big logo
+3. Add skip links display:none;
+
+*/
+#skip {
+  display: none; }
+
+.as-mobile-title {
+  margin-top: 0; }
+
+.as-nav--expanded {
+  z-index: 10; }
+
+/***
+	NEW MENU
+***/
+.as-header__inner {
+  z-index: 1000; }
+
+/* nav
+
+	.as-nav{
+		@include mobile {
+			background: $as-text;
+			position: absolute;
+			top: -100%;
+			//left: 0;
+			width: 100%;
+			z-index: 10;
+
+			display: none;
+			transition: .5s all ease;
+
+		}
+		border-bottom: 1px solid $as-border;
+		ul{
+
+		}
+		li{
+			list-style-type: none !important;
+			list-style-image: none !important;
+		}
+		a{
+			text-decoration: none;
+		}
+	}
+	.as-container--nav--expanded{
+		.as-nav{
+		top: 45px;
+		display: block;
+	}
+	}
+
+	a.as-header__link--menu--active{
+		background: $as-red;
+		color: $as-white;
+		.as-icon--bars{
+			display:none;
+		}
+		.as-icon--close{
+			display: inline-block !important;
+			// fix
+		}
+	}
+
+	.menu--primary{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		margin: 0;
+		@media screen and (min-width: 600px){
+			display: flex;
+			justify-content: space-around;
+		}
+		li{
+			padding: 0;
+			position: relative;
+		}
+	}
+
+	.as-nav__link--primary{
+		display: block;
+		padding: 1em;
+		color: $as-white;
+		border-bottom: 1px solid $as-text-lt;
+		@media screen and (min-width: 600px){
+			color: $as-text;
+			font-size: 18px;
+			border-top: 3px solid transparent;
+			border-bottom: none;
+				@include font-sans-semi;
+			&.active{
+				border-top: 3px solid $as-red;
+			}
+			&:hover{
+				border-top: 3px solid $as-text;
+			}
+		}
+	}
+
+	.menu--secondary, .menu--tertiary{
+		display: none;
+	}
+
+	.menu--primary li:hover .menu--secondary{
+		@media screen and (min-width:600px){
+			display: flex;
+			flex-flow: column;
+		}
+
+	}
+
+	.menu--secondary{
+			padding: 10px 0;
+			position: absolute;
+			background: $as-white;
+			border: 1px solid $as-border;
+			margin: 0 auto;
+			min-width: 260px;
+			z-index: 10;
+			width: 130%;
+			left: -15%;
+			min-width: 260px;
+			@include box-shadow(2px 2px 0 rgba(#000, 0.06));
+			&:after {
+				//@include absolutely-centered;
+				position: absolute;
+				left: 2em;
+				content: "";
+				background: url("../images/arrow-subnav-up.png");
+				width: 28px;
+				height: 15px;
+				top: -15px;
+			}
+
+			a{
+				@include font-serif-med;
+				color: $as-text-lt;
+				display: block;
+				font-size: 15px;
+				padding: 10px 20px;
+				&:before, &:after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					width: 10px;
+					height: 100%;
+				}
+				&:before {
+					left: -10px;
+				}
+				&:after {
+					right: -10px;
+				}
+				&:hover {
+					background: $as-red;
+					color: $as-white;
+					&:before, &:after {
+						background: $as-red;
+					}
+				}
+			}
+	}
+
+*/
+/***
+MASONRY
+***/
+body {
+  background: #fff; }
+
+/* position stamp elements with CSS */
+/*.stamp{
+	position:absolute;
+	width: 100%;
+	left: 0;
+}
+
+@media screen and (min-width:640px) and (max-width:900px){
+	.stamp{
+		left: 3%;
+		width: 61.6%;
+	}
+}
+
+@media screen and (min-width: $large){
+	.stamp{
+		//position: absolute;
+		left: 26.5%;
+		width: 46%;
+	}
+}
+*/
+/*
+.as-card__copy{
+	display:flex;
+	flex-direction: column;
+	& div{
+		flex: 1 100%;
+	}
+}*/
+/*
+.as-card--featured{
+	.as-card__copy{
+		width: 60%;
+	}
+}
+	.as-card__title{
+		order: 2;
+	}
+	.as-card__subtitle{
+		order: 1;
+	}
+	.as-card__link{
+		order: 3;
+	}*/
+.as-card__link a {
+  color: #e44444; }
+
+.as-card--featured a {
+  color: #fff; }
+
+img {
+  max-width: 100%; }
+
+@font-face {
+  font-family: "as-font";
+  src: url("../fonts/as.eot");
+  src: url("../fonts/as.eot?#iefix") format("embedded-opentype"), url("../fonts/as.woff") format("woff"), url("../fonts/as.ttf") format("truetype"), url("../fonts/as.svg#as") format("svg"); }
+
+/*# sourceMappingURL=adjustments.css.map */

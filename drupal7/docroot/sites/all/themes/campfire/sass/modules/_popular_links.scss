@@ -1,0 +1,165 @@
+// ** .as-popular-links is FAs container for concierge and popular desitatins
+
+.as-popular-links,.as-places {
+  text-align: center;
+  //padding: 4rem 0;
+
+  .as-divider {
+    border-top: solid 1px $as-border;
+    height: 1px;
+    margin: 0 span(3 of 10);
+    margin-bottom: 7%;
+  }
+}
+
+// unordered list version of popular places
+.field-popular-places{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: -.5rem;
+  li{
+    padding: none;
+    display: inline-block;
+  }
+  a {
+    border: solid 2px $as-text-lt;
+    color: $as-text-lt;
+    @include font-sans-semi;
+    font-size: 14px;
+    //line-height: 44px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include mobile {
+      display: block;
+    }
+
+    @include small-plus {
+      display: inline-block;
+      padding: .5rem;
+      margin-right: .5rem;
+    }
+  }
+}
+
+.as-popular-links__title,.as-places h3 {
+  @include serif-font($size: 15px, $weight: 600);
+
+  text-transform: uppercase;
+  margin-bottom: gutter(4);
+}
+
+.as-popular-links__destinations {
+  padding-bottom: gutter(4);
+}
+
+.as-popular-links__places {
+  padding-top: gutter(4);
+
+  @include mobile {
+    @include span(4 at 2 of 6 isolate);
+    .as-popular-links__link {
+      &:nth-of-type(n+2) {
+        margin-top: gutter(4);
+      }
+    }
+  }
+}
+
+/*
+.as-popular-links__link {
+  border: solid 2px $as-text-lt;
+  color: $as-text-lt;
+  @include font-sans-semi;
+  font-size: 14px;
+  line-height: 44px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include mobile {
+    display: block;
+  }
+
+  @include tablet {
+    display: inline-block;
+    padding: 0 gutter();
+  }
+}
+*/
+
+.as-popular-links__text, .as-popular-links__destinations label  {
+  @include font-sans-lt;
+  line-height: 1.5;
+  @include font-size(24px);
+  @include small-plus() {
+    @include font-size(33px);
+  }
+
+}
+
+.as-popular-links__select {
+
+}
+
+.views-exposed-form .form-type-select{
+    position: relative;
+    margin-right: 10px;
+      &:after {
+      position: absolute;
+      content: '';
+      width: 0;
+      height: 0;
+      right: -24px;
+      top: 50%;
+      color: $as-blue;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid $as-blue;
+      font-size: 0;
+      line-height: 0;
+      }
+}
+
+.as-popular-links__select select, .as-popular-links__destinations select{
+  color: $as-blue;
+  background: transparent;
+  border: none;
+  @include font-sans;
+  //text-decoration: underline;
+  border-bottom: 1px solid;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  @include font-size(24px);
+
+
+  @include small-plus {
+    @include font-size(33px);
+  }
+
+}
+
+.as-popular-links__button, .as-popular-links__destinations .form-submit {
+  background: $as-blue;
+  border: 0;
+  color: $as-white;
+  @include font-sans-semi;
+  font-size: 20px;
+  outline: 0;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.25rem 2rem;
+  margin-left: gutter();
+  margin-top: 0 !important;
+  @include mobile {
+    margin-top: gutter(4);
+  }
+}
+
+.as-popular-links__destinations {
+  .views-widget, .form-item, label, .views-exposed-widget{
+    display: inline-block;
+  }
+  div{
+    float: none !important;
+  }
+}

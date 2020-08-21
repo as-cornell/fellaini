@@ -1,0 +1,16 @@
+name: 'Views Taxonomy Term Name Into ID Test'
+type: module
+description: 'Provides views with Taxonomy term name as ID Validator for tests.'
+package: Testing
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:views
+  - views_taxonomy_term_name_into_id:views_taxonomy_term_name_into_id
+
+# Information added by Drupal.org packaging script on 2020-05-07
+version: '8.x-1.0-alpha3'
+project: 'views_taxonomy_term_name_into_id'
+datestamp: 1588893533

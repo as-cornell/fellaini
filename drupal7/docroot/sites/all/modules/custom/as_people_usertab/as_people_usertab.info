@@ -1,0 +1,6 @@
+name = A&S People User tab
+description = Removes edit links for default user profile page for People AS.
+core = 7.x
+package = AS
+php = 5.2.4
+version = 7.x-1.0

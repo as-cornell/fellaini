@@ -1,0 +1,759 @@
+// need to figure out mixin card width
+// like, @mixin flex-oneHalf or flex-oneThrid
+// in clude those on differen card--xyz types
+
+.cards{
+
+}
+
+.cards--withFeature{
+  article:first-of-type{
+    flex: 0 0 66%;
+    max-width: 66%;
+  }
+}
+
+
+.card{
+  border: 1px solid $as-border;
+  margin-bottom: 24px;
+  text-align: center;
+  .card__image{
+      overflow: hidden;
+  }
+  img{
+    transition: all 0.5s;
+    display: block;
+  }
+
+  .card__content{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card__linkText{
+    @include as-link();
+  }
+  h1{
+    @include sans-font($size: 28px, $weight: 400);
+    margin-top: 0;
+  }
+  h2{
+    @include sans-font($size: 14px, $weight: 400, $color: $as-text-med);
+    margin-bottom: 1rem;
+  }
+  a{
+    //color: $as-text;
+    text-decoration: none;
+    color: $as-text;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &:hover{
+      img{
+          transform: scale(1.05);
+      }
+      .card__linkText{
+          text-decoration: underline;
+      }
+  }
+}
+  .card--text{
+    text-align: left;
+    padding: 1rem;
+    h2{
+        font-size: 1.5rem;
+        color: $as-text;
+    }
+    
+  }
+
+  .card--article, .card--newsletter, .card--work{
+    h1{
+      @include font-size(16px);
+      line-height: 21px;
+      margin-bottom: 0;
+      order: 2;
+    }
+    h2{
+      order: 1;
+    }
+    p{
+      order: 3;
+    }
+  }
+
+  .card--person{
+    .card__content{
+      h1{
+        order: 2;
+        margin-bottom: 1rem;
+      }
+      h2{
+        order: 1;
+      }
+      p{
+        order: 4;
+      }
+      .person__categories{
+          order: 3;
+      }
+    }
+  }
+
+  .card--research{
+    &:nth-of-type(4n+1){
+      .card__image::after{
+        background: $as-blue-lt;
+      }
+    }
+    &:nth-of-type(4n+2){
+      .card__image::after{
+        background: $as-gold;
+      }
+    }
+    &:nth-of-type(4n+3){
+      .card__image::after{
+        background: $as-blue;
+      }
+    }
+    &:nth-of-type(4n+4){
+      .card__image::after{
+        background: $as-green;
+      }
+    }
+    .card__image{
+    position: relative;
+    margin-bottom: 1rem;
+    display: block;
+      &::after{
+        position: absolute;
+        content: '';
+        //background: $as-green;
+        height: 1rem;
+        width: 94%;
+        left: 3%;
+        bottom: 0rem;
+        z-index: -1;
+      }
+    }
+  }
+
+
+// cards--list (people)
+.cards--list{
+  //display: inline;
+  justify-content: flex-start;
+  .card--person{
+    //flex: 0 0 23%;
+    border: none;
+    text-align: left;
+    @include small-plus{
+        flex-basis: 46%;
+        max-width: 46%;
+    }
+
+    .card--person__name{
+        padding-left: 0;
+    }
+    .card--person__title{
+        font-size: 1.25rem;
+    }
+    .person__categories{
+        list-style-type: circle;
+        font-weight: 300;
+        font-size: 1.25rem;
+        padding-left: 0;
+    }
+    .card__image{
+      display: none;
+    }
+    .card__linkText{
+      padding: 0 1rem;
+    }
+    .card__content{
+      padding-bottom:
+      h1{
+        order: 1;
+      }
+      h2{
+        order: 2;
+      }
+      p{
+        display: none;
+      }
+    }
+  }
+}
+
+// OLD Stuff
+  .as-cards__wrapper{
+    padding: gutter(12) 0;
+
+  }
+
+  .as-cards{
+    position: relative;
+    z-index: 1;
+    * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+
+  }
+
+  .as-card {
+    background: $as-white;
+    margin-bottom: 30px;
+    width:100%;
+    overflow: hidden;
+    img{
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #eeeeee;
+      position: relative;
+    }
+    h1{
+
+    }
+    a{
+        border-bottom: 3px solid transparent;
+    }
+    a:hover{
+      background-color: $as-white;
+      border-bottom: 3px solid $as-red-link;
+      img {
+        margin: 0 auto;
+      }
+      @include small-plus() {
+        .as-card__img, .field-image, .as-card__copy {
+        top: -2px;
+        @include transition(all 0.3s ease);
+      }
+        img {
+          opacity: 0.9;
+        }
+      }
+    }
+    /*&>a:after {
+      @include transition(all 0.3s ease);
+      height: 0;
+      background-color: $as-red;
+      content: '';
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }*/
+
+    a:hover:after {
+      @include small-plus() {
+        height: 5px;
+      }
+    }
+  }
+
+  .as-card--factoid{
+    border-top: 1px solid $as-border;
+    color: $as-text-lt;
+    img{
+      margin-bottom: 8.5%;
+      display: inline-block;
+    }
+  }
+
+  // Article
+  .as-card--article{
+    text-align: center;
+    position: relative;
+    a{
+      color: $as-text;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    .as-card__copy{
+      //padding-top: gutter(8);
+    }
+    .as-card__link{
+      @include as-link();
+    }
+    h1{
+      @include sans-font($size: 16px, $weight: 400);
+      margin-top: 0;
+    }
+  }
+
+  // Person
+  .as-card--person{
+    text-align: center;
+    a{
+      color: $as-text;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    h1{
+      @include sans-font($size: 24px, $weight: 400);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+    h4{
+      @include sans-font($size: 14px, $weight: 400, $color: $as-text-lt);
+      margin-bottom: 1.5rem;
+    }
+    .as-card__link{
+      margin-bottom: 0;
+      @include as-link();
+    }
+  }
+
+
+
+  /***
+    campfire titles
+  ***/
+
+  .as-cards{
+      @include small-plus(){
+        //margin: 0 20px;
+        };
+      @media screen and (min-width: 1175px){
+        margin: auto;
+      }
+    .as-card, .grid-size{
+      @media screen and (min-width:$small) and (max-width:900px){
+        width: 31.333333%;
+      }
+      @media screen and (min-width:901px){
+        width: 24%;
+      }
+    }
+    @include small-plus{
+      .gutter-size{
+        width: 1.3%;
+      }
+    }
+    .stamp{
+      position:absolute;
+      width: 100%;
+      left: 0;
+    }
+
+    @media screen and (min-width:$small) and (max-width:900px){
+      .stamp{
+        //left: 3%;
+        width: 64.6%;
+      }
+    }
+
+    @media screen and (min-width: 901px){
+      .stamp{
+        //position: absolute;
+        left: 25.5%;
+        width: 48.99%;
+      }
+    }
+  }
+
+
+
+  // Department Alt Home Campfire
+
+  .as-cards--campfire--alt{
+    margin-top: -2%;
+    .as-card, .grid-size{
+      width: 31.5%;
+    }
+    .gutter-size{
+      width: 2.7%;
+    }
+    // Newsletter
+    .as-card--newsletter{
+      width: 65.7%;
+    }
+  }
+
+  .as-cards--dept-home{
+    .as-card, .grid-size{
+      @include medium-plus(){
+        width: 31.333333%;
+      }
+    }
+    .gutter-size{
+      width: 3%;
+    }
+    .stamp{
+      width: 65%;
+    }
+  }
+
+
+  .as-cards--images{
+    .stamp{
+      margin-top:-100px;
+      top: -100px;
+    }
+  }
+
+  .as-card__img/*, .field-image */{
+    display: block;
+    max-width: 100%;
+    top: 0;
+    position: relative;
+  }
+
+  .as-card__copy {
+    @include clearfix;
+    border: 1px solid $as-border;
+    border-top: none;
+    padding: gutter(4);
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    top: 0;
+    & div{
+      //flex: 1 100%;
+    }
+  }
+
+  .as-card__copy--date{
+    display: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: .5rem;
+  }
+  .as-cards--events{
+    .as-card__copy--date{
+      display: block;
+    }
+    .as-card__copy{
+      min-height: 195px;
+    }
+  }
+
+  // visually reordering source order of copy.
+    .as-card__title{
+      order: 2;
+    }
+    .as-card__subtitle{
+      order: 1;
+    }
+    .as-card__link{
+      order: 3;
+    }
+
+  .as-card__subtitle {
+    @include serif-font($size:16px, $color: $as-text-lt);
+    margin-bottom: 1em;
+      a{
+        color: $as-text-lt;
+      }
+      .field-tags{
+          margin-bottom: 8.5%;
+      }
+  }
+
+  // Sidebar cards need to have position: relative added
+  .as-page__sidebar{
+    .as-card--article{
+      position: relative;
+    }
+  }
+
+
+  //factoids
+
+  .as-card--factoid .as-card__subtitle{
+    @include font-sans();
+    text-transform: none;
+  }
+  .as-card__stat--text{
+      @include font-sans-lt;
+      @include font-size(60px);
+      line-height: 1em;
+      color: $as-text;
+  }
+
+  .as-card__inner{
+    .as-stats{
+      border-left: 1px solid $as-border;
+      border-right: 1px solid $as-border;
+    }
+  }
+
+  .as-card__title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    //margin-top: gutter(3);
+  }
+
+  .as-card__link a{
+    display: inline-block;
+    //@include font-sans-semi;
+    font-size: .95rem;
+    letter-spacing: 0.5px;
+    margin-top: gutter(3);
+    @extend %as-link;
+    //position: relative;
+  }
+
+  // big feature in campfire
+
+  .as-card--featured {
+    max-width: none;
+    .as-card__inner {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 400px;
+      text-align: center;
+    }
+    .as-card__copy {
+      border: 4px solid $as-white;
+      display: inline-block;
+      padding: gutter(4);
+      margin-top: 50%;
+      width: 84%;
+      @include small-plus(){
+        margin-top: 43%;
+        width: 72%;
+      };
+
+    }
+    .as-card__title {
+
+      @include sans-font($size:55px, $color: $as-white, $weight: 400);
+      line-height: 1em;
+      margin-bottom: .5em;
+
+      em {
+        @include font-sans;
+        font-style: normal;
+        text-decoration: underline;
+      }
+    }
+    .as-card__link {
+      @include as-link($color: $as-white);
+      @include font-size(24px);
+      //margin-top: gutter(1.5);
+    }
+    &>a:after{
+      display:none;
+    }
+    a:hover .as-card__img .field-image, a:hover .as-card__img{
+      //transition: none;
+      top:0;
+    }
+  }
+
+  .as-card--info {
+    .as-card__copy {
+      border-top: 1px solid $as-border;
+    }
+    .as-card__text {
+      color: $as-text-lt;
+    }
+    .as-card__img {
+      display: inline;
+    }
+    img{
+        margin-bottom: 8.5%;
+    }
+  }
+
+  // Card Container Types
+
+  .as-cards--campfire{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .as-card{
+      order:2;
+      @media screen and (max-width: $small){
+        position: inherit !important;
+        top: auto !important;
+        left: auto !important;
+      }
+    }
+    .stamp{
+      order: 1;
+    }
+  }
+
+
+
+  .as-cards--gold{
+    position: relative;
+    &::before{
+      content: "";
+      background: none repeat scroll 0% 0% #F7C73E;
+      position: absolute;
+      display: block;
+      top: 5%;
+      height: 80%;
+      width: 100%;
+    }
+  }
+
+
+  // MAJORS AND MINORS CARDS
+
+  .as-cards--list{
+    .as-card{
+      @include medium-plus{
+        width: 48%;
+      }
+      img{
+        display: none;
+      }
+    }
+    .as-card__copy{
+      border-top: 2px solid $as-border;
+      padding: 4.081%;
+    }
+  }
+
+  // major-minor cards
+
+  .as-card--majors-minors {
+    text-align: left !important;
+
+    .as-card__title {
+      color: $as-text;
+      @include font-sans;
+      font-size: 19px;
+      letter-spacing: none;
+      text-transform: none;
+    }
+    a{
+      color: $as-text;
+      &:hover{
+        text-decoration: none;
+      }
+      .as-card__link{
+        @include as-link();
+      }
+    }
+
+  }
+
+  // TOC
+
+  .as-cards--toc, .as-cards--page{
+    text-align: left;
+    .as-card{
+      overflow: visible;
+    }
+    .as-card__copy{
+      padding: gutter(4) 0 0;
+    }
+    .as-card__inner{
+      h1{
+        border-top: 1px solid $as-border;
+        border-right: 1px solid $as-border;
+        border-left: 1px solid $as-border;
+        margin-bottom: 0;
+
+        @include font-size(24px);
+        position: relative;
+          &:hover::after{
+            content: "›";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-1rem, -50%);
+            color: $as-text;
+            font-size: 2rem;
+          }
+        a{
+            border-bottom: 3px solid $as-gray-lt;
+          color: $as-text;
+          display: block;
+          padding: gutter(4);
+          text-decoration: none;
+          &:hover{
+              border-bottom: 3px solid $as-text-lt;
+          }
+        }
+      }
+      ul{
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        li{
+          margin-bottom: 0;
+        }
+        a{
+          @include as-link($as-red-link);
+          font-size: 1rem;
+          font-weight: 400;
+          display: block;
+          padding: gutter(8) gutter(4);
+          //border-bottom: 1px solid $as-border;
+          &:hover{
+            text-decoration: none;
+            background: tint($as-blue-lt, 30%);
+            color: $as-white;
+            &::after{
+              color: $as-white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .as-cards--page{
+    p{
+      padding: gutter(4);
+    }
+  }
+
+
+  //description card for TOC
+
+  .as-cards--toc .as-card--description{
+    @include sans-font($size: 24px, $weight: 400);
+     position: relative;
+     background: transparent;
+     color: shade($as-gold, 66.6%);
+     width: 60%;
+     width: 90%;
+     padding: 0 5%;
+     @include small-plus{
+
+     }
+    @media screen and (min-width:640px) and (max-width:900px){
+        width: 64.6%;
+    }
+    @media screen and (min-width: 901px){
+      width: 46%;
+    }
+    @include medium-plus{
+      padding: 0;
+      &::before{
+        content: "";
+        background: #F7C73E none repeat scroll 0% 0%;
+        position: absolute;
+        display: block;
+        top: -13%;
+        left: -80%;
+        height: 136%;
+        width: 200%;
+        z-index: -10;
+      }
+    }
+  }
+
+  .event{
+    background: red;
+  }
+  
+  // .card--course
+  // courses cards are located on _course_listings.scss
+ 

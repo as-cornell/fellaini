@@ -1,0 +1,227 @@
+/*
+    New Stuff is a stupid title but this will be part of the base of the camp2.0.
+    - .grid
+    - .card
+    -- .card-vert
+    - figure
+    -- figcaption
+    - .video links
+    -- YT, VM : after content will have icons
+*/
+
+
+div[class*="flex"]{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // defaults
+    >figure, >div, >article{
+        flex: 0 0 100%;
+        // override card margins
+        //margin: 0 0 2rem 0;
+    }
+    // 3 Columns
+    @include medium-plus{
+        &[class*="3s"]{
+            >figure, >div, >article{
+                flex: 0 1 32%;
+            }
+        }
+    }
+    @include medium-plus{
+        &[class*="4-7"]{
+            >:first-child{
+                flex: 0 0 31%;
+            }
+            >:nth-child(2n){
+                flex: 0 0 66%;
+            }
+        }
+    }
+    @include medium-plus{
+        &[class*="7-4"]{
+            >:first-child{
+                flex: 0 0 66%;
+            }
+            >:nth-child(2n){
+                flex: 0 0 31%;
+            }
+        }
+    }
+
+    // Modifiers
+
+    &[class*="v-centered"]{
+        align-items: center;
+    }
+}
+
+// set up standard wrapper
+// making the default flex-direction: row as that is most of what we use.
+[class^="card"]{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    border: 1px solid $as-border;
+    background: $as-white;
+    width:100%;
+    // small plus
+    @include small-plus{
+        // vertical overides
+        &[class*="horiz"]{
+            flex-direction: row;
+        }
+    }
+    @include medium-plus{
+        max-width: 600px;
+        &.right{
+            margin-left: 2rem;
+        }
+        &.left{
+            margin-right: 2rem;
+        }
+    }
+
+    // Link and hover actions for cards that are links
+    // EX: article, work and people cards => link to detail pages
+
+    >a{
+        color: $as-text;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        &:hover{
+            text-decoration: none;
+        }
+        .link{
+            color: $as-red;
+            margin-top: auto;
+        }
+        &:after{
+            @include transition(all 0.3s ease);
+            height: 10px;
+            background-color: $as-red;
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }
+        &:hover:after{
+            @include small-plus() {
+              transform: translateY(-10px);
+            }
+        }
+    }
+
+    //headings
+    h1{
+        @include medium-minus{
+            font-size: 1.5rem;
+        };
+        padding: 2rem 1rem 0;
+    }
+    h2{
+        margin: 1rem;
+    }
+
+    //general
+    p{
+        padding: 0 1rem;
+    }
+
+    //// Modifiers
+    // text - plain text no image at the top - basically just padding
+    &[class*="text"]{
+        padding-top: 1rem;
+    }
+
+}
+
+// Figure styles
+// Control width with image sizes
+figure{
+    margin: 1rem 0 1.85rem 0rem;
+    display: inline-block;
+    border: 1px solid $as-border;
+    border-radius: 4px;
+    //max-width: 600px;
+}
+    figcaption{
+        padding: 1rem;
+        color: #414141;
+        font-weight: 400;
+        //font-family: $serif-font;
+    }
+
+
+// popup link styles
+[class*="hasIcon"]{
+    position: relative;
+    display: block;
+    // justify-content: center;
+    // align-items: center;
+    &[class*="YT"], &[class*="YT"]>img{
+        //border-bottom: 10px solid yellow;
+        &::after{
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            content:url(http://as.cornell.edu/sites/as/files/red%20play.png);
+        }
+    }
+    &[class*="VM"]{
+        //border-bottom: 10px solid yellow;
+        &::after{
+            position: absolute;
+            content:url(http://as.cornell.edu/sites/as/files/blue%20play.png);
+        }
+    }
+}
+
+/* new block system */
+.block{
+    padding: 4rem 0;
+    &.red{
+        @include bg-radial(#9F031B, 0%, #BB2931, 100%);
+        *{
+            color: $light-gray;
+        }
+        a{
+            text-shadow: 3px 0 #b31b1b, 2px 0 #B31B26, 1px 0 #b31b1b, -1px 0 #b31b1b, -2px 0 #b31b1b, -3px 0 #b31b1b;
+            &:hover{
+                background-image: linear-gradient(darken($light-gray, 20),darken($light-gray, 20));
+            }
+        }
+    }
+}
+// using C for now to separate out from all the old stuff
+.container{
+    max-width: $x-large;
+    margin: 0 auto;
+    padding: 0 1rem;
+    @include medium-plus{
+        padding: 0 2rem;
+    };
+    @include x-large-plus{
+        padding: 0;
+    }
+}
+
+// hero__copy
+.hero__copy{
+    color: #ffffff;
+    position: absolute;
+    /* margin-left: 2em; */
+    text-shadow: #737373 1px 1px 3px;
+    animation: fade-in 3s 1;
+    width: 70%;
+    bottom: 6.5%;
+    h1{
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,50 @@
+.as-page--academics {
+  .as-page__block--hero {
+    padding: 0;
+  }
+  .as-hero__copy {
+    bottom: gutter(1.25);
+  }
+  .as-page__block--search-bar {
+    padding: 0;
+    margin-top: gutter(-3);
+  }
+  .as-page__block--info-nav {
+    padding-bottom: 0;
+  }
+  .as-page__block--grid {
+    border-bottom: 1px solid $as-border;
+    padding-top: 0;
+
+    .as-section__title {
+      text-align: center;
+    }
+  }
+  .as-grid--featured {
+    @include tablet {
+      position: relative;
+      &:before {
+        content: "";
+        background: $as-gold;
+        position: absolute;
+        display: block;
+        top: 5%;
+        height: 70%;
+        width: 100%;
+      }
+    }
+  }
+  .as-page__block--popular-links {
+    padding-bottom: 0;
+  }
+  .as-page__block--tip-bar {
+    padding-bottom: 0;
+  }
+  .as-page__block--faq {
+    padding-top: gutter(3);
+    .as-section__title {
+      margin-bottom: gutter(4);
+      text-align: center;
+    }
+  }
+}
