@@ -1,0 +1,345 @@
+.as-header {
+  
+  //z-index: 2;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include medium-plus {
+    border-bottom: 1px solid $as-border;
+    background-image: linear-gradient($as-black, $as-black 50px, $as-white 50px, $as-white);
+   // padding: 0 2%;
+  }
+}
+
+.as-header__inner {
+  position: relative;
+  padding: 10px 0 9px 15px;
+  text-align: center;
+  @include medium-plus {
+    padding: 36px 0 30px 0;
+  }
+
+  @include huge-plus{
+    float: left;
+    //width: 40%;
+  }
+}
+.as-header__brand{
+  img{
+    max-width: 500px;
+  }
+}
+
+.logo{
+  img{
+    display: none;
+    @include medium-plus{
+      display: inline-block;
+    }
+  }
+}
+	.logo--cornell{
+    display: block;
+		background:url("../images/logo-3ad6166e.svg") no-repeat;
+		background-size:165px 37px;
+		//width:165px;
+		height:37px;
+      @include medium-plus{
+    		//width:392px;
+        display: inline-block;
+        background-size: 0;
+    		height:101px;
+        margin-right: 20px;
+      }
+      @include large-plus{
+        //float: left;
+      }
+    }
+
+
+	.header__logo{
+		display:none;
+    margin: 0 auto;
+    @include medium-plus{
+      display: block;
+      max-width: 100%;
+    }
+	}
+
+
+
+
+.as-header__links {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 6;
+  @include medium-plus {
+    float: right;
+    top: auto;
+  }
+}
+
+.as-header__link {
+  color: $as-text;
+  display: none;
+  //vertical-align: top;
+ // outline: none;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+  background: none;
+  &:hover, &:focus{
+    text-decoration: none;
+    border: 1px solid $as-border;
+
+  }
+  @include mobile {
+    
+  }
+  width: 48px;
+  height: 56px;
+  font-size: 0;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0;
+  .as-icon {
+    line-height: 56px;
+    font-size: 20px;
+  }
+  @include medium-plus {
+    @include font-sans-semi;
+    font-size: 13px;
+    width: auto;
+    margin-right: 2em;
+    .as-icon {
+      margin-right: 5px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.as-header__link--menu, .as-header__link--search {
+  display: inline-block;
+  @include medium-plus{
+    display: none;
+  }
+}
+.as-header__link--search{
+  //display: inline-block;
+}
+
+.as-header__link--info-bar {
+  display: none;
+  @include medium-plus {
+    display: block;
+    &.as-header__link--active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.as-header__link--menu {
+    border-left: 1px solid $as-border;
+    .as-icon--close {
+    }
+    &.as-header__link--expanded {
+      background-color: $as-red;
+      color: $as-white;
+    }
+  @include medium-plus {
+    display: none;
+  }
+}
+
+
+/*
+  search form in header
+  */
+
+.search--header{
+  @include mobile{
+    transform: translateY(-200px);
+    background: $as-white;
+    height: 60px;
+    max-width: 80% !important;
+    z-index: 2;
+    @include transition(all .3s);
+    &.search--header--expanded{
+      transform: translateY(0);
+    }
+  }
+
+}
+
+.as-container--logo{
+  @include mobile{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    height: 40px;
+    display: block;
+    width: 70%;
+  }
+  @include medium-plus{
+    padding: 36px 0 !important;
+    text-align: center;
+  }
+
+}
+
+
+
+// .as-header {
+//   background: $as-white;
+
+//   z-index: 2;
+//   position: relative;
+//   @include mobile {
+
+
+//   }
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   @include medium-plus {
+//     border-bottom: 1px solid $as-border;
+//   }
+// }
+
+// .as-header__inner {
+//   position: relative;
+//   padding: 10px 0 9px 15px;
+
+//   @include medium-plus {
+//     padding: 36px 0;
+//   }
+// }
+
+// .header__logo--small{
+// 	background:url("../images/logo-3ad6166e.svg") no-repeat;
+// 	background-size:165px 37px;
+// 	width:165px;
+// 	height:37px;
+//   display: inline-block;
+//   @include medium-plus{
+//     display: none;
+//   }
+// }
+// .header__logo--large{
+// 	display:none;
+//   @include medium-plus{
+//     display: inline-block;
+//     width: 100%;
+//     text-align: center;
+//   }
+// }
+// .logo__cornell{
+//   margin-right: 25px;
+// }
+
+
+
+
+// .as-header__links {
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   @include medium-plus {
+//     display: none;
+//   }
+// }
+
+// .as-header__link {
+//   color: $as-text;
+//   display: none;
+//   //vertical-align: top;
+//   margin-right: 15px;
+//   cursor: pointer;
+//   &:hover{
+//     text-decoration: none;
+//   }
+//   @include mobile {
+
+//   }
+//   width: 48px;
+//   height: 56px;
+//   font-size: 0;
+//   text-align: center;
+//   text-decoration: none;
+//   margin-right: 0;
+//   .as-icon {
+//     line-height: 56px;
+//     font-size: 20px;
+//   }
+//   @include medium-plus {
+//     @include font-sans-semi;
+//     font-size: 13px;
+//     width: auto;
+//     margin-right: 2em;
+//     .as-icon {
+//       margin-right: 5px;
+//       font-size: 1rem;
+//     }
+//   }
+// }
+
+// .as-header__link--info, .as-header__link--search {
+//   @include medium-plus{
+//     display: inline-block;
+//   }
+// }
+// .as-header__link--search{
+//   display: inline-block;
+// }
+
+// .as-header__link--info-bar {
+
+//   display: none;
+//   @include medium-plus {
+//     display: block;
+//     &.as-header__link--active {
+//       text-decoration: underline;
+//     }
+//   }
+// }
+
+// .as-header__link--menu {
+//     display: inline-block;
+//     border-left: 1px solid $as-border;
+//     .as-icon--close {
+//       //display: none;
+//     }
+//     &.as-header__link--expanded {
+//       background-color: $as-red;
+//       color: $as-white;
+//       .as-icon--bars {
+//         //display: none;
+//       }
+//       .as-icon--close {
+//         //display: block;
+//       }
+//     }
+
+
+//   @include medium-plus {
+//     display: none;
+//   }
+// }
+
+#skip{
+  position: absolute;
+  top: 50px;
+  z-index: 3;
+  a{
+    z-index: 0;
+    position: absolute;
+    left: -5000px;
+    width: 250px;
+    font-weight: 600;
+    &:focus{
+      left: 200px;
+    }
+  }
+}

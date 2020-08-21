@@ -1,0 +1,138 @@
+<?php
+
+function as_logos_strposa($haystack, $needles = array(), $offset = 0)
+{
+    $chr = array();
+    foreach ($needles as $needle) {
+        $res = strpos($haystack, $needle, $offset);
+        if ($res !== false) {
+            $chr[$needle] = $res;
+        }
+
+    }
+    if (empty($chr)) {
+        return false;
+    }
+
+    return min($chr);
+}
+
+function as_logos_block_info()
+{
+    // Implementation of hook_block_info():
+    $blocks['main'] = array(
+        'info' => t('Site-approriate logos in a block'),
+        //'status' => TRUE,
+        'cache' => DRUPAL_CACHE_PER_ROLE,
+    );
+    return $blocks;
+}
+
+function as_logos_block_view($delta)
+{
+    // This example is adapted from node.module.
+    $block = array();
+    switch ($delta) {
+        case 'header':
+            $block['subject'] = t('A&S Logos');
+            $block['content'] = as_logos_block_content($delta);
+            break;
+        case 'branding':
+            $block['subject'] = t('A&S Logos');
+            $block['content'] = as_logos_block_content($delta);
+            break;
+        case 'footer':
+            $block['subject'] = t('A&S Logos');
+            $block['content'] = as_logos_block_content($delta);
+            break;
+    }
+    return $block;
+}
+
+function as_logos_block_content($delta)
+{
+//Implementation of hook_block_content()
+    //$siteurl = $GLOBALS['base_url'];
+    $siteurl = variable_get('file_public_path', conf_path());
+    $siteurl = str_replace("sites/", " ", $siteurl);
+    // bionb, nbb, ecology, eeb
+    $calssites = array('bionb', 'eeb');
+    $econsite = array('econ');
+    $milstein = array('milstein');
+    $asProgramSites = array('mediastudies', 'organ');
+    $programSites = array('astroresearch','sagan','sagan.dd');
+    $cogSci = array('cogsci');
+    switch ($delta) {
+
+        //if it's a header...
+        case 'header':
+            //display the stuff according to how it needs to appear
+            if (as_logos_strposa($siteurl, $calssites, 1)) {
+                break;
+                // uncomment below for testing in local, dev and stage
+                //print $siteurl;
+            } else if (as_logos_strposa($siteurl, $econsite, 1)) {
+                break;
+                // uncomment below for testing in local, dev and stage
+                //print $siteurl;
+            } else if ((as_logos_strposa($siteurl, $programSites, 1)) || (as_logos_strposa($siteurl, $milstein, 1)) || (as_logos_strposa($siteurl, $asProgramSites, 1))) {
+                $main = '<a href="https://cornell.edu" class="floatLeft"><img src="https://as.cornell.edu/sites/as/files/cornell-reduced-white.svg"
+               alt="Cornell University" class="cornell-insignia"/></a>';
+                // uncomment below for testing in local, dev and stage
+                //print $siteurl;
+            } else {
+                $main = '<a href="https://as.cornell.edu" class="floatLeft as-mark as-mark--small"><span class=""><span class="collegeOf">The College of</span> Arts <span class="amp"><img src="/sites/all/themes/campfiredept/images/small-red-amp.svg" style="width: 10px" alt=""/></span> Sciences</span></a>';
+            }
+            $result = array('#markup' => $main);
+            return $result;
+            break;
+        //if it's a branding...
+        case 'branding':
+            //display the stuff according to how it needs to appear
+            if ((as_logos_strposa($siteurl, $programSites, 1)) || (as_logos_strposa($siteurl, $milstein, 1)) || (as_logos_strposa($siteurl, $asProgramSites, 1))) {
+                $main = '';
+            } else {
+                $main = '<a href="https://cornell.edu" class="logo--cornell"><img src="https://as.cornell.edu/sites/as/files/cu-insignia.png" alt="Cornell University"></a>';
+            }
+            $result = array('#markup' => $main);
+            return $result;
+            break;
+        //if it's a footer...
+        case 'footer':
+            //display the stuff according to how it needs to appear
+            if (as_logos_strposa($siteurl, $calssites, 1)) {
+                $main = '<div class="logos"><a href="https://as.cornell.edu/" class="as-mark as-mark--big"><span class="collegeOf">The College of</span> Arts <span class="amp">&</span> Sciences</a><br />
+                <a href="https://cals.cornell.edu/" style="float: left; clear: left; padding: 1rem 0"><img src="https://as.cornell.edu/sites/as/files/CALS-wordmark.png" alt="College of Agriculture and Life Sciences"/></a></div>';
+            } else if (as_logos_strposa($siteurl, $econsite, 1)) {
+                $main = '<div class="logos"><a href="https://as.cornell.edu/" class="as-mark as-mark--big"><span class="collegeOf">The College of</span> Arts <span class="amp">&</span> Sciences</a><br />
+                <a href="https://www.ilr.cornell.edu" style="float: left; clear: left; padding: 1rem 0"><img src="https://economics.cornell.edu/sites/econ/files/ILR.png" alt="School of Industrial and Labor Relations"/></a></div>';
+            } else if (as_logos_strposa($siteurl, $programSites, 1)) {
+                $main = '<div class="logos"><a href="https://cornell.edu/" class="as-mark as-mark--big"><img src="https://as.cornell.edu/sites/as/files/Cornell-Insignia-White.svg" alt="The College of Arts & Sciences"/></a></div>';
+            } else if (as_logos_strposa($siteurl, $milstein, 1)) {
+                $main = '<div class="logos"><a href="https://as.cornell.edu/" class="as-mark as-mark--big"><span class="collegeOf">The College of</span> Arts <span class="amp">&</span> Sciences</a></p><a href="https://tech.cornell.edu/" ><img src="https://as.cornell.edu/sites/as/files/CT_Lockup_horiz_cmyk_reverse.png" style="max-width: 200px;" alt="Cornell Tech"/></a></div>';
+            } else if (as_logos_strposa($siteurl, $cogSci, 1)){
+                $main = '<div class="logos logos--row">
+                    <a href="https://as.cornell.edu/" class="as-mark as-mark--big"><span class="collegeOf">The College of</span> Arts <span class="amp">&</span> Sciences</a>
+                    <a href="http://human.cornell.edu"><img src="https://as.cornell.edu/sites/as/files/college-of-human-ecology_0.png" alt="College of Human Ecology" class="max--125"></a>
+                    <a href="https://cals.cornell.edu/"><img src="https://as.cornell.edu/sites/as/files/CALS-wordmark.png" alt="College of Agriculture and Life Sciences"/></a>
+                    <a href="http://cis.cornell.edu/"><img src="https://as.cornell.edu/sites/as/files/cornell-cis.png" alt="Cornell Computing & Information Sciences"></a></div>';
+            }
+            else {
+                $main = '<div class="logos"><a href="https://as.cornell.edu/" class="as-mark as-mark--big"><span class="collegeOf">The College of</span> Arts <span class="amp">&</span> Sciences</a></div>';
+            }
+            $result = array('#markup' => $main);
+            return $result;
+            break;
+    }
+
+}
+
+function as_logos_help($path, $arg)
+{
+    // Implementation of hook_help()
+    if ($path == 'admin/help#as_logos') {
+        $txt = 'The as_logos module provides site-approriate logos in a block that can be displayed in either the header or footer of a website';
+
+        return '<p>' . t($txt) . '</p>';
+    }
+}

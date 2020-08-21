@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Departments Programs feature.
+ */
+
+include_once 'as_departments_programs.features.inc';

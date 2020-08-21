@@ -1,0 +1,166 @@
+.as-page{
+	padding: 2rem;
+	@include small-plus(){
+		padding: 4rem 2rem;
+	}
+
+}
+.as-page__container{
+	@extend .as-container;
+}
+
+
+
+.as-page__title {
+  @include font-sans-semi;
+  font-size: 63px;
+  margin-bottom: gutter(8);
+}
+
+.as-page__block{
+	padding: 0 2rem;
+	overflow: hidden;
+	@include small-plus(){
+		margin-bottom: 3em;
+		//padding-top: 4rem;
+	}
+	@include medium-plus(){
+		&:first-of-type{
+
+		}
+	}
+}
+	.as-page__block--gray{
+		background: $as-gray-lt;
+	}
+	.as-page__block--short{
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	.as-page__block--top{
+		padding-top: 4rem;
+	}
+
+// large-centered intro graph
+
+.as-page__introduction{
+	p{
+
+		&:first-of-type{
+			font-size: 1.75rem;
+			margin-bottom: 2em;
+		}
+		&:last-of-type{
+			margin-bottom: 2em;
+		}
+	}
+
+	@include medium{
+		width: span(10 of 12);
+	}
+	@include medium-plus(){
+		width: span(8 of 12);
+	};
+	margin: 0 auto;
+
+}
+
+//full width content
+.as-page__content--full{
+	@include medium{
+		width: span(10 of 12);
+	}
+	@include medium-plus(){
+		width: span(8 of 12);
+	};
+	margin: 0 auto;
+}
+
+//content with sidebar
+.as-page__content--withSidebar{
+	@include small-plus{
+		overflow: hidden;
+		.as-page__content{
+			width: 53%;
+			margin-left: 3.5%;
+			float: left;
+		}
+		.as-page__sidebar{
+			@include span(last 4);
+			margin-right: 3.5%;
+			//margin-right: (span(1 of 12) + gutter());
+			h2, h3, .field-image{
+				margin-bottom: gutter(4);
+			}
+			.as-card, .card{
+				.field-image{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+// content with wide sidebar
+.as-page__content--wideSidebar{
+	@include small-plus{
+		.as-page__content{
+			@include span(6);
+		}
+		.as-page__sidebar{
+			@include span(last 5);
+			h2{
+				margin-bottom: gutter(4);
+			}
+			h3{
+				margin-bottom: gutter(8);
+			}
+		}
+	}
+}
+
+.as-page__content--sevenWide{
+	@include medium-plus(){
+		@include span(6);
+	}
+}
+
+
+// Columns
+.container--columns{
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	//background: green;
+	@include medium-plus(){
+		flex-direction: row;
+	}
+}
+	@include medium-plus(){
+		.container--columns--alpha{
+			& > div:nth-of-type(odd){
+				width: 60%;
+			}
+			& > div:nth-of-type(even){
+				width: 30%;
+			}
+		}
+	}
+
+	@include medium-plus(){
+		.container--columns--beta{
+			& > .as-column:nth-of-type(odd){
+				flex: 0 0 72.99%;
+				//background: red;
+			}
+			& > .as-column:nth-of-type(even){
+				flex: 0 0 23.333%;
+				//background: yellow;
+			}
+		}
+	}
+
+// margins
+.m-bottom-4{
+	margin-bottom: 4rem;
+}

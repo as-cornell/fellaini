@@ -1,0 +1,218 @@
+
+/* Department events list */
+.eventListing{
+		a{
+			display: flex;
+			justify-content: space-between;
+			color: $as-black;
+			text-decoration: none;
+			margin-bottom: 1em;
+			border-bottom: 2px solid transparent;
+			@include transition(all 0.5s ease);
+			&:hover{
+				text-decoration: none;
+				border-bottom: 2px solid $as-border;
+			}
+		}
+		.eventListing__date{
+			flex: 0 0 10%;
+			text-align: center;
+			padding-top: 2px;
+			.month{
+				font-size: 14px;
+				display: block;
+				font-weight: 400;
+			}
+			.day{
+				font-size: 2rem;
+				padding-bottom: .5rem;
+				line-height: 1em;
+			}
+			.time{
+				font-size: 1rem;
+				font-weight: 300;
+				display: block;
+				border-top: 1px solid #eee;
+				padding-top: .5rem;
+				margin-top: .4rem;
+			}
+		}
+		.eventListing__details{
+			margin-bottom: .7em;
+			flex: 0 0 80%;
+		}
+		.eventListing__title{
+			color: $as-blue;
+			margin-bottom: .5rem;
+		}
+		.eventListing__image,.eventListing__more{
+			display: none;
+
+		}
+
+		//math only
+		&--math{
+			.eventListing{
+				&__person{
+					display: block;
+					p{
+						margin-bottom: 0;
+					}
+				}
+				&__seriesTitle{
+					font-weight: 400;
+				}
+			}
+			a{
+				display: inline;
+				color: $as-red;
+				text-decoration: underline;
+			}
+			
+		}
+
+}
+
+//hacky math person fix
+.event__person{
+	font-size: 2rem;
+	margin-bottom: 4rem;
+	font-weight: 400;
+}
+
+
+
+// ie
+.eventListing__date, .eventListing__link,.eventListing__link > span, .eventListing__title, .eventListing__description{
+	display: inline-block;
+}
+
+
+.eventList--horizontal{
+	.eventList__list{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		@include medium-plus{
+			flex-direction: row;
+		}
+		//text-align: center;
+		//justify-content: center;
+		border-top: 1px solid #eeeeee;
+		border-bottom: 1px solid #eeeeee;
+		>div{
+			flex: 0 0 33.33333%;
+			margin-bottom: 0;
+		}
+	}
+	.eventListing{
+		height: 100%;
+		width: 100%;
+	}
+	.eventListing__title{
+		margin-top: .5rem;
+	}
+	.eventListing__date{
+		color: $as-text-med;
+		@include font-sans-semi();
+		font-size: 2rem;
+		//margin-right: 1em;
+	}
+	.eventListing__link{
+		color: $as-text;
+		//font-weight: 400;
+		padding: 2rem 1rem;
+		background: transparent;
+		margin-bottom: 0;
+		&:hover{
+			text-decoration: none;
+			background: $as-border;
+			@include transition(all 1s ease);
+			.eventListing__date{
+				color: $as-text;
+				@include transition(all 1s ease);
+			}
+		}
+	}
+}
+// wth
+table.newsletter_events{
+	background: yellow;
+	tr{
+		background: red;
+	}
+}
+
+//calendar Listing
+.calendarListing{
+	.item-list{
+		ul{
+			list-style-type: none;
+		}
+		li{
+			margin-left: 0;
+			margin-bottom: 1em;
+		}
+	}
+	.eventListing{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.eventListing__title{
+		margin-bottom: 0;
+		a{
+			color: $as-blue;
+			margin-bottom: 0;
+		}
+	}
+}
+
+//event listings on sorted events pages
+.eventListItem{
+	margin-bottom: 2rem;
+	display: grid;
+	grid-template-columns: 100px 3fr 1fr;
+	grid-gap: 1rem;
+	.date{
+		display: inline-block;
+		width: 100px;
+
+	}
+	.month, .day{
+		font-weight: 600;
+	}
+	.eventListing__title{
+		a{
+			font-weight: 600;
+			color: $as-red;
+			margin-bottom: 0;
+		}
+	}
+}
+.eventListingPage{
+	h3{
+		font-family: $sans-serif-font;
+		background: #eee;
+    padding: .5rem;
+    margin-bottom: 1rem;
+	}
+}
+
+.container--event{
+	.field-image{
+		margin-bottom: 2em;
+	}
+}
+// cheap hack to get just to the sidebar events put in for the calendar and not the events for localis
+.calEvent{
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid #eeeeee;
+	.field-image{
+		margin-bottom: 1rem;
+	}
+	&__title{
+		margin-bottom: 1rem;
+	}
+}

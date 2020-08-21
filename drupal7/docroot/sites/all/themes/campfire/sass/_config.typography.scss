@@ -1,0 +1,72 @@
+/**
+  * typography
+ **/
+
+	// different sans styles
+	.sans-medium-2baseline, %sans-medium-2baseline{
+		font-family: $sans-font;
+		font-weight: $f-medium;
+		@include font-size($f-base-size * 2);
+		line-height: 1em;
+	}
+	.sans-thick-2baseline{
+		font-family: $sans-font;
+		font-weight: $f-thick;
+		@include font-size($f-base-size * 2);
+		line-height: 1em;
+	}
+	.sans-thick-3baseline, %sans-thick-3baseline{
+		@include font-size($f-base-size * 2);
+		font-weight: $f-thick;
+		line-height: 1em;
+		@include medium-plus(){
+			@include font-size($f-base-size * 3);
+			margin: 0 0 ($f-baseline / 2) 0;
+		}
+	}
+	.sans-block-3baseline, %sans-block-3baseline{
+		font-family: $sans-font;
+		font-weight: $f-block;
+		@include font-size($f-base-size * 3);
+		line-height: 1em;
+		margin: 0 0 ($f-baseline *2) 0;
+	}
+
+	
+	// different serif styles
+	.serif-thick-baseline-caps, %serif-thick-baseline-caps{
+		font-family: $serif-font;
+		font-weight: $f-thick;
+		@include font-size($f-base-size);
+		text-transform: uppercase;
+		margin: 0 0 ($f-baseline *1) 0;
+	}
+
+
+
+/*
+	Headings
+*/
+	h1,h2,h3{
+		margin-top: 0;
+	}
+
+	// h1
+	h1.pageTitle{
+		@extend %sans-block-3baseline;
+	}
+
+	// h2 
+
+	h2{
+		@extend %sans-medium-2baseline;
+	}
+
+	//h3 primarily show up as small caps serif
+
+	h3{
+		@extend %serif-thick-baseline-caps;
+	}
+	.test{
+		@extend %serif-thick-baseline-caps;
+	}

@@ -1,0 +1,18 @@
+<?php
+
+function as_people_usertab_menu_alter(&$items) {
+
+  // kpr($items);
+
+  // Change the name of the Edit tab
+  //$items['user/%user/edit']['title'] = t('Nope');
+
+  // Disable links in the user edit tab, but don't disable the page if you go navigate
+  // directly to it
+  // @see https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_menu/7.x for other types
+  $items['user/%user']['type'] = MENU_CALLBACK;
+  $items['user/%user/edit']['type'] = MENU_CALLBACK;
+  $items['user/%user/shortcuts']['type'] = MENU_CALLBACK;
+  $items['user/%user/imce']['type'] = MENU_CALLBACK;
+  $items['user/%user/devel']['type'] = MENU_CALLBACK;
+}

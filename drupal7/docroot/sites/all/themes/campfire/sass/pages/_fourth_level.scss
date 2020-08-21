@@ -1,0 +1,56 @@
+.as-fourth-level {
+  > .as-page__block {
+
+    @include mobile {
+      padding: gutter(4) gutter(8);
+    }
+
+    @include tablet {
+      padding: 0;
+    }
+
+    .as-container {
+
+      @include tablet {
+        @include span(10 of 12);
+        margin-left: span(1 of 12);
+        padding: gutter(6) 0;
+      }
+
+    }
+
+    &:not(:first-of-type) {
+      .as-container {
+        border-top: 1px solid $as-border;
+      }
+    }
+
+  }
+
+  .as-list {
+    color: $as-blue;
+    @include font-sans-semi;
+    line-height: 1.5;
+
+    span {
+      color: $as-text;
+      @include font-sans;
+    }
+  }
+
+  .as-events {
+
+    @include tablet {
+      @include clearfix;
+    }
+  }
+
+  .as-event {
+    margin: gutter() 0;
+
+    @include tablet {
+      width: 50%;
+      float: left;
+    }
+  }
+}

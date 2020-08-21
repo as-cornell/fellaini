@@ -1,0 +1,415 @@
+// //.fullPage styles
+// .fullPage__container{
+//   padding: gutter(6);
+//   @include small-plus{
+//     padding-top: gutter(3);
+//   }
+// }
+// .fullPage{
+//   @extend .as-container;
+// }
+// .fullPage__sidebar{
+//   @include span(full);
+//   background: $as-green-lt;
+//   @include small-plus(){
+//     @include span(3);
+//     background: $as-green;
+//   }
+//     h2{
+//     @include font-size(15px);
+//     padding: gutter(12);
+//     @include font-sans-semi;
+//     color: $as-white;
+//     letter-spacing: .25px;
+//     background: #6dac39;
+//     margin-bottom: 0;
+//     text-transform: uppercase;
+//     position:relative;
+//     @include small-plus(){
+//       @include font-size(18px);
+//       padding: gutter(4) gutter(3);
+//     }
+//     i{
+//       position: absolute;
+//       background: $as-green;
+//       content: "";
+//       @include font-size(15px);
+//       width: 40px;
+//       line-height: 40px;
+//       top: 0;
+//       right: 0;
+//       text-align: center;
+//       text-transform: none;
+//       text-indent: 0;
+//       color: $as-white;
+//       cursor: pointer;
+//       @include small-plus(){
+//         display: none;
+//       }
+//     }
+//   }
+// }
+// .fullPage__sidebar--fixed{
+//   position:fixed;
+//   top: gutter(12);
+//   width: 92%;
+//   z-index: 1;
+//   //@include font-size(14px);
+//   @include small-plus{
+//     top: gutter();
+//     width: span(3);
+//   }
+
+// }
+
+// .fullPage__sidebarNav{
+//   list-style-type: none;
+//   padding: 0;
+//   max-height: 0;
+//   overflow: hidden;
+//   position:relative;
+//   zindex: 2;
+//   @include small-plus{
+//     max-height: auto;
+//     overflow: visible;
+//   }
+//   a{
+//     display:block;
+//     background: #9eCe78;
+//     @include serif-font($weight:400, $color:shade($as-green, 66.6%), $size:15px);
+//     text-decoration: none;
+//     padding: gutter(12);
+//     margin-bottom: 0;
+//     @include small-plus{
+//       padding: gutter(8) gutter(3);
+//       background: $as-green-lt;
+//       &:hover{
+//         color: $as-white;
+//       }
+//     }
+//   }
+//   li{
+//     margin-bottom: 0;
+//   }
+// }
+// .fullPage__sidebarNav--expanded{
+//   max-height: auto;
+//   overflow: visible;
+//   z-index: 10;
+// }
+// .fullPage__body{
+//   position:relative;
+//   zindex: 1;
+//   @include span(full);
+//   @include small-plus{
+//     @include span(last 8);
+//   }
+//   //background: yellow;
+//   h1{
+//    @extend .pageTitle; 
+//   }
+// }
+
+
+// ///////////////////
+
+
+// .as-page--level4 {
+
+//   .as-page__block {
+//     position: relative;
+
+//     @include mobile {
+//       padding: gutter(8);
+//     }
+//   }
+
+//   .as-page__header {
+
+//     @include tablet {
+//       .as-container {
+//         padding: 0 span(1) 0 span(3);
+//       }
+//     }
+//   }
+
+//   .as-section {
+//     padding-bottom: gutter(4);
+
+//     @include mobile {
+//       padding-top: gutter(3);
+//     }
+
+//     @include tablet {
+//       .as-container {
+//         padding: 0 span(1) 0 span(3);
+//       }
+//     }
+
+//     .as-section__title {
+//       margin: 0;
+//       padding: gutter(3) 0 gutter(4);
+//     }
+
+//     &:not(:first-child) {
+//       .as-section__title {
+//         border-top: 1px solid $as-border;
+//       }
+//     }
+
+//   }
+
+//   .as-events {
+
+//     @include tablet {
+//       @include clearfix;
+//     }
+//   }
+
+//   .as-event {
+//     margin: gutter() 0;
+
+//     @include tablet {
+//       width: 50%;
+//       float: left;
+//     }
+//   }
+// }
+
+// .fullPage__controls {
+
+//   @include tablet {
+//     position: absolute;
+//     top: 80px;
+//     left: 0;
+//     width: 100%;
+//     height: 0;
+
+//     .as-container {
+//       position: relative;
+//     }
+//   }
+// }
+
+// .fullPage__controls--fixed-top {
+//   position: fixed;
+
+//   @include mobile {
+//     background: $as-white;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     padding: gutter();
+
+//     .fullPage__nav {
+//       @include mobile {
+//         margin: 0;
+//       }
+//     }
+
+//     .as-section__title {
+//       padding-top: 60px;
+//     }
+//   }
+
+//   @include tablet {
+//     top: 80px;
+//   }
+// }
+
+// .fullPage__controls--fixed-bottom {
+//   @include tablet {
+//     position: absolute;
+//     top: auto;
+//   }
+// }
+
+// .fullPage__nav {
+//   @include mobile {
+//     position: relative;
+//     margin-bottom: gutter(4);
+//   }
+
+//   @include tablet {
+//     position: absolute;
+//     left: 0;
+//     width: span(2.5);
+//   }
+
+//   .as-section__label {
+//     padding-left: gutter(3);
+//     line-height: 48px;
+//     margin: 0;
+//   }
+// }
+
+// .fullPage__nav--expanded {
+//   @include mobile {
+//     .fullPage__toggle {
+//       .as-button {
+//         .as-icon:before {
+//           content: 'l';
+//         }
+//       }
+//     }
+
+//     .fullPage__anchor-links {
+//       max-height: 480px;
+//     }
+//   }
+// }
+
+// .fullPage__page-links {
+//   display: none;
+
+//   @include desktop {
+//     display: block;
+//     position: absolute;
+//     right: -80px;
+//   }
+// }
+
+// .fullPage__page-link {
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   right: 80px;
+//   width: 0;
+//   height: 108px;
+//   background: $as-blue;
+//   font-size: 22px;
+//   padding: 20px 0;
+//   color: $as-white;
+//   text-decoration: none !important;
+//   @include transition(width .15s);
+
+//   &:hover {
+//     &:before {
+//       background: #6baeb5;
+//     }
+//   }
+
+//   &:before {
+//     content: '\203a';
+//     position: absolute;
+//     right: -80px;
+//     top: 0;
+//     background: $as-blue;
+//     color: $as-white;
+//     height: 108px;
+//     width: 80px;
+//     @include font-sans-lt;
+//     font-size: 60px;
+//     line-height: 92px;
+//     text-align: center;
+//   }
+
+//   &:hover {
+//     width: 200px;
+//     padding: 20px;
+//   }
+
+//   &:last-of-type {
+//     top: 110px;
+
+//     &:before {
+//       content: '\2039';
+//     }
+//   }
+// }
+
+// .fullPage__toggle {
+
+//   @include mobile {
+//     background: #9ece78;
+//     position: relative;
+
+//     .as-button {
+//       background: #6dac39;
+//       color: $as-white;
+//       position: absolute;
+//       right: 0;
+//       top: 0;
+//       width: 48px;
+//       line-height: 48px;
+
+//       .as-icon:before {
+//         content: 'a';
+//       }
+//     }
+//   }
+
+//   @include tablet {
+//     background: #6dac39;
+
+//     .as-button {
+//       display: none;
+//     }
+//   }
+
+//   .as-section__label {
+//     color: $as-white;
+//   }
+// }
+
+// .fullPage__anchor-links {
+//   @include clearfix;
+
+//   @include mobile {
+//     max-height: 0;
+//     overflow: hidden;
+//     @include transition(max-height .3s ease-out);
+//     position: absolute;
+//     z-index: 2;
+//     top: 48px;
+//     left: 0px;
+//     width: 100%;
+//   }
+// }
+
+// .fullPage__anchor-link {
+//   display: block;
+//   @include font-serif-bold;
+//   font-size: 13px;
+//   line-height: 48px;
+//   letter-spacing: .3px;
+//   padding-left: gutter(3);
+
+//   &:hover {
+//     color: $as-white;
+//   }
+
+//   @include mobile {
+//     background: #6dac39;
+//     color: $as-white;
+//   }
+
+//   @include tablet {
+//     background: #9eCe78;
+//     color: #3f681d;
+//   }
+// }
+
+// .fullPage__related-links {
+//   display: none;
+
+//   @include tablet {
+//     @include clearfix;
+//     display: block;
+//     margin-top: gutter(1.5);
+
+//     .as-section__label {
+//       color: #999999;
+//     }
+//   }
+// }
+
+// .fullPage__related-link {
+//   display: block;
+//   float: left;
+//   clear: both;
+//   @include font-sans-semi;
+//   font-size: 13px;
+//   margin: gutter() 0;
+//   padding-left: gutter(3);
+// }

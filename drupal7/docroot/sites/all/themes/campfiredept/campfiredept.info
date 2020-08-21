@@ -1,0 +1,27 @@
+name = Campfire Department
+description = Base theme for Cornell A&S departments
+screenshot = screenshot.png
+core = 7.x
+version = 1.2-dev
+engine = phptemplate
+
+regions[header] = Header
+regions[help] = Help
+regions[content_top] = Content Top
+regions[content] = Content
+regions[social_media] = Social Media
+regions[content_bottom] = Content Bottom
+regions[footer] = Footer
+
+features[] = logo
+features[] = favicon
+features[] = main_menu
+
+stylesheets[all][] = css/as-build.css
+stylesheets[all][] = css/dept-ie.css
+
+
+settings[basic_tabs] = 1
+settings[basic_breadcrumb_separator] = »
+settings[wireframe_mode] = 0
+settings[clear_registry] = 0

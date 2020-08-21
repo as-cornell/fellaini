@@ -1,0 +1,68 @@
+.as-quick-bar {
+  text-align: center;
+
+  @include tablet {
+    .as-container {
+      position: relative;
+    }
+  }
+}
+
+.as-quick-bar__divider {
+  background: $as-border;
+
+  @include mobile {
+    height: 1px;
+    margin: 0 25%;
+  }
+
+  @include tablet {
+    position: absolute;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    z-index: 2;
+    left: 33.3%;
+  }
+}
+
+.as-quick-bar__divider ~ .as-quick-bar__divider {
+  @include tablet {
+    left: auto;
+    right: 33.3%;
+  }
+}
+
+.as-quick-bar__item {
+  @include mobile {
+    padding: gutter(2) 0;
+  }
+
+  @include tablet {
+    width: percentage(4 / 12);
+    float: left;
+  }
+}
+
+.as-quick-bar__title {
+  @include font-sans-lt;
+  font-size: 60px;
+}
+
+.as-quick-bar__text {
+  @include font-sans;
+  font-size: 17px;
+  @include pad(0.8 of 4);
+  margin-top: gutter(4);
+}
+
+.as-quick-bar__link {
+  color: inherit;
+  display: inline-block;
+  @include font-sans-lt;
+  font-size: 24px;
+  letter-spacing: 1px;
+  @include tablet {
+    margin: gutter(2) 0;
+  }
+}

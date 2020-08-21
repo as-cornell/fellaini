@@ -1,0 +1,274 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function as_courses_json_menu() {
+
+
+  $items['courses'] = array(
+    'type' => MENU_NORMAL_ITEM,
+    'title' => t('Courses'),
+    'description' => 'Courses',
+    'menu_name' => 'main-menu',
+    'weight' => 1,
+    'page callback' => 'as_courses_json_page',
+    'page arguments' => array(1),
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback.
+ */
+function as_courses_json_page($semester) {
+  //set current semester across all depts, if not passed as argument
+  if (empty($semester)) {
+    $semester = 'FA20';
+  }
+  // multiple keyword params in a string
+  $keyword_params = variable_get('as_dept_variables_coursesubjects', '');
+  $keyword_params = explode(',',$keyword_params);
+  //set subject if empty
+  //if (empty($keyword_params)) {
+    //$keyword_params = array('PMA');
+  //}
+  $content = as_courses_json_page_content($keyword_params,$semester);
+  return $content;
+}
+
+function as_courses_json_page_content($keyword_params,$semester) {
+//Implementation of hook_block_content()
+global $base_url;
+$link = $base_url .'/courses/';
+//semester name
+$semestername = "";
+  if ($semester == 'FA18') {
+    $semestername = 'Fall 2018';
+      }
+  if ($semester == 'SP19') {
+    $semestername = 'Spring 2019';
+      }
+  if ($semester == 'FA19') {
+    $semestername = 'Fall 2019';
+      }
+  if ($semester == 'SP20') {
+    $semestername = 'Spring 2020';
+      }
+  if ($semester == 'SU20') {
+    $semestername = 'Summer 2020';
+      }
+  if ($semester == 'FA20') {
+    $semestername = 'Fall 2020';
+      }
+
+    $build['courses_block']['#markup'] = "
+    <div class='as-page'>
+    <div class='as-page__block'>
+    <div class='as-container'>
+    <h1 class='pageTitle'>Courses - ".$semestername."</h1>
+    <div class='sticky'>
+    <div class='formagain sticky'><label for='courseFilter'>Search for course number, title, instructor or keywords</label><input id='courseFilter' class='searchbox full' type='text' placeholder='search' data-search /></div>
+    </div>
+      <ul class='inlineList'>
+      <li>Courses by semester: </li>
+        <li><a href='".$link ."FA19'>Fall 2019</a></li>
+        <li><a href='".$link ."SP20'>Spring 2020</a></li>
+        <li><a href='".$link ."SU20'>Summer 2020</a></li>
+        <li><a href='".$link ."FA20'>Fall 2020</a></li>
+      </ul>
+    </div>
+      <div class='as-container list courses__list  grid grid--three'>";
+    $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . "
+
+    ";
+
+  foreach($keyword_params as $keyword_param) {
+  $course_json = as_courses_json_get_courses_json($keyword_param,$semester);
+    if (!empty($course_json)) {
+      foreach($course_json as $course_data) {
+            $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . as_courses_json_generate_course_item_markup($course_data,$semester);
+      }
+  // There were no courses
+    }
+  }
+   $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . "<div></div></div></div></div></div>";
+
+  return $build['courses_block']['#markup'];
+
+
+}
+
+
+function as_courses_json_block_view($netid) {
+  // This example is adapted from node.module.
+$block = array();
+  if (!empty(as_courses_json_block_content($netid))){
+    $block['subject'] = t('Courses by netID');
+    $block['content'] = as_courses_json_block_content($netid);
+  }
+  return $block;
+}
+
+
+function as_courses_json_block_content($netid) {
+//Implementation of hook_block_content()
+$build['courses_block']['#markup'] = "";
+  if (!empty(as_courses_json_generate_course_netid_markup($netid))){
+            $build['courses_block']['#markup'] = $build['courses_block']['#markup'] . as_courses_json_generate_course_netid_markup($netid);
+  }
+
+  return $build['courses_block']['#markup'];
+
+}
+
+
+
+function as_courses_json_get_courses_json($keyword_param,$semester) {
+
+//set cache id (verify parameters are safe values to use as cache id)
+  $cid = "as_courses:" . $semester . ":" . $keyword_param;
+  $course_json = NULL;
+//check cache
+  if (!empty($cache = cache_get($cid))) {
+      $course_json = $cache->data;
+  } else {
+    $url = "https://classes.cornell.edu/api/2.0/search/classes.json?roster={$semester}&subject={$keyword_param}";
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $course_json = $json['data']['classes'];
+    cache_set($cid, $course_json, 'cache', time() + 60 * 60 * 24); //60 * 60 * 24 = 24 hrs
+  }
+    return $course_json;
+}
+
+function as_courses_json_generate_course_item_markup($course_data,$semester) {
+// Deal with classes.cornell.edu's funky json structure
+$markup = "";
+$instructors = "";
+$instructor_markup = "";
+$course_instructors = "";
+$course_subject = $course_data['subject'];
+$course_number = $course_data['catalogNbr'];
+$course_title = $course_data['titleLong'];
+$course_description = strip_tags($course_data['description']);
+$course_offered = $course_data['catalogWhenOffered'];
+$course_catalogDistr = $course_data['catalogDistr'];
+$course_acadGroup = $course_data['acadGroup'];
+$course_acadCareer = $course_data['acadCareer'];
+$course_instructors = $course_data['enrollGroups'][0]['classSections'][0]['meetings'][0]['instructors'];
+if (!empty($course_instructors)){
+  foreach ($course_instructors as $instructors) {
+    if (!empty($instructors)){
+      $instructor_markup = $instructor_markup . $instructors['firstName'];
+      $instructor_markup = $instructor_markup . " " .$instructors['lastName'];
+      $instructor_markup = $instructor_markup . " (" . $instructors['netid'] . ") <br /> ";
+    }
+  }
+}
+  $markup = $markup . "
+              <div class='card card--course'>
+              <div class='course__number-title'>
+
+
+                    <span class='course__number'>{$course_subject} {$course_number}</span> <span class='course__title'>{$course_title}</span>
+
+                </div>
+                <button class='as-toggle__trigger btn btn--sort course-toggle' aria-label='Show details for {$course_subject} {$course_number}'>Description</button>
+                <span class='course__details'>";
+                  if ($course_description){
+                  $markup = $markup . "<p>" . $course_description . "</p>";
+                      }
+                  if ($course_catalogDistr){
+                   $markup = $markup . "<span class='course__career'> Distribution: " . $course_catalogDistr . "</span><br>";
+                       }
+                   if ($course_acadCareer){
+                   $markup = $markup . "<span class='course__career'> Academic Career: " . $course_acadCareer . "</span>";
+                       }
+                  if ($instructor_markup){
+                  $markup = $markup . "<span class='course__professor'> Instructor: " . $instructor_markup . "</span>";
+                      }
+                  $markup = $markup . "
+                  <a href='https://classes.cornell.edu/browse/roster/{$semester}/class/{$course_subject}/{$course_number}' class='course__link btn btn--clear btn--small'>
+                  Full details for {$course_subject} {$course_number} : {$course_title}</a>
+                  </span>
+
+          </div>
+          \n";
+
+  return $markup;
+}
+
+function as_courses_json_generate_course_netid_markup($netid) {
+
+$markup = "";
+$build['courses_block']['#markup'] = "";
+$semestername = "";
+//edit this to control what semesters get fetched
+$semesters = array('SP20','FA20');
+//course subject from sitewide department variables
+$keyword_params = explode(',',variable_get('as_dept_variables_coursesubjects', ''));
+$courses = array();
+$coursemarkup = "";
+$instructors = array();
+//controller
+// multiple semsters in an array
+foreach ($semesters as $semester)  {
+// multiple keyword params in an array
+$coursemarkup = "";
+  foreach($keyword_params as $keyword_param) {
+  $course_json = as_courses_json_get_courses_json($keyword_param,$semester);
+    if (!empty($course_json)) {
+      foreach($course_json as $course_data) {
+        $course_subject = $course_data['subject'];
+        $course_number = $course_data['catalogNbr'];
+        $course_title = $course_data['titleLong'];
+        $course_instructors = $course_data['enrollGroups'];
+        if (!empty($course_instructors)){
+            foreach ($course_instructors as $instructors) {
+              if (!empty($instructors['classSections'][0]['meetings'][0]['instructors'][0]['netid'])){
+              $filternetid = $instructors['classSections'][0]['meetings'][0]['instructors'][0]['netid'];
+              $filternetid2 = $instructors['classSections'][0]['meetings'][0]['instructors'][1]['netid'];
+              //check each record for $netid
+                if ($filternetid === $netid | $filternetid2 === $netid) {
+                $coursemarkup = $coursemarkup ."
+                    <li><a href='https://classes.cornell.edu/browse/roster/{$semester}/class/{$course_subject}/{$course_number}' aria-label='{$course_subject}:{$course_number} - {$semester}'>{$course_subject} {$course_number} : {$course_title}</a></li> ";
+                }
+              }
+            }
+          }
+        }
+      }
+      $courses[$semester] ['markup']=  $coursemarkup ;
+    }
+  }
+//display
+  foreach ($semesters as $semester)  {
+      //semester name
+      if ($semester == 'SP20') {
+        $semestername = 'Spring 2020';
+      }
+      if ($semester == 'FA20') {
+        $semestername = 'Fall 2020';
+      }
+      if (!empty($courses[$semester]['markup'])){
+        $markup = $markup . "<h3>{$semestername}</h3><ul>";
+        $markup = $markup . $courses[$semester]['markup'];
+        $markup = $markup . "</ul>";
+      }
+  }
+    $build['courses_block']['#markup'] = $markup ;
+    return $build['courses_block']['#markup'];
+}
+
+
+function as_courses_json_help($path, $arg) {
+  // Implementation of hook_help()
+    if ($path == 'admin/help#as_courses_json') {
+        $txt = ' Mashes related people and other instructors up into a list of links.  Related people link to their node, other people link to !cornell_people_url.  Provides a block display.';
+    return '<p>'. t($txt) .'</p>';
+    }
+}

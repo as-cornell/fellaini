@@ -1,0 +1,16 @@
+name = AS Thumbnail Gallery
+description = Feature containing content type and field instances for Thumbnail Gallery
+core = 7.x
+package = Features
+dependencies[] = as_base_fields
+dependencies[] = as_department_beans
+dependencies[] = features
+dependencies[] = field_collection
+dependencies[] = image
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = node-thumbnail_gallery-body
+features[field_instance][] = node-thumbnail_gallery-field_phototext_2
+features[image][] = square_scale_and_crop
+features[node][] = thumbnail_gallery
+project path = sites/all/modules/features

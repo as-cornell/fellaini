@@ -1,0 +1,350 @@
+///////////////////////// Colors
+
+$as-border: #e7e7e7;
+$as-bg-alt: #f8f8f8;
+$as-black: #000000;
+$as-white: #ffffff;
+
+$as-red: #e44444;
+$as-red-link: #b31b1b;
+$as-green: #698851;
+$as-green-lt: #9ece78;
+$as-blue: #467A9B;
+$as-blue-lt: #6499B9;
+$twitter-blue: #38A1F3;
+$facebook-blue: #3b5998;
+$as-gold: #f7c73e;
+
+$as-text: #2c2c2c;
+$as-text-med: #5D5D5D;
+$as-text-lt: #999999;
+
+$as-gray-med: #e0e0e0;
+$as-gray-lt: #f7f7f7;
+
+
+// Font vars
+  $sans-serif-font: "canada-type-gibson", sans-serif;
+  $serif-font: "freight-micro-pro", serif;
+  $as-base-font-size: 18px;
+
+// Screen Sizes
+
+  $small: 608px;
+  $medium: 746px;
+  $large: 960px;
+  $huge: 1200px;
+
+// Assorted things
+
+  $baseRadius: 5px;
+
+// Standard drop shadow
+
+@mixin as-box-shadow(){
+  @include box-shadow($as-gray-lt 0px 0px 5px 2px);
+}
+
+// set font sizes to rem w/ px fallback
+
+  @function calculateRem($size) {
+    $remSize: $size / 14px;
+    @return $remSize * 1rem;
+  }
+
+  @mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }
+
+// set base font
+
+  @mixin baseFont($size: $as-base-font-size, $line-height: 1.4, $spacing: .2px){
+    @include font-sans-lt;
+    @include font-size($size);
+    line-height: $line-height;
+    letter-spacing: $spacing;
+    margin-bottom: gutter();
+  }
+
+// set non-standard sans-fonts
+
+  @mixin sans-font($size:$as-base-font-size, $color:$as-text, $weight:300){
+    font-family: $sans-serif-font;
+    font-style: normal;
+    font-size: $size;
+    font-size: calculateRem($size);
+    color: $color;
+    font-weight: $weight;
+    letter-spacing: 0.7px;
+  }
+
+// set serif fonts
+
+  @mixin serif-font($size:$as-base-font-size, $color:$as-text, $weight:400){
+    font-family: $serif-font;
+    font-style: normal;
+    font-size: $size;
+    font-size: calculateRem($size);
+    color: $color;
+    font-weight: $weight;
+
+    letter-spacing: 0.7px;
+    //text-transform: uppercase;
+    margin-bottom: .75rem;
+  }
+
+///////////////////////// Media query mixins
+
+// Mobile only query
+// 0px through 608px
+@mixin mobile {
+  @media screen and (max-width: $medium) {
+    @content;
+  }
+}
+
+// small+
+@mixin small-plus {
+  @media screen and (min-width: $small){
+    @content;
+  }
+}
+// medium+
+@mixin medium-plus{
+  @media screen and (min-width: $medium){
+    @content;
+  }
+}
+
+// medium
+@mixin medium{
+  @media screen and (min-width: $small) and (max-width: $large){
+    @content;
+  }
+}
+
+// Medium - large
+@mixin medium-large{
+  @media screen and (min-width: $medium) and (max-width: $large){
+    @content;
+  }
+}
+// medium-
+@mixin medium-minus{
+  @media screen and (max-width: $medium){
+    @content;
+  }
+}
+// Large plus
+@mixin large-plus{
+  @media screen and (min-width: $large){
+    @content;
+  }
+}
+@mixin huge-plus{
+  @media screen and (min-width: $huge){
+    @content;
+  }
+}
+
+
+
+// Tablet media query
+// 576px through 960px
+@mixin tablet {
+  @media screen and (min-width: $small) and (max-width:$medium){
+    @content;
+  }
+}
+
+// Desktop media query
+// >= 960px with a max width of 1264px
+@mixin desktop {
+  @media screen and (min-width:960px) and (max-width: 1246px) {
+    @content;
+  }
+}
+
+// In some cases tablet and desktop are the same
+@mixin tablet-desktop {
+  @include tablet {
+    @content;
+  }
+
+  @include desktop {
+    @content;
+  }
+}
+
+// Buttons
+  @mixin btn(){
+    border-radius: 2px;
+    font-weight: 400;
+    display: inline-block;
+    position: relative;
+    padding: .75em 1em;
+    // font-size: 1rem;
+    border: 1px solid $as-border;
+  }
+  @mixin btnSize($font-size: 24px){
+    @include font-size($font-size);
+  }
+  @mixin btnColor($bg-color:$as-gold,$color:darken($bg-color, 35%) ){
+    color: $color;
+    background: $bg-color;
+    border: 1px solid darken($bg-color, 25%);
+    @include transition(all 0.5s ease);
+    &:after{
+      border-left-color: darken($bg-color, 15%);
+      border-width: 5px 0 5px 8px;
+      @include transition(all 0.5s ease);
+    }
+    &:hover{
+      background: darken($bg-color, 8%) !important;
+      text-decoration: none;
+      &:after{
+        border-left-color: darken($bg-color, 20%);
+        //left: 91%;
+      }
+    }
+  }
+
+
+///////////////////////// Grid helpers
+
+///////////////////////////// Retina capable media query
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+///////////////////////////// Absolutely centered
+
+@mixin absolutely-centered {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+}
+
+
+///////////////////////////// Animation
+
+@mixin animate($prop, $time: "", $delay: "", $ease: "") {
+  @if $time == "" {
+    $time: 0.4s;
+  }
+  @if $delay == "" {
+    $delay: 0s;
+  }
+  @if $ease == "" {
+    $ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  @include transition-property($prop);
+  @include transition-duration($time);
+  @include transition-timing-function($ease);
+  @include transition-delay($delay);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+
+
+
+//////////////////////// Placeholders
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+///////////////////////////// Equilateral triangles
+
+@mixin simple-triangle($direction, $size, $color) {
+  height: 0;
+  width: 0;
+  border: solid transparent;
+  @if $direction == "up" {
+    border-bottom-color: $color;
+    border-width: 0 $size $size;
+  }
+  @else if $direction == "down" {
+    border-top-color: $color;
+    border-width: $size $size 0;
+  }
+  @else if $direction == "left" {
+    border-right-color: $color;
+    border-width: $size $size $size 0;
+  }
+  @else if $direction == "right" {
+    border-left-color: $color;
+    border-width: $size 0 $size $size;
+  }
+}
+
+// better radial gradient
+@mixin bg-radial($start-colour, $start-position, $end-colour, $end-position) {
+  background-color: $end-colour;
+  background: -moz-radial-gradient(center, ellipse cover, $start-colour $start-position, $end-colour $end-position);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, Colour-stop($start-position,$start-colour), Colour-stop($end-position,$end-colour));
+  background: -webkit-radial-gradient(center, ellipse cover, $start-colour $start-position,$end-colour $end-position);
+  background: -o-radial-gradient(center, ellipse cover, $start-colour $start-position,$end-colour $end-position);
+  background: -ms-radial-gradient(center, ellipse cover, $start-colour $start-position,$end-colour $end-position);
+  background: radial-gradient(ellipse at center, $start-colour $start-position,$end-colour $end-position);
+}

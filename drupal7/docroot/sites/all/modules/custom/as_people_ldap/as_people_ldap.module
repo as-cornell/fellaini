@@ -1,0 +1,185 @@
+<?php
+function as_people_ldap_block_info() {
+  // Implementation of hook_block_info():
+  $blocks['main'] = array(
+    'info' => t('LDAP profile under image on full node view'),
+    //'status' => TRUE,
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+    $blocks['directory'] = array(
+    'info' => t('LDAP profile in directory tab layout'),
+    //'status' => TRUE,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+    $blocks['peopleform'] = array(
+    'info' => t('LDAP profile at top of people node edit form'),
+    //'status' => TRUE,
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  return $blocks;
+}
+
+function as_people_ldap_block_view($delta = '', $netid = '') {
+  // This example is adapted from node.module.
+  //get nid if not passed to block via template variables
+    if (empty($netid)){
+     $node = menu_get_object();
+    if (empty($node)) {
+      return;
+    }
+    if (!empty($node->field_person_netid['und'][0]['value'])) {
+        $netid = $node->field_person_netid['und'][0]['value'];
+        }
+    }
+  $block = array();
+    switch ($delta) {
+    case 'main':
+      $block['subject'] = t('Main');
+      $block['content'] = as_people_ldap_block_content($delta,$netid);
+      break;
+    case 'directory':
+      $block['subject'] = t('Directory');
+      $block['content'] = as_people_ldap_block_content($delta,$netid);
+      break;
+    case 'peopleform':
+      $block['subject'] = t('LDAP Data');
+      $block['content'] = as_people_ldap_block_content($delta,$netid);
+      break;
+    case 'peoplename':
+      $block['subject'] = t('LDAP Data');
+      $block['content'] = as_people_ldap_block_content($delta,$netid);
+      break;
+    }
+  return $block;
+}
+
+function as_people_ldap_get_netid_ldap($netid) {
+if (!empty($cache = cache_get('ldap-' . $netid))) {
+      $info = $cache->data;
+      //print_r ($info);
+    } else {
+// basic sequence with LDAP is connect, bind, search, interpret search
+// result, close connection
+// Connect to directory.cornell.edu
+$ds=ldap_connect("directory.cornell.edu");
+// If connection OK, Bind to server
+if (!empty($ds)) {
+        $r=ldap_bind($ds);
+        $sr=ldap_search($ds,"ou=People,o=Cornell University,c=US","uid=".$netid);
+        $info = ldap_get_entries($ds, $sr);
+        $entry = ldap_first_entry($ds, $sr);
+
+        if (!empty($entry)) {
+        //print_r ($info);
+        cache_set('ldap-' . $netid, $info, 'cache', time() + 60 * 60 * 24); //60 * 60 * 24 = 24 hrs
+        ldap_close($ds);
+        }
+    } //close if ($entry)
+} //close if ($ds)
+return $info;
+
+}
+
+function as_people_ldap_block_content($delta,$netid) {
+//Implementation of hook_block_content()
+    $info = as_people_ldap_get_netid_ldap($netid);
+        switch ($delta) {
+            case 'main':
+            //parse LDAP into individual variables
+            //print_r ($info);
+            $main = "<div class='person--contact'>\n<p> ";
+                if (!empty($info[0]["cornelleducampusaddress"][0])) {
+                $main = $main.$info[0]["cornelleducampusaddress"][0]."<br />\n";
+                }
+                if (!empty($info[0]["cornelledulocaladdress"][0])) {
+                $localaddress = explode(',', $info[0]["cornelledulocaladdress"][0]);
+                $main = $main.$localaddress[0]."<br />\n";
+                }
+                if (!empty($info[0]["mail"][0])) {
+                $main = $main."<a href='mailto:".$info[0]["mail"][0]."'>".$info[0]["mail"][0]."</a><br />";
+                }
+                if (!empty($info[0]["cornelleducampusphone"][0])) {
+                $tel = str_replace("/","-",$info[0]["cornelleducampusphone"][0]);
+                $main = $main."<a href='tel:".$tel."'>".$tel."</a><br />\n";
+                }
+                $main = $main."</p>\n</div>\n";
+                //return $main;
+                $result = array('#markup' => $main);
+                return $result;
+            break;
+            case 'directory':
+            //parse LDAP into individual variables
+                if (!empty($info[0]["mail"][0])) {
+                    $directory = "<span class='email'><a href='mailto:".$info[0]["mail"][0]."'>".$info[0]["mail"][0]."</a></span>";
+                    }
+                    if (!empty($info[0]["cornelleducampusphone"][0])) {
+                    $tel = str_replace("/","-",$info[0]["cornelleducampusphone"][0]);
+                    $directory = $directory."<a href='tel:".$tel."'>".$tel."</a><br />\n";
+                    }
+                    if (!empty($info[0]["cornelleducampusaddress"][0])) {
+                    $directory = $directory."<span class='address'>".$info[0]["cornelleducampusaddress"][0]."</span>\n";
+                    }
+                    if (!empty($info[0]["cornelledulocaladdress"][0])) {
+                    $localaddress = explode(',', $info[0]["cornelledulocaladdress"][0]);
+                    $directory = $directory.$localaddress[0]."<br />\n";
+                    }
+                    //return $directory;
+                    $result = array('#markup' => $directory);
+                    return $result;
+            break;
+            case 'peopleform':
+            //parse LDAP into individual variables
+
+                if (!empty($info[0]["mail"][0])) {
+                    $peopleform = "<span class='email'>".$info[0]["mail"][0]."</span><br />\n";
+                    }
+                    if (!empty($info[0]["cornelleducampusphone"][0])) {
+                    $tel = str_replace("/","-",$info[0]["cornelleducampusphone"][0]);
+                    $peopleform = $peopleform.$tel."<br />\n";
+                    }
+                    if (!empty($info[0]["cornelleducampusaddress"][0])) {
+                    $peopleform = $peopleform."<span class='address'>".$info[0]["cornelleducampusaddress"][0]."</span><br />\n";
+                    }
+                    if (!empty($info[0]["cornelledulocaladdress"][0])) {
+                    $addy2 = explode(',', $info[0]["cornelledulocaladdress"][0]);
+                    $peopleform = $peopleform."<span class='address'>".$addy2[0]."</span><br />\n";
+                    }
+                    $peopleform = $peopleform."<br />\n<p><a href='https://www.whoiam.cornell.edu/whoiam/directory.html'>Edit my email address or campus office location</a></p>\n";
+                    $peopleform = $peopleform."<p><a href='https://hr.cornell.edu/workday'>Edit my campus phone number</a></p>\n";
+                    //return $peopleform;
+                    $result = array('#markup' => $peopleform);
+                    return $result;
+                break;
+                case 'peoplename':
+            //parse LDAP into individual variables
+
+                if (!empty($info[0]["givenname"][0])) {
+                    $peoplename = "<div>".$info[0]["givenname"][0]." ";
+                    }
+                 if (!empty($info[0]["sn"][0])) {
+                    $peoplename = $peoplename.$info[0]["sn"][0]."</div>\n";
+                    }
+                    //return $peopleform;
+                    $result = array('#markup' => $peoplename);
+                    return $result;
+                break;
+
+    }
+
+
+
+}
+
+function as_people_ldap_help($path, $arg) {
+  // Implementation of hook_help()
+    if ($path == 'admin/help#as_people_ldap') {
+        $txt = 'The as_people_ldap module uses the !as_people_ldap_url '
+        .'API to retrieve LDAP data for a person by NetID and display it as block '
+        .'content.';
+        $link = l('LDAP', 'http://directory.cornell.edu/');
+        $replace = array(
+        '!as_people_ldap_url' => $link
+        );
+    return '<p>'. t($txt, $replace) .'</p>';
+    }
+}

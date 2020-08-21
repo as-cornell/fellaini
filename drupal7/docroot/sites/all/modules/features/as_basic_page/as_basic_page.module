@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Basic Page feature.
+ */
+
+include_once 'as_basic_page.features.inc';

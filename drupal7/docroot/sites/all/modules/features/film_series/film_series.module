@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Film Series feature.
+ */
+
+include_once 'film_series.features.inc';

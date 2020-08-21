@@ -1,0 +1,46 @@
+.shareButtons, .as-info-bar, .as-search-bar, .as-header__links, .header__logo--small, .as-mobile-title, .as-container--nav,  #college-news, #as-quick-actions, .as-page__sidebar, .as-footer__section, .as-footer__sub-section--copyright-feedback, .as-footer__sub-section--social{
+	display: none !important;
+}
+.header__logo--large{
+	display: inline; text-align: left;
+}
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.as-cards--campfire{
+	display: block;
+	position: relative !important;
+	height: auto !important;
+	float: left;
+}
+
+.as-cards--campfire .as-card{
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	width: 30% !important;
+	float: left;
+	padding-left: 15px;
+}
+
+.as-page__block--gray{
+	background-image: none;
+}
+
+/* sliders */
+.slider--active a, .slider--active img, .slider--active h1, .slider--active p{
+	opacity: 1;
+}
+.slider--tabloid .slide{
+	float: none;
+}
+
+.region-social-media, .as-container{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+h1{
+	color: black !important;
+}

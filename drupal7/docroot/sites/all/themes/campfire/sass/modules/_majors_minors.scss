@@ -1,0 +1,360 @@
+.as-majors-minors {
+}
+
+.as-majors-minors__control-bar {
+  @include small-plus {
+    @include clearfix;
+    padding-bottom: gutter();
+  }
+
+  .as-section__title {
+    font-size: 24px;
+
+    @include mobile {
+      padding: 0 gutter(8);
+    }
+
+    @include small-plus {
+      float: left;
+      margin: 0;
+    }
+  }
+}
+
+.as-majors-minors__control {
+  @include font-sans-semi;
+  font-size: 13px;
+  line-height: 32px;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  @include medium-plus {
+    float: right;
+    padding-right: gutter();
+  }
+
+  .as-icon {
+    vertical-align: middle;
+  }
+}
+
+.as-majors-minors__button {
+  color: $as-text-lt;
+  font-size: 18px;
+  margin-left: gutter(2);
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  border:none;
+  background: transparent;
+  &.show-list-view{
+      font-size: 1.3rem;
+    }
+  &.text-button{
+    font-weight: 400;
+    font-size: 1rem;
+    margin-left: 1.6em;
+  }
+}
+
+.as-majors-minors__button--enabled {
+  color: $as-text;
+}
+
+.as-majors-minors__control--filter {
+
+  @media screen and (max-width:$medium) {
+    border-top: 1px solid $as-border;
+    border-bottom: 1px solid $as-border;
+    line-height: 48px;
+    padding: 0 gutter(8);
+    position: relative;
+
+    .as-icon {
+      position: absolute;
+      line-height: 48px;
+      width: 48px;
+      right: 0;
+      text-align: center;
+    }
+  }
+
+  @include medium-plus {
+    margin-right: gutter();
+    //border-right: 1px solid $as-border;
+  }
+
+  .as-icon {
+    &:before {
+      //content: 'a';
+      font-size:.7rem;
+    }
+  }
+
+}
+
+.as-majors-minors__control--expanded {
+
+  .as-icon {
+    @include mobile {
+      background: $as-gold;
+      color: $as-white;
+      &:before {
+        content: 'j';
+      }
+    }
+
+    @include small-plus {
+      &:before {
+        content: 'l';
+      }
+    }
+  }
+}
+
+.as-majors-minors__control--view-switcher {
+  padding: 0 3.25%;
+  width: 300px;
+}
+
+.as-majors-minors__legend {
+  border-top: 1px solid $as-border;
+  padding-top: gutter();
+  margin-bottom: gutter();
+
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.as-majors-minors__legend-item {
+  color: $as-text-lt;
+  @include font-serif;
+  font-size: 13px;
+
+  @include small-plus {
+    display: inline-block;
+    &:not(:first-child) {
+      margin-left: gutter();
+    }
+  }
+}
+
+
+
+.as-majors-minors__cards {
+  overflow: hidden;
+  padding-top: gutter();
+
+  @include mobile {
+    padding-left: gutter(8);
+    padding-right: gutter(8);
+  }
+
+  @include small-plus {
+    @include clearfix;
+  }
+
+  .as-card {
+   // margin-top: 24px;
+   // max-width: none;
+  }
+
+  .as-card__img {
+  //  display: none;
+  }
+
+  .as-card__copy {
+    border: 2px solid $as-border;
+    border-top: none;
+    padding: 8.5%;
+  }
+
+  .as-card__title {
+    float: left;
+  }
+
+  .as-card__link {
+    float: left;
+    clear: both;
+    margin-top: 0;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &.as-view-type--list {
+    @include small-plus {
+      .as-card {
+        width: 50%;
+
+        &:nth-of-type(odd) {
+          clear: both;
+          float: left;
+          padding-right: 1%;
+        }
+
+        &:nth-of-type(even) {
+          float: right;
+          padding-left: 1%;
+        }
+
+        .as-quick-view {
+          width: 204%;
+        }
+
+        &:nth-of-type(2n+2) {
+          .as-quick-view {
+            margin-left: -104%;
+          }
+        }
+      }
+
+    }
+  }
+
+  &.as-view-type--grid {
+
+    @include small-plus {
+
+      .as-card {
+        float: left;
+        width: 25%;
+
+        .as-quick-view {
+          width: 400%;
+        }
+
+        &:nth-of-type(4n+2) {
+          .as-quick-view {
+            margin-left: -100%;
+          }
+        }
+        &:nth-of-type(4n+3) {
+          .as-quick-view {
+            margin-left: -200%;
+          }
+        }
+        &:nth-of-type(4n+4) {
+          .as-quick-view {
+            margin-left: -300%;
+          }
+        }
+        &:nth-of-type(4n+5) {
+          clear: left;
+        }
+      }
+
+      .as-card__thumbnail {
+        max-width: 282px;
+        margin: gutter();
+
+        .as-card__img {
+          display: block;
+        }
+
+        .as-card__copy {
+          border: 1px solid $as-border;
+          border-top: 0;
+          padding: gutter(3);
+          text-align: left;
+        }
+
+        .as-card__title {
+          display: block;
+          float: none;
+          clear: none;
+        }
+
+        .as-majors-minors__tags {
+          float: none;
+          margin-top: gutter(3);
+        }
+      }
+    }
+  }
+}
+
+.as-majors-minors__tag {
+  background: $as-border;
+  color: $as-text;
+  border-radius: 100%;
+  display: inline-block;
+  @include font-serif-bold;
+  font-size: 12px;
+  line-height: 24px;
+  width: 24px;
+  text-align: center;
+}
+
+.as-majors-minors__tag--major {
+  text-transform: uppercase;
+
+  &:after {
+    content: 'm';
+  }
+
+  &.as-majors-minors__tag--enabled {
+    background: $as-green;
+    color: $as-white;
+  }
+}
+
+.as-majors-minors__tag--minor {
+  text-transform: lowercase;
+
+  &:after {
+    content: 'm';
+  }
+
+  &.as-majors-minors__tag--enabled {
+    background: $as-gold;
+    color: $as-white;
+  }
+}
+
+.as-majors-minors__tag--graduate {
+  text-transform: uppercase;
+
+  &:after {
+    content: 'g';
+  }
+
+  &.as-majors-minors__tag--enabled {
+    background: $as-blue;
+    color: $as-white;
+  }
+}
+
+.as-card__thumbnail {
+  display: block;
+  position: relative;
+  text-decoration: none !important;
+
+  .as-majors-minors__tags {
+    float: right;
+  }
+
+  .as-quick-view--expanded & {
+    &:after {
+      content: ' ';
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      bottom: -40px;
+      width: 32px;
+      height: 32px;
+      overflow: hidden;
+      background: $as-bg-alt;
+      border-top: 1px solid $as-border;
+      border-right: 1px solid $as-border;
+      z-index: 2;
+      @include rotate(-45deg);
+    }
+  }
+}
+

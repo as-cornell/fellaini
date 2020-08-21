@@ -1,0 +1,383 @@
+.as-tabloid__slider{
+  border: 1px solid $as-border;
+  border-left: none;
+  border-right: none;
+}
+
+// Color bar - more >1 will get colors
+
+.as-color-bar{
+  position: relative;
+  //max-width: 1200px;
+  margin: 5.6667% auto;
+    &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    @include small-plus(){
+      top: 9%;
+    };
+    bottom: 9%;
+    width: 100%;
+    //background: $as-green;
+    z-index: 0;
+  }
+  &:nth-of-type(3n+1){
+    color: shade($as-green, 66.6%);
+    &::after{
+      background: $as-green;
+    }
+  }
+  &:nth-of-type(3n+2){
+    color: shade($as-gold, 66.6%);
+    &::after{
+      background: $as-gold;
+    }
+  }
+  &:nth-of-type(3n+3){
+    color: shade($as-blue, 66.6%);
+    &::after{
+      background: $as-blue;
+    }
+  }
+  
+}
+
+.bar--blue{
+  color: shade($as-blue, 66.6%);
+  &::after{
+    background: $as-blue !important;
+  }
+}
+
+.as-color-bar--gold{
+  color: shade($as-gold, 66.6%);
+  .as-color-bar::after{
+    background: $as-gold;
+  }
+}
+
+// big color bar behind academics stories and about images
+.as-color-bar2{
+  position: relative;
+  //max-width: 1200px;
+  margin: 5.6667% auto;
+    &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 2%;
+    bottom: 20%;
+    width: 100%;
+    z-index: 0;
+  }
+  color: shade($as-gold, 66.6%);
+  &::after{
+    background: $as-gold;
+  }
+  .as-card{
+    background: transparent;
+    text-align: left;
+  }
+}
+
+// "person" bar with background color
+.as-color-bar3{
+  position: relative;
+  //max-width: 1200px;
+  margin: 5.6667% auto;
+    &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    @include small-plus(){
+      top: -10%;
+    };
+    
+    bottom: -10%;
+    right: 0;
+    width: 100%;
+    @include small-plus(){
+      width: 70%;
+    };
+
+    z-index: 0;
+  }
+  color: shade($as-gold, 66.6%);
+  &::after{
+    background: $as-gold;
+  }
+  .as-card{
+    background: transparent;
+    text-align: left;
+  }
+  .as-tabloid{
+    padding: 0 1rem;
+  }
+  .as-tabloid__media{
+    flex: 0 0 33%;
+    order: 2;
+    @include small-plus(){
+      order: 1;
+    };
+  }
+  .as-tabloid__copy{
+    flex: 2;
+    order: 1;
+    padding-left: span(1 of 12);
+    padding-right: gutter(12);
+    @include small-plus(){
+      order: 2;
+      text-align: left;
+    };
+  }
+}
+
+// plain colorbar full height and width
+.as-color-bar4{
+  position: relative;
+  //max-width: 1200px;
+  margin: 5.6667% auto;
+    &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 00%; 
+    bottom: 0%;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    background: $as-gold;
+  }
+}
+
+.as-feature, .as-tabloid__slider .as-container{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.as-tabloid {
+  background: $as-white;
+
+  display: flex;
+  flex-direction: column;
+  @include small-plus(){
+    flex-direction: row;
+  };
+  align-items: center;
+  clear: both;
+  @include clearfix();
+  * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+}
+
+// Color Bar tabloids in sidebar
+
+.as-page__sidebar{
+  .as-tabloid{
+    display: block;
+  }
+  .as-tabloid__copy, .as-tabloid__media{
+    position: relative;
+    z-index: 1;
+    width: 100% !important;
+  }
+  .as-tabloid__copy{
+    padding-left: gutter(3);
+    p{
+      margin-left: gutter(3);
+    }
+  }
+  .as-tabloid__media{
+    margin-bottom: 2em;
+  }
+  .as-color-bar{
+    margin-top: 120px;
+    text-align: right !important;
+
+  }
+  .as-color-bar::after{
+    right: -20px;
+    bottom: -8%;
+  }
+}
+
+.as-tabloid__title, .as-tabloid__label, .as-tabloid__text, .as-tabloid__link{
+  margin-bottom: 2%;
+} 
+
+.as-tabloid__media, .as-tabloid__copy{
+  z-index: 2;
+}
+
+.as-tabloid__media{
+  img{
+      width: 100%;
+      display: block;
+    }
+}
+
+.as-tabloid__link a{
+    position: relative;
+    @include as-link();
+    display: inline-block;
+    @include font-sans-semi;
+    letter-spacing: 0.5px; 
+}
+
+.as-tabloid__label{
+  @extend %small-black-serif;
+}
+
+.as-tabloid{
+  max-width: none;
+  text-align: center;
+
+  .as-tabloid__media{
+    width: 100%;
+    @include small-plus(){
+    width: 57.15%;
+    float: left;
+    };
+  }
+  h1{
+    @include sans-font();
+    text-transform: none;
+    font-size: 1rem;
+    margin-top: gutter(3);
+    font-weight: 400;
+  }
+  .as-tabloid__copy {
+    overflow: visible;
+    width: 100%;
+    @include small-plus(){
+      width: 42%;
+      float: right;
+    };
+    border-top: none;
+    padding: 0 5%;
+    img{
+      margin: 8.5% auto;
+    }
+  }
+  .as-tabloid__copy--full{
+    @include clearfix;
+    //width: 800%;
+    @include medium-plus(){
+      width: 60%;
+    };
+    position: relative;
+    z-index: 1;
+    padding:2rem;
+    margin: 4rem auto;
+    border-left: 1px solid shade($as-gold, 5%);
+    border-right: 1px solid shade($as-gold, 5%);
+    p,a{
+      @include sans-font($size: 27px,$color: $as-white, $weight: 400);
+    }
+    p{
+      margin-bottom: 2em;
+    }
+    a{
+      background: $as-red;
+      //color: $as-white;
+      padding: .25em 1.5em;
+    }
+  }
+  .as-tabloid__link a{
+    margin-bottom: gutter(3);
+  }
+}
+
+
+
+.as-color-bar{
+  .as-tabloid__link a{
+    @include small-plus(){
+      @include as-link($color: $as-white);
+    };
+  }
+  .as-tabloid__copy{
+    text-align: center;
+  }
+  .as-tabloid__title{
+    @include font-size(33px);
+  }
+  .as-tabloid{
+    @extend .as-container;
+  }
+  &:nth-of-type(odd){
+    .as-tabloid__copy{
+      order: 1;
+      
+      
+      @include small-plus(){
+        text-align: right;
+        padding-left: 0;
+        padding-right: 5.6667%;
+      };
+    }
+    .as-tabloid__media{
+      order: 2;
+    }
+  }
+  &:nth-of-type(even){
+    .as-tabloid__copy{
+      order: 2;
+      
+      @include small-plus(){
+        padding-right: 0;
+        padding-left: 5.6667%;
+      };
+      //text-align: right;
+    }
+    .as-tabloid__media{
+      order: 1;
+    }
+  }
+}
+
+// as-tabloid--feature - homepage feature length tabloid
+
+.as-tabloid--feature{
+  h1{
+    text-transform: uppercase;
+  }
+}
+
+/* Save for IE 
+.as-tabloid{
+  position:relative;
+  &:nth-of-type(odd){
+    .as-tabloid__copy{
+      padding-right: 5.6667%;
+      float: left;
+      text-align: right;
+    }
+    .as-tabloid__media{
+      float: right;
+    }
+  }
+  &:nth-of-type(even){
+    .as-tabloid__copy{
+      padding-left: 5.6667%;
+      float: right;
+      text-align: left;
+    }
+    .as-tabloid__media{
+      float: left;
+    }
+  }
+
+} 
+*/
+
+//####### TEMP
+.as-tabloid__media{
+  //max-height: 500px;
+}

@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_bean_types_api_info().
+ */
+function as_instagram_block_bean_types_api_info() {
+  return array('api' => 4);
+}
+
+/**
+ * Implements hook_bean_types().
+ */
+function as_instagram_block_bean_types() {
+  $plugins = array();
+  $plugin_path = drupal_get_path('module', 'as_instagram_block') . '/plugins/bean';
+  $plugins['instagram_block'] = array(
+  'label' => t('Instagram'),
+  'description' => t('A listing of instagram posts, based on a json feed from instagram.'),
+  'handler' => array(
+    'class' => 'InstagramBlockBean',
+    'parent' => 'bean',
+    'path' => $plugin_path,
+    'file' => 'bean_instagram_block.instagram_block.inc',
+     ),
+  );
+  return $plugins;
+}
+
+/**
+ * form#sumbit handler.
+ */
+function as_instagram_block_clear_cache(&$form){
+  // Get the correct cache key and clear the cache
+  $cache_key = InstagramBlockBean::get_cache_key($form['screenname']['#value']);
+  cache_clear_all('bean_instagram-' . $cache_key, 'cache');
+}

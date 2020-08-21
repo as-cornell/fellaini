@@ -1,0 +1,15 @@
+name: CKEditor Accessibility Checker
+type: module
+description: "Adds the Accessibility Checker plugin to CKEditor."
+package: CKEditor
+# core: 8.x
+
+dependencies:
+  - ckeditor
+  - ckeditor_balloonpanel
+
+# Information added by Drupal.org packaging script on 2016-06-26
+version: '8.x-1.0'
+core: '8.x'
+project: 'ckeditor_a11ychecker'
+datestamp: 1466961543

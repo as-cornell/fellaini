@@ -1,0 +1,17 @@
+// Module for all <h> place holders
+
+%small-gray-serif{
+	color: $as-text-lt !important;
+	@include font-serif-bold;
+	font-size: 1rem;
+	letter-spacing: 0.7px;
+	text-transform: uppercase;
+}
+
+%small-black-serif{
+	color: $as-text !important;
+	@include font-serif-bold;
+	font-size: 1rem;
+	letter-spacing: 0.7px;
+	text-transform: uppercase;
+}

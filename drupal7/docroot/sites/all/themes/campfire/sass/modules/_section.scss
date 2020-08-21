@@ -1,0 +1,38 @@
+.as-section {
+}
+
+.as-section__label {
+  @include font-sans-semi;
+  letter-spacing: .25px;
+  margin-bottom: gutter();
+  text-transform: uppercase;
+
+  .as-color-bar & {
+    @include font-serif-bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.as-section__title {
+  font-size: 33px;
+  margin-bottom: gutter();
+
+  .as-color-bar & {
+    font-size: 36px;
+    letter-spacing: 0.5px;
+    margin-top: gutter(8);
+  }
+}
+
+.as-section__text {
+  @include font-sans-lt;
+  letter-spacing: .2px;
+  margin-bottom: gutter();
+
+  .as-color-bar & {
+    font-size: 21px;
+    margin: gutter(4) 0;
+  }
+}

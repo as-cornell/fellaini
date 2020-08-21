@@ -1,0 +1,47 @@
+.as-tabs {}
+
+.as-tabs__wrapper {
+  border-bottom: 1px solid $as-border;
+}
+
+.as-tabs__item {
+  color: tint($as-text, 50%);
+  @include font-sans-semi;
+  font-size: 13px;
+  border-bottom: 3px solid transparent;
+  display: inline-block;
+  padding: 8px 16px;
+  position: relative;
+  top: 3px;
+  text-transform: uppercase;
+  text-decoration: none !important;
+
+  &:hover {
+    border-bottom: 3px solid $as-black;
+  }
+}
+
+.as-tabs__item--active {
+  border-bottom: 3px solid $as-red;
+  color: $as-text;
+}
+
+
+.tabs--drupal{
+  ul.primary{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  top: 100px;
+  left: 0;
+  z-index: 10;
+  }
+  ul.primary li{
+    flex: 1 0 40%;
+    a{
+      display: block;
+      margin-right: 0;
+    }
+  }
+}

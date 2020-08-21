@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="svg-sprite">
+    <symbol viewBox="0 0 26 13" id="shape-icon-down-arrow">
+        <title>arrow</title>
+        <path d="M26 2.516L24.113 0 13 8.317 1.957.07 0 2.516l13 9.925z" fill-rule="evenodd" />
+    </symbol>
+    <symbol viewBox="0 0 23 23" id="shape-icon-grid-view">
+        <title>grid</title>
+        <g fill-rule="evenodd">
+            <path d="M0 0h10.222v10.222H0zM0 12.778h10.222V23H0zM12.778 0H23v10.222H12.778zM12.778 12.778H23V23H12.778z" />
+        </g>
+    </symbol>
+    <symbol viewBox="0 0 24 23" id="shape-icon-list-view">
+        <title>linear view icon</title>
+        <g fill-rule="evenodd">
+            <path d="M.764 0h22.688v3.632H.764zM.764 9.6h22.688v3.632H.764zM.764 19.368h22.688V23H.764z" />
+        </g>
+    </symbol>
+</svg>

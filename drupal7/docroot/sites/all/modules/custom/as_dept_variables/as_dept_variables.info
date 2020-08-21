@@ -1,0 +1,6 @@
+name = A&S Department Variables
+description = Provides custom sitewide variables for A&S Department Websites
+core = 7.x
+package = AS
+php = 5.2.4
+version = 7.x-1.0

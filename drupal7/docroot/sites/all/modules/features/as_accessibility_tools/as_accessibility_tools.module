@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the AS Accessibility Tools feature.
+ */
+
+include_once 'as_accessibility_tools.features.inc';

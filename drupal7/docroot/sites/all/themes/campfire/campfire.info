@@ -1,0 +1,30 @@
+name = Campfire
+description = Cornell A&S theme for Drupal 7
+screenshot = screenshot.png
+core = 7.x
+version = 1.2-dev
+engine = phptemplate
+
+regions[header] = Header
+regions[help] = Help
+regions[content_top] = Content Top
+regions[content] = Content
+regions[social_media] = Social Media
+regions[content_bottom] = Content Bottom
+regions[footer] = Footer
+
+features[] = logo
+features[] = favicon
+features[] = main_menu
+features[] = search
+
+
+stylesheets[all][] = css/as-build.css
+stylesheets[all][] = css/flickity.css
+stylesheets[all][] = css/magnific.css
+stylesheets[all][] = css/flexslider.css
+
+settings[basic_tabs] = 1
+settings[basic_breadcrumb_separator] = »
+settings[wireframe_mode] = 0
+settings[clear_registry] = 0

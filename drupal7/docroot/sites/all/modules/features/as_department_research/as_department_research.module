@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Department Research feature.
+ */
+
+include_once 'as_department_research.features.inc';

@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the AS Calendar Math feature.
+ */
+
+include_once 'as_calendar_math.features.inc';

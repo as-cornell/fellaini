@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Courses feature.
+ */
+
+include_once 'as_courses.features.inc';

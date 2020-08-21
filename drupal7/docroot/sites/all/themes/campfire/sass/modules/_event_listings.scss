@@ -1,0 +1,339 @@
+ //Events Card block
+.as-card--eventList{
+	background: $as-gold;
+	padding: 2em 1em;
+	width: 100%;
+	.as-icon{
+		font-size: 2em;
+		color: shade($as-gold, 33.3%);
+	}
+	font-weight: 400;
+	a:hover{
+		border-bottom: none !important;
+		background: none !important;
+		text-decoration: none;
+		&:after{
+			display: none;
+		}
+	}
+
+}
+.eventListing__image{
+	display:none;
+}
+
+
+.eventList--card div{
+	list-style-type: none;
+	padding-left: 0;
+	padding-bottom: 33.3%;
+	height: 200px;
+	&.as-icon{
+		height: 20px !important;
+		padding-bottom: 0 !important;
+	}
+	.flickity-viewport{
+		position: absolute;
+		width: 100%;
+	}
+	.eventListing{
+		height: 100%;
+		width: 100%;
+	}
+	.eventListing__date{
+		color: $as-white;
+		@include font-sans-semi();
+		font-size: 2rem;
+		margin-top: 1rem;
+	}
+	.eventListing__link{
+		color: shade($as-gold, 50%);
+	}
+	.eventListing__title{
+		margin-top: 1rem;
+	}
+}
+.eventList--slider{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	ul{
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: stretch;
+		padding: 1rem 0 2rem 0;
+		li{
+			text-align: center;
+			//margin: 0 1rem;
+			flex: 0 0 50%;
+			@include small-plus(){
+				flex: 0 0 25%;
+			};
+		}
+	}
+	.eventListing__date{
+		color: $as-white;
+		@include font-sans-semi();
+		font-size: 2rem;
+		margin-top: 1rem;
+	}
+	.eventListing__link{
+		color: shade($as-gold, 50%);
+		font-weight: 400;
+		padding: 1rem;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include transition(all 0.5s ease);
+		&:hover{
+			text-decoration: none;
+			background: shade($as-gold, 10%);
+		}
+	}
+	.eventListing__more{
+		@extend %as-link;
+		color: shade($as-gold, 50%);
+		border: 1px solid shade($as-gold, 10%);
+		border-radius: 3px;
+		margin-top: 1rem;
+	}
+	.eventListing__title{
+		margin-top: 0rem;
+	}
+	.flex-control-nav
+	{
+		width: 100%;
+		left: 0;
+	}
+	.eventListing__link--otherEvents{
+		color: shade($as-gold, 50%);
+		font-weight: 400;
+		padding: .5rem;
+		@extend %as-link;
+		color: shade($as-gold, 50%);
+		border: 1px solid shade($as-gold, 10%);
+		border-radius: 3px;
+		@include medium-plus(){
+			//flex: 0 0 25%;
+			//max-width: 25%;
+		}
+		margin-bottom: 3em;
+		@include transition(all 0.5s ease);
+		&:hover{
+			text-decoration: none;
+			background: shade($as-gold, 10%);
+		}
+	}
+
+}
+
+
+.eventList--slider--gold{
+	background: $as-gold;
+	position: relative;
+	&::before{
+		width: 200%;
+		height: 100%;
+		content: '';
+		background: $as-gold;
+		left: -50%;
+		position: absolute;
+		z-index: -1;
+	}
+}
+
+.eventList--slider--pink{
+	background: $fi-pink;
+	position: relative;
+	&::before{
+		width: 200%;
+		height: 100%;
+		content: '';
+		background: $fi-pink;
+		left: -50%;
+		position: absolute;
+		z-index: -1;
+	}
+	.eventListing__link:hover{
+		background:shade($fi-pink, 10%);
+	}
+}
+
+/*
+ ** .eventList--bar
+ ** new full width bar for LL events
+ */
+
+.eventList--bar{
+	position:relative;
+	&::before{
+		width: 200%;
+		height:100%;
+		content: '';
+		left: -50%;
+		position:absolute;
+		z-index: -1;
+	}
+	// lists
+	ul{
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: stretch;
+		padding: 2rem 0;
+		margin-bottom: 0;
+		li{
+			flex: 0 0 50%;
+			margin-bottom: 0;
+			padding: .5rem;
+			@include border-radius();
+			@include small-plus(){
+				flex: 0 0 31%;
+			};
+		}
+	}
+	//links
+	a{
+		display: flex;
+		justify-content: space-between;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	.eventListing__date{
+		flex: 0 0 20%;
+		text-align: center;
+		padding-top: 2px;
+		.month{
+			font-size: 14px;
+			display: block;
+			font-weight: 400;
+		}
+		.day{
+			font-size: 2rem;
+			padding-bottom: .5rem;
+			line-height: 1em;
+		}
+	}
+	.eventListing__details{
+		flex: 0 0 75%;
+	}
+	.eventListing__title{
+		margin-bottom: .5rem;
+	}
+	.eventListing__image{
+		display: none;
+	}
+	// Pink bar on Freedom Interrupted
+	&.pink{
+		//a{background: green;}
+		&::before{
+			background: $fi-pink;
+		}
+		.eventListing{
+			&:hover{
+				background:shade($fi-pink, 10%);
+			}
+		}
+		.eventListing__date,.eventListing__title{
+			color: $as-white;
+		}
+		.eventListing__more{
+			color: $as-gold;
+		}
+	}
+}
+
+
+
+
+
+
+.eventListing__date, .eventListing__link, .eventListing__title{
+	display: block;
+}
+
+.eventList--horizontal .eventList__list{
+	@supports (display:grid){
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-column-gap: 1rem;
+		justify-content: center;
+	}
+
+	
+	border-top: 1px solid #eeeeee;
+	padding-top: 1rem;
+	margin-bottom: 2rem;
+
+	.flickity-viewport{
+		position: absolute;
+		width: 100%;
+	}
+	.eventListing__date{
+		color: $as-text-lt;
+		border-right: 1px solid $light-gray;
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 1;
+	}
+	>a{
+		display:none !important;
+	}
+	a{
+		color: $as-text;
+		font-weight: 400;
+		padding: 2rem 0;
+		text-decoration: none;
+		@supports (display:grid){
+			display: grid;
+			grid-template-columns: 1fr 3fr;
+			grid-column-gap: 1rem;
+		}
+		position: relative;
+		transform: perspective(1px) translateZ(0);
+		overflow:hidden;
+		&:before{
+			position: absolute;
+			content: '';
+			height: 2px;
+			width: 100%;
+			background: $as-text-lt;
+			bottom: 0;
+			right: 100%;
+			transition: right .3s ease-out;
+		}
+		&:hover{
+			text-decoration: none;
+			@include transition(all 1s ease);
+			.eventListing__date{
+				color: $as-text;
+				@include transition(all 1s ease);
+			}
+			&:before{
+				right: 0;
+			}
+		}
+	}
+
+}
+
+// alt date blocks
+
+.date-listings{
+	display: flex;
+	justify-content: space-between;
+	div:first-of-type{
+		flex: 0 0 19.1099%;
+	}
+	div:last-of-type{
+		flex: 0 0 73.036%;
+	}
+	strong{
+		font-weight: 800;
+	}
+}

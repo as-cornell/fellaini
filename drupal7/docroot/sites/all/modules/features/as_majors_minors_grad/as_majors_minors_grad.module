@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Majors Minors Grad feature.
+ */
+
+include_once 'as_majors_minors_grad.features.inc';

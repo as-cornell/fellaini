@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Dept Directory feature.
+ */
+
+include_once 'as_dept_directory.features.inc';

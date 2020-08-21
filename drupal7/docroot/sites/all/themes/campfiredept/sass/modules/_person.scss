@@ -1,0 +1,146 @@
+
+.person{
+	.pageTitle{
+		margin-bottom: 0;
+		@include sans-font($size: 42px, $weight: 600 )
+	}
+}
+
+.person__header{
+	p{
+		margin: .75rem 0 2rem 0;
+	}
+
+}
+
+.person__title{
+	color: $as-text-med;
+}
+.person{
+	.person--picture{
+		flex: 0 0 40%;
+		max-width: 40%;
+		@include medium-plus(){
+			max-width: 100%;
+			margin-bottom: 1rem;
+		}
+	}
+}
+.person__sidebar{
+	display: flex;
+	justify-content: space-between;
+	@include medium-plus(){
+		flex: 0 0 28.3333%;
+		max-width: 28.3333%;
+		display: block;
+	}
+	h2{
+		padding-left: 0;
+	}
+
+}
+.person__details{
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 55%;
+	//justify-content: space-between;
+	margin-bottom: 2rem;
+
+}
+.person__main{
+
+	div:first-of-type{
+		h2{
+			margin-top: 0;
+		}
+	}
+}
+.person--courses{
+	margin-bottom: 2rem;
+}
+.person--dept-field-affiliations{
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	border: 1px solid $as-border;
+	@include medium-plus(){
+		flex-direction: row;
+		margin: 0 -1rem 2rem -1rem;
+	}
+	@include small-plus{
+		div{
+			flex: 1 1 0%;
+		}
+		ul{
+			list-style-type: none;
+			font-size: 1rem;
+			li{
+				margin-left: 0;
+			}
+		}
+		.person--fields{
+			padding: 0 1rem;
+		}
+	}
+	h3{
+		font-weight: 400;
+		font-size: 1rem;
+		border-bottom: 1px solid $as-border;
+	}
+}
+
+// .card--person specific styles
+.card--person{
+	.card--person__name{
+		border-top: 1px solid #eeeeee;
+		border-bottom: 1px solid #eeeeee;
+		padding: 1rem;
+	}
+	.person__categories{
+		font-size: 1rem;
+		padding: 0 1rem;
+		font-weight: 400;
+		text-align: left;
+		ul{
+			// list-style-type: none;
+			// padding-left: 0;
+		}
+	}
+}
+// LDAP informaiont
+.person--directory{
+	display: flex;
+	flex-direction: column;
+	div, span{
+		//height: 100px;
+	}
+	@include small-plus(){
+		flex-direction: row;
+	}
+	justify-content: space-between;
+	.name-title{
+
+		display: flex;
+		flex-direction:column;
+		@include small-plus{
+			flex: 0 0 23%;
+		}
+	}
+	.name{
+		font-weight: 400
+	}
+	.contact{
+
+		display: flex;
+		flex-direction: column;
+		margin: 1rem 0;
+		@include small-plus(){
+			flex: 0 0 33%;
+			margin: 0;
+		}
+	}
+	.other{
+		flex: 0 0 37%;
+	}
+}

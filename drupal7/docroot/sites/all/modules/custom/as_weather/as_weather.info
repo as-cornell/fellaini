@@ -1,0 +1,6 @@
+name = A&S Weather from JSON
+description = Displays current weather data from openweathermap.org in a block.
+core = 7.x
+package = AS
+php = 5.2.4
+version = 7.x-1.0

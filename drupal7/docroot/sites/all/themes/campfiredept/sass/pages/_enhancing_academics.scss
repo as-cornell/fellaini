@@ -1,0 +1,80 @@
+.as-page--enhancing-academics {
+
+  .as-page__block--hero {
+    margin: 0;
+    padding: 0;
+  }
+
+  .as-page__block--grid {
+    margin-top: 0;
+  }
+
+  .as-color-bar {
+    &:before {
+      background: $as-gold;
+      top: 0;
+      height: 378px;
+      width: percentage(7 / 12)
+    }
+  }
+
+  .as-grid {
+    .as-container > .as-grid__column {
+      @include tablet {
+        @include span(3 of 12);
+        &:first-of-type {
+          @include span(6 of 12);
+          .as-grid__column {
+            margin-top: 0;
+            @include span(3 of 6);
+            &:last-of-type {
+              @include span(3 of 6 last);
+            }
+          }
+        }
+        &:last-of-type {
+          @include span(3 of 12 last);
+        }
+      }
+    }
+  }
+
+  .as-grid__copy {
+    color: shade($as-gold, 50%);
+  }
+
+  .as-card {
+    text-align: left;
+  }
+
+  .as-card__title {
+    border: 1px solid $as-border;
+    border-bottom: none;
+    color: $as-text;
+    @include font-sans;
+    font-size: 24px;
+    text-transform: none;
+    padding: gutter(3);
+  }
+
+  .as-card__copy {
+    padding: gutter(3);
+  }
+
+  .as-card__text {
+    @include font-sans-lt;
+    font-size: 15px;
+    line-height: 1.2;
+    margin: gutter(6) 0;
+  }
+
+  .as-card__link {
+    display: block;
+    margin-top: gutter(6);
+
+    &:first-of-type {
+      margin-top: gutter(3);
+    }
+  }
+
+}

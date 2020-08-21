@@ -1,0 +1,38 @@
+// No flexbox ie9
+
+.no-flexbox{
+	.menu--primary{
+		li{
+			display: table-cell;
+			width: 20%;
+		}
+	}
+	.menu--primary li:hover .menu--secondary{
+		display: visible;
+	}
+	.as-search-bar .as-search-bar__form{
+		position: relative;
+	}
+	.as-grid, .eventListing, .as-stat, .as-card{
+		display: inline-block;
+	}
+	.as-grid > div{
+		display: inline-block;
+	}
+	.slider--tabloid .slide{
+		float: none;
+	}
+}
+.no-canvas{
+	*{
+		display: block;
+	}
+
+}
+.no-flexboxlegacy{
+	figure{
+		img{
+			width: 600px;
+		}
+	}
+}

@@ -1,0 +1,78 @@
+.as-grid, .grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  //images should always be consistent in grids
+  img{
+    //margin-bottom: 1.5rem;
+  }
+  >div, >article{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+
+  @include small-plus(){
+    >div, >article{
+      flex: 0 0 49%;
+      max-width: 49%;
+      margin-bottom: 1em;
+    }
+  }
+}
+  .as-grid--two, .grid--two{
+    div, article{
+    }
+  }
+  .as-grid--three, .grid--three{
+    @include medium-plus(){
+    >div, >a, >article{
+      flex-basis: 31.8333333%;
+      max-width: 31.8333333%;
+      //margin: 2%;
+      }
+    };
+  }
+  .as-grid--four, .grid--four{
+    @include medium-plus(){
+    >div, >article{
+        flex-basis: 23.3333%;
+        max-width: 23.3333%;
+      }
+    };
+  }
+  .as-grid--two-one, .grid--two-one{
+    @include medium-plus(){
+      >div:first-of-type{
+        flex: 0 0 64.08%;
+        max-width: 64.08%;
+      }
+      >div:last-of-type{
+        flex: 0 0 28%;
+        max-width: 28%;
+      }
+    }
+  }
+  .as-grid--one-two, .grid--one-two{
+    @include medium-plus(){
+      >div:last-of-type, >span:last-of-type{
+        flex-basis: 64.08%;
+        max-width: 64.08%;
+      }
+      >div:first-of-type, >span:first-of-type{
+        flex-basis: 28%;
+        max-width: 28%;
+      }
+    }
+  }
+  @include small-plus(){
+    .as-grid--vert-ctr, .grid--vert-ctr{
+      align-items: center;
+      p:last-of-type{
+        margin-bottom: 0;
+      }
+      >div{
+        margin-bottom: 0;
+      }
+    }
+  }

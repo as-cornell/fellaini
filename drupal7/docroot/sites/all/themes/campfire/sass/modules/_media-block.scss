@@ -1,0 +1,311 @@
+/* working but long - moves before/after from media to content want to try to make it so there is just an after on container*/
+
+.pictureText{
+	@include small-plus(){
+		display: flex;
+	}
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 4rem;
+	//@include clearfix();
+	&:last-of-type{
+		//margin-bottom: 0;
+	}
+	//max-width: 980px;
+	//background: green;
+	img{
+		width: 100%;
+		display: block;
+	}
+	@include tablet(){
+		.field-image{
+			flex: 0 0 33%;
+			max-width: 33%;
+		}
+	}
+	@include medium-plus(){
+		.field-image{
+			flex: 0 0 45%;
+			max-width: 45%;
+		}
+	}
+	.field-description{
+		flex: 1;
+	}
+	.pictureText__copy, .field-description{
+		//background: yellow;
+	}
+	.pictureText__media, .field-image{
+		margin-right: 4rem;
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			display: block;
+			top: 1rem;
+			left: -1rem;
+			height: calc(100% - 2rem);
+			width: calc(100% + 2rem);
+			z-index: -10;
+      background: $as-blue;
+      background: $blue-radial;
+		}
+	}
+	&.pictureText--lr, &:nth-of-type(even){
+		.pictureText__copy, .field-description{
+			order:1;
+			margin-right: 4rem;
+		}
+		.pictureText__media, .field-image{
+			order:2;
+			margin-right: 0;
+			&::before{
+				//left: -5%;
+        background: $as-gold;
+        background: $gold-radial;
+			}
+		}
+	}
+
+	//with full color-bar
+	&.pictureText--colorbar{
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			display: block;
+		}
+		@include medium(){
+			&::before{
+				top: -5%;
+				left: 35%;
+				height: 110%;
+				width: 100%;
+				z-index: -10;
+				//background: $as-blue;
+			}
+		}
+		@include large-plus(){
+			&::before{
+				top: 10%;
+				left: -50%;
+				height: 80%;
+				width: 200%;
+				z-index: -10;
+				//background: $as-blue;
+			}
+		}
+		.pictureText__media::before, .field-image::before{
+			background: none;
+		}
+		&.pictureText--lr{
+			.pictureText__copy, .field-description{
+				text-align: right;
+			}
+			@include medium(){
+				&::before{
+					left: -35%;
+				}
+			}
+		}
+		a{color: $as-white;
+			
+		}
+	}
+
+	// blue colorbar
+	&.pictureText--colorbar--blue{
+		&::before{
+			background: $as-blue;
+		}
+		color: $as-white;
+	}
+
+	// gold colorbar
+	&.pictureText--colorbar--gold{
+		&::before{
+			background: $as-gold;
+		}
+
+		a{
+			color: $as-text;
+		}
+	}
+
+	//quote
+	&.pictureText--quote{
+		max-width: 1200px;
+		.field-description{
+			display: flex;
+			flex-direction: column;
+			background: $as-green;
+			margin-left: -90px;
+			padding: 50px 50px 50px 90px;
+		    line-height: 1.36;
+		    @include sans-font($color: $as-white, $weight: 400, $size: 21px);
+		    @include medium-plus(){
+			    @include sans-font($color: $as-white, $weight: 400, $size: 33px);
+		    }
+			.quote__quote{
+				order:1;
+				position:relative;
+				&::after, &::before{
+					position: absolute;
+					padding:0;
+					margin:0;
+					height: 1.5rem;
+					@include serif-font($color: $as-white);
+					font-size: 1.75em;
+				}
+				&::before{
+					content: open-quote;
+					top: -1rem;
+					left: -1.5rem;
+					@include medium-plus(){
+					top: -1.5rem;
+					left: -2.5rem;
+					}
+				}
+				&::after{
+					content: close-quote;
+					bottom: .5rem;
+					@include medium-plus(){
+						bottom: 0;
+					}
+				}
+			}
+			.quote__citation{
+				order:2;
+				margin-left: -.75rem;
+			}
+		}
+		.field-image{
+			&:before{
+				display: none;
+			}
+			z-index: 1;
+			flex: 0 0 33%;
+			max-width: 33%;
+		}
+		.quote__citation{
+			line-height: 2rem;
+			a{
+			@include font-size(21px);
+			color: $as-white;
+			}
+		}
+	}
+		blockquote{
+		border:none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+}
+
+.goldBar{
+	position: relative;
+	overflow: hidden;
+	&::before{
+		content: "";
+		position: absolute;
+		display: block;
+	}
+	@include medium(){
+		&::before{
+			top: -5%;
+			left: 35%;
+			height: 110%;
+			width: 100%;
+			z-index: -10;
+			background: $as-gold;
+		}
+	}
+	@include large-plus(){
+		&::before{
+			top: 0%;
+			left: -50%;
+			height: 100%;
+			width: 200%;
+			z-index: -10;
+			background: $as-gold;
+		}
+	}
+}
+
+.imageText--feature{
+	// border: 1px solid #eee;
+	.pictureText{
+		@include medium-plus {
+			margin-bottom: 6rem;
+			position: relative;
+		}
+
+		&:after{
+			position: absolute;
+			content: '';
+			background: #eeeeee;
+			height: 1px;
+			width: 40%;
+			bottom: -3rem;
+			left: 30%;
+		}
+		&:last-of-type{
+			position: static;
+		}
+	}
+	
+	.field-image{
+    &:before{
+      content: none;
+    }
+		@include small-plus{
+			flex: 0 0 40%;
+			max-width: 40%;
+		}
+		
+		@include medium-plus{
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		
+	}
+	.field-description{
+		padding: 0 2rem;
+		text-align: center;
+	}
+}
+// image text temporarty
+
+.imageText--list{
+	.pictureText{
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 2rem;
+		align-items: flex-start;
+		img{
+			flex: 0 0 30%;
+			max-width: 30%;
+		}
+		span{
+			max-width: 66%;
+		}	
+	}
+}
+
+.pictureText--alert{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+  .field-image{
+    flex: 0 0 25%;
+  }
+  .field-description{
+    text-align: left;
+  }
+  h1{
+    margin-bottom: .25rem;
+  }
+}

@@ -1,0 +1,56 @@
+//  container
+
+.as-container, .container, %container {
+	max-width: calc(1200px + 2rem);
+	margin: 0 auto;
+	padding: 0 1rem;
+	@include x-large-plus(){
+		max-width: 1200px;
+		padding: 0;
+	}
+}
+
+/* 
+	new block containers
+*/
+
+.page__block{
+	overflow: hidden;
+	margin-bottom: 4rem;
+}
+.page__block--tall{
+	padding: 3rem 0;
+}
+.page__block--short{
+	margin-bottom: 0; 
+}
+	.page__block--gray{
+		background: $as-gray-lt;
+		border-top: 1px solid darken($as-gray-lt, 5%);
+		border-bottom: 1px solid darken($as-gray-lt, 5%);
+	}	
+	.page__block--blue{
+		background: $as-blue;
+	}
+	.page__block--red{
+		background: $as-red;
+	}
+	.page__block--green{
+		background: $as-green;
+		h1, h2, p{
+			color: $as-white;
+		}
+	}
+
+
+/* ---------------------------------- */
+
+// OLD block
+
+.as-block, .block {
+	padding: 2rem 0;
+	overflow: hidden;
+	@include small-plus(){
+		//padding: 4rem 0;
+	};
+}	

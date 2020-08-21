@@ -1,0 +1,56 @@
+<?php
+
+function as_dept_variables_form_system_site_information_settings_alter(&$form, $form_state, $form_id) {
+  $form['site_information']['as_dept_variables_facebook'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook'),
+    '#default_value' => variable_get('as_dept_variables_facebook', ''),
+    '#description' => t('Facebook URL for the Department or Program.'),
+  );
+  $form['site_information']['as_dept_variables_twitter'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter'),
+    '#default_value' => variable_get('as_dept_variables_twitter', ''),
+    '#description' => t('Twitter URL for the Department or Program.'),
+  );
+  $form['site_information']['as_dept_variables_instagram'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Instagram'),
+    '#default_value' => variable_get('as_dept_variables_instagram', ''),
+    '#description' => t('Instagram URL for the Department or Program.'),
+  );
+  $form['site_information']['as_dept_variables_linkedin'] = array(
+    '#type' => 'textfield',
+    '#title' => t('LinkedIn'),
+    '#default_value' => variable_get('as_dept_variables_linkedin', ''),
+    '#description' => t('LinkedIn URL for the Department or Program.'),
+  );
+  $form['site_information']['as_dept_variables_postaladdress'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mailing Address'),
+    '#default_value' => variable_get('as_dept_variables_postaladdress', ''),
+    '#description' => t('Mailing address for the Department or Program.'),
+  );
+    $form['site_information']['as_dept_variables_phonenumber'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Phone Number'),
+    '#default_value' => variable_get('as_dept_variables_phonenumber', ''),
+    '#description' => t('Main phone number for the Department or Program.'),
+  );
+    $form['site_information']['as_dept_variables_coursesubjects'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Course Subjects'),
+    '#default_value' => variable_get('as_dept_variables_coursesubjects', ''),
+    '#description' => t('Subject codes for courses.  Comma separated for multiples, will be listed in this order.'),
+  );
+  $form['#submit'][] = 'as_dept_variables_handler';
+}
+function as_dept_variables_handler($form, &$form_state) {
+  variable_set('as_dept_variables_facebook', $form_state['values']['as_dept_variables_facebook']);
+  variable_set('as_dept_variables_twitter', $form_state['values']['as_dept_variables_twitter']);
+  variable_set('as_dept_variables_instagram', $form_state['values']['as_dept_variables_instagram']);
+  variable_set('as_dept_variables_linkedin', $form_state['values']['as_dept_variables_linkedin']);
+  variable_set('as_dept_variables_postaladdress', $form_state['values']['as_dept_variables_postaladdress']);
+  variable_set('as_dept_variables_phonenumber', $form_state['values']['as_dept_variables_phonenumber']);
+  variable_set('as_dept_variables_coursesubjects', $form_state['values']['as_dept_variables_coursesubjects']);
+}

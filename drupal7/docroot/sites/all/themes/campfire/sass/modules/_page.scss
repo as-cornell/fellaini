@@ -1,0 +1,142 @@
+.as-page {
+	h1{
+
+	}
+}
+
+.as-page__title {
+  @include font-sans-semi;
+  font-size: 63px;
+  margin-bottom: gutter(8);
+}
+
+.as-page__block {
+	padding: 2rem 0;
+	//overflow: hidden;
+	@include small-plus(){
+		padding: 4rem 0;
+	};
+	&.contain{
+		overflow: hidden;
+	}
+}
+	.as-page__block--gray{
+		//@include radial-gradient(#F2F2F2,#E0E0E0);
+		@include background-image(radial-gradient(#F2F2F2 0%, #f5f5f5 100%));
+	}
+	.as-page__block--blue{
+		background: $as-blue;
+		padding:2rem 0 ;
+	}
+	.as-page__block--green{
+		background: $as-green;
+		padding: 3rem 0;
+		h1, h2, p{
+			color: $as-white;
+		}
+	}
+	.as-page__block--no-bottom{
+		padding-bottom: 0;
+	}
+	.as-page__block--no-top{
+		padding-top: 0;
+	}
+
+// large-centered intro graph
+
+.as-page__introduction{
+	p{
+		font-size: 1.25rem;
+		text-align: center;
+		&:first-of-type{
+			font-size: 1.5rem;
+			margin-bottom: 2em;
+		}
+		&:last-of-type{
+			margin-bottom: 2em;
+		}
+	}
+
+
+	@include medium-plus(){
+		width: span(10 of 12);
+	};
+	margin: 0 auto;
+
+}
+.featureIntroduction{
+  margin: 2rem auto 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @include medium-plus{
+    width: 50%;
+  }
+  
+  h2{
+    font-size: 3rem;
+  }
+  p{
+    font-size: 1.25rem;
+    text-align: center;
+    &:first-of-type{
+      font-size: 1.5rem;
+      margin-bottom: 2em;
+    }
+    &:last-of-type{
+      margin-bottom: 2em;
+    }
+  }
+}
+//full width content
+.as-page__content--full{
+	@include medium{
+		width: span(10 of 12);
+	}
+	// @include medium-plus(){
+	// 	width: span(8 of 12);
+	// };
+	margin: 0 auto;
+}
+
+//content with sidebar
+.as-page__content--withSidebar{
+	@include small-plus{
+		overflow: hidden;
+		.as-page__content{
+			@include span(6);
+			@include push(1 of 12);
+		}
+		.as-page__sidebar{
+			@include span(last 4);
+			//margin-right: (span(1 of 12) + gutter());
+			h2, h3, .field-image{
+				margin-bottom: gutter(4);
+			}
+			.as-card{
+				.field-image{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+// content with wide sidebar
+.as-page__content--wideSidebar{
+	@include small-plus{
+		.as-page__content{
+			@include span(6);
+		}
+		.as-page__sidebar{
+			@include span(last 5);
+			h2{
+				margin-bottom: gutter(4);
+			}
+			h3{
+				margin-bottom: gutter(8);
+			}
+		}
+	}
+}

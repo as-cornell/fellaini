@@ -1,0 +1,715 @@
+.as-cards__wrapper{
+  padding: gutter(12);
+  @include x-large-plus(){
+    padding: 2% 0;
+  }
+
+}
+
+.as-cards{
+	position: relative;
+  z-index: 1;
+	* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+	}
+}
+
+.as-card {
+  background: $as-white;
+  margin-bottom: 30px;
+  width:100%;
+  overflow: hidden;
+	img{
+		max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+    position: relative;
+	}
+  h1{
+    @include sans-font($size: 28px, $weight: 400);
+    margin-top: 0;
+  }
+  a{
+    display: block;
+    text-decoration: none;
+    padding: 0;
+    overflow: hidden;
+  }
+  a:focus{
+    border: 2px solid $as-blue;
+  }
+  a:hover{
+    background-color: $as-white;
+    img {
+      margin: 0 auto;
+    }
+    @include small-plus() {
+      .as-card__img, .field-image, .as-card__copy {
+      //top: -2px;
+      @include transition(all 0.3s ease);
+    }
+      img {
+        opacity: 0.9;
+      }
+    }
+  }
+  &>a:after {
+    @include transition(all 0.3s ease);
+    height: 10px;
+    background-color: $as-red;
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+  }
+
+  a:hover:after {
+    @include small-plus() {
+      bottom: 0;
+      //transform: translateX(5px);
+    }
+  }
+}
+
+.as-card--factoid{
+  border-top: 1px solid $as-border;
+  color: $as-text-lt;
+  img{
+    margin-bottom: 8.5%;
+    display: inline-block;
+  }
+}
+
+// Article
+.as-card--article{
+  text-align: center;
+  position: relative;
+  a{
+    color: $as-text;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .as-card__copy{
+    padding-top: gutter(8);
+    border-top: 1px solid #eeeeee;
+  }
+  .as-card__link{
+    @include as-link();
+  }
+  h1{
+    @include sans-font($size: 16px, $weight: 400);
+    margin-top: 0;
+  }
+}
+
+// mini cards on articles
+
+
+// Work
+.card--work{
+  text-align: center;
+  h1{
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    position: relative;
+    &:after{
+      width: 25%;
+      height: 1px;
+      background: $as-border;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 37%;
+    }
+  }
+  a{
+    color: $as-text;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .work__people{
+    font-weight: 400;
+  }
+}
+
+
+// card--light
+.card--light{
+  display: flex;
+  margin-bottom: 2rem !important;
+  background: transparent !important;
+  padding-top: 0;
+  a{
+    color: #ffffff;
+    display: block;
+   // border-bottom: 10px solid #91cacf;
+    @include transition(all 0.3s ease);
+    &:hover{
+     // border-bottom: 10px solid #fff;
+      text-decoration: none;
+    }
+  }
+  img{
+    margin-bottom: 1rem;
+  }
+
+}
+
+
+
+/***
+  campfire titles
+***/
+
+.as-cards{
+    @include small-plus(){
+      //margin: 0 20px;
+      };
+    @media screen and (min-width: 1175px){
+      margin: auto;
+    }
+  .as-card, .grid-size{
+    @media screen and (min-width:$small) and (max-width:900px){
+      width: 31.333333%;
+    }
+    @media screen and (min-width:901px){
+      width: 23.5%;
+    }
+  }
+  @include small-plus{
+    .gutter-size{
+    	width: 2%;
+    }
+  }
+
+}
+html.flexbox{
+    .stamp{
+      position:absolute;
+      width: 100%;
+      left: 0;
+    }
+
+    @media screen and (min-width:$small) and (max-width:900px){
+      .stamp{
+          //left: 3%;
+          width: 64.6%;
+      }
+    }
+
+    @media screen and (min-width: 901px){
+      .stamp{
+          //position: absolute;
+          left: 25.5%;
+          width: 48.99%;
+      }
+    }
+}
+
+.as-cards--images{
+  .stamp{
+    margin-top:-100px;
+    top: -100px;
+  }
+}
+
+.as-card__img, .field-image {
+  display: block;
+  max-width: 100%;
+  top: 0;
+  position: relative;
+}
+
+.as-card__copy {
+  @include clearfix;
+  border: 1px solid $as-border;
+  border-top: none;
+  padding: gutter(4);
+	display: flex;
+	flex-flow: column;
+  position: relative;
+  top: 0;
+	& div{
+		//flex: 1 100%;
+	}
+}
+
+// visually reordering source order of copy.
+  .as-card__title{
+    order: 2;
+  }
+  .as-card__subtitle{
+    order: 1;
+  }
+  .as-card__link{
+    order: 3;
+  }
+
+.as-card__subtitle {
+@include serif-font($size:16px, $color: $as-text-lt);
+text-transform: uppercase;
+margin-bottom: 1em;
+  a{
+    color: $as-text-lt;
+  }
+  .field-tags{
+      margin-bottom: 8.5%;
+  }
+}
+
+// Sidebar cards need to have position: relative added
+.field-article{
+  list-style-type: none;
+  padding: 0;
+}
+.as-page__sidebar, .small-cards{
+  .as-card{
+    text-align: left;
+    //margin-bottom: 0;
+    a{
+      @supports (display: grid){
+        display: grid;
+      }
+      
+      padding-bottom: 10px;
+      @include small-plus(){
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 1rem; 
+      }
+      @include large-plus(){
+        grid-column-gap: 2rem;
+      }
+      @supports not (display: grid){
+        display: block;
+      }     
+    }
+    &--article--noImage{
+       a{
+         display: block;
+       }
+     } 
+  }
+  .as-card__img{
+    display: none;
+    @include small-plus(){
+      display: block;
+    }
+  }
+  .as-card__copy{
+    border: none;
+    padding: 0;
+  }
+  .as-card__subtitle{
+    margin-top: 0;
+  }
+  .as-card__link{
+    margin-bottom: 0;
+  }
+}
+
+
+//factoids
+
+.as-card--factoid .as-card__subtitle{
+  @include font-sans();
+  text-transform: none;
+}
+.as-card__stat--text{
+    @include font-sans-lt;
+    @include font-size(60px);
+    line-height: 1em;
+    color: $as-text;
+}
+.as-card__inner{
+  .as-stats{
+    border-left: 1px solid $as-border;
+    border-right: 1px solid $as-border;
+    padding: 1rem 0 2rem 0;
+  }
+}
+.as-card__title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.as-card__link a{
+  display: inline-block;
+  font-size: .95rem;
+  letter-spacing: 0.5px;
+  margin-top: gutter(3);
+  @extend %as-link;
+}
+
+// big feature in campfire
+@include keyframes(fade-in) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes (title) {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@include keyframes (border1){
+    0%{border-color: transparent;background: none;}
+    100%{border-color: $as-white;
+    background: rgba(51, 51, 51, 0.24);
+    }
+}
+@include keyframes (link1){
+    0%{opacity: 0}
+    100%{opacity: 1;}
+}
+html.flexbox{
+    .as-card--featured {
+      max-width: none;
+      .as-card__img{
+          opacity: 0;
+          @include animation('fade-in 1s 1');
+          animation-fill-mode: forwards;
+      }
+      .as-card__inner {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 400px;
+        text-align: center;
+      }
+      .as-card__copy {
+        border: 4px solid transparent;
+        @include animation('border1 1s 1.2s 1');
+        animation-fill-mode: forwards;
+        display: inline-block;
+        padding: gutter(4);
+        margin-top: 54%;
+        width: 84%;
+        @include small-plus(){
+          margin-top: 54%;
+          //width: 72%;
+        };
+        .as-card__subtitle{
+          display: none;
+        }
+      }
+      .as-card__title {
+        font-size: 36px;
+        color: $as-white;
+        font-weight: 600;
+        @include animation('fade-in 1.3s 1');
+        animation-fill-mode: forwards;
+        line-height: 1em;
+        margin-bottom: .5em;
+        @include medium-plus(){
+            font-size: 53px;
+        };
+
+        em {
+          @include font-sans;
+          font-style: normal;
+          text-decoration: underline;
+        }
+      }
+      .as-card__link {
+        @include as-link($color: $as-white);
+        @include font-size(24px);
+        opacity: 0;
+        @include animation('link1 1s 2.5s 1');
+        animation-fill-mode: forwards;
+        //margin-top: gutter(1.5);
+      }
+      &>a:after{
+        display:none;
+      }
+      a:hover .as-card__img .field-image, a:hover .as-card__img{
+        //transition: none;
+        top:0;
+      }
+    }
+}
+
+
+.as-card--info {
+  .as-card__copy {
+    border-top: 1px solid $as-border;
+  }
+  .as-card__text {
+    color: $as-text-lt;
+  }
+  .as-card__img {
+    display: inline;
+  }
+  img{
+      margin-bottom: 8.5%;
+  }
+}
+
+// Callout Card
+.as-card--callout{
+  border: 1px solid $as-border;
+  img{
+    margin-bottom: 1rem;
+    border:none;
+  }
+  h1,p,ul{
+    //text-align: center;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+  }
+  h1{
+    @include serif-font($size:24px, $weight: 400);
+    margin: 1.5rem ;
+  }
+  &.magnific{
+    position: relative;
+    cursor: pointer;
+    &:after {
+      @include transition(all 0.3s ease);
+      height: 0;
+      background-color: $as-red;
+      content: '';
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    &:hover:after {
+      @include small-plus() {
+        height: 5px;
+      }
+    }
+  }
+
+}
+
+// Card Container Types
+
+.as-cards--campfire{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  .as-card{
+    order:2;
+    @media screen and (max-width: $small){
+      position: inherit !important;
+      top: auto !important;
+      left: auto !important;
+    }
+  }
+  .stamp{
+    order: 1;
+  }
+}
+
+.as-cards--gold{
+  position: relative;
+  &::before{
+    content: "";
+    background: none repeat scroll 0% 0% #F7C73E;
+    position: absolute;
+    display: block;
+    top: 5%;
+    height: 80%;
+    width: 100%;
+  }
+}
+
+
+// MAJORS AND MINORS CARDS
+
+.as-cards--list{
+  .as-card{
+    @include medium-plus{
+      width: 48%;
+    }
+    img{
+      display: none;
+    }
+  }
+  .as-card__copy{
+    border-top: 2px solid $as-border;
+    padding: 4.081%;
+  }
+}
+
+// dept-program cards
+.as-card--dept-pro{
+  h1 {
+    color: $as-text;
+    @include font-sans;
+    font-size: 20px;
+    letter-spacing: none;
+    text-transform: none;
+    grid-area: title;
+  }
+}
+// major-minor cards
+
+.as-card--majors-minors {
+  text-align: left !important;
+  //background: pink;
+  .as-card__copy{
+
+    display: block;
+    @supports (display: grid){
+      display: grid;
+    }
+    grid-auto-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+    "title title"
+    "bubbles more";
+  }
+  h1 {
+    color: $as-text;
+    @include font-sans;
+    font-size: 20px;
+    letter-spacing: none;
+    text-transform: none;
+    grid-area: title;
+  }
+  .as-card__link{
+    grid-area: more;
+  }
+  .as-majors-minors__tags{
+    grid-area: bubbles;
+  }
+  a{
+    color: $as-text;
+    &:hover{
+      text-decoration: none;
+    }
+    .as-card__link{
+      color: $as-link;
+    }
+  }
+}
+
+// TOC
+
+.as-cards--toc, .as-cards--page{
+  text-align: left;
+  .as-card{
+    overflow: visible;
+  }
+  .as-card__copy{
+    padding: gutter(4) 0 0;
+  }
+  .as-card__inner{
+    h1{
+      border-top: 1px solid $as-border;
+      border-right: 1px solid $as-border;
+      border-left: 1px solid $as-border;
+      margin-bottom: 0;
+
+      @include font-size(24px);
+      position: relative;
+        &:hover::after{
+          content: "›";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(-1rem, -50%);
+          color: $as-text;
+          font-size: 2rem;
+        }
+      a{
+        color: $as-text;
+        display: block;
+        padding: gutter(4);
+        text-decoration: none;
+      }
+    }
+    ul{
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      li{
+        margin-bottom: 0;
+      }
+      a{
+        @include as-link($as-link);
+        font-size: 1rem;
+        font-weight: 400;
+        display: block;
+        padding: gutter(8) gutter(4);
+        //border-bottom: 1px solid $as-border;
+        &:hover{
+          text-decoration: none;
+          background: tint($as-green, 30%);
+          color: $as-white;
+          &::after{
+            color: $as-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.as-cards--page{
+  p{
+    padding: gutter(4);
+  }
+}
+
+//description card for TOC
+
+.as-cards--toc .as-card--description{
+  @include sans-font($size: 24px, $weight: 400);
+   position: relative;
+   background: transparent;
+   color: shade($as-gold, 66.6%);
+   width: 60%;
+   width: 90%;
+   padding: 0 5%;
+   @include small-plus{
+
+   }
+  @media screen and (min-width:640px) and (max-width:900px){
+      width: 64.6%;
+  }
+  @media screen and (min-width: 901px){
+    width: 46%;
+  }
+  @include medium-plus{
+    padding: 0;
+    &::before{
+      content: "";
+      background: #F7C73E none repeat scroll 0% 0%;
+      position: absolute;
+      display: block;
+      top: -13%;
+      left: -80%;
+      height: 136%;
+      width: 200%;
+      z-index: -10;
+    }
+  }
+}
+.bigCard{
+    background: $as-white;
+    padding-bottom: 2rem;
+    border: 1px solid $as-border;
+    a{
+        color: $as-text;
+        text-decoration: none;
+    }
+    p, h2, h1{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

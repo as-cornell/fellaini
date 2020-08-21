@@ -1,0 +1,12 @@
+name: Views Menu Relationship
+type: module
+description: Enables sorting views by the menu order of nodes.
+# core: 8.x
+package: Other
+
+
+# Information added by Drupal.org packaging script on 2017-05-29
+version: '8.x-1.0'
+core: '8.x'
+project: 'views_menu_relationship'
+datestamp: 1496065392

@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "as-font";
+  src:url("../fonts/as.eot");
+  src:url("../fonts/as.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/as.woff") format("woff"),
+    url("../fonts/as.ttf") format("truetype"),
+    url("../fonts/as.svg#as") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.as-icon {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: as-font;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal !important;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.as-icon--arrow-down:before {
+  content: "a";
+}
+.as-icon--visit-campus:before {
+  content: "b";
+}
+.as-icon--user:before {
+  content: "c";
+}
+.as-icon--twitter:before {
+  content: "d";
+}
+.as-icon--search:before {
+  content: "e";
+}
+.as-icon--make-donation:before {
+  content: "f";
+}
+.as-icon--instagram:before {
+  content: "g";
+}
+.as-icon--grid:before {
+  content: "h";
+}
+.as-icon--facebook:before {
+  content: "i";
+}
+.as-icon--close:before {
+  content: "j";
+  cursor: pointer;
+}
+.as-icon--bars:before {
+  content: "k";
+}
+.as-icon--arrow-up:before {
+  content: "l";
+}
+.as-icon--become-student:before {
+  content: "m";
+}

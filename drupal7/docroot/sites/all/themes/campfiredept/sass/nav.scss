@@ -1,0 +1,266 @@
+@import "compass";
+@import "base";
+@import "fonts";
+
+.as-nav {
+  z-index: 3;
+
+  @include mobile {
+    background: $as-text;
+    position: fixed;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    @include transform(translateY(-100%));
+  }
+
+  @include tablet {
+    background: $as-white;
+    border-bottom: 1px solid $as-border;
+    position: relative;
+  }
+}
+
+.as-sav--expandable {
+  @include transition(transform 0.3s ease-out);
+}
+
+.as-nav--expanded {
+  @include mobile {
+    @include transform(translateY(0));
+  }
+}
+
+.as-nav--fixed {
+  @include tablet {
+    //position: fixed;
+    //top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.as-nav__wrapper {}
+
+.as-nav__wrapper--collapsed {
+  @include mobile {
+    display: none;
+  }
+}
+
+.as-nav__wrapper--expanded {
+  @include mobile {
+    display: block;
+  }
+}
+
+.as-nav__wrapper--primary {
+  @include tablet {
+    background: $as-white;
+    display: block;
+  }
+}
+
+.as-nav__wrapper--secondary {
+  @include tablet {
+    background: transparent;
+    position: absolute;
+    display: none;
+    top: 70px;
+    left: 0;
+    width: 130%;
+    left: -15%;
+    z-index: 1;
+  }
+}
+
+.as-nav__wrapper--tertiary {
+  @include tablet {
+    display: none;
+  }
+}
+
+.as-nav__inner {}
+
+.as-nav__inner--primary {
+  @include tablet {
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.as-nav__inner--secondary {
+  text-align: left;
+
+  @include mobile {
+    border-bottom: 1px solid tint($as-text, 10%);
+  }
+
+  @include tablet {
+    @include box-shadow(2px 2px 0 rgba(#000, 0.06));
+    padding: 10px 0;
+    position: relative;
+    background: $as-white;
+    border: 1px solid $as-border;
+    margin: 0 auto;
+    display: inline-block;
+    min-width: 260px;
+    &:after {
+      @include absolutely-centered;
+      content: "";
+      background: image_url("arrow-subnav-up.png");
+      width: 28px;
+      height: 15px;
+      top: -15px;
+    }
+  }
+}
+
+.as-nav__inner--tertiary {
+  @include mobile {
+    border-bottom: 1px solid tint($as-text, 10%);
+  }
+}
+
+.as-nav__section {
+  @include tablet {
+    //@include span(2.4 of 12);
+    position: relative;
+    &:last-of-type {
+     // @include span(2.4 of 12 last);
+    }
+    &:hover {
+      .as-nav__link--primary {
+        border-top: 3px solid $as-text;
+      }
+      .as-nav__wrapper--secondary {
+        display: block;
+      }
+    }
+  }
+}
+
+a.as-nav__link {
+  @include mobile {
+    display: block;
+    color: $as-white;
+    background: $as-text;
+    font-size: 15px;
+    line-height: 48px;
+  }
+}
+
+.as-nav__link--expandable {
+  @include tablet {
+    .as-icon {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    border-bottom: 1px solid tint($as-text, 10%);
+    position: relative;
+    .as-icon {
+      background: shade($as-text, 30%);
+      content: "";
+      font-size: 20px;
+      width: 48px;
+      line-height: 48px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: center;
+      text-indent: 0;
+    }
+  }
+
+  &.as-nav__link--secondary {
+    .as-icon {
+      background: transparent;
+      border-left: 1px solid tint($as-text, 10%);
+    }
+  }
+}
+
+a.as-nav__link--expanded {
+  @include mobile {
+    .as-icon {
+      &:before {
+        content: "l";
+      }
+    }
+  }
+}
+
+a.as-nav__link--primary {
+  @include font-sans-semi;
+  text-decoration: none;
+  @include mobile {
+    max-height: none;
+    text-indent: 20px;
+  }
+
+  @include tablet {
+    display: inline-block;
+    color: $as-text;
+    font-size: 18px;
+    border-top: 3px solid transparent;
+    padding: 27px 35px;
+    &.as-nav__link--active {
+      border-top: 3px solid $as-red;
+    }
+  }
+}
+
+a.as-nav__link--secondary {
+  @include font-serif-med;
+
+  @include mobile {
+    background: shade($as-text, 30%);
+    font-size: 12px;
+    text-decoration: none;
+    text-indent: 40px;
+  }
+
+  @include tablet {
+    border-top: none;
+    color: $as-text-lt;
+    display: block;
+    font-size: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    position: relative;
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 100%;
+    }
+    &:before {
+      left: -10px;
+    }
+    &:after {
+      right: -10px;
+    }
+    &:hover {
+      background: $as-red;
+      color: $as-white;
+      &:before, &:after {
+        background: $as-red;
+      }
+    }
+  }
+}
+
+a.as-nav__link--tertiary {
+  @include mobile {
+    background: shade($as-text, 30%);
+    color: $as-white;
+    @include font-serif-med;
+    font-size: 12px;
+    text-decoration: none;
+    text-indent: 60px;
+  }
+}

@@ -1,0 +1,119 @@
+.as-info-bar {
+  position: relative;
+  //background: red;
+  z-index: 5;
+  margin: 0 auto;
+  
+
+
+  @include medium-plus {
+    //margin-top: -57px;
+    height: 50px;
+    // display: block;
+    // background: #2c2c2c;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include transition(all .3s);
+    &:hover{
+        //background: #4c4c4c;
+        color: $as-white;
+        a{
+            color: $as-white;
+        }
+        form.small{
+            input{
+                //background: #4c4c4c;
+            }
+        }
+    }
+  }
+
+  .as-button--close {
+    color: $as-white;
+    font-size: 12px;
+    position: absolute;
+    width: 48px;
+    line-height: 48px;
+    top: 5px;
+    right: 0;
+  }
+}
+
+.as-info-bar--expanded {
+  margin-top: 0px;
+}
+
+.as-info-bar__mobile {
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}
+
+.as-info-bar__inner {
+  display:none;
+  @include medium-plus{
+    display: block;
+  }
+  text-align: right;
+  position: relative;
+  line-height: 43px;
+  // @include mobile {
+  //   padding-bottom: 20px;
+  //   text-align: left;
+  //   line-height: 40px;
+  //   .as-info-bar__label {
+  //     color: $as-white;
+  //     text-transform: uppercase;
+  //     margin-left: 20px;
+  //     margin-top: 30px;
+  //     font-size: 16px;
+  //   }
+  //   a {
+  //     color: $as-text-lt;
+  //     margin-left: 40px;
+  //     font-size: 16px;
+  //     display: block;
+  //   }
+  // }
+}
+
+.as-info-bar__label {
+  color: #ccc;
+  font-size: 13px;
+  margin-right: 0px;
+}
+
+.as-info-bar__link {
+  color: #ccc;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.info-for--mobile{
+  ul{
+  display: block;
+  padding-left: 1em;
+  }
+  a{
+    padding: .5em 1em;
+    display: block;
+    color: $as-text-lt;
+    font-weight: 300;
+  }
+
+  h3{
+    padding: .5em 1em;
+    color:$as-text-lt;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+  @include medium-plus{
+    display: none;
+  }
+}

@@ -1,0 +1,362 @@
+/*
+  listGroup
+*/
+.listGroup{
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  @include mobile(){
+    li{
+      width: 100%;
+    }
+  };
+  @include small-plus(){
+    @include span(isolate 10 at 2);
+    li{
+      flex: 1 0 span(5);
+      padding: 0 gutter(12);
+      margin-bottom: 2em;
+    }
+  };
+}
+
+  .listGroup__btn{
+    display:block;
+    @include font-size(22px);
+    @include medium-plus(){
+      @include font-size(30px);
+    };
+    padding: .25rem 0;
+    margin-bottom: 1rem;
+    border:1px solid darken($as-blue, 8);
+    border-radius: 3px;
+  }
+  .listGroup__btn--blue{
+    background:$as-blue;
+    color: $as-white;
+    &:hover{
+      background: darken($as-blue, 5);
+      @include transition(all 0.5s ease);
+    }
+  }
+
+/*
+  CTA Link Lists
+*/
+
+.links{
+  ul{
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    @include small-plus(){
+      display:flex;
+      flex-wrap:wrap;
+      //align-items: stretch;
+      justify-content: flex-start;
+    };
+    //@include span(isolate 10 at 2);
+  }
+  li{
+    flex: 0 0 22%;
+    margin-bottom: 1rem;
+    margin: 1rem;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: flex-start;
+  }
+  a{
+    flex: 1 0 0%;
+  }
+}
+
+.links--long{
+  li{
+    flex: 1 0 25%;
+  }
+}
+
+.links--stacked{
+  ul{
+    display: block;
+    li{
+      display: block;
+    }
+    a{
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      border: 2px solid $as-border;
+    }
+  }
+}
+
+.links--gray{
+  ul{
+    margin-bottom: 0;
+  }
+  a{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $as-text-lt;
+    //@include font-sans-med;
+    // text-transform: uppercase;
+    color: $as-text-med;
+    padding: .75rem;
+    //font-size: .8rem;
+    font-weight: 400;
+    border-radius: $baseRadius;
+    @include transition(all 0.5s ease);
+    &:hover {
+      color: $as-white;
+      background:  $as-text-lt;
+      text-decoration: none;
+      //
+      border: 1px solid #7b7b7b;
+    }
+  }
+  h3{
+    @include small-plus{
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+  .links__btn{
+    display:block;
+    @include font-size(30px);
+    padding: .25rem 0;
+    margin-bottom: 1rem;
+    border:1px solid darken($as-blue, 8);
+    border-radius: 3px;
+  }
+  .links__btn--blue{
+    background:$as-blue;
+    color: $as-white;
+    &:hover{
+      background: darken($as-blue, 5);
+    }
+  }
+
+/*
+  ### Secondary Action Links
+*/
+
+
+.field-secondary-action-link{
+  width: 100%;
+  padding: 6% 0;
+  li{
+    border-right: 1px solid $as-border;
+    padding: 0 2%;
+    &:last-of-type{
+      border: none;
+    }
+  }
+  a{
+    display: inline-block;
+    @include font-sans-lt;
+    font-size: 24px;
+    letter-spacing: 1px;
+    @include small-plus {
+      margin: .75em 0;
+    }
+    @include as-link($as-text);
+  }
+}
+
+/*
+
+  as-stat
+
+*/
+
+.stats{
+
+  text-align: center;
+  border-top: 1px solid $as-border;
+  border-bottom: 1px solid $as-border;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent;
+  padding: 2rem 0 1rem 0;
+  background: $as-white;
+
+  &:hover{
+    background: #fdfdfd;
+    @include transition(all 2s ease);
+  }
+
+  .stat__numbers, .stat__content{
+    display:block;
+  }
+  .stat__numbers{
+    @include sans-font($weight:400, $size:28px);
+    @include small-plus(){
+      @include font-size(60px);
+    };
+    line-height: 1em;
+    margin-bottom: 1rem;
+  }
+  .stat__content{
+    // color: $as-text-lt;
+    //@include font-sans;
+    //@include font-size(14px);
+    @include pad(0.25 of 4);
+    margin-top: 1rem;
+  }
+}
+.stats--sidebar{
+  margin-bottom: 4rem;
+}
+
+// Sidebar Stats
+
+.as-stats--double{
+  display:flex;
+  flex-wrap: wrap;
+  margin-bottom: span(2);
+  padding-top: gutter(4);
+  p{
+    flex: 1 0 100%;
+    @include small-plus{
+    flex: 1 0 43%;
+    }
+    margin-bottom: 2rem;
+  }
+  .as-stat__numbers{
+    @include font-size(32px);
+  }
+}
+
+//breadcrumbs
+.breadcrumb{
+  @include sans-font($size: 16px);
+  margin-bottom: 1rem;
+}
+
+
+
+// Colored CTA Bar
+
+.as-cta-bar {
+  &.as-cta-bar--gray{
+    background: $as-text-med;
+    color: white;
+  }
+  .as-cta-bar__links{
+    display: flex;
+    flex-direction: column;
+    @include medium-plus{
+      flex-direction: row;
+      height: 8em;
+    }
+  }
+  a {
+    display: flex;
+    flex: 0 0 33.333333%;
+    align-items: center;
+    padding: 1.25em 0;
+    text-decoration: underline;
+    text-decoration-color: $as-text-med;
+    @include transition(all 0.5s ease);
+    @include sans-font($color: $as-white, $size: 18px);
+    @include medium-plus {
+      padding: 0;
+      justify-content: center;
+      @include font-size(22px);
+    }
+    &:hover{
+      background: tint($as-text-lt, 50%);
+      color: $as-text;
+      text-decoration: none;
+    }
+    .as-icon{
+      flex: 0 0 12%;
+    }
+  }
+}
+
+.as-cta__copy {
+  display: inline-block;
+  text-align: left;
+  margin-left: .75rem;
+}
+
+
+.as-cta__subtitle {
+  font-weight: 600;
+  @include font-size(13px);
+  letter-spacing: 2px;
+  &:after {
+    content: "›";
+    display: inline-block;
+    font-size: 15px;
+    padding-left: 5px;
+  }
+}
+
+
+.as-cta-bar--facts {
+  .as-divider {
+    @include mobile {
+      margin: 0 33.3%;
+    }
+  }
+  a {
+    @include mobile {
+      padding: gutter(2) 0;
+    }
+  }
+}
+
+
+.as-cta-bar--bordered {
+  .as-container {
+    border-top: 1px solid $as-border;
+    border-bottom: 1px solid $as-border;
+  }
+
+  @include small-plus {
+    .as-container {
+      padding: gutter(4) 0;
+    }
+
+    .as-divider {
+      top: 33%;
+      height: 34%;
+    }
+  }
+}
+
+// Social Media shareButtons
+
+.shareButtons{
+  font-size: 1.5rem;
+  list-style-type: none;
+  padding-left: 0;
+  @include mobile(){
+    li{
+      display: inline-block;
+    }
+  }
+  @include small-plus(){
+    font-size: 1.75rem;
+    position: absolute;
+    margin-left: -40px;
+  };
+  a{
+    color: $as-text-lt;
+    text-decoration-color: $as-gray-lt;
+    &:hover{
+      color: $as-text;
+      @include transition(all 0.5s ease);
+      text-decoration: none;
+    }
+  }
+}

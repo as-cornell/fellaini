@@ -1,0 +1,13 @@
+name: CKEditor Balloon Panel
+type: module
+description: "Adds the Balloon Panel plugin to CKEditor."
+package: CKEditor
+# core: 8.x
+dependencies:
+  - ckeditor
+
+# Information added by Drupal.org packaging script on 2016-06-26
+version: '8.x-1.1'
+core: '8.x'
+project: 'ckeditor_balloonpanel'
+datestamp: 1466961843

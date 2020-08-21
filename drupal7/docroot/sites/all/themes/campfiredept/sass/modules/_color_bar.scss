@@ -1,0 +1,211 @@
+// Set up background colors for things that need background colors on
+
+.as-bg-green{
+  background: $as-green;
+}
+
+.as-bg-gold{
+  background: $as-gold;
+}
+
+.as-bg-blue{
+  background: $as-blue;
+}
+
+/*.as-color-bar {
+
+  @include mobile {
+    text-align: center;
+  }
+
+  @include tablet {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 9%;
+      bottom: 9%;
+      width: 100%;
+    }
+    .as-container {
+      display: table;
+      position: relative;
+    }
+  }
+}
+
+.as-color-bar__copy, .as-color-bar__media {
+
+  @include tablet {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    z-index: 1;
+  }
+}
+
+.as-color-bar__copy {
+  @include mobile {
+    padding-left: gutter(8);
+    padding-right: gutter(8);
+  }
+}
+
+.as-color-bar__media {
+  img {
+    display: block;
+    max-width: 100%;
+
+    @include mobile {
+      margin: 0 auto;
+    }
+  }
+  img + img {
+    margin-top: gutter();
+  }
+}
+
+
+.as-color-bar__link {
+  @include font-sans-semi;
+  font-size: 20px;
+  letter-spacing: 1px;
+
+  @include mobile {
+    color: $as-white;
+    display: block;
+    margin-top: gutter(8);
+  }
+}
+
+.as-color-bar--campus {
+  color: shade($as-green, 66.6%);
+
+  @include mobile {
+    .as-color-bar__copy {
+      background: $as-green;
+      padding-top: gutter(1.5);
+      padding-bottom: gutter(2);
+    }
+
+    .as-color-bar__media {
+      margin: 0 gutter() gutter(-2);
+    }
+  }
+
+  @include tablet {
+    text-align: left;
+    .as-color-bar__copy {
+      @include pad(2 / 3, 0);
+      width: percentage(5 / 12);
+    }
+    .as-color-bar__media {
+      width: percentage(7 / 12);
+    }
+    .as-color-bar__link {
+      color: $as-white;
+    }
+    &:before {
+      background: $as-green;
+    }
+  }
+}
+
+.as-color-bar--course {
+  color: shade($as-gold, 66.6%);
+
+  @include mobile {
+    .as-color-bar__copy {
+      background: $as-gold;
+      padding-top: gutter(2);
+      padding-bottom: gutter(1);
+      margin-bottom: gutter(-1);
+    }
+
+    .as-color-bar__media {
+      margin: 0 gutter();
+    }
+  }
+
+  @include tablet {
+    text-align: right;
+    .as-color-bar__copy {
+      @include pad(0, 2 / 3);
+      width: percentage(6 / 12);
+    }
+    .as-color-bar__media {
+      width: percentage(6 / 12);
+      padding-left: gutter();
+    }
+    .as-color-bar__title {
+      padding-left: span(1.5 of 12);
+    }
+    .as-color-bar__text {
+      padding-left: span(1 of 12);
+    }
+    .as-color-bar__link {
+      color: $as-white;
+    }
+    &:before {
+      background: $as-gold;
+    }
+  }
+}
+
+.as-color-bar--blog {
+  color: shade($as-blue, 66.6%);
+
+  @include mobile {
+    .as-color-bar__copy {
+      background: $as-blue;
+      padding-top: gutter(1.5);
+      padding-bottom: gutter(2);
+    }
+
+    .as-color-bar__media {
+      margin: 0  auto gutter(-2);
+    }
+  }
+
+  @include tablet {
+    text-align: left;
+    .as-container {
+      &:after {
+        background: $as-blue;
+        content: "";
+        position: absolute;
+        display: block;
+        top: -10%;
+        bottom: 0;
+        height: 120%;
+        width: percentage(9 / 12);
+        right: 0;
+      }
+    }
+    .as-color-bar__copy {
+      @include pad(2 / 3, 3 / 2);
+      width: percentage(8 / 12);
+    }
+    .as-color-bar__media {
+      width: percentage(4 / 12);
+    }
+    .as-color-bar__text {
+      padding-right: span(1.5 of 12);
+    }
+    .as-color-bar__sup-title {
+      font-size: 11px;
+    }
+    .as-color-bar__link {
+      color: $as-white;
+      font-size: 18px;
+    }
+    .as-color-bar__link + .as-color-bar__link {
+      margin-left: span(1 of 12);
+    }
+    &:before {
+      display: none;
+    }
+  }
+}
+*/

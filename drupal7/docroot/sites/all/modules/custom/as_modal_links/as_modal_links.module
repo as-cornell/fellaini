@@ -1,0 +1,33 @@
+<?php
+
+function as_modal_links_field_collection_item_view_alter(&$build) {
+      // Modal page sidebar links and the related anchor tags that wrap around section titles.
+      // Also provides class to wrap section titles in other use cases like Curriculum bean
+  //print_r($build);
+  //if ($build['#bundle'] = 'modal_page') {
+    if ($build['#view_mode'] == 'full') {
+      if (!empty($build['field_section_title'][0]['#markup'])){
+      //if ($build['field_section_title'][0]['#markup']){
+
+      $anchortext = strtolower(str_replace(" ","-", $build['field_section_title'][0]['#markup']));
+      // Provide clean lowercased and hyphenated title for modal page card links
+      $build['field_section_title'][0]['#anchortext'] = $anchortext;
+      // Provide markup for modal page card links
+      $build['field_section_title'][0]['#cardlinktext'] = $build['field_section_title'][0]['#markup'];
+      // Provide markup for modal page sidebar links
+      $build['field_section_title'][0]['#linktext'] = '<li><a href="#'.$anchortext . '">' .$build['field_section_title'][0]['#markup']. '</a></li>';
+      // Provide markup for modal page section titles
+      $build['field_section_title'][0]['#markup'] = '<h2 id="'.$anchortext . '">' .$build['field_section_title'][0]['#markup']. '</h2>';
+      // Provide clean lowercased and hyphenated title for css
+      if ($anchortext){
+        $build['field_section_title'][0]['#class'] = $anchortext;
+        }
+      }else{
+        $build['field_section_title'][0]['#markup'] = NULL;
+        $build['field_section_title'][0]['#class'] = NULL;
+      }
+      //dpm($build);
+  }
+}
+
+

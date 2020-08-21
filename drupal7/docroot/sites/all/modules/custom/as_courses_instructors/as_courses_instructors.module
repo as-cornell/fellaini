@@ -1,0 +1,135 @@
+<?php
+
+/** implements hook_block_info **/
+function as_courses_instructors_block_info() {
+    // Implementation of hook_block_info():
+  $blocks['main'] = array(
+    'info' => t('Related people and other instructors mashed up into a list of links.'),
+    //'status' => TRUE,
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+    'status' => 0,
+  );
+  return $blocks;
+}
+
+function as_courses_instructors_block_view($delta) {
+  // This example is adapted from node.module.
+    // The $delta parameter tells us which block is being requested.
+
+      $block['subject'] = t('Main');
+      $block['content'] = as_courses_instructors_block_content($delta);
+
+
+  return $block;
+}
+
+function as_courses_instructors_build_sorter($key) {
+    return function ($a, $b) use ($key) {
+        return strnatcmp($a[$key], $b[$key]);
+    };
+}
+
+
+function as_courses_instructors_block_content($delta) {
+//Implementation of hook_block_content()
+
+$node = node_load($delta); // Your node nid
+//$instructors[] = array('netid' => '', 'namelink' =>'');
+//related people
+for($i=0, $count = count($node->field_related_person[und]);$i<$count;$i++) {
+  if ($node->field_related_person[und][$i]['target_id'] != ''){
+    $nid = $node->field_related_person[und][$i]['target_id'];
+    $relatable = node_load($nid);
+    $path = 'node/' . $nid;
+    $alias = drupal_get_path_alias($path);
+    $parts = explode(" ", $relatable->title);
+    $lastname = array_pop($parts);
+    $instructors[] = array("netid" => $relatable->field_person_netid[LANGUAGE_NONE][0]['value'], "lastname" =>$lastname, "namelink" =>"<a href='".$base_url.$alias."'>". $relatable->title."</a>");
+  }
+}
+//people with no related person node
+for($i=0, $count = count($node->field_person_first_name[LANGUAGE_NONE]);$i<$count;$i++) {
+  if ($node->field_person_first_name[LANGUAGE_NONE][$i]['value']){
+    $netid = $node->field_person_netid[LANGUAGE_NONE][$i]['value'];
+    //if (in_array($netid, $instructors)) {
+    //if (in_array($instructors['netid'], $netid)) {
+    if(!in_array($netid, array_column($instructors, 'netid'))) {
+      //break;
+    //}else{
+      $instructors[] = array("netid" =>$node->field_person_netid[LANGUAGE_NONE][$i]['value'], "lastname" =>$node->field_person_last_name[LANGUAGE_NONE][$i]['value'], "namelink" =>"<a href='http://www.cornell.edu/search/people.cfm?q=".$node->field_person_first_name[LANGUAGE_NONE][$i]['value']."%20".$node->field_person_last_name[LANGUAGE_NONE][$i]['value']."'> ". $node->field_person_first_name[LANGUAGE_NONE][$i]['value']. " ". $node->field_person_last_name[LANGUAGE_NONE][$i]['value'] ."</a>");
+    }
+  }
+}
+
+//display the stuff according to how it needs to appear
+
+  //$main = "<div>This NID is: ".$delta."</div>\n";
+
+  usort($instructors, as_courses_instructors_build_sorter('lastname'));
+  foreach($instructors as $instr) {
+      $main = $main ."<div>" . $instr['namelink'] . "</div>\n";
+  }
+
+  $result = array('#markup' => $main);
+  return $result;
+
+
+}
+
+
+function as_courses_instructors_conc_block_content($delta) {
+//Implementation of hook_block_content()
+
+//get node
+$node = node_load($delta); // Your node nid
+//related people
+for($i=0, $count = count($node->field_related_person[und]);$i<$count;$i++) {
+          if ($node->field_related_person[und][$i]['target_id'] != ''){
+  $nid = $node->field_related_person[und][$i]['target_id'];
+  $relatable = node_load($nid);
+  $path = 'node/' . $nid;
+  $alias = drupal_get_path_alias($path);
+// build markup
+  $meep = $meep ."<div><a href='".$base_url.$alias."'>". $relatable->title."</a> ". $relatable->field_person_netid[LANGUAGE_NONE][0]['value']. "</div>";
+
+
+          }
+}
+//people with no related person node
+for($i=0, $count = count($node->field_person_first_name[LANGUAGE_NONE]);$i<$count;$i++) {
+  if ($node->field_person_first_name[LANGUAGE_NONE][$i]['value'] != ''){
+    if (!strpos($meep,$node->field_person_netid[LANGUAGE_NONE][$i]['value']) !== false) {
+
+// build markup
+  $meep = $meep ."<div><a href='http://www.cornell.edu/search/people.cfm?q=".$node->field_person_first_name[LANGUAGE_NONE][$i]['value']."%20".$node->field_person_last_name[LANGUAGE_NONE][$i]['value']."'>";
+  $meep = $meep . $node->field_person_first_name[LANGUAGE_NONE][$i]['value'];
+  $meep = $meep ." ". $node->field_person_last_name[LANGUAGE_NONE][$i]['value'];
+  $meep = $meep ."</a> ". $node->field_person_netid[LANGUAGE_NONE][$i]['value']." NO RELATE</div>\n";
+  }
+    }
+}
+
+//display the stuff according to how it needs to appear
+
+  $main = "<div>This NID is: ".$delta."</div>\n";
+  $main = $main ."<div>MOOP</div>\n";
+  $main = $main . $moop;
+  $main = $main ."<div>MEEP</div>\n";
+  $main = $main . $meep;
+  $result = array('#markup' => $main);
+  return $result;
+
+}
+
+
+function as_courses_instructors_help($path, $arg) {
+  // Implementation of hook_help()
+    if ($path == 'admin/help#as_courses_instructors') {
+        $txt = ' Mashes related people and other instructors up into a list of links.  Related people link to their node, other people link to !cornell_people_url.  Provides a block display.';
+        $link = l('Cornell People Search', 'http://www.cornell.edu/search/people.cfm');
+        $replace = array(
+        '!cornell_people_url' => $link
+        );
+    return '<p>'. t($txt, $replace) .'</p>';
+    }
+}

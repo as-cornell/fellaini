@@ -1,0 +1,83 @@
+.search {}
+.gcsc-find-more-on-google-branding{
+  display: none !important;
+}
+.gsc-results-wrapper-visible * {
+  color: $as-text !important;
+}
+
+.gcs-result-info {
+  font-size: 15px !important;
+}
+
+.gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+  padding: 0 !important;
+}
+
+.gs-title, .gs-title * {
+  color: $as-red !important;
+  @include font-sans-semi;
+  font-size: 20px !important;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.gs-snippet {
+  font-size: 17px !important;
+}
+
+.gs-visibleUrl, .gs-visibleUrl * {
+  color: $as-text-lt !important;
+  @include font-sans-lt-it;
+  font-size: 17px !important;
+  font-style: italic !important;
+}
+
+.gsc-orderby-container {
+  display: none !important;
+}
+
+.gsc-wrapper {
+  @include tablet {
+    width: 66.6% !important;
+  }
+}
+
+.gsc-webResult.gsc-result {
+  margin: gutter(8) 0 !important;
+  position: relative !important;
+}
+
+.gsc-url-top {
+}
+
+.gsc-above-wrapper-area {
+  border-bottom: none !important;
+}
+
+.gcsc-branding {
+  display: none;
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.gsc-cursor {
+
+}
+
+.gsc-cursor-page {
+  color: $as-text !important;
+  font-size: 17px !important;
+  text-decoration: underline !important;
+}
+
+.gsc-cursor-current-page {
+  color: $as-red !important;
+  @include font-sans-semi;
+}

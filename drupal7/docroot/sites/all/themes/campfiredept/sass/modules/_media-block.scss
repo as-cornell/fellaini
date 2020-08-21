@@ -1,0 +1,277 @@
+.pictureText{
+	& > span{
+		display: inline-block;
+	}
+	@include small-plus(){
+		display: flex;
+	}
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 4rem;
+	&:last-of-type{
+	}
+	img{
+		width: 100%;
+	}
+	@include tablet(){
+		.field-image{
+			flex: 0 0 33%;
+		}
+	}
+	@include medium-plus(){
+		.field-image{
+			flex: 0 0 45%;
+		}
+	}
+	.field-description{
+		flex: 1 0 0%;
+	}
+	.pictureText__copy, .field-description{
+		//background: yellow;
+	}
+	.pictureText__media, .field-image{
+		margin-right: 4rem;
+		position: relative;
+		flex: 0 0 40%;
+		&::before{
+			content: "";
+			position: absolute;
+			display: block;
+			top: 4%;
+			left: -2%;
+			height: 97%;
+			width: 100%;
+			z-index: -10;
+			background: $as-blue;
+		}
+	}
+	&.pictureText--lr, &:nth-of-type(even){
+		.pictureText__copy, .field-description{
+			order:1;
+			margin-right: 4rem;
+		}
+		.pictureText__media, .field-image{
+			order:2;
+			margin-right: 0;
+			&::before{
+				//left: -5%;
+				background: $as-gold;
+			}
+		}
+	}
+
+
+	//with full color-bar
+	&.pictureText--colorbar{
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			display: block;
+		}
+		@include medium(){
+			&::before{
+				top: -5%;
+				left: 35%;
+				height: 110%;
+				width: 100%;
+				z-index: -10;
+				//background: $as-blue;
+			}
+		}
+		@include large-plus(){
+			&::before{
+				top: 10%;
+				left: -50%;
+				height: 80%;
+				width: 200%;
+				z-index: -10;
+				//background: $as-blue;
+			}
+		}
+		.pictureText__media::before, .field-image::before{
+			background: none;
+		}
+		&.pictureText--lr{
+			.pictureText__copy, .field-description{
+				text-align: right;
+			}
+			@include medium(){
+				&::before{
+					left: -35%;
+				}
+			}
+		}
+		a{
+			color: $as-text-lt;
+			font-weight: 400;
+			@include medium-plus(){
+				color: $as-white;
+				@include as-link($color: $as-white);
+			}
+		}
+	}
+
+	// blue colorbar
+	&.pictureText--colorbar--blue{
+		&::before{
+			background: $as-blue;
+		}
+	}
+
+	// gold colorbar
+	&.pictureText--colorbar--gold{
+		&::before{
+			background: $as-gold;
+		}
+	}
+
+	//quote
+	&.pictureText--quote{
+		max-width: 1200px;
+		.field-description{
+			display: flex;
+			flex-direction: column;
+			//background: $as-green;
+			margin-right: 0;
+			padding: 0 3rem;
+			border-left: 5px solid $as-text;
+
+		    line-height: 1.36;
+		    @include sans-font($weight: 400, $size: 21px);
+		    @include medium-plus(){
+			    @include sans-font($weight: 400, $size: 28px);
+		    }
+			.quote__quote{
+				order:1;
+				position:relative;
+				margin-bottom: 0;
+
+			}
+			.quote__citation{
+				order:2;
+				margin: 1.5rem 0 0 0;
+			}
+		}
+		.field-image{
+			&:before{
+				display: none;
+			}
+			z-index: 1;
+			flex: 0 0 40%;
+			max-width: 40%;
+			margin-right: 0;
+			@include medium-plus{
+				flex: 0 0 30%;
+				max-width: 30%;
+				margin-right: 4rem;
+			}
+		}
+		.quote__citation{
+			line-height: 2rem;
+			@include font-size(21px);
+			a{
+
+			//color: $as-white;
+			}
+		}
+	}
+	.pictureText--quote--image{
+		.field-description{
+			@include medium-plus{
+				//margin-left: -90px;
+				//padding-left: 90px;
+			}
+		}
+	}
+	blockquote{
+		margin: 0;
+		border: none;
+		border-left: 1rem solid $as-black;
+		padding: 0;
+		margin-bottom: 1.5rem;
+		p{
+			font-size: 2rem;
+			margin-bottom: 0;
+			padding-left: 1rem;
+			color: $as-black;
+		}
+	}
+}
+
+
+/*
+	Stripe is the new colorbar
+*/
+div[class*="stripe"]{
+	h2, div{
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+/*
+	New Media Block
+*/
+
+$schemes:(
+	green:(
+		bg: $as-green-lt,
+		text: $as-white
+	),
+	gold:(
+		bg: $as-gold,
+		text: darken($as-gold, 40%)
+	),
+	blue:(
+		bg: $as-blue,
+		text: $as-white
+	)
+);
+
+.mediaBlock{
+	position: relative;
+	align-items: center;
+	margin-bottom: 4rem;
+	img{
+		margin: 0;
+	}
+	span{
+		z-index: 10;
+	}
+	.field-image{
+		line-height: 0;
+	}
+	&:before{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: "";
+		z-index: 1;
+	}
+	blockquote{
+		border: none;
+		font-size: 3rem;
+		font-weight: 400;
+		@include medium-plus{
+			padding: 0;
+		}
+		margin:2rem 0;
+
+		p{
+			color: inherit;
+		}
+	}
+}
+
+@each $scheme, $map in $schemes{
+	$index: index(map-keys($schemes), $scheme);
+	.mediaBlock:nth-of-type(#{$index}){
+		background: map-get($map, bg);
+		color: map-get($map, text);
+		a{
+			color: map-get($map, text);
+			font-weight: 400;
+		}
+	}
+}

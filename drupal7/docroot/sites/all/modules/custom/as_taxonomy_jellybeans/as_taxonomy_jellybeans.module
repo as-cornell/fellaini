@@ -1,0 +1,218 @@
+<?php
+
+//alter theme registry with an override
+function as_taxonomy_jellybeans_theme_registry_alter(&$theme_registry) {
+  $theme_registry['field']['theme path'] = drupal_get_path('module', 'as_taxonomy_jellybeans');
+  $theme_registry['field']['function'] = 'as_taxonomy_jellybeans_node_view';
+}
+
+//alter term reference field output for field_level in Major Minor Grad field
+function as_taxonomy_jellybeans_node_view($node, $langcode = NULL) {
+
+// MAJOR_MINOR_GRAD CONTENT TYPE
+    if($node->type == 'major_minor_grad_field'){
+      //Alters output of taxonomy fields to show themed jellybeans instead of taxonomy term
+
+  //build a string of taxonomy term names for disciplines
+      $discipline= NULL;
+      if (!empty($node->content['field_topic'])){
+        for($i=0, $count = count($node->content['field_topic']);$i<$count;$i++) {
+          if (isset($node->content['field_topic'][$i]['#title'])){
+            $discipline=$discipline . " ". str_replace(" ","-",$node->content['field_topic'][$i]['#title']);
+          }
+        }
+      }
+
+
+  //build a string of taxonomy term names for levels
+      $tags= NULL;
+      if (!empty($node->content['field_level'])){
+        for($i=0, $count = count($node->content['field_level']);$i<$count;$i++) {
+          if (isset($node->content['field_level'][$i]['#markup'])){
+            $tags=$tags . " ". $node->content['field_level'][$i]['#markup'];
+          }
+        }
+      }
+      $newmarkup = NULL;
+
+  //generate custom html markup
+        $node->content['field_topic']['#newclass'] = str_replace("&","-",strtolower($discipline));
+        $node->content['field_level']['#newclass'] = strtolower($tags);
+
+          if (strpos($tags, "Major") !== false) {
+            $newmarkup = "<div class='as-majors-minors__tag as-majors-minors__tag--major as-majors-minors__tag--enabled' aria-label='major available'></div> ";
+          }else{
+            $newmarkup = "<div class='as-majors-minors__tag as-majors-minors__tag--major as-majors-minors__tag--disabled' aria-label='no major'></div> ";
+          }
+          if (strpos($tags, "Minor") !== false) {
+            $newmarkup = $newmarkup . "<div class='as-majors-minors__tag as-majors-minors__tag--minor as-majors-minors__tag--enabled' aria-lable='minor available'></div> ";
+          }else{
+             $newmarkup = $newmarkup . "<div class='as-majors-minors__tag as-majors-minors__tag--minor as-majors-minors__tag--disabled' aria-label='no minor available'></div> ";
+          }
+           if (strpos($tags, "Graduate") !== false) {
+            $newmarkup = $newmarkup . "<div class='as-majors-minors__tag as-majors-minors__tag--graduate as-majors-minors__tag--enabled' aria-label='graduate program available'></div>";
+          }else{
+             $newmarkup = $newmarkup . "<div class='as-majors-minors__tag as-majors-minors__tag--graduate as-majors-minors__tag--disabled' aria-label='no graduate program'></div>";
+          }
+          $node->content['field_level']['#newmarkup'] = $newmarkup;
+    }
+
+// DEPARTMENT_PROGRAM CONTENT TYPE
+    if($node->type == 'department_program'){
+
+      $discipline= NULL;
+  //build a string of taxonomy term names for disciplines
+      if (!empty($node->content['field_topic'])){
+        for($i=0, $count = count($node->content['field_topic']);$i<$count;$i++) {
+          if (isset($node->content['field_topic'][$i]['#title'])){
+            $discipline=$discipline . " ". str_replace(" ","-",$node->content['field_topic'][$i]['#title']);
+          }
+        }
+      }
+
+
+  //add the right designator for department or program, only one value
+      $deptprog=$node->content['field_department_or_program'][0]['#markup'];
+
+  //generate custom html markup
+      $node->content['field_topic']['#newclass'] = str_replace("&","-",strtolower($discipline));
+      $node->content['field_department_or_program']['#newclass'] = strtolower($deptprog);
+    }
+
+
+// PERSON CONTENT TYPE
+if($node->type == 'person'){
+    //ONLY IF NEEDED ON A DEPT PERSON
+
+    // categories with | delim
+    if (!empty($node->content['field_person_categories'][0]['#title'])){
+        $personcats = '';
+        //build a string of taxonomy term names for disciplines
+        for($i=0, $count = count($node->content['field_person_categories']);$i<$count;$i++) {
+            if (!empty($node->content['field_person_categories'][$i]['#title'])){
+                $personcats = $personcats . "|". str_replace("&","and", $node->content['field_person_categories'][$i]['#title']);
+            }
+        }
+        //generate custom html markup for disciplines
+        $node->content['field_person_categories']['#newclass'] = $personcats;
+    }
+
+    // categories as list
+    if (!empty($node->content['field_person_categories'][0]['#title'])){
+        $personcatsList = '<ul>';
+        //build a string of taxonomy term names for disciplines
+        for($i=0, $count = count($node->content['field_person_categories']);$i<$count;$i++) {
+            if (!empty($node->content['field_person_categories'][$i]['#title'])){
+                $personcatsList = $personcatsList . '<li>' .  $node->content['field_person_categories'][$i]['#title'] . '</li>';
+            }
+        }
+        $personcatsList = $personcatsList . '</ul>';
+        //generate custom html markup for disciplines
+        $node->content['field_person_categories']['#catsList'] = $personcatsList;
+    }
+
+
+    // regions with | delim
+    if (!empty($node->content['field_regions'][0]['#title'])){
+        $regioncats = '';
+        //build a string of taxonomy term names for regions
+        for($i=0, $count = count($node->content['field_regions']);$i<$count;$i++) {
+            if ($node->content['field_regions'][$i]['#title'] != ''){
+                $regioncats = $regioncats . "|". str_replace("&","and", $node->content['field_regions'][$i]['#title']);
+            }
+        }
+        //generate custom html markup for regions
+        $node->content['field_regions']['#newclass'] = $regioncats;
+    }
+
+    // slice and dice with | delim
+    if (!empty($node->content['field_other'][0]['#title'])){
+        $othercats = '';
+        //build a string of taxonomy term names for sliceanddice
+        for($i=0, $count = count($node->content['field_other']);$i<$count;$i++) {
+            if (!empty($node->content['field_other'][$i]['#title'])){
+                $othercats = $othercats . "|". $node->content['field_other'][$i]['#title'];
+            }
+        }
+        //generate custom html markup for sliceanddice
+        $node->content['field_other']['#newclass'] = $othercats;
+    }
+
+    // slice and dice with ',' delim
+    if (!empty($node->content['field_other'][0]['#title'])){
+        $othercats = '';
+        //build a string of taxonomy term names for sliceanddice
+        for($i=0, $sndcount = count($node->content['field_other']);$i<$sndcount;$i++) {
+            if (!empty($node->content['field_other'][$i]['#title'])){
+                if ($i == 0){
+                    $othercats = $othercats . $node->content['field_other'][$i]['#title'];
+                }else{
+                    $othercats = $othercats . ", ". $node->content['field_other'][$i]['#title'];
+                }
+
+
+            }
+        }
+        //generate custom html markup for sliceanddice
+        $node->content['field_other']['#anotherclass'] = $othercats;
+    }
+
+    }
+
+}
+
+function as_taxonomy_jellybeans_dept_cat_flt_block_info() {
+    $blocks['filter'] = array(
+    'info' => t('Taxonomy Filters'),
+    'status' => TRUE,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  }
+
+function as_taxonomy_jellybeans_dept_cat_flt_block_view($machine_name) {
+  // This example is adapted from node.module.
+  //$node = menu_get_object();
+  $block = array();
+      $block['subject'] = t('');
+      $block['content'] = as_taxonomy_jellybeans_dept_cat_flt_block_content($machine_name);
+  return $block;
+}
+
+function as_taxonomy_jellybeans_dept_cat_flt_block_content($machine_name) {
+//Implementation of hook_block_content()
+//This implementation just prints the containers for the filters for each vocabulary present in the view
+  $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
+  $tree = taxonomy_get_tree($vocabulary->vid);
+  print "<div class='as-filter__section filter-group ".$machine_name."Container'>\n<h3 class='list-group-item-heading'>".$vocabulary->name."</h3>\n</div>";
+}
+
+function as_taxonomy_jellybeans_dept_cat_flt_full_block_view($machine_name) {
+  // This example is adapted from node.module.
+  $node = menu_get_object();
+  $block = array();
+      $block['subject'] = t('');
+      $block['content'] = as_taxonomy_jellybeans_dept_cat_flt_full_block_content($machine_name);
+  return $block;
+}
+
+function as_taxonomy_jellybeans_dept_cat_flt_full_block_content($machine_name) {
+//Implementation of hook_block_content()
+//This implementation prints the containers and all terms with their related checkboxes
+  $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
+  $tree = taxonomy_get_tree($vocabulary->vid);
+  print "<div class='as-filter__section filter-group' data-filter-group='".$machine_name."'>\n<div class='as-filter__header'>\n";
+  print "<div class='as-filter__title'>".$vocabulary->name."</div>\n<span class='as-icon'></span>\n</div>";
+  print "<div class='as-filter__section filter-group ".$machine_name."Container'>\n<h3 class='list-group-item-heading'>".$vocabulary->name."</h3>\n</div>";
+  foreach ($tree as $item) {
+    $options[$item->tid] = str_repeat('-', $item->depth) . $item->name;
+    $personcats = str_replace(" ","-",$options[$item->tid]);
+    $filterclass = str_replace("&","-",strtolower($personcats));
+    print "<div class='as-filter__item'>\n<div class='as-filter__checkbox'>\n";
+    print "<input type='radio' name='".$machine_name."' value='.".$filterclass."' id='".$filterclass."'>";
+    print "<label for='".$filterclass."'></label>\n</div>".$options[$item->tid]."</div>\n";
+  }
+  print "<div class='as-filter__item'>\n<div class='as-filter__checkbox'>\n";
+  print "<input type='radio' name='".$machine_name."' value='.all' id='".$machine_name."'>\n";
+  print "<label for='".$machine_name."'></label>\n</div>\nShow All\n</div>\n</div>\n";
+  return $options;
+}

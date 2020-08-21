@@ -1,0 +1,9 @@
+name = AS Instagram Block
+description = Provides instagram posts for a given account in a block.
+core = 7.x
+package = AS
+version = 7.x-1.0
+dependencies[] = bean
+dependencies[] = ctools
+dependencies[] = link
+files[] = plugins/bean/bean_instagram_block.instagram_block.inc

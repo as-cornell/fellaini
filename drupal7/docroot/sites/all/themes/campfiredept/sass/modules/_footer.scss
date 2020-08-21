@@ -1,0 +1,236 @@
+.region-footer{
+  clear: both;
+}
+
+.as-footer {
+  background: $as-text;
+  color: $as-gray-med;
+  .as-container{
+    padding: 0;
+  }
+}
+.as-footer__section{
+    border-bottom: 1px solid tint($as-text, 10%);
+    @include clearfix;
+    @include medium-plus(){
+      padding: 0 20px;
+    };
+    .logos{
+      margin: 50px 0;
+      a{
+        margin-bottom: 1rem;
+      }
+      img{
+        max-width: 200px;
+      }
+    }
+    .logos--row{
+      width: 100%;
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      .as-mark.as-mark--big{
+        width: 200px;
+      }
+      @include medium-plus(){
+        flex-direction: row;
+      }
+      .max--125{
+        max-width: 125px;
+      }
+    }
+}
+
+.as-footer__nav {
+  @include medium-plus() {
+    @include clearfix;
+    //border-bottom: 1px solid tint($as-text, 20%);
+    padding: gutter(4) 0;
+  }
+}
+
+.as-footer__title {
+
+}
+
+/***
+////// Footer Navigation /////
+***/
+
+.as-footer__nav{
+
+    ul{
+        padding-left: 0;
+
+        li{
+            list-style-type: none;
+            margin-left: 0;
+            background: shade($as-text, 30%);
+            @include medium-plus(){
+              background: none;
+            };
+        }
+        a{
+            line-height: 48px;
+            display: block;
+            @include medium-plus{
+                line-height: 1.5em;
+            }
+        }
+    }
+    .menu--primary{
+        li{
+            position: relative;
+        }
+        i{
+            position: absolute;
+            background: shade($as-text, 30%);
+            content: "";
+            font-size: 7px;
+            width: 48px;
+            line-height: 48px;
+            top: 1px;
+            right: 0;
+            text-align: center;
+            text-indent: 0;
+            color: $as-white;
+            cursor: pointer;
+            transform: rotate(-90deg);
+            @include medium-plus{
+                display: none;
+            }
+        }
+        @include medium-plus{
+            float: right;
+            li{
+                float: left;
+                padding-right: 2rem;
+                &:last-of-type{
+                  padding-right: 0;
+                }
+            }
+            a{
+                text-indent: 0;
+                border-bottom: none;
+                color: $as-gray-med;
+            }
+        }
+    }
+    a.as-footer__link--primary {
+      color: $as-gray-med;
+      @include font-size(14px);
+      text-transform: uppercase;
+
+      @include mobile {
+        text-transform: none;
+        text-indent: 20px;
+        position:relative;
+        border-top: 1px solid tint($as-text, 10%);
+        border-bottom: 1px solid tint($as-text, 10%);
+        .as-icon {
+          background: shade($as-text, 30%);
+          content: "";
+          font-size: 20px;
+          width: 48px;
+          line-height: 48px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          text-align: center;
+          text-indent: 0;
+        }
+      }
+    }
+}
+
+.footer__cals{
+  display: block;
+  width: 213px;
+  height: 52px;
+  margin: 0 auto 2rem;
+  background: url("http://as.cornell.edu/sites/as/files/CALS-lockup.png") no-repeat;
+  @include medium-plus(){
+    margin: 1rem 0 3rem 0;
+    float: left;
+    clear: both;
+    background: url("http://as.cornell.edu/sites/as/files/CALS-lockup.png") no-repeat;
+  }
+
+  color: $as-white;
+  text-decoration: none;
+}
+
+/*
+
+a.as-footer__link {
+  @include mobile {
+    text-decoration: none;
+    .as-icon {
+      text-transform: none;
+    }
+  }
+}
+*/
+
+.as-footer__sub {
+  margin-top: 1em;
+  text-align: center;
+  @include sans-font($size: 13px, $weight: 100, $color: $as-gray-med);
+  padding: 32px 0;
+  .as-footer__sub__address, .as-footer__sub__contacts{
+    display: block;
+    @include medium-plus{
+      display: inline-block;
+      padding-left: 2rem;
+    }
+  }
+  @include medium-plus {
+    @include clearfix;
+
+  }
+  a{
+    color: $as-gray-med;
+    text-decoration-color: $as-text;
+  }
+  .as-icon{
+    span{
+      font-size: 0;
+    }
+  }
+}
+
+
+
+
+
+a.as-footer__social-link {
+  &:hover{
+    text-decoration: none;
+  }
+  @include medium-plus {
+    margin-left: 24px;
+    &:first-of-type {
+      display: inline-block;
+      margin-left: 0;
+    }
+  }
+}
+
+.copyright{
+  text-align: center;
+  font-size: .9rem;
+  padding-bottom: 3rem;
+}
+
+// astorLinks
+.astroLinks{
+  text-align: center;
+  margin: 2rem 0 0 0;
+  line-height: 2;
+  a{
+    color: $as-gray-med;
+  }
+}

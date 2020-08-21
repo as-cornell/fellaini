@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Department Beans feature.
+ */
+
+include_once 'as_department_beans.features.inc';

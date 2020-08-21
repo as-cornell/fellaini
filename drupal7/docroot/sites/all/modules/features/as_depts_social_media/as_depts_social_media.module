@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AS Depts Social Media feature.
+ */
+
+include_once 'as_depts_social_media.features.inc';

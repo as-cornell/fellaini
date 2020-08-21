@@ -1,0 +1,155 @@
+.as-filter__panel {
+  background: $as-bg-alt;
+  border-bottom: 1px solid $as-border;
+  display: none;
+  padding: gutter(8);
+
+  @include small-plus {
+    border-top: 1px solid $as-border;
+  }
+
+  .as-container {
+    position: relative;
+  }
+
+  .as-icon--close {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: gutter();
+    width: 32px;
+    line-height: 32px;
+    color: $as-white;
+    background: $as-gold;
+    text-align: center;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+}
+
+.as-filter__panel--expanded {
+  display: block;
+
+  + .as-majors-minors__legned {
+    display: none;
+  }
+}
+
+.as-filter__section {
+
+  @include mobile {
+    margin: 0 gutter(8);
+  }
+
+  @include small-plus {
+    @include span(3 of 12);
+  }
+
+}
+
+.as-filter__header {
+  @include clearfix;
+  border-bottom: 1px solid $as-border;
+
+  @include mobile {
+    padding: gutter(8);
+  }
+
+  @include small-plus {
+    padding: gutter(3) 0;
+  }
+}
+
+.as-filter__title {
+  display: inline-block;
+  @include font-sans-semi;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.as-filter__count {
+  background: $as-red;
+  border-radius: 100%;
+  color: $as-white;
+  display: inline-block;
+  @include font-sans-semi;
+  width: 24px;
+  line-height: 24px;
+  text-align: center;
+
+  @include mobile {
+    margin-left: gutter(8);
+  }
+
+  @include small-plus {
+    margin-left: gutter();
+  }
+}
+
+.as-filter__item {
+  @include mobile {
+    margin: gutter(8);
+  }
+
+  @include small-plus {
+    margin: gutter(3) 0;
+  }
+
+  .as-majors-minors__tag {
+    margin: 0 gutter();
+  }
+}
+
+.as-filter__checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  position: relative;
+  margin: 0 gutter();
+
+  input {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    &:checked {
+      + label {
+        background: $as-green;
+        border: 1px solid shade($as-green, 33%);
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  label {
+    background: $as-white;
+    border: 1px solid $as-border;
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+
+    &:after {
+      content: '';
+      width: 9px;
+      height: 6px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border: 3px solid shade($as-green, 66%);
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}

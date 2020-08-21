@@ -1,0 +1,21 @@
+.no-flexbox .menu--primary li {
+  display: table-cell;
+  width: 20%; }
+.no-flexbox .menu--primary li:hover .menu--secondary {
+  display: visible; }
+.no-flexbox .as-search-bar .as-search-bar__form {
+  position: relative; }
+.no-flexbox .as-grid, .no-flexbox .eventListing, .no-flexbox .as-stat, .no-flexbox .as-card {
+  display: inline-block; }
+.no-flexbox .as-grid > div {
+  display: inline-block; }
+.no-flexbox .slider--tabloid .slide {
+  float: none; }
+
+.no-canvas * {
+  display: block; }
+
+.no-flexboxlegacy figure img {
+  width: 600px; }
+
+/*# sourceMappingURL=ie.css.map */

@@ -1,0 +1,80 @@
+/**
+  * mixins and placeholders
+ **/
+
+/*
+	Fonts
+*/
+	// set font sizes to rem w/ px fallback
+	@function calculateRem($size) {
+		$remSize: $size / 18px;
+		@return $remSize * 1rem;
+	}
+	@mixin font-size($size) {
+		font-size: $size;
+		font-size: calculateRem($size);
+	}
+
+	// mixins for settin font sizes want to replace with expressive classes
+		// set non-standard sans-fonts
+		@mixin sans-font($size:$f-base-size, $color:$as-text, $weight:300){
+			font-family: $sans-font;
+			font-style: normal;
+			font-size: $size;
+			font-size: calculateRem($size);
+			color: $color;
+			font-weight: $weight;
+			letter-spacing: 0.7px;
+		}
+
+		// set serif fonts
+		@mixin serif-font($size:$f-base-size, $color:$as-text, $weight:400, $txt-trans:none){
+			font-family: $serif-font;
+			font-style: normal;
+			font-size: $size;
+			font-size: calculateRem($size);
+			color: $color;
+			font-weight: $weight;
+			letter-spacing: 0.7px;
+			text-transform: $txt-trans;
+		}
+
+/*
+	links
+*/
+	@mixin as-link($color: $as-red){
+	    color: $color;
+	    &:after {
+	    content: "›";
+	    display: inline-block;
+	    height: 100%;
+	    padding-left: 5px;
+	    color: $color;
+	  }
+	}
+
+	%as-link {
+	  &:after {
+	    content: "›";
+	    display: inline-block;
+	    //height: 100%;
+	    padding-left: 5px;
+	    color: $as-red;
+	  }
+}
+
+/*
+	Buttons
+*/
+
+	@mixin button($bg-color:$as-green, $font-color: $as-white, $size:$f-base-size, $display:block, $weight: $f-medium){
+		display: block;
+		background: $bg-color;
+		color: $font-color;
+		border: 1px solid darken($bg-color, 25%);
+		border-radius: $baseRadius;
+		font-weight: $weight;
+		font-size: $size;
+		padding: .5em 1em;
+		margin-bottom: $f-baseline;
+	}
