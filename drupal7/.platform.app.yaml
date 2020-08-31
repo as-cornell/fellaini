@@ -24,7 +24,7 @@ dependencies:
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-    scholsie: 'mysqldb:scholsie'
+    scholsie: 'mysqldb:drupal7'
 
 # The configuration of app when it is exposed to the web.
 web:
@@ -112,25 +112,12 @@ web:
 disk: 2048
 
 # The mounts that will be performed when the package is deployed.
+
+
 mounts:
-    '/docroot/sites/default/files':
-        source: local
-        source_path: 'files/default'
-    '/docroot/sites/dept1/files':
-        source: local
-        source_path: 'files/dept1'
-    '/docroot/sites/dept2/files':
-        source: local
-        source_path: 'files/dept2'
-    '/tmp':
-        source: local
-        source_path: 'files/tmp'
-    '/private':
-        source: local
-        source_path: 'files/private'
-    '/drush-backups':
-        source: local
-        source_path: 'files/drush-backups7'
+  '/docroot/sites/default/files': 'shared:files/default'
+  '/docroot/sites/dept1/files': 'shared:files/dept1'
+  '/docroot/sites/dept2/files': 'shared:files/dept2'
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:

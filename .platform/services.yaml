@@ -12,7 +12,7 @@ mysqldb:
             - departmentsdb
             - peopledb
             - samldb
-            - scholsiedb
+            - drupal7db
             - saml7db
         endpoints:
             first:
@@ -31,10 +31,10 @@ mysqldb:
                 default_schema: samldb
                 privileges:
                     samldb: admin
-            scholsie:
-                default_schema: scholsiedb
+            drupal7:
+                default_schema: drupal7db
                 privileges:
-                    scholsiedb: admin
+                    drupal7db: admin
             saml7:
                 default_schema: saml7db
                 privileges:
