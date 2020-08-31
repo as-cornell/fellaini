@@ -1,0 +1,3 @@
+dev:
+  root: /var/www/fellaini/drupal8/web
+  uri: people.fellaini.local

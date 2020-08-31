@@ -13,8 +13,6 @@ mysqldb:
             - peopledb
             - samldb
             - scholsiedb
-            - dept1db
-            - dept2db
             - saml7db
         endpoints:
             first:
@@ -37,14 +35,6 @@ mysqldb:
                 default_schema: scholsiedb
                 privileges:
                     scholsiedb: admin
-            dept1:
-                default_schema: dept1db
-                privileges:
-                    dept1db: admin
-            dept2:
-                default_schema: dept2db
-                privileges:
-                    dept2db: admin
             saml7:
                 default_schema: saml7db
                 privileges:
