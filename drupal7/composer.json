@@ -59,6 +59,7 @@
         "drupal/entityreference": "^1.5",
         "drupal/entityreference_feeds": "^1.0",
         "drupal/entityreference_filter": "^1.7",
+        "drupal/fancy_file_delete": "^1.1",
         "drupal/fast_404": "^1.5",
         "drupal/features": "^2.11",
         "drupal/feed_import": "^3.4",
@@ -131,7 +132,7 @@
         "drupal/wordpress_migrate": "^2.4",
         "drupal/wysiwyg": "^2.6",
         "drupal/xmlsitemap": "^2.6",
-        "drush/drush": "^9.4",
+        "drush/drush": "7.x",
         "symfony/filesystem": "~2.7|^3",
         "webflo/drupal-finder": "^1.0.0"
     },
