@@ -47,11 +47,11 @@ Descr: Sets all specific styles for an article card
     margin-bottom: 2rem;
     .card__copy {
       padding: 0.5rem 0.5rem 1rem 0;
-      @include baseGrid($g-gap: 0px);
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "date"
-        "title";
+      // @include baseGrid($g-gap: 0px);
+      // grid-template-columns: 1fr;
+      // grid-template-areas:
+      //   "date"
+      //   "title";
     }
     .card__title {
       grid-area: title;
@@ -63,16 +63,13 @@ Descr: Sets all specific styles for an article card
       );
     }
     .label,
-    .byline {
+    .card__byline,
+    .card__date {
       display: none;
     }
-    .date {
-      grid-area: date;
-      text-align: right;
-      margin-bottom: 0.25rem;
-    }
+
     img {
-      border-radius: var(--border-radius);
+      // border-radius: var(--border-radius);
     }
   }
   figcaption {

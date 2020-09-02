@@ -12,8 +12,16 @@
  * @see template_preprocess_region()
  */
 #}
-{% extends "@site/site-footer.twig" %}
+{# {% extends "@site/site-footer.twig" %}
+;lakjsdf;klajsdff;laksjdf;lakjdsf
+#}
+{# {{vardumper()}}
 
 {% block footer_content %}
-  {{ content }}
-{% endblock %}
+	
+{% endblock %}  #}
+{% include "@site/site-footer.twig" with {
+ content: content
+
+} %}
+

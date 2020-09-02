@@ -4,19 +4,54 @@ Title: _forms.scss
 Descr: 
     Main inpage forms
 
+    .form--simpleSearch
+
+    .form--overlaySearch
+    .form--blockSearch
+
 --------------------------- */
+
+.form--simpleSearch {
+  display: inline-flex;
+  .searchField {
+    display: flex;
+    border: 1px solid var(--gray-dark);
+    border-radius: var(--border-radius);
+  }
+  .form-item__textfield,
+  .form-item__submit {
+    border: none;
+  }
+  .form-item__textfield {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: var(--base-20);
+  }
+  .form-item__submit {
+    background: var(--as-black);
+    color: var(--as-white);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+}
+
+.form--searchBlock {
+  background: var(--gray-med);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  color: var(--as-white);
+  flex-direction: column;
+}
 
 // search form in header
 .form--overlaySearch {
-  display: flex;
+  // display: flex;
   justify-content: flex-end;
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  .form-item__textfield {
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-    border-right: none;
-  }
+  // .form-item__textfield {
+  //   border-radius: var(--border-radius) 0 0 var(--border-radius);
+  //   border-right: none;
+  // }
   .form-item__submit {
     // border-radius: 0 var(--border-radius) var(--border-radius) 0;
     // padding: 0.5em 1em;

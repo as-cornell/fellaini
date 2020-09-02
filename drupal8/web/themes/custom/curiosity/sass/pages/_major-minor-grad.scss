@@ -1,0 +1,37 @@
+/* -------------------------
+
+Title: major minor grad field
+Descr: 
+    uses the <main> 12 column grid as a base.
+    under /pages because it includes the <main> element
+
+    defines main layouts for default m/m/g pages
+
+--------------------------- */
+
+.major-minor-grad {
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    ". title title title title title title title . level level level "
+    ". description description description description description description description . sidebar sidebar sidebar "
+    ". content content content content content content content . sidebar sidebar sidebar";
+  .title {
+    grid-area: title;
+  }
+
+  .level {
+    grid-area: level;
+  }
+  .description {
+    grid-area: description;
+  }
+  .image {
+    grid-area: thumbnail;
+  }
+  .content {
+    grid-area: content;
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+}

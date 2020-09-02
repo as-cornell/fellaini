@@ -12,8 +12,12 @@ h3,
 h4 {
   font-family: var(--font-sans);
   font-weight: var(--semi);
-  margin: 0.75em 0 0.5em 0;
+  margin: 0 0 0.5em 0;
 }
+// * + h2 {
+//   background: red;
+//   margin-top: 0;
+// }
 
 h1 {
   font-size: calc(2.5 * var(--base-font-size));
@@ -25,6 +29,7 @@ h1 {
 
 h2 {
   font-size: calc(2 * var(--base-font-size));
+  line-height: 1em;
 }
 
 h3 {

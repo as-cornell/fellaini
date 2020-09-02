@@ -21,9 +21,7 @@ Variations:
   margin-bottom: var(--space);
   figure {
     margin: 0;
-
   }
-
 }
 
 .card__title {
@@ -55,26 +53,26 @@ Variations:
 
 // Global small card can be overidden with .card--type .card--small
 
-.card--small {
-  @include baseGrid();
-  grid-template-columns: var(--base-grid-column) 1fr;
+// .card--small {
+//   @include baseGrid();
+//   grid-template-columns: var(--base-grid-column) 1fr;
 
-  .card__title {
-    @include baseFont(
-      $size: var(--medium-font-size),
-      $weight: var(--regular),
-      $line-height: 1.4
-    );
-  }
-  .card__label,
-  .card__byline {
-    display: none;
-  }
-  .card__date.card__date {
-    text-align: left; // using double selctor instead of !important
-  }
-  //box-shadow: none;
-}
+//   .card__title {
+//     @include baseFont(
+//       $size: var(--medium-font-size),
+//       $weight: var(--regular),
+//       $line-height: 1.4
+//     );
+//   }
+//   .card__label,
+//   .card__byline {
+//     display: none;
+//   }
+//   .card__date.card__date {
+//     text-align: left; // using double selctor instead of !important
+//   }
+//   //box-shadow: none;
+// }
 
 .card--no-image {
   .card__copy {
@@ -90,8 +88,6 @@ Variations:
 }
 
 // Card Feature -- Campfire center big ole'card will be changing
-
-
 
 // COURSES
 .card--course {

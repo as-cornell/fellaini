@@ -7,16 +7,35 @@ Descr: asideN small and large, hovers and toggles for subNav
 
 .asideNavWrapper {
   background: var(--as-white);
+  position: inherit;
+  @include large() {
+    background: none;
+    position: sticky;
+    top: 0;
+  }
+  font-size: var(--base-16);
+  animation: none;
+  // top: 0;
+  // position: sticky;
+  h4 {
+    font-size: var(--base-16);
+    margin-right: 1em;
+    @include medium() {
+      font-size: var(--base-20);
+    }
+  }
   &.stuck {
     animation-name: asideNavFader;
     animation-duration: 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-
+    display: flex;
+    width: 100%;
     @include large() {
+      display: block;
       animation: none;
-      top: 0;
-      position: sticky;
+      // position: sticky;
+      // top: 0;
     }
   }
 }
@@ -42,7 +61,7 @@ Descr: asideN small and large, hovers and toggles for subNav
 }
 
 .asideNav {
-  font-size: var(--base-20);
+  font-size: var(--base-16);
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
@@ -53,6 +72,7 @@ Descr: asideN small and large, hovers and toggles for subNav
     flex-shrink: 0;
   }
   @include large() {
+    font-size: var(--base-20);
     flex-direction: column;
     list-style-type: circle;
     padding-left: 1em;

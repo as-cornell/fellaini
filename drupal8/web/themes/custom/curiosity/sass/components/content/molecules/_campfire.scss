@@ -9,8 +9,10 @@ Descr:
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  margin-bottom: var(--bottom-margin);
   @include medium() {
     flex-direction: row;
+
     &__feature {
       flex: 0 0 47%;
       order: 2;
@@ -78,7 +80,6 @@ Descr:
   border-radius: var(--border-radius);
   // background: var(--gray-lightest);
   padding: var(--space);
-  margin-bottom: 2rem;
   p {
     @include xl {
       font-size: 1.25rem;

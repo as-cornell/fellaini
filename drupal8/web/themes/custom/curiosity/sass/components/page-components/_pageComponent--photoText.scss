@@ -15,7 +15,7 @@ Descr: Sets styles for
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--base-bottom-margin);
+  margin-bottom: var(--bottom-margin);
   font-size: var(--base-28);
   &__image,
   &__text {
@@ -27,13 +27,13 @@ Descr: Sets styles for
       font-size: var(--base-64);
     }
     line-height: 1;
-    margin-bottom: 0.75em;
+    // margin-bottom: 0.75em;
     .slider & {
       font-size: 3rem;
     }
   }
   h3 + h2 {
-    margin-top: 0;
+    // margin-top: 0;
   }
   h3 {
     font-family: var(--font-serif);

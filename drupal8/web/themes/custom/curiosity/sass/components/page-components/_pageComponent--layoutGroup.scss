@@ -4,17 +4,18 @@ Title: _pageComponent--layoutGroup.scss
 Descr: Sets grid for columns pce--layout-group.html.twig
 
 --------------------------- */
-
-.pcWrapper--layoutGroup {
-  @include medium() {
-    display: grid;
-    grid-gap: var(--grid-gap);
-    grid-template-columns: 1fr 1fr;
-    &--heavyRight {
-      grid-template-columns: 1fr 57%;
-    }
-    &--heavyLeft {
-      grid-template-columns: 57% 1fr;
+.pcWrapper {
+  &--layoutGroup {
+    @include medium() {
+      display: grid;
+      grid-gap: var(--grid-gap);
+      grid-template-columns: 1fr 1fr;
+      &.heavyRight {
+        grid-template-columns: 1fr 57%;
+      }
+      &.heavyLeft {
+        grid-template-columns: 57% 1fr;
+      }
     }
   }
 }

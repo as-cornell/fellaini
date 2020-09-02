@@ -26,7 +26,7 @@
 {# {{vardumper()}} #}
 {# {% set main_element_extra_classes = ['main'] %} #}
 
-{% set nodeType = 'majorMinor' %}
+{% set nodeType = 'major-minor-grad' %}
 
 {% set teaser_modifiers = [''] %}
 
@@ -36,7 +36,7 @@
 {% set teaser_summary = content.description %}
 
 {% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
-{% set main_element_modifiers = ['majorMinor'] %}
+{% set main_element_modifiers = ['major-minor-grad'] %}
 
 {% include "@content/molecules/_teaser.twig" with{
   teaser_title : name,

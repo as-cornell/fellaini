@@ -3,8 +3,9 @@
 /* -------------------------
 
 Title: views-view-list
-Descr: sets up wrapper for items in the view list
+Descr: sets up wrapper for items in the view list from a List Block
   -- picking the view and display affect the layout, this is the same display template for main and sidebar.
+
 
 --------------------------- */
 
@@ -16,9 +17,9 @@ Descr: sets up wrapper for items in the view list
 
 {% set items = rows %}
 {% set items_length = items|length %}
-{# {{vardumper()}} #}
+{{vardumper()}}
 {% set display =  view.display_handler.display.display_title|replace({' ': ''})|lower %}
-
+{{display}}
 {% set group_modifiers = group_modifiers|merge([display]) %}
 
 
@@ -27,3 +28,4 @@ Descr: sets up wrapper for items in the view list
   title: content.name
 } %}
 {% endembed %}
+{# {{items}} #}

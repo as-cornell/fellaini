@@ -12,16 +12,97 @@ Descr: sets styles for various pce listBlocks
 
 .pcWrapper {
   // article cards
-  &--articlescards {
+  // &--articlescards {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   .card {
+  //     flex: 0 0 45%;
+  //   }
+  // }
+  // &--articlessmallcards {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+  &--listBlock {
+    // justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .card {
-      flex: 0 0 45%;
+    .listBlock__item {
+      flex-basis: calc(25% - 1rem);
+    }
+    .listBlock__title,
+    .listBlock__text {
+      flex: 0 1 100%;
     }
   }
-  &--articlessmallcards {
-    display: flex;
-    flex-direction: column;
+  &.six-items,
+  &.two-items {
+    .listBlock__text {
+      flex: 0 1 calc(50% - 2rem);
+    }
+  }
+
+  // overrides for items in a layout group column
+  &.layoutGroup {
+    .two-items {
+      .listBlock__item {
+        flex: 0 1 calc(50% - 0.75rem);
+      }
+    }
+  }
+
+  // &.grid {
+  //   display: grid;
+  // }
+  // &.grid--one-four {
+  //   grid-template-columns: repeat(12, 1fr);
+  //   gap: 2rem;
+  //   .listBlock__title {
+  //     grid-column: 1 / -1;
+  //   }
+  //   .listBlock__text {
+  //     grid-column: 1 / 7;
+  //   }
+  //   .listBlock__item {
+  //     grid-column: auto / span 3;
+  //   }
+  // }
+  // &.grid--two {
+  //   grid-template-columns: 1fr 1fr;
+  //   gap: 2rem;
+  //   .listBlock__title {
+  //     grid-column: 1 / -1;
+  //   }
+  //   .listBlock__text {
+  //     grid-column: 1 / -1;
+  //   }
+  //   .listBlock__item {
+  //     grid-column: auto / span 1;
+  //   }
+  // }
+  // &.grid--four {
+  //   grid-template-columns: repeat(4, 1fr);
+  //   gap: 2rem;
+  //   .listBlock__title {
+  //     grid-column: 1 / -1;
+  //   }
+  //   .listBlock__text {
+  //     grid-column: 1 / -1;
+  //   }
+  //   .listBlock__item {
+  //     grid-column: auto / span 1;
+  //   }
+  // }
+}
+
+// for items in a 2x layout group
+.pcWrapper--layoutGroup {
+  .pcWrapper--listItems {
+    flex-wrap: wrap;
+    .card {
+      flex-basis: calc(50% - 1rem);
+    }
   }
 }

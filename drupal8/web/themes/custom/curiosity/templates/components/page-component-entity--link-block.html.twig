@@ -28,20 +28,17 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 #}
 
 {% set group_base_class = 'pcWrapper' %}
-{% set group_modifiers = ['listBlock'] %}
-{% set layout = content.field_list_block_layout[0]['#markup'] %}
-
-{% set group_classes = [layout, 'listBlock'] %}
+{% set group_modifiers = ['linkBlock'] %}
 
 
-{% if content.field_formatted_text.0 %}
-	{% set hasTextBlock = true %}
-	{% set textBlock = content.field_formatted_text %}
-{% endif %}
+{% set group_classes = ['linkBlock'] %}
+
+{# {{content.field_block_title}}
 
 
-{# {{vardumper(content.field_list_reference)}} #}
-{% embed "@content/molecules/_list-block.twig" with{
-  items: content.field_list_reference,
-  group_label : content.name,
+
+{{vardumper()}} #}
+{% embed "@content/molecules/_link-block.twig" with{
+  items: content.field_link,
+  group_label : content.field_block_title,
 } %}{% endembed %}

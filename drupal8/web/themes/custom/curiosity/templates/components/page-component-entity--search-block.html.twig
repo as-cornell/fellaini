@@ -11,8 +11,10 @@ Descr: Sets up search block
 
 {% set group_base_class = 'pageComponent' %}
 {% set group_modifiers = ['searchBlock'] %}
-
-{% include "@content/atoms/_searchblock.twig" with {
+{% set group_classes = ['searchBlock'] %}
+{# {{vardumper()}} #}
+{% include "@content/molecules/_searchblock.twig" with {
     group_base_class : group_base_class,
-    group_modifiers : group_modifiers
+    group_modifiers : group_modifiers,
+    form_label: content.name
 } %}

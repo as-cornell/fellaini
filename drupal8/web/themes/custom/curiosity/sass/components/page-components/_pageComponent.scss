@@ -9,3 +9,8 @@ Descr:
 .pageComponent {
   clear: both;
 }
+
+.content > .pcWrapper,
+.content > .pageComponent {
+  margin-bottom: var(--bottom-margin);
+}
