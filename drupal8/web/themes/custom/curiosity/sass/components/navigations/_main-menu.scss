@@ -78,7 +78,7 @@ Still needs: expand toggle for showing main nav on mobile
     .mainNav__item {
       border-top: 4px solid transparent;
       &:hover {
-        border-top: 4px solid var(--red);
+        border-top: 4px solid var(--as-red);
         overflow: visible;
       }
     }
@@ -89,7 +89,7 @@ Still needs: expand toggle for showing main nav on mobile
       width: auto;
       font-weight: var(--semi);
       &:hover {
-        // border-top: 4px solid var(--red);
+        // border-top: 4px solid var(--as-red);
       }
     }
 
@@ -120,13 +120,13 @@ Still needs: expand toggle for showing main nav on mobile
         .subNav {
           max-height: 1000px;
           opacity: 1;
-          left: 0;
+          left: -0.25rem;
           top: 100%;
           z-index: 10;
         }
       }
       > .mainNav__link--active {
-        // border-top: 4px solid var(--red);
+        // border-top: 4px solid var(--as-red);
       }
     }
   }
@@ -170,7 +170,7 @@ Still needs: expand toggle for showing main nav on mobile
       &:hover,
       &:focus {
         color: var(--as-white);
-        background: var(--red);
+        background: var(--as-red);
         &:after,
         &:before {
           position: absolute;
@@ -178,7 +178,7 @@ Still needs: expand toggle for showing main nav on mobile
           width: 1rem;
           height: 100%;
           top: 0;
-          background: var(--red);
+          background: var(--as-red);
           border-radius: 4px;
         }
         &:after {

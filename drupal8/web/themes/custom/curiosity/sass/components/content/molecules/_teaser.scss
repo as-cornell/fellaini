@@ -10,6 +10,7 @@ Variations:
 .teaser {
   display: flex;
   align-items: flex-start;
+  margin-bottom: var(--bottom-margin);
   figure {
     margin-right: 1rem;
   }

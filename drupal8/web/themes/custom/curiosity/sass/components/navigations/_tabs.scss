@@ -1,5 +1,6 @@
 // Tab Navigation for actions
-.tabs__nav, .tabs__nav--local-tasks {
+.tabs__nav,
+.tabs__nav--local-tasks {
   @include list-reset;
 
   border-bottom: 1px solid var(--gray);
@@ -10,9 +11,11 @@
     background: var(--gray-light);
     // flex-direction: column;
     // float: left;
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     left: 1rem;
-    top: 3rem
+    top: 3rem;
+    border-radius: 8px;
   }
 }
 
@@ -40,8 +43,19 @@
 .tabs__nav--local-tasks {
   margin: 1em 0 0.5em;
   padding: 0;
+  li:first-of-type {
+    margin-left: 0.5rem;
+  }
 }
 
 .tabs__link--local-tasks {
-  padding: 0.3em 1.5em;
+  padding: 0.5em 1em;
+  background: var(--near-white);
+  font-size: var(--base-16);
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  border: 1px solid var(--teal);
+  &:hover {
+    text-decoration-color: var(--gold);
+  }
 }

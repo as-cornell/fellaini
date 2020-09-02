@@ -78,7 +78,10 @@
     --space: 1.5rem;
   }
 
-  --base-bottom-margin: 4rem;
+  --bottom-margin: 2rem;
+  @include medium() {
+    --bottom-margin: 4rem;
+  }
 
   // ..........
   // trying to get away from everythinb gelow here.

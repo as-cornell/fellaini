@@ -1,0 +1,31 @@
+/* -------------------------
+
+Title: _card--major-minor.scss
+Descr: Sets all specific styles for an m/m/g card and teasers 
+
+--------------------------- */
+.card--major-minor {
+  .card__copy {
+    padding: 1rem;
+    @include baseGrid($g-gap: 0px);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "label label level";
+  }
+  .card__title {
+    grid-area: label;
+  }
+  .card__level {
+    grid-area: level;
+  }
+}
+
+// Jellybeans
+.ul--jellyBeans {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-right: 1rem;
+  }
+}

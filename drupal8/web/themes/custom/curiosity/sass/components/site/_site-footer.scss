@@ -1,0 +1,52 @@
+/* -------------------------
+
+Title: Site footer styles
+Descr: Set 
+        - footer
+        - for current student menu
+        - footer menus
+all search form design in _forms.scss
+
+--------------------------- */
+
+footer {
+  width: 100%;
+  background: var(--as-black);
+  color: var(--as-white);
+  font-size: var(--base-20);
+
+  h2 {
+    font-size: var(--base-24);
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .footer {
+    margin: 0 auto;
+    max-width: var(--xl);
+    display: flex;
+    &__currentStudents {
+      flex: 0 0 25%;
+    }
+    &__importantLinks {
+      flex: 0 1 calc(75% - 24px);
+      > ul {
+        display: flex;
+        > li {
+          flex: 0 1 22%;
+          font-weight: var(--semi);
+        }
+        ul {
+          font-weight: var(--regular);
+        }
+      }
+    }
+  }
+
+  a {
+    color: var(--as-white);
+  }
+}

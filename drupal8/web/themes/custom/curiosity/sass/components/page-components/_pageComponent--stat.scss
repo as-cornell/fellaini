@@ -10,18 +10,20 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
 --------------------------- */
 
 // pcWrapper--stat
-// .pcWrapper--stat{
-
-// }
+.pcWrapper--stat {
+  display: flex;
+  justify-content: space-between;
+}
 
 .card--stat {
   padding: 1rem;
   text-align: center;
   grid-row: span 1;
-  .card__copy{
+  .card__copy {
     display: flex;
     flex-direction: column;
-    p{
+    font-size: var(--base-20);
+    p {
       line-height: 1.2;
     }
   }
@@ -31,11 +33,11 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
   .card__label {
     @include baseFont($size: 2rem, $weight: var(--semi));
     position: relative;
-    padding-bottom: .5em;
-    margin-bottom: .5em;
-    &::after{
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    &::after {
       position: absolute;
-      content: '';
+      content: "";
       width: 30%;
       height: 4px;
       background: var(--green);
@@ -43,5 +45,12 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
       bottom: 0;
       border-radius: var(--border-radius);
     }
+  }
+}
+
+// card stats in 2x layout group
+.pcWrapper--layoutGroup {
+  .card--stat {
+    flex-basis: calc(50% - 3rem);
   }
 }
