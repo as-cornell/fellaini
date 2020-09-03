@@ -118,6 +118,8 @@ mounts:
   '/docroot/sites/default/files': 'shared:files/default'
   '/docroot/sites/dept1/files': 'shared:files/dept1'
   '/docroot/sites/dept2/files': 'shared:files/dept2'
+  "/tmp": "shared:files/tmp/7"
+  "/private": "shared:files/private/7"
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
