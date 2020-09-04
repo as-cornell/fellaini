@@ -16,7 +16,7 @@ master:
   options:
     platformsh-cli-auto-remove: true
   root: /app/web
-  user: ydfzxlmxa2d3a-master-7rqtwti--app
+  user: ydfzxlmxa2d3a-master-7rqtwti--drupal8
   host: ssh.us-2.platform.sh
   uri: 'https://asd8.as.cornell.edu/'
 dept:
