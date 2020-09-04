@@ -68,7 +68,7 @@ web:
             allow: true
             expires: 5m
             passthru: '/index.php'
-            root: 'public/sites/default/files'
+            root: 'docroot/sites/default/files'
 
             # Do not execute PHP scripts.
             scripts: false
@@ -83,7 +83,7 @@ web:
             allow: true
             expires: 5m
             passthru: '/index.php'
-            root: 'public/sites/dept1/files'
+            root: 'docroot/sites/dept1/files'
 
             # Do not execute PHP scripts.
             scripts: false
@@ -98,7 +98,7 @@ web:
             allow: true
             expires: 5m
             passthru: '/index.php'
-            root: 'public/sites/dept2/files'
+            root: 'docroot/sites/dept2/files'
 
             # Do not execute PHP scripts.
             scripts: false
