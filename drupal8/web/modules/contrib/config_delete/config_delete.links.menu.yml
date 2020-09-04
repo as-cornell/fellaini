@@ -1,5 +1,0 @@
-config_delete.delete:
-  title: 'Delete'
-  route_name: config_delete.delete
-  weight: 3
-  parent: config.sync
