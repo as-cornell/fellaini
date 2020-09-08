@@ -9,7 +9,9 @@ Descr: Sets all specific styles for an m/m/g card and teasers
     padding: 1rem;
     @include baseGrid($g-gap: 0px);
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "label label level";
+    grid-template-areas:
+      ". . level"
+      "label label label";
   }
   .card__title {
     grid-area: label;
