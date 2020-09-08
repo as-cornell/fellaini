@@ -29,7 +29,7 @@ Variations:
   line-height: 1.3;
   font-weight: var(--semi);
   &-link {
-    color: var(--dusk);
+    color: var(--storm);
     text-decoration-color: var(--gray-lightest);
   }
 }
@@ -50,29 +50,6 @@ Variations:
 .card__button {
   // @include button;
 }
-
-// Global small card can be overidden with .card--type .card--small
-
-// .card--small {
-//   @include baseGrid();
-//   grid-template-columns: var(--base-grid-column) 1fr;
-
-//   .card__title {
-//     @include baseFont(
-//       $size: var(--medium-font-size),
-//       $weight: var(--regular),
-//       $line-height: 1.4
-//     );
-//   }
-//   .card__label,
-//   .card__byline {
-//     display: none;
-//   }
-//   .card__date.card__date {
-//     text-align: left; // using double selctor instead of !important
-//   }
-//   //box-shadow: none;
-// }
 
 .card--no-image {
   .card__copy {
