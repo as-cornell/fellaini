@@ -87,7 +87,7 @@ mounts:
   "/web/sites/default/files": "shared:files/files-first"
   "/web/sites/departments/files": "shared:files/files-departments"
   "/web/sites/people/files": "shared:files/files-people"
-  "/tmp": "shared:files/tmp/first"
+  "/tmp": "shared:files/tmp"
   "/private": "shared:files/private"
   "/drush-backups": "shared:files/drush-backups"
 
