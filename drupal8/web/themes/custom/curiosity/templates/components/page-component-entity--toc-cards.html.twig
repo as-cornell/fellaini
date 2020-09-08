@@ -1,0 +1,28 @@
+{#
+
+/* -------------------------
+
+Title: page-component-entity--page-secton
+Descr: outputs a page section
+
+--------------------------- */
+
+#}
+{# {{vardumper()}} #}
+{% set group_base_class = 'pcWrapper' %}
+{% set group_modifiers = ['tocCards'] %}
+
+
+{% set items = content.field_pages %}
+{% set items_length = items|length %}
+
+
+{% if items.1 %}
+	{% set multiple = true %}
+{% endif %}
+
+{% embed "@content/molecules/_grouping.twig" with{
+  items: items,
+  group_label : content.name
+} %}
+{% endembed %}

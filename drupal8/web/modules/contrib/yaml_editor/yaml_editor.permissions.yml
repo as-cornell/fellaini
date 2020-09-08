@@ -1,3 +1,0 @@
-configure yaml_editor:
-  title: 'Configure YAML Editor'
-  description: 'Allows access to YAML editor configuration page.'
