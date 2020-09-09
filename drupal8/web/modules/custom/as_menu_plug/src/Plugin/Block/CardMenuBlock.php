@@ -22,13 +22,15 @@ class CardMenuBlock extends BlockBase {
     $build = [];
     $build['#theme'] = 'card_menu_block';
     $config = $this->getConfiguration();
-
+    //dump($config) ;
     if (!empty($config['link_values'])) {
       $link_values = $config['link_values'];
     }
-    if (!empty($config['alias'])) {
-      $alias = $config['alias'];
+    if (!empty($config['node_id'])) {
+      $nid = $config['node_id'];
     }
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nid);
+
     $build['card_menu_block']['#markup'] = '<ul>';
 
     if (!empty($link_values)) {

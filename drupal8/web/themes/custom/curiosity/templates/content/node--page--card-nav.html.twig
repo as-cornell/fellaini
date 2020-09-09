@@ -51,7 +51,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
   - link values for the nav items
   - set aside_nav to the menu block
 #}
-{# {{vardumper()}} #}
+ {#vardumper(node.id)#}
 
 {# Need to get {{url}} passed into the function in the module. I think into the $alis? #}
 
@@ -66,7 +66,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 
   {% set card_body %}
 
-    {{ drupal_block('card_menu_block', {link_values:linkValues}, 'bob') }}
+    {{ drupal_block('card_menu_block', {link_values:linkValues,node_id:node.id}, 'bob') }}
 
   {% endset %}
 
