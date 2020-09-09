@@ -1,7 +1,0 @@
-as_weather.content:
-  path: '/as_weather'
-  defaults:
-    _controller: '\Drupal\as_weather\Controller\WeatherController::content'
-    _title: 'As Weather'
-  requirements:
-    _permission: 'access content'
