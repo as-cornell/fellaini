@@ -1,0 +1,19 @@
+uuid: 19ee10b0-b9a5-4fe6-a5b7-e5007da3222e
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.search_block
+    - field.storage.page_component_entity.field_search_terms
+id: page_component_entity.search_block.field_search_terms
+field_name: field_search_terms
+entity_type: page_component_entity
+bundle: search_block
+label: 'Search Terms'
+description: 'Enter search terms that will prepopulate the search form and will be searched.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

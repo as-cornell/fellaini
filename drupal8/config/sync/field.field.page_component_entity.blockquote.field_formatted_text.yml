@@ -1,0 +1,21 @@
+uuid: b58c9c21-2509-46bf-882d-501d970d31b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.blockquote
+    - field.storage.page_component_entity.field_formatted_text
+  module:
+    - text
+id: page_component_entity.blockquote.field_formatted_text
+field_name: field_formatted_text
+entity_type: page_component_entity
+bundle: blockquote
+label: 'Quote Body'
+description: 'Enter quote with ""s. Make a new line and add the attribution as text with no preceding punctuation. Highlight the attribution and select "attribution" from the style dropdown. Select all your text and click the quote (") button.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

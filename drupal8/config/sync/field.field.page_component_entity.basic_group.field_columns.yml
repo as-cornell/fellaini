@@ -1,40 +1,36 @@
-uuid: d4a1dd64-4e38-42a1-ab8c-f9d0556ef00d
+uuid: 6bb0a795-94ed-4795-a43d-67116cb8bd52
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.basic_group
-    - as_page_components.page_component_entity_type.events_block
+    - as_page_components.page_component_entity_type.blockquote
     - as_page_components.page_component_entity_type.formatted_text_block
-    - as_page_components.page_component_entity_type.layout_group
     - as_page_components.page_component_entity_type.list_block
-    - as_page_components.page_component_entity_type.person
-    - as_page_components.page_component_entity_type.related_articles
+    - as_page_components.page_component_entity_type.search_block
     - as_page_components.page_component_entity_type.stat_wrapper
     - field.storage.page_component_entity.field_columns
-id: page_component_entity.layout_group.field_columns
+id: page_component_entity.basic_group.field_columns
 field_name: field_columns
 entity_type: page_component_entity
-bundle: layout_group
-label: Columns
-description: ''
+bundle: basic_group
+label: Items
+description: 'Basic groups can be used for each column in a layout group. If your layout group does not have >1 item in either column you don''t need to use ab Basic Group.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
-      basic_group: basic_group
-      events_block: events_block
+      blockquote: blockquote
       formatted_text_block: formatted_text_block
       list_block: list_block
-      person: person
-      related_articles: related_articles
+      search_block: search_block
       stat_wrapper: stat_wrapper
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: events_block
+    auto_create_bundle: formatted_text_block
 field_type: entity_reference

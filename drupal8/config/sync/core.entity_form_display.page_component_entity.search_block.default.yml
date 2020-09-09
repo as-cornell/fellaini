@@ -1,0 +1,30 @@
+uuid: b146d23f-82f3-48b2-83e5-2f8d80f64f9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.search_block
+    - field.field.page_component_entity.search_block.field_search_terms
+id: page_component_entity.search_block.default
+targetEntityType: page_component_entity
+bundle: search_block
+mode: default
+content:
+  field_search_terms:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

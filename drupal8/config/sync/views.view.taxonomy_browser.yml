@@ -1,18 +1,20 @@
-uuid: 0c435931-7d20-46a4-babc-8b0f02d6fdd7
+uuid: d7474286-e67f-4368-b709-3bc6e6ceddb7
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.majors_and_minors_index
+    - taxonomy.vocabulary.departments_programs
   module:
-    - search_api
-id: search_majors_minors
-label: 'Search Majors Minors'
+    - entity_browser
+    - taxonomy
+    - user
+id: taxonomy_browser
+label: 'Taxonomy Browser'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_majors_and_minors_index
-base_field: search_api_id
+base_table: taxonomy_term_field_data
+base_field: tid
 display:
   default:
     display_plugin: default
@@ -21,17 +23,20 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
       query:
         type: views_query
         options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
       exposed_form:
         type: basic
         options:
@@ -43,40 +48,50 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: mini
+        type: none
         options:
-          items_per_page: 10
           offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       style:
-        type: default
+        type: table
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            name: name
+            entity_browser_select: entity_browser_select
+          info:
+            name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            entity_browser_select:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: false
       row:
-        type: search_api
+        type: fields
         options:
-          view_modes:
-            'entity:taxonomy_term':
-              majors_minors_gradfields: teaser
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
       fields:
-        search_api_rendered_item:
-          id: search_api_rendered_item
-          table: search_api_index_majors_and_minors_index
-          field: search_api_rendered_item
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
           relationship: none
           group_type: group
           admin_label: ''
@@ -100,8 +115,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -121,84 +136,121 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_modes:
-            'entity:taxonomy_term':
-              majors_minors_gradfields: card
-          plugin_id: search_api_rendered_item
-        search_api_excerpt:
-          id: search_api_excerpt
-          table: search_api_index_majors_and_minors_index
-          field: search_api_excerpt
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          link_to_item: false
-          use_highlighting: false
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
           multi_type: separator
-          multi_separator: ', '
-          plugin_id: search_api
-      filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_majors_and_minors_index
-          field: search_api_fulltext
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+        entity_browser_select:
+          id: entity_browser_select
+          table: taxonomy_term_data
+          field: entity_browser_select
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          use_field_cardinality: false
+          entity_type: taxonomy_term
+          plugin_id: entity_browser_select
+      filters:
+        status:
+          value: '1'
+          table: taxonomy_term_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: taxonomy_term
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            departments_programs: departments_programs
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: search_api_fulltext_op
-            label: Keywords
+            operator_id: name_op
+            label: Name
             description: ''
             use_operator: false
-            operator: search_api_fulltext_op
+            operator: name_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: keywords
+            identifier: name
             required: false
             remember: false
             multiple: false
@@ -220,52 +272,37 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields: {  }
-          plugin_id: search_api_fulltext
-      sorts:
-        name:
-          id: name
-          table: search_api_index_majors_and_minors_index
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-      title: 'Search Majors Minors'
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+      sorts: {  }
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
-      tags:
-        - 'config:search_api.index.majors_and_minors_index'
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: Page
+        - user.permissions
+      tags: {  }
+  entity_browser_1:
+    display_plugin: entity_browser
+    id: entity_browser_1
+    display_title: 'Department Browser'
     position: 1
     display_options:
       display_extenders: {  }
-      path: search/majors-minors
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
-      tags:
-        - 'config:search_api.index.majors_and_minors_index'
+        - user.permissions
+      tags: {  }
