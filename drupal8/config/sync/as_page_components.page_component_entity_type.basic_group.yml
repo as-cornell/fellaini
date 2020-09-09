@@ -1,0 +1,6 @@
+uuid: 3c6463cc-433a-4827-bbee-7e492de0c4ef
+langcode: en
+status: true
+dependencies: {  }
+id: basic_group
+label: 'Basic Group'

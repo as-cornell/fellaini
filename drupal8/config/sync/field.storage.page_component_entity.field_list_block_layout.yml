@@ -1,0 +1,51 @@
+uuid: e9983fbe-8bf9-444b-a1c1-44317e31ecbf
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - options
+id: page_component_entity.field_list_block_layout
+field_name: field_list_block_layout
+entity_type: page_component_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: grid--two
+      label: 'Grid Two'
+    -
+      value: grid--four
+      label: 'Grid Four'
+    -
+      value: grid--one-four
+      label: 'Grid Fancy One'
+    -
+      value: noWrapper
+      label: 'No Wrapper'
+    -
+      value: horizontal
+      label: Horizontal
+    -
+      value: vertical
+      label: Vertical
+    -
+      value: two-items
+      label: 'Two items'
+    -
+      value: four-items
+      label: 'Four items'
+    -
+      value: six-items
+      label: 'Six items'
+    -
+      value: eight-items
+      label: 'Eight items'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

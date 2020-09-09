@@ -1,0 +1,10 @@
+uuid: 1f9548c3-1f48-44c8-a05d-8f915396cc98
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_nav
+label: 'Card Nav'
+targetEntityType: node
+cache: true

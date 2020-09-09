@@ -3,14 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.card_small
-    - field.storage.taxonomy_term.field_images
+    - core.entity_view_mode.taxonomy_term.card
     - field.storage.taxonomy_term.field_level
     - taxonomy.vocabulary.level
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
     - better_exposed_filters
-    - media
     - rest
     - rest_export_nested
     - serialization
@@ -83,17 +81,24 @@ display:
                   sort_options: false
           text_input_required_format: full_html
       pager:
-        type: none
+        type: some
         options:
-          items_per_page: 0
+          items_per_page: 2
           offset: 0
       style:
-        type: default
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: group--majors-and-minors
+          class: 'view__list view__list--majors-and-minors'
       row:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: card_small
+          view_mode: card
       fields:
         name:
           id: name
@@ -170,21 +175,7 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-      sorts:
-        name:
-          id: name
-          table: taxonomy_term_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: taxonomy_term
-          entity_field: name
-          plugin_id: standard
+      sorts: {  }
       title: 'Majors and Minors'
       header: {  }
       footer: {  }
@@ -197,6 +188,76 @@ display:
         operator: AND
         groups:
           1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: 'Majors/Minors cards 4'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      style:
+        type: default
+        options:
+          row_class: listBlock__item
+          default_row_class: true
+          uses_fields: false
+      defaults:
+        style: false
+        row: false
+        pager: false
+      row:
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: card
+      display_description: ''
+      pager:
+        type: some
+        options:
+          items_per_page: 4
+          offset: 0
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Majors/Minors cards 2'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      style:
+        type: default
+        options:
+          row_class: listBlock__item
+          default_row_class: true
+          uses_fields: false
+      defaults:
+        style: false
+        row: false
+        pager: false
+      row:
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: card
+      display_description: ''
+      pager:
+        type: some
+        options:
+          items_per_page: 2
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
@@ -290,10 +351,44 @@ display:
       defaults:
         filters: false
         filter_groups: false
+        pager: false
+        sorts: false
+        style: false
+        row: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      pager:
+        type: none
+        options:
+          offset: 0
+      sorts:
+        name:
+          id: name
+          table: taxonomy_term_field_revision
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: standard
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: card
     cache_metadata:
       max-age: -1
       contexts:
@@ -460,70 +555,6 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
-        field_images:
-          id: field_images
-          table: taxonomy_term__field_images
-          field: field_images
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: image
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: '{{ field_images }}'
-            absolute: true
-            external: true
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: true
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         description__value:
           id: description__value
           table: taxonomy_term_field_data
@@ -704,7 +735,6 @@ display:
         - request_format
         - user.permissions
       tags:
-        - 'config:field.storage.taxonomy_term.field_images'
         - 'config:field.storage.taxonomy_term.field_level'
   rest_export_nested_1:
     display_plugin: rest_export_nested
@@ -863,70 +893,6 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
-        field_images:
-          id: field_images
-          table: taxonomy_term__field_images
-          field: field_images
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: image
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: '{{ field_images }}'
-            absolute: true
-            external: true
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: true
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: media_thumbnail
-          settings:
-            image_style: ''
-            image_link: ''
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         description__value:
           id: description__value
           table: taxonomy_term_field_data
@@ -1158,5 +1124,4 @@ display:
         - request_format
         - user.permissions
       tags:
-        - 'config:field.storage.taxonomy_term.field_images'
         - 'config:field.storage.taxonomy_term.field_level'

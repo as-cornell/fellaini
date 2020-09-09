@@ -9,7 +9,7 @@
 # - All other information will be deleted.
 
 _local:
-  root: /Users/mew72/Sites/drupal-vm-cd/sites/fellaini/_www
+  root: /Users/mew72/Sites/drupal-vm-cd/sites/fellaini/drupal8_www
   options:
     platformsh-cli-auto-remove: true
 master:

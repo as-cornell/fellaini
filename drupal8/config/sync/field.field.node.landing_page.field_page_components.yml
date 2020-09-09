@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - as_page_components.page_component_entity_type.blockquote
     - as_page_components.page_component_entity_type.campfire
     - as_page_components.page_component_entity_type.course_block
     - as_page_components.page_component_entity_type.events_block
@@ -17,6 +18,7 @@ dependencies:
     - as_page_components.page_component_entity_type.photo_text_wrapper
     - as_page_components.page_component_entity_type.stat_wrapper
     - as_page_components.page_component_entity_type.text_selection_group
+    - as_page_components.page_component_entity_type.toc_cards
     - as_page_components.page_component_entity_type.twitter_block
     - field.storage.node.field_page_components
     - node.type.landing_page
@@ -34,6 +36,7 @@ settings:
   handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
+      blockquote: blockquote
       campfire: campfire
       course_block: course_block
       events_block: events_block
@@ -47,6 +50,7 @@ settings:
       person: person
       photo_text_wrapper: photo_text_wrapper
       stat_wrapper: stat_wrapper
+      toc_cards: toc_cards
       text_selection_group: text_selection_group
       twitter_block: twitter_block
     sort:

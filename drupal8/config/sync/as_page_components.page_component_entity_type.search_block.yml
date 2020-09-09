@@ -1,0 +1,6 @@
+uuid: 0ee2fefc-0930-409f-ab11-0095a09b0018
+langcode: en
+status: true
+dependencies: {  }
+id: search_block
+label: 'Search Block'

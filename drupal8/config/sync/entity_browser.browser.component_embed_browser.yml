@@ -1,0 +1,63 @@
+uuid: b6446813-5d6b-4101-bf55-d1732a8e8bca
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.article_browser
+    - views.view.component_browser
+    - views.view.taxonomy_browser
+  module:
+    - views
+name: component_embed_browser
+label: 'Component Embed Browser'
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  3f606f1a-cceb-403a-9de6-489fd87e06a5:
+    settings:
+      view: component_browser
+      view_display: entity_browser_3
+      submit_text: 'Select People'
+      auto_select: false
+    uuid: 3f606f1a-cceb-403a-9de6-489fd87e06a5
+    weight: -10
+    label: 'Select People'
+    id: view
+  0ad28e82-bf2b-4464-95e4-12cac6c6b165:
+    settings:
+      view: component_browser
+      view_display: entity_browser_4
+      submit_text: 'Select Search Block'
+      auto_select: false
+    uuid: 0ad28e82-bf2b-4464-95e4-12cac6c6b165
+    weight: -8
+    label: 'Select Search Blocks'
+    id: view
+  63f9ed4c-197b-41c1-b8a7-a0e436663f1a:
+    settings:
+      view: taxonomy_browser
+      view_display: entity_browser_1
+      submit_text: 'Select Departments '
+      auto_select: false
+    uuid: 63f9ed4c-197b-41c1-b8a7-a0e436663f1a
+    weight: -9
+    label: 'Select Departments '
+    id: view
+  e5470559-6970-4b73-bebe-fa4b840bea79:
+    settings:
+      view: article_browser
+      view_display: entity_browser_2
+      submit_text: 'Select Articles'
+      auto_select: false
+    uuid: e5470559-6970-4b73-bebe-fa4b840bea79
+    weight: 4
+    label: 'Select Articles'
+    id: view

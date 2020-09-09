@@ -5,11 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.requirements
     - field.field.taxonomy_term.majors_minors_gradfields.field_image
-    - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_one
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_two
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
+    - field.field.taxonomy_term.majors_minors_gradfields.field_sidebar_components
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
     - text
@@ -30,8 +30,8 @@ content:
 hidden:
   description: true
   field_image: true
-  field_images: true
   field_level: true
   field_long_text_one: true
   field_page_components: true
+  field_sidebar_components: true
   search_api_excerpt: true

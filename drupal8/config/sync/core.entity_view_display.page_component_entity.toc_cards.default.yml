@@ -1,21 +1,21 @@
-uuid: 55b9d663-c03d-44c6-961d-0da12b500308
+uuid: eac090e6-d6a3-45a7-970e-d626bc1c48ac
 langcode: en
 status: true
 dependencies:
   config:
-    - as_page_components.page_component_entity_type.stat_wrapper
-    - field.field.page_component_entity.stat_wrapper.field_stats
-id: page_component_entity.stat_wrapper.default
+    - as_page_components.page_component_entity_type.toc_cards
+    - field.field.page_component_entity.toc_cards.field_pages
+id: page_component_entity.toc_cards.default
 targetEntityType: page_component_entity
-bundle: stat_wrapper
+bundle: toc_cards
 mode: default
 content:
-  field_stats:
+  field_pages:
     weight: 1
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      view_mode: card_nav
+      link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content

@@ -5,11 +5,11 @@ dependencies:
   config:
     - entity_browser.browser.thumbnail_entity_browser
     - field.field.taxonomy_term.majors_minors_gradfields.field_image
-    - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_one
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_two
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
+    - field.field.taxonomy_term.majors_minors_gradfields.field_sidebar_components
     - taxonomy.vocabulary.majors_minors_gradfields
   module:
     - entity_browser
@@ -54,6 +54,7 @@ third_party_settings:
         - field_page_components
         - field_long_text_one
         - field_long_text_two
+        - field_sidebar_components
       parent_name: group_standard
       weight: 21
       format_type: tab
@@ -95,16 +96,6 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_images:
-    type: entity_reference_autocomplete_tags
-    weight: 4
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_level:
     weight: 22
     settings: {  }
@@ -144,6 +135,25 @@ content:
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_sidebar_components:
+    weight: 8
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: component_entity_browser
     type: inline_entity_form_complex
     region: content
   name:

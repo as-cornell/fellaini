@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - as_page_components.page_component_entity_type.blockquote
     - as_page_components.page_component_entity_type.formatted_text_block
     - as_page_components.page_component_entity_type.instagram_block
     - as_page_components.page_component_entity_type.layout_group
@@ -24,6 +25,7 @@ settings:
   handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
+      blockquote: blockquote
       formatted_text_block: formatted_text_block
       instagram_block: instagram_block
       layout_group: layout_group

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - as_page_components.page_component_entity_type.blockquote
     - as_page_components.page_component_entity_type.course_block
     - as_page_components.page_component_entity_type.events_block
     - as_page_components.page_component_entity_type.figure_wrapper
@@ -30,6 +31,7 @@ settings:
   handler: 'default:page_component_entity'
   handler_settings:
     target_bundles:
+      blockquote: blockquote
       course_block: course_block
       events_block: events_block
       figure_wrapper: figure_wrapper

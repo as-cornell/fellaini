@@ -1,0 +1,21 @@
+uuid: 5bbed98d-c24e-49e3-be60-647cf86aaf40
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.list_block
+    - field.storage.page_component_entity.field_list_block_layout
+  module:
+    - options
+id: page_component_entity.list_block.field_list_block_layout
+field_name: field_list_block_layout
+entity_type: page_component_entity
+bundle: list_block
+label: 'List Block Layout'
+description: 'Really only use in a pinch if you know what you are doing.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

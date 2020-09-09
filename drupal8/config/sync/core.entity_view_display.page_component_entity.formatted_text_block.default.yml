@@ -15,19 +15,13 @@ bundle: formatted_text_block
 mode: default
 content:
   field_formatted_text:
-    weight: 1
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  name:
-    type: string
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
+  name: true
+  search_api_excerpt: true
   user_id: true
