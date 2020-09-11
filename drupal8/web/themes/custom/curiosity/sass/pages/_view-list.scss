@@ -11,6 +11,10 @@ Descr:
   grid-template-rows: auto auto 1fr;
   .sidebar {
     grid-area: sidebar;
+    form {
+      position: sticky;
+      top: 150px;
+    }
   }
   .pageTitle {
     grid-area: title;
@@ -30,8 +34,26 @@ Descr:
   // medium layout
   @include medium {
     grid-template-areas:
-      "sidebar sidebar sidebar sidebar title title title title title title title title "
-      "sidebar sidebar sidebar sidebar content content content content content content content content "
-      "sidebar sidebar sidebar sidebar pager pager pager pager pager pager pager pager ";
+      "sidebar sidebar sidebar title title title title title title title title title "
+      "sidebar sidebar sidebar content content content content content content content content content "
+      "sidebar sidebar sidebar pager pager pager pager pager pager pager pager pager ";
+  }
+}
+
+/*
+  layouts for teasers and cards in list views
+*/
+
+// list--teasers
+
+// list--cards
+.list--cards {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .views-row {
+      flex: 1 0 30%;
+    }
   }
 }
