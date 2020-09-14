@@ -7,6 +7,11 @@ type: "php:7.2"
 build:
   flavor: composer
 
+# The build-time dependencies of the app.
+dependencies:
+  php:
+    "drush/drush": "^9.4"
+
 relationships:
   first: "mysqldb:first"
   departments: "mysqldb:departments"
