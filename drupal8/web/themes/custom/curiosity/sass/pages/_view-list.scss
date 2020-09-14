@@ -52,8 +52,13 @@ Descr:
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    .views-row {
+    .article,
+    .major-minor {
       flex: 1 0 30%;
+      &:first-of-type,
+      &:nth-of-type(2) {
+        flex: 1 1 40%;
+      }
     }
   }
 }

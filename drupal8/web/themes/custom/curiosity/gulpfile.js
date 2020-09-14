@@ -33,14 +33,14 @@ gulp.task("sass", function () {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass(sass_config).on("error", sass.logError))
-    // .pipe(
-    //   autoprefixer({
-    //     browsers: ["last 2 version"],
-    //   })
-    // )
-    // .pipe(stripCssComments({ preserve: false }))
+    .pipe(
+      autoprefixer({
+        browsers: ["last 2 version"],
+      })
+    )
+    .pipe(stripCssComments({ preserve: false }))
     .pipe(cssmin())
-    .pipe(sourcemaps.write("."))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest("./css"));
 });
 

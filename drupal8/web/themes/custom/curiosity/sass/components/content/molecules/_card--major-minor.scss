@@ -28,7 +28,6 @@ Descr: Sets all specific styles for an m/m/g card and teasers
   margin: 0;
   padding: 0;
   li {
-    // margin-right: 1rem;
   }
   .link {
     text-indent: -5000px;
@@ -50,7 +49,7 @@ Descr: Sets all specific styles for an m/m/g card and teasers
     }
     &--major {
       &:before {
-        background: var(--as-green);
+        background: pink;
         content: "M";
       }
     }
