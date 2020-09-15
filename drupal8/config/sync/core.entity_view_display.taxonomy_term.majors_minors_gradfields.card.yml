@@ -4,12 +4,16 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.card
+    - field.field.taxonomy_term.majors_minors_gradfields.field_classes
     - field.field.taxonomy_term.majors_minors_gradfields.field_image
+    - field.field.taxonomy_term.majors_minors_gradfields.field_images
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
+    - field.field.taxonomy_term.majors_minors_gradfields.field_links
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_one
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_two
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
     - field.field.taxonomy_term.majors_minors_gradfields.field_sidebar_components
+    - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
     - taxonomy.vocabulary.majors_minors_gradfields
 _core:
   default_config_hash: paiqNyvsE8e77KNcqFe4dOybjvPdaUmEAFX_tv3_edE
@@ -38,8 +42,12 @@ content:
     third_party_settings: {  }
 hidden:
   description: true
+  field_classes: true
+  field_images: true
+  field_links: true
   field_long_text_one: true
   field_long_text_two: true
   field_page_components: true
   field_sidebar_components: true
+  field_student_careers: true
   search_api_excerpt: true

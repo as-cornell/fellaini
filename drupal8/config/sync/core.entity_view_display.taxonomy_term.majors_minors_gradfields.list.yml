@@ -1,9 +1,9 @@
-uuid: 1527acc4-87ee-4cad-ae5e-c1178dc9a0bf
+uuid: eb4cb9a6-6056-4e61-a98d-266c74a9eba5
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.outcomes
+    - core.entity_view_mode.taxonomy_term.list
     - field.field.taxonomy_term.majors_minors_gradfields.field_classes
     - field.field.taxonomy_term.majors_minors_gradfields.field_image
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
@@ -15,22 +15,13 @@ dependencies:
     - field.field.taxonomy_term.majors_minors_gradfields.field_sidebar_components
     - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
     - taxonomy.vocabulary.majors_minors_gradfields
-  module:
-    - text
 _core:
   default_config_hash: paiqNyvsE8e77KNcqFe4dOybjvPdaUmEAFX_tv3_edE
-id: taxonomy_term.majors_minors_gradfields.outcomes
+id: taxonomy_term.majors_minors_gradfields.list
 targetEntityType: taxonomy_term
 bundle: majors_minors_gradfields
-mode: outcomes
-content:
-  field_long_text_one:
-    type: text_default
-    weight: 0
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
+mode: list
+content: {  }
 hidden:
   description: true
   field_classes: true
@@ -38,6 +29,7 @@ hidden:
   field_images: true
   field_level: true
   field_links: true
+  field_long_text_one: true
   field_long_text_two: true
   field_page_components: true
   field_sidebar_components: true
