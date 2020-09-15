@@ -82,12 +82,12 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
         required_fields: true
-      label: Tags
+        id: ''
+        classes: ''
+      label: 'Tags and relationships'
     group_authoring:
       children:
         - uid
@@ -127,7 +127,6 @@ third_party_settings:
     group_body:
       children:
         - field_article_components_entity
-        - field_aside_components
       parent_name: group_article
       weight: 13
       format_type: tab
@@ -153,23 +152,6 @@ content:
   field_article_components_entity:
     type: inline_entity_form_complex
     weight: 17
-    region: content
-    settings:
-      match_operator: CONTAINS
-      form_mode: default
-      revision: false
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      allow_duplicate: false
-    third_party_settings: {  }
-  field_aside_components:
-    type: inline_entity_form_complex
-    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -394,6 +376,7 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_aside_components: true
   field_byline: true
   field_media_source: true
   field_topics_and_disciplines: true

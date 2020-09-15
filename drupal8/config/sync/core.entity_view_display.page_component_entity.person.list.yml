@@ -1,17 +1,18 @@
-uuid: c31630ff-cffd-4a75-9681-19986d10942d
+uuid: ff0890dd-86e4-4cf3-8c5d-5eecd2cf6dee
 langcode: en
 status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.person
+    - core.entity_view_mode.page_component_entity.list
     - field.field.page_component_entity.person.field_link
     - field.field.page_component_entity.person.field_netid
   module:
     - link
-id: page_component_entity.person.default
+id: page_component_entity.person.list
 targetEntityType: page_component_entity
 bundle: person
-mode: default
+mode: list
 content:
   field_link:
     weight: 2

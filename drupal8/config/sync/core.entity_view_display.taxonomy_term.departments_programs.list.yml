@@ -1,0 +1,23 @@
+uuid: b3150085-6195-4795-b665-08329a0905a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.list
+    - field.field.taxonomy_term.departments_programs.field_department_website
+    - field.field.taxonomy_term.departments_programs.field_image
+    - field.field.taxonomy_term.departments_programs.field_page_components
+    - taxonomy.vocabulary.departments_programs
+_core:
+  default_config_hash: qDuC0Y6MUNedfzwkibfc1kDLvJ1Hde8pGs4eDayorZI
+id: taxonomy_term.departments_programs.list
+targetEntityType: taxonomy_term
+bundle: departments_programs
+mode: list
+content: {  }
+hidden:
+  description: true
+  field_department_website: true
+  field_image: true
+  field_page_components: true
+  search_api_excerpt: true
