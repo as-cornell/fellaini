@@ -17,11 +17,12 @@ Descr: main output business for views. Classes are from the view-display setting
   ]
 %}
 
-{% set main_element_extra_classes = ['main']%}
+{% set main_element_extra_classes = ['main', 'list--cards'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
 {% set main_element_base_class = 'basicSidebar' %}
-{% set main_element_modifiers = ['viewContainer'] %}
+{% set main_element_modifiers = ['viewContainer', 'majors-minors-grads'] %}
+
 
 {# {{vardumper()}} #}
 {# set view_title = view.storage.label #}

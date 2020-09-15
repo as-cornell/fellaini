@@ -35,32 +35,41 @@ Passes:
 {# article byline #}
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
 
-{# department program taxonomy #}
-{% if node.field_department_program.target_id %}
-  {% set aside_content = content.field_department_program %}
+{# Related department program taxonomy #}
+{% if node.field_department_program.0 %}
+  {% set show_related_departments_programs = true %}
+  {% set related_departments_programs = (content.field_department_program|render is not empty) ? content.field_department_program %}
 {% endif %}
 
+{# Related articles #}
+{% if node.field_related_articles.0 %}
+	{% set show_related_articles = true %}
+	{% set related_articles = (content.field_related_articles|render is not empty) ? content.field_related_articles %}
+{% endif %}
 
-{# {% if node.field_department_program %}
-  {% set dept_program = content.field_department_program %}
-{% endif %} #}
+{# Related people #}
+{% if node.field_related_people.0 %}
+	{% set show_related_people = true %}
+	{% set related_people = (content.field_related_people|render is not empty) ? content.field_related_people %}
+{% endif %}
+
 
 
 {% include "@pages/_article.twig" with {
 
-    article_pano : content.field_pano,
-    article_card : content.field_image,
+  article_pano : content.field_pano,
+  article_card : content.field_image,
 
-    content_wrapper_modifiers : content_wrapper_modifiers,
-    main_element_modifiers : main_element_modifiers,
+  content_wrapper_modifiers : content_wrapper_modifiers,
+  main_element_modifiers : main_element_modifiers,
 
-    title: node.label,
-    main_content : content.field_article_components_entity,
-    aside_content : content.field_aside_components,
+  title: node.label,
+  main_content : content.field_article_components_entity,
+  aside_content : content.field_aside_components,
 
-    article_dateline: content.field_dateline,
-    article_byline: article_byline,
-    article_mediasource: content.field_media_source_reference,
+  article_dateline: content.field_dateline,
+  article_byline: article_byline,
+  article_mediasource: content.field_media_source_reference,
 
 } %}
 

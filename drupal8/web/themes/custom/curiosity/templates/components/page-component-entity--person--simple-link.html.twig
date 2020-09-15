@@ -1,0 +1,26 @@
+{#
+/**
+ name = page-component-entity--person--list.html.twig
+ Makes name a link to page
+
+ */
+#}
+{# {% set ul_modifiers = ['people'] %}
+
+
+{% embed "@content/atoms/_ul.twig" with{
+  ul_items : items
+} %}
+{% endembed %} #}
+{{content.field_link.0['#values'].uri}}
+
+
+{# {{vardumper(content.field_link)}} #}
+{# {{content.name}} #}
+
+{% embed "@content/atoms/_link.twig" with {
+    link_modifiers : ["person"],
+    link_content: content.name,
+    link_url: content.field_link.0.uri
+} %}
+{% endembed %}
