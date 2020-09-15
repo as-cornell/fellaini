@@ -28,6 +28,42 @@ Descr: Sets all specific styles for an m/m/g card and teasers
   margin: 0;
   padding: 0;
   li {
-    margin-right: 1rem;
+  }
+  .link {
+    text-indent: -5000px;
+    position: relative;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    &:before {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      position: absolute;
+      content: "M";
+      color: white;
+      top: 0;
+      right: 0;
+      text-indent: 0;
+      text-align: center;
+    }
+    &--major {
+      &:before {
+        background: pink;
+        content: "M";
+      }
+    }
+    &--minor {
+      &:before {
+        background: var(--teal);
+        content: "m";
+      }
+    }
+    &--graduate {
+      &:before {
+        background: var(--gold);
+        content: "g";
+      }
+    }
   }
 }

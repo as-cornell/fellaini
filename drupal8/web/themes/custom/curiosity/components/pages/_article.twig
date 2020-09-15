@@ -61,10 +61,32 @@ Needed? :
 		{{article_card}}
 	</div>
 	<aside role="complimentary">
-		{{ aside_content }}
-    {% if dept_program %}
-      <h3>Related Department or Program</h3>
-      {{ dept_program }}
+    
+    {% if show_related_articles %}
+      <h3>
+        Related articles
+      </h3>
+      {{related_articles}}
     {% endif %}
+
+    {% if show_related_departments_programs %}
+      <h3>
+        Related department or program
+      </h3>
+      {{related_departments_programs}}
+    {% endif %}
+
+    {% if show_related_people %}
+      <h3>
+        Related people
+      </h3>
+      {{related_people}}
+    {% endif %}
+
+
+
+
+
+
 	</aside>
 </main>

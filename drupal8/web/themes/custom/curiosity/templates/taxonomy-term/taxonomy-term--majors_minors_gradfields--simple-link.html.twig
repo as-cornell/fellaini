@@ -26,33 +26,10 @@
 {# {{vardumper()}} #}
 {# {% set main_element_extra_classes = ['main'] %} #}
 
-{% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
-{% set card_modifiers = ['major-minor'] %}
+{# {% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
+{% set card_modifiers = ['major-minor'] %} #}
 
-{% if content.field_image|render is not empty %}
-    {% set card_image = content.field_image %}
-  {% else %}
-{% set card_image = '<figure
-	
-	class="figure figure--inline figure--4_5 contextual-region"
-	data-quickedit-entity-instance-id="0"
->
-	<img
-		src="/sites/default/files/styles/4_5/public/2020-06/d46c81_24d1a1c7ae9045a38a731df496a7a692.jpg?h=ce31a056&amp;itok=CcdKMj95"
-		width="500"
-		height="625"
-		alt="Kirk Cousins likes it."
-		typeof="foaf:Image"
-		class="img"
-		loading="lazy"
-	/>
-
-	<figcaption class="figure__caption">Kirk Cousins likes it.</figcaption>
-</figure>'
-
- %}
-
-{% endif %}
+{# 
 
 {% include "@content/molecules/card.twig" with{
   card_title : name,
@@ -60,4 +37,12 @@
   card_title_link: url,
   card_image : card_image,
   card_description: content.description
+} %} #}
+lskjflksjflksjdflkjsdlfkjsldkfjlskdjflksjdlksjdflksdj
+{% embed "@content/atoms/_link.twig" with {
+    link_modifiers : ["major-minor"],
+    link_content: label,
+    link_url: url,
+    link_list: 'yes'
 } %}
+{% endembed %}
