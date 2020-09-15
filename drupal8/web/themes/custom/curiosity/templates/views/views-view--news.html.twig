@@ -23,14 +23,16 @@ Descr: main output business for views. Classes are from the view-display setting
 {% set main_element_base_class = 'basicSidebar' %}
 {% set main_element_modifiers = ['viewContainer', 'newsList'] %}
 
-{# {{vardumper()}} #}
+ {#vardumper(header.view)#}
 {# set view_title = view.storage.label #}
 {% set view_title = view.element['#title'] %}
 
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_sidebar = exposed %}
-{% set view_header = header %}
+{% set view_header = header.view %}
+
+{{header.view}}
 
 {% include "@pages/_view-list.twig" with {
   view_title : view_title,
