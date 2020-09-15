@@ -1,0 +1,15 @@
+{#
+/**
+ *field--field-related.html.twig
+ adds ul wrapper to list of related people
+ */
+#}
+{# {{vardumper(items)}} #}
+
+{% set ul_modifiers = ['related-people'] %}
+
+
+{% embed "@content/atoms/_ul.twig" with{
+  ul_items : items
+} %}
+{% endembed %}
