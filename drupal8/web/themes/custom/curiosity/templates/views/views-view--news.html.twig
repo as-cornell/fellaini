@@ -29,17 +29,13 @@ Descr: main output business for views. Classes are from the view-display setting
 
 
 
-{# {% if search_terms is not empty %}
-	{% set view_sub_title = 'Search results for ' ~ '"'~search_terms~'"' %}
-{% endif %}
-{{view_sub_title}} #}
-{# set view_title = view.storage.label #}
+{# set view title, look for exposed input values and update title value #}
 {% set view_title = view.element['#title'] %}
 
 {% if (view.getExposedInput.media_source) %}
-{% set view_title = "Articles appearing in " ~ view.getExposedInput.media_source %}
+  {% set view_title = "Articles appearing in " ~ view.getExposedInput.media_source %}
 {% elseif (view.getExposedInput.byline) %}
-{% set view_title = "Articles by " ~ view.getExposedInput.byline %}
+  {% set view_title = "Articles by " ~ view.getExposedInput.byline %}
 {% endif %}
 
 {% set view_content = rows %}
@@ -48,7 +44,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {# {% set view_header = header.view %} #}
 
-{# {{header.view}} #}
+{# Hiding header for now {{header.view}} #}
 
 {% include "@pages/_view-list.twig" with {
   view_title : view_title,

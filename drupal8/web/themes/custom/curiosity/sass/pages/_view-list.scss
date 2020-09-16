@@ -55,9 +55,9 @@ Descr:
     .article,
     .major-minor {
       flex: 1 0 30%;
-      &:first-of-type {
-        flex: 1 1 100%;
-      }
+      // &:first-of-type {
+      //   flex: 1 1 100%;
+      // }
     }
   }
 }
