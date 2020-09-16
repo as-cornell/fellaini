@@ -1,0 +1,15 @@
+{#
+/**
+ *field--field-related-articles.html.twig
+ adds ul wrapper to list of related articles
+ */
+#}
+{# {{vardumper(items)}} #}
+
+{% set ul_modifiers = ['related-articles'] %}
+
+
+{% embed "@content/atoms/_ul.twig" with{
+  ul_items : items
+} %}
+{% endembed %}
