@@ -19,8 +19,13 @@ Variations:
   // @include baseBorder();
   border-radius: var(--border-radius);
   margin-bottom: var(--space);
+  @include gradient-border();
   figure {
     margin: 0;
+    position: relative;
+    img {
+      border-radius: 2px 2px 0 0;
+    }
   }
 }
 
@@ -43,12 +48,9 @@ Variations:
   margin: 0.7em 0 1em;
 }
 
-.card__link {
-  // @include link;
-}
-
-.card__button {
-  // @include button;
+.card__copy {
+  position: relative;
+  padding: 1rem;
 }
 
 .card--no-image {
@@ -63,7 +65,13 @@ Variations:
     max-width: 400px;
   }
 }
+.card__link {
+  // @include link;
+}
 
+.card__button {
+  // @include button;
+}
 // Card Feature -- Campfire center big ole'card will be changing
 
 // COURSES

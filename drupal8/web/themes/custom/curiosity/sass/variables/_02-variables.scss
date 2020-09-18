@@ -12,10 +12,25 @@
   --dusk: #435363;
   --fog: #607774;
   --storm: #4f869f;
-  --teal: #85c4ca;
+  --as-teal: #85c4ca;
   --gold: #ffd91f;
   --as-green: #4d9b5e;
   --as-red: #b31b1b;
+
+  --as-purple: #bd6ae4;
+
+  // gradients for now
+  --blue-purple: linear-gradient(
+    144deg,
+    var(--as-teal) 0%,
+    var(--as-purple) 100%
+  );
+
+  --teal-purple: linear-gradient(
+    0,
+    hsla(177, 48, 71, 0.6) 0%,
+    hsla(281, 70, 68, 0.4) 100%
+  );
 
   --gray: #c2c0c0; // depricate
   --gray-light: #d9d9d9; // depricate
