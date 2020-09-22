@@ -60,7 +60,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     @include xl() {
       justify-content: left;
       margin-bottom: 0;
@@ -83,10 +83,14 @@ header {
     max-width: initial; // force logo full size
   }
 
-  //large screen
+  //medium screen
   @include medium() {
     flex-direction: row;
     padding: 4rem 1rem 2rem 1rem;
+  }
+  //large screen
+  @include xl() {
+    padding: 6rem 1rem 5rem 1rem;
   }
 }
 

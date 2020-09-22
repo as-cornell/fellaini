@@ -12,10 +12,30 @@
   --dusk: #435363;
   --fog: #607774;
   --storm: #4f869f;
-  --teal: #85c4ca;
+  --as-teal: #85c4ca;
   --gold: #ffd91f;
   --as-green: #4d9b5e;
   --as-red: #b31b1b;
+
+  --as-purple: #bd6ae4;
+
+  // gradients for now
+  --blue-purple: linear-gradient(
+    144deg,
+    var(--as-teal) 0%,
+    var(--as-purple) 100%
+  );
+
+  --teal-purple: linear-gradient(
+    90deg,
+    hsla(177, 48, 71, 0.3) 0%,
+    hsla(281, 70, 68, 0.3) 100%
+  );
+
+  --storm-radial: radial-gradient(
+    hsla(195, 82, 16, 0.76) 0,
+    hsla(195, 82, 16, 1) 100%
+  );
 
   --gray: #c2c0c0; // depricate
   --gray-light: #d9d9d9; // depricate
@@ -31,7 +51,7 @@
 
   // Font families
   --font-sans: "canada-type-gibson", sans-serif;
-  --font-serif: "freight-micro-pro", verdana;
+  --font-serif: "freight-macro-pro", serif;
   --font-curly: "Alisha";
 
   // font size
@@ -55,9 +75,14 @@
   --base-48: 2rem;
   --base-64: 2.66rem;
 
+  --base-84: 2.6rem;
+  @include large() {
+    --base-84: 3.5rem;
+  }
+
   //font weights
 
-  --light: 300;
+  --light: 200;
   --regular: 400;
   --semi: 600;
   --heavy: 800;
@@ -80,7 +105,7 @@
 
   --bottom-margin: 2rem;
   @include medium() {
-    --bottom-margin: 4rem;
+    --bottom-margin: 6rem;
   }
 
   // ..........

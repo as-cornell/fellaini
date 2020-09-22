@@ -31,12 +31,14 @@
 				{{ head_title|safe_join(' | ') }}
 			</title>
 			<css-placeholder token="{{ placeholder_token|raw }}">
-				<js-placeholder token="{{ placeholder_token|raw }}">
+				<js-placeholder
+					token="{{ placeholder_token|raw }}">
 					{# currently set up to go to bob's typekit #}
-					<link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
+					<link rel="stylesheet" href="https://use.typekit.net/dsj5vco.css">
+
 				</head>
 				<body{{attributes}}>
-					<span class="hidden" aria-hidden="true">
+					<span class="offscreen" aria-hidden="true">
 						{% include "@images/sprite.svg" %}
 					</span>
 					{{ page_top }}
@@ -45,21 +47,21 @@
 					<js-bottom-placeholder token="{{ placeholder_token|raw }}"></body>
 				</html>
 
-{# 
-<!DOCTYPE html>
-<html{{html_attributes}}>
-    <head>
-        <head-placeholder token="{{ placeholder_token|raw }}">
-        <title>{{ head_title|safe_join(' | ') }}</title>
-        <css-placeholder token="{{ placeholder_token|raw }}">
-        <js-placeholder token="{{ placeholder_token|raw }}">
-        <link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
-    </head>
-    <body{{attributes}}>
-        <span class="hidden" aria-hidden="true">{% include "@dist-images/sprite/sprite.svg" %}</span>
-        {{ page_top }}
-        {{ page }}
-        {{ page_bottom }}
-        <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-    </body>
-</html> #}
+				{# 
+								<!DOCTYPE html>
+								<html{{html_attributes}}>
+								    <head>
+								        <head-placeholder token="{{ placeholder_token|raw }}">
+								        <title>{{ head_title|safe_join(' | ') }}</title>
+								        <css-placeholder token="{{ placeholder_token|raw }}">
+								        <js-placeholder token="{{ placeholder_token|raw }}">
+								        <link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
+								    </head>
+								    <body{{attributes}}>
+								        <span class="hidden" aria-hidden="true">{% include "@dist-images/sprite/sprite.svg" %}</span>
+								        {{ page_top }}
+								        {{ page }}
+								        {{ page_bottom }}
+								        <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+								    </body>
+								</html> #}

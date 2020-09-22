@@ -7,7 +7,24 @@ Descr: Sets styles for
 
 --------------------------- */
 
-// pcWrapper--photoText
+// pcWrapper--photoText pcWrapper--featured
+.pcWrapper--photoText.pcWrapper--featured {
+  .photoText {
+    //adjust figure default
+    figure {
+      background: none;
+    }
+
+    // set up masks
+    @for $i from 1 through 3 {
+      &:nth-of-type(3n + #{$i}) {
+        img {
+          @extend .mask-#{$i};
+        }
+      }
+    }
+  }
+}
 
 // photoText
 .photoText {

@@ -28,10 +28,3 @@ body {
   @include baseFont();
   overflow-x: hidden;
 }
-
-p {
-  // width: var(--line-width);
-  max-width: 100%;
-  line-height: calc(1ex / 0.32);
-  // margin: 0;
-}
