@@ -32,10 +32,10 @@ Variations:
 .card__title {
   font-size: 1rem;
   line-height: 1.3;
-  font-weight: var(--semi);
+  font-weight: var(--regular);
   &-link {
-    color: var(--storm);
-    text-decoration-color: var(--gray-lightest);
+    color: var(--as-black);
+    // text-decoration-color: var(--gray);
   }
 }
 

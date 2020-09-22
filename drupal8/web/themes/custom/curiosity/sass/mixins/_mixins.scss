@@ -11,7 +11,7 @@
 @mixin baseFont(
   $size: var(--base-font-size),
   $color: var(--dark-text),
-  $weight: var(--light),
+  $weight: var(--regular),
   $line-height: var(--line-height),
   $family: var(--font-sans)
 ) {
@@ -57,4 +57,12 @@
     background: var(--as-white);
     z-index: 0;
   }
+}
+
+// text gradients need to set up to take variables for background
+@mixin text-gradient {
+  background: var(--storm-radial);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 8px;
 }
