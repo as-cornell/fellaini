@@ -4,22 +4,31 @@ Title: link block
 Descr: sets background, color options, link styles for link blocks
 
 --------------------------- */
-
-.linkBlock {
-  background: var(--gray-med);
-  color: var(--as-white);
-  text-align: center;
-  padding: 2em;
-  border-radius: var(--border-radius);
-  a {
-    display: inline-block;
-    background: var(--as-white);
-    padding: 0.5em 1em;
+.content {
+  .linkBlock {
+    background: var(--gray-med);
+    color: var(--as-white);
+    text-align: center;
+    padding: 2em;
     border-radius: var(--border-radius);
-    font-weight: var(--semi);
-    margin-right: 1em;
-    &:last-of-type {
-      margin-right: 0;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      li {
+        margin: 0 0.5rem;
+      }
+    }
+    a {
+      display: inline-block;
+      background: var(--as-white);
+      padding: 0.5em 1em;
+      border-radius: var(--border-radius);
+      font-weight: var(--semi);
+      margin-right: 1em;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 }

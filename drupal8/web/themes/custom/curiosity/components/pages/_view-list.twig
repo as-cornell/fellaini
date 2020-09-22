@@ -6,7 +6,7 @@ Title: _view-list.twig
 Descr: output for view listings
 receives:
   --- view_content
-Setting up new block class of 'teaser'
+Setting up new block class of 'teaser' 
 
 --------------------------- */
 
@@ -39,10 +39,9 @@ Setting up new block class of 'teaser'
 			<input id='courseFilter' class='searchbox full' type='text' placeholder='search' name="keyword" data-search/>
 		{% endif %}
 	</div>
-  <div class="header">
-  	{{view_header}}
-  </div>
+
 	<div class="content">
+		{{view_header}}
 		{{ view_content }}
 	</div>
 	{% if view_pager %}
