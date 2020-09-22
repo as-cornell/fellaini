@@ -2,7 +2,7 @@
 
 /* -------------------------
 
-Title: pce - list-block
+Title: pce - related articles
 Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens on views-view-list.html.twig because the content here is jus
 
 --------------------------- */
@@ -28,14 +28,13 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 #}
 
 {% set group_base_class = 'pcWrapper' %}
-{% set group_modifiers = ['linkBlock'] %}
+{% set group_modifiers = ['relatedArticles'] %}
 
 
-{% set group_classes = ['linkBlock'] %}
-
+{% set group_classes = ['relatedArticles'] %}
 
 {# {{vardumper()}} #}
 {% embed "@content/molecules/_grouping.twig" with{
-  items: content.field_link,
-  group_label : content.field_block_title,
+  items: content.field_articles,
+  group_label : content.name
 } %}{% endembed %}

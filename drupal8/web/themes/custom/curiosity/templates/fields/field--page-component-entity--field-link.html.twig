@@ -1,0 +1,14 @@
+{#
+/**
+ *field--page-component-entity--field-link.html.twig
+ adds ul wrapper to list of links
+ */
+#}
+{# {{vardumper(items)}} #}
+
+{% set ul_modifiers = ['links'] %}
+
+{% embed "@content/atoms/_ul.twig" with{
+  ul_items : items
+} %}
+{% endembed %}
