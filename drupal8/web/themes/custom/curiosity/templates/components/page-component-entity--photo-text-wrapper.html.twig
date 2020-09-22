@@ -16,11 +16,11 @@ Descr: Set main wrapper for photo text item
 {% set items_length = items|length %}
 
 {% if content.field_photo_text_wrapper_class %}
-  {% set wrapperClass = content.field_photo_text_wrapper_class[0]['#markup'] %}
-  {% set group_modifiers = group_modifiers|merge([wrapperClass]) %}
+	{% set wrapperClass = content.field_photo_text_wrapper_class[0]['#markup'] %}
+	{% set group_modifiers = group_modifiers|merge([wrapperClass]) %}
 {% endif %}
 
-
+{# {{vardumper()}} #}
 {% if items.1 %}
 	{% set multiple = true %}
 {% endif %}
@@ -28,7 +28,5 @@ Descr: Set main wrapper for photo text item
 {% embed "@content/molecules/_grouping.twig" with{
   items: items,
   title: content.name
-} %}{% endembed %}
-
-
-
+} %}
+{% endembed %}

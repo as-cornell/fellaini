@@ -11,3 +11,18 @@ Descr:
     max-width: var(--line-width);
   }
 }
+
+// for now target first layer of ftbs on lading page for width
+
+.landingPage {
+  .content > .pageComponent--ftb {
+    @include medium() {
+      max-width: 72%;
+    }
+    margin-left: auto;
+    margin-right: auto;
+    p {
+      max-width: auto;
+    }
+  }
+}

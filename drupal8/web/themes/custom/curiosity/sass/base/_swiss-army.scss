@@ -6,11 +6,14 @@ Descr: Where all little helper classes that don't go on one specific component c
 --------------------------- */
 
 // Hidden, only for items that need to be hidden from everything, including screen readers
-.hidden{
-    display: none;
+.hidden {
+  display: none;
+}
+.offscreen {
+  position: absolute;
 }
 
-.sr-only{
+.sr-only {
   display: block;
   height: 1px;
   width: 1px;

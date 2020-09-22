@@ -11,7 +11,7 @@
 @mixin baseFont(
   $size: var(--base-font-size),
   $color: var(--dark-text),
-  $weight: var(--light),
+  $weight: var(--regular),
   $line-height: var(--line-height),
   $family: var(--font-sans)
 ) {
@@ -24,11 +24,45 @@
 
 // Drop shadow
 @mixin boxShadow() {
-  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
 @mixin list-reset {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+// gradient-border needs two parts. one for the conatiner/border, one that sets the :before for the actual visible background color
+@mixin gradient-border {
+  position: relative;
+  background: var(--teal-purple);
+  background-origin: padding-box, border-box;
+  background-repeat: no-repeat;
+  // border: 1px solid transparent;
+  // border: 1px solid transparent;
+  border-radius: 9px;
+  &::before {
+    content: "";
+    content: "";
+    content: "";
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    // border: 2px solid pink;
+    border-radius: 9px;
+    background: pink;
+    background: var(--as-white);
+    z-index: 0;
+  }
+}
+
+// text gradients need to set up to take variables for background
+@mixin text-gradient {
+  background: var(--storm-radial);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 8px;
 }

@@ -16,7 +16,6 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
 }
 
 .card--stat {
-  padding: 1rem;
   text-align: center;
   grid-row: span 1;
   .card__copy {
@@ -40,7 +39,7 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
       content: "";
       width: 30%;
       height: 4px;
-      background: var(--green);
+      background: var(--as-green);
       left: 35%;
       bottom: 0;
       border-radius: var(--border-radius);
@@ -51,6 +50,6 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
 // card stats in 2x layout group
 .pcWrapper--layoutGroup {
   .card--stat {
-    flex-basis: calc(50% - 3rem);
+    flex-basis: calc(50% - 1rem);
   }
 }
