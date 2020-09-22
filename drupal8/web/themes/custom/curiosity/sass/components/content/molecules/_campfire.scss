@@ -10,9 +10,20 @@ Descr:
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: var(--bottom-margin);
-  @include medium() {
+  margin-top: 2rem;
+  @include small() {
     flex-direction: row;
-
+    flex-wrap: wrap;
+    &__feature {
+      flex: 0 0 100%;
+      margin-bottom: 2rem;
+    }
+    &__articles {
+      flex: 0 0 calc(50% - 1rem);
+    }
+  }
+  @include medium() {
+    margin-top: 0;
     &__feature {
       flex: 0 0 44%;
       order: 2;

@@ -8,6 +8,7 @@ Descr: Sets all specific styles for an article card
 
 .card--article {
   grid-row: span 2;
+
   .card__copy {
     padding: 1rem;
     @include baseGrid($g-gap: 0px);
@@ -78,7 +79,7 @@ Descr: Sets all specific styles for an article card
 }
 
 .card--feature {
-  margin-bottom: 3rem;
+  margin-bottom: 3rem !important;
   .card__copy {
     grid-template-columns: 1fr;
     grid-template-areas:

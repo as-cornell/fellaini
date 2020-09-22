@@ -16,7 +16,9 @@ Descr:
 
 .landingPage {
   .content > .pageComponent--ftb {
-    max-width: 72%;
+    @include medium() {
+      max-width: 72%;
+    }
     margin-left: auto;
     margin-right: auto;
     p {

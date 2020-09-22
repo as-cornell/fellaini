@@ -17,12 +17,12 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 	{% if panoImage %}
 		<div
 			class="pano">{# {% include "@atoms/04-images/figure.twig" with {
-																        "img_src": pano_img_src,
-																        "img_alt": pano_img_alt,
-																        "img_caption" : pano_img_caption,
-																        "img_credit" : pano_img_credit,
-																        "figure_modifiers" : ['pano','image']
-																      } %} #}
+																				        "img_src": pano_img_src,
+																				        "img_alt": pano_img_alt,
+																				        "img_caption" : pano_img_caption,
+																				        "img_credit" : pano_img_credit,
+																				        "figure_modifiers" : ['pano','image']
+																				      } %} #}
 		</div>
 	{% endif %}
 	{% if not is_front %}
@@ -32,7 +32,8 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
         "heading_level" : 1,
         "heading" : title,
         "heading_modifiers" : heading_modifiers,
-        "heading_base_class" : heading_base_class
+        "heading_base_class" : heading_base_class,
+        "heading_class" : heading_class
       } %}
 			{{title_suffix}}
 		</div>
