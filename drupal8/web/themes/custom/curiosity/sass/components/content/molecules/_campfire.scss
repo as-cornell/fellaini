@@ -14,8 +14,9 @@ Descr:
     flex-direction: row;
 
     &__feature {
-      flex: 0 0 47%;
+      flex: 0 0 44%;
       order: 2;
+      margin-top: -4rem;
     }
     &__articles {
       flex: 0 0 23%;
@@ -76,10 +77,10 @@ Descr:
 
 // campfire specific styles
 .campfire__support {
-  @include boxShadow;
-  border-radius: var(--border-radius);
-  // background: var(--gray-lightest);
-  padding: var(--space);
+  // @include boxShadow;
+  // border-radius: var(--border-radius);
+  // // background: var(--gray-lightest);
+  // padding: var(--space);
   p {
     @include xl {
       font-size: 1.25rem;

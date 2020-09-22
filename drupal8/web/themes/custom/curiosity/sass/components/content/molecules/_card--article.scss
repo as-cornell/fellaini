@@ -21,7 +21,7 @@ Descr: Sets all specific styles for an article card
     grid-area: title;
     margin: 0.75em 0 2em 0;
     font-weight: var(--regular);
-    font-size: var(--base-20);
+    font-size: var(--base-24);
     line-height: 1.25;
   }
   .card__label {
@@ -78,6 +78,7 @@ Descr: Sets all specific styles for an article card
 }
 
 .card--feature {
+  margin-bottom: 3rem;
   .card__copy {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -92,9 +93,14 @@ Descr: Sets all specific styles for an article card
   }
   .figure {
     grid-area: image;
+    background: transparent;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    padding-top: 2rem;
   }
   .card__title {
     padding: 0 1rem;
+    margin-bottom: 1em;
     font-size: 2rem;
     text-align: center;
     font-weight: var(--semi);
@@ -107,9 +113,13 @@ Descr: Sets all specific styles for an article card
   }
   .card__date {
     font-size: var(--base-16);
+    display: none;
   }
   .card__byline {
     font-size: var(--base-18);
     text-align: center;
+  }
+  img {
+    @extend .mask-2;
   }
 }

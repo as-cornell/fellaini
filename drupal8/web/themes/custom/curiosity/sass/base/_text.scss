@@ -4,7 +4,38 @@ Title: text
 Descr: Styles for things that are not anywhere else. Essentially css atoms.
 
 --------------------------- */
-
+p {
+  margin: 0;
+}
+* + p {
+  margin-top: 1.5em;
+}
 strong {
   font-weight: var(--semi);
+}
+
+// special decoration classes for big messaging labels
+
+.spotlight {
+  font-family: var(--font-serif);
+  font-weight: var(--heavy);
+  text-align: center;
+  font-size: var(--base-64);
+  &--storm {
+    @include text-gradient;
+  }
+}
+
+// font size choices
+.base-28 {
+  font-size: var(--base-28);
+}
+.base-36 {
+  font-size: var(--base-36);
+}
+.base-48 {
+  font-size: var(--base-48);
+}
+.base-64 {
+  font-size: var(--base-64);
 }
