@@ -66,3 +66,18 @@
   -webkit-text-fill-color: transparent;
   padding-bottom: 8px;
 }
+
+// links that look like buttons
+@mixin btnLink($background: var(--gray-lightest), $color: var(--storm)) {
+  display: inline-block;
+  background: $background;
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  // font-weight: var(--semi);
+  color: $color;
+  @include boxShadow();
+  margin-right: 1rem;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
