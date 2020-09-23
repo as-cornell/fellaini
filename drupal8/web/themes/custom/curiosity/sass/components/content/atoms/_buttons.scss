@@ -1,6 +1,6 @@
 /* -------------------------
 
-Title: Buttons
+Title: Buttons and linksthat look like buttons
 Descr: 
    - iconButton
     -- a button that has an svg icon in the middle
@@ -40,4 +40,20 @@ Descr:
   svg {
     width: 1rem;
   }
+}
+
+/*
+  == Links that look like buttons
+*/
+.btn {
+  @include btnLink();
+}
+.btn--blue {
+  @include btnLink(var(--storm-radial), var(--as-white));
+}
+.btn--red {
+  @include btnLink();
+}
+.btn--green {
+  @include btnLink();
 }
