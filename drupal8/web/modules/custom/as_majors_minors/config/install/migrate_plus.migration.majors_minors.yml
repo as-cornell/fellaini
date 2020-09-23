@@ -84,10 +84,11 @@ process:
       delimiter: +
     -
       plugin: sub_process
+      source: field_level
       process:
         target_id:
           plugin: entity_lookup
-          source: field_level
+          source: value
           entity_type: taxonomy_term
           bundle: level
           value_key: name
