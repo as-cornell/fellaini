@@ -37,29 +37,17 @@ source:
       label: 'Description'
       selector: node/description
     -
+      name: field_outcomes
+      label: 'Outcomes'
+      selector: node/field_outcomes
+    -
       name: field_level
-      label: 'Links'
+      label: 'Level'
       selector: node/field_level
     -
       name: field_classes
-      label: 'Links'
+      label: 'Classes'
       selector: node/classes
-    -
-      name: field_student_careers
-      label: 'Links'
-      selector: node/student_careers
-    -
-      name: links_title
-      label: 'Links'
-      selector: node/links_title
-    -
-      name: links_url
-      label: 'Links'
-      selector: node/links_url
-    -
-      name: field_links
-      label: 'Links'
-      selector: node/field_links
 
 
 destination:
@@ -77,10 +65,14 @@ process:
   'description/format':
     plugin: default_value
     default_value: full_html
-  'field_image/target_id':
-    plugin: migration
-    migration: major_minor_image_media
-    source: uuid
+  'field_long_text_one/value': field_outcomes
+  'field_long_text_one/format':
+    plugin: default_value
+    default_value: full_html
+  'field_classes/value': field_classes
+  'field_classes/format':
+    plugin: default_value
+    default_value: full_html
   field_level:
     -
       plugin: skip_on_empty
@@ -90,48 +82,30 @@ process:
       plugin: explode
       source: field_level
       delimiter: +
-  field_classes:
+    -
+      plugin: entity_lookup
+      source: field_level
+      entity_type: taxonomy_term
+      bundle: level
+      value_key: name
+  field_discipline:
     -
       plugin: skip_on_empty
       method: process
-      source: field_classes
+      source: field_discipline
     -
       plugin: explode
-      source: field_classes
+      source: field_discipline
       delimiter: +
-  field_student_careers:
     -
-      plugin: skip_on_empty
-      method: process
-      source: field_student_careers
-    -
-      plugin: explode
-      source: field_student_careers
-      delimiter: +
-  temp_links_url:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_links
-    -
-      plugin: explode
-      source: field_links
-      delimiter: +
-  temp_links_title:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: links_title
-    -
-      plugin: explode
-      source: links_title
-      delimiter: +
-  temp_links:
-    plugin: merge
-    source:
-      - '@temp_links_title'
-      - '@temp_links_url'
-  field_links: '@temp_links_url'
+      plugin: static_map
+      source: field_discipline
+      map:
+        1891: 61579
+        1901: 61580
+        1906: 61582
+        1911: 61581
+        1896: 61580
   'field_image/target_id':
     plugin: migration
     migration: major_minor_image_media
