@@ -123,9 +123,6 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-  build: |
-    set -e
-    curl -sS https://platform.sh/cli/installer | php
   deploy: |
     set -e
     cd docroot
@@ -136,12 +133,6 @@ crons:
     drupal:
         spec: '*/20 * * * *'
         cmd: 'cd docroot ; drush core-cron'
-    snapshot:
-        spec: '0 5 * * *'
-        cmd: |
-            if [ "$PLATFORM_BRANCH" = master ]; then
-                platform snapshot:create --yes --no-wait
-            fi
 
 # Added for simplesaml
 variables:
