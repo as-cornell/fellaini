@@ -86,12 +86,10 @@ process:
       plugin: sub_process
       source: field_level
       process:
-        target_id:
-          plugin: entity_lookup
-          source: value
-          entity_type: taxonomy_term
-          bundle: level
-          value_key: name
+        plugin: entity_lookup
+        entity_type: taxonomy_term
+        bundle: level
+        value_key: name
   field_discipline:
     -
       plugin: skip_on_empty
