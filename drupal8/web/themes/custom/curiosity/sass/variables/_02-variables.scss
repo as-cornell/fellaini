@@ -36,6 +36,10 @@
     hsla(195, 82, 16, 0.76) 0,
     hsla(195, 82, 16, 1) 100%
   );
+  --green-radial: radial-gradient(
+    hsla(96, 48, 48, 1) 0,
+    hsla(96, 48, 33, 1) 100%
+  );
 
   --gray: #c2c0c0; // depricate
   --gray-light: #d9d9d9; // depricate
