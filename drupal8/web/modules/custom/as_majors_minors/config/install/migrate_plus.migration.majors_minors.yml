@@ -81,15 +81,13 @@ process:
     -
       plugin: explode
       source: field_level
-      delimiter: +
+      delimiter: '+'
     -
-      plugin: sub_process
-      source: field_level
-      process:
-        plugin: entity_lookup
-        entity_type: taxonomy_term
-        bundle: level
-        value_key: name
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: level
   field_discipline:
     -
       plugin: skip_on_empty
