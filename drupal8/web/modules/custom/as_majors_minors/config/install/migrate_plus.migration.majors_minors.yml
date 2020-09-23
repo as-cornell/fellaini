@@ -80,8 +80,10 @@ process:
       source: field_level
     -
       plugin: explode
-      source: field_level
       delimiter: '+'
+    -
+      plugin: callback
+      callable: trim
     -
       plugin: entity_generate
       entity_type: taxonomy_term
@@ -95,11 +97,9 @@ process:
       source: field_discipline
     -
       plugin: explode
-      source: field_discipline
-      delimiter: +
+      delimiter: '+'
     -
       plugin: static_map
-      source: field_discipline
       map:
         1891: 61579
         1901: 61580
