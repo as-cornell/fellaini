@@ -24,6 +24,7 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
     font-size: var(--base-20);
     p {
       line-height: 1.2;
+      margin-top: 0;
     }
   }
   .card__title {
