@@ -123,13 +123,11 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-    # We run deploy hook after your application has been deployed and started.
-    deploy: |
-        set -e
-        cd docroot
-        drush -y updatedb
+  deploy: |
+    set -e
+    cd docroot
+    drush -y updatedb
 
-    # The configuration of scheduled execution.
 crons:
     drupal:
         spec: '*/20 * * * *'
@@ -138,7 +136,7 @@ crons:
 # Added for simplesaml
 variables:
     env:
-        SIMPLESAMLPHP_CONFIG_DIR: /scholsie/simplesamlphp/config
+        SIMPLESAMLPHP_CONFIG_DIR: /app/simplesamlphp/config
 
 # Added for New Relic
 #runtime:
