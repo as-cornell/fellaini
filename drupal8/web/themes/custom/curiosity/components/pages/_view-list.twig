@@ -49,7 +49,20 @@ Setting up new block class of 'teaser'
 			{{ view_pager }}
 		</div>
 	{% endif %}
+
 	<div class="sidebar">
+      {% if show_search %}
+      <form action="/search/{{show_search}}" id="sidebar__searchform" class="form form--simpleSearch form--searchBlock">
+      <label for="search-input">
+        Keyword Search
+      </label>
+      <span class="searchField">
+        <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text form-item__textfield"/>
+        <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="js-form-submit form-submit form-item__submit"/>
+      </span>
+    </form>
+    {% endif %}
+    Filter by:
 		{{ view_sidebar }}
 	</div>
 </main>
