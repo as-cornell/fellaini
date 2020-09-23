@@ -13,6 +13,9 @@ Descr:
 
 .form--simpleSearch {
   display: inline-flex;
+  * {
+    z-index: 1;
+  }
   .searchField {
     display: flex;
     border: 1px solid var(--gray-dark);
@@ -33,12 +36,35 @@ Descr:
   }
 }
 
+// wrappers specifically for sidebar and embedded searches
 .form--searchBlock {
   background: var(--gray-lt);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: var(--border-radius);
-  color: var(--as-white);
+  // color: var(--as-white);
   flex-direction: column;
+  margin: 2rem 0;
+  width: calc(100% - 4rem);
+  @include gradient-border();
+  .searchField {
+    display: flex;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    @include boxShadow();
+    border: 1px solid var(--storm);
+  }
+  label {
+    font-weight: var(--semi);
+    margin: 0em 0 1.5em;
+  }
+  .form-item__textfield {
+    flex: 0 0 80%;
+  }
+  .form-item__submit {
+    flex: 0 0 calc(20% - 2em);
+    font-size: var(--base-18);
+    background: var(--storm-radial);
+  }
 }
 
 // search form in header
@@ -48,6 +74,16 @@ Descr:
   align-items: center;
   opacity: 0;
   visibility: hidden;
+  label,
+  .form-item__label {
+    display: block;
+    font-weight: 600;
+    @include xs {
+      display: block;
+      margin-right: 2%;
+      padding: 0.6em 0;
+    }
+  }
   // .form-item__textfield {
   //   border-radius: var(--border-radius) 0 0 var(--border-radius);
   //   border-right: none;
@@ -71,17 +107,6 @@ Descr:
   margin-bottom: 1em;
   max-width: 32em;
   font-size: 0.75rem;
-}
-
-label,
-.form-item__label {
-  display: block;
-  font-weight: 600;
-  @include xs {
-    display: block;
-    margin-right: 2%;
-    padding: 0.6em 0;
-  }
 }
 
 .form-item__textfield,
