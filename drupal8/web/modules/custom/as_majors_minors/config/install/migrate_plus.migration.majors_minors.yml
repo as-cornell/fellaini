@@ -107,7 +107,7 @@ process:
         '1911': 61581
         '1896': 61580
     -
-      plugin: entity_lookup
+      plugin: entity_generate
       value_key: tid
       entity_type: taxonomy_term
       bundle_key: vid
