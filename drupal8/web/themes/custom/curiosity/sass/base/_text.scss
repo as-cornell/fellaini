@@ -38,6 +38,7 @@ strong {
 }
 .base-48 {
   font-size: var(--base-48);
+  margin-bottom: 0.6em;
 }
 .base-64 {
   font-size: var(--base-64);
@@ -45,4 +46,9 @@ strong {
 .base-84 {
   font-size: var(--base-84);
   line-height: 0.9em !important;
+}
+
+// text colors
+.gradient--green {
+  @include text-gradient(var(--green-radial));
 }
