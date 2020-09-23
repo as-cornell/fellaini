@@ -80,17 +80,16 @@ process:
       source: field_level
     -
       plugin: explode
-      source: field_level
-      delimiter: +
+      delimiter: '+'
     -
-      plugin: sub_process
-      process:
-        target_id:
-          plugin: entity_lookup
-          source: field_level
-          entity_type: taxonomy_term
-          bundle: level
-          value_key: name
+      plugin: callback
+      callable: trim
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: level
   field_discipline:
     -
       plugin: skip_on_empty
@@ -98,17 +97,21 @@ process:
       source: field_discipline
     -
       plugin: explode
-      source: field_discipline
-      delimiter: +
+      delimiter: '+'
     -
       plugin: static_map
-      source: field_discipline
       map:
-        1891: 61579
-        1901: 61580
-        1906: 61582
-        1911: 61581
-        1896: 61580
+        '1891': 61579
+        '1901': 61580
+        '1906': 61582
+        '1911': 61581
+        '1896': 61580
+    -
+      plugin: entity_generate
+      value_key: tid
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: discipline
   'field_image/target_id':
     plugin: migration
     migration: major_minor_image_media
