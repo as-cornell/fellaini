@@ -106,7 +106,11 @@ source:
     -
       name: field_related_people
       label: 'Related People'
-      selector: /attributes/field_related_people
+      selector: /attributes/field_related_people_label
+    -
+      name: field_discipline
+      label: 'Disciplines'
+      selector: /attributes/field_topic
 
 
 
@@ -134,15 +138,6 @@ process:
     -
       plugin: explode
       source: field_departments_programs
-      delimiter: +
-  field_topics_and_disciplines:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_topic
-    -
-      plugin: explode
-      source: field_topic
       delimiter: +
   field_byline: field_byline
   field_byline_reference:
@@ -175,14 +170,42 @@ process:
       source: field_related_people
     -
       plugin: explode
-      source: field_related_people
       delimiter: +
     -
-      plugin: entity_lookup
-      source: field_related_people
+      plugin: entity_generate
       entity_type: page_component_entity
       bundle: person
-      value_key: field_netid
+      value_key: name
+  field_related_disciplines:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_discipline
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: static_map
+      map:
+        '1891': 61579
+        '1901': 61580
+        '1911': 61581
+        '1896': 61580
+  field_related_functions:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_discipline
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: static_map
+      map:
+        '1776': 61590 # Alumni Stories to Alumni News
+        '1796': 61584 # Career Development Stories to Career Development
+        '1726': 61585 # Research, Scholarship and Creative Works to Research/Creative Works
+        '1721': 61586 # Student News Stories to Undergraduate Student News
   'field_image/target_id':
     plugin: migration
     migration: import_as_article_image_media
