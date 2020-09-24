@@ -48,6 +48,10 @@ source:
       name: field_classes
       label: 'Classes'
       selector: node/classes
+    -
+      name: field_discipline
+      label: 'Classes'
+      selector: node/disciplines
 
 
 destination:
@@ -90,7 +94,7 @@ process:
       value_key: name
       bundle_key: vid
       bundle: level
-  'field_discipline/tid':
+  field_discipline:
     -
       plugin: skip_on_empty
       method: process
