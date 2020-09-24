@@ -126,11 +126,17 @@ process:
   changed: changed
   path: path
   field_summary: field_summary
-  field_article_components_entity:
+  pseudo_field_article_components_entity:
     plugin: migration_lookup
     migration: import_as_article_body
-    no_stub: true
     source: nid
+  field_article_components_entity:
+    plugin: sub_process
+    source:
+    - '@pseudo_field_article_components_entity'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
   field_department_program:
     -
       plugin: skip_on_empty
@@ -141,11 +147,17 @@ process:
       source: field_departments_programs
       delimiter: +
   field_byline_reference:
-    plugin: entity_lookup
+    plugin: entity_generate
     source: field_byline
+    entity_type: taxonomy_term
+    value_key: name
+    bundle: article_bylines
   field_media_source_reference:
-    plugin: entity_lookup
+    plugin: entity_generate
     source: field_media_source
+    entity_type: taxonomy_term
+    value_key: name
+    bundle: article_mediasources
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_related_articles:
@@ -159,7 +171,6 @@ process:
     -
       plugin: migration_lookup
       migration: import_as_article
-      no_stub: true
   field_related_people:
     -
       plugin: skip_on_empty
@@ -172,7 +183,6 @@ process:
       plugin: entity_lookup
       entity_type: page_component_entity
       bundle: person
-      no_stub: true
       value_key: name
   psuedo_discipline:
     -
@@ -184,7 +194,8 @@ process:
       delimiter: '+'
   field_related_disciplines:
       plugin: static_map
-      source: '@psuedo_discipline'
+      source:
+      - '@psuedo_discipline'
       map:
         '1891': 61579
         '1901': 61580
@@ -192,7 +203,8 @@ process:
         '1896': 61580
   field_related_functions:
       plugin: static_map
-      source: '@psuedo_discipline'
+      source:
+      - '@psuedo_discipline'
       map:
         '1776': 61590 # Alumni Stories to Alumni News
         '1796': 61584 # Career Development Stories to Career Development
