@@ -170,7 +170,7 @@ process:
       source: field_related_people
     -
       plugin: explode
-      delimiter: +
+      delimiter: '+'
     -
       plugin: entity_generate
       entity_type: page_component_entity
