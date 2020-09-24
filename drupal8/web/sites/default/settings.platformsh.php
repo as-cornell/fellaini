@@ -45,7 +45,7 @@ if (getenv('PLATFORM_APP_DIR')) {
     $settings['file_private_path'] = getenv('PLATFORM_APP_DIR') . '/private';
   }
 if (!isset($config['system.file']['path']['temporary'])) {
-  $settings["file_temp_path"] = $platformsh->appDir . '/tmp';
+  $settings["file_temp_path"] = getenv('PLATFORM_APP_DIR') . '/tmp';
 }
 
   // Configure the default PhpStorage and Twig template cache directories.
