@@ -8,7 +8,6 @@ $settings['file_scan_ignore_directories'] = [
     'node_modules'
 ];
 $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
-$settings["file_temp_path"] = "/app/tmp/"
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/../settings.platformsh.php')) {
     $platformsh_subsite_id = 'first';
