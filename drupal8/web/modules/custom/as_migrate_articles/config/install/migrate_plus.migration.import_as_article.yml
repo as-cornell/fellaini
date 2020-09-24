@@ -148,20 +148,18 @@ process:
     source: field_media_source
   field_dateline: field_dateline
   field_card_label: field_card_label
-  field_related_articles:
+  'field_related_articles/target_id':
     -
       plugin: skip_on_empty
       method: process
       source: field_related_articles
     -
       plugin: explode
-      source: field_related_articles
-      delimiter: +
+      delimiter: '+'
     -
       plugin: migration_lookup
       migration: import_as_article
       no_stub: true
-      source: field_related_articles
   field_related_people:
     -
       plugin: skip_on_empty
@@ -174,9 +172,8 @@ process:
       plugin: entity_lookup
       entity_type: page_component_entity
       bundle: person
-      bundle_key: vid
       value_key: name
-  field_related_disciplines:
+  psuedo_discipline:
     -
       plugin: skip_on_empty
       method: process
@@ -184,23 +181,17 @@ process:
     -
       plugin: explode
       delimiter: '+'
-    -
+  field_related_disciplines:
       plugin: static_map
+      source: '@psuedo_discipline'
       map:
         '1891': 61579
         '1901': 61580
         '1911': 61581
         '1896': 61580
   field_related_functions:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_discipline
-    -
-      plugin: explode
-      delimiter: '+'
-    -
       plugin: static_map
+      source: '@psuedo_discipline'
       map:
         '1776': 61590 # Alumni Stories to Alumni News
         '1796': 61584 # Career Development Stories to Career Development
