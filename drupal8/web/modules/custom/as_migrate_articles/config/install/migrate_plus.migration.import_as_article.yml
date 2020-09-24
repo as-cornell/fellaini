@@ -125,6 +125,7 @@ process:
   created: created
   changed: changed
   path: path
+  field_summary: field_summary
   field_article_components_entity:
     plugin: migration_lookup
     migration: import_as_article_body
@@ -139,11 +140,9 @@ process:
       plugin: explode
       source: field_departments_programs
       delimiter: +
-  field_byline: field_byline
   field_byline_reference:
     plugin: entity_lookup
     source: field_byline
-  field_media_source: field_media_source
   field_media_source_reference:
     plugin: entity_lookup
     source: field_media_source
@@ -172,7 +171,7 @@ process:
       plugin: explode
       delimiter: '+'
     -
-      plugin: entity_generate
+      plugin: entity_lookup
       entity_type: page_component_entity
       bundle: person
       value_key: name
