@@ -26,71 +26,71 @@ source:
     -
       name: uuid
       label: 'Uuid'
-      selector: /attributes/uuid
+      selector: attributes/uuid
     -
       name: nid
       label: 'nid'
-      selector: /attributes/nid
+      selector: attributes/nid
     -
       name: title
       label: 'Title'
-      selector: /attributes/title
+      selector: attributes/title
     -
       name: created
       label: 'Created'
-      selector: /attributes/created
+      selector: attributes/created
     -
       name: changed
       label: 'Changed'
-      selector: /attributes/changed
+      selector: attributes/changed
     -
       name: status
       label: 'Status'
-      selector: /attributes/status
+      selector: attributes/status
     -
       name: path
       label: 'Path'
-      selector: /attributes/path
+      selector: attributes/path
     -
       name: summary
       label: 'Summary'
-      selector: /attributes/summary
+      selector: attributes/summary
     -
       name: body
       label: 'Body'
-      selector: /attributes/description
+      selector: attributes/description
     -
       name: field_byline
       label: 'Field Byline'
-      selector: /attributes/field_byline
+      selector: attributes/field_byline
     -
       name: field_media_source
       label: 'Field Media Source'
-      selector: /attributes/field_media_source
+      selector: attributes/field_media_source
     -
       name: field_dateline
       label: 'Field dateline'
-      selector: /attributes/field_dateline
+      selector: attributes/field_dateline
     -
       name: field_card_label
       label: 'Field Card Label'
-      selector: /attributes/field_card_label
+      selector: attributes/field_card_label
     -
       name: field_departments_programs
       label: 'Departments and Programs'
-      selector: /attributes/field_departments_programs
+      selector: attributes/field_departments_programs
     -
       name: field_related_articles
       label: 'Related Articles'
-      selector: /attributes/field_related_articles
+      selector: attributes/field_related_articles
     -
       name: field_related_people
       label: 'Related People'
-      selector: /attributes/field_related_people_label
+      selector: attributes/field_related_people_label
     -
       name: field_discipline
       label: 'Disciplines'
-      selector: /attributes/field_topic
+      selector: attributes/field_topic
 
 
 
@@ -106,10 +106,6 @@ process:
   field_summary: field_summary
   field_dateline: field_dateline
   field_card_label: field_card_label
-  'field_image/target_id':
-    plugin: migration
-    migration: import_as_article_image_media
-    source: uuid
   uid:
     plugin: default_value
     default_value: 0

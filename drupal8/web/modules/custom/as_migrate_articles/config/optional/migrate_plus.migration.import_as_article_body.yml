@@ -27,11 +27,11 @@ source:
     -
       name: uuid
       label: 'Uuid'
-      selector: /attributes/uuid
+      selector: attributes/uuid
     -
       name: description
       label: 'Description'
-      selector: /attributes/description
+      selector: attributes/description
 
 process:
   type:
