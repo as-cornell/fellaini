@@ -76,18 +76,6 @@ source:
       label: 'Departments and Programs'
       selector: /attributes/field_departments_programs
     -
-      name: field_image_url
-      label: 'Image URL'
-      selector: /attributes/field_image/src
-    -
-      name: field_image_uri
-      label: 'Image URI'
-      selector: /attributes/field_image_uri
-    -
-      name: field_image_alt
-      label: 'Image Alt tag'
-      selector: /attributes/field_image/alt
-    -
       name: field_related_articles
       label: 'Related Articles'
       selector: /attributes/field_related_articles
@@ -112,20 +100,6 @@ process:
   changed: changed
   path: path
   field_summary: field_summary
-  field_article_components_entity:
-    plugin: migration_lookup
-    migration: import_as_article_body
-    source: uuid
-  field_department_program:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_departments_programs
-    -
-      plugin: explode
-      delimiter: '+'
-  field_byline_reference: field_byline
-  field_media_source_reference: field_media_source
   field_dateline: field_dateline
   field_card_label: field_card_label
   'field_image/target_id':
