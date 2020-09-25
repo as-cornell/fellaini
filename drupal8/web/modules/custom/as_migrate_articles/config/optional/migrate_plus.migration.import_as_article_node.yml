@@ -107,7 +107,6 @@ process:
   type:
     plugin: default_value
     default_value: article
-  uuid: uuid
   title: title
   created: created
   changed: changed
