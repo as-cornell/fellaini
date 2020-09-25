@@ -88,9 +88,15 @@ header {
     flex-direction: row;
     padding: 4rem 1rem 2rem 1rem;
   }
-  //large screen
-  @include xl() {
-    padding: 6rem 1rem 5rem 1rem;
+}
+
+//page type specific header styles
+body.landing_page {
+  header {
+    //large screen
+    @include xl() {
+      padding: 6rem 1rem 5rem 1rem;
+    }
   }
 }
 
