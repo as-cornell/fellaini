@@ -28,14 +28,6 @@ source:
       label: 'Uuid'
       selector: /attributes/uuid
     -
-      name: nid
-      label: 'Nid'
-      selector: /attributes/nid
-    -
-      name: vid
-      label: 'Vid'
-      selector: /attributes/vid
-    -
       name: title
       label: 'Title'
       selector: /attributes/title
