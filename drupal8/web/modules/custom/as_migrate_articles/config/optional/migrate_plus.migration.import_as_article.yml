@@ -139,12 +139,14 @@ process:
     source: field_byline
     entity_type: taxonomy_term
     value_key: name
+    bundle_key: vid
     bundle: article_bylines
   field_media_source_reference:
     plugin: entity_generate
     source: field_media_source
     entity_type: taxonomy_term
     value_key: name
+    bundle_key: vid
     bundle: article_mediasources
   field_dateline: field_dateline
   field_card_label: field_card_label
