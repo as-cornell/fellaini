@@ -172,14 +172,6 @@ process:
     -
       plugin: explode
       delimiter: '+'
-  field_related_disciplines:
-      plugin: static_map
-      source: field_discipline
-      map:
-        '1891': 61579
-        '1901': 61580
-        '1911': 61581
-        '1896': 61580
   'field_image/target_id':
     plugin: migration
     migration: import_as_article_image_media
