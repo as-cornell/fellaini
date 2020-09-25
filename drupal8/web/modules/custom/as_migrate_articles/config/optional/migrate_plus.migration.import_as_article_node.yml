@@ -28,6 +28,10 @@ source:
       label: 'Uuid'
       selector: /attributes/uuid
     -
+      name: nid
+      label: 'nid'
+      selector: /attributes/nid
+    -
       name: title
       label: 'Title'
       selector: /attributes/title
@@ -108,4 +112,4 @@ process:
     source: uuid
   uid:
     plugin: default_value
-    default_value: 1
+    default_value: 0
