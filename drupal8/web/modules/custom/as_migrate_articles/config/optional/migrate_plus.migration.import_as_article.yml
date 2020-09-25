@@ -126,17 +126,10 @@ process:
   changed: changed
   path: path
   field_summary: field_summary
-  pseudo_field_article_components_entity:
+  field_article_components_entity:
     plugin: migration_lookup
     migration: import_as_article_body
     source: nid
-  field_article_components_entity:
-    plugin: sub_process
-    source:
-    - '@pseudo_field_article_components_entity'
-    process:
-      target_id: '0'
-      target_revision_id: '1'
   field_department_program:
     -
       plugin: skip_on_empty
