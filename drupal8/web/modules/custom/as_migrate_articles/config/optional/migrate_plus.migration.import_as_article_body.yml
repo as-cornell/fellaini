@@ -18,16 +18,16 @@ source:
   urls: http://as.cornell.edu/articles-asd8-json-depts
 
   ids:
-    nid:
-      type: integer
+    uuid:
+      type: string
 
   item_selector: data/
 
   fields:
     -
-      name: nid
-      label: 'Nid'
-      selector: /attributes/nid
+      name: uuid
+      label: 'Uuid'
+      selector: /attributes/uuid
     -
       name: description
       label: 'Description'
@@ -37,7 +37,6 @@ process:
   type:
     plugin: default_value
     default_value: formatted_text_block
-  nid: nid
   name:
     plugin: default_value
     default_value: 'Imported Article Body'

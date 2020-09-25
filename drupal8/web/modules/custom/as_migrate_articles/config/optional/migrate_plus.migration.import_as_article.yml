@@ -17,12 +17,16 @@ source:
   urls: https://as.cornell.edu/articles-asd8-json-depts
 
   ids:
-    nid:
-      type: integer
+    uuid:
+      type: string
 
   item_selector: data/
 
   fields:
+    -
+      name: uuid
+      label: 'Uuid'
+      selector: /attributes/uuid
     -
       name: nid
       label: 'Nid'
@@ -31,10 +35,6 @@ source:
       name: vid
       label: 'Vid'
       selector: /attributes/vid
-    -
-      name: uuid
-      label: 'Uuid'
-      selector: /attributes/uuid
     -
       name: title
       label: 'Title'
@@ -84,10 +84,6 @@ source:
       label: 'Departments and Programs'
       selector: /attributes/field_departments_programs
     -
-      name: field_topic
-      label: 'Topics and Disciplines'
-      selector: /attributes/field_topic
-    -
       name: field_image_url
       label: 'Image URL'
       selector: /attributes/field_image/src
@@ -119,7 +115,6 @@ process:
   type:
     plugin: default_value
     default_value: article
-  nid: nid
   uuid: uuid
   title: title
   created: created
@@ -129,7 +124,7 @@ process:
   field_article_components_entity:
     plugin: migration_lookup
     migration: import_as_article_body
-    source: nid
+    source: uuid
   field_department_program:
     -
       plugin: skip_on_empty
@@ -175,7 +170,7 @@ process:
   'field_image/target_id':
     plugin: migration
     migration: import_as_article_image_media
-    source: nid
+    source: uuid
   uid:
     plugin: default_value
     default_value: 1

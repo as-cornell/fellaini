@@ -14,16 +14,16 @@ source:
   urls: http://as.cornell.edu/articles-asd8-json-depts
 
   ids:
-    id:
-      type: integer
+    uuid:
+      type: string
 
   item_selector: data/
 
   fields:
     -
-      name: id
-      label: 'id'
-      selector: /attributes/nid
+      name: uuid
+      label: 'uuid'
+      selector: /attributes/uuid
     -
       name: uri
       label: 'Uri'
