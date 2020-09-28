@@ -143,7 +143,6 @@ process:
     plugin: entity_generate
       entity_type: taxonomy_term
       value_key: name
-      bundle_key: type
       bundle: article_bylines
   field_related_articles:
     -
