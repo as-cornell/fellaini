@@ -137,18 +137,8 @@ process:
       plugin: explode
       source: field_departments_programs
       delimiter: +
-  field_byline_reference:
-    plugin: entity_generate
-    source: field_byline
-    entity_type: taxonomy_term
-    value_key: name
-    bundle: article_bylines
-  field_media_source_reference:
-    plugin: entity_generate
-    source: field_media_source
-    entity_type: taxonomy_term
-    value_key: name
-    bundle: article_mediasources
+  field_byline_reference: field_byline
+  field_media_source_reference: field_media_source
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_related_articles:
