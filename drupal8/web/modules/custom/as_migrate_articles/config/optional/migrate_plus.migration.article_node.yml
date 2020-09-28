@@ -143,6 +143,7 @@ process:
     plugin: entity_generate
     entity_type: taxonomy_term
     bundle: article_bylines
+    value_key: name
   field_related_articles:
     -
       plugin: skip_on_empty
@@ -167,14 +168,6 @@ process:
       entity_type: page_component_entity
       bundle: person
       value_key: name
-  psuedo_discipline:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_discipline
-    -
-      plugin: explode
-      delimiter: '+'
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
