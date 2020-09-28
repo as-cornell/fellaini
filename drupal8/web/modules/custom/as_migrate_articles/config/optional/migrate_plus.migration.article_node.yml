@@ -143,7 +143,6 @@ process:
     plugin: sub_process
     source: field_byline
     process:
-      target_id:
       plugin: entity_generate
       source: value
       value_key: name
