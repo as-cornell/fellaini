@@ -168,6 +168,32 @@ process:
       entity_type: page_component_entity
       bundle: person
       value_key: name
+    psuedo_discipline:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_discipline
+    -
+      plugin: explode
+      delimiter: '+'
+  field_related_disciplines:
+      plugin: static_map
+      source:
+      - '@psuedo_discipline'
+      map:
+        '1891': 61579
+        '1901': 61580
+        '1911': 61581
+        '1896': 61580
+  field_related_functions:
+      plugin: static_map
+      source:
+      - '@psuedo_discipline'
+      map:
+        '1776': 61590 # Alumni Stories to Alumni News
+        '1796': 61584 # Career Development Stories to Career Development
+        '1726': 61585 # Research, Scholarship and Creative Works to Research/Creative Works
+        '1721': 61586 # Student News Stories to Undergraduate Student News
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
