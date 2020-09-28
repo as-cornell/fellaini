@@ -1,5 +1,5 @@
 # Migration configuration for imported images.
-id: import_as_article_image
+id: article_image
 label: Migrate images from D7 articles to D8
 migration_group: articles
 migration_dependencies: {}
