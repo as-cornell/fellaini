@@ -11,6 +11,7 @@ Descr: Where all little helper classes that don't go on one specific component c
 }
 .offscreen {
   position: absolute;
+  z-index: -1;
 }
 
 .sr-only {

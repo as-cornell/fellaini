@@ -15,15 +15,7 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
 
 	{% if panoImage %}
-		<div
-			class="pano">{# {% include "@atoms/04-images/figure.twig" with {
-																				        "img_src": pano_img_src,
-																				        "img_alt": pano_img_alt,
-																				        "img_caption" : pano_img_caption,
-																				        "img_credit" : pano_img_credit,
-																				        "figure_modifiers" : ['pano','image']
-																				      } %} #}
-		</div>
+		<div class="pano"></div>
 	{% endif %}
 	{% if not is_front %}
 		<div class="title">
@@ -42,7 +34,12 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 		{{main_content}}
 	</div>
 	{% if sidebarNav != false %}
-		<nav class="siteNav">
+
+
+		<nav class="nav--site">
+			<p class="siteNavOpener">
+				Expand site nav
+			</p>
 			{{ sidebar_nav }}
 		</nav>
 	{% endif %}
