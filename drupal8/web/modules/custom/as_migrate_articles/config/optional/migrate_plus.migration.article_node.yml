@@ -141,9 +141,9 @@ process:
   field_card_label: field_card_label
   field_byline_reference:
     plugin: entity_generate
-      entity_type: taxonomy_term
-      value_key: name
-      bundle: article_bylines
+    entity_type: taxonomy_term
+    value_key: name
+    bundle: article_bylines
   field_related_articles:
     -
       plugin: skip_on_empty
