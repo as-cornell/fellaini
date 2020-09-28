@@ -8,30 +8,30 @@
 // watch sections with class navTarget
 // console.log("observers-activated");
 // const targets = document.querySelectorAll(".navTarget");
-console.log("observers");
+// console.log("observers");
 
-const asideNav = document.querySelector(".asideNavWrapper");
-const sectionOne = document.querySelector(".title");
+// const asideNav = document.querySelector(".asideNavWrapper");
+// const sectionOne = document.querySelector(".title");
 
-const sectionOneOptions = {
-  rootMargin: "100px 0px 0px 0px",
-};
+// const sectionOneOptions = {
+//   rootMargin: "100px 0px 0px 0px",
+// };
 
-const sectionOneObserver = new IntersectionObserver(function (
-  entries,
-  sectionOneObserver
-) {
-  entries.forEach((entry) => {
-    console.log(entry.target);
-    if (!entry.isIntersecting) {
-      asideNav.classList.add("stuck");
-    } else {
-      asideNav.classList.remove("stuck");
-    }
-  });
-},
-sectionOneOptions);
-sectionOneObserver.observe(sectionOne);
+// const sectionOneObserver = new IntersectionObserver(function (
+//   entries,
+//   sectionOneObserver
+// ) {
+//   entries.forEach((entry) => {
+//     console.log(entry.target);
+//     if (!entry.isIntersecting) {
+//       asideNav.classList.add("stuck");
+//     } else {
+//       asideNav.classList.remove("stuck");
+//     }
+//   });
+// },
+// sectionOneOptions);
+// sectionOneObserver.observe(sectionOne);
 
 // // watch sections with class navTarget
 // const targets = document.querySelectorAll(".navTarget");

@@ -10,6 +10,7 @@ global:
 global-scripts:
   js:
     js_min/main-menu.js: {}
+    js_min/site-menu.js: {}
     js_min/forms.js: {}
     js_min/svgxuse.min.js: {}
     js_min/list-filter.js: {}
