@@ -23,23 +23,23 @@ source:
     -
       name: uuid
       label: 'uuid'
-      selector: /attributes/uuid
+      selector: attributes/uuid
     -
       name: title
       label: 'Title'
-      selector: /attributes/title
+      selector: attributes/title
     -
       name: uri
       label: 'Uri'
-      selector: /attributes/field_image_uri
+      selector: attributes/field_image_uri
     -
       name: url
       label: 'Url'
-      selector: /attributes/field_image/src
+      selector: attributes/field_image/src
     -
       name: alt
       label: 'alt tag'
-      selector: /attributes/field_image/alt
+      selector: attributes/field_image/alt
 
 
 destination:
@@ -55,6 +55,6 @@ process:
     default_value: 1
   'field_media_image/target_id':
     plugin: migration
-    migration: import_as_article_image
+    migration: article_image
     source: uuid
   'field_media_image/alt': alt
