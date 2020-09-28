@@ -136,9 +136,7 @@ process:
     -
       plugin: explode
       source: field_departments_programs
-      delimiter: +
-  field_byline_reference: field_byline
-  field_media_source_reference: field_media_source
+      delimiter: '+'
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_related_articles:
