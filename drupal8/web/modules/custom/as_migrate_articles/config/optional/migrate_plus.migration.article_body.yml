@@ -1,5 +1,5 @@
 # Migration configuration for imported images.
-id: import_as_article_body
+id: article_body
 label: Import article bodies into page component entities
 migration_group: articles
 migration_dependencies: {}
