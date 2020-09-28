@@ -149,7 +149,6 @@ process:
       bundle_key: vid
       bundle: article_bylines
       entity_type: taxonomy_term
-      ignore_case: true
   field_related_articles:
     -
       plugin: skip_on_empty
