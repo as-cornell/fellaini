@@ -71,20 +71,33 @@ aside {
   list-style-type: none;
   padding-left: 0;
   flex-direction: column;
+  li {
+    margin-right: 1em;
+  }
+  a {
+  }
+  // medium
   @include medium() {
     flex-direction: row;
     flex-shrink: 0;
   }
+  // .large
   @include large() {
     font-size: var(--base-20);
     flex-direction: column;
-    list-style-type: circle;
-    padding-left: 1em;
-  }
-  li {
-    margin-right: 1em;
-    @include large() {
+    padding-left: 0;
+    li {
       margin-right: 0;
+    }
+    a {
+      color: var(--as-black);
+      padding: 0.25em 1em;
+      &.active {
+        color: var(--as-white);
+        background: var(--storm-radial);
+        display: block;
+        border-radius: var(--border-radius);
+      }
     }
   }
 }

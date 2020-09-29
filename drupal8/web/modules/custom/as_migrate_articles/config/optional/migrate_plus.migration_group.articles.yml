@@ -4,6 +4,6 @@ dependencies: {  }
 id: articles
 label: Articles
 description: 'Migrate Articles content from Drupal 7 to Drupal 8'
-source_type: 'Drupal 7'
+source_type: 'JSON from Drupal 7 views export'
 module: null
 shared_configuration: null

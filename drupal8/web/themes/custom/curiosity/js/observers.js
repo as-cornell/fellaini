@@ -5,6 +5,36 @@
   - if section intersecting, change class on the nav item
 */
 
+// // watch sections with class navTarget
+// const targets = document.querySelectorAll(".pcWrapper--page-section");
+
+// // set navOptions
+// const navOptions = {
+//   threshold: 0.55,
+// };
+
+// const navObserver = new IntersectionObserver((entries, navObserver) => {
+//   entries.forEach((entry) => {
+//     if (!entry.isIntersecting) {
+//       return;
+//     } else {
+//       console.log(entry);
+//       // remove old active class
+//       document.querySelector(".active").classList.remove("active");
+//       // get id of the intersecting section
+//       var id = entry.target.getAttribute("id");
+//       // find matching link & add appropriate class
+//       var newLink = document
+//         .querySelector(`[href="#${id}"]`)
+//         .classList.add("active");
+//     }
+//   });
+// }, navOptions);
+
+// targets.forEach((target) => {
+//   navObserver.observe(target);
+// });
+
 // watch sections with class navTarget
 // console.log("observers-activated");
 // const targets = document.querySelectorAll(".navTarget");
