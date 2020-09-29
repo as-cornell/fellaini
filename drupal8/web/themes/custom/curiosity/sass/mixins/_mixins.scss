@@ -6,6 +6,9 @@
 @mixin base12GridColumns() {
   grid-template-columns: repeat(12, calc(8.59% - 2rem));
 }
+@mixin base24GridColumns() {
+  grid-template-columns: repeat(24, calc(4.3% - 2rem));
+}
 
 // Fonts
 @mixin baseFont(

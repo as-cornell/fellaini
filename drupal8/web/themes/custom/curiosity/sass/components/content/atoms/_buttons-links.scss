@@ -35,8 +35,13 @@ Descr:
 //     }
 //   }
 // }
-// icon buttons
-.iconButton {
+
+.icon {
+  background: none;
+  border: none;
+}
+
+.icon--button {
   svg {
     width: 1rem;
   }

@@ -8,27 +8,64 @@ Still needs: expand toggle for showing sidebar nav on mobile
 --------------------------- */
 
 ul[class^="nav"] {
+  line-height: 1.75em;
+
   font-size: var(--base-20);
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 0;
+
+  // all uls in sidebar
+  height: 0;
+  overflow: hidden;
+  &.expanded {
+    height: auto;
+  }
+  @include medium() {
+    height: auto;
+  }
+
   a {
     position: relative;
-    padding-left: 0.5rem;
+    // padding-left: 0.5rem;
     display: block;
+    color: var(--dark-text);
     &:before {
       position: absolute;
       content: "";
       height: 100%;
-      width: 1px;
-      left: 0;
+      width: 3px;
+      left: -15px;
       top: 0;
       background: var(--gray-lt);
     }
   }
-  li[class$="active-trail"] {
+  li[class*="active-trail"] {
     > a {
-      color: red;
+      color: var(--as-black);
+      &:before {
+        background: var(--as-red);
+      }
+    }
+  }
+
+  .with-sub {
+    display: grid;
+    grid-template-columns: 1fr 2rem;
+    > a {
+      grid-column: 1 / 1;
+    }
+    > button {
+      grid-column: 2 / -1;
+    }
+    > ul {
+      grid-column: 1 / -1;
+    }
+    @include medium() {
+      display: auto;
+      > button {
+        display: none;
+      }
     }
   }
 }
@@ -36,57 +73,89 @@ ul[class^="nav"] {
 .nav {
   &__root {
     position: inherit;
-    padding-left: 0.5rem;
+    // padding-left: 0.5rem;
     > a {
       font-size: var(--base-24);
       color: var(--as-black);
+      font-weight: var(--semi);
+      &:before {
+        display: none;
+      }
     }
   }
-
-  .nav-1__item {
-    > a {
-      margin-left: 0.5rem;
-      &:before {
-        background-color: var(--as-green);
-      }
-      &:hover {
-        &:before {
-          background: pink;
+  .nav-1 {
+    border-left: 1px solid var(--storm);
+    padding-left: 0.75em;
+    &__item {
+      &[class*="active-trail"] {
+        > a {
+          font-weight: var(--semi);
         }
       }
-    }
-    .active {
-      color: green;
-    }
-  }
-
-  .nav-2__item {
-    > a {
-      margin-left: 0.75rem;
-      &:before {
-        background-color: var(--gold);
-      }
-      &:hover {
+      > a {
+        // margin-left: 0.5rem;
         &:before {
-          background: pink;
+          background-color: transparent;
         }
+        &:hover {
+          &:before {
+            background: var(--as-teal);
+          }
+        }
+      }
+      .active {
+        color: green;
       }
     }
   }
 
-  .nav-3__item {
-    > a {
-      margin-left: 1rem;
-      &:before {
-        background-color: var(--teal);
-      }
-      &:hover {
+  .nav-2 {
+    border-left: 1px solid var(--fog);
+    padding-left: 0.75em;
+    margin-top: 0.5em;
+    &__item {
+      > a {
+        // margin-left: 0.75rem;
         &:before {
-          background: pink;
+          background-color: transparent;
+        }
+        &:hover {
+          &:before {
+            background: var(--as-teal);
+          }
         }
       }
     }
   }
+
+  .nav-3 {
+    &__item {
+      > a {
+        margin-left: 1rem;
+        &:before {
+          background-color: var(--teal);
+        }
+        &:hover {
+          &:before {
+            background: pink;
+          }
+        }
+      }
+    }
+  }
+  // .nav-3__item {
+  //   > a {
+  //     margin-left: 1rem;
+  //     &:before {
+  //       background-color: var(--teal);
+  //     }
+  //     &:hover {
+  //       &:before {
+  //         background: pink;
+  //       }
+  //     }
+  //   }
+  // }
   // base withSubNav
   .withSubNav {
     position: relative;

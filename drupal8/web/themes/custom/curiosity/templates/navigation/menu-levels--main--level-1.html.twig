@@ -16,7 +16,7 @@
 			{% set menu_item_classes = [
       listClass ~ '__item',
       item.in_active_trail ? listClass ~ '__item--active-trail',
-      item.content.children ? listClass ~ '__item--with-nav-2',
+      item.content.children ? listClass ~ '__item--with-nav-2 with-sub',
     ] %}
 
 			<li{{item.attributes.addClass(menu_item_classes)}}>
