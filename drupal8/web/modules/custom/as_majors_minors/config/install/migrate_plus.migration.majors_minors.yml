@@ -48,6 +48,10 @@ source:
       name: field_classes
       label: 'Classes'
       selector: node/classes
+    -
+      name: field_discipline
+      label: 'Disciplines'
+      selector: node/disciplines
 
 
 destination:
@@ -103,7 +107,6 @@ process:
       map:
         '1891': 61579
         '1901': 61580
-        '1906': 61582
         '1911': 61581
         '1896': 61580
   'field_image/target_id':
