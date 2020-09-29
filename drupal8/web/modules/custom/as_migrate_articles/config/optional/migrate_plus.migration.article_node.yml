@@ -150,17 +150,6 @@ process:
       entity_type: taxonomy_term
       bundle: article_bylines
       property: name
-  field_related_articles:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_related_articles
-    -
-      plugin: explode
-      delimiter: '+'
-    -
-      plugin: migration_lookup
-      migration: import_as_article
   field_related_people:
     -
       plugin: skip_on_empty
