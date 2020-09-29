@@ -168,10 +168,10 @@ process:
     -
       plugin: static_map
       map:
-        '1891': 61579
-        '1901': 61580
-        '1911': 61581
-        '1896': 61580
+        1891: 61579
+        1901: 61580
+        1911: 61581
+        1896: 61580
       bypass: TRUE
   'field_image/target_id':
     plugin: migration
