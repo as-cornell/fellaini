@@ -182,11 +182,12 @@ process:
       plugin: explode
       delimiter: '+'
     -
+      plugin: static_map
       map:
-        '1776': 61590 # Alumni Stories to Alumni News
-        '1796': 61584 # Career Development Stories to Career Development
-        '1726': 61585 # Research, Scholarship and Creative Works to Research/Creative Works
-        '1721': 61586 # Student News Stories to Undergraduate Student News
+        '1776': 61590
+        '1796': 61584
+        '1726': 61585
+        '1721': 61586
       bypass: TRUE
   'field_image/target_id':
     plugin: migration
