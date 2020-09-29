@@ -40,5 +40,8 @@ process:
   vid:
     plugin: default_value
     default_value: article_bylines
-  name: field_byline
+  name:
+    plugin: callback
+    callable: trim
+    source: field_byline
   field_byline_person_title: field_byline_person_title
