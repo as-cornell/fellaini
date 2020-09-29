@@ -139,8 +139,12 @@ process:
       delimiter: '+'
   field_dateline: field_dateline
   field_card_label: field_card_label
-  field_byline_reference: field_byline
-  field_media_source_reference: field_media_source
+  field_byline_reference:
+    plugin: entity_lookup
+    source: field_byline
+  field_media_source_reference:
+    plugin: entity_lookup
+    source: field_media_source
   field_related_people:
     -
       plugin: skip_on_empty
