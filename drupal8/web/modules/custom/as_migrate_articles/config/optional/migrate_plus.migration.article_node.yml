@@ -140,11 +140,16 @@ process:
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_byline_reference:
-    plugin: entity_generate
-    source: field_byline
-    entity_type: taxonomy_term
-    bundle: article_bylines
-    property: name
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_departments_programs
+    -
+      plugin: entity_generate
+      source: field_byline
+      entity_type: taxonomy_term
+      bundle: article_bylines
+      property: name
   field_related_articles:
     -
       plugin: skip_on_empty
