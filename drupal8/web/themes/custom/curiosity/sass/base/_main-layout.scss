@@ -18,6 +18,9 @@ Descr:
   @include medium {
     @include base12GridColumns();
   }
+  @include large {
+    @include base24GridColumns();
+  }
 }
 
 // Basic
@@ -31,7 +34,7 @@ Descr:
 // Basic sidebar
 .basicSidebar {
   grid-template-rows: auto auto 1fr;
-  .siteNav {
+  .nav--site {
     grid-area: nav;
   }
   .title {
@@ -44,11 +47,15 @@ Descr:
     grid-area: content;
   }
   aside {
-    display: none;
+    // display: none;
     @include medium() {
-      display: block;
+      grid-area: aside;
+      // display: block;
     }
-    grid-area: aside;
+    // @include large() {
+    //   grid-area: aside;
+    // }
+
     .page_component_entity {
       display: none;
       @include large() {
@@ -61,12 +68,12 @@ Descr:
     "title"
     "content"
     "sidebar";
-  @include medium {
-    grid-template-areas:
-      "nav nav nav nav title title title title title title title title"
-      "nav nav nav nav content content content content content content content content"
-      "sidebar sidebar sidebar sidebar content content content content content content content content";
-  }
+  // @include medium {
+  //   grid-template-areas:
+  //     "nav nav nav nav title title title title title title title title"
+  //     "nav nav nav nav content content content content content content content content"
+  //     "sidebar sidebar sidebar sidebar content content content content content content content content";
+  // }
   &--has-aside {
     @include medium {
       grid-template-areas:
@@ -77,9 +84,9 @@ Descr:
     }
     @include large {
       grid-template-areas:
-        "nav nav nav title title title title title title title . ."
-        "nav nav nav content content content content content content content aside aside"
-        "sidebar sidebar sidebar content content content content content content content aside aside";
+        ". . . . . title title title title title title title title title title title title title title title . . . ."
+        "nav nav nav nav nav content content content content content content content content content content content content content content content aside aside aside aside"
+        "sidebar sidebar sidebar sidebar sidebar content content content content content content content content content content content content content content content aside aside aside aside";
     }
   }
 }
@@ -109,56 +116,56 @@ Descr:
 
 --------------------------- */
 
-.container {
-  grid-column: 2;
-  display: grid;
-  align-items: flex-start;
-  align-content: flex-start;
+// .container {
+//   grid-column: 2;
+//   display: grid;
+//   align-items: flex-start;
+//   align-content: flex-start;
 
-  &--has-aside {
-    @include large {
-      grid-gap: 2rem;
-      grid-template-columns: 1fr minmax(200px, 300px);
-      grid-template-areas:
-        "title title"
-        "components aside";
-      .title {
-        grid-area: title;
-      }
-      .components {
-        grid-area: components;
-      }
-      aside {
-        grid-area: aside;
-      }
-    }
-  }
+//   &--has-aside {
+//     @include large {
+//       grid-gap: 2rem;
+//       grid-template-columns: 1fr minmax(200px, 300px);
+//       grid-template-areas:
+//         "title title"
+//         "components aside";
+//       .title {
+//         grid-area: title;
+//       }
+//       .components {
+//         grid-area: components;
+//       }
+//       aside {
+//         grid-area: aside;
+//       }
+//     }
+//   }
 
-  &--has-sidebar {
-    .toc-menu,
-    .sidebar-nav {
-      grid-area: menu;
-    }
-    .sidebar {
-      grid-area: sidebar;
-    }
-    main {
-      grid-area: main;
-    }
-    @include medium {
-    }
-    @include xxl {
-      grid-gap: calc(3 * var(--space));
-      grid-row-gap: var(--space);
-    }
-  }
-}
+//   &--has-sidebar {
+//     .toc-menu,
+//     .sidebar-nav {
+//       grid-area: menu;
+//     }
+//     .sidebar {
+//       grid-area: sidebar;
+//     }
+//     main {
+//       grid-area: main;
+//     }
+//     @include medium {
+//     }
+//     @include xxl {
+//       grid-gap: calc(3 * var(--space));
+//       grid-row-gap: var(--space);
+//     }
+//   }
+// }
 
 // sections of a basic page
-.page-title {
-  grid-area: page-title;
-  display: block;
-}
-.main-content {
-  grid-area: content;
-}
+// .page-title {
+//   grid-area: page-title;
+//   display: block;
+// }
+// .main-content {
+//   grid-area: content;
+// }

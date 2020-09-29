@@ -1,0 +1,200 @@
+# Migration configuration for imported articles.
+id: article_node
+label: Migrate A&S articles from Drupal 7 to Drupal 8
+migration_group: articles
+migration_dependencies: {}
+
+destination:
+  plugin: entity:node
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  constants:
+    source_base_path: 'https://as.cornell.edu'
+
+  urls: https://as.cornell.edu/articles-asd8-json-depts
+
+  ids:
+    uuid:
+      type: string
+
+  item_selector: data/
+
+  fields:
+    -
+      name: nid
+      label: 'Nid'
+      selector: /attributes/nid
+    -
+      name: vid
+      label: 'Vid'
+      selector: /attributes/vid
+    -
+      name: uuid
+      label: 'Uuid'
+      selector: /attributes/uuid
+    -
+      name: title
+      label: 'Title'
+      selector: /attributes/title
+    -
+      name: created
+      label: 'Created'
+      selector: /attributes/created
+    -
+      name: changed
+      label: 'Changed'
+      selector: /attributes/changed
+    -
+      name: status
+      label: 'Status'
+      selector: /attributes/status
+    -
+      name: path
+      label: 'Path'
+      selector: /attributes/path
+    -
+      name: summary
+      label: 'Summary'
+      selector: /attributes/summary
+    -
+      name: body
+      label: 'Body'
+      selector: /attributes/description
+    -
+      name: field_byline
+      label: 'Field Byline'
+      selector: /attributes/field_byline
+    -
+      name: field_media_source
+      label: 'Field Media Source'
+      selector: /attributes/field_media_source
+    -
+      name: field_dateline
+      label: 'Field dateline'
+      selector: /attributes/field_dateline
+    -
+      name: field_card_label
+      label: 'Field Card Label'
+      selector: /attributes/field_card_label
+    -
+      name: field_departments_programs
+      label: 'Departments and Programs'
+      selector: /attributes/field_departments_programs
+    -
+      name: field_topic
+      label: 'Topics and Disciplines'
+      selector: /attributes/field_topic
+    -
+      name: field_image_url
+      label: 'Image URL'
+      selector: /attributes/field_image/src
+    -
+      name: field_image_uri
+      label: 'Image URI'
+      selector: /attributes/field_image_uri
+    -
+      name: field_image_alt
+      label: 'Image Alt tag'
+      selector: /attributes/field_image/alt
+    -
+      name: field_related_articles
+      label: 'Related Articles'
+      selector: /attributes/field_related_articles
+    -
+      name: field_related_people
+      label: 'Related People'
+      selector: /attributes/field_related_people_label
+    -
+      name: field_discipline
+      label: 'Disciplines'
+      selector: /attributes/field_topic
+
+
+
+
+process:
+  type:
+    plugin: default_value
+    default_value: article
+  title: title
+  created: created
+  changed: changed
+  path: path
+  field_summary: field_summary
+  field_article_components_entity:
+    plugin: migration_lookup
+    migration: article_body
+    source: uuid
+  field_department_program:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_departments_programs
+    -
+      plugin: explode
+      source: field_departments_programs
+      delimiter: '+'
+  field_dateline: field_dateline
+  field_card_label: field_card_label
+  field_byline_reference:
+    plugin: sub_process
+    source: field_byline
+    process:
+      target_id:
+      plugin: entity_generate
+      source: value
+      value_key: name
+      bundle_key: vid
+      bundle: article_bylines
+      entity_type: taxonomy_term
+      ignore_case: true
+  field_related_articles:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_related_articles
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: migration_lookup
+      migration: import_as_article
+  field_related_people:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_related_people
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: entity_lookup
+      entity_type: page_component_entity
+      bundle: person
+      value_key: name
+  field_related_disciplines:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_discipline
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: static_map
+      source: field_discipline
+      map:
+        '1891': 61579
+        '1901': 61580
+        '1911': 61581
+        '1896': 61580
+  'field_image/target_id':
+    plugin: migration
+    migration: article_image_media
+    source: uuid
+  uid:
+    plugin: default_value
+    default_value: 1

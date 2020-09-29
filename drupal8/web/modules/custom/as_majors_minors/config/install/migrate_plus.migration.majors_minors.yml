@@ -94,7 +94,7 @@ process:
       value_key: name
       bundle_key: vid
       bundle: level
-  field_discipline:
+  'field_discipline/tid':
     -
       plugin: skip_on_empty
       method: process

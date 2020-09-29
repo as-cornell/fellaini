@@ -20,7 +20,8 @@ regions:
 
 # CKEditor stylesheet loads in wysiwyg to give content editors a better experience
 ckeditor_stylesheets:
-  - dist/style.css
+  - https://use.typekit.net/dsj5vco.css
+  - css/style.css
 
 #component libraries - it's a module thing
 component-libraries:

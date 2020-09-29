@@ -37,7 +37,8 @@
 					<link rel="stylesheet" href="https://use.typekit.net/dsj5vco.css">
 
 				</head>
-				<body{{attributes}}>
+				<body{{attributes.addClass(node_type)}}>
+					{# {{vardumper()}} #}
 					<span class="offscreen" aria-hidden="true">
 						{% include "@images/sprite.svg" %}
 					</span>
@@ -48,20 +49,20 @@
 				</html>
 
 				{# 
-								<!DOCTYPE html>
-								<html{{html_attributes}}>
-								    <head>
-								        <head-placeholder token="{{ placeholder_token|raw }}">
-								        <title>{{ head_title|safe_join(' | ') }}</title>
-								        <css-placeholder token="{{ placeholder_token|raw }}">
-								        <js-placeholder token="{{ placeholder_token|raw }}">
-								        <link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
-								    </head>
-								    <body{{attributes}}>
-								        <span class="hidden" aria-hidden="true">{% include "@dist-images/sprite/sprite.svg" %}</span>
-								        {{ page_top }}
-								        {{ page }}
-								        {{ page_bottom }}
-								        <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-								    </body>
-								</html> #}
+																				<!DOCTYPE html>
+																				<html{{html_attributes}}>
+																				    <head>
+																				        <head-placeholder token="{{ placeholder_token|raw }}">
+																				        <title>{{ head_title|safe_join(' | ') }}</title>
+																				        <css-placeholder token="{{ placeholder_token|raw }}">
+																				        <js-placeholder token="{{ placeholder_token|raw }}">
+																				        <link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
+																				    </head>
+																				    <body{{attributes}}>
+																				        <span class="hidden" aria-hidden="true">{% include "@dist-images/sprite/sprite.svg" %}</span>
+																				        {{ page_top }}
+																				        {{ page }}
+																				        {{ page_bottom }}
+																				        <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+																				    </body>
+																				</html> #}
