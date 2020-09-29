@@ -41,8 +41,7 @@ process:
     plugin: default_value
     default_value: article_bylines
   name:
-        -
-      plugin: callback
-      callable: '\Drupal\Component\Utility\Unicode'
-      source: field_byline
+    plugin: callback
+    callable: '\Drupal\Component\Utility\Unicode'
+    source: field_byline
   field_byline_person_title: field_byline_person_title
