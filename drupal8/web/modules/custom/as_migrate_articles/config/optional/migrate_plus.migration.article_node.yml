@@ -136,8 +136,6 @@ process:
     -
       plugin: explode
       delimiter: '+'
-    -
-      plugin: entity_lookup
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_byline_reference:
@@ -159,6 +157,21 @@ process:
       entity_type: page_component_entity
       bundle: person
       value_key: name
+  'field_related_disciplines/tid':
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_topic
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: static_map
+      map:
+        '1891': 61579
+        '1901': 61580
+        '1911': 61581
+        '1896': 61580
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
