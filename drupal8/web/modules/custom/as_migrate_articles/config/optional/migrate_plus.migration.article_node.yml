@@ -108,7 +108,7 @@ source:
       label: 'Related People'
       selector: /attributes/field_related_people_label
     -
-      name: field_discipline
+      name: field_topic
       label: 'Disciplines'
       selector: /attributes/field_topic
 
@@ -142,8 +142,9 @@ process:
   field_byline_reference:
     plugin: entity_generate
     source: field_byline
-    bundle: article_bylines
     entity_type: taxonomy_term
+    bundle: article_bylines
+    property: name
   field_related_articles:
     -
       plugin: skip_on_empty
@@ -172,13 +173,12 @@ process:
     -
       plugin: skip_on_empty
       method: process
-      source: field_discipline
+      source: field_topic
     -
       plugin: explode
       delimiter: '+'
     -
       plugin: static_map
-      source: field_discipline
       map:
         '1891': 61579
         '1901': 61580
