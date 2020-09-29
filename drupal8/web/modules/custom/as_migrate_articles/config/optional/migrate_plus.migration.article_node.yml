@@ -142,6 +142,8 @@ process:
   field_byline_reference:
     plugin: entity_generate
     source: field_byline
+    bundle: article_bylines
+    entity_type: taxonomy_term
   field_related_articles:
     -
       plugin: skip_on_empty
