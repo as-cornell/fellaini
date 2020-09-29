@@ -157,7 +157,7 @@ process:
       entity_type: page_component_entity
       bundle: person
       value_key: name
-  'field_related_disciplines/tid':
+  field_related_disciplines:
     -
       plugin: skip_on_empty
       method: process
@@ -168,10 +168,10 @@ process:
     -
       plugin: static_map
       map:
-        1891: 61579
-        1901: 61580
-        1911: 61581
-        1896: 61580
+        '1891': 61579
+        '1901': 61580
+        '1911': 61581
+        '1896': 61580
       bypass: TRUE
   'field_image/target_id':
     plugin: migration
