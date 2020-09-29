@@ -10,15 +10,17 @@
 
 // watch sections with class navTarget
 const targets = document.querySelectorAll(".pcWrapper--page-section");
-
+console.log(targets);
 // set navOptions
 const navOptions = {
-  threshold: 0.25,
+  threshold: 0,
+  rootMargin: "-200px",
 };
 
 const navObserver = new IntersectionObserver((entries, navObserver) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
+      console.log(entry);
       return;
     } else {
       console.log(entry);
