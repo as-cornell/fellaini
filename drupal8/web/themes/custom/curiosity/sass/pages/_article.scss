@@ -2,8 +2,8 @@
   // grid-template-columns: repeat(12,calc(8.333% - 2rem));
   grid-template-rows: auto auto;
   grid-template-areas:
-    ". title title title title title title thumbnail thumbnail thumbnail thumbnail ."
-    "social content content content content content content content content aside aside aside";
+    ". . title title title title title title title title title title title title title thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail . ."
+    "social social content content content content content content content content content content content content content content content aside aside aside aside aside . .";
   .title {
     grid-area: title;
     align-self: center;
@@ -19,6 +19,9 @@
   }
   aside {
     grid-area: aside;
+    h3 {
+      font-size: var(--base-24);
+    }
   }
   &--pano {
     grid-template-rows: auto auto auto 1fr;

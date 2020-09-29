@@ -81,10 +81,11 @@ aside {
     a {
       color: var(--as-black);
       padding: 0.25em 1em;
+      display: block;
       &.active {
         color: var(--as-white);
         background: var(--storm-radial);
-        display: block;
+
         border-radius: var(--border-radius);
       }
     }
