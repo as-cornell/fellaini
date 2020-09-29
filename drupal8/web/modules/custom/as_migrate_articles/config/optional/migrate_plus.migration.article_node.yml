@@ -150,6 +150,10 @@ process:
       entity_type: taxonomy_term
       bundle: article_bylines
       property: name
+    -
+      plugin: entity_lookup
+      access_check: false
+      ignore_case: true
   field_related_people:
     -
       plugin: skip_on_empty
