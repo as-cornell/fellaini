@@ -108,7 +108,7 @@ source:
       label: 'Related People'
       selector: /attributes/field_related_people_label
     -
-      name: field_discipline
+      name: field_topic
       label: 'Disciplines'
       selector: /attributes/field_topic
 
@@ -140,19 +140,8 @@ process:
   field_dateline: field_dateline
   field_card_label: field_card_label
   field_byline_reference:
-    plugin: entity_generate
-    source: field_byline
-  field_related_articles:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_related_articles
-    -
-      plugin: explode
-      delimiter: '+'
-    -
-      plugin: migration_lookup
-      migration: import_as_article
+      plugin: entity_lookup
+      source: field_byline
   field_related_people:
     -
       plugin: skip_on_empty
@@ -166,22 +155,6 @@ process:
       entity_type: page_component_entity
       bundle: person
       value_key: name
-  field_related_disciplines:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_discipline
-    -
-      plugin: explode
-      delimiter: '+'
-    -
-      plugin: static_map
-      source: field_discipline
-      map:
-        '1891': 61579
-        '1901': 61580
-        '1911': 61581
-        '1896': 61580
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
