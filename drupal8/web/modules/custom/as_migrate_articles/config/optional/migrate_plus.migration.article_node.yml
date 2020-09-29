@@ -142,9 +142,6 @@ process:
   field_byline_reference:
       plugin: entity_lookup
       source: field_byline
-      entity_type: taxonomy_term
-      bundle: article_bylines
-      value_key: name
   field_related_people:
     -
       plugin: skip_on_empty
@@ -158,21 +155,6 @@ process:
       entity_type: page_component_entity
       bundle: person
       value_key: name
-  field_related_disciplines:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_topic
-    -
-      plugin: explode
-      delimiter: '+'
-    -
-      plugin: static_map
-      map:
-        '1891': 61579
-        '1901': 61580
-        '1911': 61581
-        '1896': 61580
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
