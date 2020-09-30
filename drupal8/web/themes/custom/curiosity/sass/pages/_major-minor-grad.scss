@@ -31,6 +31,9 @@ Descr:
   }
   .content {
     grid-area: content;
+    > .pageComponent {
+      margin-bottom: 0;
+    }
   }
   .sidebar {
     grid-area: sidebar;
