@@ -126,7 +126,7 @@ process:
   created: created
   changed: changed
   path: path
-  field_summary: field_summary
+  field_summary: summary
   field_article_components_entity:
     plugin: migration_lookup
     migration: article_body
