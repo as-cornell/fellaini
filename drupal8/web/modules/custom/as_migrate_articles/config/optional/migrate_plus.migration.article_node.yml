@@ -157,7 +157,7 @@ process:
       entity_type: page_component_entity
       bundle: person
       value_key: name
-  'field_related_disciplines/tid':
+  field_related_disciplines:
     -
       plugin: skip_on_empty
       method: process
@@ -172,6 +172,22 @@ process:
         '1901': 61580
         '1911': 61581
         '1896': 61580
+      bypass: TRUE
+  field_related_functions:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_topic
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: static_map
+      map:
+        '1776': 61590
+        '1796': 61584
+        '1726': 61585
+        '1721': 61586
       bypass: TRUE
   'field_image/target_id':
     plugin: migration
