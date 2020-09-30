@@ -10,6 +10,7 @@ Descr:
 --------------------------- */
 
 .major-minor-grad {
+  @include base12GridColumns();
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
     ". title title title title title title title . level level level "

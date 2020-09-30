@@ -45,9 +45,21 @@ Descr: Sets all specific styles for an article card
   &.card--small {
     // grid-template-columns: 180px 1fr;
     border: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+    :before {
+      display: none;
+    }
+    figure {
+      flex: 0 0 30%;
+    }
     .card__copy {
-      padding: 0.5rem 0.5rem 1rem 0;
+      flex: 0 0 60%;
+      // padding: 0.5rem 0.5rem 1rem 0;
       // @include baseGrid($g-gap: 0px);
       // grid-template-columns: 1fr;
       // grid-template-areas:
@@ -57,11 +69,7 @@ Descr: Sets all specific styles for an article card
     .card__title {
       grid-area: title;
       margin: 0;
-      @include baseFont(
-        $size: var(--medium-font-size),
-        $weight: var(--semi),
-        $line-height: 1.4em
-      );
+      font-size: var(--base-20);
     }
     .label,
     .card__byline,

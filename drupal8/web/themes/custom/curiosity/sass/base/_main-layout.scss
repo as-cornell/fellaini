@@ -15,12 +15,12 @@ Descr:
   // row gap 0 circle back
   grid-row-gap: 0;
   padding: 0 1rem;
-  @include medium {
-    @include base12GridColumns();
-  }
-  @include large {
-    @include base24GridColumns();
-  }
+  // @include medium {
+  //   @include base12GridColumns();
+  // }
+  // @include large {
+  //   @include base24GridColumns();
+  // }
 }
 
 // Basic
