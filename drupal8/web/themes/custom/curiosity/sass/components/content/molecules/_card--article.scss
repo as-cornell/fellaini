@@ -59,6 +59,7 @@ Descr: Sets all specific styles for an article card
     }
     .card__copy {
       flex: 0 0 60%;
+      padding: 0;
       // padding: 0.5rem 0.5rem 1rem 0;
       // @include baseGrid($g-gap: 0px);
       // grid-template-columns: 1fr;
