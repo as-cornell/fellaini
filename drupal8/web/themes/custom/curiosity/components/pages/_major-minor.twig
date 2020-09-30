@@ -32,6 +32,12 @@ Descr: defines content and blocks for majors and minors detail pages
 	</div>
 	<div class="sidebar">
 		{{image}}
-		{{sidebar}}
+		{% if show_related_articles %}
+			<h3>
+				Related articles
+			</h3>
+			{{related_articles}}
+		{% endif %}
+
 	</div>
 </main>

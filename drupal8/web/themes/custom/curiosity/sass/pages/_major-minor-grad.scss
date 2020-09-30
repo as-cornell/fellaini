@@ -34,5 +34,8 @@ Descr:
   }
   .sidebar {
     grid-area: sidebar;
+    h3 {
+      font-size: var(--base-24);
+    }
   }
 }
