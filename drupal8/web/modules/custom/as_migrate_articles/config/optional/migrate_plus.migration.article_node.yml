@@ -144,6 +144,19 @@ process:
   field_media_source_reference:
     plugin: entity_lookup
     source: field_media_source
+  field_related_articles:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_related_articles
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: entity_lookup
+      entity_type: node
+      bundle: article
+      value_key: field_legacy_nid
   field_related_people:
     -
       plugin: skip_on_empty
@@ -193,6 +206,7 @@ process:
     plugin: migration
     migration: article_image_media
     source: uuid
+  field_legacy_nid: nid
   uid:
     plugin: default_value
     default_value: 1
