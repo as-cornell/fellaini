@@ -1,0 +1,16 @@
+/* -------------------------
+
+Title: <main> .landingPage .
+Descr: 
+   landingPage specific 
+
+--------------------------- */
+
+.landingPage {
+  > div {
+    grid-column: 1 / -1;
+  }
+  .content > .pageComponent {
+    margin-bottom: var(--bottom-margin);
+  }
+}
