@@ -3,6 +3,12 @@
 Title: <main> layouts.
 Descr: 
     main content is the <main> tag. It is where the main components are. It is a child of the .container.
+  - specific grid layouts on page css's
+  * _article
+  * _basicPage
+  * _landingPage
+  * _major-minor-grad
+  * _view-list
 
 --------------------------- */
 
@@ -12,160 +18,6 @@ Descr:
   margin: 0 auto;
   display: grid;
   grid-gap: 2rem;
-  // row gap 0 circle back
   grid-row-gap: 0;
   padding: 0 1rem;
-  // @include medium {
-  //   @include base12GridColumns();
-  // }
-  // @include large {
-  //   @include base24GridColumns();
-  // }
 }
-
-// Basic
-.basic,
-.landingPage {
-  > div {
-    grid-column: 1 / -1;
-  }
-}
-
-// Basic sidebar
-.basicSidebar {
-  grid-template-rows: auto auto 1fr;
-  .nav--site {
-    grid-area: nav;
-  }
-  .title {
-    grid-area: title;
-  }
-  .sidebar {
-    grid-area: sidebar;
-  }
-  .content {
-    grid-area: content;
-  }
-  aside {
-    // display: none;
-    @include medium() {
-      grid-area: aside;
-      // display: block;
-    }
-    // @include large() {
-    //   grid-area: aside;
-    // }
-
-    .page_component_entity {
-      display: none;
-      @include large() {
-        display: block;
-      }
-    }
-  }
-  grid-template-areas:
-    "nav"
-    "title"
-    "content"
-    "sidebar";
-  // @include medium {
-  //   grid-template-areas:
-  //     "nav nav nav nav title title title title title title title title"
-  //     "nav nav nav nav content content content content content content content content"
-  //     "sidebar sidebar sidebar sidebar content content content content content content content content";
-  // }
-  &--has-aside {
-    @include medium {
-      grid-template-areas:
-        ". . . title title title title title title title . ."
-        "nav nav nav aside aside aside aside aside aside aside aside aside"
-        "nav nav nav content content content content content content content content content"
-        "sidebar sidebar sidebar content content content content content content content content content";
-    }
-    @include large {
-      grid-template-areas:
-        ". . . . . title title title title title title title title title title title title title title title . . . ."
-        "nav nav nav nav nav content content content content content content content content content content content content content content content aside aside aside aside"
-        "sidebar sidebar sidebar sidebar sidebar content content content content content content content content content content content content content content content aside aside aside aside";
-    }
-  }
-}
-
-// Article moved to _article.scss
-
-.page {
-  &--landing-page {
-    @include medium {
-    }
-    @include large {
-    }
-    @include xl {
-    }
-  }
-}
-
-/* -------------------------
-
-Title: container layouts.
-Descr: 
-    this is the container that spans from the <header> to <footer>. It establishes columns for sidebars etc. .mainContent(--modifier) is a child of .container.
-
-    - --has-aside and has--sidebar are the base models. Basic page, and TOC both use them
-
-    -- article and --hasPano are for articles, more complicated grids
-
---------------------------- */
-
-// .container {
-//   grid-column: 2;
-//   display: grid;
-//   align-items: flex-start;
-//   align-content: flex-start;
-
-//   &--has-aside {
-//     @include large {
-//       grid-gap: 2rem;
-//       grid-template-columns: 1fr minmax(200px, 300px);
-//       grid-template-areas:
-//         "title title"
-//         "components aside";
-//       .title {
-//         grid-area: title;
-//       }
-//       .components {
-//         grid-area: components;
-//       }
-//       aside {
-//         grid-area: aside;
-//       }
-//     }
-//   }
-
-//   &--has-sidebar {
-//     .toc-menu,
-//     .sidebar-nav {
-//       grid-area: menu;
-//     }
-//     .sidebar {
-//       grid-area: sidebar;
-//     }
-//     main {
-//       grid-area: main;
-//     }
-//     @include medium {
-//     }
-//     @include xxl {
-//       grid-gap: calc(3 * var(--space));
-//       grid-row-gap: var(--space);
-//     }
-//   }
-// }
-
-// sections of a basic page
-// .page-title {
-//   grid-area: page-title;
-//   display: block;
-// }
-// .main-content {
-//   grid-area: content;
-// }

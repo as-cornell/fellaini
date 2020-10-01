@@ -10,4 +10,4 @@ Curiosity is the default colelge theme for the College of Ars & Sciences at Corn
 
 ## radom dev notes
 
-1. updated menu-link-conent in menu_items_extras to remove divs
+1.

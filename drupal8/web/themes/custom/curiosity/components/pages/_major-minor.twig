@@ -38,5 +38,19 @@ Descr: defines content and blocks for majors and minors detail pages
 			{{related_articles}}
 		{% endif %}
 
+		{% if show_interests %}
+			<h3>
+				Associated interests
+			</h3>
+			{{interests}}
+		{% endif %}
+
+		{% if show_disciplines %}
+			<h3>
+				Related disciplines
+			</h3>
+			{{disciplines}}
+		{% endif %}
+
 	</div>
 </main>
