@@ -60,7 +60,7 @@
 
   // font size
   --base-font-size: 20px;
-  @include large {
+  @include medium {
     --base-font-size: 24px;
   }
 
@@ -74,9 +74,10 @@
   --base-18: 0.75rem;
   --base-20: 0.8333rem;
   --base-24: 1rem;
-  --base-28: 1.166rem;
+  --base-28: 1.2rem;
   --base-36: 1.5rem;
   --base-48: 2rem;
+  --base-56: 2.33rem;
   --base-64: 2.66rem;
 
   --base-84: 2.6rem;
@@ -110,6 +111,17 @@
   --bottom-margin: 2rem;
   @include medium() {
     --bottom-margin: 6rem;
+  }
+
+  // set specific margins usually for containers will collapse at smaller sizes.
+  --margin-3: 2rem;
+  @include medium() {
+    --margin-3: 3rem;
+  }
+
+  --margin-6: 2rem;
+  @include medium() {
+    --margin-6: 6rem;
   }
 
   // ..........
