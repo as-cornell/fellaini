@@ -29,6 +29,7 @@ Descr: sets styles for various pce listBlocks
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: var(--margin-6);
     .listBlock__item {
       flex-basis: calc(25% - 1rem);
     }
@@ -37,10 +38,24 @@ Descr: sets styles for various pce listBlocks
       flex: 0 1 100%;
     }
   }
+  &.four-items {
+    .listBlock__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: var(--margin-3);
+      p {
+        max-width: var(--large);
+      }
+    }
+  }
   &.six-items,
   &.two-items {
     .listBlock__text {
       flex: 0 1 calc(50% - 2rem);
+      h2 {
+        margin-top: 0;
+      }
     }
   }
 
@@ -52,53 +67,13 @@ Descr: sets styles for various pce listBlocks
       }
     }
   }
-
-  // &.grid {
-  //   display: grid;
-  // }
-  // &.grid--one-four {
-  //   grid-template-columns: repeat(12, 1fr);
-  //   gap: 2rem;
-  //   .listBlock__title {
-  //     grid-column: 1 / -1;
-  //   }
-  //   .listBlock__text {
-  //     grid-column: 1 / 7;
-  //   }
-  //   .listBlock__item {
-  //     grid-column: auto / span 3;
-  //   }
-  // }
-  // &.grid--two {
-  //   grid-template-columns: 1fr 1fr;
-  //   gap: 2rem;
-  //   .listBlock__title {
-  //     grid-column: 1 / -1;
-  //   }
-  //   .listBlock__text {
-  //     grid-column: 1 / -1;
-  //   }
-  //   .listBlock__item {
-  //     grid-column: auto / span 1;
-  //   }
-  // }
-  // &.grid--four {
-  //   grid-template-columns: repeat(4, 1fr);
-  //   gap: 2rem;
-  //   .listBlock__title {
-  //     grid-column: 1 / -1;
-  //   }
-  //   .listBlock__text {
-  //     grid-column: 1 / -1;
-  //   }
-  //   .listBlock__item {
-  //     grid-column: auto / span 1;
-  //   }
-  // }
 }
 
 // for items in a 2x layout group
 .pcWrapper--layoutGroup {
+  .pcWrapper--listBlock {
+    margin-top: 0;
+  }
   .pcWrapper--listItems {
     flex-wrap: wrap;
     .card {

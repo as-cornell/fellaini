@@ -1,0 +1,67 @@
+/* -------------------------
+
+Title: <main> .basicSidebar
+Descr: 
+   basicSidebar specific 
+
+--------------------------- */
+
+// Basic sidebar
+.basicSidebar {
+  grid-template-rows: auto auto 1fr;
+  .nav--site {
+    grid-area: nav;
+  }
+  .title {
+    grid-area: title;
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+  .content {
+    grid-area: content;
+  }
+  aside {
+    // display: none;
+    @include medium() {
+      grid-area: aside;
+      // display: block;
+    }
+    // @include large() {
+    //   grid-area: aside;
+    // }
+
+    .page_component_entity {
+      display: none;
+      @include large() {
+        display: block;
+      }
+    }
+  }
+  grid-template-areas:
+    "nav"
+    "title"
+    "content"
+    "sidebar";
+  // @include medium {
+  //   grid-template-areas:
+  //     "nav nav nav nav title title title title title title title title"
+  //     "nav nav nav nav content content content content content content content content"
+  //     "sidebar sidebar sidebar sidebar content content content content content content content content";
+  // }
+  &--has-aside {
+    @include medium {
+      grid-template-areas:
+        ". . . title title title title title title title . ."
+        "nav nav nav aside aside aside aside aside aside aside aside aside"
+        "nav nav nav content content content content content content content content content"
+        "sidebar sidebar sidebar content content content content content content content content content";
+    }
+    @include large {
+      grid-template-areas:
+        ". . . . . title title title title title title title title title title title title title title title . . . ."
+        "nav nav nav nav nav content content content content content content content content content content content content content content content aside aside aside aside"
+        "sidebar sidebar sidebar sidebar sidebar content content content content content content content content content content content content content content content aside aside aside aside";
+    }
+  }
+}

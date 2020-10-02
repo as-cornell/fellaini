@@ -12,7 +12,6 @@ h3,
 h4 {
   font-family: var(--font-sans);
   font-weight: var(--semi);
-  margin: 0 0 1em 0;
 }
 // * + h2 {
 //   background: red;
@@ -28,21 +27,20 @@ h1 {
 }
 
 h2 {
-  font-size: calc(2 * var(--base-font-size));
-  line-height: 1em;
+  @extend .base-56;
+}
+
+// h2 after an eyebrow gets less margin top
+.eyebrow + h2 {
+  margin-top: 0.25em;
 }
 
 h3 {
-  font-size: calc(1.75 * var(--base-font-size));
-  line-height: 1em;
+  @extend .base-48;
 }
 
 h4 {
   font-size: calc(1.5 * var(--base-font-size));
-}
-
-h5,
-h6 {
 }
 
 // Sidebar sizes for component headers
