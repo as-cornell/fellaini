@@ -7,15 +7,27 @@ Descr: Sets grid for columns pce--layout-group.html.twig
 .pcWrapper {
   &--layoutGroup {
     @include medium() {
-      display: grid;
-      grid-gap: var(--grid-gap);
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      justify-content: space-between;
       &.heavyRight {
-        grid-template-columns: 1fr 57%;
+        > div:first-of-type {
+          flex: 0 0 40%;
+        }
+        > div:last-of-type {
+          flex: 0 0 calc(60% - 2rem);
+        }
       }
       &.heavyLeft {
-        grid-template-columns: 57% 1fr;
+        > div:first-of-type {
+          flex: 0 0 calc(60% - 2rem);
+        }
+        > div:last-of-type {
+          flex: 0 0 40%;
+        }
       }
+    }
+    h2:first-of-type {
+      margin-top: 0;
     }
   }
 }
