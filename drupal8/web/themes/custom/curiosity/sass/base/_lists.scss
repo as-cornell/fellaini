@@ -16,3 +16,12 @@ ol {
     max-width: var(--line-width);
   }
 }
+ul.inline {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin-right: 1rem;
+  }
+}

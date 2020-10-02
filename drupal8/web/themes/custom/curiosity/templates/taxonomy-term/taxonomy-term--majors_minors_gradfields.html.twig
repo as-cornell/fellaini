@@ -28,6 +28,26 @@
 {% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
 {% set main_element_modifiers = [''] %}
 
+{# Related articles #}
+{% if content.field_related_articles.0 %}
+	{% set show_related_articles = true %}
+	{% set related_articles = (content.field_related_articles|render is not empty) ? content.field_related_articles %}
+{% endif %}
+
+{# Related interests #}
+{% if content.field_interests.0 %}
+	{% set show_interests = true %}
+	{% set interests = (content.field_interests|render is not empty) ? content.field_interests %}
+{% endif %}
+
+{# Related discipline #}
+{% if content.field_discipline.0 %}
+	{% set show_disciplines = true %}
+	{% set disciplines = (content.field_discipline|render is not empty) ? content.field_discipline %}
+{% endif %}
+
+
+
 {% include "@pages/_major-minor.twig" with{
   title : name,
   level: content.field_level,
@@ -39,5 +59,7 @@
   outcomes: content.field_long_text_one,
   requirements: content.field_long_text_two,
 
-  sidebar: content.field_sidebar_components
+  related_articles: content.field_related_articles,
+  interests: interests,
+  disciplines: disciplines
 } %}

@@ -10,6 +10,7 @@ Descr:
 --------------------------- */
 
 .major-minor-grad {
+  @include base12GridColumns();
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
     ". title title title title title title title . level level level "
@@ -30,8 +31,14 @@ Descr:
   }
   .content {
     grid-area: content;
+    > .pageComponent {
+      margin-bottom: 0;
+    }
   }
   .sidebar {
     grid-area: sidebar;
+    h3 {
+      font-size: var(--base-24);
+    }
   }
 }

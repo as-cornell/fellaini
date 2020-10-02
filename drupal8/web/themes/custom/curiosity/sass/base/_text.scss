@@ -29,7 +29,39 @@ strong {
   }
 }
 
+// gradient text colors
+.storm {
+  @include text-gradient(var(--storm-radial));
+}
+.green {
+  @include text-gradient(var(--green-radial));
+}
+.purple {
+  @include text-gradient(var(--teal-purple));
+}
+
+.eyebrow {
+  font-family: var(--font-serif);
+}
+
+.pageIntroduction {
+  @extend .base-36;
+  max-width: var(--large);
+  margin-top: 0;
+  text-align: center;
+}
+.sectionIntroduction {
+  @extend .base-28;
+  max-width: var(--large);
+  margin-top: 0;
+  text-align: center;
+}
+
 // font size choices
+.base-24 {
+  font-size: var(--base-24);
+  line-height: var(--line-height);
+}
 .base-28 {
   font-size: var(--base-28);
 }
@@ -38,14 +70,21 @@ strong {
 }
 .base-48 {
   font-size: var(--base-48);
-  margin-bottom: 0.6em;
+  margin-bottom: 0.5em;
+  line-height: 1em;
+}
+.base-56 {
+  font-size: var(--base-56);
+  margin-bottom: 0.44em;
+  line-height: 1em;
 }
 .base-64 {
   font-size: var(--base-64);
 }
 .base-84 {
   font-size: var(--base-84);
-  line-height: 0.9em !important;
+  line-height: 1.08;
+  margin-bottom: 1em;
 }
 
 // text colors
