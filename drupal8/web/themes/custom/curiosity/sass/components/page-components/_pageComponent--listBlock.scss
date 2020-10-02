@@ -53,6 +53,9 @@ Descr: sets styles for various pce listBlocks
   &.two-items {
     .listBlock__text {
       flex: 0 1 calc(50% - 2rem);
+      h2 {
+        margin-top: 0;
+      }
     }
   }
 
@@ -68,6 +71,9 @@ Descr: sets styles for various pce listBlocks
 
 // for items in a 2x layout group
 .pcWrapper--layoutGroup {
+  .pcWrapper--listBlock {
+    margin-top: 0;
+  }
   .pcWrapper--listItems {
     flex-wrap: wrap;
     .card {
