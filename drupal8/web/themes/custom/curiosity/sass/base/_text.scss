@@ -28,8 +28,10 @@ strong {
     @include text-gradient;
   }
 }
-
+/* 
 // gradient text colors
+*/
+
 .storm {
   @include text-gradient(var(--storm-radial));
 }
@@ -57,7 +59,10 @@ strong {
   text-align: center;
 }
 
+/*
 // font size choices
+*/
+
 .base-24 {
   font-size: var(--base-24);
   line-height: var(--line-height);
@@ -85,9 +90,4 @@ strong {
   font-size: var(--base-84);
   line-height: 1.08;
   margin-bottom: 1em;
-}
-
-// text colors
-.gradient--green {
-  @include text-gradient(var(--green-radial));
 }
