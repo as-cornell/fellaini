@@ -9,6 +9,7 @@ Descr: Sets grid for columns pce--layout-group.html.twig
     @include medium() {
       display: flex;
       justify-content: space-between;
+      margin-bottom: var(--margin-3);
       &.heavyRight {
         > div:first-of-type {
           flex: 0 0 40%;
