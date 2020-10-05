@@ -8,7 +8,7 @@ Descr: outputs a page section
 --------------------------- */
 
 #}
-{# {{vardumper()}} #}
+
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['stat'] %}
 
@@ -17,7 +17,7 @@ Descr: outputs a page section
 {% set items_length = items|length %}
 
 
-{% if items.1 %}
+{% if content.field_stats['#is_multiple'] == true %}
 	{% set multiple = true %}
 {% endif %}
 

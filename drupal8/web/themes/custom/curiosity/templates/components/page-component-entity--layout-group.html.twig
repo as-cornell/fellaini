@@ -12,10 +12,8 @@ Descr: Group wrapper for layout entity item. Passes wrapper class and items.
 {% set group_modifiers = ['layoutGroup'] %}
 
 {% set group_base_class = 'pcWrapper' %}
-{% set alignment = content.field_layout[0]['#markup'] %}
+{% set alignment = content.field_layout|field_value|safe_join(', ') %}
 {% set group_classes = group_modifiers|merge([alignment]) %}
-
-{# {{vardumper()}} #}
 {% include "@content/molecules/_grouping.twig" with {
     items : content.field_columns
 

@@ -13,15 +13,14 @@ Descr: Set main wrapper for photo text item
 {% set group_modifiers = ['photoText'] %}
 
 {% set items = content.field_photo_text_reference %}
-{% set items_length = items|length %}
 
-{% if content.field_photo_text_wrapper_class %}
-	{% set wrapperClass = content.field_photo_text_wrapper_class[0]['#markup'] %}
+
+{% if content.field_photo_text_wrapper_class|render is not empty %}
+	{% set wrapperClass = content.field_photo_text_wrapper_class|field_value|safe_join(', ') %}
 	{% set group_modifiers = group_modifiers|merge([wrapperClass]) %}
 {% endif %}
 
-{# {{vardumper()}} #}
-{% if items.1 %}
+{% if content.field_photo_text_reference['#is_multiple'] == true %}
 	{% set multiple = true %}
 {% endif %}
 

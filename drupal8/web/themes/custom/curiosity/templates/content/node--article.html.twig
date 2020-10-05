@@ -32,25 +32,22 @@ Passes:
 	{% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
 {% endif %}
 
-{# article byline #}
-{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
-
 {# Related department program taxonomy #}
-{% if node.field_department_program.0 %}
+{% if content.field_department_program|render is not empty %}
   {% set show_related_departments_programs = true %}
-  {% set related_departments_programs = (content.field_department_program|render is not empty) ? content.field_department_program %}
+  {% set related_departments_programs = content.field_department_program %}
 {% endif %}
 
 {# Related articles #}
-{% if node.field_related_articles.0 %}
+{% if content.field_related_articles|render is not empty %}
 	{% set show_related_articles = true %}
-	{% set related_articles = (content.field_related_articles|render is not empty) ? content.field_related_articles %}
+	{% set related_articles = content.field_related_articles %}
 {% endif %}
 
 {# Related people #}
-{% if node.field_related_people.0 %}
+{% if content.field_related_people|render is not empty %}
 	{% set show_related_people = true %}
-	{% set related_people = (content.field_related_people|render is not empty) ? content.field_related_people %}
+	{% set related_people = content.field_related_people %}
 {% endif %}
 
 
@@ -68,7 +65,7 @@ Passes:
   aside_content : content.field_aside_components,
 
   article_dateline: content.field_dateline,
-  article_byline: article_byline,
+  article_byline: content.field_byline_reference,
   article_mediasource: content.field_media_source_reference,
 
 } %}
