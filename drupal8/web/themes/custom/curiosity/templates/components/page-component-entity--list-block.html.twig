@@ -29,12 +29,12 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['listBlock'] %}
-{% set layout = content.field_list_block_layout[0]['#markup'] %}
+{% set layout = content.field_list_block_layout|field_value|safe_join(', ') %}
 
 {% set group_classes = [layout, 'listBlock'] %}
 
 
-{% if content.field_formatted_text.0 %}
+{% if content.field_formatted_text|render is not empty %}
 	{% set hasTextBlock = true %}
 	{% set textBlock = content.field_formatted_text %}
 {% endif %}
