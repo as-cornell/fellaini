@@ -22,6 +22,7 @@ Passes:
 {% set main_element_base_class = main_element_base_class | default('article') %}
 {% set main_element_modifiers = [''] %}
 
+{# {{vardumper()}} #}
 {# Content wrapper modifiers#}
 {% set content_wrapper_modifiers = ['article'] %}
 
@@ -32,19 +33,19 @@ Passes:
 {% endif %}
 
 {# Related department program taxonomy #}
-{% if node.field_department_program|render is not empty %}
+{% if content.field_department_program|render is not empty %}
   {% set show_related_departments_programs = true %}
   {% set related_departments_programs = content.field_department_program %}
 {% endif %}
 
 {# Related articles #}
-{% if node.field_related_articles|render is not empty %}
+{% if content.field_related_articles|render is not empty %}
 	{% set show_related_articles = true %}
 	{% set related_articles = content.field_related_articles %}
 {% endif %}
 
 {# Related people #}
-{% if node.field_related_people|render is not empty %}
+{% if content.field_related_people|render is not empty %}
 	{% set show_related_people = true %}
 	{% set related_people = content.field_related_people %}
 {% endif %}
