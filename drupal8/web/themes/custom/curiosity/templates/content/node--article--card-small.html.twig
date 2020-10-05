@@ -11,9 +11,11 @@ Descr: defines content for a small article card. Generally in sidebar.
 {# {{content.field_thumbnail_image}} #}
 
 {% set card_modifiers =  ["article", "small"]%}
- {% set card_image = content.field_image %}
-{% if content.field_thumbnail_image.0 %}
+{# if content.field_thumbnail_image.0 #}
+{% if content.field_thumbnail_image|render is not empty %}
  {% set card_image = content.field_thumbnail_image %}
+{% else %}
+  {% set card_image = content.field_image %}
 {% endif %}
 {% if node.card_image.target_id %}
   {% set card_modifiers = card_modifiers|merge(["no-image"]) %}
