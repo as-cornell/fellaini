@@ -20,7 +20,7 @@ Passes:
 
 {% set figure_modifiers = ['inline'] %}
 
-{% set image_style = content.field_media_image.0['#image_style'] %}
+
 {% set figure_modifiers = figure_modifiers|merge([image_style]) %}
 {{figure_modifiers}}
 
