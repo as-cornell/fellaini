@@ -40,8 +40,9 @@ figure {
     &--5_4 {
       max-width: 520px;
     }
-    &--4_5 {
-      max-width: 300px;
+    &--4_5,
+    &--1_1_phototext {
+      max-width: 280px;
     }
   }
 }
