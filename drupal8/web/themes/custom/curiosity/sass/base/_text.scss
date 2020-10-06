@@ -8,7 +8,7 @@ p {
   margin: 0;
 }
 * + p {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 strong {
   font-weight: var(--semi);
@@ -72,6 +72,8 @@ strong {
 }
 .base-36 {
   font-size: var(--base-36);
+  margin-bottom: 0;
+  margin-top: 1.5em;
 }
 .base-48 {
   font-size: var(--base-48);
