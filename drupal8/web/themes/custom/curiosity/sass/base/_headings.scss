@@ -19,8 +19,11 @@ h4 {
 // }
 
 h1 {
-  font-size: var(--base-84);
-  line-height: calc(1ex / 0.5);
+  @extend .base-64;
+  @include xl() {
+    @extend .base-84;
+  }
+
   .title {
     margin-top: 0;
   }
