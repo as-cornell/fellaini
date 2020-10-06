@@ -19,8 +19,11 @@ h4 {
 // }
 
 h1 {
-  font-size: calc(2.5 * var(--base-font-size));
-  line-height: calc(1ex / 0.5);
+  @extend .base-64;
+  @include xl() {
+    font-size: var(--base-84);
+  }
+
   .title {
     margin-top: 0;
   }
@@ -36,11 +39,11 @@ h2 {
 }
 
 h3 {
-  @extend .base-48;
+  @extend .base-36;
 }
 
 h4 {
-  font-size: calc(1.5 * var(--base-font-size));
+  @extend .base-28;
 }
 
 // Sidebar sizes for component headers

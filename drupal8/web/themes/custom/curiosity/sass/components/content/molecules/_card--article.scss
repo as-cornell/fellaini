@@ -48,7 +48,7 @@ Descr: Sets all specific styles for an article card
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     background: none;
     box-shadow: none;
     :before {

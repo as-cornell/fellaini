@@ -8,7 +8,7 @@ p {
   margin: 0;
 }
 * + p {
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 strong {
   font-weight: var(--semi);
@@ -28,8 +28,10 @@ strong {
     @include text-gradient;
   }
 }
-
+/* 
 // gradient text colors
+*/
+
 .storm {
   @include text-gradient(var(--storm-radial));
 }
@@ -57,7 +59,10 @@ strong {
   text-align: center;
 }
 
+/*
 // font size choices
+*/
+
 .base-24 {
   font-size: var(--base-24);
   line-height: var(--line-height);
@@ -67,6 +72,8 @@ strong {
 }
 .base-36 {
   font-size: var(--base-36);
+  margin-bottom: 0;
+  margin-top: 1.5em;
 }
 .base-48 {
   font-size: var(--base-48);
@@ -85,9 +92,4 @@ strong {
   font-size: var(--base-84);
   line-height: 1.08;
   margin-bottom: 1em;
-}
-
-// text colors
-.gradient--green {
-  @include text-gradient(var(--green-radial));
 }
