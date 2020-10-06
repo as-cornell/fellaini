@@ -9,6 +9,7 @@ Descr:
 
 .basicSidebar--viewContainer {
   grid-template-rows: auto auto 1fr;
+  grid-template-columns: repeat(12, 1fr);
   .sidebar {
     grid-area: sidebar;
     form {
@@ -47,17 +48,18 @@ Descr:
 // list--teasers
 
 // list--cards
-// .list--cards {
-//   .content {
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 1rem;
-//     .article,
-//     .major-minor {
-//       flex: 1 0 30%;
-//       // &:first-of-type {
-//       //   flex: 1 1 100%;
-//       // }
-//     }
-//   }
-// }
+.list--cards {
+  .content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space);
+    // .article,
+    // .major-minor {
+    //   flex: 1 0 30%;
+    //   // &:first-of-type {
+    //   //   flex: 1 1 100%;
+    //   // }
+    // }
+  }
+}
