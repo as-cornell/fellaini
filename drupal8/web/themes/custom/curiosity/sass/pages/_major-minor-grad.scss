@@ -14,7 +14,7 @@ Descr:
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
     ". title title title title title title title . level level level "
-    ". description description description description description description description . sidebar sidebar sidebar "
+    // ". description description description description description description description . sidebar sidebar sidebar "
     ". content content content content content content content . sidebar sidebar sidebar";
   .title {
     grid-area: title;

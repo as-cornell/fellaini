@@ -100,41 +100,90 @@ Descr:
   }
 }
 
-// field containers
+// views-exposed-form
+// This is where all the action happens for exposed drupal forms
 
-.form-item {
-  color: var(--gray);
-  margin-bottom: 1em;
-  max-width: 32em;
-  font-size: 0.75rem;
+.views-exposed-form {
+  font-size: var(--base-20);
+  max-width: 300px;
+  .fieldgroup {
+    margin-bottom: 0.5em;
+  }
+
+  //autocomplete wrapper
+  .js-form-type-entity-autocomplete {
+    display: flex;
+    flex-direction: column;
+  }
+
+  //select list styles
+  .js-form-type-select {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-weight: var(--semi);
+    }
+    option {
+      font-size: var(--base-20);
+    }
+  }
+
+  // checkboxes
+  .js-form-type-checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.25em;
+    label {
+      flex: 0 0 90%;
+    }
+  }
+
+  //janky drupal hide/show
+  details[id*="collapsible"] {
+    summary {
+      font-weight: var(--semi);
+    }
+    .form-checkboxes .form-checkboxes {
+      height: 400px;
+      overflow-y: scroll;
+    }
+  }
+
+  // best based fields
+  .form-item__textfield,
+  .form-select,
+  .form-autocomplete {
+    border: 1px solid var(--gray-lt);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    &:focus {
+      border-color: var(--as-black);
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--gray-light);
+    }
+
+    &:-moz-placeholder {
+      color: var(--gray-light);
+    }
+
+    &::-moz-placeholder {
+      color: var(--gray-light);
+    }
+
+    &:-ms-input-placeholder {
+      color: var(--gray-light);
+    }
+  }
 }
+// .form-item {
+//   color: var(--gray);
+//   // margin-bottom: 1em;
+//   max-width: 32em;
 
-.form-item__textfield,
-.form-select,
-.form-autocomplete {
-  border: 1px solid var(--gray-lt);
-  padding: 0.5rem;
-  border-radius: var(--border-radius);
-  &:focus {
-    border-color: var(--as-black);
-  }
-
-  &::-webkit-input-placeholder {
-    color: var(--gray-light);
-  }
-
-  &:-moz-placeholder {
-    color: var(--gray-light);
-  }
-
-  &::-moz-placeholder {
-    color: var(--gray-light);
-  }
-
-  &:-ms-input-placeholder {
-    color: var(--gray-light);
-  }
-}
+// }
 
 // submit buttons
 .form-submit {
@@ -165,11 +214,16 @@ Descr:
   width: calc(100% - 1rem);
 }
 
+legend {
+  font-weight: var(--semi);
+}
+
 // stacking label and field in the sidebar
 
-.sidebar {
-  .form-item {
-    display: flex;
-    flex-direction: column;
-  }
-}
+// .sidebar {
+//   *[class*="autocomplete"] {
+//     display: flex;
+//     flex-direction: column;
+//     // background: red;
+//   }
+// }
