@@ -21,7 +21,7 @@ h4 {
 h1 {
   @extend .base-64;
   @include xl() {
-    @extend .base-84;
+    font-size: var(--base-84);
   }
 
   .title {
