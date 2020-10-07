@@ -23,15 +23,32 @@ Descr: main output business for views. Classes are from the view-display setting
 {% set main_element_base_class = 'basicSidebar' %}
 {% set main_element_modifiers = ['viewContainer', 'majors-minors-grads'] %}
 
-
-{# {{vardumper()}} #}
-{# set view_title = view.storage.label #}
 {% set view_title = view.element['#title'] %}
 
+{% if (view.getExposedInput.level) %}
+ {% set view_title = 'Level: ' %}
+  {% for key, item in view.getExposedInput.level %}
+    {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
+    {% set view_title = view_title ~ termname  %}
+  {% endfor %}
+{% endif %}
+{% if (view.getExposedInput.discipline) %}
+  {% set view_title = view_title ~'Discipline: ' %}
+  {% for key, item in view.getExposedInput.discipline %}
+    {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
+    {% set view_title = view_title ~ termname  %}
+  {% endfor %}
+{% endif %}
+{% if (view.getExposedInput.interests) %}
+  {% set view_title = view_title ~ 'Interests: ' %}
+  {% for key, item in view.getExposedInput.interests %}
+    {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
+    {% set view_title = view_title ~ termname  %}
+  {% endfor %}
+{% endif %}
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_sidebar = exposed %}
-{# {% set view_title = header %} #}
 
 {% include "@pages/_view-list.twig" with {
   view_title : view_title,
