@@ -76,8 +76,8 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 
 {# if page sectin values set aside_nav to the page menu block #}
 {% if linkValues %}
-  {% set aside_nav %}
-  <div class="asideNavWrapper">
+  {% set otp_nav %}
+  <div class="otpNavWrapper otpNav--basic_page">
     <h4>On this page</h4>
     {{ drupal_block('page_menu_block', {link_values:linkValues}) }}
   </div>
@@ -88,7 +88,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
     - if aside_components or aside_nav set aside to true, and add has-aside to page
 #}
 
-{% if node.field_aside_components.target_id or aside_nav %}
+{% if node.field_aside_components.target_id or otp_nav %}
   {% set aside = true %}
   {% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
 {% endif %}
@@ -100,7 +100,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
     main_content : content.field_page_components,
     
     aside_content : content.field_aside_components,
-    aside_nav : aside_nav,
+    otp_nav : otp_nav,
     
     sidebar_nav : sidebar_nav,
     sidebar_content : sidebar_content,

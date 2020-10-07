@@ -35,7 +35,7 @@ h2 {
 
 // h2 after an eyebrow gets less margin top
 .eyebrow + h2 {
-  margin-top: 0.25em;
+  margin-top: 0.25em !important;
 }
 
 h3 {

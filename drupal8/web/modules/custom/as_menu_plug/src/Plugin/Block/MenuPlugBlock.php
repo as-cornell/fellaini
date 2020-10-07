@@ -64,10 +64,10 @@ class MenuPlugBlock extends BlockBase
         $index = 0;
         // make sure we need a wrapper
 
-        // RTM 8/17 hiding the list with inpage navs from big view added asideNav as they can both be the same just visually hidden in sidebar. 
+        // RTM 8/17 hiding the list with inpage navs from big view added otpNav as they can both be the same just visually hidden in sidebar. 
 
         //if (!empty($node->field_page_components[0]->entity->field_page_section_title[0])) {
-        $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul class="' . $list_class . ' asideNav">';
+        $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul class="' . $list_class . ' otpNav">';
         foreach ($fpce as $pce) {
           // this uses the component entity label as the link text
           //$link_title = $node->field_page_components_entity[$index]->entity->label();

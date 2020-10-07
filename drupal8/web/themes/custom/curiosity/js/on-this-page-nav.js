@@ -1,11 +1,11 @@
 /*
-  On this page navigation
+  On this page "OTP" navigation
   - add .active to first item
   - observers to change active to different links based on location of intersection sections
 */
 
 (function ($) {
-  $(".asideNav").first().first().addClass("active");
+  $(".otpNav").first().first().addClass("active");
 })(jQuery);
 
 // watch sections with class navTarget
