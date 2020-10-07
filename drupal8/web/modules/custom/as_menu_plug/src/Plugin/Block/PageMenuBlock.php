@@ -6,7 +6,7 @@ use Drupal\Core\Block\BlockBase;
 
 
 /**
- * Provides a 'PageMenuBlock' block speicifically for asideNav internal page items
+ * Provides a 'PageMenuBlock' block speicifically for otpNav internal page items
  *
  * @Block(
  *  id = "page_menu_block",
@@ -24,8 +24,8 @@ class PageMenuBlock extends BlockBase
   public function build()
   {
 
-    $link_class = 'asideNav__item';
-    $list_class = 'asideNav';
+    $link_class = 'otpNav__item';
+    $list_class = 'otpNav';
     $alias = '';
     $build = [];
     $build['#theme'] = 'page_menu_block';
