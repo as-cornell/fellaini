@@ -17,6 +17,10 @@ Descr:
     &__feature {
       flex: 0 0 100%;
       margin-bottom: 2rem;
+      .spotlight {
+        font-size: var(--base-64);
+        line-height: 1;
+      }
     }
     &__articles {
       flex: 0 0 calc(50% - 1rem);

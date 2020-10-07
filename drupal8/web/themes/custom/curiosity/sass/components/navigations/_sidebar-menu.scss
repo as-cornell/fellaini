@@ -168,9 +168,9 @@ ul[class^="nav"] {
       content: "s";
     }
   }
-  // .asideNav removed and managed on _aside-nav.scss for big screen.
+  // .optNav removed and managed on _opt-nav.scss for big screen.
   @include medium() {
-    .asideNav {
+    .otpNav {
       @include medium() {
         display: none;
       }
