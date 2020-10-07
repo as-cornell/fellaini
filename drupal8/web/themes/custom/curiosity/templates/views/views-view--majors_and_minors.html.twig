@@ -35,7 +35,7 @@ Descr: main output business for views. Classes are from the view-display setting
 {% if (view.getExposedInput.discipline) %}
   {% set view_title = view_title ~'Discipline: ' %}
   {% for key, item in view.getExposedInput.discipline %}
-    {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
+    {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
     {% set view_title = view_title ~ termname  %}
   {% endfor %}
 {% endif %}
