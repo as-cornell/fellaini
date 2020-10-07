@@ -102,7 +102,8 @@
         "drupal/search_api": "^1.16",
         "drupal/metatag": "^1.14",
         "drupal/gin": "^3.0",
-        "drupal/gin_toolbar": "^1.0"
+        "drupal/gin_toolbar": "^1.0",
+        "drupal/linkit": "^4.3"
 
 
     },
