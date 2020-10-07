@@ -13,4 +13,7 @@ Descr:
   .content > .pageComponent {
     margin-bottom: var(--bottom-margin);
   }
+  .group__title {
+    // @extend .sr-only;
+  }
 }
