@@ -78,7 +78,7 @@ Descr: otpN small and large, hovers and toggles for subNav
     }
     // .large
     @include large() {
-      font-size: var(--base-20);
+      // font-size: var(--base-20);
       flex-direction: column;
       padding-left: 0;
       li {
@@ -89,9 +89,10 @@ Descr: otpN small and large, hovers and toggles for subNav
         padding: 0.5em 1em;
         display: block;
         border-bottom: 1px solid var(--gray-lightest);
-        &.active {
+        &.active,
+        &:hover {
           color: var(--as-white);
-          background: var(--storm-radial);
+          background: var(--storm);
 
           border-radius: var(--border-radius);
         }

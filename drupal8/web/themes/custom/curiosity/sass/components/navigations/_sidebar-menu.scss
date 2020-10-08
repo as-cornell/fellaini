@@ -35,19 +35,19 @@ ul[class^="nav"] {
       content: "";
       height: 100%;
       width: 3px;
-      left: -15px;
+      left: -20px;
       top: 0;
       background: var(--gray-lt);
     }
   }
-  li[class*="active-trail"] {
-    > a {
-      color: var(--as-black);
-      &:before {
-        background: var(--as-red);
-      }
-    }
-  }
+  // li[class*="active-trail"] {
+  //   > a {
+  //     color: var(--as-black);
+  //     &:before {
+  //       background: var(--as-red);
+  //     }
+  //   }
+  // }
 
   .with-sub {
     display: grid;
@@ -78,18 +78,22 @@ ul[class^="nav"] {
       font-size: var(--base-24);
       color: var(--as-black);
       font-weight: var(--semi);
+      margin-bottom: 0.5em;
       &:before {
         display: none;
       }
     }
   }
   .nav-1 {
-    border-left: 1px solid var(--storm);
-    padding-left: 0.75em;
+    border-left: 1px solid var(--as-teal);
+    padding-left: 1em;
     &__item {
       &[class*="active-trail"] {
         > a {
           font-weight: var(--semi);
+          &:before {
+            background: var(--as-teal);
+          }
         }
       }
       > a {
@@ -110,10 +114,18 @@ ul[class^="nav"] {
   }
 
   .nav-2 {
-    border-left: 1px solid var(--fog);
-    padding-left: 0.75em;
+    border-left: 1px solid var(--as-green);
+    padding-left: 1em;
     margin-top: 0.5em;
     &__item {
+      &[class*="active-trail"] {
+        > a {
+          font-weight: var(--semi);
+          &:before {
+            background: var(--as-green);
+          }
+        }
+      }
       > a {
         // margin-left: 0.75rem;
         &:before {

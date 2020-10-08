@@ -23,7 +23,7 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 			{% include "@content/atoms/_heading.twig" with {
         "heading_level" : 1,
         "heading" : title,
-        "heading_modifiers" : heading_modifiers,
+        "heading_modifiers" : ['title'],
         "heading_base_class" : heading_base_class,
         "heading_class" : heading_class
       } %}
@@ -31,9 +31,9 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 		</div>
 	{% endif %}
 	<div class="content">
-  {% if otpNav %}
-  {{otp_nav}}
-  {% endif %}
+		{% if otpNav %}
+			{{otp_nav}}
+		{% endif %}
 		{{main_content}}
 	</div>
 	{% if sidebarNav != false %}

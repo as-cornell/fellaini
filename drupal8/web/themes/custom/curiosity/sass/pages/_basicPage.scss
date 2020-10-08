@@ -64,4 +64,9 @@ Descr:
         "sidebar sidebar sidebar sidebar sidebar content content content content content content content content content content content content content content content aside aside aside aside";
     }
   }
+
+  // spotlight on the first <p> in the first FTB
+  .content > .pageComponent--ftb > p:first-of-type {
+    @extend .base-28;
+  }
 }
