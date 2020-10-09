@@ -17,3 +17,15 @@ global-scripts:
     js_min/list-filter.js: {}
   dependencies:
     - core/jquery
+
+magnific:
+  js:
+    js_min/magnific-popup.js: {}
+    js_min/magnific-popup-pops.js: {}
+
+fancybox:
+  js:
+    js_min/jquery.fancybox.min.js: {}
+    js_min/jquery.fancybox-scripts.min.js: {}
+  dependencies:
+    - core/jquery

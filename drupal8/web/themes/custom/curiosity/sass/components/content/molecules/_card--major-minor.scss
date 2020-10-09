@@ -13,11 +13,27 @@ Descr: Sets all specific styles for an m/m/g card and teasers
       ". . level"
       "label label label";
   }
+  // if fancybox
+
   .card__title {
     grid-area: label;
   }
   .card__level {
     grid-area: level;
+  }
+  .card__links {
+    grid-area: links;
+    font-size: var(--base-16);
+    display: flex;
+    justify-content: space-between;
+  }
+  &.card--fancybox {
+    .card__copy {
+      grid-template-areas:
+        ". . level"
+        "label label label"
+        "links links links";
+    }
   }
 }
 
@@ -28,16 +44,17 @@ Descr: Sets all specific styles for an m/m/g card and teasers
   margin: 0;
   padding: 0;
   li {
+    margin-bottom: 0;
   }
   .link {
     text-indent: -5000px;
     position: relative;
     display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;
+    height: 1rem;
     &:before {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 0.9rem;
+      height: 0.9rem;
       border-radius: 50%;
       position: absolute;
       content: "M";
@@ -45,6 +62,7 @@ Descr: Sets all specific styles for an m/m/g card and teasers
       top: 0;
       right: 0;
       text-indent: 0;
+      font-size: 0.7rem;
       text-align: center;
     }
     &--major {
@@ -55,14 +73,14 @@ Descr: Sets all specific styles for an m/m/g card and teasers
     }
     &--minor {
       &:before {
-        background: var(--teal);
-        content: "m";
+        background: blue;
+        content: "M";
       }
     }
     &--graduate {
       &:before {
-        background: var(--gold);
-        content: "g";
+        background: gray;
+        content: "G";
       }
     }
   }
