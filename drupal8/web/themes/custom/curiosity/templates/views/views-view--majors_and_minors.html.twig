@@ -27,24 +27,24 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {# adding "now viewing" labels #}
 {% if (view.getExposedInput.level) %}
- {% set view_title = 'Level: ' %}
+ {% set view_header = 'Level: ' %}
   {% for key, item in view.getExposedInput.level %}
     {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-    {% set view_title = view_title ~ termname  %}
+    {% set view_header = view_header ~ termname  %}
   {% endfor %}
 {% endif %}
 {% if (view.getExposedInput.discipline) %}
-  {% set view_title = view_title ~'Discipline: ' %}
+  {% set view_header = view_header ~'Discipline: ' %}
   {% for key, item in view.getExposedInput.discipline %}
     {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
-    {% set view_title = view_title ~ termname  %}
+    {% set view_header = view_header ~ termname  %}
   {% endfor %}
 {% endif %}
 {% if (view.getExposedInput.interests) %}
-  {% set view_title = view_title ~ 'Interests: ' %}
+  {% set view_header = view_header ~ 'Interests: ' %}
   {% for key, item in view.getExposedInput.interests %}
     {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-    {% set view_title = view_title ~ termname  %}
+    {% set view_header = view_header ~ termname  %}
   {% endfor %}
 {% endif %}
 
@@ -57,6 +57,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% include "@pages/_view-list.twig" with {
   view_title : view_title,
+  view_header : view_header,
   view_content : view_content,
   view_pager : view_pager,
   view_sidebar : view_sidebar
