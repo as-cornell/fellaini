@@ -13,6 +13,8 @@ receives:
 --- link to content
 Setting up new block class of 'teaser'
 
+--if show_fancybox for teasers that are part of a fancybox or gallery
+
 --------------------------- */
 
 #}
@@ -22,8 +24,17 @@ Setting up new block class of 'teaser'
 {% set card_byline = card_byline | default('') %}
 {% set card_dateline = card_dateline | default('') %}
 
+{# fancybox wrapper #}
+{% if show_fancybox %}
+	<div id="{{fancyboxID}}" style="display: none;">
+{% endif %}
 
-<div {{ bem(card_base_class, (teaser_modifiers), card_blockname) }} {% if card_nodeId %}aria-labelledby="article-title-{{card_nodeId}}"{% endif %}>
+
+
+
+<div {{ bem(card_base_class, (teaser_modifiers), card_blockname, teaser_classes) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %} >
+
+
 {{teaser_img}}
   <div {{ bem(card_copy_base_class|default('teaser__copy'), (card_copy_modifiers), card_copy_blockname) }}>
     {% include "@content/atoms/_heading.twig" with {
@@ -63,5 +74,18 @@ Setting up new block class of 'teaser'
     {% if teaser_body %}
      {{teaser_body|raw}}
     {% endif %}
+{% if show_fancybox %}
+	<p>
+		<a href="{{card_title_link}}">
+			Full details</a>
+  </p>
+	</span>
+{% endif %}
+
+
   </div>
 </div>
+{% if show_fancybox %}
+	</div> 
+{% endif %}
+
