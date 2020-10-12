@@ -25,6 +25,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% set view_title = view.element['#title'] %}
 
+{# adding "now viewing" labels #}
 {% if (view.getExposedInput.level) %}
  {% set view_header = 'Level: ' %}
   {% for key, item in view.getExposedInput.level %}
@@ -46,9 +47,13 @@ Descr: main output business for views. Classes are from the view-display setting
     {% set view_header = view_header ~ termname  %}
   {% endfor %}
 {% endif %}
+
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_sidebar = exposed %}
+
+{# include fancybox #}
+{% set show_fancybox = true %}
 
 {% include "@pages/_view-list.twig" with {
   view_title : view_title,

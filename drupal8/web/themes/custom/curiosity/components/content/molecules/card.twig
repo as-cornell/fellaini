@@ -44,6 +44,19 @@
  * - card_button_modifiers - array of modifiers to add to the base classname of the button
  */
 #}
+{# 
+<div style="display: none;" id="hidden-content">
+	<h2>
+		Hello
+	</h2>
+	<p>
+		You are awesome.
+	</p>
+</div>
+<a data-fancybox data-src="#hidden-content" href="javascript:;">
+	Trigger the fancybox
+</a> #}
+
 {% set card_base_class = 'card' %}
 {% set card_byline = card_byline | default('') %}
 {% set card_dateline = card_dateline | default('') %}
@@ -107,6 +120,18 @@
 			<span class="card__byline">
 				By |
 				{{ card_byline }}
+			</span>
+		{% endif %}
+		{% if show_fancybox %}
+			<span class="card__links">
+				<a data-fancybox="gallery" data-src="#{{fancyboxID}}" href="javascript:;">
+
+					Quick look
+				</a>
+
+				<a href="{{card_title_link}}">
+					Full details
+				</a>
 			</span>
 		{% endif %}
 
