@@ -30,10 +30,11 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 			{{title_suffix}}
 		</div>
 	{% endif %}
+	{% if otpNav %}
+		{{otp_nav}}
+	{% endif %}
 	<div class="content">
-		{% if otpNav %}
-			{{otp_nav}}
-		{% endif %}
+
 		{{main_content}}
 	</div>
 	{% if sidebarNav != false %}
