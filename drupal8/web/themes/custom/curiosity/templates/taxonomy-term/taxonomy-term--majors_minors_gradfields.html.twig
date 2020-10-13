@@ -47,7 +47,6 @@
 {% endif %}
 
 
-
 {% include "@pages/_major-minor.twig" with{
   title : name,
   level: content.field_level,
@@ -58,6 +57,8 @@
   body: content.field_page_components,
   outcomes: content.field_long_text_one,
   requirements: content.field_long_text_two,
+  classes: content.field_classes,
+  links: content.field_links,
 
   related_articles: content.field_related_articles,
   interests: interests,
