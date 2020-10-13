@@ -43,4 +43,14 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
     include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
-$settings['hash_salt'] = 'Gze5OOIlitsbtGpDoblpp1s5Hrw64KH6WSFsjw4YHlghRl7cKrQZes5Ln8Cksm0i9gYtPOuKwg';
+$settings['hash_salt'] = '0U6ZN9QW4RJvlkDr8ZrWPv7hRbIglJLdAlgzymDJ_gEx181D-SDjdx8Dj9M8ZqS1Sx8tn0oHjw';
+$databases['default']['default'] = array (
+  'database' => 'people',
+  'username' => 'drupal',
+  'password' => 'drupal',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
