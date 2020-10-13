@@ -7,10 +7,6 @@ migration_dependencies:
   require:
     - people_image
     - people_summary
-dependencies:
-  enforced:
-    module:
-      - as_migrate_people
 
 destination:
   plugin: entity:node
