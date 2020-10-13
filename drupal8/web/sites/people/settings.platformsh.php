@@ -14,7 +14,7 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
   $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
   if (empty($databases['default']) && !empty($relationships)) {
     foreach ($relationships as $key => $relationship) {
-      $drupal_key = ($key === $platformsh_subsite_id) ? 'default' : $key;
+      $drupal_key = ($key === $platformsh_subsite_id) ? 'people' : $key;
       foreach ($relationship as $instance) {
         if (empty($instance['scheme']) || ($instance['scheme'] !== 'mysql' && $instance['scheme'] !== 'pgsql')) {
           continue;
