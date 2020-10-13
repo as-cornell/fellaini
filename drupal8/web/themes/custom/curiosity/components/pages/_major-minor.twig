@@ -26,11 +26,26 @@ Descr: defines content and blocks for majors and minors detail pages
 	<div class="content">
 		{{description}}
 		{{body}}
+		<h2 id="classes">
+			Classes of note
+		</h2>
+		{{classes}}
+		<h2 id="outcomes">
+			Outcomes
+		</h2>
 		{{outcomes}}
+		<h2 id="requirments">
+			Requirements
+		</h2>
 		{{requirements}}
 	</div>
 	<div class="sidebar">
 		{{image}}
+		<h3>
+			Learn more
+		</h3>
+		{{links}}
+
 		{% if show_related_articles %}
 			<h3>
 				Related articles
@@ -51,6 +66,7 @@ Descr: defines content and blocks for majors and minors detail pages
 			</h3>
 			{{disciplines}}
 		{% endif %}
+
 
 	</div>
 </main>
