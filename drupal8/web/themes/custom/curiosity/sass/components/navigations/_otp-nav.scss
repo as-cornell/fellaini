@@ -13,23 +13,41 @@ Descr: otpN small and large, hovers and toggles for subNav
   position: inherit;
   background: var(--as-white);
   z-index: 1;
-  @include medium() {
-    // background: none;
-    position: sticky;
-    top: 100px;
-  }
   font-size: var(--base-16);
   animation: none;
-  // top: 0;
-  // position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  @include large() {
+    flex-direction: column;
+  }
   h4 {
     font-size: var(--base-16);
-    margin-right: 1em;
+    margin: 0;
+    flex: 0 0 auto;
     @include medium() {
       font-size: var(--base-20);
     }
     @include large() {
       text-align: center;
+    }
+  }
+}
+
+// for stuck otpnav
+.main.otpStuck {
+  // @include medium() {
+  //   .otpNavWrapper {
+  //     position: fixed;
+  //     top: 0;
+  //   }
+  //   .content {
+  //     padding-top: 150px;
+  //   }
+  // }
+  @include large() {
+    .otpNavWrapper {
+      position: sticky;
+      top: 0;
     }
   }
 }
@@ -65,6 +83,7 @@ Descr: otpN small and large, hovers and toggles for subNav
 .otpNav--basic_page {
   .otpNav {
     flex-direction: column;
+    width: 100%;
     li {
       margin-right: 1em;
       margin-bottom: 0;
@@ -103,8 +122,14 @@ Descr: otpN small and large, hovers and toggles for subNav
 
 .otpNav--landing_page {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  // position: sticky;
+  // top: 0;
+  h4 {
+    margin-right: 0.5rem;
+  }
   .otpNav {
     display: flex;
     li {

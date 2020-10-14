@@ -8,10 +8,7 @@
   $(".otpNav").first().first().addClass("active");
 })(jQuery);
 
-// watch sections with class navTarget
 const targets = document.querySelectorAll(".pcWrapper--page-section");
-console.log(targets);
-// set navOptions
 const navOptions = {
   threshold: 0,
   rootMargin: "-200px",
@@ -20,15 +17,10 @@ const navOptions = {
 const navObserver = new IntersectionObserver((entries, navObserver) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      console.log(entry);
       return;
     } else {
-      console.log(entry);
-      // remove old active class
       document.querySelector(".active").classList.remove("active");
-      // get id of the intersecting section
       var id = entry.target.getAttribute("id");
-      // find matching link & add appropriate class
       var newLink = document
         .querySelector(`[href="#${id}"]`)
         .classList.add("active");
@@ -41,3 +33,25 @@ targets.forEach((target) => {
 });
 
 // document is ready to go
+
+// watch .title if not intersecting add class 'stuck' to otpNav
+const pageTitle = document.querySelector(".basicSidebar .title");
+const mainContainer = document.querySelector(".main");
+
+const otpNavOptions = {
+  threshold: 0,
+  // rootMargin: "200px 0px 0px 0px",
+};
+
+const otpNavObserver = new IntersectionObserver(function (entries, optNavObserver) { 
+  entries.forEach(entry => {
+    // console.log(entry.target);
+    if (!entry.isIntersecting) {
+      mainContainer.classList.add('otpStuck');
+    } else {
+      mainContainer.classList.remove('otpStuck');
+    }
+  });
+}, otpNavOptions);
+
+otpNavObserver.observe(pageTitle);
