@@ -6,9 +6,10 @@
 #}
 {# {{vardumper(items)}} #}
 
-{% set ul_modifiers = ['articles'] %}
+{% set group_modifiers = ['articles', 'listBlock'] %}
+{% set group_base_class = 'pcWrapper' %}
 
-{% embed "@content/atoms/_ul.twig" with{
-  ul_items : items
+{% embed "@content/molecules/_list-block.twig" with{
+  items : items
 } %}
 {% endembed %}
