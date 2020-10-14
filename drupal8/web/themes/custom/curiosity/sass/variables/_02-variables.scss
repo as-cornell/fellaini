@@ -153,3 +153,13 @@
 
   --component-bottom-margin: calc(1 * var(--space));
 }
+
+//annimations
+@keyframes simpleFadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
