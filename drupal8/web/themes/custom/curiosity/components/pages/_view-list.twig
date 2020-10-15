@@ -16,9 +16,8 @@ Setting up new block class of 'teaser'
 {% endif %}
 {% if show_fancybox %}
 	{{ attach_library('curiosity/fancybox' )}}
-
 {% endif %}
-
+{# jahsdf;lasjhdf;alksdfj #}
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 	<div class="pageTitle">
 		{% include "@content/atoms/_heading.twig" with {
@@ -32,9 +31,8 @@ Setting up new block class of 'teaser'
     "heading_modifiers" : ["margin"]
   } %}
 		{% endif %}
-
+		{{view_header}}
 		{# Temporary show in page filter here. Might need to put m/m into new template #}
-
 
 		{% if show_filter %}
 			<label for='courseFilter'>
@@ -45,7 +43,6 @@ Setting up new block class of 'teaser'
 	</div>
 
 	<div class="content">
-		{{view_header}}
 		{{ view_content }}
 	</div>
 	{% if view_pager %}
@@ -57,16 +54,16 @@ Setting up new block class of 'teaser'
 	<div class="sidebar">
 		{# Hiding search on news page for now #}
 		{# {% if show_search %}
-																																			<form action="/search/{{show_search}}" id="sidebar__searchform" class="form form--simpleSearch form--searchBlock">
-																																				<label for="search-input">
-																																					Keyword Search
-																																				</label>
-																																				<span class="searchField">
-																																					<input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text form-item__textfield"/>
-																																					<input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="js-form-submit form-submit form-item__submit"/>
-																																				</span>
-																																			</form>
-																																		{% endif %} #}
+																																																			<form action="/search/{{show_search}}" id="sidebar__searchform" class="form form--simpleSearch form--searchBlock">
+																																																				<label for="search-input">
+																																																					Keyword Search
+																																																				</label>
+																																																				<span class="searchField">
+																																																					<input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text form-item__textfield"/>
+																																																					<input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="js-form-submit form-submit form-item__submit"/>
+																																																				</span>
+																																																			</form>
+																																																		{% endif %} #}
 		{# Filter by: #}
 	{{ view_sidebar }}
 </div></main>

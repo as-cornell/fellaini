@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Majors, minors and graduate fields layout and content.
+ * Department and program fields layout and content.
  *
  * Available variables:
  * - url: URL of the current term.
@@ -25,19 +25,13 @@
 #}
 {# {{vardumper()}} #}
 {% set main_element_extra_classes = ['main'] %}
-{% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
+{% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = [''] %}
 
 {# Related articles #}
 {% if content.field_related_articles.0 %}
 	{% set show_related_articles = true %}
 	{% set related_articles = (content.field_related_articles|render is not empty) ? content.field_related_articles %}
-{% endif %}
-
-{# Related interests #}
-{% if content.field_interests.0 %}
-	{% set show_interests = true %}
-	{% set interests = (content.field_interests|render is not empty) ? content.field_interests %}
 {% endif %}
 
 {# Related discipline #}
@@ -47,9 +41,10 @@
 {% endif %}
 
 
-{% include "@pages/_major-minor.twig" with{
+
+{% include "@pages/_department-program.twig" with{
   title : name,
-  level: content.field_level,
+  type : content.field_type,
 
   image : content.field_image,
 
@@ -60,7 +55,9 @@
   classes: content.field_classes,
   links: content.field_links,
 
+
   related_articles: content.field_related_articles,
-  interests: interests,
   disciplines: disciplines
+
+
 } %}

@@ -51,7 +51,7 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
   - link values for the nav items
   - set aside_nav to the menu block
 #}
- {#vardumper(node.id)#}
+{# {{vardumper()}} #}
 
 {# Need to get {{url}} passed into the function in the module. I think into the $alis? #}
 
@@ -74,8 +74,9 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 
 
 {% embed "@content/molecules/card.twig" with {
-    card_modifiers : ["page"],
+    card_modifiers : ["pageToc"],
     card_title: label,
+    card_link_url: url,
 
     card_body : card_body,
 

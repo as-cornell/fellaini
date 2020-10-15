@@ -7,6 +7,19 @@ Descr:
 --------------------------- */
 
 .landingPage {
+  grid-template-areas: "title" "aside" "content";
+  .title {
+    grid-area: title;
+  }
+  aside {
+    grid-area: aside;
+    position: sticky;
+    top: 0;
+    margin-bottom: var(--margin-3);
+  }
+  .content {
+    grid-area: content;
+  }
   > div {
     grid-column: 1 / -1;
   }
