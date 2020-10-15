@@ -4,10 +4,10 @@ id: people_node
 label: Import people nodes
 migration_group: people
 migration_dependencies:
-  require:
+  required:
     - people_image
     - people_summary
-
+  optional: {}
 destination:
   plugin: entity:node
   default_bundle: person
