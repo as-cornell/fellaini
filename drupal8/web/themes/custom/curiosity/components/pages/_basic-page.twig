@@ -9,6 +9,8 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 --------------------------- */ 
 
 #}
+
+
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
 
@@ -30,11 +32,10 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 			{{title_suffix}}
 		</div>
 	{% endif %}
-	{% if otpNav %}
-		{{otp_nav}}
-	{% endif %}
+	{# {% if otpNav %}
+								{{otp_nav}}
+							{% endif %} #}
 	<div class="content">
-
 		{{main_content}}
 	</div>
 	{% if sidebarNav != false %}
@@ -56,6 +57,7 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 		<aside>
 			{{ otp_nav }}
 			{{ aside_content }}
+			<div></div>
 		</aside>
 	{% endif %}
 </main>

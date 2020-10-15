@@ -5,19 +5,24 @@ Descr: sets up all uniquie styles for toc cards wrappers
   
 
   .pcWrapper--card
-  .card--stat - base card styles set at /molecules/_card.scss
+
 
 --------------------------- */
 
 .pcWrapper--tocCards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  gap: var(--space);
+  @include small() {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include medium() {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .group__title {
-    flex: 0 1 100%;
+    grid-column: 1 / -1;
   }
   .card {
-    flex-basis: calc(25% - 1rem);
-    padding: 1rem;
+    // flex-basis: calc(25% - 1rem);
+    // padding: 1rem;
   }
 }

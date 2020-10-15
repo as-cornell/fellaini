@@ -11,16 +11,17 @@ Descr: defines content and blocks for majors and minors detail pages
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 	{{title_suffix}}
+	<p class="type eyebrow">
 
+		{{type}}
+
+	</p>
 	{% include "@content/atoms/_heading.twig" with {
     "heading_level" : 1,
     "heading" : title,
     "heading_modifiers" : ["margin"],
     "heading_base_class" : "title"
   } %}
-	<div class="level">
-		{{level}}
-	</div>
 
 
 	<div class="content">
@@ -28,18 +29,6 @@ Descr: defines content and blocks for majors and minors detail pages
 		{{body}}
 
 
-		<h2 id="requirments">
-			Requirements
-		</h2>
-		{{requirements}}
-		<h2 id="classes">
-			Sample classes
-		</h2>
-		{{classes}}
-		<h2 id="outcomes">
-			Outcomes
-		</h2>
-		{{outcomes}}
 	</div>
 	<div class="sidebar">
 		{{image}}
@@ -55,12 +44,6 @@ Descr: defines content and blocks for majors and minors detail pages
 			{{related_articles}}
 		{% endif %}
 
-		{% if show_interests %}
-			<h3>
-				Associated interests
-			</h3>
-			{{interests}}
-		{% endif %}
 
 		{% if show_disciplines %}
 			<h3>

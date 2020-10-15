@@ -1,0 +1,29 @@
+/* -------------------------
+
+Title: _card--page.scss
+Descr: Sets all specific styles for an TOC card and other page cards
+
+--------------------------- */
+
+.card {
+  &.card--pageToc {
+    padding: 0;
+    .card__copy {
+      padding: 0;
+    }
+    .card__title {
+      margin: 1px;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      padding: 1rem;
+      background: var(--as-black);
+      font-weight: var(--semi);
+      &-link {
+        color: var(--as-white);
+      }
+    }
+    ul,
+    p {
+      padding: 0 1em 0 2em;
+    }
+  }
+}

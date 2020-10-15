@@ -11,4 +11,10 @@ Descr: Specific styles for page sections wrappers, headings
       margin-top: 0;
     }
   }
+  &:target {
+    animation-name: simpleFadeIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+  }
 }
