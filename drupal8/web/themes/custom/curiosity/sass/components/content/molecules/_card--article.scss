@@ -30,6 +30,7 @@ Descr: Sets all specific styles for an article card
     color: var(--as-black);
     font-size: var(--base-18);
     font-weight: var(--semi);
+    margin-bottom: 0.5em;
   }
   .card__date {
     grid-area: date;
