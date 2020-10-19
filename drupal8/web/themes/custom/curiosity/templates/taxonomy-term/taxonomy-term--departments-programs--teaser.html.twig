@@ -34,6 +34,12 @@
 {% set teaser_modifiers = teaser_modifiers|merge([nodeType]) %}
 
 {% set teaser_summary = content.description %}
+{% set teaser_body = contnet.descripiton %}
+{# if search api excerpt set to that #}
+{% if elements['#search_api_excerpt'] %}
+	{% set teaser_body = elements['#search_api_excerpt'] %}
+{% endif %}
+
 
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = ['department-program'] %}

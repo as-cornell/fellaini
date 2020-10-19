@@ -12,7 +12,7 @@ Descr:
   grid-template-columns: repeat(12, 1fr);
   .sidebar {
     grid-area: sidebar;
-    form {
+    .sidebar--filters {
       position: sticky;
       top: 150px;
     }
