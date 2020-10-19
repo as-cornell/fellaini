@@ -34,9 +34,16 @@
 {% set teaser_modifiers = teaser_modifiers|merge([nodeType]) %}
 
 {% set teaser_summary = content.description %}
+{% set teaser_body = content.description %}
 
 {% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
 {% set main_element_modifiers = ['major-minor-grad'] %}
+
+
+{# if search api excerpt set to that #}
+{% if elements['#search_api_excerpt'] %}
+	{% set teaser_body = elements['#search_api_excerpt'] %}
+{% endif %}
 
 {% include "@content/molecules/_teaser.twig" with{
   teaser_title : name,
@@ -44,5 +51,5 @@
   teaser_link_url: url,
   teaser_img : content.field_image,
 
-  teaser_body: content.description
+  teaser_body: teaser_body
 } %}
