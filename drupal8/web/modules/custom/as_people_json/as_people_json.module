@@ -3,59 +3,87 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 
 
-function as_people_json_get_json($netid)
+function as_people_json_get_person_json($netid)
 {
   //set cache id (verify parameters are safe values to use as cache id)
   $cid = "as_people_json:" . $netid;
-  $person_json = NULL;
+  $person_data = [];
   //check cache
-  if ($cache = \Drupal::cache('data')->get($cid)) {
+  //if ($cache = \Drupal::cache('data')->get($cid)) {
     //fetch cache data
-    $person_json = $cache->data;
+    //$person_json = $cache->data;
     //check cache expiration
-  }
+  //}
   // if no data check url
-  else {
+  //else {
     $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter%5Bfield_person_netid%5D=' . $netid .'&include=field_image';
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
-    $person_json = $json['data'];
-    $person_image = $json['included'];
-    \Drupal::cache('data')
-      ->set($cid, $person_json, time() + 360);
-  }
+    $person_data['data'] = $json['data'];
+    $person_data['included'] = $json['included'];
+    //\Drupal::cache('data')
+      //->set($cid, $person_json, time() + 360);
+  //}
   //return data
-  //dump($person_image);
-  return $person_json;
+  //dump($json);
+  //dump($person_data);
+  return $person_data;
 }
 
-function as_people_json_generate_item_markup($person_data)
+function as_people_json_get_dept_json($deptuuid)
 {
-  // Deal with localist's funky json structure
-  //$person = $person_data['attributes'];
-  $title = $person_data['attributes']['title'];
-  $keywords = strip_tags($person_data['attributes']['field_keywords']['value']);
-  $image = $person_data['included']['attributes'];
-  $jobtitle = $person_data['attributes']['field_person_title'];
-  // Create the markup
-  //dump($person_data['included']);
-  $markup = '<div><div>' . $title . '</div>';
-  if ($jobtitle) {
-    $markup = $markup . '<div>' . $jobtitle .'</div>';
-  }
-  if ($image) {
-    $markup = $markup . '<div> IMAGE:' . $image .'</div>';
-  }
-  if ($keywords) {
-    $markup = $markup . '<div>' . $keywords .'</div>';
-  }
-  $markup = $markup . '</div>';
-
-
-  return $markup;
+  //set cache id (verify parameters are safe values to use as cache id)
+  $cid = "as_dept_json:" . $deptuuid;
+  $dept_json = NULL;
+  //check cache
+  //if ($cache = \Drupal::cache('data')->get($cid)) {
+    //fetch cache data
+    //$person_json = $cache->data;
+    //check cache expiration
+  //}
+  // if no data check url
+  //else {
+    $url = 'https://people.asd8.as.cornell.edu/jsonapi/taxonomy_term/departments_and_programs/' . $deptuuid;
+    //fetch data and set cache
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $dept_data['data'] = $json['data'];
+    //\Drupal::cache('data')
+      //->set($cid, $person_json, time() + 360);
+  //}
+  //return data
+  //dump($json);
+  //dump($person_data);
+  return $dept_data;
 }
 
+function as_people_json_get_people_summary_json($summaryuuid)
+{
+  //set cache id (verify parameters are safe values to use as cache id)
+  $cid = "as_people_summary_json:" . $summaryuuid;
+  $dept_json = NULL;
+  //check cache
+  //if ($cache = \Drupal::cache('data')->get($cid)) {
+    //fetch cache data
+    //$person_json = $cache->data;
+    //check cache expiration
+  //}
+  // if no data check url
+  //else {
+    $url = 'https://people.asd8.as.cornell.edu/jsonapi/paragraph/person_description_standard/' . $summaryuuid;
+    //fetch data and set cache
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $summary_data['data'] = $json['data'];
+    //\Drupal::cache('data')
+      //->set($cid, $person_json, time() + 360);
+  //}
+  //return data
+  //dump($json);
+  //dump($person_data);
+  return $summary_data;
+}
 
 /**
  * Implements hook_help().
