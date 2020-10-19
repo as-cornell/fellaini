@@ -5,22 +5,21 @@
 
  */
 #}
-{# {% set ul_modifiers = ['people'] %}
 
-
-{% embed "@content/atoms/_ul.twig" with{
-  ul_items : items
-} %}
-{% endembed %} #}
-{{content.field_link.0['#values'].uri}}
-
-
-{# {{vardumper(content.field_link)}} #}
+{% set netid = content.field_netid|field_value|safe_join(', ') %}
+{% set personlink = content.field_link.0['#url'] %}
 {# {{content.name}} #}
 
-{% embed "@content/atoms/_link.twig" with {
+ {% set blocky = drupal_block('person_card_block', {netid:netid}) %}
+
+ {% if blocky|length < 10 %}
+
+ {% embed "@content/atoms/_link.twig" with {
     link_modifiers : ["person"],
     link_content: content.name,
-    link_url: content.field_link.0.uri
+    link_url: personlink
 } %}
 {% endembed %}
+{% else %}
+  {{ blocky }}
+{% endif %}
