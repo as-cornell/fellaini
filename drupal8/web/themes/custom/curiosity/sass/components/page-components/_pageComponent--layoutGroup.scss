@@ -30,7 +30,8 @@ Descr: Sets grid for columns pce--layout-group.html.twig
         }
       }
     }
-    h2:first-of-type {
+    h2:first-of-type,
+    h3:first-of-type {
       margin-top: 0;
     }
   }
