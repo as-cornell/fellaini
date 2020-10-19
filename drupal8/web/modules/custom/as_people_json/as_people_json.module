@@ -1,0 +1,73 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+function as_people_json_get_json($netid)
+{
+  //set cache id (verify parameters are safe values to use as cache id)
+  $cid = "as_people_json:" . $netid;
+  $person_json = NULL;
+  //check cache
+  if ($cache = \Drupal::cache('data')->get($cid)) {
+    //fetch cache data
+    $person_json = $cache->data;
+    //check cache expiration
+  }
+  // if no data check url
+  else {
+    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter%5Bfield_person_netid%5D=' . $netid .'&include=field_image';
+    //fetch data and set cache
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $person_json = $json['data'];
+    $person_image = $json['included'];
+    \Drupal::cache('data')
+      ->set($cid, $person_json, time() + 360);
+  }
+  //return data
+  //dump($person_image);
+  return $person_json;
+}
+
+function as_people_json_generate_item_markup($person_data)
+{
+  // Deal with localist's funky json structure
+  //$person = $person_data['attributes'];
+  $title = $person_data['attributes']['title'];
+  $keywords = strip_tags($person_data['attributes']['field_keywords']['value']);
+  $image = $person_data['included']['attributes'];
+  $jobtitle = $person_data['attributes']['field_person_title'];
+  // Create the markup
+  //dump($person_data['included']);
+  $markup = '<div><div>' . $title . '</div>';
+  if ($jobtitle) {
+    $markup = $markup . '<div>' . $jobtitle .'</div>';
+  }
+  if ($image) {
+    $markup = $markup . '<div> IMAGE:' . $image .'</div>';
+  }
+  if ($keywords) {
+    $markup = $markup . '<div>' . $keywords .'</div>';
+  }
+  $markup = $markup . '</div>';
+
+
+  return $markup;
+}
+
+
+/**
+ * Implements hook_help().
+ */
+function as_people_json_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    case 'help.as_people_json':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The A&S People JSON module provides various blocks of people that consume JSON API from people.as.cornell.edu.') . '</p>';
+
+      return $output;
+  }
+}
