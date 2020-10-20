@@ -23,7 +23,7 @@ function as_people_json_get_person_json($netid)
     $person_data['data'] = $json['data'];
     $person_data['included'] = $json['included'];
     \Drupal::cache('data')
-      ->set($cid, $person_json, time() + 360);
+      ->set($cid, $json, time() + 360);
   }
   //return data
   return $person_data;
@@ -48,7 +48,7 @@ function as_people_json_get_dept_json($deptuuid)
     $json = json_decode($data, true);
     $dept_data['data'] = $json['data'];
     \Drupal::cache('data')
-      ->set($cid, $person_json, time() + 360);
+      ->set($cid, $json, time() + 360);
   }
   //return data
   return $dept_data;
@@ -73,7 +73,7 @@ function as_people_json_get_people_summary_json($summaryuuid)
     $json = json_decode($data, true);
     $summary_data['data'] = $json['data'];
     \Drupal::cache('data')
-      ->set($cid, $person_json, time() + 360);
+      ->set($cid, $json, time() + 360);
   }
   //return data
   return $summary_data;
