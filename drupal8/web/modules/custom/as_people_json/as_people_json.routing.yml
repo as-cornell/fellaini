@@ -2,6 +2,6 @@ as_people_json.content:
   path: '/as_people_json/{netid}'
   defaults:
     _controller: '\Drupal\as_people_json\Controller\PeopleController::content'
-    _title: 'AS People JSON'
+    _title: 'People'
   requirements:
     _permission: 'access content'
