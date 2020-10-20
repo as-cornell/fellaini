@@ -14,6 +14,9 @@ class PeopleController extends ControllerBase {
   public function content($netid) {
 
     $markup = "";
+    $departments = "";
+    $summary = "";
+    $researchfocus = "";
     $people_json = as_people_json_get_person_json($netid);
     if (!empty($people_json['data'])) {
       //dump($people_json['data']);
@@ -40,7 +43,7 @@ class PeopleController extends ControllerBase {
             $summaryuuid = $summary_data['id'];
             $summary_json = as_people_json_get_people_summary_json($summaryuuid);
             $summary = $summary . $summary_json['data']['attributes']['field_description']['processed'];
-            $summary = $summary . $summary_json['data']['attributes']['field_person_research_focus']['processed'];
+            $researchfocus = $researchfocus . $summary_json['data']['attributes']['field_person_research_focus']['processed'];
           }
       }
       // Create the markup
@@ -63,6 +66,9 @@ class PeopleController extends ControllerBase {
       }
       if ($summary) {
         $markup = $markup . '<div><h3>Overview</h3>' . $summary .'</div>';
+      }
+      if ($researchfocus) {
+        $markup = $markup . '<div><h3>Research Focus</h3>' . $researchfocus .'</div>';
       }
     } // There were no people
     else {
