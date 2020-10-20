@@ -140,7 +140,8 @@ Descr:
   }
 
   //janky drupal hide/show
-  details[id*="collapsible"] {
+  details[id*="collapsible"],
+  fieldset[id*="field-interests"] {
     summary {
       font-weight: var(--semi);
     }
@@ -149,6 +150,9 @@ Descr:
       overflow-y: scroll;
     }
   }
+  // fieldset[id*="field-interests"] {
+  //   background: red;
+  // }
 
   // best based fields
   .form-item__textfield,
