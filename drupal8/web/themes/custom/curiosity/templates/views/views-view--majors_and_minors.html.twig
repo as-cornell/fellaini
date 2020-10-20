@@ -16,7 +16,7 @@ Descr: main output business for views. Classes are from the view-display setting
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-
+{{vardumper()}}
 {% set main_element_extra_classes = ['main', 'list--cards'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
