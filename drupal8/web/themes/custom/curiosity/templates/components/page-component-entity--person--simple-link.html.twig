@@ -9,10 +9,12 @@
 {% set netid = content.field_netid|field_value|safe_join(', ') %}
 {% set personlink = content.field_link.0['#url'] %}
 {# {{content.name}} #}
+{# set blocky = drupal_block('person_card_block', {netid:netid}) #}
+{% set badlarry = parse_people_json(netid) %}
+{#vardumper(badlarry)#}
 
- {% set blocky = drupal_block('person_card_block', {netid:netid}) %}
 
- {% if blocky|length < 10 %}
+ {% if badlarry.title is empty %}
 
  {% embed "@content/atoms/_link.twig" with {
     link_modifiers : ["person"],
@@ -20,6 +22,14 @@
     link_url: personlink
 } %}
 {% endembed %}
+
 {% else %}
-  {{ blocky }}
+  <ul>
+  <li>{{badlarry.imagepath}}</li>
+  <li>{{badlarry.alt}}</li>
+  <li>{{badlarry.path}}</li>
+  <li>{{badlarry.title}}</li>
+  <li>{{badlarry.jobtitle}}</li>
+  <li>{{badlarry.departments}}</li>
+  </ul>
 {% endif %}
