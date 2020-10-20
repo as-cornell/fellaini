@@ -45,7 +45,7 @@ class PeopleController extends ControllerBase {
       }
       // Create the markup
       $markup = '<div> <img src="https://people.asd8.as.cornell.edu' . $imagepath .'" alt="'.$alt.'"></div>';
-      $markup = $markup . '<div><a href="/as_people_json/'. $netid .'">' . $title . '</a></div>';
+      $markup = $markup . '<h3>' . $title . '</a></div>';
       if ($jobtitle) {
         $markup = $markup . '<div>' . $jobtitle .'</div>';
       }
@@ -58,7 +58,7 @@ class PeopleController extends ControllerBase {
       if ($education) {
         $markup = $markup . '<div><h3>Education</h3>' . $education .'</div>';
       }
-      if ($education) {
+      if ($publications) {
         $markup = $markup . '<div><h3>Publications</h3>' . $publications .'</div>';
       }
       if ($summary) {
