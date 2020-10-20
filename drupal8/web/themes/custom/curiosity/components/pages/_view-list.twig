@@ -17,7 +17,7 @@ Setting up new block class of 'teaser'
 {% if show_fancybox %}
 	{{ attach_library('curiosity/fancybox' )}}
 {% endif %}
-{# jahsdf;lasjhdf;alksdfj #}
+
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 	<div class="pageTitle">
 		{% include "@content/atoms/_heading.twig" with {
@@ -56,14 +56,14 @@ Setting up new block class of 'teaser'
 		{{ view_sidebar }}
 
 		{# {% if show_search_options %}
-							<h3>
-								Search for
-							</h3>
-							<ul>
-								<li><a href="">Search articles</a></li>
-								<li><a href="">Search majors and minors</a></li>
-								<li><a href="">Search people</a></li>
-							</ul>
-						{% endif %} #}
+									<h3>
+										Search for
+									</h3>
+									<ul>
+										<li><a href="">Search articles</a></li>
+										<li><a href="">Search majors and minors</a></li>
+										<li><a href="">Search people</a></li>
+									</ul>
+								{% endif %} #}
 	</div>
 </main>
