@@ -104,7 +104,8 @@
         "drupal/gin": "^3.0",
         "drupal/gin_toolbar": "^1.0",
         "drupal/linkit": "^4.3",
-        "drupal/facets": "^1.5"
+        "drupal/facets": "^1.5",
+        "drupal/facets_pretty_paths": "^1.0"
 
 
     },
