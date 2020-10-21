@@ -29,7 +29,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 
 
-{{vardumper(view)}}
+{# {{vardumper(view)}} #}
 
 {# set view_title = view.storage.label #}
 {% set view_title = view.element['#title'] %}
@@ -50,16 +50,25 @@ Descr: main output business for views. Classes are from the view-display setting
 	{% set keyword = view.getExposedInput.search_api_fulltext %}
   {% set view_header = view_header ~ keyword  %}
 {% endif %}
+{% if (view.getExposedInput.field_related_disciplines) %}
+	{% set view_header = view_header ~'Discipline: ' %}
+	{% for key, item in view.getExposedInput.field_related_disciplines %}
+		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
+		{% set view_header = view_header ~ termname  %}
+	{% endfor %}
+{% endif %}
+
+
 {% if (view.getExposedInput.field_byline_reference) %}
 	{% set view_header = view_header ~ 'Byline search: ' %}
 	{% set Byline = view.getExposedInput.field_byline_reference %}
 	{% set view_header = view_header ~ Byline  %}
 {% endif %}
-{# {% if (view.getExposedInput.field_media_source_reference) %}
+{% if (view.getExposedInput.field_media_source_reference) %}
 	{% set view_header = view_header ~ 'Media source search: ' %}
-	{% set Media source = view.getExposedInput.field_media_source_reference %}
-	{% set view_header = view_header ~ Media source  %}
-{% endif %} #}
+	{% set Media_source = view.getExposedInput.field_media_source_reference %}
+	{% set view_header = view_header ~ Media_source  %}
+{% endif %}
 
 
 
