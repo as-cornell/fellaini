@@ -31,11 +31,11 @@ Descr: main output business for search results views. Classes are from the view-
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_sidebar = exposed %}
-{% set view_header = "links to differnet searches" %}
+{% set view_header = header %}
 {% set show_search_options = true %}
 
 {# set show_filter = true #}
-
+{# {{vardumper(view)}} #}
 {# {{ view.getExposedInput.byline }} #}
 
 {% set view_sidebar %}
