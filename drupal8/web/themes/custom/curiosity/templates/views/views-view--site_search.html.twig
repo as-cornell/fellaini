@@ -19,7 +19,7 @@ Descr: main output business for search results views. Classes are from the view-
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
 {% set main_element_base_class = 'basicSidebar' %}
-{% set main_element_modifiers = ['viewContainer'] %}
+{% set main_element_modifiers = ['viewContainer', 'site-search'] %}
 {% set search_terms = exposed.keywords['#value'] %}
 
 
@@ -36,7 +36,21 @@ Descr: main output business for search results views. Classes are from the view-
 
 {# set show_filter = true #}
 
-{{ view.getExposedInput.byline }}
+{# {{ view.getExposedInput.byline }} #}
+
+{% set view_sidebar %}
+	<div class="sidebar--filters"> {{exposed}}
+	<h3>
+		Search for
+	</h3>
+	<ul>
+		<li><a href="">Search articles</a></li>
+		<li><a href="">Search majors and minors</a></li>
+		<li><a href="">Search people</a></li>
+	</ul>
+
+</div>
+{% endset %}
 
 
 {% include "@pages/_view-list.twig" with {
