@@ -27,6 +27,6 @@ Descr:
     margin-bottom: var(--bottom-margin);
   }
   .group__title {
-    // @extend .sr-only;
+    @extend .sr-only;
   }
 }

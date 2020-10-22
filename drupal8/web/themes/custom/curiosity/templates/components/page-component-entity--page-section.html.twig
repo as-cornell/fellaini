@@ -8,7 +8,7 @@ Descr: outputs a page section
 --------------------------- */
 
 #}
- {# {{vardumper(content.field_page_section_title.)}} #}
+{# {{vardumper(content.field_page_section_title)}} #}
 
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['page-section'] %}
@@ -16,15 +16,18 @@ Descr: outputs a page section
 
 {% set items = content.field_page_components %}
 {% set items_length = items|length %}
+
 {% set divid = content.field_page_section_title|field_value|safe_join(', ')|lower|replace({" ": "-"}) %}
+
 {% if content.field_page_components['#is_multiple'] == true %}
 	{% set multiple = true %}
 {% endif %}
+
 {% embed "@content/molecules/_grouping.twig" with{
   items: items,
   title: content.field_page_section_title,
-  divid : divid
+  divid : divid,
+group_label : content.field_page_section_title
 
 } %}
 {% endembed %}
-
