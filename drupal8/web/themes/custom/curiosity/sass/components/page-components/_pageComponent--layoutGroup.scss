@@ -29,6 +29,11 @@ Descr: Sets grid for columns pce--layout-group.html.twig
           flex: 0 0 40%;
         }
       }
+      &.threeCol {
+        > div {
+          flex: 0 0 calc(33% - 1rem);
+        }
+      }
     }
     h2:first-of-type,
     h3:first-of-type {

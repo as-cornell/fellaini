@@ -1,6 +1,6 @@
 {#
 /**
- name = page-component-entity--person--list.html.twig
+ name = page-component-entity--person--card.html.twig
  Makes name a link to page
 
  */
@@ -14,49 +14,14 @@
 {#vardumper(person)#}
 
 
-	{% if person.title is empty %}
-
-	{% embed "@content/atoms/_link.twig" with {
-    link_modifiers : ["person"],
-    link_content: content.name,
-    link_url: personlink
-} %}
-	{% endembed %}
-
-
-	{% else %}
-	{# <ul>
-											<li>
-												{{person.imagepath}}
-											</li>
-											<li>
-												{{person.alt}}
-											</li>
-											<li>
-												{{person.path}}
-											</li>
-											<li>
-												{{person.title}}
-											</li>
-											<li>
-												{{person.jobtitle}}
-											</li>
-											<li>
-												{{person.departments}}
-											</li>
-										</ul> #}
-{% endif %}
-{# {% set person__link %}
-
-{% endset %} #}
 {% set person__departments %}
-<p>
-	<strong>
-		Departments
-	</strong>
+	<p>
+		<strong>
+	Departments
+</strong>
 </p>
-<ul>
-	{{person.departments|raw}}
+	<ul>
+{{person.departments|raw}}
 </ul>
 {% endset %}
 
@@ -69,5 +34,4 @@
     card_label: person.jobtitle,
     card_body: person__departments,
     card_nodeId : node.id
-} %}
-{% endembed %}
+} %}{% endembed %}

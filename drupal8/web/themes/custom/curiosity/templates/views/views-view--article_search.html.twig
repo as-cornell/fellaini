@@ -68,14 +68,14 @@ Descr: main output business for views. Classes are from the view-display setting
 {% endif %}
 
 
-{% if (view.getExposedInput.field_byline_reference) %}
+{% if (view.getExposedInput.byline) %}
 	{% set view_header = view_header ~ 'Byline search: ' %}
-	{% set Byline = view.getExposedInput.field_byline_reference %}
+	{% set Byline = view.getExposedInput.byline %}
 	{% set view_header = view_header ~ Byline  %}
 {% endif %}
-{% if (view.getExposedInput.field_media_source_reference) %}
+{% if (view.getExposedInput.media_source) %}
 	{% set view_header = view_header ~ 'Media source search: ' %}
-	{% set Media_source = view.getExposedInput.field_media_source_reference %}
+	{% set Media_source = view.getExposedInput.media_source %}
 	{% set view_header = view_header ~ Media_source  %}
 {% endif %}
 
