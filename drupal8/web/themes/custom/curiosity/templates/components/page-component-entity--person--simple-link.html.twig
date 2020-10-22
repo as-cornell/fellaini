@@ -14,22 +14,34 @@
 {#vardumper(badlarry)#}
 
 
- {% if badlarry.title is empty %}
+	{% if badlarry.title is empty %}
 
- {% embed "@content/atoms/_link.twig" with {
+	{% embed "@content/atoms/_link.twig" with {
     link_modifiers : ["person"],
     link_content: content.name,
     link_url: personlink
 } %}
-{% endembed %}
+	{% endembed %}
 
 {% else %}
-  <ul>
-  <li>{{badlarry.imagepath}}</li>
-  <li>{{badlarry.alt}}</li>
-  <li>{{badlarry.path}}</li>
-  <li>{{badlarry.title}}</li>
-  <li>{{badlarry.jobtitle}}</li>
-  <li>{{badlarry.departments}}</li>
-  </ul>
+	<ul>
+		<li>
+			{{badlarry.imagepath}}
+		</li>
+		<li>
+			{{badlarry.alt}}
+		</li>
+		<li>
+			{{badlarry.path}}
+		</li>
+		<li>
+			{{badlarry.title}}
+		</li>
+		<li>
+			{{badlarry.jobtitle}}
+		</li>
+		<li>
+			{{badlarry.departments}}
+		</li>
+	</ul>
 {% endif %}
