@@ -16,27 +16,35 @@ Descr: main output business for views. Classes are from the view-display setting
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-{# include fancybox #}
 
-{% set show_fancybox = true %}
 
 {# set up classes #}
 
-{% set main_element_extra_classes = ['main'] %}
+{% set main_element_extra_classes = ['main', 'list--teasers'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 {% set main_element_base_class = 'basicSidebar' %}
 {% set main_element_modifiers = ['viewContainer', 'articles'] %}
 
 
 
-{# {{vardumper(view)}} #}
+{# set secondary title search for #}
+{% set search_terms = exposed.keywords['#value'] %}
+{% if search_terms is not empty %}
+	{% set view_sub_title = 'Search results for ' ~ '"'~search_terms~'"' %}
+{% endif %}
 
-{# set view_title = view.storage.label #}
+
+{# set set main variables #}
+
 {% set view_title = view.element['#title'] %}
-
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_sidebar %}
+{% set view_header = header %}
+
+{# set view specific sidebar #}
+
+{% set view_header = sidebar %}
 <div class="sidebar--filters">
   {{exposed}}
 </div>
@@ -45,9 +53,10 @@ Descr: main output business for views. Classes are from the view-display setting
 
 
 {# adding "now viewing" labels #}
-{% if (view.getExposedInput.search_api_fulltext) %}
+
+{% if (view.getExposedInput.keywords) %}
 	{% set view_header = view_header ~ 'Keyword search: ' %}
-	{% set keyword = view.getExposedInput.search_api_fulltext %}
+	{% set keyword = view.getExposedInput.keywords %}
   {% set view_header = view_header ~ keyword  %}
 {% endif %}
 {% if (view.getExposedInput.field_related_disciplines) %}
