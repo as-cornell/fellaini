@@ -1,0 +1,73 @@
+{#
+/**
+ name = page-component-entity--person--list.html.twig
+ Makes name a link to page
+
+ */
+#}
+
+{% set netid = content.field_netid|field_value|safe_join(', ') %}
+{% set personlink = content.field_link.0['#url'] %}
+{# {{content.name}} #}
+{# set blocky = drupal_block('person_card_block', {netid:netid}) #}
+{% set person = parse_people_json(netid) %}
+{#vardumper(person)#}
+
+
+	{% if person.title is empty %}
+
+	{% embed "@content/atoms/_link.twig" with {
+    link_modifiers : ["person"],
+    link_content: content.name,
+    link_url: personlink
+} %}
+	{% endembed %}
+
+
+	{% else %}
+	{# <ul>
+											<li>
+												{{person.imagepath}}
+											</li>
+											<li>
+												{{person.alt}}
+											</li>
+											<li>
+												{{person.path}}
+											</li>
+											<li>
+												{{person.title}}
+											</li>
+											<li>
+												{{person.jobtitle}}
+											</li>
+											<li>
+												{{person.departments}}
+											</li>
+										</ul> #}
+{% endif %}
+{# {% set person__link %}
+
+{% endset %} #}
+{% set person__departments %}
+<p>
+	<strong>
+		Departments
+	</strong>
+</p>
+<ul>
+	{{person.departments|raw}}
+</ul>
+{% endset %}
+
+{% embed "@content/molecules/card--person.twig" with {
+    card_modifiers : ["person"],
+    card_title: person.title,
+    card_link_url: personlink,
+    card_image_path : person.imagepath,
+    card_image_alt : person.alt,
+    card_label: person.jobtitle,
+    card_body: person__departments,
+    card_nodeId : node.id
+} %}
+{% endembed %}
