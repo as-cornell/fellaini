@@ -51,12 +51,19 @@ Descr:
     "title"
     "content"
     "sidebar";
-  // @include medium {
-  //   grid-template-areas:
-  //     "nav nav nav nav title title title title title title title title"
-  //     "nav nav nav nav content content content content content content content content"
-  //     "sidebar sidebar sidebar sidebar content content content content content content content content";
-  // }
+  @include medium {
+    grid-template-areas:
+      ". title title title title title title title title title title ."
+      "nav nav nav content content content content content content content content content"
+      "sidebar sidebar sidebar content content content content content content content content content";
+  }
+  @include large {
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-areas:
+      ". . . . . title title title title title title title title title title title title title title title . . . ."
+      "nav nav nav nav nav content content content content content content content content content content content content content content content aside aside aside aside"
+      "sidebar sidebar sidebar sidebar sidebar content content content content content content content content content content content content content content content aside aside aside aside";
+  }
   &--has-aside {
     @include medium {
       grid-template-columns: repeat(12, 1fr);
