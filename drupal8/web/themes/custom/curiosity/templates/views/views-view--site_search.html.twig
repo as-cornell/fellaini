@@ -15,28 +15,48 @@ Descr: main output business for search results views. Classes are from the view-
   ]
 %}
 
-{% set main_element_extra_classes = ['main']%}
+{% set main_element_extra_classes = ['main', 'list--teasers']%}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
 {% set main_element_base_class = 'basicSidebar' %}
-{% set main_element_modifiers = ['viewContainer'] %}
+{% set main_element_modifiers = ['viewContainer', 'site-search'] %}
+
+{# set secondary title search for #}
 {% set search_terms = exposed.keywords['#value'] %}
-
-
 {% if search_terms is not empty %}
 	{% set view_sub_title = 'Search results for ' ~ '"'~search_terms~'"' %}
 {% endif %}
+
+{# set main variables #}
 
 {% set view_title = view.storage.label %}
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_sidebar = exposed %}
-{% set view_header = "links to differnet searches" %}
-{% set show_search_options = true %}
+{% set view_header = header %}
 
-{# set show_filter = true #}
+{# set view specific sidebar #}
 
-{{ view.getExposedInput.byline }}
+{% set view_sidebar %}
+<div class="sidebar--filters">
+	{{exposed}}
+	<p>
+		Search for "
+		<em>
+			{{search_terms}}
+		</em>
+		"
+	</p>
+	<ul>
+		<li><a href="/article-search?keywords={{search_terms}}">Search articles</a></li>
+
+		<li><a href="/major-minor-grad-search?keywords={{search_terms}}">Search majors and minors</a></li>
+
+		<li><a href="">Search people</a></li>
+	</ul>
+
+</div>
+{% endset %}
 
 
 {% include "@pages/_view-list.twig" with {
