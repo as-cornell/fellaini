@@ -52,22 +52,22 @@ class PeopleController extends ControllerBase {
       if ($jobtitle) {
         $markup = $markup . '<div>' . $jobtitle .'</div>';
       }
-      if ($departments) {
+      if (!empty($departments)) {
         $markup = $markup . '<div>' . rtrim($departments, ', ') .'</div>';
       }
-      if ($keywords) {
+      if (!empty($keywords)) {
         $markup = $markup . '<div>' . $keywords .'</div>';
       }
-      if ($education) {
+      if (!empty($education)) {
         $markup = $markup . '<div><h3>Education</h3>' . $education .'</div>';
       }
-      if ($publications) {
+      if (!empty($publications)) {
         $markup = $markup . '<div><h3>Publications</h3>' . $publications .'</div>';
       }
-      if ($summary) {
+      if (!empty($summary)) {
         $markup = $markup . '<div><h3>Overview</h3>' . $summary .'</div>';
       }
-      if ($researchfocus) {
+      if (!empty($researchfocus)) {
         $markup = $markup . '<div><h3>Research Focus</h3>' . $researchfocus .'</div>';
       }
     } // There were no people
