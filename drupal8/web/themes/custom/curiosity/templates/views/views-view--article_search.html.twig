@@ -16,16 +16,14 @@ Descr: main output business for views. Classes are from the view-display setting
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-{# include fancybox #}
 
-{% set show_fancybox = true %}
 
 {# set up classes #}
 
-{% set main_element_extra_classes = ['main', 'list--cards'] %}
+{% set main_element_extra_classes = ['main', 'list--teasers'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 {% set main_element_base_class = 'basicSidebar' %}
-{% set main_element_modifiers = ['viewContainer', 'majors-minors-grads'] %}
+{% set main_element_modifiers = ['viewContainer', 'articles'] %}
 
 
 
@@ -35,16 +33,18 @@ Descr: main output business for views. Classes are from the view-display setting
 	{% set view_sub_title = 'Search results for ' ~ '"'~search_terms~'"' %}
 {% endif %}
 
-{# set main variables #}
+
+{# set set main variables #}
 
 {% set view_title = view.element['#title'] %}
 {% set view_content = rows %}
 {% set view_pager = pager %}
+{% set view_sidebar %}
 {% set view_header = header %}
 
 {# set view specific sidebar #}
 
-{% set view_sidebar %}
+{% set view_header = sidebar %}
 <div class="sidebar--filters">
   {{exposed}}
 </div>
@@ -54,32 +54,32 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {# adding "now viewing" labels #}
 
-{% if (view.getExposedInput.search_api_fulltext) %}
+{% if (view.getExposedInput.keywords) %}
 	{% set view_header = view_header ~ 'Keyword search: ' %}
-	{% set keyword = view.getExposedInput.search_api_fulltext %}
+	{% set keyword = view.getExposedInput.keywords %}
   {% set view_header = view_header ~ keyword  %}
 {% endif %}
-{% if (view.getExposedInput.field_level) %}
-	{% set view_header = 'Level: ' %}
-	{% for key, item in view.getExposedInput.field_level %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
-	{% endfor %}
-{% endif %}
-{% if (view.getExposedInput.field_discipline) %}
+{% if (view.getExposedInput.field_related_disciplines) %}
 	{% set view_header = view_header ~'Discipline: ' %}
-	{% for key, item in view.getExposedInput.field_discipline %}
+	{% for key, item in view.getExposedInput.field_related_disciplines %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
 		{% set view_header = view_header ~ termname  %}
 	{% endfor %}
 {% endif %}
-{% if (view.getExposedInput.field_interests) %}
-	{% set view_header = view_header ~ 'Interests: ' %}
-	{% for key, item in view.getExposedInput.field_interests %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
-	{% endfor %}
+
+
+{% if (view.getExposedInput.byline) %}
+	{% set view_header = view_header ~ 'Byline search: ' %}
+	{% set Byline = view.getExposedInput.byline %}
+	{% set view_header = view_header ~ Byline  %}
 {% endif %}
+{% if (view.getExposedInput.media_source) %}
+	{% set view_header = view_header ~ 'Media source search: ' %}
+	{% set Media_source = view.getExposedInput.media_source %}
+	{% set view_header = view_header ~ Media_source  %}
+{% endif %}
+
+
 
 
 
