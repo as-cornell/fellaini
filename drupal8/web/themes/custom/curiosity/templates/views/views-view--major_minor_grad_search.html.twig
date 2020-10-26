@@ -59,9 +59,9 @@ Descr: main output business for views. Classes are from the view-display setting
 	{% set keyword = view.getExposedInput.search_api_fulltext %}
   {% set view_header = view_header ~ keyword  %}
 {% endif %}
-{% if (view.getExposedInput.field_level) %}
+{% if (view.getExposedInput.level) %}
 	{% set view_header = 'Level: ' %}
-	{% for key, item in view.getExposedInput.field_level %}
+	{% for key, item in view.getExposedInput.level %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
 		{% set view_header = view_header ~ termname  %}
 	{% endfor %}
