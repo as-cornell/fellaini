@@ -19,7 +19,6 @@ Descr: outputs a page section
 
 {% set divid = content.field_page_section_title|field_value|safe_join(', ')|lower|replace({" ": "-", ",": ""}) %}
 
-
 {% if content.field_page_components['#is_multiple'] == true %}
 	{% set multiple = true %}
 {% endif %}
