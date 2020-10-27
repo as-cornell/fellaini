@@ -6,6 +6,7 @@ Title: block--as-events.html.twig
 Descr: sets up event list
   pases list class of 'eventList
   passes isList
+  show label will override default group label hiding on landing pages
 
 --------------------------- */
 
@@ -15,8 +16,8 @@ Descr: sets up event list
 
 {% set list_base_class = 'eventList' %}
 {# {{vardumper()}} #}
-{% set isList = true %}
-
+{# {% set isList = true %} #}
+{# {% set heading_modifiers = ['sr-only'] %} #}
 
 {% include "@content/molecules/_grouping.twig" with {
     items : content,
