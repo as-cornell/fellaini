@@ -1,7 +1,7 @@
 # Migration configuration for imported images.
 id: bylines
 label: Import article bylines into taxonomy terms
-migration_group: articles
+migration_group: bylinesmediasources
 migration_dependencies: {}
 
 source:
