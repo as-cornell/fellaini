@@ -36,7 +36,12 @@ Setting up new block class of 'teaser'
 
 
 {{teaser_img}}
-  <div {{ bem(card_copy_base_class|default('teaser__copy'), (card_copy_modifiers), card_copy_blockname) }}>
+  <div {{ bem(card_copy_base_class|default('teaser__copy'), (card_copy_modifiers), card_copy_blockname) }}>    
+    {% if teaser_label %}
+      <p class="teaser__label eyebrow">
+        {{ teaser_label }}
+      </p>
+    {% endif %}
     {% include "@content/atoms/_heading.twig" with {
       "heading_level": 2,
       "heading": teaser_title,
@@ -48,11 +53,7 @@ Setting up new block class of 'teaser'
       "heading_base_class": teaser_title_base_class|default('title'),
       "isAriaLabel" : teaser_nodeId
     } %}
-    {% if card_label %}
-      <span class="teaser__label">
-        {{ card_label }}
-      </span>
-    {% endif %}
+
     <p>
       {% if teaser_dateline %}
         <span class="teaser__date">
