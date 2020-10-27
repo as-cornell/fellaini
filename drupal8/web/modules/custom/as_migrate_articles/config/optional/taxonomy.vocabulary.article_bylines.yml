@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'Article Bylines'
-vid: article_bylines
-description: 'Bylines to Articles as tags to allow aggregating articles by author'
-hierarchy: 0
-weight: -9
