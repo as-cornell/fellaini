@@ -5,6 +5,7 @@ migration_group: articles
 migration_dependencies:
   required:
     - article_image
+  optional: {}
 
 source:
   plugin: url
