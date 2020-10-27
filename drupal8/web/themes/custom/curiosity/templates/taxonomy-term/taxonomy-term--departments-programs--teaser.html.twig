@@ -34,7 +34,11 @@
 {% set teaser_modifiers = teaser_modifiers|merge([nodeType]) %}
 
 {% set teaser_summary = content.description %}
-{% set teaser_body = contnet.descripiton %}
+{% set teaser_body = content.descripiton %}
+
+{% set main_element_base_class = main_element_base_class | default('department-program') %}
+{% set main_element_modifiers = ['department-program'] %}
+
 {# if search api excerpt set to that #}
 {% if elements['#search_api_excerpt'] %}
 	{% set teaser_body = elements['#search_api_excerpt'] %}
@@ -43,12 +47,11 @@
 
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = ['department-program'] %}
-
 {% include "@content/molecules/_teaser.twig" with{
   teaser_title : name,
-  dp_type: content.field_type,
+  teaser_label: content.field_type,
   teaser_link_url: url,
   teaser_img : content.field_image,
 
-  teaser_body: content.description
+  teaser_body: teaser_body
 } %}

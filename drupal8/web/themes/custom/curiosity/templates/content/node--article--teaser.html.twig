@@ -27,11 +27,11 @@ Setting up new block class of 'teaser'
 {% if content.field_summary|render is not empty %}
 	{% set teaser_body = teaser_summary %}
 {% else %}
-  {% set teaser_body = '<p>' ~ content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags|truncate(400, true, '...') ~ '</p>' %}
+	{% set teaser_body = '<p>' ~ content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags|truncate(400, true, '...') ~ '</p>' %}
 {% endif %}
 {# if search api excerpt set to that #}
 {% if elements['#search_api_excerpt'] %}
-  {% set teaser_body = elements['#search_api_excerpt'] %}
+	{% set teaser_body = elements['#search_api_excerpt'] %}
 {% endif %}
 
 {# if no thumbnail set to field_image #}
@@ -43,6 +43,8 @@ Setting up new block class of 'teaser'
 
 {% embed "@content/molecules/_teaser.twig" with {
   teaser_title: label,
+teaser_label : 'Article',
+
   teaser_body: content.body,
   teaser_link_url: url,
   teaser_img: teaser_img,

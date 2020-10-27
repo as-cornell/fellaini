@@ -25,7 +25,7 @@ Descr: main output business for views. Classes are from the view-display setting
 {% set main_element_extra_classes = ['main', 'list--cards'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 {% set main_element_base_class = 'basicSidebar' %}
-{% set main_element_modifiers = ['viewContainer', 'majors-minors-grads'] %}
+{% set main_element_modifiers = ['viewContainer', 'departments-and-programs'] %}
 
 
 
@@ -59,27 +59,23 @@ Descr: main output business for views. Classes are from the view-display setting
 	{% set keyword = view.getExposedInput.search_api_fulltext %}
   {% set view_header = view_header ~ keyword  %}
 {% endif %}
-{% if (view.getExposedInput.level) %}
-	{% set view_header = 'Level: ' %}
-	{% for key, item in view.getExposedInput.level %}
+
+{% if (view.getExposedInput.Type) %}
+	{% set view_header = 'Type: ' %}
+	{% for key, item in view.getExposedInput.Type %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
 		{% set view_header = view_header ~ termname  %}
 	{% endfor %}
 {% endif %}
-{% if (view.getExposedInput.field_discipline) %}
+
+{% if (view.getExposedInput.discipline) %}
 	{% set view_header = view_header ~'Discipline: ' %}
-	{% for key, item in view.getExposedInput.field_discipline %}
+	{% for key, item in view.getExposedInput.discipline %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
 		{% set view_header = view_header ~ termname  %}
 	{% endfor %}
 {% endif %}
-{% if (view.getExposedInput.field_interests) %}
-	{% set view_header = view_header ~ 'Interests: ' %}
-	{% for key, item in view.getExposedInput.field_interests %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
-	{% endfor %}
-{% endif %}
+
 
 
 
