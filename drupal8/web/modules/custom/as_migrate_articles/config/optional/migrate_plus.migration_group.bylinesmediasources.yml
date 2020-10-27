@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: bylinesmediasources
+label: Bylines
+description: 'Migrate byline and media source strings from Drupal 7 into Drupal 8 taxonomy terms'
+source_type: 'JSON from Drupal 7 views export'
+module: null
+shared_configuration: null
