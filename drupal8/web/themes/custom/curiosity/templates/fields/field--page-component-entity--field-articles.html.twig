@@ -1,3 +1,4 @@
+
 {#
 /**
  *field--page-component-entity--field-articles.html.twig
@@ -6,10 +7,9 @@
 #}
 {# {{vardumper(items)}} #}
 
-{% set group_modifiers = ['articles', 'listBlock'] %}
+{% set group_modifiers = ['articles', 'list-links'] %}
 {% set group_base_class = 'pcWrapper' %}
-
-{% embed "@content/molecules/_list-block.twig" with{
+{% set isList = true %}
+{% embed "@content/molecules/_grouping.twig" with{
   items : items
-} %}
-{% endembed %}
+} %}{% endembed %}
