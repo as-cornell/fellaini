@@ -41,16 +41,24 @@ Setting up new block class of 'teaser'
 	{% set teaser_img = content.field_image %}
 {% endif %}
 
+{# check for field_media_source_reference #}
+{% if content.field_media_source_reference|render is not empty %}
+	{% set teaser_media_source = content.field_media_source_reference %}
+{% endif %}
+
+{# check for field_byline_reference #}
+{% if content.field_byline_reference|render is not empty %}
+	{% set teaser_byline = content.field_byline_reference %}
+{% endif %}
+
+
 {% embed "@content/molecules/_teaser.twig" with {
   teaser_title: label,
-teaser_label : 'Article',
-
+  teaser_label : 'Article',
   teaser_body: content.body,
   teaser_link_url: url,
   teaser_img: teaser_img,
   teaser_dateline: content.field_dateline,
-  teaser_media_source : content.field_media_source_reference,
-  teaser_byline : content.field_byline_reference,
   teaser_body : teaser_body
 } %}
 
