@@ -100,6 +100,7 @@ Descr: sets styles for various pce listBlocks
 .pcWrapper--layoutGroup {
   .pcWrapper--listBlock {
     margin-top: 0;
+    margin-bottom: 0;
     grid-template-columns: repeat(2, 1fr);
   }
   .pcWrapper--listItems {

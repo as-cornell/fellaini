@@ -37,7 +37,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {# set main variables #}
 
-{% set view_title = view.element['#title'] %}
+{% set view_title = view.title %}
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_header = header %}
@@ -55,29 +55,29 @@ Descr: main output business for views. Classes are from the view-display setting
 {# adding "now viewing" labels #}
 
 {% if (view.getExposedInput.search_api_fulltext) %}
-	{% set view_header = view_header ~ 'Keyword search: ' %}
+	{% set view_filters = view_filters ~ 'Keyword search: ' %}
 	{% set keyword = view.getExposedInput.search_api_fulltext %}
-  {% set view_header = view_header ~ keyword  %}
+  {% set view_filters = view_filters ~ keyword  %}
 {% endif %}
 {% if (view.getExposedInput.level) %}
-	{% set view_header = 'Level: ' %}
+	{% set view_filters = 'Level: ' %}
 	{% for key, item in view.getExposedInput.level %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
+		{% set view_filters = view_filters ~ termname  %}
 	{% endfor %}
 {% endif %}
 {% if (view.getExposedInput.field_discipline) %}
-	{% set view_header = view_header ~'Discipline: ' %}
+	{% set view_filters = view_filters ~'Discipline: ' %}
 	{% for key, item in view.getExposedInput.field_discipline %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
+		{% set view_filters = view_filters ~ termname  %}
 	{% endfor %}
 {% endif %}
 {% if (view.getExposedInput.field_interests) %}
-	{% set view_header = view_header ~ 'Interests: ' %}
+	{% set view_filters = view_filters ~ 'Interests: ' %}
 	{% for key, item in view.getExposedInput.field_interests %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
+		{% set view_filters = view_filters ~ termname  %}
 	{% endfor %}
 {% endif %}
 

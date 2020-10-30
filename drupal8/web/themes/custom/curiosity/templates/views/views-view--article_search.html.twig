@@ -36,15 +36,15 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {# set set main variables #}
 
-{% set view_title = view.element['#title'] %}
+{% set view_title = view.title %}
 {% set view_content = rows %}
 {% set view_pager = pager %}
-{% set view_sidebar %}
+
 {% set view_header = header %}
 
 {# set view specific sidebar #}
 
-{% set view_header = sidebar %}
+{% set view_sidebar %}
 <div class="sidebar--filters">
   {{exposed}}
 </div>
@@ -55,28 +55,30 @@ Descr: main output business for views. Classes are from the view-display setting
 {# adding "now viewing" labels #}
 
 {% if (view.getExposedInput.keywords) %}
-	{% set view_header = view_header ~ 'Keyword search: ' %}
+	{% set view_filters = view_filters ~ 'Keyword search: ' %}
 	{% set keyword = view.getExposedInput.keywords %}
-  {% set view_header = view_header ~ keyword  %}
+  {% set view_filters = view_filters ~ keyword  %}
 {% endif %}
-{% if (view.getExposedInput.field_related_disciplines) %}
-	{% set view_header = view_header ~'Discipline: ' %}
-	{% for key, item in view.getExposedInput.field_related_disciplines %}
+
+{% if (view.getExposedInput.disciplines) %}
+	{% set view_filters = view_filters ~'Discipline: ' %}
+	{% for key, item in view.getExposedInput.disciplines %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
+		{% set view_filters = view_filters ~ termname  %}
 	{% endfor %}
 {% endif %}
 
 
 {% if (view.getExposedInput.byline) %}
-	{% set view_header = view_header ~ 'Byline search: ' %}
+	{% set view_filters = view_filters ~ 'Byline search: ' %}
 	{% set Byline = view.getExposedInput.byline %}
-	{% set view_header = view_header ~ Byline  %}
+	{% set view_filters = view_filters ~ Byline  %}
 {% endif %}
+
 {% if (view.getExposedInput.media_source) %}
-	{% set view_header = view_header ~ 'Media source search: ' %}
+	{% set view_filters = view_filters ~ 'Media source search: ' %}
 	{% set Media_source = view.getExposedInput.media_source %}
-	{% set view_header = view_header ~ Media_source  %}
+	{% set view_filters = view_filters ~ Media_source  %}
 {% endif %}
 
 
