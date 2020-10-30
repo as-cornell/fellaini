@@ -8,20 +8,31 @@ Descr: Sets styles for
 --------------------------- */
 
 // pcWrapper--photoText pcWrapper--featured
-.pcWrapper--photoText.pcWrapper--featured {
-  .photoText {
-    //adjust figure default
-    figure {
-      background: none;
-    }
-
-    // set up masks
-    @for $i from 1 through 3 {
-      &:nth-of-type(3n + #{$i}) {
-        img {
-          @extend .mask-#{$i};
+.pcWrapper--photoText {
+  &[class*="pcWrapper--featured"] {
+    .photoText {
+      //adjust figure default
+      figure {
+        background: none;
+      }
+      // set up masks
+      @for $i from 1 through 3 {
+        &:nth-of-type(3n + #{$i}) {
+          img {
+            @extend .mask-#{$i};
+          }
         }
       }
+    }
+  }
+  &[class*="blue"] {
+    background: var(--storm-radial);
+    color: var(--as-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--bottom-margin);
+    .photoText {
+      margin-bottom: 0;
     }
   }
 }

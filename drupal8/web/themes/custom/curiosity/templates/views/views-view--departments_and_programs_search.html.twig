@@ -27,7 +27,7 @@ Descr: main output business for views. Classes are from the view-display setting
 {% set main_element_base_class = 'basicSidebar' %}
 {% set main_element_modifiers = ['viewContainer', 'departments-and-programs'] %}
 
-
+{# {{view.title}} #}
 
 {# set secondary title search for #}
 {% set search_terms = exposed.keywords['#value'] %}
@@ -37,7 +37,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {# set main variables #}
 
-{% set view_title = view.element['#title'] %}
+{% set view_title = view.title %}
 {% set view_content = rows %}
 {% set view_pager = pager %}
 {% set view_header = header %}
@@ -55,29 +55,29 @@ Descr: main output business for views. Classes are from the view-display setting
 {# adding "now viewing" labels #}
 
 {% if (view.getExposedInput.search_api_fulltext) %}
-	{% set view_header = view_header ~ 'Keyword search: ' %}
+	{% set view_filters = view_filters ~ 'Keyword search: ' %}
 	{% set keyword = view.getExposedInput.search_api_fulltext %}
-  {% set view_header = view_header ~ keyword  %}
+  {% set view_filters = view_filters ~ keyword  %}
 {% endif %}
 
-{% if (view.getExposedInput.Type) %}
-	{% set view_header = 'Type: ' %}
-	{% for key, item in view.getExposedInput.Type %}
+{% if (view.getExposedInput.type) %}
+	{% set view_filters = 'Type: ' %}
+	{% for key, item in view.getExposedInput.type %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
+		{% set view_filters = view_filters ~ termname  %}
 	{% endfor %}
 {% endif %}
 
 {% if (view.getExposedInput.discipline) %}
-	{% set view_header = view_header ~'Discipline: ' %}
+	{% set view_filters = view_filters ~'Discipline: ' %}
 	{% for key, item in view.getExposedInput.discipline %}
 		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
-		{% set view_header = view_header ~ termname  %}
+		{% set view_filters = view_filters ~ termname  %}
 	{% endfor %}
 {% endif %}
 
 
-
+{# {{vardumper()}} #}
 
 
 {% include "@pages/_view-list.twig" with {
