@@ -208,7 +208,7 @@ process:
     -
       plugin: explode
       delimiter: +
-   'field_links/uri':
+  'field_links/uri':
     plugin: sub_process
     source:
     - '@pseudo_field_links_url'
