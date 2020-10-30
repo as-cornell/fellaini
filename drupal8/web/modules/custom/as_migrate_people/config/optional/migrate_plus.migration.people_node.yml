@@ -160,8 +160,6 @@ process:
   field_person_title: proftitle
   field_person_netid: netid
 
-  'field_links/uri': field_links_url
-  'field_links/title': field_links_title
 
   field_person_type:
       plugin: skip_on_empty
@@ -194,6 +192,29 @@ process:
     process:
       target_id: '0'
       target_revision_id: '1'
+  pseudo_field_links_url:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_links_url
+    -
+      plugin: explode
+      delimiter: +
+  pseudo_field_links_title:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_links_title
+    -
+      plugin: explode
+      delimiter: +
+   'field_links/uri':
+    plugin: sub_process
+    source:
+    - '@pseudo_field_links_url'
+
+#  'field_links/uri': field_links_url
+#  'field_links/title': field_links_title
 
   uid: netid
 
