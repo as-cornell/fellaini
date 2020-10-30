@@ -3,10 +3,6 @@ id: people_summary
 label: Import people summaries from field collections into paragraphs
 migration_group: people
 migration_dependencies: {}
-dependencies:
-  enforced:
-    module:
-      - as_migrate_people
 
 destination:
   plugin: entity_reference_revisions:paragraph

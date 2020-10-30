@@ -8,6 +8,7 @@ migration_dependencies:
     - people_image_media
     - people_summary
   optional: {}
+
 destination:
   plugin: entity:node
   default_bundle: person

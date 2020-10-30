@@ -5,10 +5,7 @@ migration_group: people
 migration_dependencies:
   required:
     - people_image
-dependencies:
-  enforced:
-    module:
-      - as_migrate_people
+  optional: {}
 
 source:
   plugin: url
