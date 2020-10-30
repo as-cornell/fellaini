@@ -52,7 +52,6 @@ source:
 process:
   id: id
   revision_id: id
-  uuid: uuid
   type:
     plugin: default_value
     default_value: person_description_standard

@@ -5,7 +5,7 @@ label: Import people nodes
 migration_group: people
 migration_dependencies:
   required:
-    - people_image
+    - people_image_media
     - people_summary
   optional: {}
 destination:

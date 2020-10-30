@@ -2,7 +2,9 @@
 id: people_image_media
 label: Import people images into media entities
 migration_group: people
-migration_dependencies: {}
+migration_dependencies:
+  required:
+    - people_image
 dependencies:
   enforced:
     module:
