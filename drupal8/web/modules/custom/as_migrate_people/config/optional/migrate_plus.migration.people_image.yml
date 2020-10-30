@@ -3,12 +3,6 @@ id: people_image
 label: Import people images
 migration_group: people
 migration_dependencies: {}
-dependencies:
-  enforced:
-    module:
-      - as_migrate_people
-
-
 
 source:
   plugin: url

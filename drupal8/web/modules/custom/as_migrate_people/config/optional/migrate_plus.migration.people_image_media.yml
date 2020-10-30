@@ -3,10 +3,6 @@ id: people_image_media
 label: Import people images into media entities
 migration_group: people
 migration_dependencies: {}
-dependencies:
-  enforced:
-    module:
-      - as_migrate_people
 
 source:
   plugin: url
