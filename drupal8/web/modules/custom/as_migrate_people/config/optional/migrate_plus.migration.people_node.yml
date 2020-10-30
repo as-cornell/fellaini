@@ -125,11 +125,9 @@ process:
     plugin: default_value
     default_value: person
 
-
+  uuid: uuid
   title: title
-
   path: path
-
   field_person_affiliation:
     -
       plugin: skip_on_empty
@@ -139,7 +137,6 @@ process:
       plugin: explode
       source: affiliation
       delimiter: +
-
   field_person_graduate_fields:
     -
       plugin: skip_on_empty
@@ -149,31 +146,21 @@ process:
       plugin: explode
       source: gradfields
       delimiter: +
-
   'field_person_education/value': education
-
   'field_person_education/format':
     plugin: default_value
-    default_value: basic_html
-
+    default_value: full_html
   'field_keywords/value': keywords
-
   'field_keywords/format':
     plugin: default_value
-    default_value: basic_html
-
+    default_value: full_html
   'field_person_publications/value': publications
-
   'field_person_publications/format':
     plugin: default_value
-    default_value: basic_html
-
+    default_value: full_html
   field_person_first_name: firstname
-
   field_person_last_name: lastname
-
   field_person_title: proftitle
-
   field_person_netid: netid
 
   'field_links/uri': field_links_url
@@ -183,19 +170,10 @@ process:
       plugin: skip_on_empty
       method: process
       source: field_person_type
-
   'field_image/target_id':
-    plugin: migration
-    migration: people_image
-    source: nid
-
-  'field_image/alt': title
-
-  'field_images/target_id':
     plugin: migration
     migration: people_image_media
     source: nid
-
   field_departments_programs:
     -
       plugin: skip_on_empty
@@ -205,10 +183,17 @@ process:
       plugin: explode
       source: field_departments_programs
       delimiter: +
+  pseudo_field_summary:
+    plugin: migration_lookup
+    migration: people_summary
+    source: nid
+  field_summary:
+    plugin: sub_process
+    source:
+    - '@pseudo_field_summary'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
 
-  'field_summary/target_id': field_summary
-
-  'field_summary/target_revision_id': field_summary
-
-  uid: uid
+  uid: netid
 
