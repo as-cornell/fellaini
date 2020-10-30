@@ -178,8 +178,11 @@ process:
       source: field_departments_programs
     -
       plugin: explode
-      source: field_departments_programs
       delimiter: +
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      value_key: name
   pseudo_field_summary:
     plugin: migration_lookup
     migration: people_summary
