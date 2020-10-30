@@ -21,72 +21,75 @@ Setting up new block class of 'teaser'
 
 {# {{ vardumper(content) }} #}
 {% set card_base_class = 'teaser' %}
-{% set card_byline = card_byline | default('') %}
+{# {% set card_byline = card_byline | default('') %} #}
 {% set card_dateline = card_dateline | default('') %}
 
 {# fancybox wrapper #}
 {% if show_fancybox %}
 	<div id="{{fancyboxID}}" style="display: none;">
-{% endif %}
+	{% endif %}
 
 
+	<div {{ bem(card_base_class, (teaser_modifiers), card_blockname, teaser_classes) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
 
 
-<div {{ bem(card_base_class, (teaser_modifiers), card_blockname, teaser_classes) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %} >
-
-
-{{teaser_img}}
-  <div {{ bem(card_copy_base_class|default('teaser__copy'), (card_copy_modifiers), card_copy_blockname) }}>    
-    {% if teaser_label %}
-      <p class="teaser__label eyebrow">
-        {{ teaser_label }}
-      </p>
-    {% endif %}
-    {% include "@content/atoms/_heading.twig" with {
-      "heading_level": 2,
-      "heading": teaser_title,
-      "heading_url": teaser_title_link|default(teaser_link_url),
-      "heading_blockname": teaser_title_blockname|default(teaser_base_class),
-      "heading_modifiers": teaser_title_modifiers,
-      "heading_link_base_class": teaser_title_link_base_class|default('title-link'),
-      "heading_link_blockname": teaser_base_class,
-      "heading_base_class": teaser_title_base_class|default('title'),
-      "isAriaLabel" : teaser_nodeId
+		{{teaser_img}}
+		<div {{ bem(card_copy_base_class|default('teaser__copy'), (card_copy_modifiers), card_copy_blockname) }}>
+			{% if teaser_label %}
+				<p class="teaser__label eyebrow">
+					{{ teaser_label }}
+				</p>
+			{% endif %}
+			{% include "@content/atoms/_heading.twig" with {
+        "heading_level": 2,
+        "heading": teaser_title,
+        "heading_url": teaser_title_link|default(teaser_link_url),
+        "heading_blockname": teaser_title_blockname|default(teaser_base_class),
+        "heading_modifiers": teaser_title_modifiers,
+        "heading_link_base_class": teaser_title_link_base_class|default('title-link'),
+        "heading_link_blockname": teaser_base_class,
+        "heading_base_class": teaser_title_base_class|default('title'),
+        "isAriaLabel" : teaser_nodeId
     } %}
 
-    <p>
-      {% if teaser_dateline %}
-        <span class="teaser__date">
-          {{ teaser_dateline }}
-        </span>
-      {% endif %}
-      {% if teaser_byline %}
-        <span class="teaser__byline">
-          by : {{ teaser_byline }}
-          {% if teaser_media_source %}
-          , {{ teaser_media_source }}
-          {% endif %}
-        </span>
-      {% endif %}
-      {% if mm_level %}
-        {{mm_level}}
-      {% endif %}
-    </p>
-    {% if teaser_body %}
-     {{teaser_body|raw}}
-    {% endif %}
-{% if show_fancybox %}
-	<p>
-		<a href="{{card_title_link}}">
-			Full details</a>
-  </p>
-	</span>
-{% endif %}
+			<p>
+				{% if teaser_dateline %}
+					<span class="teaser__date">
+						{{ teaser_dateline }}
+					</span>
+				{% endif %}
+				{% if teaser_byline %}
+					<span class="teaser__byline">
+						{% if teaser_byline %}
+							by :
+							{{ teaser_byline }}
+						{% endif %}
+						{% if teaser_byline and teaser_media_source %}
+							,
+						{% endif %}
+						{% if teaser_media_source %}
+							{{ teaser_media_source }}
+						{% endif %}
+					</span>
+				{% endif %}
+				{% if mm_level %}
+					{{mm_level}}
+				{% endif %}
+			</p>
+			{% if teaser_body %}
+				{{teaser_body|raw}}
+			{% endif %}
+			{% if show_fancybox %}
+				<p>
+					<a href="{{card_title_link}}">
+						Full details
+					</a>
+				</p>
+			</span>
+		{% endif %}
 
 
-  </div>
+	</div>
 </div>
 {% if show_fancybox %}
-	</div> 
-{% endif %}
-
+</div>{% endif %}
