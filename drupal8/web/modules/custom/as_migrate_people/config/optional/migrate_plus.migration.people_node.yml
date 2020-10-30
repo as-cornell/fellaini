@@ -3,11 +3,7 @@
 id: people_node
 label: Import people nodes
 migration_group: people
-migration_dependencies:
-  required:
-    - people_image_media
-    - people_summary
-  optional: {}
+migration_dependencies: {}
 
 destination:
   plugin: entity:node
