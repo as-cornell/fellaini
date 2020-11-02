@@ -14,16 +14,38 @@
 {#vardumper(person)#}
 
 
-{% set person__departments %}
-	<p>
+{% set person_departments %}
+	<div class="person__departments"> <p>
 		<strong>
-	Departments
-</strong>
-</p>
+			Departments
+		</strong>
+	</p>
 	<ul>
-{{person.departments|raw}}
-</ul>
+		{{person.departments|raw}}
+	</ul>
+</div>
 {% endset %}
+
+{% set card_image = '<figure
+	
+	class="figure figure--inline figure--4_5 contextual-region"
+	data-quickedit-entity-instance-id="0"
+>
+	<img
+src="https://people.as.cornell.edu/sites/people/files/Baptist_14.jpg"
+
+		width="500"
+		height="625"
+		alt="Kirk Cousins likes it."
+		typeof="foaf:Image"
+		class="img"
+		loading="lazy"
+	/>
+
+'
+
+ %}
+
 
 {% embed "@content/molecules/card--person.twig" with {
     card_modifiers : ["person"],
@@ -32,6 +54,7 @@
     card_image_path : person.imagepath,
     card_image_alt : person.alt,
     card_label: person.jobtitle,
-    card_body: person__departments,
+    card_departments: person_departments,
     card_nodeId : node.id
-} %}{% endembed %}
+} %}
+{% endembed %}

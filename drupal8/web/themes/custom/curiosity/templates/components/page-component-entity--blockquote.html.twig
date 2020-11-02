@@ -9,10 +9,22 @@ Descr: Sets up block quote
 
 #}
 
+
 {% set group_base_class = 'pageComponent' %}
 {% set group_modifiers = ['blockQuote'] %}
 
-{% include "@content/atoms/_formatted-text-block.twig" with {
+{# {{vardumper()}} #}
+
+{% if content.field_related_person|render is not empty %}
+	{% set hasPerson = true %}
+	{% set group_modifiers = group_modifiers|merge(['hasPerson']) %}
+{% endif %}
+
+{# {{group_modifiers}} #}
+
+{% include "@content/molecules/_blockquote.twig" with {
     group_base_class : group_base_class,
-    group_modifiers : group_modifiers
+    group_modifiers : group_modifiers,
+    quote : content.field_formatted_text,
+    person : content.field_related_person
 } %}
