@@ -193,7 +193,7 @@ process:
       target_id: '0'
       target_revision_id: '1'
   'field_links/uri':
-      -
+    -
       plugin: skip_on_empty
       method: process
       source: field_links_url
