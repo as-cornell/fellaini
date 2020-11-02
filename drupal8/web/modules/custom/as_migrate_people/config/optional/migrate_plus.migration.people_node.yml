@@ -192,7 +192,7 @@ process:
     process:
       target_id: '0'
       target_revision_id: '1'
-  'field_links/uri':
+  pseudo_field_links:
     -
       plugin: skip_on_empty
       method: process
@@ -200,6 +200,13 @@ process:
     -
       plugin: explode
       delimiter: +
+  field_links:
+    plugin: sub_process
+    source:
+    - '@pseudo_field_links'
+    process:
+      uri: value
+      title: 'Link'
 #  'field_links/uri': field_links_url
 # 'field_links/title': field_links_title
 
