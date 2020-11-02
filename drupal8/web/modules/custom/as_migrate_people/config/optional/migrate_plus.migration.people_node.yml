@@ -192,8 +192,16 @@ process:
     process:
       target_id: '0'
       target_revision_id: '1'
-  'field_links/uri': field_links_url
-  'field_links/title': field_links_title
+  'field_links/uri':
+      -
+      plugin: skip_on_empty
+      method: process
+      source: field_links_url
+    -
+      plugin: explode
+      delimiter: +
+#  'field_links/uri': field_links_url
+# 'field_links/title': field_links_title
 
   uid: netid
 
