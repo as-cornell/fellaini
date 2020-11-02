@@ -192,14 +192,8 @@ process:
     process:
       target_id: '0'
       target_revision_id: '1'
-  field_links:
-    plugin: sub_process
-    source: field_links_url
-    process:
-      uri: value
-
-#  'field_links/uri': field_links_url
-#  'field_links/title': field_links_title
+  'field_links/uri': field_links_url
+  'field_links/title': field_links_title
 
   uid: netid
 
