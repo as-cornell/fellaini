@@ -46,7 +46,7 @@ class parsePeopleJson extends \Twig_Extension {
           $person_record['imagepath'] = 'https://people.asd8.as.cornell.edu' . $people_json['included'][1]['attributes']['uri']['url'];;
         //}
       foreach($people_json['data'] as $person_data) {
-          $person_record['alt'] = $person_data['relationships']['field_media_image']['data']['meta']['alt'];
+          $person_record['alt'] = 'Image of ' . $person_data['attributes']['title'];
           $person_record['path'] = $person_data['attributes']['path']['alias'];
           $person_record['title'] = $person_data['attributes']['title'];
           $person_record['jobtitle'] = $person_data['attributes']['field_person_title'];
