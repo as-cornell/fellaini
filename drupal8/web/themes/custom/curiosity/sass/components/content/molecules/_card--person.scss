@@ -1,0 +1,38 @@
+/* -------------------------
+
+Title: _card--person.scss
+Descr: Sets all specific styles for an person card
+  sets css for card--feature as they are person
+
+--------------------------- */
+
+.card--person {
+  &.card--small {
+    border: none;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: none;
+    box-shadow: none;
+    :before {
+      display: none;
+    }
+    .card__copy,
+    .card__title {
+      padding-top: 0;
+      margin-top: 0;
+    }
+    .card__title {
+      font-size: var(--base-20);
+    }
+    figure {
+      flex: 0 0 30%;
+    }
+    .card__copy {
+      flex: 0 0 60%;
+      padding: 0;
+      font-size: var(--base-18);
+    }
+  }
+}
