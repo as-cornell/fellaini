@@ -5,28 +5,49 @@ Descr:
    - style block quote.
 
 --------------------------- */
-.pageComponent--blockQuote{
-  blockquote{
+.pageComponent--blockQuote {
+  blockquote {
     background: var(--gray-lightest);
     padding: 3rem;
     font-style: italic;
     font-size: 1.5rem;
     margin: 3rem;
-    .attribution{
-      font-weight: var(--semi);
+    .attribution {
+      font-weight: var(--regular);
+    }
+  }
+  // with person
+  &.pageComponent--hasPerson {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--bottom-margin);
+    .blockquote__quote {
+      flex: 0 0 75%;
+      margin: 0;
+      blockquote {
+        margin: 0 3rem;
+      }
+    }
+    .blockquote__person {
+      .person__departments {
+        @extend .sr-only;
+      }
+      .card {
+        margin-bottom: 0;
+      }
     }
   }
 }
 
-.pageComponent--ftb{
-  blockquote{
+.pageComponent--ftb {
+  blockquote {
     background: var(--gray-lightest);
     padding: 3rem;
     font-style: italic;
     font-size: 1.5rem;
     margin: 3rem;
-    .attribution{
-      font-weight: var(--semi);
+    .attribution {
+      font-weight: var(--regular);
     }
   }
 }
