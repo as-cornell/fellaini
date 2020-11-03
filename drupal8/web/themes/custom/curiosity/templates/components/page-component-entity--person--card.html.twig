@@ -25,7 +25,7 @@
 </div>
 {% endset %}
 
-{% set card_image = '<figure
+{# {% set card_image = '<figure
 	
 	class="figure figure--inline figure--4_5 contextual-region"
 	data-quickedit-entity-instance-id="0"
@@ -43,7 +43,7 @@ src="https://people.as.cornell.edu/sites/people/files/Baptist_14.jpg"
 
 '
 
- %}
+ %} #}
 {# {% card_modifiers = [''] %} #}
 {% embed "@content/molecules/card--person.twig" with {
     card_modifiers : ["person"],
@@ -54,5 +54,4 @@ src="https://people.as.cornell.edu/sites/people/files/Baptist_14.jpg"
     card_label: person.jobtitle,
     card_departments: person_departments,
     card_nodeId : node.id
-} %}
-{% endembed %}
+} %}{% endembed %}
