@@ -31,11 +31,20 @@
   }
   &--pano {
     grid-template-rows: auto auto auto 1fr;
+    grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
       ". pano pano pano pano pano pano pano pano pano pano ."
       ". . title title title title title title title title . ."
       "social content content content content content content content content thumbnail thumbnail thumbnail"
       "social content content content content content content content content aside aside aside";
+    @include medium() {
+      grid-template-columns: repeat(24, 1fr);
+      grid-template-areas:
+        ". . . pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano . . ."
+        ". . . . title title title title title title title title title title title title title title title title . . . ."
+        "social social content content content content content content content content content content content content content content content content thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail"
+        "social social content content content content content content content content content content content content content content content content aside aside aside aside aside aside";
+    }
     .pano {
       grid-area: pano;
       justify-self: center;
