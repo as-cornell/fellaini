@@ -48,6 +48,12 @@
     .pano {
       grid-area: pano;
       justify-self: center;
+      figure {
+        background: none;
+        img {
+          @extend .mask-1;
+        }
+      }
     }
     .title {
       text-align: center;
