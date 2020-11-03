@@ -19,13 +19,10 @@ class PeopleController extends ControllerBase {
     $researchfocus = "";
     $people_json = as_people_json_get_person_json($netid);
     if (!empty($people_json['data'])) {
-      //dump($people_json['data']);
       // get image path from json
-      foreach($people_json['included'] as $image) {
-          $imagepath = $image['attributes']['uri']['url'];
-      }
+          $imagepath = $people_json['included'][1]['attributes']['uri']['url'];
       foreach($people_json['data'] as $person_data) {
-          $alt = $person_data['relationships']['field_image']['data']['meta']['alt'];
+          $alt = 'Image of ' . $person_data['attributes']['title'];
           $path = $person_data['attributes']['path']['alias'];
           $title = $person_data['attributes']['title'];
           $jobtitle = $person_data['attributes']['field_person_title'];
