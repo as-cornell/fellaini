@@ -9,7 +9,8 @@
 
 {% set group_modifiers = ['articles'] %}
 {% set group_base_class = 'pcWrapper' %}
-{% set isList = true %}
+{% set group_label = 'Related articles' %}
+{# {% set isList = true %} #}
 {% embed "@content/molecules/_grouping.twig" with{
   items : items
 } %}{% endembed %}
