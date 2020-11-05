@@ -15,16 +15,6 @@ ul[class^="nav"] {
   padding-left: 0;
   margin-bottom: 0;
 
-  // all uls in sidebar
-  height: 0;
-  overflow: hidden;
-  &.expanded {
-    height: auto;
-  }
-  @include medium() {
-    height: auto;
-  }
-
   a {
     position: relative;
     // padding-left: 0.5rem;
@@ -40,14 +30,6 @@ ul[class^="nav"] {
       background: var(--gray-lt);
     }
   }
-  // li[class*="active-trail"] {
-  //   > a {
-  //     color: var(--as-black);
-  //     &:before {
-  //       background: var(--as-red);
-  //     }
-  //   }
-  // }
 
   .with-sub {
     display: grid;
@@ -71,6 +53,14 @@ ul[class^="nav"] {
 }
 
 .nav {
+  height: 0;
+  overflow: hidden;
+  &.expanded {
+    height: auto;
+  }
+  @include medium() {
+    height: auto;
+  }
   &__root {
     position: inherit;
     // padding-left: 0.5rem;
@@ -155,19 +145,7 @@ ul[class^="nav"] {
       }
     }
   }
-  // .nav-3__item {
-  //   > a {
-  //     margin-left: 1rem;
-  //     &:before {
-  //       background-color: var(--teal);
-  //     }
-  //     &:hover {
-  //       &:before {
-  //         background: pink;
-  //       }
-  //     }
-  //   }
-  // }
+
   // base withSubNav
   .withSubNav {
     position: relative;
@@ -187,5 +165,19 @@ ul[class^="nav"] {
         display: none;
       }
     }
+  }
+}
+
+// siteNavOpener
+
+.siteNavOpener {
+  background: var(--gray-light);
+  border-radius: var(--border-radius);
+  padding: 0.5em;
+  color: var(--as-red);
+  display: flex;
+  justify-content: space-between;
+  @include medium() {
+    display: none;
   }
 }

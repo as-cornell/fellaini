@@ -33,8 +33,8 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 		</div>
 	{% endif %}
 	{# {% if otpNav %}
-								{{otp_nav}}
-							{% endif %} #}
+									{{otp_nav}}
+								{% endif %} #}
 	<div class="content">
 		{{main_content}}
 	</div>
@@ -43,7 +43,15 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 
 		<nav class="nav--site">
 			<p class="siteNavOpener">
-				Expand site nav
+				<span>
+					Expand site nav
+				</span>
+				<button class="subNav-toggle icon icon--button " aria-haspopup="true" aria-label="secondary menu closed" aria-expanded="false">
+					<svg viewbox="0 0 20 20" class="icon--arrow">
+						<use xlink:href="#chevron-down"></use>
+					</svg>
+				</button>
+
 			</p>
 			{{ sidebar_nav }}
 		</nav>
