@@ -1,5 +1,5 @@
 as_people_json.content:
-  path: '/as_people_json/{netid}'
+  path: '/people/{netid}'
   defaults:
     _controller: '\Drupal\as_people_json\Controller\PeopleController::content'
     _title: 'People'
