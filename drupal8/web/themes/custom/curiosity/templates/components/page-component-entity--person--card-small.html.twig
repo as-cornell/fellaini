@@ -1,7 +1,8 @@
 {#
-/**
- name = page-component-entity--person--card.html.twig
- Makes name a link to page
+/*
+
+ name = page-component-entity--person--card-small.html.twig
+ person card small
 
  */
 #}
@@ -11,8 +12,9 @@
 {# {{content.name}} #}
 {# set blocky = drupal_block('person_card_block', {netid:netid}) #}
 {% set person = parse_people_json(netid) %}
-
-
+{# {{vardumper(person)
+}} #}
+{# 
 {% set person_departments %}
 	<div class="person__departments"> <p>
 		<strong>
@@ -23,9 +25,9 @@
 		{{person.departments|raw}}
 	</ul>
 </div>
-{% endset %}
+{% endset %} #}
 
-{# {% set card_image = '<figure
+{% set card_image = '<figure
 	
 	class="figure figure--inline figure--4_5 contextual-region"
 	data-quickedit-entity-instance-id="0"
@@ -39,14 +41,16 @@ src="https://people.as.cornell.edu/sites/people/files/Baptist_14.jpg"
 		typeof="foaf:Image"
 		class="img"
 		loading="lazy"
-	/>
+	/></figure>
 
 '
 
- %} #}
-{# {% card_modifiers = [''] %} #}
+ %}
+
+{# {% set card_modifiers = ['small'] %} #}
+
 {% embed "@content/molecules/card--person.twig" with {
-    card_modifiers : ["person"],
+    card_modifiers : ["person", "small"],
     card_title: person.title,
     card_link_url: personlink,
     card_image_path : person.imagepath,
