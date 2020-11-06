@@ -1,0 +1,27 @@
+{# [module]/templates/my-template.html.twig #}
+<p>netid: {{ netid }}</p>
+{% set badlarry = parse_people_json(netid) %}
+{{vardumper(badlarry)}}
+<ul>
+    <li>
+      {{badlarry.title}}
+    </li>
+    <li>
+      {{badlarry.imagepath}}
+    </li>
+    <li>
+      {{badlarry.alt}}
+    </li>
+    <li>
+      {{badlarry.path}}
+    </li>
+    <li>
+      {{badlarry.title}}
+    </li>
+    <li>
+      {{badlarry.jobtitle}}
+    </li>
+    <li>
+      {{badlarry.departments}}
+    </li>
+  </ul>
