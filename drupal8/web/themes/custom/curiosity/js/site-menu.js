@@ -13,29 +13,29 @@
   });
 
   // add toggles to items .with-sub
-  $(".with-sub > a").after(
-    "<button class='subNav-toggle icon icon--button ' aria-haspopup='true' aria-label='secondary menu closed' aria-expanded='false'><svg viewBox='0 0 20 20' class='icon--arrow'> <use xlink:href='#chevron-down'></use > </svg ></button>"
-  );
+  // $(".with-sub > a").after(
+  //   "<button class='subNav-toggle icon icon--button ' aria-haspopup='true' aria-label='secondary menu closed' aria-expanded='false'><svg viewBox='0 0 20 20' class='icon--arrow'> <use xlink:href='#chevron-down'></use > </svg ></button>"
+  // );
 
-  $(".subNav-toggle").click(function (e) {
-    var _this = $(this);
-    var subNav = $(this).next();
-    // $(".nav--site > .nav").toggleClass("shown");
-    console.log(_this);
-    console.log(subNav);
-    // $(subNav).addClass("tubthumping");
-    if (subNav.hasClass("expanded")) {
-      $(subNav).removeClass("expanded");
-      // set aria label for button
-      $(_this).attr("aria-label", "secondary menu is closed");
-      $(_this).attr("aria-expanded", "false");
-    } else {
-      $(subNav).addClass("expanded");
-      // set aria label for button
-      $(_this).attr("aria-label", "secondary menu is open");
-      $(_this).attr("aria-expanded", "true");
-    }
-  });
+  // $(".subNav-toggle").click(function (e) {
+  //   var _this = $(this);
+  //   var subNav = $(this).next();
+  //   // $(".nav--site > .nav").toggleClass("shown");
+  //   console.log(_this);
+  //   console.log(subNav);
+  //   // $(subNav).addClass("tubthumping");
+  //   if (subNav.hasClass("expanded")) {
+  //     $(subNav).removeClass("expanded");
+  //     // set aria label for button
+  //     $(_this).attr("aria-label", "secondary menu is closed");
+  //     $(_this).attr("aria-expanded", "false");
+  //   } else {
+  //     $(subNav).addClass("expanded");
+  //     // set aria label for button
+  //     $(_this).attr("aria-label", "secondary menu is open");
+  //     $(_this).attr("aria-expanded", "true");
+  //   }
+  // });
 
   // Add aria-haspopup true to links with popups
   // $(".mainNav__toggle").prev().attr("aria-haspopup", "true");

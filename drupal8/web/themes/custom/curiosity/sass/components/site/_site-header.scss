@@ -35,7 +35,7 @@ header {
     "nav nav nav nav"
     "search search search search";
 
-  @include medium {
+  @include large {
     grid-template-columns: 1fr auto auto 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -69,7 +69,7 @@ header {
   .header__mainNav {
     grid-area: nav;
     width: 100%;
-    @include medium() {
+    @include large() {
       width: auto;
       display: flex;
       flex-direction: column;
@@ -141,7 +141,7 @@ body.landing_page {
     cursor: pointer;
   }
   .iconButton--showNav {
-    @include medium() {
+    @include large() {
       display: none;
     }
   }
