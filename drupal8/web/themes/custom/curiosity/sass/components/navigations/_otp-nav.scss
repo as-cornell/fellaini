@@ -17,6 +17,7 @@ Descr: otpN small and large, hovers and toggles for subNav
   animation: none;
   display: flex;
   flex-wrap: wrap;
+
   @include large() {
     flex-direction: column;
   }
@@ -78,6 +79,10 @@ Descr: otpN small and large, hovers and toggles for subNav
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
+  flex-direction: column;
+  @include medium() {
+    flex-direction: row;
+  }
 }
 
 .otpNav--basic_page {

@@ -12,7 +12,7 @@ Still needs: expand toggle for showing main nav on mobile
   padding: 0;
   font-size: var(--base-18);
   overflow: hidden;
-  @include medium() {
+  @include large() {
     font-size: var(--base-20);
     overflow: visible;
   }
@@ -38,14 +38,14 @@ Still needs: expand toggle for showing main nav on mobile
     padding: 0.5rem 0;
   }
   .mainNav__subNavToggle {
-    width: 1rem;
+    width: 1em;
     padding: 0;
     background: none;
     border: none;
     position: relative;
     z-index: 10;
     svg {
-      fill: var(--gray-lightest);
+      fill: var(--as-black);
     }
     @include medium() {
       opacity: 0;
@@ -68,7 +68,7 @@ Still needs: expand toggle for showing main nav on mobile
     }
   }
   //big maiNav
-  @include medium() {
+  @include large() {
     max-height: 100%;
     background: transparent;
     color: var(--as-black);
@@ -146,7 +146,7 @@ Still needs: expand toggle for showing main nav on mobile
     &.subNav--expanded {
       max-height: 100%;
       opacity: 1;
-      width: calc(100% - 3rem);
+      // width: calc(100% - 3rem);
     }
 
     list-style-type: none;
