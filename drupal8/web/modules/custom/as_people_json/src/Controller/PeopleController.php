@@ -73,11 +73,10 @@ class PeopleController extends ControllerBase {
                 <p>There are no people records related to ".$netid.".</p>
                 </main>";
     }
-    return array(
-      '#type' => 'markup',
-      '#markup' => $this->t('<div class="person">
-<article class="person-aside">'. $markup .'</article></div>'),
-    );
+    return [
+      '#theme' => 'person',
+      '#netid' => $this->t($netid),
+    ];
   }
 
 }
