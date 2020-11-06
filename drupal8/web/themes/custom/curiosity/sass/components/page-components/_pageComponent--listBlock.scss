@@ -49,53 +49,6 @@ Descr: sets styles for various pce listBlocks
   }
 }
 
-// .pcWrapper {
-
-//   &--listBlock {
-//     // justify-content: space-between;
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
-//     margin-top: var(--margin-6);
-//     .listBlock__item {
-//       flex-basis: calc(25% - 1rem);
-//     }
-//     .listBlock__title,
-//     .listBlock__text {
-//       flex: 0 1 100%;
-//     }
-//   }
-//   &.four-items {
-//     .listBlock__text {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       margin-bottom: var(--margin-3);
-//       p {
-//         max-width: var(--large);
-//       }
-//     }
-//   }
-//   &.six-items,
-//   &.two-items {
-//     .listBlock__text {
-//       flex: 0 1 calc(50% - 1rem);
-//       h2 {
-//         margin-top: 0;
-//       }
-//     }
-//   }
-
-//   // overrides for items in a layout group column
-//   &.layoutGroup {
-//     .two-items {
-//       .listBlock__item {
-//         flex: 0 1 calc(50% - 0.75rem);
-//       }
-//     }
-//   }
-// }
-
 // for items in a 2x layout group
 .pcWrapper--layoutGroup {
   .pcWrapper--listBlock {
@@ -107,6 +60,19 @@ Descr: sets styles for various pce listBlocks
     flex-wrap: wrap;
     .card {
       flex-basis: calc(50% - 1rem);
+    }
+  }
+}
+
+// sidebar listBlock
+.sidebar {
+  .pcWrapper--listBlock {
+    > div {
+      grid-column: 1 / -1;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
   }
 }
