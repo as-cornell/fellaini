@@ -22,7 +22,7 @@ list_base_class / list_base_modifiers
 
 {% set group_base_class = group_base_class | default('') %}
 {% set group_modifiers = group_modifiers | default(['']) %}
-{% set group_classes = group_classes | default(['pcWrapper']) %}
+{# {% set group_classes = group_classes | default(['pcWrapper']) %} #}
 
 
 <div{{bem(group_base_class,(group_modifiers),'',group_classes)}} {% if divid %} id="{{divid}}" {% endif %}>

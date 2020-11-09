@@ -7,8 +7,8 @@ Descr: Sets grid for columns pce--layout-group.html.twig
 .pcWrapper {
   &--layoutGroup {
     @include medium() {
-      display: flex;
-      justify-content: space-between;
+      // display: flex;
+      // justify-content: space-between;
       margin-bottom: var(--bottom-margin);
       > div {
         flex: 0 0 calc(50% - 1rem);

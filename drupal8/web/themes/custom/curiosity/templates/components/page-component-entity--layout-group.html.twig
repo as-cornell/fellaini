@@ -11,12 +11,19 @@ Descr: Group wrapper for layout entity item. Passes wrapper class and items.
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['layoutGroup'] %}
 
-{% set group_base_class = 'pcWrapper' %}
+{# set items #}
+{% set items = content.field_columns %}
+
+{# set alignment #}
 {% set alignment = content.field_layout|field_value|safe_join(', ') %}
 
-{% set group_classes = group_modifiers|merge([alignment]) %}
-{% include "@content/molecules/_grouping.twig" with {
-    items : content.field_columns
+{# set length to help with column layouts #}
+{% set count = content.field_columns['#items']|length %}
 
+{# set classes #}
+{% set group_classes = ['flex', alignment, 'items--'~count] %}
+
+{% include "@content/molecules/_grouping.twig" with {
+    items : items
 }
 %}
