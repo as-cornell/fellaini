@@ -5,9 +5,9 @@
 </p>
 
 
-
-{{vardumper(person)}}#}
+#}
 {% set person = parse_people_json(netid) %}
+{{vardumper(person)}}
 
 {# edcuation #}
 	{% if person.education %}
@@ -18,9 +18,8 @@
 {# summary #}
 	{% if person.summary %}
 	{% set show_summary = true %}
-{% set summary = person.summary %}
+{% set summary = person.summary|raw %}
 {% endif %}
-
 {# researchfocus #}
 	{% if person.researchfocus %}
 	{% set show_researchfocus = true %}
