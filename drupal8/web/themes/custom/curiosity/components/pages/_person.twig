@@ -1,0 +1,77 @@
+{# 
+
+/* -------------------------
+
+Title: _person.twig
+Descr: defines content and blocks for basic person page
+
+--------------------------- */ 
+
+#}
+{% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
+	{{title_suffix}}
+	<div class="title">
+		{% include "@content/atoms/_heading.twig" with {
+    "heading_level" : 1,
+    "heading" : name,
+    "heading_base_class" : "title"
+  } %}
+		{% include "@content/atoms/_heading.twig" with {
+    "heading_level" : 3,
+    "heading" : title,
+    "heading_modifiers" : ["person"],
+    "heading_base_class" : "title"
+  } %}
+	</div>
+
+	<div class="content">
+
+		{% if show_summary %}
+			<h2>
+				Summary
+			</h2>
+			{{summary}}
+		{% endif %}
+		{% if show_researchfocus %}
+			<h2>
+				Research Focus
+			</h2>
+			{{researchfocus}}
+		{% endif %}
+		{% if show_publications %}
+			<h2>
+				Publications
+			</h2>
+			{{publications}}
+		{% endif %}
+
+		<h2>
+			Related articles
+		</h2>
+		{{related_articles}}
+
+
+	</div>
+	<div class="sidebar">
+		{{image}}
+		<h3>
+			Contact informations
+		</h3>
+		{% if show_education %}
+			<h3>
+				Education
+			</h3>
+			{{education}}
+		{% endif %}
+		{% if show_departments %}
+			<h3>
+				Departments and programs
+			</h3>
+			{{departments}}
+		{% endif %}
+		<h3>
+			LINKS
+		</h3>
+	</div>
+</main>
