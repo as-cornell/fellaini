@@ -50,7 +50,20 @@ Passes:
 	{% set related_people = content.field_related_people %}
 {% endif %}
 
+{# byline #}
+{% if content.field_byline_reference|render is not empty %}
+	{% set show_byline = true %}
+	{% set byline = content.field_byline_reference %}
+{% endif %}
 
+{# mediasource #}
+{% if content.field_media_source_reference|render is not empty %}
+	{% set show_mediasource = true %}
+	{% set mediasource = content.field_media_source_reference %}
+{% endif %}
+{# {{vardumper()}}
+ms- {{show_mediasource}}<br>
+by - {{show_byline}} #}
 
 {% include "@pages/_article.twig" with {
 
@@ -65,8 +78,8 @@ Passes:
   aside_content : content.field_aside_components,
 
   article_dateline: content.field_dateline,
-  article_byline: content.field_byline_reference,
-  article_mediasource: content.field_media_source_reference,
+  article_byline: byline,
+  article_mediasource: mediasource,
 
 } %}
 

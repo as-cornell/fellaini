@@ -34,8 +34,9 @@ Descr: overriding taxonomy term laout for m/m/g.
 {# Set link_modifier to value to add to class to style links #}
 {% set class = name[0]['#context']['value']|lower %}
 {% set link_modifiers = [class] %}
+{% set link_url = '/majors-and-minors?keywords=' ~ class%}
 
 {% include "@content/atoms/_link.twig" with {
- link_url: url,
+ link_url: link_url,
  link_content: name
 }%}
