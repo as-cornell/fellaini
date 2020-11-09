@@ -1,0 +1,36 @@
+/* -------------------------
+
+Title: person
+Descr: 
+    uses the <main> 12 column grid as a base.
+    under /pages because it includes the <main> element
+
+    defines main layouts for default person pages
+
+--------------------------- */
+
+.person {
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "title title title title"
+    "content content content content"
+    "sidebar sidebar sidebar sidebar";
+  @include medium {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      ". title title title title title title title . . . ."
+      ". content content content content content content content sidebar sidebar sidebar .";
+  }
+
+  .title {
+    grid-area: title;
+  }
+  .content {
+    grid-area: content;
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+}
