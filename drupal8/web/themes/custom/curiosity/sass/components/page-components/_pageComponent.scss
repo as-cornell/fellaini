@@ -10,7 +10,28 @@ Descr:
   clear: both;
 }
 
-// .content > .pcWrapper,
-// .content > .pageComponent {
-//   margin-bottom: var(--bottom-margin);
-// }
+// pc--rapper with items laid out on specified grid based on numbe of items.
+
+.pcWrapper {
+  &.grid {
+    display: grid;
+    gap: var(--space);
+  }
+  &.flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.items--3 {
+  @include medium() {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.items--4 {
+  grid-template-columns: 1fr 1fr;
+  @include medium() {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

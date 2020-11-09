@@ -7,51 +7,34 @@
 #}
 
 {% set netid = content.field_netid|field_value|safe_join(', ') %}
-{% set personlink = content.field_link.0['#url'] %}
-{# {{content.name}} #}
-{# set blocky = drupal_block('person_card_block', {netid:netid}) #}
+
 {% set person = parse_people_json(netid) %}
 
 
 {% set person_departments %}
-	<div class="person__departments"> <p>
+<div class="person__departments">
+	<p>
 		<strong>
 			Departments
 		</strong>
 	</p>
+
 	<ul>
-		{{person.departments|raw}}
+		{{person.departments}}
 	</ul>
 </div>
 {% endset %}
+{# {{vardumper(person)}} #}
 
-{# {% set card_image = '<figure
-	
-	class="figure figure--inline figure--4_5 contextual-region"
-	data-quickedit-entity-instance-id="0"
->
-	<img
-src="https://people.as.cornell.edu/sites/people/files/Baptist_14.jpg"
-
-		width="500"
-		height="625"
-		alt="Kirk Cousins likes it."
-		typeof="foaf:Image"
-		class="img"
-		loading="lazy"
-	/>
-
-'
-
- %} #}
-{# {% card_modifiers = [''] %} #}
+{% set card_link_url = 'people/'~person.path %}
 {% embed "@content/molecules/card--person.twig" with {
     card_modifiers : ["person"],
     card_title: person.title,
-    card_link_url: personlink,
+
     card_image_path : person.imagepath,
     card_image_alt : person.alt,
     card_label: person.jobtitle,
     card_departments: person_departments,
     card_nodeId : node.id
-} %}{% endembed %}
+} %}
+{% endembed %}

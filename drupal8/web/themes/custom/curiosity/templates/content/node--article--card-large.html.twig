@@ -9,11 +9,11 @@ Descr: defines content  for a feature image in a campfire
 
 #}
 {% set card_image = content.field_image %}
-{% if content.field_newsletter_image|render is not empty %}
+{# {% if content.field_newsletter_image|render is not empty %}
   {% set card_image = content.field_newsletter_image %}
 {% else %}
   {% set card_image = content.field_image %}
-{% endif %}
+{% endif %} #}
 
 
 {% embed "@content/molecules/card.twig" with {

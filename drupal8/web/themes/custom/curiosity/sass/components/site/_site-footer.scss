@@ -14,6 +14,7 @@ footer {
   background: var(--as-black);
   color: var(--as-white);
   font-size: var(--base-20);
+  padding: 3rem 0;
 
   h2 {
     font-size: var(--base-24);
@@ -68,5 +69,6 @@ footer {
 
   a {
     color: var(--as-white);
+    text-decoration-color: var(--gray-dark);
   }
 }
