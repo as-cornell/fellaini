@@ -6,9 +6,10 @@
  */
 #}
 
-{% set netid = content.field_netid|field_value|safe_join(', ') %}
+{% set pathtoken = content.field_link.0['#title']|split('/')[4] %}
 
-{% set person = parse_people_json(netid) %}
+{{content.field_link.0['#title']|split('/')[4]}}
+{% set person = parse_people_json(pathtoken) %}
 
 
 {% set person_departments %}
@@ -26,7 +27,7 @@
 {% endset %}
 {# {{vardumper(person)}} #}
 
-{% set card_link_url = 'people/'~person.path %}
+{% set card_link_url = 'people/'~pathtoken %}
 {% embed "@content/molecules/card--person.twig" with {
     card_modifiers : ["person"],
     card_title: person.title,
