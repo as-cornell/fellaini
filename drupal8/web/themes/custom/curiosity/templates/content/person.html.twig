@@ -1,7 +1,8 @@
 {# [module]/templates/my-template.html.twig #}
-<p>netid: {{ netid }}</p>
-{% set badlarry = parse_people_json(netid) %}
-{{vardumper(badlarry)}}
+
+<p>pathtoken: {{ pathtoken }}</p>
+{% set badlarry = parse_people_json(pathtoken) %}
+{#vardumper(badlarry)#}
 <ul>
     <li>
       {{badlarry.title}}
@@ -11,6 +12,9 @@
     </li>
     <li>
       {{badlarry.alt}}
+    </li>
+    <li>
+      {{badlarry.netid}}
     </li>
     <li>
       {{badlarry.path}}

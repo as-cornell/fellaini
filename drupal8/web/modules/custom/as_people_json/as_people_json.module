@@ -3,10 +3,10 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 
 
-function as_people_json_get_person_json($netid)
+function as_people_json_get_person_json($pathtoken)
 {
   //set cache id (verify parameters are safe values to use as cache id)
-  $cid = "as_people_json:" . $netid;
+  $cid = "as_people_json:" . $pathtoken;
   $person_data = [];
   //check cache
   if ($cache = \Drupal::cache('data')->get($cid)) {
@@ -16,7 +16,7 @@ function as_people_json_get_person_json($netid)
   }
   // if no data check url
   else {
-    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter%5Bfield_person_netid%5D=' . $netid .'&include=field_image.field_media_image';
+    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter[field_path_token]=/' . $pathtoken .'&include=field_image.field_media_image';
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
@@ -101,6 +101,7 @@ function as_people_json_theme($existing, $type, $theme, $path) {
   return [
     'person' => [
       'variables' => ['netid' => NULL],
+      'variables' => ['pathtoken' => NULL],
     ],
   ];
 }

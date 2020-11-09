@@ -35,11 +35,11 @@ class parsePeopleJson extends \Twig_Extension {
    * @return array $person_record
    *   data in array for theming
    */
-  public function parse_people_json($netid) {
+  public function parse_people_json($pathtoken) {
 
     $person_record = [];
     $departments = '';
-    $people_json = as_people_json_get_person_json($netid);
+    $people_json = as_people_json_get_person_json($pathtoken);
     if (!empty($people_json['data'])) {
       // get image path from json
       //foreach($people_json['included'] as $image) {
@@ -47,6 +47,7 @@ class parsePeopleJson extends \Twig_Extension {
         //}
       foreach($people_json['data'] as $person_data) {
           $person_record['alt'] = 'Image of ' . $person_data['attributes']['title'];
+          $person_record['netid']= $person_data['attributes']['field_person_netid'];
           $person_record['path'] = $person_data['attributes']['path']['alias'];
           $person_record['title'] = $person_data['attributes']['title'];
           $person_record['jobtitle'] = $person_data['attributes']['field_person_title'];

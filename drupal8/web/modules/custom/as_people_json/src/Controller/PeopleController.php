@@ -11,12 +11,11 @@ class PeopleController extends ControllerBase {
    *
    * @return array
    */
-  public function content($netid) {
-
+  public function content($pathtoken) {
 
     return [
       '#theme' => 'person',
-      '#netid' => $this->t($netid),
+      '#pathtoken' => $this->t($pathtoken),
     ];
   }
 
