@@ -23,7 +23,7 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-{# {{vardumper()}} #}
+{{vardumper()}}
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = [''] %}
@@ -39,7 +39,6 @@
 	{% set show_disciplines = true %}
 	{% set disciplines = (content.field_discipline|render is not empty) ? content.field_discipline %}
 {% endif %}
-
 
 
 {% include "@pages/_department-program.twig" with{

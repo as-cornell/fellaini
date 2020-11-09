@@ -35,15 +35,22 @@ Needed? :
             "heading_base_class" : "title"
 
         } %}
-		<p class="byline">
+  {% if show_byline or show_mediasource or article_dateline %}
+    <p class="byline">
+    {% if show_byline or show_mediasource %}
+      {% if show_byline %}
+        {{ byline }}
+      {% endif %}
 
-				{{ article_byline }}
-
-			,
-			{{article_mediasource}}
-			<br/>
-			{{article_dateline}}
-		</p>
+      {% if show_byline and show_mediasource %}, {% endif %}
+      {% if show_mediasource %}
+        {{mediasource}}
+      {% endif %}
+      <br/>
+      {% endif %}
+        {{article_dateline}}
+		</p> 
+  {% endif %}
 	</div>
 	<div class="social">
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">
