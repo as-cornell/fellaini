@@ -11,9 +11,10 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
 
 // pcWrapper--stat
 .pcWrapper--stat {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  // display: grid;
+  // gap: var(--space);
+  // grid-template-columns: repeat(2, 1fr);
+  // justify-content: space-between;
 }
 
 .card--stat {
