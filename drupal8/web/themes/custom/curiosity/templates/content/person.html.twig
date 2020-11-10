@@ -1,13 +1,8 @@
 {# [module]/templates/my-template.html.twig #}
-{# <p>
-	netid:
-	{{ netid }}
-</p>
 
 
-#}
-{% set person = parse_people_json(netid) %}
-{{vardumper(person)}}
+{% set person = parse_people_json(pathtoken) %}
+{# {{vardumper(person)}}#}
 
 {# edcuation #}
 	{% if person.education %}
