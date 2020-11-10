@@ -4,6 +4,7 @@
 
 
 {% set person = parse_people_json(pathtoken) %}
+{% set related_articles = drupal_view('news', 'block_related_articles', person.netid) %}
 {# {{vardumper(person)}}#}
 
 {# edcuation #}
@@ -37,6 +38,7 @@
 {% endif %}
 
 
+
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('person') %}
 {% set main_element_modifiers = [''] %}
@@ -53,5 +55,5 @@
 
   links: content.field_links,
 
-  related_articles: content.field_related_articles
+  related_articles: related_articles
 } %}
