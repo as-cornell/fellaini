@@ -15,6 +15,7 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
   // gap: var(--space);
   // grid-template-columns: repeat(2, 1fr);
   // justify-content: space-between;
+  margin-bottom: var(--bottom-margin);
 }
 
 .card--stat {

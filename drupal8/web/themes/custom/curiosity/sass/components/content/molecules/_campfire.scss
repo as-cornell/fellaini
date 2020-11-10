@@ -105,4 +105,7 @@ Descr:
     font-weight: var(--semi);
     margin-top: 0.5em;
   }
+  .group__title {
+    @extend .sr-only;
+  }
 }

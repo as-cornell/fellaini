@@ -35,6 +35,7 @@ footer {
     &__currentStudents {
       grid-column: 1 / 4;
       grid-row: 1 / 1;
+      margin-bottom: 2rem;
     }
     &__importantLinks {
       grid-column: 4 / 10;
@@ -57,6 +58,10 @@ footer {
     &__logo {
       grid-column: 1 / 4;
       grid-row: 2;
+      a {
+        display: block;
+        max-width: 10rem;
+      }
     }
     &__address {
       grid-column: 4 / 6;
