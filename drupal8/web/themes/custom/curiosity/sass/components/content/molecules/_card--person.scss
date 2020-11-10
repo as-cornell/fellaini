@@ -7,6 +7,9 @@ Descr: Sets all specific styles for an person card
 --------------------------- */
 
 .card--person {
+  .card__label {
+    font-style: var(--base-20);
+  }
   &.card--small {
     border: none;
     margin-bottom: 1rem;

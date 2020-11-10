@@ -3,7 +3,7 @@
 
 {% set person = parse_people_json(pathtoken) %}
 {% set related_articles = drupal_view('news', 'block_related_articles', person.netid) %}
-{# {{vardumper(person)}}#}
+{# {{vardumper(person)}} #}
 
 {# edcuation #}
 	{% if person.education %}
@@ -33,7 +33,6 @@
 	{% set show_departments = true %}
 {% set departments = person.departments %}
 {% endif %}
-
 
 
 {% set main_element_extra_classes = ['main'] %}
