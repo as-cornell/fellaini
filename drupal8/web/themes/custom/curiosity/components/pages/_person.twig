@@ -1,11 +1,11 @@
-{# 
+{#
 
 /* -------------------------
 
 Title: _person.twig
 Descr: defines content and blocks for basic person page
 
---------------------------- */ 
+--------------------------- */
 
 #}
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
@@ -56,7 +56,7 @@ Descr: defines content and blocks for basic person page
 	<div class="sidebar">
 		{{image}}
 		<h3>
-			Contact informations
+			Contact information
 		</h3>
 		{% if show_education %}
 			<h3>
@@ -73,5 +73,10 @@ Descr: defines content and blocks for basic person page
 		<h3>
 			LINKS
 		</h3>
+		<ul>
+		 {% for link in links %}
+        <li><a href='{{ link.uri }}'>{{ link.title }}</a></li>
+    {% endfor %}
+    </ul>
 	</div>
 </main>
