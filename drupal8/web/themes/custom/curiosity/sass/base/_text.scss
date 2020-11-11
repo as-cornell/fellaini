@@ -24,6 +24,7 @@ strong {
   max-width: 29ch;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1em;
   &--storm {
     @include text-gradient;
   }
@@ -44,6 +45,8 @@ strong {
 
 .eyebrow {
   font-family: var(--font-serif);
+  font-size: var(--base-24);
+  font-weight: var(--semi);
 }
 
 .pageIntroduction {
