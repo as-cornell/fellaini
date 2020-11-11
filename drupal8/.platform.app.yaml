@@ -125,7 +125,8 @@ variables:
   env:
     SIMPLESAMLPHP_CONFIG_DIR: /app/simplesamlphp/config
 
-# Added for New Relic
+# Added for New Relic and LDAP
 runtime:
   extensions:
     - newrelic
+    - ldap
