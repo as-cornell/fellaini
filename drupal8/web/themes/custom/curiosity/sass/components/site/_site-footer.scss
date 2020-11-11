@@ -31,9 +31,11 @@ footer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto;
+    font-weight: var(--light);
     &__currentStudents {
       grid-column: 1 / 4;
       grid-row: 1 / 1;
+      margin-bottom: 2rem;
     }
     &__importantLinks {
       grid-column: 4 / 10;
@@ -42,33 +44,44 @@ footer {
         display: flex;
         > li {
           flex: 0 0 33.3%;
-          font-weight: var(--semi);
+          font-weight: var(--regular);
+          > a {
+            margin-bottom: 0.5em;
+            display: block;
+          }
         }
         ul {
-          font-weight: var(--regular);
+          font-weight: var(--light);
         }
       }
     }
     &__logo {
       grid-column: 1 / 4;
       grid-row: 2;
+      a {
+        display: block;
+        max-width: 10rem;
+      }
     }
     &__address {
-      grid-column: 5 / 7;
+      grid-column: 4 / 6;
       grid-row: 2;
+      font-size: var(--base-16);
     }
     &__contacts {
-      grid-column: 8 / 11;
+      grid-column: 6 / 9;
       grid-row: 2;
+      font-size: var(--base-16);
     }
     &__socialLinks {
       grid-column: 11 / -1;
       grid-row: 2;
+      font-size: var(--base-16);
     }
   }
 
   a {
     color: var(--as-white);
-    text-decoration-color: var(--gray-dark);
+    text-decoration-color: var(--dusk);
   }
 }

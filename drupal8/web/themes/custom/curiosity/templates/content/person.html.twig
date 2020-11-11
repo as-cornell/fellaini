@@ -1,8 +1,6 @@
 {# [module]/templates/my-template.html.twig #}
 
 
-
-
 {% set person = parse_people_json(pathtoken) %}
 {% set related_articles = drupal_view('news', 'block_related_articles', person.netid) %}
 
@@ -15,9 +13,8 @@
 {# summary #}
 	{% if person.summary %}
 	{% set show_summary = true %}
-{% set summary = person.summary %}
+{% set summary = person.summary|raw %}
 {% endif %}
-
 {# researchfocus #}
 	{% if person.researchfocus %}
 	{% set show_researchfocus = true %}
@@ -41,7 +38,6 @@
   {% set show_links = true %}
 {% set links = person.links %}
 {% endif %}
-
 
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('person') %}

@@ -13,7 +13,6 @@ Still needs: expand toggle for showing main nav on mobile
   font-size: var(--base-18);
   overflow: hidden;
   @include large() {
-    font-size: var(--base-20);
     overflow: visible;
   }
   // @include large() {

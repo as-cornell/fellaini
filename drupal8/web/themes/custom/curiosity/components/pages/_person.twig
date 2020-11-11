@@ -31,19 +31,19 @@ Descr: defines content and blocks for basic person page
 			<h2>
 				Summary
 			</h2>
-			{{summary}}
+			{{summary|raw}}
 		{% endif %}
 		{% if show_researchfocus %}
 			<h2>
 				Research Focus
 			</h2>
-			{{researchfocus}}
+			{{researchfocus|raw}}
 		{% endif %}
 		{% if show_publications %}
 			<h2>
 				Publications
 			</h2>
-			{{publications}}
+			{{publications|raw}}
 		{% endif %}
 
 		<h2>
@@ -62,13 +62,13 @@ Descr: defines content and blocks for basic person page
 			<h3>
 				Education
 			</h3>
-			{{education}}
+			{{education|raw}}
 		{% endif %}
 		{% if show_departments %}
 			<h3>
 				Departments and programs
 			</h3>
-			{{departments}}
+			{{departments|raw}}
 		{% endif %}
 		<h3>
 			LINKS
