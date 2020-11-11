@@ -5,7 +5,6 @@
 
 {% set person = parse_people_json(pathtoken) %}
 {% set related_articles = drupal_view('news', 'block_related_articles', person.netid) %}
-{# {{vardumper(person)}}#}
 
 {# edcuation #}
 	{% if person.education %}
@@ -37,6 +36,11 @@
 {% set departments = person.departments %}
 {% endif %}
 
+{# links #}
+  {% if person.links %}
+  {% set show_links = true %}
+{% set links = person.links %}
+{% endif %}
 
 
 {% set main_element_extra_classes = ['main'] %}
@@ -44,8 +48,9 @@
 {% set main_element_modifiers = [''] %}
 
 {% set image %}
-<img src="{{person.imagepath}}" alt="{{person.alt}}"> {% endset %}
 
+<img src="{{person.imagepath}}" alt="{{person.alt}}"> {% endset %}
+{{person.links}}
 {% include "@pages/_person.twig" with{
   name : person.title,
   title : person.jobtitle,
@@ -53,7 +58,7 @@
 
   image : image,
 
-  links: content.field_links,
+  links: links,
 
   related_articles: related_articles
 } %}
