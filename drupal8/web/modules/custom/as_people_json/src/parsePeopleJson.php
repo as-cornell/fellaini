@@ -54,6 +54,7 @@ class parsePeopleJson extends \Twig_Extension {
           $person_record['keywords'] = strip_tags($person_data['attributes']['field_keywords']['value']);
           $person_record['education'] = $person_data['attributes']['field_person_education']['value'];
           $person_record['publications'] = $person_data['attributes']['field_person_publications']['value'];
+          $person_record['links'] = $person_data['attributes']['field_links'];
           // get department label from json
           foreach($person_data['relationships']['field_departments_programs']['data'] as $dept_data) {
             $deptuuid = $dept_data['id'];
