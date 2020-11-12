@@ -29,44 +29,34 @@
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = [''] %}
 
-{# Related articles
-{% if content.field_related_articles.0 %}
-	{% set show_related_articles = true %}
-	{% set related_articles = (content.field_related_articles|render is not empty) ? content.field_related_articles %}
+
+{# Majors Minors #}
+{% set related_majors = drupal_view('majors_and_minors', 'block_interests', name.0['#context']['value']) %}
+{% if related_majors %}
+  {% set show_related_majors = true %}
 {% endif %}
-#}
+
+{# Departments Programs #}
+{% set related_departments = drupal_view('departments_and_programs', 'block_interests', name.0['#context']['value']) %}
+{% if related_departments %}
+  {% set show_related_departments = true %}
+{% endif %}
 
 {# Articles Block #}
-
-
-{% set related_articles = drupal_view('article_blocks', 'block_departments', name.0['#context']['value']) %}
+{% set related_articles = drupal_view('article_blocks', 'block_interests', name.0['#context']['value']) %}
 {% if related_articles %}
   {% set show_related_articles = true %}
 {% endif %}
 
-{# Related discipline #}
-{% if content.field_discipline.0 %}
-	{% set show_disciplines = true %}
-	{% set disciplines = (content.field_discipline|render is not empty) ? content.field_discipline %}
-{% endif %}
+
 
 
 {% include "@pages/_department-program.twig" with{
   title : name,
-  type : content.field_type,
+  related_majors: related_majors,
+  related_departments: related_departments,
+  related_articles: related_articles
 
-  image : content.field_image,
-
-  description: content.description,
-  body: content.field_page_components,
-  outcomes: content.field_long_text_one,
-  requirements: content.field_long_text_two,
-  classes: content.field_classes,
-  links: content.field_links,
-
-
-  related_articles: related_articles,
-  disciplines: disciplines
 
 
 } %}
