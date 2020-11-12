@@ -3,8 +3,7 @@
 
 {% set person = parse_people_json(pathtoken) %}
 {% set related_articles = drupal_view('news', 'block_related_articles', person.netid) %}
-{# {{vardumper(person)}} #}
-
+{% set contact = drupal_block('ldap_block', {netid: person.netid}) %}
 {# edcuation #}
 	{% if person.education %}
 	{% set show_education = true %}
@@ -34,22 +33,29 @@
 {% set departments = person.departments %}
 {% endif %}
 
+{# links #}
+  {% if person.links %}
+  {% set show_links = true %}
+{% set links = person.links %}
+{% endif %}
 
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('person') %}
 {% set main_element_modifiers = [''] %}
 
 {% set image %}
-<img src="{{person.imagepath}}" alt="{{person.alt}}"> {% endset %}
 
+<img src="{{person.imagepath}}" alt="{{person.alt}}"> {% endset %}
+{{person.links}}
 {% include "@pages/_person.twig" with{
   name : person.title,
   title : person.jobtitle,
-  level: content.field_level,
 
   image : image,
 
-  links: content.field_links,
+  contact: contact,
+
+  links: links,
 
   related_articles: related_articles
 } %}
