@@ -75,12 +75,13 @@
 @mixin btnLink($background: var(--gray-lightest), $color: var(--storm)) {
   display: inline-block;
   background: $background;
-  padding: 0.5em 1em;
+  padding: 1em;
   border-radius: var(--border-radius);
   // font-weight: var(--semi);
   color: $color;
   @include boxShadow();
   margin-right: 1rem;
+  margin-top: 1em;
   &:last-of-type {
     margin-right: 0;
   }

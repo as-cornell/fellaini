@@ -25,10 +25,8 @@ strong {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
-  &--storm {
-    @include text-gradient;
-  }
 }
+
 /* 
 // gradient text colors
 */
