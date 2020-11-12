@@ -4,13 +4,14 @@ use Drupal\Core\Routing\RouteMatchInterface;
 
 function as_people_ldap_get_netid_ldap($netid) {
 
-
+  // get settings
+  $config = \Drupal::config("as_people_ldap.credentials");
+  $settings = [];
+  $settings["ldaprdn"] = $config->get("ldaprdn");
+  $settings["ldappass"] = $config->get("ldappass");
    //set cache id (verify parameters are safe values to use as cache id)
   $cid = 'as_people_ldap:' . $netid;
   $info = [];
-  $ldaprdn  = 'cucascontactrdr';     // ldap rdn or dn
-  //$ldappass = variable_get('as_dept_variables_ldappass', '');
-  $ldappass = '8fw4ONDXae#iH8';
   //check cache
   if ($cache = \Drupal::cache('data')->get($cid)) {
     //fetch cache data
@@ -24,7 +25,7 @@ function as_people_ldap_get_netid_ldap($netid) {
     $ds=ldap_connect('ldap://directory.cornell.edu');
     // If connection OK, Bind to server
     if (!empty($ds)) {
-            $r=ldap_bind($ds, $ldaprdn, $ldappass);
+            $r=ldap_bind($ds, $settings["ldaprdn"], $settings["ldappass"]);
             $sr=ldap_search($ds,'ou=People,o=Cornell University,c=US','uid='.$netid);
             $info = ldap_get_entries($ds, $sr);
             $entry = ldap_first_entry($ds, $sr);
