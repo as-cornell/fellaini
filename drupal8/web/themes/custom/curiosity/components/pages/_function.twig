@@ -2,8 +2,8 @@
 
 /* -------------------------
 
-Title: _interest.twig
-Descr: defines content and blocks for interest detail pages
+Title: _function.twig
+Descr: defines content and blocks for discipline detail pages
 
 --------------------------- */
 
@@ -27,17 +27,12 @@ Descr: defines content and blocks for interest detail pages
 	<div class="content">
 		{{description}}
 		{{body}}
-		{% if show_related_majors %}
+
+		{% if show_related_articles %}
 			<h3>
-				Related Majors, Minors and Graduate Fields
+				Related articles
 			</h3>
-			{{related_majors}}
-		{% endif %}
-		{% if show_related_departments %}
-			<h3>
-				Related Departments and Programs
-			</h3>
-			{{related_departments}}
+			{{related_articles}}
 		{% endif %}
 
 

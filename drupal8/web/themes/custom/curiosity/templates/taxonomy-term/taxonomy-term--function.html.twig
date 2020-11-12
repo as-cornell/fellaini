@@ -29,25 +29,15 @@
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = [''] %}
 
-
-{# Majors Minors #}
-{% set related_majors = drupal_view('majors_and_minors', 'block_interests', name.0['#context']['value']) %}
-{% if related_majors %}
-  {% set show_related_majors = true %}
+{# Articles Block #}
+{% set related_articles = drupal_view('article_blocks', 'block_functions', name.0['#context']['value']) %}
+{% if related_articles %}
+  {% set show_related_articles = true %}
 {% endif %}
 
-{# Departments Programs #}
-{% set related_departments = drupal_view('departments_and_programs', 'block_interests', name.0['#context']['value']) %}
-{% if related_departments %}
-  {% set show_related_departments = true %}
-{% endif %}
-
-{% include "@pages/_interest.twig" with{
+{% include "@pages/_function.twig" with{
   title : name,
-  related_majors: related_majors,
-  related_departments: related_departments,
   related_articles: related_articles
-
 
 
 } %}
