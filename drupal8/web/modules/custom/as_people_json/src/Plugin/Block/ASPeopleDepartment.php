@@ -50,7 +50,7 @@ public function build() {
             $dept_json = as_people_json_get_dept_json($deptuuid);
             $departments = $departments . $dept_json['data']['attributes']['name'] . ', ';
           }
-          $markup = $markup . '<li><a href="/people'. $path .'">' . $title . '</a><br\>';
+          $markup = $markup . '<li><a href="/people'. $path .'">' . $title . '</a></li>';
           //$markup = $markup . $departments . '</li>';
       }
       // Create the markup
