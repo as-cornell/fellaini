@@ -107,7 +107,8 @@
         "drupal/facets": "^1.5",
         "drupal/facets_pretty_paths": "^1.0",
         "drupal/field_defaults": "^1.1",
-        "drupal/field_token_value": "^1.0"
+        "drupal/field_token_value": "^1.0",
+        "drupal/view_mode_selector": "^1.0@beta"
 
 
     },
