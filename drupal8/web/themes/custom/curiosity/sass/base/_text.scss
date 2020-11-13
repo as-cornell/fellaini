@@ -31,14 +31,17 @@ strong {
 // gradient text colors
 */
 
-.storm {
-  @include text-gradient(var(--storm-radial));
+.blue-blue {
+  @include text-gradient(var(--blue-blue));
 }
-.green {
-  @include text-gradient(var(--green-radial));
+.green-green {
+  @include text-gradient(var(--green-green));
 }
-.purple {
+.teal-purple {
   @include text-gradient(var(--teal-purple));
+}
+.blue-purple {
+  @include text-gradient(var(--blue-purple));
 }
 
 .eyebrow {
