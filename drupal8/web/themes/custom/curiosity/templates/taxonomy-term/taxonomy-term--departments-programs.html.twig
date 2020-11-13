@@ -23,8 +23,8 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-{#vardumper(name)#}
-
+{#vardumper(term.tid.value)#}
+{#drupal_block('people_department_block', {deptid: term.tid.value})#}
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = [''] %}
@@ -50,6 +50,11 @@
 	{% set disciplines = (content.field_discipline|render is not empty) ? content.field_discipline %}
 {% endif %}
 
+{# Related People#}
+{% set related_people = drupal_block('people_department_block', {deptid: term.tid.value}) %}
+{% if related_people %}
+  {% set show_related_people = true %}
+{% endif %}
 
 {% include "@pages/_department-program.twig" with{
   title : name,
@@ -66,7 +71,8 @@
 
 
   related_articles: related_articles,
-  disciplines: disciplines
+  disciplines: disciplines,
+  related_people: related_people
 
 
 } %}
