@@ -13,7 +13,7 @@
 
   --gold: #ffd91f;
 
-  --as-red: #b31b1b;
+  --as-red: #952020;
 
   --as-blue-gray: #435363;
   --as-blue-base: #006699;
@@ -43,6 +43,12 @@
     var(--as-purple) 100%
   );
 
+  --main-card-border: linear-gradient(
+    90deg,
+    hsla(177, 48, 70, 0.66) 0%,
+    hsla(281, 70, 66, 0.38) 100%
+  );
+
   --green-green: linear-gradient(
     90deg,
     var(--as-green-light) 0%,
@@ -59,6 +65,12 @@
     60deg,
     var(--as-blue-base) 0%,
     var(--as-blue-gray) 100%
+  );
+
+  --blue-blue--light: linear-gradient(
+    60deg,
+    hsla(189, 30, 70, 0.47) 0%,
+    hsla(207, 67, 62, 0.31) 100%
   );
 
   --storm-radial: radial-gradient(

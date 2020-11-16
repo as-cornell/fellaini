@@ -36,15 +36,6 @@ Descr: otpN small and large, hovers and toggles for subNav
 
 // for stuck otpnav
 .main.otpStuck {
-  // @include medium() {
-  //   .otpNavWrapper {
-  //     position: fixed;
-  //     top: 0;
-  //   }
-  //   .content {
-  //     padding-top: 150px;
-  //   }
-  // }
   @include large() {
     .otpNavWrapper {
       position: sticky;
@@ -116,7 +107,7 @@ Descr: otpN small and large, hovers and toggles for subNav
         &.active,
         &:hover {
           color: var(--as-white);
-          background: var(--blue-blue);
+          background: var(--as-blue-gray);
 
           border-radius: var(--border-radius);
         }
