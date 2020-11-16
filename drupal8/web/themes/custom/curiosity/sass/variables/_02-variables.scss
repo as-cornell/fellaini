@@ -1,7 +1,4 @@
 :root {
-  --white: #f0f0f0; //depricated
-  --black: #2c2c2c; //depricated
-
   --as-white: #fdfdfd;
   --as-black: #2c2c2c;
   --dark-text: #35363f;
@@ -9,41 +6,88 @@
   --gray-med: #959595;
   --gray-lt: #c2c0c0;
   --gray-lightest: #fbfbfb;
-  --dusk: #435363;
-  --fog: #607774;
-  --storm: #4f869f;
-  --as-teal: #85c4ca;
-  --gold: #ffd91f;
-  --as-green: #4d9b5e;
-  --as-red: #b31b1b;
 
-  --as-purple: #bd6ae4;
+  --dusk: red;
+  --fog: red;
+  --storm: red;
+
+  --gold: #ffd91f;
+
+  --as-red: #952020;
+
+  --as-blue-gray: #435363;
+  --as-blue-base: #006699;
+
+  --as-light-blue: #3292e0;
+  --as-purple: #a63fe6;
+
+  --as-brown-dark: #81681e;
+  --as-brown-light: #b08918;
+
+  --as-green: #1f8335;
+  --as-green-light: #619f38;
+
+  --as-teal: #85c4ca;
+  --as-teal-dark: #33a19b;
 
   // gradients
   --blue-purple: linear-gradient(
     144deg,
-    var(--as-teal) 0%,
+    var(--as-light-blue) 0%,
     var(--as-purple) 100%
   );
 
   --teal-purple: linear-gradient(
     90deg,
-    hsla(177, 48, 71, 0.3) 0%,
-    hsla(281, 70, 68, 0.3) 100%
+    var(--as-teal-dark) 0%,
+    var(--as-purple) 100%
+  );
+
+  --main-card-border: linear-gradient(
+    90deg,
+    hsla(177, 48, 70, 0.66) 0%,
+    hsla(281, 70, 66, 0.38) 100%
+  );
+
+  --green-green: linear-gradient(
+    90deg,
+    var(--as-green-light) 0%,
+    var(--as-green) 100%
+  );
+
+  --brown-brown: linear-gradient(
+    90deg,
+    var(--as-brown-light) 0%,
+    var(--as-brown-dark) 100%
+  );
+
+  --blue-blue: linear-gradient(
+    60deg,
+    var(--as-blue-base) 0%,
+    var(--as-blue-gray) 100%
+  );
+
+  --blue-blue--light: linear-gradient(
+    60deg,
+    hsla(189, 30, 70, 0.47) 0%,
+    hsla(207, 67, 62, 0.31) 100%
   );
 
   --storm-radial: radial-gradient(
     hsla(195, 82, 16, 0.76) 0,
     hsla(195, 82, 16, 1) 100%
   );
+
   --green-radial: radial-gradient(
     hsla(96, 48, 48, 1) 0,
     hsla(96, 48, 33, 1) 100%
   );
 
-  --gray: #c2c0c0; // depricate
-  --gray-light: #d9d9d9; // depricate
-  --near-white: #fbfbfb; // depricate
+  --white: red; //depricated
+  --black: red; //depricated
+  --gray: red; // depricate
+  --gray-light: red; // depricate
+  --near-white: red; // depricate
 
   // page widths moved to _01-breakpoints.scss so they can be used here
   --xs: 320px;

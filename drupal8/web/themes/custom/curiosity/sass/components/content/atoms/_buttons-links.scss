@@ -51,14 +51,14 @@ Descr:
   == Links that look like buttons
 */
 .btn {
-  @include btnLink();
+  @include btnLink(var(--gray-lightest), var(--as-blue-base));
 }
 .btn--blue {
   @include btnLink(var(--storm-radial), var(--as-white));
 }
 .btn--red {
-  @include btnLink();
+  @include btnLink(var(--as-red), var(--as-white));
 }
 .btn--green {
-  @include btnLink();
+  @include btnLink(var(--as-green), var(--as-white));
 }

@@ -8,7 +8,7 @@
   @include small {
     border-left: 1px solid var(--gray);
     display: flex;
-    background: var(--gray-light);
+    background: var(--gray-lightest);
     // flex-direction: column;
     // float: left;
     position: fixed;
@@ -50,7 +50,7 @@
 
 .tabs__link--local-tasks {
   padding: 0.5em 1em;
-  background: var(--near-white);
+  background: var(--as-white);
   font-size: var(--base-16);
   border-radius: 8px;
   margin-right: 0.5rem;

@@ -45,13 +45,14 @@
     if (!next.hasClass("subNav--expanded")) {
       $(next).addClass("subNav--expanded");
       $(parent).addClass("withSubNav--expanded");
-      _this.prev().find("a").removeAttr("tabindex", -1);
+     
+      _this.next().find("a").removeAttr("tabindex", -1);
 
       // remove sub-expaneded
     } else {
       $(next).removeClass("subNav--expanded");
       $(parent).removeClass("withSubNav--expanded");
-      _this.prev().find("a").attr("tabindex", -1);
+      _this.next().find("a").attr("tabindex", -1);
     }
 
     // $('.subNav__link').focus(function(){
