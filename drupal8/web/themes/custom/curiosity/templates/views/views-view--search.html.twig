@@ -23,8 +23,8 @@ Descr: main output business for search results views. Classes are from the view-
 {% set search_terms = exposed.keywords['#value'] %}
 
 
-	{% if search_terms is not empty %}
-{% set view_sub_title = 'Search results for ' ~ '"'~search_terms~'"' %}
+{% if search_terms is not empty %}
+	{% set view_sub_title = 'Search results for ' ~ '"'~search_terms~'"' %}
 {% endif %}
 
 {% set view_title = view.storage.label %}
@@ -35,8 +35,6 @@ Descr: main output business for search results views. Classes are from the view-
 {# set show_filter = true #}
 
 {{ view.getExposedInput.byline }}
-
-
 
 
 {% include "@pages/_view-list.twig" with {
