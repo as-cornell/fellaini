@@ -15,6 +15,9 @@ Descr: Sets styles for
       figure {
         background: none;
       }
+      h2 {
+        margin-top: 0;
+      }
       // set up masks
       @for $i from 1 through 3 {
         &:nth-of-type(3n + #{$i}) {
@@ -26,11 +29,12 @@ Descr: Sets styles for
     }
   }
   &[class*="blue"] {
-    background: var(--storm-radial);
-    color: var(--as-white);
-    padding: 2rem;
+    background: var(--blue-blue--light);
+    color: var(--as-black);
+    padding: 3rem;
     border-radius: var(--border-radius);
     margin-bottom: var(--bottom-margin);
+    @include boxShadow();
     .photoText {
       margin-bottom: 0;
     }
@@ -50,12 +54,6 @@ Descr: Sets styles for
     flex: 0 0 calc(47% - var(--space));
   }
   h2 {
-    // font-size: var(--base-48);
-    // @include large() {
-    //   font-size: var(--base-64);
-    // }
-    // line-height: 1;
-    // margin-bottom: 0.75em;
     .slider & {
       font-size: 3rem;
     }

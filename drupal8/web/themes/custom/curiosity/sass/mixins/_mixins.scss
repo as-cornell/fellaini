@@ -40,24 +40,18 @@
 // gradient-border needs two parts. one for the conatiner/border, one that sets the :before for the actual visible background color
 @mixin gradient-border {
   position: relative;
-  background: var(--teal-purple);
+  background: var(--main-card-border);
   background-origin: padding-box, border-box;
   background-repeat: no-repeat;
-  // border: 1px solid transparent;
-  // border: 1px solid transparent;
   border-radius: var(--border-radius);
   &::before {
-    content: "";
-    content: "";
     content: "";
     position: absolute;
     top: 1px;
     bottom: 1px;
     left: 1px;
     right: 1px;
-    // border: 2px solid pink;
     border-radius: var(--border-radius);
-    background: pink;
     background: var(--as-white);
     z-index: 0;
   }
@@ -75,12 +69,13 @@
 @mixin btnLink($background: var(--gray-lightest), $color: var(--storm)) {
   display: inline-block;
   background: $background;
-  padding: 0.5em 1em;
+  padding: 1em;
   border-radius: var(--border-radius);
   // font-weight: var(--semi);
   color: $color;
   @include boxShadow();
   margin-right: 1rem;
+  margin-top: 1em;
   &:last-of-type {
     margin-right: 0;
   }

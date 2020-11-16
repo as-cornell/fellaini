@@ -10,18 +10,10 @@ Still needs: expand toggle for showing main nav on mobile
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: var(--base-18);
   overflow: hidden;
-  @include large() {
-    overflow: visible;
-  }
-  // @include large() {
-  //   font-size: var(--base24);
-  // }
-  // @include xl() {
-  //   font-size: var(--base-20);
-  // }
-  background: var(--gray-dark);
+  width: 100%;
+
+  background: var(--as-black);
   padding: 0 1rem;
   max-height: 0;
   transition: max-height 0.25s ease;
@@ -31,7 +23,8 @@ Still needs: expand toggle for showing main nav on mobile
   }
 
   .mainNav__link {
-    color: var(--near-white);
+    color: var(--gray-lightest);
+    font-weight: var(--light);
     display: inline-block;
     width: calc(100% - 2rem);
     padding: 0.5rem 0;
@@ -44,9 +37,9 @@ Still needs: expand toggle for showing main nav on mobile
     position: relative;
     z-index: 10;
     svg {
-      fill: var(--as-black);
+      fill: var(--gray-lightest);
     }
-    @include medium() {
+    @include headerBreak() {
       opacity: 0;
     }
     &:focus {
@@ -58,46 +51,71 @@ Still needs: expand toggle for showing main nav on mobile
     }
   }
 
-  li {
-    // display: flex;
-    // justify-content: space-between;
-    // overflow: hidden;
-    &.withSubNav {
-      // position: relative;
-    }
-  }
   //big maiNav
-  @include large() {
+  @include headerBreak() {
     max-height: 100%;
+    overflow: visible;
+    font-size: var(--base-18);
     background: transparent;
     color: var(--as-black);
-    // flex-direction: row;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
-    // overflow: visible;
+    justify-content: center;
+    //new
     .mainNav__item {
-      // border-top: 4px solid transparent;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        width: calc(100% - 15px);
+        height: 3px;
+        background: var(--as-red);
+        top: 0;
+        left: 0;
+        transform: scaleX(0);
+        transition: all 0.15s ease-in;
+        visibility: hidden;
+        border-radius: 2px;
+      }
       &:hover {
         // border-top: 4px solid var(--as-red);
+        text-decoration-color: var(--gray-med);
+        &:after {
+          visibility: visible;
+          transform: scaleX(1);
+          transition: all 0.25s ease-out;
+        }
         overflow: visible;
 
         > .mainNav__link {
-          border-top: 4px solid var(--as-red);
+          // border-top: 4px solid var(--as-red);
           background: var(--gray-lightest);
+          box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
         }
       }
+
+      &.mainNav__item--active {
+        text-decoration-color: var(--gray-med);
+        &:after {
+          visibility: visible;
+          transform: scaleX(1);
+          transition: all 0.25s ease-out;
+          background: var(--as-teal-dark);
+        }
+      }
+
+      // &:hover {
+      //   // border-top: 4px solid var(--as-red);
+
+      // }
     }
     .mainNav__link {
-      border-top: 4px solid transparent;
+      // border-top: 4px solid transparent;
       color: var(--dark-text);
-      text-decoration-color: var(--gray-light);
+      text-decoration-color: var(--gray-lt);
       padding: 0.5rem;
       width: auto;
       font-weight: var(--semi);
-      &:hover {
-        // border-top: 4px solid var(--as-red);
-      }
     }
 
     // Base for all lis in nav
@@ -107,7 +125,7 @@ Still needs: expand toggle for showing main nav on mobile
       display: inline-block;
       z-index: 1;
       // margin: 0 0.5rem;
-      @include medium {
+      @include headerBreak {
         overflow: visible;
       }
       // padding: .5rem;
@@ -137,6 +155,9 @@ Still needs: expand toggle for showing main nav on mobile
       }
     }
   }
+  @include large() {
+    justify-content: flex-end;
+  }
   // subNav
   .subNav {
     // expandable bits
@@ -150,17 +171,21 @@ Still needs: expand toggle for showing main nav on mobile
 
     list-style-type: none;
     // position: absolute;
-    background: var(--near-white);
+    background: var(--gray-lightest);
     // @include boxShadow;
+
     display: flex;
     flex-flow: column;
 
-    // Medium plus styles
+    // headerBreak plus styles
     width: 100%;
-    @include medium() {
+    @include headerBreak() {
       width: 240px;
       position: absolute;
       font-size: var(--base-18);
+      box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0 var(--border-radius) var(--border-radius)
+        var(--border-radius);
     }
     padding-left: 0;
     // margin-top: .5rem;
@@ -209,7 +234,7 @@ Still needs: expand toggle for showing main nav on mobile
   svg {
     fill: var(--as-white);
   }
-  @include medium() {
+  @include headerBreak() {
     svg {
       fill: none;
     }

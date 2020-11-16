@@ -28,4 +28,6 @@ html {
 body {
   @include baseFont();
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
