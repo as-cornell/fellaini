@@ -71,11 +71,11 @@
     hsla(96, 48, 33, 1) 100%
   );
 
-  --white: #f0f0f0; //depricated
-  --black: #2c2c2c; //depricated
-  --gray: #c2c0c0; // depricate
-  --gray-light: #d9d9d9; // depricate
-  --near-white: #fbfbfb; // depricate
+  --white: red; //depricated
+  --black: red; //depricated
+  --gray: red; // depricate
+  --gray-light: red; // depricate
+  --near-white: red; // depricate
 
   // page widths moved to _01-breakpoints.scss so they can be used here
   --xs: 320px;
