@@ -20,6 +20,10 @@ Descr:
   &.flex {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    @include medium() {
+      flex-direction: row;
+    }
   }
 }
 

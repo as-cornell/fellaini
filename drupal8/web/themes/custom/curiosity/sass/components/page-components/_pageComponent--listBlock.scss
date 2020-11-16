@@ -14,7 +14,11 @@ Descr: sets styles for various pce listBlocks
 .pcWrapper {
   &--listBlock {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    @include medium() {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     gap: var(--space);
     margin-bottom: var(--margin-6);
     .listBlock__text {

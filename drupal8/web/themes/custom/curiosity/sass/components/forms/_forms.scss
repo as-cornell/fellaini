@@ -72,8 +72,10 @@ Descr:
   // display: flex;
   justify-content: flex-end;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  // opacity: 0;
+  // visibility: hidden;
   label,
   .form-item__label {
     display: block;
@@ -95,8 +97,12 @@ Descr:
     // border-left: none;
   }
   &.shown {
-    opacity: 1;
-    visibility: visible;
+    max-height: 100%;
+    // opacity: 1;
+    // visibility: visible;
+    background: var(--as-white);
+    padding: 1rem;
+    z-index: 1;
   }
 }
 
