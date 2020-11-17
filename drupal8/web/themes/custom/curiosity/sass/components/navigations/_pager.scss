@@ -1,0 +1,22 @@
+/* -------------------------
+
+Title: pager
+Descr: pager on views
+
+--------------------------- */
+
+.pager {
+  display: flex;
+  justify-content: center;
+  &__items {
+    list-style-type: none;
+    display: flex;
+  }
+  &__item {
+    width: 1rem;
+  }
+  &__item--first,
+  &__item--last {
+    width: 3rem;
+  }
+}
