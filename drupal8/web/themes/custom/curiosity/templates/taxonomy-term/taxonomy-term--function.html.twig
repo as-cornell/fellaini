@@ -30,7 +30,7 @@
 {% set main_element_modifiers = [''] %}
 
 {# Articles Block #}
-{% set related_articles = drupal_view('article_blocks', 'block_functions', name.0['#context']['value']) %}
+{% set related_articles = drupal_view('news', 'block_list_10', name.0['#context']['value']) %}
 {% if related_articles %}
   {% set show_related_articles = true %}
 {% endif %}
