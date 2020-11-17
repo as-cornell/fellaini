@@ -81,6 +81,15 @@ Descr: main output business for views. Classes are from the view-display setting
 	{% set view_filters = view_filters ~ Media_source  %}
 {% endif %}
 
+{% if (view.getExposedInput.department_program) %}
+	{% set view_filters = view_filters ~ 'Department/program search: ' %}
+  {% for key, item in view.getExposedInput.department_program %}
+    {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
+    {% set view_filters = view_filters ~ termname  %}
+  {% endfor %}
+
+{% endif %}
+
 
 
 
