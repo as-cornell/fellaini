@@ -8,8 +8,20 @@ Descr: Sets all specific styles for an person card
 
 .card--person {
   .card__label {
-    font-style: var(--base-20);
+    font-size: var(--base-18);
   }
+  .person__departments {
+    margin-top: 1em;
+    font-size: var(--base-16);
+    ul {
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+  .card__title {
+    font-weight: var(--semi);
+  }
+
   &.card--small {
     border: none;
     margin-bottom: 1rem;
