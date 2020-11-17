@@ -13,8 +13,8 @@ Variations:
   justify-content: space-between;
   margin-bottom: var(--bottom-margin);
   figure {
-    flex: 0 0 25%;
-    width: auto;
+    // flex: 0 0 25%;
+    margin-right: var(--space);
     img {
       width: 8rem;
       border-radius: var(--border-radius);
@@ -25,7 +25,8 @@ Variations:
     }
   }
   .teaser__copy {
-    flex: 0 0 70%;
+    // flex: 0 0 70%;
+    flex-grow: 1;
   }
 }
 
