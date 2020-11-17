@@ -10,18 +10,28 @@ Variations:
 .teaser {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   margin-bottom: var(--bottom-margin);
   figure {
-    margin-right: 1rem;
+    flex: 0 0 25%;
+    width: auto;
+    img {
+      width: 8rem;
+      border-radius: var(--border-radius);
+      @include boxShadow();
+    }
+    figcaption {
+      @extend .sr-only;
+    }
+  }
+  .teaser__copy {
+    flex: 0 0 70%;
   }
 }
 
-// article specifici
-.teaser--article {
-  figure {
-    max-width: 200px;
-    img {
-      width: 8rem;
-    }
-  }
-}
+// // article specifici
+// .teaser--article {
+//   figure {
+//     max-width: 200px;
+//   }
+// }

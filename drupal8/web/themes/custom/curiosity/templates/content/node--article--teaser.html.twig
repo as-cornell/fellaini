@@ -25,10 +25,12 @@ Setting up new block class of 'teaser'
 
 {# if no summary set to chopped body #}
 {% if content.field_summary|render is not empty %}
-	{% set teaser_body = teaser_summary %}
+	{% set teaser_body = '<p>' ~ content.field_summary|render ~ '</p>'%}
+
 {% else %}
 	{% set teaser_body = '<p>' ~ content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags|truncate(400, true, '...') ~ '</p>' %}
 {% endif %}
+
 
 {# if search api excerpt set to that #}
 {% if elements['#search_api_excerpt'] %}
