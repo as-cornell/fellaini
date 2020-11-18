@@ -22,7 +22,6 @@ class PeopleLink extends ProcessPluginBase {
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     try {
 
-    // send pptstring
     if (!empty($value)) {
       $linkstring = $value;
       // break string into title and uri
