@@ -5,7 +5,7 @@
 
 mysqldb:
     type: "mysql:10.0"
-    disk: 4096
+    disk: 8192
     configuration:
         schemas:
             - firstdb
