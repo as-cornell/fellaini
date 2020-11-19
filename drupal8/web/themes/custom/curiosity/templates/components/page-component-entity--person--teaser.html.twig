@@ -1,0 +1,39 @@
+{#
+/**
+ name = page-component-entity--person--card.html.twig
+ Makes name a link to page
+
+ */
+#}
+
+{% set pathtoken = content.field_link.0['#title']|split('/')[4] %}
+
+{% set person = parse_people_json(pathtoken) %}
+
+
+{% set person_departments %}
+<div class="person__departments">
+	<p>
+		<strong>
+			Departments
+		</strong>
+	</p>
+	<ul>
+		{{person.departments}}
+	</ul>
+</div>
+{% endset %}
+{# {{vardumper(person)}} #}
+
+{% set card_link_url = 'people/'~pathtoken %}
+{% embed "@content/molecules/card--person.twig" with {
+    card_modifiers : ["person"],
+    card_title: person.title,
+
+    card_image_path : person.imagepath,
+    card_image_alt : person.alt,
+    card_label: person.jobtitle,
+    card_departments: person_departments,
+    card_nodeId : node.id
+} %}
+{% endembed %}
