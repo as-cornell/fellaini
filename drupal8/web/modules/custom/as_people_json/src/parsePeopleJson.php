@@ -51,6 +51,7 @@ class parsePeopleJson extends \Twig_Extension {
           $person_record['path'] = $person_data['attributes']['path']['alias'];
           $person_record['title'] = $person_data['attributes']['title'];
           $person_record['jobtitle'] = $person_data['attributes']['field_person_title'];
+          $person_record['responsibilities'] = $person_data['attributes']['field_responsibilities'];
           $person_record['keywords'] = strip_tags($person_data['attributes']['field_keywords']['value']);
           $person_record['education'] = $person_data['attributes']['field_person_education']['value'];
           $person_record['publications'] = $person_data['attributes']['field_person_publications']['value'];

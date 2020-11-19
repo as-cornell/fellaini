@@ -1,0 +1,44 @@
+{#
+
+/* -------------------------
+
+Title: pce - list-block
+Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens on views-view-list.html.twig because the content here is jus
+
+--------------------------- */
+
+#}
+
+{#
+/**
+ * @file page_component_entity.html.twig
+ * Default theme implementation to present Item data.
+ *
+ * This template is used when viewing Item pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_page_component_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{# {{kint(attributes)}}
+{{label}}
+{{attributes}}
+{{content.name}} #}
+{# <div{{ attributes.addClass('viewList') }}> #}
+{% set title = content.name %}
+{% include "@atoms/00-text/_heading.twig" with {
+      "heading_level" : 2,
+      "heading" : title,
+      "heading_modifiers" : ['border']
+  } %}
+
+  {% if content %}
+  {{ content }}
+  {% endif %}
+{# </div> #}
