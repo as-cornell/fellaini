@@ -55,6 +55,58 @@ function as_people_json_get_department_people_json($deptid)
   return $department_data;
 }
 
+function as_people_json_get_department_faculty_json($deptid)
+{
+  //set cache id (verify parameters are safe values to use as cache id)
+  $cid = "as_people_json_department_faculty:" . $deptid;
+  $department_data = [];
+  //check cache
+  if ($cache = \Drupal::cache('data')->get($cid)) {
+    //fetch cache data
+    $department_data = $cache->data;
+    //check cache expiration
+  }
+  // if no data check url
+  else {
+    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]='. $deptid .'&filter[field_person_type.tid][value]=80099&sort=field_person_last_name';
+    //fetch data and set cache
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $department_data['data'] = $json['data'];
+    $department_data['included'] = $json['included'];
+    \Drupal::cache('data')
+      ->set($cid, $json, time() + 360);
+  }
+  //return data
+  return $department_data;
+}
+
+function as_people_json_get_department_staff_json($deptid)
+{
+  //set cache id (verify parameters are safe values to use as cache id)
+  $cid = "as_people_json_department_staff:" . $deptid;
+  $department_data = [];
+  //check cache
+  if ($cache = \Drupal::cache('data')->get($cid)) {
+    //fetch cache data
+    $department_data = $cache->data;
+    //check cache expiration
+  }
+  // if no data check url
+  else {
+    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]='. $deptid .'&filter[field_person_type.tid][value]=80100&sort=field_person_last_name' ;
+    //fetch data and set cache
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $department_data['data'] = $json['data'];
+    $department_data['included'] = $json['included'];
+    \Drupal::cache('data')
+      ->set($cid, $json, time() + 360);
+  }
+  //return data
+  return $department_data;
+}
+
 function as_people_json_get_dept_json($deptuuid)
 {
   //set cache id (verify parameters are safe values to use as cache id)

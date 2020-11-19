@@ -6,15 +6,15 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
 
 /**
- * Provides a list of people filtered by department tid.
+ * Provides a person list filtered by type=staff and department tid.
  *
  * @Block(
- *   id = "people_department_block",
- *   admin_label = @Translation("People Department Block"),
+ *   id = "people_dept_staff_block",
+ *   admin_label = @Translation("Department Faculty Block"),
  *   category = @Translation("People"),
  * )
  */
-class ASPeopleDepartment extends BlockBase implements BlockPluginInterface {
+class ASPeopleDeptStaff extends BlockBase implements BlockPluginInterface {
 
 
   /**
@@ -31,7 +31,7 @@ public function build() {
     $build = [];
     $markup = "";
     // get people data from json
-    $department_json = as_people_json_get_department_people_json($deptid);
+    $department_json = as_people_json_get_department_staff_json($deptid);
     //var_dump($department_json);
     if (!empty($department_json['data'])) {
       // get image path from json
@@ -59,7 +59,7 @@ public function build() {
                 //<p>No people record for '. $netid .'.</p>
                 //</main>';
    // }
-$build['people_department_block']['#markup'] = $markup;
+$build['dept_staff_block']['#markup'] = $markup;
     return $build;
   }
 }
