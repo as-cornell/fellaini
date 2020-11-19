@@ -29,4 +29,32 @@ Descr:
   .group__title--sr-only {
     @extend .sr-only;
   }
+  &--pano {
+    .title {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      figure,
+      h1 {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+      h1 {
+        color: var(--as-white);
+        @include dropShadow();
+        z-index: 1;
+        max-width: 80%;
+      }
+      figure {
+        background: none;
+      }
+      figcaption {
+        @extend .sr-only;
+      }
+      img {
+        @extend .mask-1;
+      }
+    }
+  }
 }

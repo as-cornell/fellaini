@@ -26,9 +26,13 @@
   line-height: $line-height;
 }
 
-// Drop shadow
+// Box and Drop shadow
 @mixin boxShadow() {
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.08);
+}
+
+@mixin dropShadow() {
+  filter: drop-shadow(0 0 8px #333);
 }
 
 @mixin list-reset {
