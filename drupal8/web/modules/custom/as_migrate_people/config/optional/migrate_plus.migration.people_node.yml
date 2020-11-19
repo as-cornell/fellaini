@@ -84,13 +84,9 @@ source:
       label: 'NetID'
       selector: /attributes/field_person_netid
     -
-      name: field_links_title
-      label: 'Links Title'
-      selector: /attributes/field_links_title
-    -
-      name: field_links_url
+      name: field_links
       label: 'Links URL'
-      selector: /attributes/field_links_url
+      selector: /attributes/field_links
     -
       name: field_image_url
       label: 'Field image URL'
@@ -195,8 +191,9 @@ process:
     process:
       target_id: '0'
       target_revision_id: '1'
-  'field_links/uri': field_links_url
-  'field_links/title': field_links_title
+  field_links:
+    plugin: people_link
+    source: field_links
 
   uid: netid
 
