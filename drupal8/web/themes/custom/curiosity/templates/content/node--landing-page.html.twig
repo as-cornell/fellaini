@@ -22,6 +22,7 @@ Descr: Sets up variables and content for _basic-page.twig
 {% set main_element_extra_classes = ['main'] %}
 
 {% set main_element_base_class = 'landingPage' %}
+{% set main_element_modifiers = [''] %}
 
 
 {# {% set main_element_blockname = 'bobsblock' %} #}
@@ -30,9 +31,16 @@ Descr: Sets up variables and content for _basic-page.twig
 {% set sidebarNav = false %}
 {% set aside = false %}
 {% set sidebarContent = false %}
+
 {% set heading_base_class = 'spotlight' %}
-{% set heading_modifiers = ['storm'] %}
+{% set heading_modifiers = ['title'] %}
 {% set heading_class = ['centered', 'base-84'] %}
+{% if is_front %}
+	{% set heading_class = heading_class|merge(['sr-only']) %}
+{% endif %}
+
+
+
 
 {# {{vardumper()}} #}
 
@@ -40,15 +48,13 @@ Descr: Sets up variables and content for _basic-page.twig
   If pano image 
   -- Currently not using pano on landing page.
 #}
-{% if node.field_pano_image.target_id %}
-	{% set panoImage = true %}
-  {% set main_element_modifiers = main_element_modifiers|merge(['has-pano']) %}
-  {% set pano_img_src = field_pano_image_img.uri | image_style('full_content') %}
-  {% set pano_img_alt = field_pano_image_img.alt %}
-  {% set pano_img_caption = field_pano_image_img.caption %}
-  {% set pano_img_credit = field_pano_image_img.credit %}
+{# if field_pano not empty add to content_wrapper_modifiers #}
+{% if content.field_pano|render is not empty %}
+	{% set hasPano = true %}
+	{% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
 {% endif %}
 
+{# {{content.field_pano}} #}
 {#
   Page Section links
   - set up aside in-page nav
@@ -80,11 +86,8 @@ Descr: Sets up variables and content for _basic-page.twig
 {% include "@pages/_basic-page.twig" with {
     title : label,
     main_element_modifiers : main_element_modifiers,
+    pano : content.field_pano,
 
-    pano_img_src : pano_img_src,
-    pano_img_alt : pano_img_alt,
-    pano_img_caption : pano_img_caption,
-    pano_img_credit : pano_img_credit,
 
     main_content : content.field_page_components,
 
