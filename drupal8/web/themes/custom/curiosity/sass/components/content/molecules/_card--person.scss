@@ -7,24 +7,44 @@ Descr: Sets all specific styles for an person card
 --------------------------- */
 
 .card--person {
-  .card__label {
-    font-size: var(--base-18);
+  display: grid;
+
+  &__name-title {
+    font-size: var(--base-28);
+    font-weight: var(--semi);
+    margin: 0 1rem;
+  }
+  &__name {
+    font-size: var(--base-28);
+    font-weight: var(--semi);
+  }
+  &__title {
+    font-size: var(--base-20);
+    margin-top: 0;
+  }
+  &__contacts {
+    // font-size: var(--base-18);
+    // padding: 1em 0 1em 1rem;
+    // display: none;
+  }
+  &__copy {
+    margin: 0 1rem;
   }
   .person__departments {
     margin-top: 1em;
+    padding-top: 1em;
     font-size: var(--base-16);
+    border-top: 1px solid var(--as-teal);
     ul {
       padding-left: 0;
       margin-left: 0;
+      margin-top: 0;
     }
-  }
-  .card__title {
-    font-weight: var(--semi);
   }
 
   &.card--small {
     border: none;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -33,21 +53,82 @@ Descr: Sets all specific styles for an person card
     :before {
       display: none;
     }
-    .card__copy,
-    .card__title {
+    .card--person__name-title {
+      margin: 0;
+    }
+    .card--person__name,
+    .card--person__title {
       padding-top: 0;
       margin-top: 0;
     }
-    .card__title {
+    .card--person__name {
+      font-weight: var(--semi);
       font-size: var(--base-20);
+    }
+    .card--person__title {
+      font-size: var(--base-20);
+      font-weight: var(--regular);
     }
     figure {
       flex: 0 0 30%;
+      margin-right: 1rem;
     }
     .card__copy {
       flex: 0 0 60%;
       padding: 0;
       font-size: var(--base-18);
+    }
+    .card--person__contacts {
+      display: none;
+    }
+  }
+}
+
+// embed people
+.pageComponent--ftb {
+  .card--person {
+    max-width: 300px;
+    .card--person__contacts {
+      display: none;
+    }
+  }
+}
+
+.list--people {
+  .card--person {
+    grid-template-columns: 200px auto;
+    grid-template-rows: auto;
+    column-gap: var(--space);
+    &__image {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    &__name-title {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0;
+      font-size: var(--base-28);
+      font-weight: var(--semi);
+      padding-right: 1rem;
+    }
+    &__name {
+      font-size: var(--base-28);
+      font-weight: var(--semi);
+    }
+    &__title {
+      font-size: var(--base-20);
+      margin-top: 0;
+    }
+    &__contacts {
+      grid-column: 1;
+      grid-row: 2;
+      font-size: var(--base-18);
+      padding: 1em 0 1em 1rem;
+    }
+    &__copy {
+      grid-column: 2 / -1;
+      grid-row: 2;
+      margin: 0 1rem 0 0;
     }
   }
 }

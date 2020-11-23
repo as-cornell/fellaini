@@ -3,6 +3,7 @@
 
 {% set person = parse_people_json(pathtoken) %}
 {% set related_articles = drupal_view('news', 'block_related_articles', person.netid) %}
+
 {% set contact = drupal_block('ldap_block', {netid: person.netid}) %}
 {# edcuation #}
 	{% if person.education %}

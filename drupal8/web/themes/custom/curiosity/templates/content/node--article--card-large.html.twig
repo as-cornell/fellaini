@@ -4,25 +4,20 @@
 
 Title: node--article--card-large
 Descr: defines content  for a feature image in a campfire
+same info as card--article just adds class feature
 
 --------------------------- */
 
 #}
-{% set card_image = content.field_image %}
-{# {% if content.field_newsletter_image|render is not empty %}
-  {% set card_image = content.field_newsletter_image %}
-{% else %}
-  {% set card_image = content.field_image %}
-{% endif %} #}
+{% set card_modifiers =  ["article", "feature"]%}
 
 
-{% embed "@content/molecules/card.twig" with {
-    card_modifiers : ["article", "feature"],
+{% embed "@content/molecules/_card--article.twig" with {
     card_feature: 'true',
     card_title: label,
     card_label: content.field_card_label,
     card_link_url: url,
-    card_image : card_image,
+    card_image : content.field_image,
     card_byline : content.field_byline_reference,
     card_dateline: content.field_dateline,
 
