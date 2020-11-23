@@ -45,14 +45,7 @@
  */
 #}
 {# 
-<div style="display: none;" id="hidden-content">
-	<h2>
-		Hello
-	</h2>
-	<p>
-		You are awesome.
-	</p>
-</div>
+
 <a data-fancybox data-src="#hidden-content" href="javascript:;">
 	Trigger the fancybox
 </a> #}
@@ -139,23 +132,3 @@
 	</div>
 
 </div>
-
-{# {% include "@atoms/00-text/_heading.twig" with {
-        "heading_level" : 3,
-        "heading" : card_subtitle,
-        "heading_url" : card_subtitle_link,
-        "heading_blockname" : card_subtitle_blockname | default(card_base_class),
-        "heading_modifiers" : card_subtitle_modifiers,
-        "heading_base_class" : card_subtitle_base_class | default('subtitle')
-    } %} #}
-
-{# {% if card_button_url %}
-      {% include "@atoms/06-buttons/01-button.twig" with {
-          "button_content" : card_button_content,
-          "button_url" : card_button_url,
-          "button_base_class" : card_button_base_class | default('button'),
-          "button_attributes" : card_button_attributes,
-          "button_modifiers" : card_button_modifiers,
-          "button_blockname" : card_blockname | default(card_base_class)
-      } %}
-  {% endif %} #}

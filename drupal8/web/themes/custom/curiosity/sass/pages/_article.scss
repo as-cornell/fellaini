@@ -27,6 +27,7 @@
     grid-area: aside;
     h3 {
       @extend .base-24;
+      margin-bottom: 1em;
     }
   }
   &--pano {
