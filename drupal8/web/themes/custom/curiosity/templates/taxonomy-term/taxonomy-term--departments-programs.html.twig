@@ -51,7 +51,7 @@
 {% endif %}
 
 {# Related People#}
-{% set related_people = drupal_block('people_department_block', {deptid: term.tid.value}) %}
+{% set related_people = drupal_block('people_dept_faculty_block', {deptid: term.tid.value}) %}
 {% if related_people %}
   {% set show_related_people = true %}
 {% endif %}
