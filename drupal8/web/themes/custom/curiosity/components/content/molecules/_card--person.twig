@@ -10,11 +10,10 @@ Descr: builds cards for personses'
 {% set card_dateline = card_dateline | default('') %}
 
 
-{# {{vardumper()}} #}
-
 {# {% set figure_modifiers = ['mask-one'] %} #}
 {{title_suffix}}
-	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}> <figure class='card--person__image'>
+<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
+	<figure class='card--person__image'>
 		<img src="{{person_image_path}}" alt="{{person_image_alt}}"/>
 	</figure>
 	<div class="card--person__name-title">
@@ -37,14 +36,20 @@ Descr: builds cards for personses'
 			</p>
 		{% endif %}
 	</div>
+
+	{% if show_responsibilities %}
+		<div class="card--person__responsibilities">
+			{{person_responsibilities|raw}}
+		</div>
+	{% endif %}
+
 	<div class="card--person__contacts">
 		{{contact}}
 	</div>
 
-	<div
-		{{ bem(card_copy_base_class|default('card--person__copy'), (card_copy_modifiers), card_copy_blockname) }}>
-		{# probably need to do filter  #}
-		{{person_departments}}
-	</div>
-
+	{% if show_departments %}
+		<div class="card--person__departments">
+			{{person_departments}}
+		</div>
+	{% endif %}
 </div>
