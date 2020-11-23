@@ -6,48 +6,65 @@
 
 {% set contact = drupal_block('ldap_block', {netid: person.netid}) %}
 {# edcuation #}
-	{% if person.education %}
+{% if person.education %}
 	{% set show_education = true %}
-{% set education = person.education %}
+  {% set education = person.education %}
 {% endif %}
 
 {# summary #}
-	{% if person.summary %}
+{% if person.summary %}
 	{% set show_summary = true %}
-{% set summary = person.summary|raw %}
+  {% set summary = person.summary|raw %}
 {% endif %}
+
+{# responsibilities #}
+{% if person.responsibilities %}
+	{% set show_responsibilities = true %}
+  {% set responsibilities = person.responsibilities|raw %}
+{% endif %}
+
+
 {# researchfocus #}
-	{% if person.researchfocus %}
+{% if person.researchfocus %}
 	{% set show_researchfocus = true %}
-{% set researchfocus = person.researchfocus %}
+  {% set researchfocus = person.researchfocus %}
 {% endif %}
 
 {# publications #}
-	{% if person.publications %}
+{% if person.publications %}
 	{% set show_publications = true %}
-{% set publications = person.publications %}
+  {% set publications = person.publications %}
 {% endif %}
 
 {# departments #}
-	{% if person.departments %}
+{% if person.departments %}
 	{% set show_departments = true %}
-{% set departments = person.departments %}
+  {% set departments = person.departments %}
 {% endif %}
 
 {# links #}
-  {% if person.links %}
+{% if person.links %}
   {% set show_links = true %}
-{% set links = person.links %}
+  {% set links = person.links %}
 {% endif %}
+
+{# related articles #}
+{# {% if person.related_articles %}
+  {% set show_related_articles = true %}
+{% endif %} #}
+{# {{related_articles}} #}
 
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('person') %}
 {% set main_element_modifiers = [''] %}
 
+{# set image #}
 {% set image %}
+  <img src="{{person.imagepath}}" alt="{{person.alt}}">
+{% endset %}
 
-<img src="{{person.imagepath}}" alt="{{person.alt}}"> {% endset %}
-{{person.links}}
+{# {{vardumper()}} #}
+
 {% include "@pages/_person.twig" with{
   name : person.title,
   title : person.jobtitle,

@@ -8,7 +8,9 @@ Descr: Sets all specific styles for an person card
 
 .card--person {
   display: grid;
-
+  figure {
+    background: none;
+  }
   &__name-title {
     font-size: var(--base-28);
     font-weight: var(--semi);
@@ -23,20 +25,22 @@ Descr: Sets all specific styles for an person card
     margin-top: 0;
   }
   &__contacts {
-    // font-size: var(--base-18);
-    // padding: 1em 0 1em 1rem;
-    // display: none;
+    font-size: var(--base-18);
+    padding: 1em 0 1em 1rem;
   }
   &__copy {
     margin: 0 1rem;
   }
-  .person__departments {
+  &__departments,
+  &__responsibilities {
     margin-top: 1em;
     padding-top: 1em;
     font-size: var(--base-16);
     border-top: 1px solid var(--as-teal);
+    padding-bottom: 1rem;
+    margin: 1rem;
     ul {
-      padding-left: 0;
+      padding-left: 1rem;
       margin-left: 0;
       margin-top: 0;
     }
@@ -97,11 +101,11 @@ Descr: Sets all specific styles for an person card
 .list--people {
   .card--person {
     grid-template-columns: 200px auto;
-    grid-template-rows: auto;
+    grid-template-rows: auto 1fr auto;
     column-gap: var(--space);
     &__image {
       grid-column: 1;
-      grid-row: 1;
+      grid-row: 1 / 3;
     }
     &__name-title {
       grid-column: 2;
@@ -109,7 +113,7 @@ Descr: Sets all specific styles for an person card
       margin: 0;
       font-size: var(--base-28);
       font-weight: var(--semi);
-      padding-right: 1rem;
+      margin-right: 1rem;
     }
     &__name {
       font-size: var(--base-28);
@@ -120,15 +124,20 @@ Descr: Sets all specific styles for an person card
       margin-top: 0;
     }
     &__contacts {
-      grid-column: 1;
+      grid-column: 2;
       grid-row: 2;
       font-size: var(--base-18);
-      padding: 1em 0 1em 1rem;
+      padding: 0;
+      margin: 1rem 1rem 0 0;
     }
-    &__copy {
-      grid-column: 2 / -1;
-      grid-row: 2;
-      margin: 0 1rem 0 0;
+    &__departments,
+    &__responsibilities {
+      margin: 1rem;
+      padding-bottom: 0;
+      grid-column: 1 / -1;
+      ul {
+        padding-left: 1rem;
+      }
     }
   }
 }
