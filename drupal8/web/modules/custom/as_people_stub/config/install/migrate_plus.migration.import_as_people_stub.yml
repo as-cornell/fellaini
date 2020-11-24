@@ -12,12 +12,12 @@ destination:
 
 source:
   plugin: url
-  data_fetcher_plugin: http
+  data_fetcher_plugin: file
   data_parser_plugin: json
   constants:
     person_base_path: '/people'
 
-  urls: https://as.cornell.edu/people-json
+  urls: public://people-stubs-rest.json
 
   ids:
     netid:
