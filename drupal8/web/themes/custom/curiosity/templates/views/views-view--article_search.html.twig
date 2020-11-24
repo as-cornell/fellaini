@@ -22,7 +22,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% set main_element_extra_classes = ['main', 'list--teasers'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
-{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_base_class = 'landingPage' %}
 {% set main_element_modifiers = ['viewContainer', 'articles'] %}
 
 
@@ -62,10 +62,9 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% if (view.getExposedInput.disciplines) %}
 	{% set view_filters = view_filters ~'Discipline: ' %}
-	{% for key, item in view.getExposedInput.disciplines %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
-		{% set view_filters = view_filters ~ termname  %}
-	{% endfor %}
+  {% set number = view.getExposedInput.disciplines %}
+  {% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ ' ' %}
+  {% set view_filters = view_filters ~ termname  %}
 {% endif %}
 
 
@@ -83,15 +82,10 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% if (view.getExposedInput.department_program) %}
 	{% set view_filters = view_filters ~ 'Department/program search: ' %}
-  {% for key, item in view.getExposedInput.department_program %}
-    {% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
+    {% set number = view.getExposedInput.department_program %}
+    {% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ ' ' %}
     {% set view_filters = view_filters ~ termname  %}
-  {% endfor %}
-
 {% endif %}
-
-
-
 
 
 
