@@ -17,6 +17,7 @@ Descr: Sets all specific styles for an m/m/g card and teasers
 
   .card__title {
     grid-area: label;
+    font-size: var(--base-24);
   }
   .card__level {
     grid-area: level;

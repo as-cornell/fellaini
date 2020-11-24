@@ -63,3 +63,12 @@ Descr:
     // }
   }
 }
+
+//people list
+.list--people {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space);
+  }
+}

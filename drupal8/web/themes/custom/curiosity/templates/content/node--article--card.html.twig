@@ -4,35 +4,26 @@
 
 Title: node--article--card
 Descr: defines content for basic article card
+card_nodeId -- used for lightbox
 
 --------------------------- */
 
 #}
 
 
-{# {% set card_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference|render : false %} #}
-
-{# {% set card_byline = true %}
-{% set card_byline_content = content.field_byline %} #}
+{% set card_modifiers =  ["article"]%}
 {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
 
 
 
-{% embed "@content/molecules/card.twig" with {
-    card_modifiers : ["article"],
+{% embed "@content/molecules/_card--article.twig" with {
     card_title: label,
     card_label: content.field_card_label,
     card_link_url: url,
-
     card_image : content.field_image,
-
-
     card_byline: article_byline,
-
     card_dateline: content.field_dateline,
-
     card_nodeId : node.id
-
 } %}
 
 {% endembed %}
