@@ -7,7 +7,7 @@
 #}
 
 {% set pathtoken = content.field_link.0['#title']|split('/')[4] %}
-
+{% set pathtoken = content.field_people_uuid|field_value|safe_join(' ') %}
 {% set person = parse_people_json(pathtoken) %}
 
 
