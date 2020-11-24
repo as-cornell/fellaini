@@ -72,3 +72,39 @@ Descr:
     gap: var(--space);
   }
 }
+
+// trying it out as a landing page
+.landingPage--viewContainer {
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: repeat(12, 1fr);
+  .sidebar {
+    grid-area: sidebar;
+    .sidebar--filters {
+      position: sticky;
+      top: 150px;
+    }
+  }
+  .pageTitle {
+    grid-area: title;
+  }
+  .content {
+    grid-area: content;
+  }
+  .pager {
+    grid-area: pager;
+  }
+  // base layout
+  grid-template-areas:
+    "sidebar"
+    "title"
+    "content"
+    "pager";
+  // medium layout
+  @include medium {
+    grid-template-areas:
+      ". title title title title title title title title title title . "
+      ". sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar . "
+      ". content content content content content content content content content content . "
+      ". pager pager pager pager pager pager pager pager pager pager . ";
+  }
+}

@@ -111,7 +111,8 @@ Descr:
 
 .views-exposed-form {
   font-size: var(--base-20);
-  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
   .fieldgroup {
     margin-bottom: 0.5em;
   }
@@ -188,12 +189,6 @@ Descr:
     }
   }
 }
-// .form-item {
-//   color: var(--gray);
-//   // margin-bottom: 1em;
-//   max-width: 32em;
-
-// }
 
 // submit buttons
 .form-submit {
@@ -228,12 +223,54 @@ legend {
   font-weight: var(--semi);
 }
 
-// stacking label and field in the sidebar
+#views-exposed-form-article-search-page-1 {
+  display: grid;
+  grid-template-columns: 3fr 3fr 60px 60px;
+  grid-template-rows: auto;
+  gap: var(--space);
+  border: 1px solid var(--gray-lt);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--bottom-margin);
+  @include boxShadow();
+  .js-form-item-keywords {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    flex: 0 0 75%;
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: var(--base-24);
+    }
+    #edit-keywords {
+    }
+  }
+  input[type="text"] {
+    border: 1px solid var(--gray-lt);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+  }
+  //fields
+  .js-form-item-disciplines {
+    grid-column: 1;
+  }
+  .js-form-item-department-program {
+    grid-column: 2;
+  }
+  //buttons
+  .js-form-submit {
+    grid-row: 1;
+  }
 
-// .sidebar {
-//   *[class*="autocomplete"] {
-//     display: flex;
-//     flex-direction: column;
-//     // background: red;
-//   }
-// }
+  .js-form-item-media-source {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .js-form-item-byline {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  .bef--secondary {
+    grid-column: 1 / 3;
+  }
+}
