@@ -32,11 +32,11 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 {{content.name}} #}
 {# <div{{ attributes.addClass('viewList') }}> #}
 {% set title = content.name %}
-{% include "@atoms/00-text/_heading.twig" with {
+{# include "@atoms/00-text/_heading.twig" with {
       "heading_level" : 2,
       "heading" : title,
       "heading_modifiers" : ['border']
-  } %}
+  } #}
 
   {% if content %}
   {{ content }}

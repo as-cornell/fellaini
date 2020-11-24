@@ -26,6 +26,7 @@
 {# {{vardumper(person)}} #}
 
 {% set card_link_url = 'people/'~pathtoken %}
+{{vardumper(content.field_link.0)}}
 {% embed "@content/molecules/card--person.twig" with {
     card_modifiers : ["person"],
     card_title: person.title,

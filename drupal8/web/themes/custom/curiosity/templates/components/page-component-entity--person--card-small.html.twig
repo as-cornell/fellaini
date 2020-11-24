@@ -8,15 +8,16 @@
 #}
 
 {% set pathtoken = content.field_link.0['#title']|split('/')[4] %}
-
+{{vardumper(pathtoken)}}
 {% set person = parse_people_json(pathtoken) %}
-
+{{pathtoken}}
 {# {{content.name}} #}
 {# set blocky = drupal_block('person_card_block', {netid:netid}) #}
 {# {% set person = parse_people_json(netid) %} #}
 {# {{person.title}} #}
-{# 
+{#
 {% set person_departments %}
+
 	<div class="person__departments"> <p>
 		<strong>
 			Departments
