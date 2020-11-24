@@ -4,12 +4,16 @@
 
 Title: node--article--card-small
 Descr: defines content for a small article card. Generally in sidebar.
+sets no image style if no image.
+passes card_modifiers "small"
+If no thumbnail image uses regular image
 
 --------------------------- */
 
 #}
 
 {% set card_modifiers =  ["article", "small"]%}
+
 {% if content.field_thumbnail_image|render is not empty %}
  {% set card_image = content.field_thumbnail_image %}
 {% else %}
@@ -20,7 +24,7 @@ Descr: defines content for a small article card. Generally in sidebar.
   {% set card_modifiers = card_modifiers|merge(["no-image"]) %}
 {% endif %}
 
-{% embed "@content/molecules/card.twig" with {
+{% embed "@content/molecules/_card--article.twig" with {
     card_modifiers : card_modifiers,
     card_title: label,
     card_label: content.field_card_label,

@@ -16,6 +16,8 @@ Descr: Sets all specific styles for an TOC card and other page cards
       border-radius: var(--border-radius) var(--border-radius) 0 0;
       padding: 1rem;
       background: var(--as-black);
+      font-size: var(--base-28);
+      line-height: 1.3;
       font-weight: var(--semi);
       &-link {
         color: var(--as-white);

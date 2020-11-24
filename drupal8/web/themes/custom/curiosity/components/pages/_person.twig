@@ -45,20 +45,19 @@ Descr: defines content and blocks for basic person page
 			</h2>
 			{{publications|raw}}
 		{% endif %}
-
-		<h2>
-			Related articles
-		</h2>
-		{{related_articles}}
-
+    {# {% if show_related_articles %} #}
+      <h2>
+        Related articles
+      </h2>
+      {{related_articles}}
+    {# {% endif %} #}
 
 	</div>
 	<div class="sidebar">
 		{{image}}
-		<h3>
-			Contact information
-		</h3>
-		{{contact}}
+    <div class="person__contact">
+      {{contact}}
+    </div>
 		{% if show_education %}
 			<h3>
 				Education
@@ -71,6 +70,7 @@ Descr: defines content and blocks for basic person page
 			</h3>
 			{{departments|raw}}
 		{% endif %}
+    {% if show_links %}
 		<h3>
 			LINKS
 		</h3>
@@ -79,5 +79,6 @@ Descr: defines content and blocks for basic person page
         <li><a href='{{ link.uri }}'>{{ link.title }}</a></li>
     {% endfor %}
     </ul>
+    {% endif %}
 	</div>
 </main>

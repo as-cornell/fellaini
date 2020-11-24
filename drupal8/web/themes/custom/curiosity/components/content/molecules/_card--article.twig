@@ -44,15 +44,8 @@
  * - card_button_modifiers - array of modifiers to add to the base classname of the button
  */
 #}
-{#
-<div style="display: none;" id="hidden-content">
-	<h2>
-		Hello
-	</h2>
-	<p>
-		You are awesome.
-	</p>
-</div>
+{# 
+
 <a data-fancybox data-src="#hidden-content" href="javascript:;">
 	Trigger the fancybox
 </a> #}
@@ -68,14 +61,12 @@
 } %} #}
 
 {# {{vardumper()}} #}
-pppppp
+
 {# {% set figure_modifiers = ['mask-one'] %} #}
 {{title_suffix}}
-	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
 
-  {# swapping for now #}
- <figure> <img src="{{card_image_path}}" alt="{{card_image_alt}}"/></figure>
-{# {{card_image|raw}} #}
+	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}> {{card_image|raw}}
+
 
 	<div {{ bem(card_copy_base_class|default('card__copy'), (card_copy_modifiers), card_copy_blockname) }}>
 
@@ -94,20 +85,36 @@ pppppp
 		{% endif %}
 
 		{% if card_label %}
-			<p class="card__label">
+			<span class="card__label">
 				{{ card_label }}
-			</p>
+			</span>
 		{% endif %}
 
-
-		{% block card_info %}
-		{% endblock %}
-		{% if card_subtitle %}
-
+		{% if card_dateline %}
+			<span class="card__date">
+				{{ card_dateline }}
+			</span>
 		{% endif %}
-    {{card_departments}}
 
+		{% if card_body %}
+			{{card_body}}
+		{% endif %}
 
+		{% if card_byline %}
+			<span class="card__byline">
+				By |
+				{{ card_byline }}
+			</span>
+		{% endif %}
+		{% if show_fancybox %}
+			<span class="card__links">
+				<a data-fancybox="gallery" data-src="#{{fancyboxID}}" href="javascript:;">
+					Quick look
+				</a>
+				<a href="{{card_title_link}}">
+					Full details
+				</a>
+			</span>
+		{% endif %}
 	</div>
-
 </div>

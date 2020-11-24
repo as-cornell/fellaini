@@ -31,14 +31,28 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 {{attributes}}
 {{content.name}} #}
 {# <div{{ attributes.addClass('viewList') }}> #}
+{# {{vardumper()}}
 {% set title = content.name %}
-{# include "@atoms/00-text/_heading.twig" with {
+{% include "@content/atoms/_heading.twig" with {
       "heading_level" : 2,
       "heading" : title,
       "heading_modifiers" : ['border']
-  } #}
+  } %}
 
   {% if content %}
   {{ content }}
-  {% endif %}
+  {% endif %} #}
 {# </div> #}
+
+
+{% set group_base_class = 'pcWrapper' %}
+{% set group_modifiers = ['peopleList', 'listBlock'] %}
+
+
+{% set group_classes = ['people'] %}
+
+{# {{vardumper()}} #}
+{% embed "@content/molecules/_grouping.twig" with{
+  items: content.field_person,
+  group_label : title
+} %}{% endembed %}
