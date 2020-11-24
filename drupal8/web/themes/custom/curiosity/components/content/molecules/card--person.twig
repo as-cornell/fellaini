@@ -44,7 +44,7 @@
  * - card_button_modifiers - array of modifiers to add to the base classname of the button
  */
 #}
-{# 
+{#
 <div style="display: none;" id="hidden-content">
 	<h2>
 		Hello
@@ -68,10 +68,10 @@
 } %} #}
 
 {# {{vardumper()}} #}
-
+pppppp
 {# {% set figure_modifiers = ['mask-one'] %} #}
 {{title_suffix}}
-	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}> 
+	<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
 
   {# swapping for now #}
  <figure> <img src="{{card_image_path}}" alt="{{card_image_alt}}"/></figure>
@@ -99,7 +99,7 @@
 			</p>
 		{% endif %}
 
-	
+
 		{% block card_info %}
 		{% endblock %}
 		{% if card_subtitle %}
