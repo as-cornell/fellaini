@@ -12,46 +12,72 @@ destination:
 
 source:
   plugin: url
-  data_fetcher_plugin: http
+  data_fetcher_plugin: file
   data_parser_plugin: json
   constants:
-    source_base_path: 'https://as.cornell.edu'
+    person_base_path: '/people'
 
-  urls: https://as.cornell.edu/people-json
+  urls: public://people-stubs-rest.json
 
   ids:
-    nid:
-      type: integer
-
-  item_selector: nodes/
+    netid:
+      type: string
 
   fields:
     -
-      name: nid
-      label: 'nid'
-      selector: /node/nid
+      name: uuid
+      label: 'uuid'
+      selector: uuid
     -
-      name: title
-      label: 'Title'
-      selector: /node/title
-    -
-      name: field_person_netid
+      name: netid
       label: 'NetID'
       selector: /node/person_netid
     -
-      name: field_links
-      label: 'Links'
-      selector: /node/person_links
+      name: title
+      label: 'Title'
+      selector: title
+    -
+      name: field_person_type
+      label: 'Person Type'
+      selector: field_person_type
+    -
+      name: field_departments_programs
+      label: 'Departments and Programs'
+      selector: field_departments_programs
+    -
+      name: field_keywords
+      label: 'Keywords'
+      selector: field_keywords
+    -
+      name: link
+      label: 'Link'
+      selector: view_node
 
 
 process:
   type:
     plugin: default_value
     default_value: person
-  nid: nid
   name: title
-  field_netid: field_person_netid
-  field_link: field_links
+  field_netid: netid
+  field_people_uuid: uuid
+  'field_link/uri':
+    plugin: concat
+    source:
+      - 'person_base_path'
+      - link
+  field_person_type:
+    plugin: entity_lookup
+    source: field_person_type
+  field_department_program:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_departments_programs
+    -
+      plugin: explode
+      delimiter: ','
+  field_keywords: field_keywords
   uid:
     plugin: default_value
     default_value: 1
