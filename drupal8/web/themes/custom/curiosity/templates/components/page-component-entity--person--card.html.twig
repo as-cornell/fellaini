@@ -6,8 +6,8 @@
  */
 #}
 
-{% set pathtoken = content.field_link.0['#title']|split('/')[4] %}
-
+{% set link = content.field_link.0['#title']|split('/')[4] %}
+{% set pathtoken = content.field_people_uuid|field_value|safe_join(' ') %}
 {% set person = parse_people_json(pathtoken) %}
 
 {% set contact = drupal_block('ldap_block', {netid: person.netid}) %}
@@ -36,7 +36,7 @@
 </div>
 {% endset %} #}
 
-{% set card_link_url = 'people/'~pathtoken %}
+{% set card_link_url = link %}
 {% embed "@content/molecules/_card--person.twig" with {
     card_modifiers : ["person"],
     person_name: person.title,
