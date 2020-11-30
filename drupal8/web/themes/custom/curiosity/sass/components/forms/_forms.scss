@@ -260,6 +260,11 @@ legend {
   //buttons
   .js-form-submit {
     grid-row: 1;
+    grid-column: 3;
+  }
+  .js-form-submit:nth-of-type(2) {
+    grid-row: 1;
+    grid-column: 4;
   }
 
   .js-form-item-media-source {
