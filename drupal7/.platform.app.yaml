@@ -93,8 +93,7 @@ mounts:
 hooks:
   deploy: |
     set -e
-    cd docroot
-    drush -y updatedb
+
 
 crons:
     drupal:
