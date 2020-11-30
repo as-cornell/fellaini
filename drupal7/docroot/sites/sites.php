@@ -15,5 +15,7 @@ $sites['cogsci.cornell.edu'] = 'cogsci';
 $sites['cder.as.cornell.edu'] = 'cder';
 $sites['frenchstudies.cornell.edu'] = 'frenchstudies';
 $sites['igcs.cornell.edu'] = 'igcs';
+$sites['mediastudies.as.cornell.edu'] = 'mediastudies';
+$sites['medievalstudies.cornell.edu'] = 'medieval';
 $sites['rural.as.cornell.edu'] = 'rural';
 $sites['sct.cornell.edu'] = 'sct';
