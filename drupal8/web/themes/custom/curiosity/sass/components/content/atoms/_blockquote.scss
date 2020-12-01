@@ -33,23 +33,22 @@ blockquote {
 
     &:before {
       position: absolute;
-      height: 90px;
-      width: 120px;
+      height: 45px;
+      width: 60px;
       content: "";
       background-image: var(--blue-purple);
       background-size: 300%;
-      // transition: background-position 1s;
       animation: bg-animation 3s infinite alternate;
       z-index: -1;
     }
     &:before {
-      margin-left: -5rem;
-      margin-top: -2rem;
+      margin-left: -3rem;
+      margin-top: -1rem;
       clip-path: url(#open-quote);
     }
 
     &:first-of-type {
-      text-indent: 3rem;
+      text-indent: 2rem;
     }
     &:last-of-type {
       &:before,

@@ -8,5 +8,30 @@ Descr:
 a,
 .link {
   color: var(--as-red);
-  text-decoration-color: var(--gray-lt);
+  text-decoration: none;
+}
+
+// main content base link styles
+main {
+  a,
+  .link {
+    color: var(--as-red);
+
+    text-decoration: underline;
+    text-decoration-color: var(--gray-lt);
+    transition: all 1s;
+    &:hover {
+      text-decoration-color: var(--gray-lightest);
+    }
+  }
+}
+
+//link animatation
+@keyframes link-animation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
