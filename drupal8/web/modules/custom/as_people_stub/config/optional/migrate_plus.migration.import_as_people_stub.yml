@@ -1,6 +1,6 @@
 # Migration configuration for imported stats.
 id: import_as_people_stub
-label: Migrate stats from D7 AS to D8 AS
+label: Migrate people stubs from People D8 to AS D8
 migration_group: people
 dependencies:
   enforced:
@@ -15,9 +15,11 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: json
   constants:
-    person_base_path: '/people'
+    person_base_path: 'https://asd8.as.cornell.edu/people'
 
   urls: public://people-stubs-rest.json
+
+  item_selector: /
 
   ids:
     netid:
@@ -31,7 +33,7 @@ source:
     -
       name: netid
       label: 'NetID'
-      selector: /node/person_netid
+      selector: field_person_netid
     -
       name: title
       label: 'Title'
@@ -64,19 +66,24 @@ process:
   'field_link/uri':
     plugin: concat
     source:
-      - 'person_base_path'
+      - 'constants/person_base_path'
       - link
-  field_person_type:
-    plugin: entity_lookup
-    source: field_person_type
-  field_department_program:
+  field_departments_and_programs:
     -
       plugin: skip_on_empty
       method: process
       source: field_departments_programs
     -
       plugin: explode
-      delimiter: ','
+      delimiter: ', '
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle: departments_programs
+      value_key: name
+  field_person_type:
+    plugin: entity_lookup
+    source: field_person_type
   field_keywords: field_keywords
   uid:
     plugin: default_value
