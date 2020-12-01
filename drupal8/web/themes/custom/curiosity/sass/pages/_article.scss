@@ -10,17 +10,24 @@
       ". . title title title title title title title title title title title title title thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail . ."
       "social social content content content content content content content content content content content content content content . aside aside aside aside aside aside aside";
   }
-  .title {
+  &__title {
     grid-area: title;
     align-self: center;
+    margin-bottom: 2rem;
+    h1 {
+      @extend .spotlight;
+      @extend .blue-radial;
+      margin-bottom: 1rem;
+      @include dropShadow;
+    }
   }
-  .social {
+  &__social {
     grid-area: social;
   }
-  .content {
+  &__content {
     grid-area: content;
   }
-  .thumbnail {
+  &__thumbnail {
     grid-area: thumbnail;
   }
   aside {
@@ -46,18 +53,45 @@
         "social social content content content content content content content content content content content content content content content content thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail"
         "social social content content content content content content content content content content content content content content content content aside aside aside aside aside aside";
     }
-    .pano {
-      grid-area: pano;
-      justify-self: center;
-      figure {
-        background: none;
-        img {
-          @extend .mask-1;
-        }
+    .article__title {
+      text-align: center;
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 1em;
+      .title {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+      .article__label {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 0;
+        font-weight: var(--semi);
+      }
+      .article__byline {
+        grid-column: 1 / -1;
+        grid-row: 3;
+      }
+      .article__dateline {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: var(--base-18);
+        font-weight: var(--semi);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
-    .title {
-      text-align: center;
+  }
+  &__pano {
+    grid-area: pano;
+    justify-self: center;
+    figure {
+      background: none;
+      img {
+        @extend .mask-1;
+      }
     }
   }
 }

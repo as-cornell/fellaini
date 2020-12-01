@@ -27,6 +27,12 @@ Descr:
   }
 }
 
+.items--2 {
+  @include medium() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .items--3 {
   @include medium() {
     grid-template-columns: repeat(3, 1fr);
