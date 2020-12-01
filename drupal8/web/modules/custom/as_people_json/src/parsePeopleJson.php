@@ -14,7 +14,7 @@ class parsePeopleJson extends \Twig_Extension
    */
   public function getName()
   {
-    return 'as_people_joson.parse.json';
+    return 'as_people_json.parse.json';
   }
 
 

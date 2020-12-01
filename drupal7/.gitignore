@@ -10,7 +10,10 @@ docroot/modules
 *composer.lock
 
 # Ignore Drupal's file directory
-docroot/sites/*/files
+#docroot/sites/*/files
+
+# Ignore department file directory
+docroot/sites/department_files
 
 # Ignore configuration files that may contain sensitive information.
 docroot/sites/*/settings.local.php
