@@ -43,6 +43,30 @@ Descr: Sets all specific styles for an article card
     font-size: var(--base-16);
     text-align: right;
   }
+  // links for article cards
+  a.card__title-link {
+    display: block;
+    padding-bottom: 1em;
+    text-decoration: underline;
+    text-decoration-color: var(--gray-lt);
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 50%;
+      height: 1px;
+      bottom: 0;
+      left: 25%;
+      transition: all 0.2s;
+      background-image: var(--teal-purple);
+    }
+    &:hover {
+      &:before {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
   &.card--small {
     // grid-template-columns: 180px 1fr;
     border: none;
@@ -72,7 +96,9 @@ Descr: Sets all specific styles for an article card
     .card__date {
       display: none;
     }
-
+    .card__label {
+      font-size: var(--base-16);
+    }
     img {
       // border-radius: var(--border-radius);
     }
