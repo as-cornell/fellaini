@@ -43,6 +43,9 @@ strong {
 .blue-purple {
   @include text-gradient(var(--blue-purple));
 }
+.blue-radial {
+  @include text-gradient(var(--storm-radial));
+}
 
 .eyebrow {
   font-family: var(--font-serif);
