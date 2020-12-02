@@ -15,18 +15,78 @@ $config = array(
         'saml:SP',
         'privatekey' => 'prod.pem',
         'certificate' => 'prod.crt',
-        'entityID' => 'https://prod.as.cornell.edu/',
-        'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
-        // The URL to the discovery service.
-        // Can be NULL/unset, in which case a builtin discovery service will be used.
-        //'discoURL' => null,
+        'entityID' => 'https://asd7.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
     ),
-    'as-sp' => array(
+    'dept1-sp' => array(
         'saml:SP',
         'privatekey' => 'prod.pem',
         'certificate' => 'prod.crt',
-        'entityID' => 'https://as.cornell.edu/',
-        'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
+        'entityID' => 'https://dept1.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept2-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept2.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept3-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept3.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept4-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept4.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept5-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept5.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept6-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept6.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept7-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept7.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept8-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept8.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept9-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept9.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+    ),
+    'dept10-sp' => array(
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://dept10.as.cornell.edu/',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
     ),
     'communications-sp' => array(
         'saml:SP',

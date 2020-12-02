@@ -5,7 +5,7 @@
 
 mysqldb:
     type: "mysql:10.0"
-    disk: 8192
+    disk: 16384
     configuration:
         schemas:
             - firstdb
@@ -13,7 +13,6 @@ mysqldb:
             - peopledb
             - samldb
             - drupal7db
-            - saml7db
         endpoints:
             first:
                 default_schema: firstdb
@@ -35,10 +34,6 @@ mysqldb:
                 default_schema: drupal7db
                 privileges:
                     drupal7db: admin
-            saml7:
-                default_schema: saml7db
-                privileges:
-                    saml7db: admin
 
 #rediscache:
 #    type: "redis:3.0"

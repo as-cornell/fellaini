@@ -1090,12 +1090,42 @@ $config = array(
     'store.redis.prefix' => 'SimpleSAMLphp',
 );
 
+// All custom changes below. Modify as needed.
 
+// Set some security and other configs that are set above, however we
+// overwrite them here to keep all changes in one area
+$config['technicalcontact_name'] = "Mark Wilson";
+$config['technicalcontact_email'] = "mew72@cornell.edu";
+
+// Change these for your installation
+$config['secretsalt'] = 'zonMbUT81OFMsS1SVzgu';
+$config['auth.adminpassword'] = '37s0Vk1cIdPq0KiiOOwT';
 // added per https://docs.platform.sh/frameworks/drupal8/simplesaml.html
 // Set SimpleSAML to log using error_log(), which on Platform.sh will
 // be mapped to the /var/log/app.log file.
 $config['logging.handler'] = 'errorlog';
-
+/**
+ * Support SSL Redirects to SAML login pages.
+ *
+ * Uncomment the code following code block to set
+ * server port to 443 on HTTPS environment.
+ *
+ * This is a requirement in SimpleSAML when providing a redirect path.
+ *
+ * @link https://github.com/simplesamlphp/simplesamlphp/issues/450
+ *
+ */
+$_SERVER['SERVER_PORT'] = 443;
+$_SERVER['HTTPS'] = 'true';
+$protocol = 'https://';
+$port = ':' . $_SERVER['SERVER_PORT'];
+/**
+ * Support multi-site and single site installations at different base URLs.
+ *
+ * Overide $config['baseurlpath'] = "https://{yourdomain}/simplesaml/"
+ * to customize the default Acquia configuration.
+ */
+$config['baseurlpath'] = $protocol . $_SERVER['HTTP_HOST'] . '/simplesaml/';
 // Set SimpleSAML to use the metadata directory in Git, rather than
 // the empty one in the vendor directory.
 $config['metadata.sources'] = [

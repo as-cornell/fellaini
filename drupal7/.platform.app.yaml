@@ -77,9 +77,15 @@ web:
                 # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
                 '^/sites/department_files/(css|js)':
                     expires: 2w
+        '/simplesaml':
+            root: "vendor/simplesamlphp/simplesamlphp/www"
+            allow: true
+            scripts: true
+            index:
+              - index.php
 
 # The size of the persistent disk of the application (in MB).
-disk: 2048
+disk: 16384
 
 # The mounts that will be performed when the package is deployed.
 
@@ -103,10 +109,11 @@ crons:
 
 # Added for simplesaml
 variables:
-    env:
-        SIMPLESAMLPHP_CONFIG_DIR: /app/simplesamlphp/config
+  env:
+    SIMPLESAMLPHP_CONFIG_DIR: /app/simplesamlphp/config
 
-# Added for New Relic
-#runtime:
-    #extensions:
-        #- newrelic
+# Added for New Relic and LDAP
+runtime:
+  extensions:
+    - newrelic
+    - ldap
