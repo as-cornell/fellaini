@@ -11,6 +11,8 @@ picture {
   display: block;
   height: auto;
   max-width: 100%;
+  border-radius: var(--border-radius);
+  @include boxShadow;
 }
 
 //masking styles
@@ -22,5 +24,12 @@ picture {
   .mask-#{$i} {
     clip-path: url(#mask-#{$i});
     -webkit-clip-path: url(#mask-#{$i});
+  }
+}
+
+@for $i from 1 through 3 {
+  .pano-mask-#{$i} {
+    clip-path: url(#pano-mask-#{$i});
+    -webkit-clip-path: url(#pano-mask-#{$i});
   }
 }
