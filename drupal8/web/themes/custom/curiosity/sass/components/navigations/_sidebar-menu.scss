@@ -8,13 +8,17 @@ Still needs: expand toggle for showing sidebar nav on mobile
 --------------------------- */
 
 ul[class^="nav"] {
-  line-height: 1.75em;
+  font-size: var(--base-24);
+  line-height: 2em;
 
-  font-size: var(--base-20);
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 16px;
   margin-bottom: 0;
-
+  overflow: hidden;
+  @include medium() {
+    font-size: var(--base-18);
+    line-height: 1.75em;
+  }
   a {
     position: relative;
     // padding-left: 0.5rem;
@@ -23,14 +27,32 @@ ul[class^="nav"] {
     &:before {
       position: absolute;
       content: "";
-      height: 100%;
-      width: 3px;
-      left: -20px;
+      height: 70%;
+      width: 2px;
+      transform: translateX(-18px);
       top: 0;
       background: var(--gray-lt);
+      border-radius: 0 2px 2px 0;
+    }
+    &:hover {
+      &:before {
+        animation-name: indicators;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: 1;
+        transform: translateX(-16px);
+      }
     }
   }
-
+  // active trail
+  [class*="active-trail"] {
+    > a {
+      font-weight: var(--semi);
+      &:before {
+        transform: translateX(-16px);
+      }
+    }
+  }
   .with-sub {
     display: grid;
     grid-template-columns: 1fr 2rem;
@@ -63,10 +85,11 @@ ul[class^="nav"] {
   }
   &__root {
     position: inherit;
-    // padding-left: 0.5rem;
     > a {
-      font-size: var(--base-24);
+      grid-column: 1 / -1 !important;
+      font-size: var(--base-20);
       color: var(--as-black);
+      text-decoration-color: var(--as-black);
       font-weight: var(--semi);
       margin-bottom: 0.5em;
       &:before {
@@ -76,73 +99,64 @@ ul[class^="nav"] {
   }
   .nav-1 {
     border-left: 1px solid var(--as-teal);
-    padding-left: 1em;
     &__item {
       &[class*="active-trail"] {
         > a {
-          font-weight: var(--semi);
           &:before {
             background: var(--as-teal);
           }
         }
       }
       > a {
-        // margin-left: 0.5rem;
         &:before {
-          background-color: transparent;
-        }
-        &:hover {
-          &:before {
-            background: var(--as-teal);
-          }
+          background-color: var(--as-teal);
         }
       }
-      .active {
-        color: green;
-      }
+    }
+    a {
+      text-decoration-color: var(--as-teal);
     }
   }
 
   .nav-2 {
-    border-left: 1px solid var(--as-green);
-    padding-left: 1em;
-    margin-top: 0.5em;
+    border-left: 1px solid var(--as-blue-base);
     &__item {
       &[class*="active-trail"] {
         > a {
-          font-weight: var(--semi);
           &:before {
-            background: var(--as-green);
+            background: var(--as-blue-base);
           }
         }
       }
       > a {
-        // margin-left: 0.75rem;
         &:before {
-          background-color: transparent;
-        }
-        &:hover {
-          &:before {
-            background: var(--as-teal);
-          }
+          background: var(--as-blue-base);
         }
       }
+    }
+    a {
+      text-decoration-color: var(--as-blue-base);
     }
   }
 
   .nav-3 {
+    border-left: 1px solid var(--as-light-blue);
     &__item {
-      > a {
-        margin-left: 1rem;
-        &:before {
-          background-color: var(--teal);
-        }
-        &:hover {
+      &[class*="active-trail"] {
+        > a {
           &:before {
-            background: pink;
+            background: var(--as-light-blue);
           }
         }
       }
+      > a {
+        &:before {
+          background: var(--as-light-blue);
+        }
+      }
+    }
+    a {
+      text-decoration-color: var(--as-light-blue);
     }
   }
 
@@ -171,13 +185,33 @@ ul[class^="nav"] {
 // siteNavOpener
 
 .siteNavOpener {
-  background: var(--gray-light);
+  background: var(--blue-blue);
   border-radius: var(--border-radius);
   padding: 0.5em;
-  color: var(--as-red);
+  color: var(--as-white);
+  font-size: var(--base-24);
   display: flex;
   justify-content: space-between;
+  svg {
+    fill: var(--as-white);
+  }
   @include medium() {
     display: none;
+  }
+}
+
+// indiacator anmimations
+@keyframes indicators {
+  0% {
+    transform: translateX(-1.25em);
+    // left: -1.25em;
+  }
+  60% {
+    transform: translateX(-0.5em);
+    // left: -0.5em;
+  }
+  100% {
+    transform: translateX(-0.75em);
+    // left: -1em;
   }
 }
