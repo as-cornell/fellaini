@@ -29,6 +29,7 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: auto auto auto;
+  margin: 1em auto;
   @include medium() {
     margin: 3rem auto 5rem auto;
   }
@@ -39,7 +40,7 @@ header {
     margin: 5rem auto;
   }
   max-width: var(--xl);
-  margin: 0 auto;
+
   form {
     grid-column: 1 / -1;
     grid-row: 3;
