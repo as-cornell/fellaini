@@ -54,3 +54,18 @@ https://dept4.as.cornell.edu/:
 https://dept5.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
+https://dept6.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+https://dept7.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+https://dept8.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+https://dept9.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+https://dept10.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
