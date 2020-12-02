@@ -9,9 +9,9 @@ Descr: otpN small and large, hovers and toggles for subNav
 //   top: 0;
 // }
 .otpNavWrapper {
-  background: var(--as-white);
+  // background: var(--as-white);
   position: inherit;
-  background: var(--as-white);
+  // background: var(--as-white);
   z-index: 1;
   font-size: var(--base-16);
   animation: none;
@@ -26,9 +26,10 @@ Descr: otpN small and large, hovers and toggles for subNav
     margin: 0;
     flex: 0 0 auto;
     @include medium() {
-      font-size: var(--base-20);
+      font-size: var(--base-18);
     }
     @include large() {
+      font-size: var(--base-20);
       text-align: center;
     }
   }
@@ -77,9 +78,22 @@ Descr: otpN small and large, hovers and toggles for subNav
 }
 
 .otpNav--basic_page {
+  @include medium() {
+    background: var(--as-white);
+    padding: 1rem 1rem 0 1rem;
+    margin: 0 0 1rem -1rem;
+    box-shadow: 0px 8px 7px -6px rgba(0, 0, 0, 0.08);
+  }
+  @include large() {
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
   .otpNav {
     flex-direction: column;
     width: 100%;
+
     li {
       margin-right: 1em;
       margin-bottom: 0;
@@ -90,26 +104,29 @@ Descr: otpN small and large, hovers and toggles for subNav
     @include medium() {
       flex-direction: row;
       flex-shrink: 0;
+      margin: 0 0 1rem 0;
     }
     // .large
     @include large() {
-      // font-size: var(--base-20);
       flex-direction: column;
       padding-left: 0;
+
       li {
         margin-right: 0;
+        margin-bottom: 0.5rem;
       }
       a {
         color: var(--as-black);
+        background: var(--gray-lightest);
         padding: 0.5em 1em;
         display: block;
         border-bottom: 1px solid var(--gray-lightest);
+        transition: none;
+        border-radius: var(--border-radius);
         &.active,
         &:hover {
           color: var(--as-white);
           background: var(--as-blue-gray);
-
-          border-radius: var(--border-radius);
         }
       }
     }
@@ -121,8 +138,6 @@ Descr: otpN small and large, hovers and toggles for subNav
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  // position: sticky;
-  // top: 0;
   h4 {
     margin-right: 0.5rem;
   }
