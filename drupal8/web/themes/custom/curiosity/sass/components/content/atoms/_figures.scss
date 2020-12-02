@@ -13,6 +13,14 @@ figure {
   &.figure {
     &--pano {
       margin: 0;
+      figcaption {
+        font-family: var(--font-serif);
+        color: var(--gray-lt);
+        transition: all 0.5s;
+        &:hover {
+          color: var(--as-black);
+        }
+      }
     }
     &--image {
     }
