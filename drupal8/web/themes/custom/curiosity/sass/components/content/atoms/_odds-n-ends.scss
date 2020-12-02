@@ -12,5 +12,10 @@ Descr: I know right...
 }
 .align-left {
   margin-right: var(--space);
-  margin-left: -2rem;
+}
+
+@include large() {
+  .align-left {
+    margin-left: -2rem;
+  }
 }

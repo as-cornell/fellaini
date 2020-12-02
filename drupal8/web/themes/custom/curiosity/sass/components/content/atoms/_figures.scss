@@ -8,13 +8,15 @@
 figure {
   margin: 1rem 0;
   background: var(--gray-lightest);
+  border-radius: var(--border-radius);
   width: 100%;
+  @include boxShadow();
   // border-radius: var(--border-radius);
   &.figure {
     &--pano {
       margin: 0;
-      figcaption {
-        font-family: var(--font-serif);
+      box-shadow: none;
+      img figcaption {
         color: var(--gray-lt);
         transition: all 0.5s;
         &:hover {
@@ -38,19 +40,32 @@ figure {
 
     // other styles here....
   }
+  img {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  figcaption {
+    font-size: var(--base-16);
+    @include large() {
+      font-size: var(--base-18);
+    }
+  }
 }
 // figures in pageComponent--ftb need special width restrictions
 .pageComponent--ftb {
   .figure {
-    &--6_4_newsletter {
-      max-width: 600px;
-    }
-    &--5_4 {
-      max-width: 520px;
-    }
-    &--4_5,
-    &--1_1_phototext {
-      max-width: 300px;
+    max-width: 200px;
+    padding-top: 6px; // to align with top of text
+    @include large() {
+      &--6_4_newsletter {
+        max-width: 600px;
+      }
+      &--5_4 {
+        max-width: 520px;
+      }
+      &--4_5,
+      &--1_1_phototext {
+        max-width: 300px;
+      }
     }
   }
 }
