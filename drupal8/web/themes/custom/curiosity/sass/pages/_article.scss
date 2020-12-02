@@ -2,10 +2,18 @@
   // grid-template-columns: repeat(12,calc(8.333% - 2rem));
   grid-template-rows: auto auto;
   grid-template-areas:
-    "title title title social"
+    "title title title thumbnail"
+    "social social social social"
     "content content content content"
-    "aside aside aside thumbnail";
+    "aside aside aside aside";
   @include medium() {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "title title title title title title title title thumbnail thumbnail thumbnail thumbnail "
+      "social social social social social social social social social social social social"
+      "content content content content content content content content aside aside aside aside";
+  }
+  @include large() {
     grid-template-columns: repeat(24, 1fr);
     grid-template-areas:
       ". . title title title title title title title title title title title title title title . thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail"
@@ -61,9 +69,14 @@
   }
   aside {
     grid-area: aside;
+    font-size: var(--base-20);
     h3 {
-      @extend .base-24;
+      font-size: var(--base-20);
       margin-bottom: 1em;
+    }
+    // set margins for all related lists
+    ul {
+      margin-top: 0.5em;
     }
   }
   &--pano {
