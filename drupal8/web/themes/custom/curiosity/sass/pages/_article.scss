@@ -2,10 +2,18 @@
   // grid-template-columns: repeat(12,calc(8.333% - 2rem));
   grid-template-rows: auto auto;
   grid-template-areas:
-    "title title title social"
+    "title title title thumbnail"
+    "social social social social"
     "content content content content"
-    "aside aside aside thumbnail";
+    "aside aside aside aside";
   @include medium() {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+      "title title title title title title title title thumbnail thumbnail thumbnail thumbnail "
+      "social social social social social social social social social social social social"
+      "content content content content content content content content aside aside aside aside";
+  }
+  @include large() {
     grid-template-columns: repeat(24, 1fr);
     grid-template-areas:
       ". . title title title title title title title title title title title title title title . thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail"
@@ -48,9 +56,6 @@
       font-size: var(--base-16);
       font-weight: var(--semi);
       margin-top: 0.5em;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
     }
   }
   &__social {
@@ -64,20 +69,37 @@
   }
   aside {
     grid-area: aside;
+    font-size: var(--base-20);
     h3 {
-      @extend .base-24;
+      font-size: var(--base-20);
       margin-bottom: 1em;
+    }
+    // set margins for all related lists
+    ul {
+      margin-top: 0.5em;
     }
   }
   &--pano {
-    grid-template-rows: auto auto auto 1fr;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-      ". pano pano pano pano pano pano pano pano pano pano ."
-      ". . title title title title title title title title . ."
-      "social content content content content content content content content thumbnail thumbnail thumbnail"
-      "social content content content content content content content content aside aside aside";
+      "pano pano pano pano"
+      "title title title title "
+      "social social social social "
+      "content content content content"
+      "thumbnail thumbnail thumbnail thumbnail"
+      "aside aside aside aside";
     @include medium() {
+      grid-template-rows: auto auto auto 1fr;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+        "pano pano pano pano pano pano pano pano pano pano pano pano"
+        "title title title title title title title title title title title title"
+        "social content content content content content content content content thumbnail thumbnail thumbnail"
+        "social content content content content content content content content aside aside aside";
+    }
+
+    @include large() {
       grid-template-columns: repeat(24, 1fr);
       grid-template-areas:
         ". . . pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano pano . . ."
@@ -87,14 +109,10 @@
     }
     .article__title {
       text-align: center;
-      // display: grid;
-      // grid-template-rows: auto;
-      // grid-template-columns: 1fr 1fr;
+
       margin-top: 1em;
       .title {
-        // grid-column: 1 / -1;
         margin-top: 1rem;
-        // grid-row: 2;
       }
       .article__label {
         grid-column: 1;
@@ -108,8 +126,6 @@
       .article__dateline {
         grid-column: 2;
         grid-row: 1;
-        // font-size: var(--base-18);
-        // font-weight: var(--semi);
         display: flex;
         justify-content: center;
         align-items: center;

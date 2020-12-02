@@ -9,10 +9,16 @@ Descr:
 // base blockquotes
 blockquote {
   background: var(--gray-lightest);
-  padding: 3rem;
+  font-size: 1.25rem;
+  margin: 3rem 0;
+  padding: 1em;
+  @include large() {
+    padding: 3rem;
+    font-size: 1.5rem;
+  }
+
   // font-style: italic;
-  font-size: 1.5rem;
-  margin: 3rem;
+
   font-weight: var(--semi);
   border-radius: var(--border-radius);
   @include boxShadow;
@@ -26,10 +32,6 @@ blockquote {
   p {
     position: relative;
     z-index: 1;
-    // background: url(/themes/custom/curiosity/images/icons/src/burger.svg)
-    //   no-repeat;
-
-    // background-size: 82px 82px;
 
     &:before {
       position: absolute;
