@@ -22,7 +22,7 @@ source:
   item_selector: /
 
   ids:
-    netid:
+    uuid:
       type: string
 
   fields:
