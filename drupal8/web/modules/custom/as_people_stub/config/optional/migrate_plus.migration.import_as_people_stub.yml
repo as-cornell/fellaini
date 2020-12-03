@@ -1,5 +1,5 @@
 # Migration configuration for imported stats.
-id: import_as_people_stub
+id: people_stub
 label: Migrate people stubs from People D8 to AS D8
 migration_group: people
 dependencies:
