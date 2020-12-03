@@ -20,7 +20,7 @@ Descr:
       .spotlight {
         font-size: var(--base-64);
         line-height: 1;
-        // @extend .blue-purple;
+        @include text-gradient(var(--storm-radial));
       }
     }
     &__articles {

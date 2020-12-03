@@ -184,9 +184,10 @@ aside {
     width: calc(100% + 2rem);
     margin-left: -1rem;
     padding-top: 2rem;
+    box-shadow: none;
   }
   .card__title {
-    padding: 0 1rem;
+    // padding: 0 1rem;
     margin-bottom: 1em;
     font-size: 2rem;
     text-align: center;
