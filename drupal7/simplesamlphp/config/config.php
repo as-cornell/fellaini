@@ -790,7 +790,10 @@ $config['technicalcontact_email'] = "mew72@cornell.edu";
 // Change these for your installation
 $config['secretsalt'] = 'zonMbUT81OFMsS1SVzgu';
 $config['auth.adminpassword'] = '37s0Vk1cIdPq0KiiOOwT';
-
+// added per https://docs.platform.sh/frameworks/drupal8/simplesaml.html
+// Set SimpleSAML to log using error_log(), which on Platform.sh will
+// be mapped to the /var/log/app.log file.
+$config['logging.handler'] = 'errorlog';
 
 /**
  * Support SSL Redirects to SAML login pages.
@@ -812,75 +815,38 @@ $port = ':' . $_SERVER['SERVER_PORT'];
  * Support multi-site and single site installations at different base URLs.
  *
  * Overide $config['baseurlpath'] = "https://{yourdomain}/simplesaml/"
- * to customize the default Acquia configuration.
+ * to customize the default configuration.
  */
 
 $config['baseurlpath'] = $protocol . $_SERVER['HTTP_HOST'] . '/simplesaml/';
 
-/**
- * Cookies No Cache.
- *
- * Allow users to be automatically logged in if they signed in via the same
- * SAML provider on another site by uncommenting the setcookie line below.
- *
- * Warning: This has performance implications for anonymous users.
- *
- * @link https://docs.acquia.com/resource/using-simplesamlphp-acquia-cloud-site
- */
-// setcookie('NO_CACHE', '1');.
-/**
- * Generate Acquia session storage via hosting creds.json.
- *
- * Session sorage defaults using the database for the current request.
- *
- * @link https://docs.acquia.com/resource/using-simplesamlphp-acquia-cloud-site/#storing-session-information-using-the-acquia-cloud-sql-database
- */
+// Setup the database connection for all parts of SimpleSAML.
+if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
+  $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
+  foreach ($relationships['saml'] as $instance) {
+    if (!empty($instance['query']['is_master'])) {
+      $dsn = sprintf("%s:host=%s;dbname=%s",
+        $instance['scheme'],
+        $instance['host'],
+        $instance['path']
+      );
+      $config['database.dsn'] = $dsn;
+      $config['database.username'] = $instance['username'];
+      $config['database.password'] = $instance['password'];
+      $config['store.type'] = 'sql';
+      $config['store.sql.dsn'] = $dsn;
+      $config['store.sql.username'] = $instance['username'];
+      $config['store.sql.password'] = $instance['password'];
+      $config['store.sql.prefix'] = 'simplesaml';
 
-if (!getenv('AH_SITE_ENVIRONMENT')) {
-  // Add / modify your local configuration here.
-  $config['store.type'] = 'sql';
-  $config['store.sql.dsn'] = sprintf('mysql:host=%s;port=%s;dbname=%s', '127.0.0.1', '33067', 'simplesaml');
-  $config['store.sql.username'] = 'simplesaml';
-  $config['store.sql.password'] = 'JtRuhTXwxtJbhD16';
-  $config['store.sql.prefix'] = 'simplesaml';
-  $config['certdir'] = "/var/www/simplesamlphp/cert/";
-  $config['metadatadir'] = "/var/www/simplesamlphp/metadata";
-  $config['baseurlpath'] = 'simplesaml/';
-  $config['loggingdir'] = '/var/www/simplesamlphp/log/';
+    }
+  }
+}
 
+// Set the salt value from the Platform.sh entropy value, provided for this purpose.
+if (isset($_ENV['PLATFORM_PROJECT_ENTROPY'])) {
+  $config['secretsalt'] = $_ENV['PLATFORM_PROJECT_ENTROPY'];
 }
-elseif (getenv('AH_SITE_ENVIRONMENT')) {
-  // Set  ACE ad ACSF sites based on hosting database and site name.
-  $config['certdir'] = "/mnt/www/html/{$_ENV['AH_SITE_GROUP']}.{$_ENV['AH_SITE_ENVIRONMENT']}/simplesamlphp/cert/";
-  $config['metadatadir'] = "/mnt/www/html/{$_ENV['AH_SITE_GROUP']}.{$_ENV['AH_SITE_ENVIRONMENT']}/simplesamlphp/metadata";
-  // baseurlpath is set above
-  //$config['baseurlpath'] = 'https://'.$_SERVER["HTTP_HOST"].'/simplesaml/';
-  // Setup basic logging.
-  $config['logging.handler'] = 'file';
-  $config['loggingdir'] = dirname(getenv('ACQUIA_HOSTING_DRUPAL_LOG'));
-  $config['logging.logfile'] = 'simplesamlphp-' . date('Ymd') . '.log';
-  $creds_json = file_get_contents('/var/www/site-php/' . $_ENV['AH_SITE_GROUP'] . '.' . $_ENV['AH_SITE_ENVIRONMENT'] . '/creds.json');
-  $databases = json_decode($creds_json, TRUE);
-  $creds = $databases['databases'][$_ENV['AH_SITE_GROUP']];
-  require_once "/usr/share/php/Net/DNS2_wrapper.php";
-  try {
-    $resolver = new Net_DNS2_Resolver(array(
-      'nameservers' => array(
-        '127.0.0.1',
-        'dns-master',
-      ),
-    ));
-    $response = $resolver->query("cluster-{$creds['db_cluster_id']}.mysql", 'CNAME');
-    $creds['host'] = $response->answer[0]->cname;
-  }
-  catch (Net_DNS2_Exception $e) {
-    $creds['host'] = "";
-  }
-  $config['store.type'] = 'sql';
-  $config['store.sql.dsn'] = sprintf('mysql:host=%s;port=%s;dbname=%s', $creds['host'], $creds['port'], $creds['name']);
-  $config['store.sql.name'] = 'simplesaml';
-  $config['store.sql.username'] = $creds['user'];
-  $config['store.sql.password'] = $creds['pass'];
-  $config['store.sql.prefix'] = 'simplesaml';
-}
+
+$config['certdir'] = dirname(__DIR__) . '/cert';
 

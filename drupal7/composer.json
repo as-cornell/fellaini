@@ -133,6 +133,8 @@
         "drupal/wysiwyg": "^2.6",
         "drupal/xmlsitemap": "^2.6",
         "drush/drush": "8.x",
+        "simplesamlphp/simplesamlphp": "^1.17",
+        "simplesamlphp/twig-configurable-i18n": "^2.2",
         "symfony/filesystem": "~2.7|^3",
         "webflo/drupal-finder": "^1.0.0"
     },
