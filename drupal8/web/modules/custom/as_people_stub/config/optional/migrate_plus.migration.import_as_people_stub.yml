@@ -1,5 +1,5 @@
 # Migration configuration for imported stats.
-id: import_as_people_stub
+id: people_stub
 label: Migrate people stubs from People D8 to AS D8
 migration_group: people
 dependencies:
@@ -12,17 +12,17 @@ destination:
 
 source:
   plugin: url
-  data_fetcher_plugin: file
+  data_fetcher_plugin: http
   data_parser_plugin: json
   constants:
     person_base_path: 'https://asd8.as.cornell.edu/people'
 
-  urls: public://people-stubs-rest.json
+  urls: https://people.asd8.as.cornell.edu/people-stubs-rest
 
   item_selector: /
 
   ids:
-    netid:
+    uuid:
       type: string
 
   fields:
