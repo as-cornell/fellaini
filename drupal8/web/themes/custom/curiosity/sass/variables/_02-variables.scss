@@ -121,10 +121,18 @@
   --base-28: 1.2rem;
   --base-36: 1.5rem;
   --base-48: 2rem;
-  --base-56: 2.33rem;
+
+  --base-56: 2rem;
+  @include medium() {
+    --base-56: 2.33rem;
+  }
+
   --base-64: 2.66rem;
 
-  --base-84: 2.6rem;
+  --base-84: 2rem;
+  @include small() {
+    --base-84: 2.6rem;
+  }
   @include large() {
     --base-84: 3.5rem;
   }
@@ -153,7 +161,7 @@
   }
 
   --bottom-margin: 2rem;
-  @include medium() {
+  @include large() {
     --bottom-margin: 6rem;
   }
 

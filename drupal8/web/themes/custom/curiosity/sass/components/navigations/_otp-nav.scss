@@ -135,14 +135,51 @@ Descr: otpN small and large, hovers and toggles for subNav
 
 .otpNav--landing_page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+
+  background: var(--as-white);
+  box-shadow: 0px 8px 7px -6px rgba(0, 0, 0, 0.08);
+
+  border-radius: 12px;
+
+  @include medium() {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @include xl() {
+    width: 110%;
+    margin-left: -5%;
+  }
   h4 {
     margin-right: 0.5rem;
+    cursor: pointer;
+    font-size: var(--base-20);
+    color: var(--as-red);
+    margin-top: 0.5em;
+    @include medium() {
+      cursor: default;
+      margin-top: 0;
+      color: var(--as-black);
+    }
   }
   .otpNav {
     display: flex;
+    justify-content: center;
+
+    height: 0;
+    overflow: hidden;
+
+    &.expanded {
+      height: 100%;
+      overflow: hidden;
+    }
+    @include medium() {
+      height: 100%;
+      overflow: hidden;
+    }
+
     li {
       margin-right: 1em;
       margin-bottom: 0;

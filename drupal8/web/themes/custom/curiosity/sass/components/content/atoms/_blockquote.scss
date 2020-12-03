@@ -12,6 +12,8 @@ blockquote {
   font-size: 1.25rem;
   margin: 3rem 0;
   padding: 1em;
+  position: relative;
+  z-index: -1;
   @include large() {
     padding: 3rem;
     font-size: 1.5rem;
