@@ -439,11 +439,11 @@ $config = array(
         'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
     ),
     'sct-sp' => array(
-    'saml:SP',
-    'privatekey' => 'prod.pem',
-    'certificate' => 'prod.crt',
-    'entityID' => 'https://sct.cornell.edu/',
-    'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
+        'saml:SP',
+        'privatekey' => 'prod.pem',
+        'certificate' => 'prod.crt',
+        'entityID' => 'https://sct.cornell.edu/',
+        'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
     ),
     'inequality-sp' => array(
         'saml:SP',
