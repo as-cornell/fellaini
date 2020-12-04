@@ -65,3 +65,6 @@ if (isset($_ENV['PLATFORM_VARIABLES'])) {
 if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($drupal_hash_salt)) {
   $drupal_hash_salt = $_ENV['PLATFORM_PROJECT_ENTROPY'];
 }
+
+// Set the path for the SimpleSAMLphp library dynamically.
+$conf['simplesamlphp_auth_installdir'] = __DIR__ . '/simplesamlphp';
