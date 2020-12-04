@@ -78,7 +78,7 @@ web:
                 '^/sites/department_files/(css|js)':
                     expires: 2w
         '/simplesaml':
-            root: "vendor/simplesamlphp/simplesamlphp/www"
+            root: "simplesamlphp/www"
             allow: true
             scripts: true
             index:
