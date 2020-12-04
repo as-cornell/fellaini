@@ -53,7 +53,7 @@ figure {
 // figures in pageComponent--ftb need special width restrictions
 .pageComponent--ftb {
   .figure {
-    max-width: 200px;
+    max-width: 300px;
     padding-top: 6px; // to align with top of text
     @include large() {
       &--6_4_newsletter {
@@ -66,6 +66,9 @@ figure {
       &--1_1_phototext {
         max-width: 300px;
       }
+    }
+    &--video {
+      max-width: 100%;
     }
   }
 }

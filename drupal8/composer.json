@@ -110,7 +110,9 @@
         "drupal/field_token_value": "^1.0",
         "drupal/view_mode_selector": "^1.0@beta",
         "drupal/ckeditor_entity_link": "^1.2",
-        "drupal/editor_advanced_link": "^1.8"
+        "drupal/editor_advanced_link": "^1.8",
+        "drupal/ckeditor_media_embed": "^1.10",
+        "drupal/video_embed_field": "^2.4"
 
 
     },
