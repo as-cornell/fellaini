@@ -67,4 +67,4 @@ if (isset($_ENV['PLATFORM_PROJECT_ENTROPY']) && empty($drupal_hash_salt)) {
 }
 
 // Set the path for the SimpleSAMLphp library dynamically.
-$conf['simplesamlphp_auth_installdir'] = __DIR__ . '/simplesamlphp';
+$conf['simplesamlphp_auth_installdir'] = '/app/vendor/simplesamlphp/simplesamlphp/www';
