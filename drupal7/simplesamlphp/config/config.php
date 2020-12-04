@@ -1091,7 +1091,7 @@ $config = array(
 );
 
 
-// added per https://docs.platform.sh/frameworks/drupal8/simplesaml.html
+// added per https://docs.platform.sh/frameworks/drupal7/simplesaml.html
 // Set SimpleSAML to log using error_log(), which on Platform.sh will
 // be mapped to the /var/log/app.log file.
 $config['logging.handler'] = 'errorlog';
