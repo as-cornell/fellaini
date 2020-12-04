@@ -89,9 +89,6 @@ https://dept9.as.cornell.edu/:
 https://dept10.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
-https://dept10.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
 http://cder.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
