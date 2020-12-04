@@ -13,6 +13,10 @@ Descr:
 // pc--rapper with items laid out on specified grid based on numbe of items.
 
 .pcWrapper {
+  margin-bottom: var(--bottom-margin);
+  .pcWrapper {
+    margin-bottom: 0;
+  }
   &.grid {
     display: grid;
     gap: var(--space);

@@ -14,6 +14,7 @@ Descr: Sets styles for
       //adjust figure default
       figure {
         background: none;
+        box-shadow: none;
       }
       h2 {
         margin-top: 0;
@@ -46,12 +47,22 @@ Descr: Sets styles for
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: var(--bottom-margin);
   font-size: var(--base-24);
-  &__image,
+
   &__text {
-    flex: 0 0 calc(47% - var(--space));
+    flex: 0 0 calc(70% - var(--space));
+  }
+  &__image {
+    flex: 0 0 calc(34% - var(--space));
+  }
+  @include large() {
+    align-items: center;
+    &__image,
+    &__text {
+      flex: 0 0 calc(47% - var(--space));
+    }
   }
   h2 {
     .slider & {

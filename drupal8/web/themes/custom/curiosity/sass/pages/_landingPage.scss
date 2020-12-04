@@ -31,20 +31,25 @@ Descr:
   }
   &--pano {
     .title {
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: flex-end;
-      margin-bottom: 4rem;
+      @include medium() {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-end;
+        margin-bottom: 4rem;
+      }
+
       figure,
       h1 {
         grid-column: 1 / -1;
         grid-row: 1;
       }
       h1 {
-        color: var(--as-white);
-        @include dropShadow();
-        z-index: 1;
-        max-width: 80%;
+        @include medium() {
+          color: var(--as-white);
+          @include dropShadow();
+          z-index: 1;
+          max-width: 80%;
+        }
       }
       figure {
         background: none;
@@ -53,7 +58,7 @@ Descr:
         @extend .sr-only;
       }
       img {
-        @extend .mask-1;
+        @extend .pano-mask-1;
       }
     }
   }

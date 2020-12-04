@@ -6,6 +6,12 @@
 
 (function ($) {
   $(".otpNav").first().first().addClass("active");
+  $(".otpToggle").on({
+  click: function () {
+    $(".otpNav").toggleClass("expanded");
+  },
+});
+
 })(jQuery);
 
 const targets = document.querySelectorAll(".pcWrapper--page-section");

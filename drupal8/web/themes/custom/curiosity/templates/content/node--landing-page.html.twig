@@ -73,7 +73,7 @@ Descr: Sets up variables and content for _basic-page.twig
 {% if linkValues %}
   {% set otp_nav %}
   <div class="otpNavWrapper otpNav--landing_page">
-  <h4>On this page:</h4>
+  <h4 class="otpToggle">On this page:</h4>
     {{ drupal_block('page_menu_block', {link_values:linkValues}) }}
   </div>
   {% endset %}
