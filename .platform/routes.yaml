@@ -48,6 +48,9 @@ https://dept2.as.cornell.edu/:
 https://dept3.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
+  cache:
+    enabled: true
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept4.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
