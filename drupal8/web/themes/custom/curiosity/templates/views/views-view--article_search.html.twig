@@ -42,57 +42,78 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% set view_header = header %}
 
-{# set view specific sidebar #}
-
-{% set view_sidebar %}
-<div class="sidebar--filters">
-  {{exposed}}
-</div>
-{% endset %}
 
 
+
+{# {{vardumper(view)}} #}
 
 {# adding "now viewing" labels #}
 
+{% if (view.getExposedInput) %}
+{% set showFacets = true %}
+{% endif %}
+
 {% if (view.getExposedInput.keywords) %}
-	{% set view_filters = view_filters ~ 'Keyword search: ' %}
+	{% set view_filters_1 = 'Keyword: ' %}
 	{% set keyword = view.getExposedInput.keywords %}
-  {% set view_filters = view_filters ~ keyword  %}
+{% set view_filters_1 = '<strong>' ~ view_filters_1 ~ '</strong>'  ~ keyword  %}
+
+
 {% endif %}
 
-{% if (view.getExposedInput.disciplines) %}
-	{% set view_filters = view_filters ~'Discipline: ' %}
+{% if (view.getExposedInput.disciplines != 'All' or '') %}
+	{% set view_filters_2 = 'Discipline: ' %}
   {% set number = view.getExposedInput.disciplines %}
-  {% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ ' ' %}
-  {% set view_filters = view_filters ~ termname  %}
-{% endif %}
+  {% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
+  {% set view_filters_2 = '<strong>' ~ view_filters_2 ~ '</strong>' ~ termname  %}
 
+{% endif %}
 
 {% if (view.getExposedInput.byline) %}
-	{% set view_filters = view_filters ~ 'Byline search: ' %}
+	{% set view_filters_3 = 'Byline: ' %}
 	{% set Byline = view.getExposedInput.byline %}
-	{% set view_filters = view_filters ~ Byline  %}
+{% set view_filters_3 = '<strong>' ~  view_filters_3 ~ '</strong>'  ~ Byline ~ '<br />' %}
+
+
 {% endif %}
 
 {% if (view.getExposedInput.media_source) %}
-	{% set view_filters = view_filters ~ 'Media source search: ' %}
+	{% set view_filters_4 = 'Media source: ' %}
 	{% set Media_source = view.getExposedInput.media_source %}
-	{% set view_filters = view_filters ~ Media_source  %}
+{% set view_filters_4 = '<strong>' ~  view_filters_4 ~ '</strong>'  ~ Media_source ~ '<br />' %}
+
+
 {% endif %}
 
-{% if (view.getExposedInput.department_program) %}
-	{% set view_filters = view_filters ~ 'Department/program search: ' %}
+{% if (view.getExposedInput.department_program != 'All') %}
+	{% set view_filters_5 = 'Department/program: ' %}
     {% set number = view.getExposedInput.department_program %}
-    {% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ ' ' %}
-    {% set view_filters = view_filters ~ termname  %}
+    {% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
+{% set view_filters_5 = '<strong>' ~  view_filters_5 ~ '</strong>'  ~ termname  %}
+
+
 {% endif %}
 
+
+
+
+{% set facets %}
+  {% if showFacets %}
+  <p>
+    {{view_filters_1|raw}}
+    {{view_filters_2|raw}}
+    {{view_filters_3|raw}}
+    {{view_filters_4|raw}}
+    {{view_filters_5|raw}}
+  </p>
+ {% endif %}
+{% endset %} 
 
 
 {% include "@pages/_view-list.twig" with {
   view_title : view_title,
   view_content : view_content,
   view_pager : view_pager,
-  view_sidebar : view_sidebar,
+  view_form : exposed,
   view_header : view_header
 }%}

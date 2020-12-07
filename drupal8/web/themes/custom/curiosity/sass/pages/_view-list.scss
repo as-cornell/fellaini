@@ -77,12 +77,18 @@ Descr:
 .landingPage--viewContainer {
   grid-template-rows: auto auto 1fr;
   grid-template-columns: repeat(12, 1fr);
-  .sidebar {
-    grid-area: sidebar;
-    .sidebar--filters {
-      position: sticky;
-      top: 150px;
-    }
+  .view--form {
+    grid-area: form;
+    position: sticky;
+    top: 2rem;
+    z-index: 1;
+  }
+  .view--facets {
+    grid-area: facets;
+    grid-area: facets;
+    border: 1px solid var(--as-teal);
+    padding: 1rem;
+    border-radius: var(--border-radius);
   }
   .pageTitle {
     grid-area: title;
@@ -103,7 +109,8 @@ Descr:
   @include medium {
     grid-template-areas:
       ". title title title title title title title title title title . "
-      ". sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar . "
+      "form form form form form form form form form form form form "
+      ". facets facets facets facets facets facets facets facets facets facets . "
       ". content content content content content content content content content content . "
       ". pager pager pager pager pager pager pager pager pager pager . ";
   }

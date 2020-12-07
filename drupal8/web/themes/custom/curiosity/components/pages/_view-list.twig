@@ -31,19 +31,20 @@ Setting up new block class of 'teaser'
     "heading_modifiers" : ["margin"]
   } %}
 		{% endif %}
-		{{view_header}}
-		<br/>
-		{{view_filters}}
-		{# Temporary show in page filter here. Might need to put m/m into new template #}
 
-		{% if show_filter %}
-			<label for='courseFilter'>
-				Search for course number, title, instructor or keywords
-			</label>
-			<input id='courseFilter' class='searchbox full' type='text' placeholder='search' name="keyword" data-search/>
-		{% endif %}
+
 	</div>
+	<span class="view--form">
+		{{view_form}}
+	</span>
+	<span class="view--facets">
 
+		{{view_header}}
+
+
+		{{facets}}
+
+	</span>
 	<div class="content">
 		{{ view_content }}
 	</div>
@@ -53,9 +54,4 @@ Setting up new block class of 'teaser'
 		</div>
 	{% endif %}
 
-	<div class="sidebar">
-
-		{{ view_sidebar }}
-
-	</div>
 </main>
