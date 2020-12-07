@@ -25,3 +25,19 @@ ul.inline {
     margin-right: 1rem;
   }
 }
+ul.thumbnails {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 2rem;
+  li {
+    clear: both;
+    margin-bottom: 1.5rem;
+    .figure {
+      margin-top: 6px;
+      max-width: 240px;
+      img {
+        // margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

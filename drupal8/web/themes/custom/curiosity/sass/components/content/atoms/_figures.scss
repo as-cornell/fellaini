@@ -37,11 +37,16 @@ figure {
     &--inline {
       // max-width: 600px;
     }
-
+    &--hasCaption {
+      // background: red;
+      img {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+    }
     // other styles here....
   }
   img {
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-radius: var(--border-radius);
   }
   figcaption {
     font-size: var(--base-16);
@@ -53,8 +58,8 @@ figure {
 // figures in pageComponent--ftb need special width restrictions
 .pageComponent--ftb {
   .figure {
-    max-width: 200px;
-    padding-top: 6px; // to align with top of text
+    // max-width: 300px;
+    margin-top: 6px; // to align with top of text
     @include large() {
       &--6_4_newsletter {
         max-width: 600px;
@@ -64,8 +69,11 @@ figure {
       }
       &--4_5,
       &--1_1_phototext {
-        max-width: 300px;
+        max-width: 248px;
       }
+    }
+    &--video {
+      max-width: 100%;
     }
   }
 }
@@ -83,6 +91,7 @@ figcaption {
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
+
 .videoContainer iframe {
   position: absolute;
   top: 0;
