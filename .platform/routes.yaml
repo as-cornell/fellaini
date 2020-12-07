@@ -47,64 +47,75 @@ https://dept1.as.cornell.edu/:
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept2.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept3.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept4.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept5.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept6.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept7.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept8.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept9.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept10.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 http://cder.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
+    default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
