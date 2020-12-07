@@ -25,6 +25,7 @@ dependencies:
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
     drupal7: 'mysqldb:drupal7'
+    saml: 'mysqldb:saml'
 
 # The configuration of app when it is exposed to the web.
 web:
