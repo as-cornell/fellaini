@@ -37,11 +37,16 @@ figure {
     &--inline {
       // max-width: 600px;
     }
-
+    &--hasCaption {
+      // background: red;
+      img {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+    }
     // other styles here....
   }
   img {
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-radius: var(--border-radius);
   }
   figcaption {
     font-size: var(--base-16);
@@ -54,7 +59,7 @@ figure {
 .pageComponent--ftb {
   .figure {
     // max-width: 300px;
-    padding-top: 6px; // to align with top of text
+    margin-top: 6px; // to align with top of text
     @include large() {
       &--6_4_newsletter {
         max-width: 600px;
@@ -64,7 +69,7 @@ figure {
       }
       &--4_5,
       &--1_1_phototext {
-        max-width: 300px;
+        max-width: 248px;
       }
     }
     &--video {
@@ -86,6 +91,7 @@ figcaption {
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
+
 .videoContainer iframe {
   position: absolute;
   top: 0;
