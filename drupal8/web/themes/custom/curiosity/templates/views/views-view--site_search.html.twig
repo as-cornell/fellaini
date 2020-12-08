@@ -18,7 +18,7 @@ Descr: main output business for search results views. Classes are from the view-
 {% set main_element_extra_classes = ['main', 'list--teasers']%}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
 
-{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_base_class = 'landingPage' %}
 {% set main_element_modifiers = ['viewContainer', 'site-search'] %}
 
 {# set secondary title search for #}
@@ -37,26 +37,38 @@ Descr: main output business for search results views. Classes are from the view-
 
 {# set view specific sidebar #}
 
-{% set view_sidebar %}
-<div class="sidebar--filters">
-	{{exposed}}
-	<p>
+{% set facets %}
+
+
+<ul class="inline">
+	<li>
 		Search for "
-		<em>
+		<strong>
 			{{search_terms}}
-		</em>
-		"
-	</p>
-	<ul>
-		<li><a href="/news?keywords={{search_terms}}">Search articles</a></li>
+		</strong>
 
-		<li><a href="/majors-and-minors?keywords={{search_terms}}">Search majors and minors</a></li>
+		" in:
+	</li>
+	<li>
+		<a href="/news?keywords={{search_terms}}">
+			Search articles
+		</a>
+	</li>
 
-		<li><a href="/people?keywords={{search_terms}}">Search people</a></li>
+	<li>
+		<a href="/majors-and-minors?keywords={{search_terms}}">
+			Search majors and minors
+		</a>
+	</li>
 
-	</ul>
+	<li>
+		<a href="/people?keywords={{search_terms}}">
+			Search people
+		</a>
+	</li>
 
-</div>
+</ul>
+
 {% endset %}
 
 
@@ -66,5 +78,6 @@ Descr: main output business for search results views. Classes are from the view-
   view_content : view_content,
   view_pager : view_pager,
   view_sidebar : view_sidebar,
+  view_form: exposed,
   view_header: view_header
 }%}

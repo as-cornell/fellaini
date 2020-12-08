@@ -89,6 +89,11 @@ Descr:
     border: 1px solid var(--as-teal);
     padding: 1rem;
     border-radius: var(--border-radius);
+    font-size: var(--base-18);
+    margin-bottom: 1rem;
+    ul {
+      margin-bottom: 0;
+    }
   }
   .pageTitle {
     grid-area: title;

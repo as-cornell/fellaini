@@ -223,7 +223,10 @@ legend {
   font-weight: var(--semi);
 }
 
-#views-exposed-form-article-search-page-1 {
+#views-exposed-form-article-search-page-1,
+#views-exposed-form-site-search-page-1,
+#views-exposed-form-departments-and-programs-search-page-1,
+#views-exposed-form-major-minor-grad-search-page-1 {
   display: grid;
   grid-template-columns: 3fr 3fr 60px 60px;
   grid-template-rows: auto;
@@ -234,7 +237,7 @@ legend {
   margin-bottom: 2rem;
   background: var(--as-white);
   @include boxShadow();
-  .js-form-item-keywords {
+  .js-form-type-textfield {
     grid-column: 1 / 3;
     grid-row: 1;
     flex: 0 0 75%;
@@ -263,18 +266,19 @@ legend {
     grid-column: 1 / 3;
     display: flex;
   }
-  .js-form-item {
+  //text fields
+  .js-form-item-type-textfield {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5rem;
   }
-  // //fields
-  // .js-form-item-disciplines {
-  //   // grid-column: 1;
-  // }
-  // .js-form-item-department-program {
-  //   // grid-column: 2;
-  // }
+  //field groups
+  .js-form-item.fieldgroup {
+    // background: red;
+    grid-column: auto;
+    grid-row: 2;
+  }
+
   //buttons
   .js-form-submit {
     grid-row: 1;
@@ -284,16 +288,10 @@ legend {
     grid-row: 1;
     grid-column: 4;
   }
-
-  // .js-form-item-media-source {
-  //   // grid-row: 3;
-  //   // grid-column: 1;
-  // }
-  // .js-form-item-byline {
-  //   // grid-row: 3;
-  //   // grid-column: 2;
-  // }
-  // .bef--secondary {
-  //   // grid-column: 1 / 3;
-  // }
+}
+//mmg specific
+#views-exposed-form-major-minor-grad-search-page-1 {
+  .form-item-interests {
+    grid-row: 3;
+  }
 }
