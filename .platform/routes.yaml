@@ -119,3 +119,31 @@ http://cder.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+http://baroqueorgan.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+http://cogsci.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+http://frenchstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+http://igcs.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
