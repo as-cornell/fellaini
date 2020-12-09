@@ -64,15 +64,6 @@ Descr:
   }
 }
 
-//people list
-.list--people {
-  .content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space);
-  }
-}
-
 // trying it out as a landing page
 .landingPage--viewContainer {
   grid-template-rows: auto auto 1fr;
@@ -118,5 +109,25 @@ Descr:
       ". facets facets facets facets facets facets facets facets facets facets . "
       ". content content content content content content content content content content . "
       ". pager pager pager pager pager pager pager pager pager pager . ";
+  }
+}
+
+//people list
+.landingPage--people {
+}
+.list--people {
+  @include medium {
+    grid-template-areas:
+      ". title title title title title title title title title title . "
+      "form form form form form form form form form form form form "
+      ". facets facets facets facets facets facets facets facets facets facets . "
+      "content content content content content content content content content content content content "
+      ". pager pager pager pager pager pager pager pager pager pager . ";
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space);
   }
 }

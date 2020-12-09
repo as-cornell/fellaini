@@ -226,7 +226,8 @@ legend {
 #views-exposed-form-article-search-page-1,
 #views-exposed-form-site-search-page-1,
 #views-exposed-form-departments-and-programs-search-page-1,
-#views-exposed-form-major-minor-grad-search-page-1 {
+#views-exposed-form-major-minor-grad-search-page-1,
+#views-exposed-form-people-search-page-1 {
   display: grid;
   grid-template-columns: 3fr 3fr 60px 60px;
   grid-template-rows: auto;
@@ -276,6 +277,10 @@ legend {
   .js-form-item.fieldgroup {
     // background: red;
     grid-column: auto;
+    grid-row: 2;
+  }
+  //form select
+  .js-form-type-select {
     grid-row: 2;
   }
 
