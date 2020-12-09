@@ -24,7 +24,7 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {% set main_element_extra_classes = ['main', 'list--cards'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
-{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_base_class = 'landingPage' %}
 {% set main_element_modifiers = ['viewContainer', 'majors-minors-grads'] %}
 
 
@@ -44,50 +44,71 @@ Descr: main output business for views. Classes are from the view-display setting
 
 {# set view specific sidebar #}
 
-{% set view_sidebar %}
+{% if (view.getExposedInput) %}
+	{% set showFacets = true %}
+{% endif %}
+
+
+{# {% set view_sidebar %}
 <div class="sidebar--filters">
   {{exposed}}
 </div>
-{% endset %}
+{% endset %} #}
 
 
 
 {# adding "now viewing" labels #}
 
 {% if (view.getExposedInput.search_api_fulltext) %}
-	{% set view_filters = view_filters ~ 'Keyword search: ' %}
+	{% set view_filters_1 = view_filters_1 ~ 'Keyword search: ' %}
 	{% set keyword = view.getExposedInput.search_api_fulltext %}
-  {% set view_filters = view_filters ~ keyword  %}
+  {% set view_filters_1 = view_filters_1 ~ keyword  %}
 {% endif %}
-{% if (view.getExposedInput.level) %}
-	{% set view_filters = 'Level: ' %}
-	{% for key, item in view.getExposedInput.level %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_filters = view_filters ~ termname  %}
-	{% endfor %}
-{% endif %}
-{% if (view.getExposedInput.field_discipline) %}
-	{% set view_filters = view_filters ~'Discipline: ' %}
-	{% for key, item in view.getExposedInput.field_discipline %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
-		{% set view_filters = view_filters ~ termname  %}
-	{% endfor %}
-{% endif %}
-{% if (view.getExposedInput.field_interests) %}
-	{% set view_filters = view_filters ~ 'Interests: ' %}
-	{% for key, item in view.getExposedInput.field_interests %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_filters = view_filters ~ termname  %}
-	{% endfor %}
+
+{% if (view.getExposedInput.level  != 'All' or '') %}
+	{% set view_filters_3 = 'Level: ' %}
+	{% set number = view.getExposedInput.level %}
+	{% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
+	{% set view_filters_3 = '<strong>' ~ view_filters_3 ~ '</strong>' ~ termname  %}
 {% endif %}
 
 
 
+{% if (view.getExposedInput.discipline != 'All' or '') %}
+	{% set view_filters_2 = 'Discipline: ' %}
+	{% set number = view.getExposedInput.discipline %}
+	{% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
+	{% set view_filters_2 = '<strong>' ~ view_filters_2 ~ '</strong>' ~ termname  %}
+{% endif %}
+
+{% if (view.getExposedInput.interests  != 'All' or '') %}
+	{% set view_filters_4 = 'interests: ' %}
+	{% set number = view.getExposedInput.interests %}
+	{% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
+	{% set view_filters_4 = '<strong>' ~ view_filters_4 ~ '</strong>' ~ termname  %}
+{% endif %}
+
+
+{% set facets %}
+{% if showFacets %}
+	<p>
+		{{view_filters_1|raw}}
+		{{view_filters_2|raw}}
+		{{view_filters_3|raw}}
+{{view_filters_4|raw}}
+
+
+	</p>
+{% endif %}
+{% endset %}
+
+
+{# {{vardumper(view)}} #}
 
 {% include "@pages/_view-list.twig" with {
   view_title : view_title,
   view_content : view_content,
   view_pager : view_pager,
-  view_sidebar : view_sidebar,
+  view_form: exposed,
   view_header : view_header
 }%}

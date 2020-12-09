@@ -13,26 +13,13 @@ Variations:
   justify-content: space-between;
   margin-bottom: var(--bottom-margin);
   figure {
-    // flex: 0 0 25%;
     margin-right: var(--space);
-    img {
-      width: 8rem;
-      border-radius: var(--border-radius);
-      @include boxShadow();
-    }
+
     figcaption {
       @extend .sr-only;
     }
   }
   .teaser__copy {
-    // flex: 0 0 70%;
     flex-grow: 1;
   }
 }
-
-// // article specifici
-// .teaser--article {
-//   figure {
-//     max-width: 200px;
-//   }
-// }
