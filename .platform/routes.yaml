@@ -112,35 +112,70 @@ https://dept10.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://cder.as.cornell.edu/:
+https://cder.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://baroqueorgan.cornell.edu/:
+https://baroqueorgan.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://cogsci.cornell.edu/:
+https://cogsci.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://frenchstudies.cornell.edu/:
+https://frenchstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://igcs.cornell.edu/:
+https://igcs.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://mediastudies.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://medievalstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://rural.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://sct.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://icm.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
