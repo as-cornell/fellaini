@@ -126,6 +126,9 @@ https://baroqueorgan.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.baroqueorgan.cornell.edu/:
+    type: redirect
+    to: https://baroqueorgan.cornell.edu/
 https://cogsci.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -133,6 +136,9 @@ https://cogsci.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.cogsci.cornell.edu/:
+    type: redirect
+    to: https://cogsci.cornell.edu/
 https://frenchstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -140,6 +146,9 @@ https://frenchstudies.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.frenchstudies.cornell.edu/:
+    type: redirect
+    to: https://frenchstudies.cornell.edu/
 https://igcs.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -147,6 +156,9 @@ https://igcs.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.igcs.cornell.edu/:
+    type: redirect
+    to: https://igcs.cornell.edu/
 https://mediastudies.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -154,6 +166,9 @@ https://mediastudies.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.mediastudies.as.cornell.edu/:
+    type: redirect
+    to: https://mediastudies.as.cornell.edu/
 https://medievalstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -161,6 +176,9 @@ https://medievalstudies.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.medievalstudies.cornell.edu/:
+    type: redirect
+    to: https://medievalstudies.cornell.edu/
 https://rural.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -175,6 +193,9 @@ https://sct.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.sct.cornell.edu/:
+    type: redirect
+    to: https://sct.cornell.edu/
 https://icm.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
