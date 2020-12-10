@@ -140,10 +140,32 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTP_HOST} ^safety.chem.cornell.edu$ [NC]
   RewriteRule ^(.*)$ http%{ENV:protossl}://chemistry.cornell.edu/safety [R=301,L]
 
+  # Perform redirect if soc.cornell.edu
+  RewriteCond %{HTTP_HOST} ^soc\.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://sociology.cornell.edu [R=301,L]
+
+  # Perform redirect if psych.cornell.edu
+  RewriteCond %{HTTP_HOST} ^psych\.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://psychology.cornell.edu [R=301,L]
+
+  # Perform redirect if writers.cornell.edu
+  RewriteCond %{HTTP_HOST} ^writers.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ https://english.cornell.edu/writersatcornell [R=301,L]
+
+  # Perform redirect if ambassadors.as.cornell.edu
+  RewriteCond %{HTTP_HOST} ^ambassadors\.as\.cornell\.edu$ [NC]
+  RewriteRule ^(.*)$ https://as.cornell.edu/ambassadors [R=301,L]
+
+  # Perform redirect if icm.arts.cornell.edu
+  RewriteCond %{HTTP_HOST} ^icm\.arts\.cornell\.edu$ [NC]
+  RewriteRule ^(.*)$ https://icm.as.cornell.edu/ [R=301,L]
+
   # Perform redirect if James Sethna
   RewriteCond %{REQUEST_URI} ^/sethna/(.*)$ [NC]
   RewriteRule ^(.*)$ http://pages.physics.cornell.edu/$1 [R=301,L]
 
+
+  # NBB faculty pages
   # Perform redirect to pages.nbb.cornell.edu if NBB legacy site
   RewriteCond %{REQUEST_URI} ^/adlertribute(.*)$ [NC]
   RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
@@ -193,14 +215,6 @@ DirectoryIndex index.php index.html index.htm
   RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
   RewriteCond %{REQUEST_URI} ^/neurobio/harris-warrick(.*)$ [NC]
   RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
-
-  # Perform redirect if soc.cornell.edu
-  RewriteCond %{HTTP_HOST} ^soc\.cornell.edu$ [NC]
-  RewriteRule ^(.*)$ http%{ENV:protossl}://sociology.cornell.edu [R=301,L]
-
-  # Perform redirect if psych.cornell.edu
-  RewriteCond %{HTTP_HOST} ^psych\.cornell.edu$ [NC]
-  RewriteRule ^(.*)$ http%{ENV:protossl}://psychology.cornell.edu [R=301,L]
 
   #math redirects
   #ADMIN/Computers/
@@ -477,18 +491,6 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
   RewriteCond %{REQUEST_URI} ^/sochum(/.*)?$ [NC]
   RewriteRule ^(.*)$ http%{ENV:protossl}://sochum.as.cornell.edu/ [R=301,L]
-
-  # Perform redirect if writers.cornell.edu
-  RewriteCond %{HTTP_HOST} ^writers.cornell.edu$ [NC]
-  RewriteRule ^(.*)$ https://english.cornell.edu/writersatcornell [R=301,L]
-
-  # Perform redirect if ambassadors.as.cornell.edu
-  RewriteCond %{HTTP_HOST} ^ambassadors\.as\.cornell\.edu$ [NC]
-  RewriteRule ^(.*)$ https://as.cornell.edu/ambassadors [R=301,L]
-
-  # Perform redirect if icm.arts.cornell.edu
-  RewriteCond %{HTTP_HOST} ^icm\.arts\.cornell\.edu$ [NC]
-  RewriteRule ^(.*)$ https://icm.as.cornell.edu/ [R=301,L]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
