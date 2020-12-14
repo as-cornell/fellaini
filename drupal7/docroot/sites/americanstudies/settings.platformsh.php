@@ -16,7 +16,7 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
           'password' => $instance['password'],
           'host' => $instance['host'],
           'port' => $instance['port'],
-          'prefix' => 'anthro_',
+          'prefix' => 'americanstudies_',
         ];
         if (!empty($instance['query']['compression'])) {
           $database['pdo'][PDO::MYSQL_ATTR_COMPRESS] = TRUE;
