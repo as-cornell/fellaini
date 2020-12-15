@@ -28,6 +28,7 @@ $sites['icm.as.cornell.edu'] = 'icm';
 $sites['carlsaganinstitute.cornell.edu'] = 'sagan';
 $sites['africana.cornell.edu'] = 'africana';
 $sites['asianamericanstudies.cornell.edu'] = 'aas';
+$sites['asianstudies.cornell.edu'] = 'asianstudies';
 $sites['americanstudies.cornell.edu'] = 'americanstudies';
 $sites['anthropology.cornell.edu'] = 'anthro';
 $sites['archaeology.cornell.edu'] = 'archaeology';
