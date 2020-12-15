@@ -14,7 +14,7 @@ Variations:
   margin-bottom: var(--bottom-margin);
   figure {
     margin-right: var(--space);
-
+    flex: 0 0 240px;
     figcaption {
       @extend .sr-only;
     }
