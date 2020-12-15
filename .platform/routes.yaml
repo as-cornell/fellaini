@@ -312,4 +312,3 @@ https://complit.arts.cornell.edu/:
 https://www.complit.arts.cornell.edu/:
     type: redirect
     to: https://complit.cornell.edu/
-

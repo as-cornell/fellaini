@@ -30,11 +30,12 @@
             ?>
           <div class="person__details">
             <?php
+              if (!empty($node->field_person_netid['und'][0]['value'])) {
               $netid = $node->field_person_netid['und'][0]['value'];
-              //$blockldap = block_load('as_people_ldap', $netid);
-              //_block_render_blocks(array($blockldap));
+
               $block = module_invoke('as_people_ldap', 'block_view', 'main', $netid);
               print render($block['content']);
+              }
               if (!empty($content['field_person_education'])) {
                 print render($content['field_person_education']);
                 }
@@ -103,13 +104,13 @@
             //}else{
              // print views_embed_view('courses', 'block_flt_netid', $netid);
               //}
-
-            $courseblock = module_invoke('as_courses_json', 'block_view', $netid);
-            if (!empty($courseblock)) {
-            print "<h2>Courses</h2>";
-            print render($courseblock['content']);
+            if (!empty($netid)) {
+              $courseblock = module_invoke('as_courses_json', 'block_view', $netid);
+              if (!empty($courseblock)) {
+              print "<h2>Courses</h2>";
+              print render($courseblock['content']);
+              }
             }
-
             if (!empty($content['field_person_publications'])){
             print "<div class='person--publications' id='publications'>\n<h2>Publications</h2>\n";
             print render($content['field_person_publications']);

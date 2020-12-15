@@ -48,6 +48,10 @@ function as_dept_view_modes_entity_info_alter(&$entity_info) {
     'label' => t('Image and Text (media block)'),
     'custom settings' => TRUE,
   );
+  $entity_info['field_collection_item']['view modes']['newsletter'] = array(
+    'label' => t('Newsletter'),
+    'custom settings' => TRUE,
+  );
   $entity_info['field_collection_item']['view modes']['photo_gallery_one'] = array(
     'label' => t('Photo Gallery One'),
     'custom settings' => TRUE,

@@ -60,8 +60,11 @@ $count = count($weatherdescription);
      $item = $weatherdescription[$i];
         $weatherdescription =  $item->{'description'} ;
         $weatherdescription = as_weather_nameize($weatherdescription);
+        $icon = $item->{'icon'};
+        $id = $item->{'id'};
         break;
     }
+
 $temp = $parsed_json->{'main'}->{'temp'};
 $temp = round($temp);
 $temphi = $parsed_json->{'main'}->{'temp_max'};
@@ -72,7 +75,18 @@ $humid = $parsed_json->{'main'}->{'humidity'};
 //display the stuff according to how it needs to appear
 switch ($delta) {
     case 'main':
-    $main = "<div>Current weather in ${location} is: ${weatherdescription}, ${temp} &#8457; (high ${temphi} &#8457;, low ${templo} &#8457;)</div>\n";
+    $main = "<div class='weather'>
+                <span>Weather:</span>
+                <span class='conditions'>
+                    <span class='description'>
+                        <span>
+                            <i class='owf owf-${id}'></i> ${weatherdescription}
+                        </span>
+                    </span>
+                    <span class='temps'>${temp} &#8457; <span class='hilo'>(high ${temphi} &#8457;, low ${templo} &#8457;)</span>
+                    </span>
+                <span>
+            </div>\n";
     $result = array('#markup' => $main);
     return $result;
     break;

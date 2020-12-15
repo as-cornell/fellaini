@@ -38,8 +38,8 @@
     </div>
   <?php endif; ?>
 
-  <?php //Cinema film series by name ?>
-  <?php if (!empty(views_embed_view('film_series_name', 'block'))): ?>
+  <?php //Cinema film series by name  ?>
+  <?php if (!empty(views_embed_view('film_series_name', 'block')) && (url($_GET['q']) == '/films-events')): ?>
    <div class="as-page__block">
     <div class="as-container">
       <?php print views_embed_view('film_series_name', 'block'); ?>

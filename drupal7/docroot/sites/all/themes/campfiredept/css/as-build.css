@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'as-cu';
+  font-family: "as-cu";
   src: url("../fonts/as-cu.eot?92257652");
   src: url("../fonts/as-cu.eot?92257652#iefix") format("embedded-opentype"), url("../fonts/as-cu.woff?92257652") format("woff"), url("../fonts/as-cu.ttf?92257652") format("truetype"), url("../fonts/as-cu.svg?92257652#as-cu") format("svg");
   font-weight: normal;
@@ -34,93 +34,92 @@
   -moz-osx-font-smoothing: grayscale; }
 
 .as-icon--grid:before {
-  content: '\e800';
-  font-size: .8em; }
+  content: "\e800";
+  font-size: 0.8em; }
 
 /* '' */
 .as-icon--calendar:before {
-  content: '\e801'; }
+  content: "\e801"; }
 
 /* '' */
 .as-icon--mail:before {
-  content: '\e802'; }
+  content: "\e802"; }
 
 /* '' */
 .as-icon--apply:before {
-  content: '\e803'; }
+  content: "\e803"; }
 
 /* '' */
 .as-icon--list:before {
-  content: '\e804'; }
+  content: "\e804"; }
 
 /* '' */
 .as-icon--call:before {
-  content: '\e805'; }
+  content: "\e805"; }
 
 /* '' */
 .as-icon--arrow-down:before {
-  content: '\e806'; }
+  content: "\e806"; }
 
 /* '' */
 .as-icon--facebook:before {
-  content: '\e807';
-  color: #3b5998; }
+  content: "\e807"; }
 
 /* '' */
 .as-icon--gift:before {
-  content: '\e808'; }
+  content: "\e808"; }
 
 /* '' */
 .as-icon--make-donation:before {
-  content: '\e809'; }
+  content: "\e809"; }
 
 /* '' */
 .as-icon--user:before {
-  content: '\e80a'; }
+  content: "\e80a"; }
 
 /* '' */
 .as-icon--instagram:before {
-  content: '\e80b'; }
+  content: "\e80b"; }
 
 /* '' */
 .as-icon--linked-in:before {
-  content: '\e80c'; }
+  content: "\e80c"; }
 
 /* '' */
 .as-icon--search:before {
-  content: '\e80d'; }
+  content: "\e80d"; }
 
 /* '' */
 .as-icon--twitter:before {
-  content: '\e80e';
-  color: #38A1F3; }
+  content: "\e80e"; }
 
 /* '' */
 .as-icon--visit-campus:before {
-  content: '\e80f'; }
+  content: "\e80f"; }
 
 /* '' */
 .as-icon--bars:before {
-  content: '\e810'; }
+  content: "\e810"; }
 
 /* '' */
 .as-icon--heart:before {
-  content: '\e811'; }
+  content: "\e811"; }
 
 /* '' */
 .as-icon--arrow-up:before {
-  content: '\e812'; }
+  content: "\e812"; }
 
 /* '' */
 .as-icon--close:before {
-  content: '\e814'; }
+  content: "\e814"; }
 
 /* '' */
 .as-icon--cancel-circle:before {
-  content: '\e815'; }
+  content: "\e815"; }
 
 /* '' */
-.region-footer .as-icon--twitter:before, .region-footer .as-icon--facebook:before {
+.region-footer .as-icon--twitter:before,
+.region-footer .as-icon--facebook:before {
   color: white; }
 
 *,
@@ -803,7 +802,7 @@ main ol {
     .menu-toggle svg[class^="icon"][class*="arrow"] {
       fill: none; } }
   .menu-toggle:focus {
-    font-size: .5em;
+    font-size: 0.5em;
     border-bottom: 1px solid #e7e7e7; }
   @media screen and (min-width: 746px) {
     .menu-toggle:focus {
@@ -822,7 +821,7 @@ main ol {
 
 .as-nav {
   width: 100%;
-  transition: .5s all ease;
+  transition: 0.5s all ease;
   /* ++++++++ PMA for now */ }
   @media screen and (min-width: 1200px) {
     .as-nav {
@@ -840,7 +839,7 @@ main ol {
     background: #2c2c2c;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .5s ease; }
+    transition: max-height 0.5s ease; }
     @media screen and (min-width: 746px) {
       .as-nav .menu--primary {
         background: transparent;
@@ -877,22 +876,24 @@ main ol {
         font-style: normal;
         font-weight: 600; }
         .as-nav .as-nav__link--primary.active {
-          border-top: 3px solid #e44444; }
+          border-top: 3px solid #b31b1b; }
         .as-nav .as-nav__link--primary:hover {
           border-top: 3px solid #2c2c2c;
-          text-decoration: none; } }
-  .as-nav .menu--secondary, .as-nav .menu--tertiary {
+          color: #b31b1b; } }
+  .as-nav .menu--secondary,
+  .as-nav .menu--tertiary {
     max-height: 0;
     overflow: hidden; }
   @media screen and (min-width: 746px) {
-    .as-nav .menu--primary li:hover .menu--secondary, .as-nav .menu--secondary.display {
+    .as-nav .menu--primary li:hover .menu--secondary,
+    .as-nav .menu--secondary.display {
       opacity: 1;
       max-height: 1000px;
       overflow: visible;
       top: 64px; } }
   .as-nav .menu--secondary {
     background: #1f1f1f;
-    transition: max-height .5s ease; }
+    transition: max-height 0.5s ease; }
     @media screen and (min-width: 746px) {
       .as-nav .menu--secondary {
         padding: 10px 0;
@@ -906,9 +907,9 @@ main ol {
         left: -15%;
         top: -10000px;
         min-width: 260px;
-        opacity: .5;
+        opacity: 0.5;
         box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.06);
-        transition: opacity .25s ease; }
+        transition: opacity 0.25s ease; }
         .as-nav .menu--secondary:after {
           position: absolute;
           left: 2em;
@@ -952,10 +953,10 @@ main ol {
           .as-nav .menu--secondary a:after {
             right: -10px; }
           .as-nav .menu--secondary a:hover {
-            background: #e44444;
+            background: #b31b1b;
             color: #ffffff; }
             .as-nav .menu--secondary a:hover:before, .as-nav .menu--secondary a:hover:after {
-              background: #e44444; } }
+              background: #b31b1b; } }
 
 .as-container--nav--expanded .as-nav {
   top: 54px;
@@ -968,7 +969,7 @@ main ol {
     padding: 10px 0; }
 
 a.as-header__link--menu--active {
-  background: #e44444;
+  background: #b31b1b;
   color: #ffffff; }
   a.as-header__link--menu--active .as-icon--bars {
     display: none; }
@@ -3828,8 +3829,27 @@ a.as-faq__link {
   letter-spacing: 1px; }
 
 .region-social-media {
-  overflow: hidden;
-  *zoom: 1; }
+  display: -ms-flexbox;
+  display: flex; }
+  .region-social-media h2 a {
+    color: #2c2c2c;
+    -webkit-text-decoration-color: #e7e7e7;
+            text-decoration-color: #e7e7e7; }
+  .region-social-media .pictureText .field-image {
+    margin-bottom: 2rem; }
+    .region-social-media .pictureText .field-image:before {
+      display: none; }
+
+.as-social-bar-instagram-twitter {
+  display: -ms-flexbox;
+  display: flex; }
+  .as-social-bar-instagram-twitter > div:first-of-type {
+    margin-right: 2rem; }
+  .as-social-bar-instagram-twitter .pictureText {
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .as-social-bar-instagram-twitter .pictureText .field-image {
+      margin-right: 0; }
 
 .as-social-bar img {
   max-width: 100%; }
@@ -3881,8 +3901,6 @@ a.as-faq__link {
     .as-social-bar__title {
       padding-bottom: 1.5em;
       position: relative; } }
-  .as-social-bar__title .as-icon {
-    width: 100%; }
 
 .as-social-bar__text {
   color: #5d5d5d; }
@@ -3938,16 +3956,19 @@ a.as-faq__link {
   -ms-flex-direction: column;
       flex-direction: column; }
 
-@media screen and (min-width: 746px) {
-  .view-tweets {
-    display: -ms-flexbox;
-    display: flex; } }
 .view-tweets .as-social-bar__item--twitter--small .as-social-bar__tweet-text {
   font-size: 1.5rem;
   padding: 1.5rem 1rem 2rem; }
 .view-tweets .as-social-bar__item--twitter--small .as-social-bar__tweet-text {
   margin-bottom: 1.5rem; }
-.view-tweets > div {
+
+@media screen and (min-width: 746px) {
+  .row-tweets .view-tweets {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row; } }
+.row-tweets .view-tweets > div {
   -ms-flex: 0 0 32%;
       flex: 0 0 32%;
   max-width: 32%; }
@@ -5248,10 +5269,10 @@ iframe {
     .as-buttons .sort.desc:after, .as-buttons .sort.asc:after {
       position: absolute;
       font-family: "as-cu";
-      content: '\e806';
+      content: "\e806";
       right: 10px;
       top: 36%;
-      font-size: .5em;
+      font-size: 0.5em;
       transition: all 0.5s ease; }
     .as-buttons .sort.desc:after {
       transform: rotate(180deg); }
@@ -5259,7 +5280,7 @@ iframe {
 .as-button--light {
   border: 1px solid #e7e7e7;
   border-radius: 2px;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   color: #5D5D5D;
   cursor: pointer;
   transition: all 0.5s ease; }
@@ -5326,7 +5347,7 @@ iframe {
   position: absolute; }
 
 .notice {
-  padding: .5em;
+  padding: 0.5em;
   border: 1px solid #eee;
   background: #f5f5f5;
   border-radius: 2px;
@@ -5340,7 +5361,7 @@ iframe {
     padding: 1em;
     display: block;
     margin-bottom: 2rem;
-    transition: all .5s; }
+    transition: all 0.5s; }
     .notice--alert:hover {
       border-color: #b31b1b; }
 
@@ -5348,6 +5369,19 @@ iframe {
   position: -webkit-sticky;
   position: sticky;
   top: 2rem; }
+
+.floated-image-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0; }
+  .floated-image-list li {
+    margin-bottom: 2rem;
+    display: flow-root; }
+  .floated-image-list img {
+    float: left;
+    clear: both;
+    margin-right: 1rem;
+    max-width: 75px; }
 
 .articleListing__link {
   text-decoration: none;
@@ -5651,7 +5685,7 @@ div[class*="stripe"] h2, div[class*="stripe"] div {
     margin-top: 1rem; }
   .card--course .course__title {
     display: block;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
     -ms-flex-order: 1;
         order: 1;
     font-weight: 400; }
@@ -5700,7 +5734,7 @@ div[class*="stripe"] h2, div[class*="stripe"] div {
   transition: all 0.5s ease; }
 .courses__list--full .course__title {
   display: block;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
   -ms-flex-order: 1;
       order: 1;
   font-weight: 400;
@@ -5710,12 +5744,12 @@ div[class*="stripe"] h2, div[class*="stripe"] div {
 .courses__list--full .as-toggle--expanded {
   border-bottom: 10px solid #f7c73e; }
   .courses__list--full .as-toggle--expanded .as-toggle__trigger {
-    /*&:after{
-    	font-size: .5rem;
-        display: inline-block;
-    	transform: rotate(180deg);
-    	transform-origin: 50% 50%;
-    }*/ }
+      /*&:after{
+				font-size: .5rem;
+			    display: inline-block;
+				transform: rotate(180deg);
+				transform-origin: 50% 50%;
+			}*/ }
   .courses__list--full .as-toggle--expanded .course__details {
     max-height: 100%; }
   .courses__list--full .as-toggle--expanded .course__title {
@@ -5753,7 +5787,7 @@ div[class*="stripe"] h2, div[class*="stripe"] div {
         order: 3; }
     @media screen and (min-width: 608px) {
       .course__heading.as-toggle__trigger:after {
-        content: '+' !important; } }
+        content: "+" !important; } }
 
 .as-buttons--courses {
   -ms-flex-direction: column;
@@ -5769,13 +5803,18 @@ div[class*="stripe"] h2, div[class*="stripe"] div {
   .as-toggle__trigger--more-less:hover {
     background: #eeeeee; }
 
-.course__semestersContainer, .course__sortContainer {
+.course__semestersContainer,
+.course__sortContainer {
   margin-bottom: 0 !important; }
 
-.course__professor, .course__semesters, .course__crossListed {
+.course__professor,
+.course__semesters,
+.course__crossListed {
   display: block; }
 
-.course__crossListed strong, .course__semesters strong, .course__professor strong {
+.course__crossListed strong,
+.course__semesters strong,
+.course__professor strong {
   color: #5D5D5D; }
 
 .course__link {
@@ -5912,38 +5951,38 @@ div[class*="stripe"] h2, div[class*="stripe"] div {
     -ms-flex: 0 0 37%;
         flex: 0 0 37%; }
 
-.as-form, .webform, #user-login, #user-pass {
+.as-form, .webform, #user-login, #user-pass, form[id^="views-exposed-form-media-report"] {
   max-width: 960px;
   margin: 0 auto; }
-  .as-form fieldset, .webform fieldset, #user-login fieldset, #user-pass fieldset {
+  .as-form fieldset, .webform fieldset, #user-login fieldset, #user-pass fieldset, form[id^="views-exposed-form-media-report"] fieldset {
     border: 1px solid #e7e7e7;
     margin: 0 0 2rem 0;
     padding: 2rem; }
-  .as-form label, .as-form legend, .webform label, .webform legend, #user-login label, #user-login legend, #user-pass label, #user-pass legend {
+  .as-form label, .as-form legend, .webform label, .webform legend, #user-login label, #user-login legend, #user-pass label, #user-pass legend, form[id^="views-exposed-form-media-report"] label, form[id^="views-exposed-form-media-report"] legend {
     display: block;
     font-size: 18px;
     letter-spacing: .25px; }
-  .as-form label, .webform label, #user-login label, #user-pass label {
+  .as-form label, .webform label, #user-login label, #user-pass label, form[id^="views-exposed-form-media-report"] label {
     margin-bottom: 10px;
     font-weight: normal !important; }
-  .as-form legend, .webform legend, #user-login legend, #user-pass legend {
+  .as-form legend, .webform legend, #user-login legend, #user-pass legend, form[id^="views-exposed-form-media-report"] legend {
     margin-bottom: 0;
     font-size: 2rem; }
-  .as-form input[type='text'], .as-form textarea, .as-form input[type='password'], .as-form input[type='email'], .webform input[type='text'], .webform textarea, .webform input[type='password'], .webform input[type='email'], #user-login input[type='text'], #user-login textarea, #user-login input[type='password'], #user-login input[type='email'], #user-pass input[type='text'], #user-pass textarea, #user-pass input[type='password'], #user-pass input[type='email'] {
+  .as-form input[type='text'], .as-form textarea, .as-form input[type='password'], .as-form input[type='email'], .webform input[type='text'], .webform textarea, .webform input[type='password'], .webform input[type='email'], #user-login input[type='text'], #user-login textarea, #user-login input[type='password'], #user-login input[type='email'], #user-pass input[type='text'], #user-pass textarea, #user-pass input[type='password'], #user-pass input[type='email'], form[id^="views-exposed-form-media-report"] input[type='text'], form[id^="views-exposed-form-media-report"] textarea, form[id^="views-exposed-form-media-report"] input[type='password'], form[id^="views-exposed-form-media-report"] input[type='email'] {
     border: 1px solid #cbcbcb;
     border-radius: 3px;
     box-shadow: inset 0px 0px 3px 1px #eeeeee;
     font-size: 1rem;
     padding: .5em;
     transition: 0.2s; }
-    .as-form input[type='text']:focus, .as-form textarea:focus, .as-form input[type='password']:focus, .as-form input[type='email']:focus, .webform input[type='text']:focus, .webform textarea:focus, .webform input[type='password']:focus, .webform input[type='email']:focus, #user-login input[type='text']:focus, #user-login textarea:focus, #user-login input[type='password']:focus, #user-login input[type='email']:focus, #user-pass input[type='text']:focus, #user-pass textarea:focus, #user-pass input[type='password']:focus, #user-pass input[type='email']:focus {
+    .as-form input[type='text']:focus, .as-form textarea:focus, .as-form input[type='password']:focus, .as-form input[type='email']:focus, .webform input[type='text']:focus, .webform textarea:focus, .webform input[type='password']:focus, .webform input[type='email']:focus, #user-login input[type='text']:focus, #user-login textarea:focus, #user-login input[type='password']:focus, #user-login input[type='email']:focus, #user-pass input[type='text']:focus, #user-pass textarea:focus, #user-pass input[type='password']:focus, #user-pass input[type='email']:focus, form[id^="views-exposed-form-media-report"] input[type='text']:focus, form[id^="views-exposed-form-media-report"] textarea:focus, form[id^="views-exposed-form-media-report"] input[type='password']:focus, form[id^="views-exposed-form-media-report"] input[type='email']:focus {
       box-shadow: 0px 0px 5px 2px #eeeeee;
       color: #2c2c2c; }
-    .as-form input[type='text'].full, .as-form textarea.full, .as-form input[type='password'].full, .as-form input[type='email'].full, .webform input[type='text'].full, .webform textarea.full, .webform input[type='password'].full, .webform input[type='email'].full, #user-login input[type='text'].full, #user-login textarea.full, #user-login input[type='password'].full, #user-login input[type='email'].full, #user-pass input[type='text'].full, #user-pass textarea.full, #user-pass input[type='password'].full, #user-pass input[type='email'].full {
+    .as-form input[type='text'].full, .as-form textarea.full, .as-form input[type='password'].full, .as-form input[type='email'].full, .webform input[type='text'].full, .webform textarea.full, .webform input[type='password'].full, .webform input[type='email'].full, #user-login input[type='text'].full, #user-login textarea.full, #user-login input[type='password'].full, #user-login input[type='email'].full, #user-pass input[type='text'].full, #user-pass textarea.full, #user-pass input[type='password'].full, #user-pass input[type='email'].full, form[id^="views-exposed-form-media-report"] input[type='text'].full, form[id^="views-exposed-form-media-report"] textarea.full, form[id^="views-exposed-form-media-report"] input[type='password'].full, form[id^="views-exposed-form-media-report"] input[type='email'].full {
       width: 100%; }
-  .as-form textarea, .webform textarea, #user-login textarea, #user-pass textarea {
+  .as-form textarea, .webform textarea, #user-login textarea, #user-pass textarea, form[id^="views-exposed-form-media-report"] textarea {
     resize: none; }
-  .as-form input[type='submit'], .webform input[type='submit'], #user-login input[type='submit'], #user-pass input[type='submit'] {
+  .as-form input[type='submit'], .webform input[type='submit'], #user-login input[type='submit'], #user-pass input[type='submit'], form[id^="views-exposed-form-media-report"] input[type='submit'] {
     background: #ffffff;
     border: 2px solid #e7e7e7;
     font-family: "canada-type-gibson", sans-serif;
@@ -5957,24 +5996,74 @@ div[class*="stripe"] h2, div[class*="stripe"] div {
     border-radius: 4px;
     padding: 1rem;
     cursor: pointer; }
-    .as-form input[type='submit']:hover, .as-form input[type='submit']:focus, .webform input[type='submit']:hover, .webform input[type='submit']:focus, #user-login input[type='submit']:hover, #user-login input[type='submit']:focus, #user-pass input[type='submit']:hover, #user-pass input[type='submit']:focus {
+    .as-form input[type='submit']:hover, .as-form input[type='submit']:focus, .webform input[type='submit']:hover, .webform input[type='submit']:focus, #user-login input[type='submit']:hover, #user-login input[type='submit']:focus, #user-pass input[type='submit']:hover, #user-pass input[type='submit']:focus, form[id^="views-exposed-form-media-report"] input[type='submit']:hover, form[id^="views-exposed-form-media-report"] input[type='submit']:focus {
       background: #efefef;
       box-shadow: 0px 0px 5px 2px #eeeeee; }
-  .as-form legend, .webform legend, #user-login legend, #user-pass legend {
+  .as-form legend, .webform legend, #user-login legend, #user-pass legend, form[id^="views-exposed-form-media-report"] legend {
     border: none;
     padding: 0; }
-  .as-form .form-checkboxes .form-item, .as-form .form-radios .form-item, .webform .form-checkboxes .form-item, .webform .form-radios .form-item, #user-login .form-checkboxes .form-item, #user-login .form-radios .form-item, #user-pass .form-checkboxes .form-item, #user-pass .form-radios .form-item {
+  .as-form .form-checkboxes .form-item, .as-form .form-radios .form-item, .webform .form-checkboxes .form-item, .webform .form-radios .form-item, #user-login .form-checkboxes .form-item, #user-login .form-radios .form-item, #user-pass .form-checkboxes .form-item, #user-pass .form-radios .form-item, form[id^="views-exposed-form-media-report"] .form-checkboxes .form-item, form[id^="views-exposed-form-media-report"] .form-radios .form-item {
     display: -ms-flexbox;
     display: flex; }
-  .as-form .webform-component-file, .webform .webform-component-file, #user-login .webform-component-file, #user-pass .webform-component-file {
+  .as-form .webform-component-file, .webform .webform-component-file, #user-login .webform-component-file, #user-pass .webform-component-file, form[id^="views-exposed-form-media-report"] .webform-component-file {
     border: 1px solid #e7e7e7;
     padding: 2rem; }
-  .as-form .sticky-header, .webform .sticky-header, #user-login .sticky-header, #user-pass .sticky-header {
+  .as-form .sticky-header, .webform .sticky-header, #user-login .sticky-header, #user-pass .sticky-header, form[id^="views-exposed-form-media-report"] .sticky-header {
     display: none; }
-  .as-form .form-item, .webform .form-item, #user-login .form-item, #user-pass .form-item {
+  .as-form .form-item, .webform .form-item, #user-login .form-item, #user-pass .form-item, form[id^="views-exposed-form-media-report"] .form-item {
     margin: 0 0 2rem 0; }
-  .as-form .form-type-radio, .as-form .form-type-checkbox, .webform .form-type-radio, .webform .form-type-checkbox, #user-login .form-type-radio, #user-login .form-type-checkbox, #user-pass .form-type-radio, #user-pass .form-type-checkbox {
+  .as-form .form-type-radio, .as-form .form-type-checkbox, .webform .form-type-radio, .webform .form-type-checkbox, #user-login .form-type-radio, #user-login .form-type-checkbox, #user-pass .form-type-radio, #user-pass .form-type-checkbox, form[id^="views-exposed-form-media-report"] .form-type-radio, form[id^="views-exposed-form-media-report"] .form-type-checkbox {
     margin: 0; }
+
+form[id^="views-exposed-form-media-report"] {
+  margin-top: 2rem; }
+  form[id^="views-exposed-form-media-report"] .views-exposed-widgets {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+        align-items: flex-end; }
+    form[id^="views-exposed-form-media-report"] .views-exposed-widgets .form-item {
+      margin-bottom: 0; }
+    form[id^="views-exposed-form-media-report"] .views-exposed-widgets .form-type-select:after {
+      display: none; }
+    form[id^="views-exposed-form-media-report"] .views-exposed-widgets .form-submit {
+      margin-top: 0;
+      padding: .5rem;
+      font-size: 1rem; }
+
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+/* Suggestion list */
+#autocomplete {
+  border: 1px solid #eeeeee;
+  background: white;
+  border-radius: 4px;
+  font-size: 1rem;
+  position: absolute;
+  z-index: 100;
+  padding: .5rem; }
+
+#autocomplete ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0; }
+
+#autocomplete li {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  white-space: pre;
+  zoom: 1;
+  /* IE7 */ }
+  #autocomplete li:hover {
+    background: #b31b1b; }
+
+.form-type-select select {
+  font-size: 1rem; }
 
 .formagain {
   padding: 2em;
@@ -7743,14 +7832,31 @@ div[class*="flex"] {
     padding-top: 1rem; }
 
 figure {
-  margin: 1rem 0 1.85rem 0rem;
+  margin: 0 0 1rem 0;
   display: inline-block;
-  border: 1px solid #e7e7e7; }
+  border: 1px solid #e7e7e7;
+  border-radius: 4px; }
+  figure img {
+    display: block;
+    margin: 0 !important; }
+  figure.left {
+    margin-right: 1rem; }
+  figure.right {
+    margin-left: 1rem; }
 
 figcaption {
   padding: 1rem;
-  color: #414141;
-  font-weight: 400; }
+  background: #f7f7f7;
+  border-top: 1px solid #eee;
+  font-weight: 400;
+  font-size: .9rem; }
+
+div[class*="media-wysiwyg"] figure {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; }
+  div[class*="media-wysiwyg"] figure img {
+    max-width: 300px; }
 
 [class*="hasIcon"] {
   position: relative; }

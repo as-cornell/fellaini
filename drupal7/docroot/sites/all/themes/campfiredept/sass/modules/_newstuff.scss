@@ -141,21 +141,43 @@ div[class*="flex"]{
     }
 
 }
-
-// Figure styles
+// Figure styles for media elements
 // Control width with image sizes
 figure{
-    margin: 1rem 0 1.85rem 0rem;
-    display: inline-block;
-    border: 1px solid $as-border;
-    //max-width: 600px;
+  margin: 0 0 1rem 0;
+  display: inline-block;
+  border: 1px solid $as-border;
+  border-radius: 4px;
+  img{
+    display: block;
+    margin: 0 !important;
+  }
+  &.left{
+    margin-right: 1rem;
+  }
+  &.right{
+    margin-left: 1rem;
+  }
 }
-    figcaption{
-        padding: 1rem;
-        color: #414141;
-        font-weight: 400;
-        //font-family: $serif-font;
+
+figcaption{
+  padding: 1rem;
+  background: $as-gray-lt;
+  border-top: 1px solid #eee;
+  font-weight: 400;
+  font-size: .9rem;
+}
+
+// hacky way to get to images that are aligned left or right.
+div[class *="media-wysiwyg"]{
+  figure{
+    width: min-content;
+    img{
+      max-width: 300px;
     }
+  }
+
+}
 
 
 // popup link styles

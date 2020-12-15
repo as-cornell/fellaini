@@ -43,6 +43,12 @@ function as_dept_variables_form_system_site_information_settings_alter(&$form, $
     '#default_value' => variable_get('as_dept_variables_coursesubjects', ''),
     '#description' => t('Subject codes for courses.  Comma separated for multiples, will be listed in this order.'),
   );
+    $form['site_information']['as_dept_variables_ldappass'] = array(
+    '#type' => 'textfield',
+    '#title' => t('LDAP Password'),
+    '#default_value' => variable_get('as_dept_variables_ldappass', ''),
+    '#description' => t('LDAP Bind Key password.'),
+  );
   $form['#submit'][] = 'as_dept_variables_handler';
 }
 function as_dept_variables_handler($form, &$form_state) {
@@ -53,4 +59,5 @@ function as_dept_variables_handler($form, &$form_state) {
   variable_set('as_dept_variables_postaladdress', $form_state['values']['as_dept_variables_postaladdress']);
   variable_set('as_dept_variables_phonenumber', $form_state['values']['as_dept_variables_phonenumber']);
   variable_set('as_dept_variables_coursesubjects', $form_state['values']['as_dept_variables_coursesubjects']);
+  variable_set('as_dept_variables_ldappass', $form_state['values']['as_dept_variables_ldappass']);
 }

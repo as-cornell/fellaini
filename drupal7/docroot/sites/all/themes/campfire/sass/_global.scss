@@ -6,11 +6,11 @@
   @include box-sizing(border-box);
 }
 
-html{
+html {
   font-size: 14px;
-  @include small-plus(){
+  @include small-plus() {
     font-size: 16px;
-  };
+  }
 }
 //body
 
@@ -29,23 +29,22 @@ body {
 a {
   color: $as-link;
   // text-decoration: none;
-
 }
 
-a{
-    padding: 12px 0;
-    // background-image: linear-gradient(currentColor,currentColor);
-    // background-repeat: no-repeat;
-    // background-size: 100% 1px;
-    // background-position: center bottom 29%;
-    // background-origin: padding-box;
-    // text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
-    // transition: color .1s ease-out;
-    // transition: background-size .25s ease;
-    &:hover{
-        // background-size:95% 1px;
-        // background-image: linear-gradient(darken($as-red, 20),darken($as-red, 20));
-    }
+a {
+  padding: 12px 0;
+  // background-image: linear-gradient(currentColor,currentColor);
+  // background-repeat: no-repeat;
+  // background-size: 100% 1px;
+  // background-position: center bottom 29%;
+  // background-origin: padding-box;
+  // text-shadow: 3px 0 #fff, 2px 0 #fff, 1px 0 #fff, -1px 0 #fff, -2px 0 #fff, -3px 0 #fff;
+  // transition: color .1s ease-out;
+  // transition: background-size .25s ease;
+  &:hover {
+    // background-size:95% 1px;
+    // background-image: linear-gradient(darken($as-red, 20),darken($as-red, 20));
+  }
 }
 
 // .as-info-bar__inner, .header__logo--large, .as-nav, .inpage_two, .card, .as-card, .card--light, .region-content-bottom, .as-footer, .fullPage__sidebarNav, .buttonLinks, .links, .listGroup, .drupal-navbar, .tabs--drupal, .shareButtons, .as-search-bar__footer, .pictureText, .as-tabloid{
@@ -54,20 +53,18 @@ a{
 //         text-shadow: none;
 //         padding: 0;
 //     }
-    
+
 // }
 
-.as-page__block--gray{
-  a{
-   // text-shadow: 3px 0 #f5f5f5, 2px 0 #f5f5f5, 1px 0 #f5f5f5, -1px 0 #f5f5f5, -2px 0 #f5f5f5, -3px 0 #f5f5f5;
+.as-page__block--gray {
+  a {
+    // text-shadow: 3px 0 #f5f5f5, 2px 0 #f5f5f5, 1px 0 #f5f5f5, -1px 0 #f5f5f5, -2px 0 #f5f5f5, -3px 0 #f5f5f5;
   }
 }
 
-
-
-@mixin as-link($color: $as-link){
-    color: $color;
-    &:after {
+@mixin as-link($color: $as-link) {
+  color: $color;
+  &:after {
     content: "›";
     display: inline-block;
     height: 100%;
@@ -88,17 +85,30 @@ a{
 
 // headers
 
-h1, h2, h3, h4, h5, h6, p, ul, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @include font-sans;
   line-height: 1.1em;
 }
 
-h1{
-  span{
+h1 {
+  span {
     //color: $as-gold;
     //margin: 0 -.75rem;
   }
@@ -106,46 +116,52 @@ h1{
   font-weight: 600;
   margin-bottom: 1em;
 }
-h1.alt{
+
+// h1s with p before get margin top
+p + h1 {
+  margin-top: 2em;
+}
+
+h1.alt {
   @include serif-font($size: 24px, $weight: 200, $color: $as-white);
   text-transform: none;
 }
-h2{
-  a{
+h2 {
+  a {
     color: $as-text;
     text-decoration-color: $as-link;
   }
 }
 
 .pageTitle {
-  @include sans-font($size:32px,$weight:600);
-  @include medium-plus{
-    @include sans-font($size:63px,$weight:800);
+  @include sans-font($size: 32px, $weight: 600);
+  @include medium-plus {
+    @include sans-font($size: 63px, $weight: 800);
   }
   line-height: 1em;
   //margin-bottom: gutter(8);
 }
-  .pageTitle--first{
-    padding-top: gutter(2);
-    @include small-plus {
-      padding-top: gutter(4);
-    }
+.pageTitle--first {
+  padding-top: gutter(2);
+  @include small-plus {
+    padding-top: gutter(4);
   }
-  .pageTitle--short{
-    margin: 0;
-  }
+}
+.pageTitle--short {
+  margin: 0;
+}
 
-  .sectionTitle{
-    @include sans-font($size:33px, $weight: 800)
-  }
+.sectionTitle {
+  @include sans-font($size: 33px, $weight: 800);
+}
 
-h2{
+h2 {
   margin: 1em 0;
   font-size: 1.5rem;
 }
 
-h3{
-  @include serif-font($size:16px, $weight: 600);
+h3 {
+  @include serif-font($size: 16px, $weight: 600);
   margin-bottom: 1.25em;
   line-height: 1.25em;
   text-transform: uppercase;
@@ -153,9 +169,9 @@ h3{
 
 // text
 
-p{
+p {
   @include font-sans-lt;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   margin-bottom: 1.5rem;
 }
 
@@ -177,16 +193,18 @@ hr {
   clear: both;
   height: 1px;
   background: #e0e0e0;
-  &.half{
+  &.half {
     width: 50%;
     margin: 3rem auto 4rem auto;
+  }
+  &.blue {
+    background-color: $as-blue;
   }
 }
 
 mark {
   background: none;
 }
-
 
 /////////////////// Forms
 
@@ -215,10 +233,7 @@ label {
   position: relative;
 }
 
-
 // common
-
-
 
 .as-main {
   background: $as-white;
@@ -235,36 +250,43 @@ label {
     @include layout(12 (24 / 78));
     @include container(1200px);
   }
-  @media screen and (max-width:1200px){
+  @media screen and (max-width: 1200px) {
     padding: 0 1rem;
   }
-  .noAfter{
-
+  .noAfter {
   }
 }
-.container{
+.container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-  .as-container__narrow{
-    max-width: calc(746px + 2rem);
+.as-container__narrow,
+.wrapper-narrow {
+  max-width: calc(746px + 2rem);
+  margin: 0 auto;
+}
+.as-container__960 {
+  @include medium-plus {
     margin: 0 auto;
+    max-width: 960px\;;
   }
-  .as-container__960{
-      padding-bottom: 3rem;
-  	@include medium-plus{
-        padding: 3rem 240px 3rem 0;
-    }
-
-  }
-header{
-  .as-container{
+}
+header {
+  .as-container {
     padding: 0;
   }
 }
-.as-container--narrow{
+.as-container--narrow {
   @include container(800px);
+}
+
+// special narrow containers
+.as-container--820 {
+  @include container(820px);
+}
+.as-container--760 {
+  @include container(760px);
 }
 
 .as-overlay {
@@ -294,50 +316,52 @@ header{
   }
 }
 
-.centered{
+.centered {
   text-align: center;
 }
 
 // images
-main img{
+main img {
   max-width: 100%;
+  height: auto;
   border-radius: 2px;
 }
-.as-page__content{
-  img{
+.as-page__content {
+  img {
     margin-bottom: 1rem;
   }
 }
-.image{
-    margin-top: 6px;
-    border-radius: 2px;
-    &--left{
-        float: left;
-        margin-right: 1rem;
-    }
-    &--right{
-        float: right;
-        margin-left: 1rem;
-    }
+.image {
+  margin-top: 6px;
+  border-radius: 2px;
+  &--left {
+    float: left;
+    margin-right: 1rem;
+  }
+  &--right {
+    float: right;
+    margin-left: 1rem;
+  }
 }
 
 // Lists
-main ul, .mfp-container ul{
+main ul,
+.mfp-container ul {
   padding-left: 1rem;
   margin-bottom: 1.5rem;
   list-style-type: circle;
-  li{
-    margin-bottom: .5rem;
+  li {
+    margin-bottom: 0.5rem;
   }
 }
 
-main ol{
+main ol {
   padding-left: 1rem;
-  li{
-    margin-bottom: .5rem;
+  li {
+    margin-bottom: 0.5rem;
   }
-  
-  ol{
+
+  ol {
     list-style-type: lower-alpha;
   }
 }
@@ -346,21 +370,25 @@ main ol{
 	layout helper classes probably will be moved to expressiv sheet
 */
 
-.max-960{
-	max-width: $large;
+.max-960 {
+  max-width: $large;
 }
 
-.curriculum-review{
-    p, h1, h2, h3, ul, ol{
-        max-width: 960px;
-        margin-left:auto;
-        margin-right: auto;
-    }
-
+.curriculum-review {
+  p,
+  h1,
+  h2,
+  h3,
+  ul,
+  ol {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.offscreen{
-    position: absolute;
-    top: -10000px;
-    left: -10000px;
+.offscreen {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
 }

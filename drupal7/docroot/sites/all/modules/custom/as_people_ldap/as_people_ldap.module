@@ -60,11 +60,15 @@ if (!empty($cache = cache_get('ldap-' . $netid))) {
     } else {
 // basic sequence with LDAP is connect, bind, search, interpret search
 // result, close connection
+// using ldap bind
+$ldaprdn  = 'uid=cucascontactrdr,ou=Directory Administrators,o=Cornell University,c=US';     // ldap rdn or dn
+$ldappass = variable_get('as_dept_variables_ldappass', '');
+
 // Connect to directory.cornell.edu
 $ds=ldap_connect("directory.cornell.edu");
 // If connection OK, Bind to server
 if (!empty($ds)) {
-        $r=ldap_bind($ds);
+        $r=ldap_bind($ds, $ldaprdn, $ldappass);
         $sr=ldap_search($ds,"ou=People,o=Cornell University,c=US","uid=".$netid);
         $info = ldap_get_entries($ds, $sr);
         $entry = ldap_first_entry($ds, $sr);

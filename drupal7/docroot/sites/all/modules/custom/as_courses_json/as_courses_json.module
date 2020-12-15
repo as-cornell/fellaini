@@ -64,6 +64,9 @@ $semestername = "";
   if ($semester == 'FA20') {
     $semestername = 'Fall 2020';
       }
+  if ($semester == 'SP21') {
+    $semestername = 'Spring 2021';
+      }
 
     $build['courses_block']['#markup'] = "
     <div class='as-page'>
@@ -75,10 +78,8 @@ $semestername = "";
     </div>
       <ul class='inlineList'>
       <li>Courses by semester: </li>
-        <li><a href='".$link ."FA19'>Fall 2019</a></li>
-        <li><a href='".$link ."SP20'>Spring 2020</a></li>
-        <li><a href='".$link ."SU20'>Summer 2020</a></li>
         <li><a href='".$link ."FA20'>Fall 2020</a></li>
+        <li><a href='".$link ."SP21'>Spring 2021</a></li>
       </ul>
     </div>
       <div class='as-container list courses__list  grid grid--three'>";
@@ -207,8 +208,10 @@ function as_courses_json_generate_course_netid_markup($netid) {
 $markup = "";
 $build['courses_block']['#markup'] = "";
 $semestername = "";
+$filternetid = "";
+$filternetid2 = "";
 //edit this to control what semesters get fetched
-$semesters = array('SP20','FA20');
+$semesters = array('FA20');
 //course subject from sitewide department variables
 $keyword_params = explode(',',variable_get('as_dept_variables_coursesubjects', ''));
 $courses = array();
@@ -248,11 +251,11 @@ $coursemarkup = "";
 //display
   foreach ($semesters as $semester)  {
       //semester name
-      if ($semester == 'SP20') {
-        $semestername = 'Spring 2020';
-      }
       if ($semester == 'FA20') {
         $semestername = 'Fall 2020';
+      }
+      if ($semester == 'SP21') {
+        $semestername = 'Spring 2021';
       }
       if (!empty($courses[$semester]['markup'])){
         $markup = $markup . "<h3>{$semestername}</h3><ul>";
