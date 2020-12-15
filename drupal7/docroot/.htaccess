@@ -101,8 +101,396 @@ DirectoryIndex index.php index.html index.htm
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/... will be redirected to http://example.com/...)
   # uncomment the following:
-  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  # RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+
+  # Perform redirect if asrc.cornell.edu
+  RewriteCond %{HTTP_HOST} ^asrc.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://africana.cornell.edu [R=301,L]
+
+  # Perform redirect if history.arts.cornell.edu
+  RewriteCond %{HTTP_HOST} ^history.arts.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://history.cornell.edu [R=301,L]
+
+  # Perform redirect if government.arts.cornell.edu
+  RewriteCond %{HTTP_HOST} ^government.arts.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://government.cornell.edu [R=301,L]
+
+  # Perform redirect if english.arts.cornell.edu
+  RewriteCond %{HTTP_HOST} ^english.arts.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://english.cornell.edu [R=301,L]
+
+  # Perform redirect if complit.arts.cornell.edu
+  RewriteCond %{HTTP_HOST} ^complit.arts.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://complit.cornell.edu [R=301,L]
+
+  # Perform redirect if chem.cornell.edu
+  RewriteCond %{HTTP_HOST} ^chem.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://chemistry.cornell.edu [R=301,L]
+
+  # Perform redirect if ciams.cornell.edu
+  RewriteCond %{HTTP_HOST} ^ciams.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://archaeology.cornell.edu [R=301,L]
+
+  # Perform redirect if sochum.as.cornell.edu
+  RewriteCond %{HTTP_HOST} ^sochum.as.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://societyhumanities.as.cornell.edu [R=301,L]
+
+  # Perform redirect if safety.chem.cornell.edu
+  RewriteCond %{HTTP_HOST} ^safety.chem.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://chemistry.cornell.edu/safety [R=301,L]
+
+  # Perform redirect if soc.cornell.edu
+  RewriteCond %{HTTP_HOST} ^soc\.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://sociology.cornell.edu [R=301,L]
+
+  # Perform redirect if psych.cornell.edu
+  RewriteCond %{HTTP_HOST} ^psych\.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://psychology.cornell.edu [R=301,L]
+
+  # Perform redirect if writers.cornell.edu
+  RewriteCond %{HTTP_HOST} ^writers.cornell.edu$ [NC]
+  RewriteRule ^(.*)$ https://english.cornell.edu/writersatcornell [R=301,L]
+
+  # Perform redirect if ambassadors.as.cornell.edu
+  RewriteCond %{HTTP_HOST} ^ambassadors\.as\.cornell\.edu$ [NC]
+  RewriteRule ^(.*)$ https://as.cornell.edu/ambassadors [R=301,L]
+
+  # Perform redirect if icm.arts.cornell.edu
+  RewriteCond %{HTTP_HOST} ^icm\.arts\.cornell\.edu$ [NC]
+  RewriteRule ^(.*)$ https://icm.as.cornell.edu/ [R=301,L]
+
+  # Perform redirect if James Sethna
+  RewriteCond %{REQUEST_URI} ^/sethna/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.physics.cornell.edu/$1 [R=301,L]
+
+
+  # NBB faculty pages
+  # Perform redirect to pages.nbb.cornell.edu if NBB legacy site
+  RewriteCond %{REQUEST_URI} ^/adlertribute(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/basslab(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/biologyopenhouses(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/fruitfly(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/gamebug(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/gadagkar(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/Goldberg(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/hoylab(.*)$ [NC]
+  RewriteRule ^(.*)$ https://hoylab.wordpress.com/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/linster(.*)$ [NC]
+  RewriteRule ^(.*)$ http://cplab.net/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/nbb50th(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neuroscience(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/vitousek(.*)$ [NC]
+  RewriteRule ^(.*)$ http://vitousek.weebly.com/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/warden(.*)$ [NC]
+  RewriteRule ^(.*)$ http://www.wardenlab.org/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/websterlab(.*)$ [NC]
+  RewriteRule ^(.*)$ http://www.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/wkoenig(.*)$ [NC]
+  RewriteRule ^(.*)$ http://www.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/shaw/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/aaronrice(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/emlen(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/fetcho(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/Hopkins(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/linster(.*)$ [NC]
+  RewriteRule ^(.*)$ http://cplab.net/ [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/ragusolab(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/websterlab(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/neurobio/harris-warrick(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pages.nbb.cornell.edu/$1 [R=301,L]
+
+  #math redirects
+  #ADMIN/Computers/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/ADMIN/Computers/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #ADMIN/courseinfo/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/ADMIN/courseinfo/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #app/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/app/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #awards/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/awards/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #CornellLogo/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/CornellLogo/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #CourseArchive/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/CourseArchive/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #event/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/event/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #files/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/files/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #Fonts/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/Fonts/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #Graphics/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/Graphics/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #jisfpwyr/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/jisfpwyr/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #jqfu/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/jqfu/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #MathJax/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/MathJax/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #Math-Net/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/Math-Net/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #napp/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/napp/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #rcalendar/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/rcalendar/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #restricted/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/restricted/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #spb/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/spb/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #Survey/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/Survey/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #webcalendar/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/webcalendar/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #webcalpub/
+  #m/ADMIN/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/m/ADMIN/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #m/Colloquia/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/m/Colloquia/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #~
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/~(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #js/
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  #RewriteCond %{REQUEST_URI} ^/js/(.*)$ [NC]
+  #RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #Media/Dynkin
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/Media/Dynkin/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+  #Media/Lectures
+  RewriteCond %{HTTP_HOST} ^math\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/Media/Lectures/(.*)$ [NC]
+  RewriteRule ^(.*)$ http://pi.math.cornell.edu/$1 [R=301,L]
+
+  #ASTRO REDIRECTS
+  #user directories prefaced with tilde
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/~(.*)$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #astro redirects with slash
+  #/academics/courses/
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/academics/courses/(.+)$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+  #/staff/
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/staff/(.+)$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #astro redirects with optional slash
+  #/biosignatures
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/biosignatures(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/team
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/team(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/specialprograms
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/specialprograms(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/specialprograms/reu
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/specialprograms/reu(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/spacegrant
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/spacegrant(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/SPIF
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/SPIF(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/Galaxy
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/Galaxy(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/art
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/art(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #research/parallax
+  RewriteCond %{HTTP_HOST} ^astro\.cornell.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/research/parallax(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/research/almapsr
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/research/almapsr(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #research/projects/palfa
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/research/projects/palfa(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/research/projects/us-kaz
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/research/projects/us-kaz(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #outreach/foa/cau18
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/outreach/foa/cau18(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  #/us-russia
+  RewriteCond %{HTTP_HOST} ^astro\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/us-russia(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://hosting.astro.cornell.edu/$1 [R=301,L]
+
+  # carlsaganinstitute.org
+  RewriteCond %{HTTP_HOST} ^carlsaganinstitute\.org$ [NC]
+  RewriteRule ^(.*)$ https://carlsaganinstitute.cornell.edu [R=301,L]
+
+  # carlsaganinstitute.com
+  RewriteCond %{HTTP_HOST} ^carlsaganinstitute\.com$ [NC]
+  RewriteRule ^(.*)$ https://carlsaganinstitute.cornell.edu [R=301,L]
+
+  # redirect old epoch url to a page on English website
+  RewriteCond %{HTTP_HOST} ^epoch\.cornell\.edu$ [NC]
+  RewriteRule ^(.*)$ https://english.cornell.edu/epoch-magazine-0 [R=301,L]
+
+  #redirects from decommissioned arts.cornell.edu server
+  #English
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/english(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://english.cornell.edu/ [R=301,L]
+  #Epl
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/epl(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://philosophy.cornell.edu/law-society [R=301,L]
+  #FGSS
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/fgss(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://fgss.cornell.edu/ [R=301,L]
+  #Government
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/government(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://government.cornell.edu/ [R=301,L]
+  #Gaf44
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/gaf44(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://flores-macias.government.cornell.edu/ [R=301,L]
+  #History
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/history(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://history.cornell.edu/ [R=301,L]
+  #IGCS
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/igcs(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://igcs.cornell.edu/ [R=301,L]
+  #Jazz
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/jazz(/.*)?$ [NC]
+  RewriteRule ^(.*)$ https://jazz.arts.cornell.edu/ [R=301,L]
+  #Jrz3
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/jrz3(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://jrzorn.arts.cornell.edu/ [R=301,L]
+  #Jwst
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/jwst(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://jewishstudies.cornell.edu/ [R=301,L]
+  #Knight_Institute
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/knight_institute(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://knight.as.cornell.edu/ [R=301,L]
+  #Medieval
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/medieval(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://medievalstudies.cornell.edu/ [R=301,L]
+  #Pe52
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/pe52(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://peterenns.org/ [R=301,L]
+  #Prh3
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/prh3(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http://prh3.arts.cornell.edu [R=301,L]
+  #Relst
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/relst(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://religious-studies.cornell.edu/ [R=301,L]
+  #Romance
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/romance(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://romancestudies.cornell.edu/ [R=301,L]
+  #Sochum
+  RewriteCond %{HTTP_HOST} ^arts\.cornell\.edu$ [NC]
+  RewriteCond %{REQUEST_URI} ^/sochum(/.*)?$ [NC]
+  RewriteRule ^(.*)$ http%{ENV:protossl}://sochum.as.cornell.edu/ [R=301,L]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.

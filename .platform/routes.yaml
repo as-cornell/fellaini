@@ -112,35 +112,91 @@ https://dept10.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://cder.as.cornell.edu/:
+https://cder.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://baroqueorgan.cornell.edu/:
+https://baroqueorgan.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://cogsci.cornell.edu/:
+https://www.baroqueorgan.cornell.edu/:
+    type: redirect
+    to: https://baroqueorgan.cornell.edu/
+https://cogsci.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://frenchstudies.cornell.edu/:
+https://www.cogsci.cornell.edu/:
+    type: redirect
+    to: https://cogsci.cornell.edu/
+https://frenchstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-http://igcs.cornell.edu/:
+https://www.frenchstudies.cornell.edu/:
+    type: redirect
+    to: https://frenchstudies.cornell.edu/
+https://igcs.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.igcs.cornell.edu/:
+    type: redirect
+    to: https://igcs.cornell.edu/
+https://mediastudies.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.mediastudies.as.cornell.edu/:
+    type: redirect
+    to: https://mediastudies.as.cornell.edu/
+https://medievalstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.medievalstudies.cornell.edu/:
+    type: redirect
+    to: https://medievalstudies.cornell.edu/
+https://rural.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://sct.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.sct.cornell.edu/:
+    type: redirect
+    to: https://sct.cornell.edu/
+https://icm.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
