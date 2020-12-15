@@ -256,4 +256,60 @@ https://archaeology.cornell.edu/:
 https://www.archaeology.cornell.edu/:
     type: redirect
     to: https://archaeology.cornell.edu/
+https://asianamericanstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.asianamericanstudies.cornell.edu/:
+    type: redirect
+    to: https://asianamericanstudies.cornell.edu.edu/
+https://asianstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.asianstudies.cornell.edu/:
+    type: redirect
+    to: https://asianstudies.cornell.edu/
+https://caps.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.caps.cornell.edu/:
+    type: redirect
+    to: https://caps.cornell.edu/
+https://classics.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.classics.cornell.edu/:
+    type: redirect
+    to: https://classics.cornell.edu/
+https://complit.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.complit.cornell.edu/:
+    type: redirect
+    to: https://complit.cornell.edu/
+https://complit.arts.cornell.edu/:
+    type: redirect
+    to: https://complit.cornell.edu/
+https://www.complit.arts.cornell.edu/:
+    type: redirect
+    to: https://complit.cornell.edu/
 

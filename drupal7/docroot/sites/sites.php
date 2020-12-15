@@ -5,11 +5,11 @@ $sites['dept1.fellaini.local'] = 'dept1';
 $sites['dept2.fellaini.local'] = 'dept2';
 // PLATFORM
 $sites['asd7.as.cornell.edu'] = 'default';
-$sites['dept1.as.cornell.edu'] = 'inequality';
-$sites['dept2.as.cornell.edu'] = 'africana';
-$sites['dept3.as.cornell.edu'] = 'americanstudies';
-$sites['dept4.as.cornell.edu'] = 'anthro';
-$sites['dept5.as.cornell.edu'] = 'archaeology';
+$sites['dept1.as.cornell.edu'] = 'sts';
+$sites['dept2.as.cornell.edu'] = 'cinema';
+$sites['dept3.as.cornell.edu'] = 'eeb';
+$sites['dept4.as.cornell.edu'] = 'econ';
+$sites['dept5.as.cornell.edu'] = 'fgss';
 $sites['dept6.as.cornell.edu'] = 'aas';
 $sites['dept7.as.cornell.edu'] = 'asianstudies';
 $sites['dept8.as.cornell.edu'] = 'complit';
@@ -35,4 +35,8 @@ $sites['inequality.cornell.edu'] = 'inequality';
 $sites['complit.cornell.edu'] = 'complit';
 $sites['caps.cornell.edu'] = 'caps';
 $sites['classics.cornell.edu'] = 'classics';
-
+$sites['sts.cornell.edu'] = 'sts';
+$sites['cinema.cornell.edu'] = 'cinema'
+$sites['ecologyandevolution.cornell.edu'] = 'eeb'
+$sites['economics.cornell.edu'] = 'econ'
+$sites['fgss.cornell.edu'] = 'fgss'
