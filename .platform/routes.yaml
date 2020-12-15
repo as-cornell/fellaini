@@ -203,3 +203,57 @@ https://icm.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://inequality.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.inequality.cornell.edu/:
+    type: redirect
+    to: https://inequality.cornell.edu/
+https://africana.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.africana.cornell.edu/:
+    type: redirect
+    to: https://africana.cornell.edu/
+https://asrc.cornell.edu/:
+    type: redirect
+    to: https://africana.cornell.edu/
+https://www.asrc.cornell.edu/:
+    type: redirect
+    to: https://africana.cornell.edu/
+https://americanstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://anthropology.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.anthropology.cornell.edu/:
+    type: redirect
+    to: https://anthropology.cornell.edu/
+https://archaeology.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.archaeology.cornell.edu/:
+    type: redirect
+    to: https://archaeology.cornell.edu/
+
