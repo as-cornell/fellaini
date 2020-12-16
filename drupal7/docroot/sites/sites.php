@@ -51,3 +51,16 @@ $sites['lrc.cornell.edu'] = 'lrc';
 $sites['latino.cornell.edu'] = 'latino';
 $sites['lgbt.cornell.edu'] = 'lgbt';
 $sites['linguistics.cornell.edu'] = 'linguistics';
+$sites['romancestudies.cornell.edu'] = 'romance';
+$sites['milstein-program.as.cornell.edu'] = 'milstein';
+$sites['music.cornell.edu'] = 'music';
+$sites['neareasternstudies.cornell.edu'] = 'nes';
+$sites['societyhumanities.as.cornell.edu'] = 'sochum';
+$sites['pma.cornell.edu'] = 'pma';
+$sites['philosophy.cornell.edu'] = 'phil';
+$sites['sociology.cornell.edu'] = 'sociology';
+$sites['psychology.cornell.edu'] = 'psych';
+$sites['religious-studies.cornell.edu'] = 'religiousstudies';
+
+
+
