@@ -392,57 +392,78 @@ jQuery(document).ready(function($) {
       type: 'ajax'
     });
   });
+
+  // // newsletter
+  // // get url path name as utm_campaign, get first part to use as utm_source
+  // // add it to article links with class newsletterLink
+  // $(document).ready(function(){
+  //   pathname = $(location).attr('pathname').split("/");
+
+  //   utmCampaign = pathname[2];
+
+  //   pieces = utmCampaign.split("-");
+  //   utmSource = pieces[0];
+
+  //   $('a.newsletterLink').each(function(){
+  //     var oldUrl = $(this).attr("href");
+  //     var newUrl = oldUrl +'&utm_campaign='+ utmCampaign +'&utm_source=' + utmSource;
+  //     console.log(newUrl);
+  //     $(this).attr("href", newUrl);
+  //   });
+
+  // });
+
 });
 
 //magnific
 
-
-
 // Tiny Carousels
 
-jQuery(document).ready(function($){https://www.parasoft.com/sites/default/files/map_marker.png
-	
-	// set tabindex of links in popups to -1
-	// $('.mfp-hide a').attr('tabindex', '-1');
-	
-	$('.magnific').magnificPopup({
-      type:'inline',
-      removalDelay: 300,
-      mainClass: 'mfp-fade',
-      midClick: true}
-  );
-  
-    $('.magnificTwo').magnificPopup({
-      type:'inline',
-      removalDelay: 300,
-      mainClass: 'mfp-fade',
-      midClick: true,
-      delegate: 'div'}
-    );
-  $('.popLink').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false
-	});
-    $('.popup-with-form').magnificPopup({
-		type: 'inline',
-		preloader: false,
-		focus: '#name',
-		// When elemenet is focused, some mobile browsers in some cases zoom in
-		// It looks not nice, so we disable it:
-		callbacks: {
-			beforeOpen: function() {
-				if($(window).width() < 700) {
-					this.st.focus = false;
-				} else {
-					this.st.focus = '#name';
-				}
-			}
-		}
-	});
+jQuery(document).ready(function ($) {
+  //www.parasoft.com/sites/default/files/map_marker.png
+
+  // set tabindex of links in popups to -1
+  // $('.mfp-hide a').attr('tabindex', '-1');
+
+  https: $(".magnific").magnificPopup({
+    type: "inline",
+    removalDelay: 300,
+    mainClass: "mfp-fade",
+    midClick: true,
+  });
+
+  $(".magnificTwo").magnificPopup({
+    type: "inline",
+    removalDelay: 300,
+    mainClass: "mfp-fade",
+    midClick: true,
+    delegate: "div",
+  });
+  $(".popLink, .popup-youtube").magnificPopup({
+    disableOn: 700,
+    type: "iframe",
+    mainClass: "mfp-fade",
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false,
+  });
+
+  $(".popup-with-form").magnificPopup({
+    type: "inline",
+    preloader: false,
+    focus: "#name",
+    // When elemenet is focused, some mobile browsers in some cases zoom in
+    // It looks not nice, so we disable it:
+    callbacks: {
+      beforeOpen: function () {
+        if ($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = "#name";
+        }
+      },
+    },
+  });
 });
 
 carousel = (function(){

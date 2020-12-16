@@ -70,14 +70,7 @@ if(typeof(CKEDITOR) !== 'undefined') {
         {
           'class' : 'notice'
         }
-      },
-      {
-        name: 'Quote Attribute',
-        element: 'p',
-        attributes:
-        {
-          'class': 'attribute'
-        }
       }
     ]);
 }
+ 

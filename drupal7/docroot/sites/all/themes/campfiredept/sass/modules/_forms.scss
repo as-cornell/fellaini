@@ -1,4 +1,4 @@
-.as-form, .webform, #user-login, #user-pass {
+.as-form, .webform, #user-login, #user-pass, form[id^="views-exposed-form-media-report"] {
   max-width: $large;
   margin: 0 auto;
   fieldset {
@@ -28,7 +28,7 @@
     //@include appearance(none);
   }
 
-  input[type='text'], textarea, input[type='password'], input[type='email'] {
+  input[type='text'], textarea, input[type='password'], input[type='email'],  {
     border: 1px solid #cbcbcb;
     border-radius: 3px;
     box-shadow: inset 0px 0px 3px 1px #eeeeee;
@@ -86,7 +86,62 @@
   }
 
 }
-
+// special for media report
+form[id^="views-exposed-form-media-report"]{
+  margin-top: 2rem;
+  .views-exposed-widgets{
+    display: flex;
+    align-items: flex-end;
+    .form-item{
+      margin-bottom: 0;
+    }
+    .form-type-select:after{
+      display: none;
+    }
+    .form-submit{
+      margin-top:0;
+      padding: .5rem;
+      font-size: 1rem;
+    }
+  }
+}
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+/* Suggestion list */
+#autocomplete {
+  border: 1px solid #eeeeee;
+  background: white;
+  border-radius: 4px;
+  font-size: 1rem;
+  // overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  padding: .5rem;
+}
+#autocomplete ul {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+#autocomplete li {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  white-space: pre;
+  zoom: 1; /* IE7 */
+  &:hover{
+    background: $as-red-link;
+  }
+}
+.form-type-select{
+  select{
+    font-size: 1rem;
+  }
+}
 .formagain{
   padding: 2em;
   margin: 2em;

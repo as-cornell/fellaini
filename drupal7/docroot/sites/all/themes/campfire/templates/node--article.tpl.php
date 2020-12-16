@@ -53,17 +53,25 @@ drupal_add_html_head($og_url, 'og_url');
 drupal_add_html_head($og_image, 'og_image');
 drupal_add_html_head($og_description, 'og_description');
 ?>
-
-
+<?php
+$i = 0;
+foreach ($content['field_topic'] as $topic) {
+    if (!empty($content['field_topic'][$i]["#title"])) {
+        $topicclass = $topicclass . " category-" . drupal_html_class($content['field_topic'][$i]["#title"]);
+        $i++;
+    }
+}
+$topicclass = trim(str_replace('-amp-', '-and-', $topicclass));
+?>
 <!--
 	Article default
 -->
 <div class="as-page as-page__block">
 	<div class="as-container">
 		<?php if (!empty($content['field_featured_video'])): ?>
-			<article class='as-page__content' itemscope itemtype="http://schema.org/NewsArticle" id="main-article" aria-label="Content of story with title: <?php print $title; ?>">
+			<article class='as-page__content <?php print $topicclass;?>' itemscope itemtype="http://schema.org/NewsArticle" id="main-article" aria-label="Content of story with title: <?php print $title; ?>">
 		<?php else: ?>
-			<article class='as-page__content--withSidebar' itemscope itemtype="http://schema.org/NewsArticle" id="main-article" aria-label="Content of story with title: <?php print $title; ?>">
+			<article class='as-page__content--withSidebar <?php print $topicclass;?>' itemscope itemtype="http://schema.org/NewsArticle" id="main-article" aria-label="Content of story with title: <?php print $title; ?>">
 		<?php endif;?>
 			<div class="as-page__content">
 				<h1 class="pageTitle" itemprop="headline">
@@ -77,7 +85,8 @@ drupal_add_html_head($og_description, 'og_description');
 				</ul>
 				<p>
 					<?php if (!empty($content['field_byline'])): ?>
-						By: <?php print render($content['field_byline']);?>,&nbsp;<?php print render($content['field_media_source']);?><br />
+						By: <?php print render($content['field_byline']);?><?php if (!empty($content['field_byline_title'])): ?>, <?php print render($content['field_byline_title']);
+?><?php endif;?> <br /><?php print render($content['field_media_source']);?><br />
 					<?php endif;?>
 					<?php if (!empty($content['field_dateline'])): ?>
 						<?php print render($content['field_dateline']);?>
@@ -156,12 +165,13 @@ drupal_add_html_head($og_description, 'og_description');
 
 <?php if (!empty($content['field_article_view_tags'])): ?>
 <?php if ($content['field_article_view_tags'][0]['#title'] == 'seniors'): ?>
+  <?php $senioryear = $content['field_article_view_tags'][1]['#title']; ?>
     <div id="Extraordinary-Journeys" class="as-container as-cards__wrapper" aria-label="Other Journeys">
     <h1>Other Extraordinary Journeys</h1>
     <!--<a href="/all-articles" class="viewAll as-button as-button - light">View all Extraordinary Journeys</a>-->
     <div class="content as-cards">
     <?php
-print views_embed_view('factoid_blocks', 'seniors', '2019');?>
+      print views_embed_view('factoid_blocks', 'seniors', $senioryear);?>
     </div>
     </div>
 <?php endif;?>

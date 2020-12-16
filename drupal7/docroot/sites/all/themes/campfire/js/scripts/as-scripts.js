@@ -392,4 +392,25 @@ jQuery(document).ready(function($) {
       type: 'ajax'
     });
   });
+
+  // // newsletter
+  // // get url path name as utm_campaign, get first part to use as utm_source
+  // // add it to article links with class newsletterLink
+  // $(document).ready(function(){
+  //   pathname = $(location).attr('pathname').split("/");
+
+  //   utmCampaign = pathname[2];
+
+  //   pieces = utmCampaign.split("-");
+  //   utmSource = pieces[0];
+
+  //   $('a.newsletterLink').each(function(){
+  //     var oldUrl = $(this).attr("href");
+  //     var newUrl = oldUrl +'&utm_campaign='+ utmCampaign +'&utm_source=' + utmSource;
+  //     console.log(newUrl);
+  //     $(this).attr("href", newUrl);
+  //   });
+
+  // });
+
 });

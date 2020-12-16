@@ -1,5 +1,5 @@
 table.as-table2 {
-    /*@include small-plus{
+  /*@include small-plus{
         position: sticky;
         z-index: -1;
         top: 3rem;
@@ -18,7 +18,7 @@ table.as-table2 {
 
   tr {
     &:nth-of-type(even) {
-     // background: #f0f0f0;
+      // background: #f0f0f0;
     }
     &:nth-of-type(odd) {
       //background: #fafafa;
@@ -32,8 +32,6 @@ table.as-table2 {
     }
   }
 
-
-
   th {
     border-top: 2px solid $as-border;
     border-bottom: 2px solid $as-border;
@@ -46,7 +44,6 @@ table.as-table2 {
     padding: 1rem;
     text-align: left;
     //text-transform: uppercase;
-
   }
 
   td {
@@ -58,13 +55,13 @@ table.as-table2 {
     @include mobile {
       border-bottom: none;
       border-top: none;
-     // display: inline-block;
+      // display: inline-block;
     }
-
   }
-    p, ul{
-        margin-bottom: 0;
-    }
+  p,
+  ul {
+    margin-bottom: 0;
+  }
 }
 /*
 @include small-plus{
@@ -76,8 +73,6 @@ table.as-table2 {
     }
 }
 */
-
-
 
 table.as-table {
   border-collapse: collapse;
@@ -96,15 +91,15 @@ table.as-table {
     &:nth-of-type(odd) {
       background: #fafafa;
     }
-    &:first-of-type {
-      background: $as-white;
-    }
+    // &:first-of-type {
+    //   background: $as-white;
+    // }
 
     @include mobile {
       border-top: 1px solid $as-border;
     }
-    &.spacerRow{
-      td{
+    &.spacerRow {
+      td {
         background: white;
         border-top: 2px solid #bbb;
       }
@@ -119,11 +114,11 @@ table.as-table {
     @include font-sans-semi;
     font-weight: 600;
     //font-size: 13px;
-    padding: 4% 2%;
+    padding: 1rem;
     text-align: left;
     //text-transform: uppercase;
-    
-    p{
+
+    p {
       font-weight: 600;
     }
   }
@@ -132,46 +127,47 @@ table.as-table {
     border-top: 1px solid $as-border;
     border-bottom: 1px solid $as-border;
     @include font-sans-lt;
-    padding: gutter();
-    
+    padding: 1rem;
+
     @include mobile {
       border-bottom: none;
       border-top: none;
-     // display: inline-block;
+      // display: inline-block;
     }
   }
-  p{
+  p {
     margin-bottom: 0;
   }
-  &--ambassadors{
-    td{
+  &--ambassadors {
+    td {
       border: none;
     }
-    th{
+    th {
       border-bottom: 1px solid $as-border;
       border-top: none;
       padding: 0;
     }
-    tr{
+    tr {
       display: flex;
       justify-content: space-between;
     }
     background: red;
-    p{
+    p {
       margin: 0 0 1rem;
     }
-    td:first-child, th:first-child{
+    td:first-child,
+    th:first-child {
       display: flex;
       flex: 0 0 33%;
       max-width: 33%;
       flex-direction: column;
 
-      p:first-child{
+      p:first-child {
         font-weight: 400;
       }
-
     }
-    td:last-child, th:last-child{
+    td:last-child,
+    th:last-child {
       display: flex;
       flex: 0 0 60%;
       max-width: 60%;
@@ -180,40 +176,45 @@ table.as-table {
   }
 }
 
-
 /*
  ** Webform responses are kinda like tables so i'm putting them here
  */
 
-.response__list{
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:column;
-    align-items: stretch;
-    justify-content: space-between;
-    li{
-        border-left: 1rem solid $as-blue;
-        margin-bottom: 4em;
-        padding-left: 2em;
-        &:nth-of-type(2n){
-            border-left: 1rem solid $as-gold;
-        }
-        > div, .response__field, .views--field--value{
-            margin-bottom: 1em;
-            padding-bottom: 1em;
-            border-bottom: 1px solid $as-border;
-            display: flex;
-            justify-content: space-between;
-            .response__label, span:first-of-type, .views-lable{
-                flex: 0 0 30%;
-                font-weight: 400;
-            }
-            .response__content, span:last-of-type, .field-content{
-                flex: 0 0 65%;
-            }
-        }
+.response__list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  li {
+    border-left: 1rem solid $as-blue;
+    margin-bottom: 4em;
+    padding-left: 2em;
+    &:nth-of-type(2n) {
+      border-left: 1rem solid $as-gold;
     }
+    > div,
+    .response__field,
+    .views--field--value {
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid $as-border;
+      display: flex;
+      justify-content: space-between;
+      .response__label,
+      span:first-of-type,
+      .views-lable {
+        flex: 0 0 30%;
+        font-weight: 400;
+      }
+      .response__content,
+      span:last-of-type,
+      .field-content {
+        flex: 0 0 65%;
+      }
+    }
+  }
 }
 
 /* flex tables failed
@@ -242,34 +243,34 @@ table.as-table {
 }
 */
 
-.fTableOutter{
-    display: flex;
-    align-items: center;
+.fTableOutter {
+  display: flex;
+  align-items: center;
 }
-.fTableRowTitle{
-    flex: 0 0 20%;
+.fTableRowTitle {
+  flex: 0 0 20%;
 }
-.fTableInner{
+.fTableInner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.fTable {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  .fColumn {
+    flex: 0 0 48%;
     display: flex;
     flex-direction: column;
-    width: 100%;
-}
-.fTable{
-    display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
-
-    .fColumn{
-        flex: 0 0 48%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+  }
 }
-.fCell{
-    background: #eeeeee;
-    text-align: center;
-    &.fCellStretch{
-        flex: 0 0 100%;
-    }
+.fCell {
+  background: #eeeeee;
+  text-align: center;
+  &.fCellStretch {
+    flex: 0 0 100%;
+  }
 }

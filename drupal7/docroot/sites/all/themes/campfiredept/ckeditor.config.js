@@ -87,9 +87,9 @@ Drupal.settings.cke_toolbar_DrupalAdvanced = [
 Drupal.settings.cke_toolbar_DrupalFull = [
     ['Cut','Copy','Paste','PasteText','PasteFromWord'],
     ['Undo','Redo','Find','Replace','-','SelectAll'],
-    ['Image','Iframe','HorizontalRule', 'Table'],
+    ['Iframe','HorizontalRule', 'Table','A11ychecker'],
     '/',
-    ['Format','Styles','ShowBlocks'],
+     ['Format','Styles','ShowBlocks'],
     ['Bold','Italic','-','Subscript','Superscript','-','RemoveFormat'],
     ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
     ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],

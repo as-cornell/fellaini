@@ -35,7 +35,7 @@
     <?php print render($content['field_secondary_body']); ?>
   </div>
   
-  <div class="as-container imageText--feature">
+  <div class="as-container imageText--feature featureBlocks">
     <?php print render($content['field_image_text']); ?>
   </div>
 </div>
