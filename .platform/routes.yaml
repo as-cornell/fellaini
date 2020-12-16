@@ -256,6 +256,12 @@ https://archaeology.cornell.edu/:
 https://www.archaeology.cornell.edu/:
     type: redirect
     to: https://archaeology.cornell.edu/
+https://ciams.cornell.edu/:
+    type: redirect
+    to: https://archaeology.cornell.edu/
+https://www.ciams.cornell.edu/:
+    type: redirect
+    to: https://archaeology.cornell.edu/
 https://asianamericanstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
