@@ -18,6 +18,8 @@ Descr: Sets all specific styles for an m/m/g card and teasers
   .card__title {
     grid-area: label;
     font-size: var(--base-24);
+    margin-top: 0.5rem;
+    margin-bottom: 1em;
   }
   .card__level {
     grid-area: level;
@@ -36,53 +38,87 @@ Descr: Sets all specific styles for an m/m/g card and teasers
         "links links links";
     }
   }
+  &:hover {
+    .level {
+      animation-name: jellbean-animation;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+    }
+  }
 }
 
 // Jellybeans
 .ul--jellyBeans {
   display: flex;
+  justify-content: flex-end;
   list-style: none;
   margin: 0;
   padding: 0;
   li {
     margin-bottom: 0;
   }
-  .link {
+  .level {
     text-indent: -5000px;
     position: relative;
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
+    width: 1em;
+    height: 1em;
+    // margin-left: 0.1em;
+    font-size: 0.6rem; // change to change size of circles
+
     &:before {
-      width: 0.9rem;
-      height: 0.9rem;
+      width: 1.5em;
+      height: calc(1.5em - 0.1em);
+      // border-radius: 2px;
       border-radius: 50%;
       position: absolute;
       content: "M";
       color: white;
+      background: var(--blue-blue);
+      // border: 1px solid var(--as-purple);
+      @include dropShadow($spread: 2px);
       top: 0;
       right: 0;
       text-indent: 0;
-      font-size: 0.7rem;
+
       text-align: center;
+      font-weight: var(--light);
+      padding-top: 0.1em;
     }
     &--major {
       &:before {
-        background: pink;
+        background: var(--as-red);
         content: "M";
       }
     }
     &--minor {
       &:before {
-        background: blue;
+        background: var(--as-blue-base);
         content: "M";
       }
     }
     &--graduate {
       &:before {
-        background: gray;
+        background: var(--as-green);
         content: "G";
       }
     }
+  }
+}
+
+// jellybean animation
+@keyframes jellybean-animation {
+  0% {
+    transform: translateX(-1.25em);
+    // left: -1.25em;
+  }
+  60% {
+    transform: translateX(-0.5em);
+    // left: -0.5em;
+  }
+  100% {
+    transform: translateX(-0.75em);
+    // left: -1em;
   }
 }

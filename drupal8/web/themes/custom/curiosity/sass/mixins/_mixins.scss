@@ -31,8 +31,8 @@
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
-@mixin dropShadow() {
-  filter: drop-shadow(0 0 8px #333);
+@mixin dropShadow($spread: 8px, $color: var(--gray-med)) {
+  filter: drop-shadow(0 0 $spread $color);
 }
 
 @mixin list-reset {
