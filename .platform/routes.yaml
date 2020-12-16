@@ -312,9 +312,6 @@ https://complit.arts.cornell.edu/:
 https://www.complit.arts.cornell.edu/:
     type: redirect
     to: https://complit.cornell.edu/
-https://www.classics.cornell.edu/:
-    type: redirect
-    to: https://classics.cornell.edu/
 https://sts.cornell.edu/:
   type: upstream
   upstream: drupal7:http
