@@ -312,3 +312,56 @@ https://complit.arts.cornell.edu/:
 https://www.complit.arts.cornell.edu/:
     type: redirect
     to: https://complit.cornell.edu/
+https://www.classics.cornell.edu/:
+    type: redirect
+    to: https://classics.cornell.edu/
+https://sts.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.sts.cornell.edu/:
+    type: redirect
+    to: https://sts.cornell.edu/
+https://cinema.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.cinema.cornell.edu/:
+    type: redirect
+    to: https://cinema.cornell.edu/
+https://ecologyandevolution.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.ecologyandevolution.cornell.edu/:
+    type: redirect
+    to: https://ecologyandevolution.cornell.edu/
+https://economics.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.economics.cornell.edu/:
+    type: redirect
+    to: https://economics.cornell.edu/
+https://fgss.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.fgss.cornell.edu/:
+    type: redirect
+    to: https://fgss.cornell.edu/
