@@ -47,9 +47,13 @@
 
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set main_element_modifiers = ['department-program'] %}
+
+{% set type = content.field_type.0['#plain_text'] %}
+
+
 {% include "@content/molecules/_teaser.twig" with{
   teaser_title : name,
-  teaser_label: content.field_type,
+  teaser_label: type,
   teaser_link_url: url,
   teaser_img : content.field_image,
 

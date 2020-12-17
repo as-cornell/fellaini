@@ -55,10 +55,11 @@
 {% if related_people %}
   {% set show_related_people = true %}
 {% endif %}
-
+{# {{vardumper()}} #}
+{% set type = content.field_type.0['#plain_text'] %}
 {% include "@pages/_department-program.twig" with{
   title : name,
-  type : content.field_type,
+  type : type,
 
   image : content.field_image,
 

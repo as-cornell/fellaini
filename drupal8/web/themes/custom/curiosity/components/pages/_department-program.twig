@@ -31,35 +31,35 @@ Descr: defines content and blocks for majors and minors detail pages
 			<h3>
 				Related people
 			</h3>
-			<ul>
+			<ul class="columns">
 				{{related_people}}
-				<ul>
-				{% endif %}
+			</ul>
+		{% endif %}
 
 
-			</div>
-			<div class="sidebar">
-				{{image}}
-				<h3>
-					Learn more
-				</h3>
-				{{links}}
+	</div>
+	<div class="sidebar">
+		{{image}}
+		<h3>
+			Learn more
+		</h3>
+		{{links}}
 
-				{% if show_related_articles %}
-					<h3>
-						Related articles
-					</h3>
-					{{related_articles}}
-				{% endif %}
-
-
-				{% if show_disciplines %}
-					<h3>
-						Related disciplines
-					</h3>
-					{{disciplines}}
-				{% endif %}
+		{% if show_related_articles %}
+			<h3>
+				Related articles
+			</h3>
+			{{related_articles}}
+		{% endif %}
 
 
-			</div>
-		</main>
+		{% if show_disciplines %}
+			<h3>
+				Related disciplines
+			</h3>
+			{{disciplines}}
+		{% endif %}
+
+
+	</div>
+</main>
