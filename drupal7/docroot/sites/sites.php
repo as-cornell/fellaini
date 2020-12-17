@@ -61,6 +61,3 @@ $sites['philosophy.cornell.edu'] = 'phil';
 $sites['sociology.cornell.edu'] = 'sociology';
 $sites['psychology.cornell.edu'] = 'psych';
 $sites['religious-studies.cornell.edu'] = 'religiousstudies';
-
-
-
