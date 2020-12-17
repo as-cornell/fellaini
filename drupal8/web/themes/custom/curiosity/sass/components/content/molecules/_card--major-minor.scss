@@ -85,14 +85,14 @@ Descr: Sets all specific styles for an m/m/g card and teasers
     display: flex;
     justify-content: space-between;
   }
-  &.card--fancybox {
-    .card__copy {
-      grid-template-areas:
-        "links links links"
-        "label label label"
-        "level level level";
-    }
+
+  .card__copy {
+    grid-template-areas:
+      "links links links"
+      "label label label"
+      "level level level";
   }
+
   .levels {
     .level {
       width: 1.5em;
