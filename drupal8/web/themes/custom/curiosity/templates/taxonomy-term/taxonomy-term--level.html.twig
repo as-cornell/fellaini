@@ -33,8 +33,5 @@ Descr: overriding taxonomy term laout for m/m/g.
 
 {% set class = name[0]['#context']['value']|lower %}
 
-{% set link_url = '/majors-and-minors?keywords=' ~ class%}
-<span class="level level--{{class}}">
-{{class}}
-</span>
 
+<span class="level level--{{class}}">{{class}}</span>

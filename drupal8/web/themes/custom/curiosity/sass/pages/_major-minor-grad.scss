@@ -7,6 +7,8 @@ Descr:
 
     defines main layouts for default m/m/g pages
 
+    all jellybean stuff is on _card--major-minor
+
 --------------------------- */
 
 .major-minor-grad {
@@ -20,8 +22,10 @@ Descr:
     grid-area: title;
   }
 
-  .level {
+  .degree-levels {
     grid-area: level;
+    display: flex;
+    align-items: center;
   }
   .description {
     grid-area: description;

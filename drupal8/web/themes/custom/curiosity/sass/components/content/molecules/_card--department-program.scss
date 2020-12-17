@@ -18,7 +18,7 @@ Descr: Sets all specific styles for an m/m/g card and teasers
 
   .card__title {
     grid-area: label;
-    margin-top: 0;
+    margin: 1em 0;
     font-size: var(--base-24);
   }
   .card__type {
@@ -33,9 +33,9 @@ Descr: Sets all specific styles for an m/m/g card and teasers
   &.card--fancybox {
     .card__copy {
       grid-template-areas:
-        ". . type"
+        "links links links"
         "label label label"
-        "links links links";
+        "type type type";
     }
   }
 }

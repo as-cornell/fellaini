@@ -18,7 +18,7 @@ Descr: defines content and blocks for majors and minors detail pages
     "heading_modifiers" : ["margin"],
     "heading_base_class" : "title"
   } %}
-	<div class="level">
+	<div class="degree-levels">
 		{{level}}
 	</div>
 
@@ -27,19 +27,24 @@ Descr: defines content and blocks for majors and minors detail pages
 		{{description}}
 		{{body}}
 
-
-		<h2 id="requirments">
-			Requirements
-		</h2>
-		{{requirements}}
-		<h2 id="classes">
-			Sample classes
-		</h2>
-		{{classes}}
-		<h2 id="outcomes">
-			Outcomes
-		</h2>
-		{{outcomes}}
+		{% if show_requirements %}
+			<h2 id="requirments">
+				Requirements
+			</h2>
+			{{requirements}}
+		{% endif %}
+		{% if show_classes %}
+			<h2 id="classes">
+				Sample classes
+			</h2>
+			{{classes}}
+		{% endif %}
+		{% if show_outcomes %}
+			<h2 id="outcomes">
+				Outcomes
+			</h2>
+			{{outcomes}}
+		{% endif %}
 	</div>
 	<div class="sidebar">
 		{{image}}
