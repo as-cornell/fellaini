@@ -24,7 +24,8 @@ h1 {
     font-size: var(--base-84);
   }
 
-  &.h1--title {
+  &.h1--title,
+  &.title {
     margin-top: 0;
     font-family: var(--font-serif);
     font-weight: var(--heavy);

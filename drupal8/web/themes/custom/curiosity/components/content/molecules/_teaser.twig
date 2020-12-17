@@ -20,9 +20,9 @@ Setting up new block class of 'teaser'
 #}
 
 {# {{ vardumper(content) }} #}
-{% set card_base_class = 'teaser' %}
-{# {% set card_byline = card_byline | default('') %} #}
-{% set card_dateline = card_dateline | default('') %}
+{% set teaser_base_class = 'teaser' %}
+{# {% set teaser_byline = teaser_byline | default('') %} #}
+{% set teaser_dateline = teaser_dateline | default('') %}
 
 {# fancybox wrapper #}
 {% if show_fancybox %}
@@ -30,11 +30,11 @@ Setting up new block class of 'teaser'
 	{% endif %}
 
 
-	<div {{ bem(card_base_class, (teaser_modifiers), card_blockname, teaser_classes) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
+	<div {{ bem(teaser_base_class, (teaser_modifiers), teaser_blockname, teaser_classes) }} {% if teaser_nodeId %} aria-labelledby="article-title-{{teaser_nodeId}}" {% endif %}>
 
 
 		{{teaser_img}}
-		<div {{ bem(card_copy_base_class|default('teaser__copy'), (card_copy_modifiers), card_copy_blockname) }}>
+		<div {{ bem(teaser_copy_base_class|default('teaser__copy'), (teaser_copy_modifiers), teaser_copy_blockname) }}>
 			{% if teaser_label %}
 				<p class="teaser__label eyebrow">
 					{{ teaser_label }}
@@ -81,7 +81,8 @@ Setting up new block class of 'teaser'
 			{% endif %}
 			{% if show_fancybox %}
 				<p>
-					<a href="{{card_title_link}}">
+<a href="{{teaser_title_link|default(teaser_link_url)}}">
+
 						Full details
 					</a>
 				</p>

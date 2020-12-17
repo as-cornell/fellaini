@@ -229,28 +229,34 @@ legend {
 #views-exposed-form-major-minor-grad-search-page-1,
 #views-exposed-form-people-search-page-1 {
   display: grid;
-  grid-template-columns: 3fr 3fr 60px 60px;
+  grid-template-columns: 3fr 3fr 1fr;
   grid-template-rows: auto;
   gap: var(--space);
-  border: 1px solid var(--gray-lt);
+  // border: 1px solid var(--gray-lt);
   padding: 1rem;
   border-radius: var(--border-radius);
   margin-bottom: 2rem;
   background: var(--as-white);
   @include boxShadow();
+  // base labels{
+  label {
+    font-weight: var(--regular);
+    font-size: var(--base-);
+  }
   .js-form-type-textfield {
     grid-column: 1 / 3;
     grid-row: 1;
     flex: 0 0 75%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     label {
-      font-size: var(--base-24);
+      margin-right: 1rem;
     }
-    #edit-keywords {
+    .form-text {
+      flex: 0 0 70%;
     }
   }
-  [role="button"] {
+  .button {
     background: var(--blue-blue);
     padding: 0.5rem;
     border: 1px solid var(--as-blue-base);
@@ -263,10 +269,19 @@ legend {
     padding: 0.5rem;
     border-radius: var(--border-radius);
   }
-  .bef--secondary {
+  details {
     grid-column: 1 / 3;
-    display: flex;
+    .details__contents {
+      display: flex;
+      summary {
+        // @extend .sr-only;
+      }
+      .form-item {
+        // flex: 0 0 30%;
+      }
+    }
   }
+
   //text fields
   .js-form-item-type-textfield {
     display: flex;
@@ -289,10 +304,10 @@ legend {
     grid-row: 1;
     grid-column: 3;
   }
-  .js-form-submit:nth-of-type(2) {
-    grid-row: 1;
-    grid-column: 4;
-  }
+  // .js-form-submit:nth-of-type(2) {
+  //   grid-row: 1;
+  //   grid-column: 4;
+  // }
 }
 //mmg specific
 #views-exposed-form-major-minor-grad-search-page-1 {

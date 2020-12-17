@@ -32,7 +32,11 @@ Variations:
   // line-height: 1.3;
   // font-weight: var(--regular);
   &-link {
-    color: var(--as-black);
+    color: var(--as-dark-blue);
+    display: block;
+    &:hover {
+      color: var(--as-blue-base);
+    }
   }
 }
 

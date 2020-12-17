@@ -8,7 +8,7 @@
 #}
 
 
-{% set ul_modifiers = ['jellyBeans'] %}
+{% set group_base_class = 'levels' %}
 
 {# {% for item in items %}
   {% set li_modifiers = ['label'] %}
@@ -20,7 +20,9 @@
 	{# {{label}} #}
 {% endfor %}
 
-{% embed "@content/atoms/_ul.twig" with{
-  ul_items : items
+{% set li_base_class = "level" %}
+
+{% embed "@content/molecules/_grouping.twig" with{
+  items : items
 } %}
 {% endembed %}

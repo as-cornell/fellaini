@@ -71,15 +71,15 @@ Descr:
   .view--form {
     grid-area: form;
     position: sticky;
-    top: 2rem;
+    top: 0.5rem;
     z-index: 1;
   }
   .view--facets {
     grid-area: facets;
     grid-area: facets;
-    border: 1px solid var(--as-teal);
-    padding: 1rem;
-    border-radius: var(--border-radius);
+    // border: 1px solid var(--as-teal);
+    // padding: 1rem;
+    // border-radius: var(--border-radius);
     font-size: var(--base-18);
     margin-bottom: 1rem;
     ul {
@@ -105,9 +105,9 @@ Descr:
   @include medium {
     grid-template-areas:
       ". title title title title title title title title title title . "
-      "form form form form form form form form form form form form "
       ". facets facets facets facets facets facets facets facets facets facets . "
-      ". content content content content content content content content content content . "
+      ". form form form form form form form form form form . "
+      "content content content content content content content content content content content content "
       ". pager pager pager pager pager pager pager pager pager pager . ";
   }
 }
@@ -119,7 +119,7 @@ Descr:
   @include medium {
     grid-template-areas:
       ". title title title title title title title title title title . "
-      "form form form form form form form form form form form form "
+      ". form form form form form form form form form form . "
       ". facets facets facets facets facets facets facets facets facets facets . "
       "content content content content content content content content content content content content "
       ". pager pager pager pager pager pager pager pager pager pager . ";

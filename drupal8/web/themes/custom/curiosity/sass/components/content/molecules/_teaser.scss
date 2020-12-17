@@ -19,6 +19,16 @@ Variations:
       @extend .sr-only;
     }
   }
+  .teaser__title {
+    &-link {
+      color: var(--as-dark-blue);
+      display: block;
+      text-decoration: underline;
+      &:hover {
+        color: var(--as-blue-base);
+      }
+    }
+  }
   .teaser__copy {
     flex-grow: 1;
   }

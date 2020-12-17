@@ -28,6 +28,26 @@
 {% set main_element_base_class = main_element_base_class | default('major-minor-grad') %}
 {% set main_element_modifiers = [''] %}
 
+
+{# requirements #}
+{% if content.field_long_text_two.0 %}
+	{% set show_requirements = true %}
+	{% set requirements = (content.field_long_text_two|render is not empty) ? content.field_long_text_two %}
+{% endif %}
+
+{# outcomes #}
+{% if content.field_long_text_one.0 %}
+	{% set show_outcomes = true %}
+	{% set outcomes = (content.field_long_text_one|render is not empty) ? content.field_long_text_one %}
+{% endif %}
+
+{# classes #}
+{% if content.field_classes.0 %}
+	{% set show_classes = true %}
+	{% set classes = (content.field_classes|render is not empty) ? content.field_classes %}
+{% endif %}
+
+
 {# Related articles #}
 {% if content.field_related_articles.0 %}
 	{% set show_related_articles = true %}
@@ -55,9 +75,9 @@
 
   description: content.description,
   body: content.field_page_components,
-  outcomes: content.field_long_text_one,
-  requirements: content.field_long_text_two,
-  classes: content.field_classes,
+  outcomes: outcomes,
+  requirements: requirements,
+  classes: classes,
   links: content.field_links,
 
   related_articles: content.field_related_articles,
