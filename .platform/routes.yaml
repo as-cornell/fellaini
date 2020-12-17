@@ -256,6 +256,12 @@ https://archaeology.cornell.edu/:
 https://www.archaeology.cornell.edu/:
     type: redirect
     to: https://archaeology.cornell.edu/
+https://ciams.cornell.edu/:
+    type: redirect
+    to: https://archaeology.cornell.edu/
+https://www.ciams.cornell.edu/:
+    type: redirect
+    to: https://archaeology.cornell.edu/
 https://asianamericanstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -312,3 +318,115 @@ https://complit.arts.cornell.edu/:
 https://www.complit.arts.cornell.edu/:
     type: redirect
     to: https://complit.cornell.edu/
+https://sts.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.sts.cornell.edu/:
+    type: redirect
+    to: https://sts.cornell.edu/
+https://cinema.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.cinema.cornell.edu/:
+    type: redirect
+    to: https://cinema.cornell.edu/
+https://ecologyandevolution.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.ecologyandevolution.cornell.edu/:
+    type: redirect
+    to: https://ecologyandevolution.cornell.edu/
+https://economics.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.economics.cornell.edu/:
+    type: redirect
+    to: https://economics.cornell.edu/
+https://fgss.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.fgss.cornell.edu/:
+    type: redirect
+    to: https://fgss.cornell.edu/
+https://german.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.german.cornell.edu/:
+    type: redirect
+    to: https://german.cornell.edu/
+https://government.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.government.cornell.edu/:
+    type: redirect
+    to: https://government.cornell.edu/
+https://government.arts.cornell.edu/:
+    type: redirect
+    to: https://government.cornell.edu/
+https://www.government.arts.cornell.edu/:
+    type: redirect
+    to: https://government.cornell.edu/
+https://history.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.history.cornell.edu/:
+    type: redirect
+    to: https://history.cornell.edu/
+https://history.arts.cornell.edu/:
+    type: redirect
+    to: https://history.cornell.edu/
+https://www.history.arts.cornell.edu/:
+    type: redirect
+    to: https://history.cornell.edu/
+https://arthistory.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.arthistory.cornell.edu/:
+    type: redirect
+    to: https://arthistory.cornell.edu/
+https://jewishstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.jewishstudies.cornell.edu/:
+    type: redirect
+    to: https://jewishstudies.cornell.edu/
