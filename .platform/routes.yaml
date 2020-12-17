@@ -368,3 +368,65 @@ https://fgss.cornell.edu/:
 https://www.fgss.cornell.edu/:
     type: redirect
     to: https://fgss.cornell.edu/
+https://german.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.german.cornell.edu/:
+    type: redirect
+    to: https://german.cornell.edu/
+https://government.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.government.cornell.edu/:
+    type: redirect
+    to: https://government.cornell.edu/
+https://government.arts.cornell.edu/:
+    type: redirect
+    to: https://government.cornell.edu/
+https://www.government.arts.cornell.edu/:
+    type: redirect
+    to: https://government.cornell.edu/
+https://history.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.history.cornell.edu/:
+    type: redirect
+    to: https://history.cornell.edu/
+https://history.arts.cornell.edu/:
+    type: redirect
+    to: https://history.cornell.edu/
+https://www.history.arts.cornell.edu/:
+    type: redirect
+    to: https://history.cornell.edu/
+https://arthistory.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.arthistory.cornell.edu/:
+    type: redirect
+    to: https://arthistory.cornell.edu/
+https://jewishstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.jewishstudies.cornell.edu/:
+    type: redirect
+    to: https://jewishstudies.cornell.edu/
