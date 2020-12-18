@@ -483,13 +483,3 @@ https://linguistics.cornell.edu/:
 https://www.linguistics.cornell.edu/:
     type: redirect
     to: https://linguistics.cornell.edu/
-https://knight.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.knight.as.cornell.edu/:
-    type: redirect
-    to: https://knight.as.cornell.edu/
