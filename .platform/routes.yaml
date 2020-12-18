@@ -430,3 +430,56 @@ https://jewishstudies.cornell.edu/:
 https://www.jewishstudies.cornell.edu/:
     type: redirect
     to: https://jewishstudies.cornell.edu/
+https://knight.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.knight.as.cornell.edu/:
+    type: redirect
+    to: https://knight.as.cornell.edu/
+https://lrc.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.lrc.cornell.edu/:
+    type: redirect
+    to: https://lrc.cornell.edu/
+https://wld.lrc.cornell.edu/:
+    type: redirect
+    to: https://lrc.cornell.edu/
+https://latino.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.latino.cornell.edu/:
+    type: redirect
+    to: https://latino.cornell.edu/
+https://lgbt.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.lgbt.cornell.edu/:
+    type: redirect
+    to: https://lgbt.cornell.edu/
+https://linguistics.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.linguistics.cornell.edu/:
+    type: redirect
+    to: https://linguistics.cornell.edu/
