@@ -12,7 +12,7 @@ set up on grid
 
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['stat'] %}
-{% set group_classes = ['grid'] %}
+{% set group_classes = ['flex'] %}
 
 
 {% set items = content.field_stats %}
@@ -23,7 +23,7 @@ set up on grid
 	{% set multiple = true %}
 {% endif %}
 
-{# set number of items to help with grids #}
+{# set number of items to help with flex #}
 {% set count = content.field_stats['#items']|length %}
 {% set group_classes = group_classes|merge(['items--'~count]) %}
 

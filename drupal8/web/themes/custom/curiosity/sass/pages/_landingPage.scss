@@ -15,7 +15,7 @@ Descr:
     grid-area: aside;
     position: sticky;
     top: 0;
-    margin-bottom: var(--margin-3);
+    margin: 1rem 0 var(--bottom-margin) 0;
   }
   .content {
     grid-area: content;

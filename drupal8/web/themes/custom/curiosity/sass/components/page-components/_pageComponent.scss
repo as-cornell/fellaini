@@ -15,7 +15,10 @@ Descr:
 .pcWrapper {
   // margin-bottom: var(--bottom-margin);
   .pcWrapper {
-    margin-bottom: 0;
+    margin-bottom: var(--bottom-margin);
+    > .pcWrapper {
+      margin-bottom: 0;
+    }
   }
   &.grid {
     display: grid;
@@ -25,6 +28,7 @@ Descr:
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    flex-wrap: wrap;
     @include medium() {
       flex-direction: row;
     }

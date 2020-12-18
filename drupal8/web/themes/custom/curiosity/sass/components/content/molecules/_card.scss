@@ -16,8 +16,10 @@ Variations:
   border-radius: var(--border-radius);
   margin-bottom: var(--space);
   @include gradient-border();
+  align-items: flex-start;
   figure {
     margin: 0;
+    box-shadow: none;
     img {
       border-radius: 2px 2px 0 0;
     }
