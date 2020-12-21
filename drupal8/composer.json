@@ -112,7 +112,8 @@
         "drupal/ckeditor_entity_link": "^1.2",
         "drupal/editor_advanced_link": "^1.8",
         "drupal/ckeditor_media_embed": "^1.10",
-        "drupal/video_embed_field": "^2.4"
+        "drupal/video_embed_field": "^2.4",
+        "drupal/migrate_cron": "^1.3"
 
 
     },
