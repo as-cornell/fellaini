@@ -483,3 +483,65 @@ https://linguistics.cornell.edu/:
 https://www.linguistics.cornell.edu/:
     type: redirect
     to: https://linguistics.cornell.edu/
+https://romancestudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.romancestudies.cornell.edu/:
+    type: redirect
+    to: https://romancestudies.cornell.edu/
+https://milstein-program.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.milstein-program.as.cornell.edu/:
+    type: redirect
+    to: https://milstein-program.as.cornell.edu/
+https://milstein.as.cornell.edu/:
+    type: redirect
+    to: https://milstein-program.as.cornell.edu/
+https://www.milstein.as.cornell.edu/:
+    type: redirect
+    to: https://milstein-program.as.cornell.edu/
+https://music.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.music.cornell.edu/:
+    type: redirect
+    to: https://music.cornell.edu/
+https://neareasternstudies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.neareasternstudies.cornell.edu/:
+    type: redirect
+    to: https://neareasternstudies.cornell.edu/
+https://societyhumanities.as.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.societyhumanities.as.cornell.edu/:
+    type: redirect
+    to: https://societyhumanities.as.cornell.edu/
+https://sochum.as.cornell.edu/:
+    type: redirect
+    to: https://societyhumanities.as.cornell.edu/
+https://www.sochum.as.cornell.edu/:
+    type: redirect
+    to: https://societyhumanities.as.cornell.edu/
