@@ -44,18 +44,27 @@ Descr:
         grid-row: 1;
       }
       h1 {
-        @include medium() {
-          color: var(--as-white);
-          @include dropShadow();
-          z-index: 1;
-          max-width: 80%;
-        }
+        grid-row: 2;
       }
       figure {
         background: none;
+        display: grid;
+        grid-row: 1;
+        margin-bottom: 2rem;
+      }
+      figcaption,
+      img {
+        grid-column: 1;
+        grid-row: 1;
       }
       figcaption {
-        @extend .sr-only;
+        // @extend .sr-only;
+        color: var(--as-white);
+        max-width: 80%;
+        @include dropShadow();
+        @extend .spotlight;
+        @extend .base-84;
+        align-self: flex-end;
       }
       img {
         @extend .pano-mask-1;
