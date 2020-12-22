@@ -17,7 +17,13 @@ Descr: otpN small and large, hovers and toggles for subNav
   animation: none;
   display: flex;
   flex-wrap: wrap;
-
+  a {
+    color: var(--as-dark-blue);
+    // display: block;
+    &:hover {
+      color: var(--as-blue-base);
+    }
+  }
   @include large() {
     flex-direction: column;
   }
@@ -82,7 +88,7 @@ Descr: otpN small and large, hovers and toggles for subNav
     background: var(--as-white);
     padding: 1rem 1rem 0 1rem;
     margin: 0 0 1rem -1rem;
-    box-shadow: 0px 8px 7px -6px rgba(0, 0, 0, 0.08);
+    @include boxShadow();
   }
   @include large() {
     background: none;
@@ -138,20 +144,40 @@ Descr: otpN small and large, hovers and toggles for subNav
   flex-direction: column;
   justify-content: center;
 
+  position: relative;
+  padding: 0.5rem 3rem;
   background: var(--as-white);
-  box-shadow: 0px 8px 7px -6px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  @include boxShadow($color: var(--gray-lightest));
+  &:before {
+    border-radius: var(--border-radius);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    z-index: -1;
+    @include boxShadow();
+    opacity: 0;
+    transition: opacity 0.25s ease-in;
+  }
 
-  border-radius: 12px;
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
 
   @include medium() {
     flex-direction: row;
     align-items: center;
   }
 
-  @include xl() {
-    width: 110%;
-    margin-left: -5%;
-  }
+  // @include xl() {
+  //   width: 110%;
+  //   margin-left: -5%;
+  // }
   h4 {
     margin-right: 0.5rem;
     cursor: pointer;
@@ -167,10 +193,10 @@ Descr: otpN small and large, hovers and toggles for subNav
   .otpNav {
     display: flex;
     justify-content: center;
-
+    align-items: center;
     height: 0;
     overflow: hidden;
-
+    margin: 0;
     &.expanded {
       height: 100%;
       overflow: hidden;
@@ -183,6 +209,9 @@ Descr: otpN small and large, hovers and toggles for subNav
     li {
       margin-right: 1em;
       margin-bottom: 0;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
   // .otpNav
