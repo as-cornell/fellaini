@@ -27,21 +27,9 @@ https://{default}/:
 https://departments.asd8.as.cornell.edu/:
   type: upstream
   upstream: drupal8:http
-https://anthro.asd8.as.cornell.edu/:
-  type: upstream
-  upstream: drupal8:http
-https://history.asd8.as.cornell.edu/:
-  type: upstream
-  upstream: drupal8:http
 https://people.asd8.as.cornell.edu/:
   type: upstream
   upstream: drupal8:http
-https://asd7.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept1.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -71,41 +59,6 @@ https://dept4.as.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://dept5.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept6.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept7.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept8.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept9.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept10.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
@@ -503,12 +456,6 @@ https://milstein-program.as.cornell.edu/:
 https://www.milstein-program.as.cornell.edu/:
     type: redirect
     to: https://milstein-program.as.cornell.edu/
-https://milstein.as.cornell.edu/:
-    type: redirect
-    to: https://milstein-program.as.cornell.edu/
-https://www.milstein.as.cornell.edu/:
-    type: redirect
-    to: https://milstein-program.as.cornell.edu/
 https://music.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -537,11 +484,5 @@ https://societyhumanities.as.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.societyhumanities.as.cornell.edu/:
-    type: redirect
-    to: https://societyhumanities.as.cornell.edu/
-https://sochum.as.cornell.edu/:
-    type: redirect
-    to: https://societyhumanities.as.cornell.edu/
-https://www.sochum.as.cornell.edu/:
     type: redirect
     to: https://societyhumanities.as.cornell.edu/
