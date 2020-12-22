@@ -131,9 +131,9 @@
   --base-64: 2.66rem;
 
   --base-84: 2rem;
-  @include small() {
-    --base-84: 2.6rem;
-  }
+  // @include small() {
+  //   --base-84: 2.6rem;
+  // }
   @include large() {
     --base-84: 3.5rem;
   }

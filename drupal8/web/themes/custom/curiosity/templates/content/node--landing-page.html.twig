@@ -32,9 +32,9 @@ Descr: Sets up variables and content for _basic-page.twig
 {% set aside = false %}
 {% set sidebarContent = false %}
 
-{% set heading_base_class = 'spotlight' %}
+{# {% set heading_base_class = 'spotlight' %}
 {% set heading_modifiers = ['title'] %}
-{% set heading_class = ['centered', 'base-84'] %}
+{% set heading_class = ['centered', 'base-84'] %} #}
 {% if is_front %}
 	{% set heading_class = heading_class|merge(['sr-only']) %}
 {% endif %}
@@ -52,15 +52,9 @@ Descr: Sets up variables and content for _basic-page.twig
 {% if content.field_pano|render is not empty %}
 	{% set hasPano = true %}
 	{% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
+{% else %}
+  {% set main_element_modifiers = main_element_modifiers|merge(['no-pano']) %}
 {% endif %}
-
-{# {{content.field_pano}} #}
-{#
-  Page Section links
-  - set up aside in-page nav
-  - link values for the nav items
-  - set aside_nav to the menu block
-#}
 
 {% set linkValues = [] %}
 {% for item in node.field_page_components %}
@@ -78,6 +72,9 @@ Descr: Sets up variables and content for _basic-page.twig
   </div>
   {% endset %}
   {% set aside = true %}
+
+{% set main_element_modifiers = main_element_modifiers|merge(['has-aside']) %}
+
 {% endif %}
 
 

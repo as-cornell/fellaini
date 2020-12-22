@@ -48,7 +48,7 @@ Descr: Sets styles for
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: var(--bottom-margin);
+  margin-bottom: var(--margin-3);
   font-size: var(--base-24);
 
   &__text {
@@ -59,9 +59,11 @@ Descr: Sets styles for
   }
   @include large() {
     align-items: center;
-    &__image,
+    &__image {
+      flex: 0 0 40%;
+    }
     &__text {
-      flex: 0 0 calc(47% - var(--space));
+      flex: 0 0 55%;
     }
   }
   h2 {
