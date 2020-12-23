@@ -29,10 +29,11 @@ Descr:
   }
   aside {
     // display: none;
+    position: sticky;
+    top: 0;
     @include medium() {
       grid-area: aside;
-      position: sticky;
-      top: 0;
+
       // display: block;
     }
     // @include large() {
@@ -49,6 +50,7 @@ Descr:
   grid-template-areas:
     "nav"
     "title"
+    "aside"
     "content"
     "sidebar";
   @include medium {

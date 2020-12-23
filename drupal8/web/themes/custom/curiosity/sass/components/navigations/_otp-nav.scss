@@ -4,52 +4,16 @@ Title: otp navigation
 Descr: otpN small and large, hovers and toggles for subNav
 
 --------------------------- */
-// .otp {
-//   position: sticky;
-//   top: 0;
-// }
-.otpNavWrapper {
-  // background: var(--as-white);
-  position: inherit;
-  // background: var(--as-white);
-  z-index: 1;
-  font-size: var(--base-16);
-  animation: none;
-  display: flex;
-  flex-wrap: wrap;
-  a {
-    color: var(--as-dark-blue);
-    // display: block;
-    &:hover {
-      color: var(--as-blue-base);
-    }
-  }
-  @include large() {
-    flex-direction: column;
-  }
-  h4 {
-    font-size: var(--base-16);
-    margin: 0;
-    flex: 0 0 auto;
-    @include medium() {
-      font-size: var(--base-18);
-    }
-    @include large() {
-      font-size: var(--base-20);
-      text-align: center;
-    }
-  }
-}
 
 // for stuck otpnav
-.main.otpStuck {
-  @include large() {
-    .otpNavWrapper {
-      position: sticky;
-      top: 0;
-    }
-  }
-}
+// .main.otpStuck {
+//   @include large() {
+//     .otpNavWrapper {
+//       position: sticky;
+//       top: 0;
+//     }
+//   }
+// }
 
 @keyframes otpNavFader {
   0% {
@@ -78,45 +42,104 @@ Descr: otpN small and large, hovers and toggles for subNav
   flex-wrap: wrap;
   padding-left: 0;
   flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  &.expanded {
+    height: 100%;
+    overflow: hidden;
+  }
+
   @include medium() {
+    height: 100%;
+    overflow: hidden;
     flex-direction: row;
   }
+  li {
+    margin-right: 1em;
+    margin-bottom: 0;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 }
-
-.otpNav--basic_page {
+.otpNavWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background: var(--as-white);
+  @include boxShadow($spread: 1px, $color: var(--gray-lt));
+  position: relative;
+  z-index: 1;
+  font-size: var(--base-16);
+  width: 100%;
   @include medium() {
     background: var(--as-white);
     padding: 1rem 1rem 0 1rem;
     margin: 0 0 1rem -1rem;
+  }
+  // :before for border/shadow
+  &:before {
+    border-radius: var(--border-radius);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    z-index: -1;
     @include boxShadow();
+    opacity: 0;
+    transition: opacity 0.25s ease-in;
   }
-  @include large() {
-    background: none;
-    padding: 0;
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+  // links
+  a {
+    color: var(--as-dark-blue);
+    &:hover {
+      color: var(--as-blue-base);
+    }
+  }
+  // Header and toggle
+  h4 {
+    font-size: var(--base-16);
     margin: 0;
-    box-shadow: none;
-  }
-  .otpNav {
-    flex-direction: column;
-    width: 100%;
-
-    li {
-      margin-right: 1em;
-      margin-bottom: 0;
-    }
-    a {
-    }
-    // medium
+    flex: 0 0 auto;
+    margin-right: 0.5rem;
+    font-size: var(--base-20);
+    margin-top: 0.5em;
+    cursor: pointer;
     @include medium() {
-      flex-direction: row;
-      flex-shrink: 0;
-      margin: 0 0 1rem 0;
+      cursor: default;
+      margin-top: 0;
+      color: var(--as-black);
+      font-size: var(--base-18);
     }
-    // .large
+    @include large() {
+      font-size: var(--base-20);
+      text-align: center;
+    }
+  }
+  .otpToggle,
+  .otpNav {
+    flex: 0 0 100%;
+  }
+}
+
+// basic page styles
+.otpNav--basic_page {
+  .otpNav {
     @include large() {
       flex-direction: column;
       padding-left: 0;
-
+      background: none;
+      padding: 0;
+      margin: 0;
+      box-shadow: none;
       li {
         margin-right: 0;
         margin-bottom: 0.5rem;
@@ -139,80 +162,9 @@ Descr: otpN small and large, hovers and toggles for subNav
   }
 }
 
+//landing page styles
 .otpNav--landing_page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  position: relative;
-  padding: 0.5rem 3rem;
-  background: var(--as-white);
-  width: 100%;
-  @include boxShadow($color: var(--gray-lightest));
-  &:before {
-    border-radius: var(--border-radius);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    z-index: -1;
-    @include boxShadow();
-    opacity: 0;
-    transition: opacity 0.25s ease-in;
+  @include large() {
+    flex-direction: column;
   }
-
-  &:hover {
-    &:before {
-      opacity: 1;
-    }
-  }
-
-  @include medium() {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  // @include xl() {
-  //   width: 110%;
-  //   margin-left: -5%;
-  // }
-  h4 {
-    margin-right: 0.5rem;
-    cursor: pointer;
-    font-size: var(--base-20);
-    color: var(--as-red);
-    margin-top: 0.5em;
-    @include medium() {
-      cursor: default;
-      margin-top: 0;
-      color: var(--as-black);
-    }
-  }
-  .otpNav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 0;
-    overflow: hidden;
-    margin: 0;
-    &.expanded {
-      height: 100%;
-      overflow: hidden;
-    }
-    @include medium() {
-      height: 100%;
-      overflow: hidden;
-    }
-
-    li {
-      margin-right: 1em;
-      margin-bottom: 0;
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-  }
-  // .otpNav
 }

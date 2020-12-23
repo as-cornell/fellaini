@@ -20,7 +20,7 @@ Descr: sets styles for various pce listBlocks
     }
 
     gap: var(--space);
-    margin-bottom: var(--margin-6);
+    // margin-bottom: var(--margin-6);
     .listBlock__text {
       grid-column: 1 / -1;
       > h2:first-of-type,
