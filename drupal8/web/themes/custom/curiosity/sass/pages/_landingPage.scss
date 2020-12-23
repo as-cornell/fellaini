@@ -29,6 +29,14 @@ Descr:
   .content > .pcWrapper {
     margin-bottom: var(--bottom-margin);
   }
+  // constrain ftbs
+  .content > .pcWrapper--ftb {
+    margin-left: auto;
+    margin-right: auto;
+    @include medium() {
+      max-width: 72%;
+    }
+  }
   .group__title--sr-only {
     @extend .sr-only;
   }
@@ -83,6 +91,11 @@ Descr:
   &--has-aside {
     .title {
       margin-bottom: 0;
+    }
+  }
+  &--homepage {
+    aside {
+      @extend .sr-only;
     }
   }
 }

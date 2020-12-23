@@ -134,6 +134,9 @@ Descr: otpN small and large, hovers and toggles for subNav
 .otpNav--basic_page {
   box-shadow: none;
   @include large() {
+    h4 {
+      margin-bottom: 0.75em;
+    }
     &:before {
       display: none;
     }

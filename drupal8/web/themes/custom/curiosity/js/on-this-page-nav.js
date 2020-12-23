@@ -14,7 +14,7 @@
 
 })(jQuery);
 
-const targets = document.querySelectorAll(".pcWrapper--page-section");
+const targets = document.querySelectorAll(".pageSection");
 const navOptions = {
   threshold: 0,
   rootMargin: "-200px",
@@ -22,6 +22,7 @@ const navOptions = {
 
 const navObserver = new IntersectionObserver((entries, navObserver) => {
   entries.forEach((entry) => {
+    console.log(entry);
     if (!entry.isIntersecting) {
       return;
     } else {
