@@ -37,6 +37,8 @@ Descr: Sets up variables and content for _basic-page.twig
 {% set heading_class = [''] %}
 {% if is_front %}
 	{% set heading_class = heading_class|merge(['sr-only']) %}
+{% set main_element_modifiers = main_element_modifiers|merge(['homepage']) %}
+
 {% endif %}
 
 
