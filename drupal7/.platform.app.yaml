@@ -112,6 +112,8 @@ crons:
 variables:
   env:
     SIMPLESAMLPHP_CONFIG_DIR: /app/simplesamlphp/config
+  php:
+       max_input_vars: 4096
 
 # Added for New Relic and LDAP
 runtime:
