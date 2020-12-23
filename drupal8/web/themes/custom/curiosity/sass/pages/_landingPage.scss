@@ -26,8 +26,8 @@ Descr:
   > div {
     grid-column: 1 / -1;
   }
-  .content > .pageComponent {
-    // margin-bottom: var(--bottom-margin);
+  .content > .pcWrapper {
+    margin-bottom: var(--bottom-margin);
   }
   .group__title--sr-only {
     @extend .sr-only;

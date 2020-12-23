@@ -166,5 +166,6 @@ Descr: otpN small and large, hovers and toggles for subNav
 .otpNav--landing_page {
   @include large() {
     flex-direction: column;
+    align-content: center;
   }
 }

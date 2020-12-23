@@ -17,6 +17,7 @@ blockquote {
   @include large() {
     padding: 3rem;
     font-size: 1.5rem;
+    margin: 2rem 0;
   }
 
   // font-style: italic;
@@ -26,6 +27,7 @@ blockquote {
   @include boxShadow;
   .attribution {
     font-weight: var(--regular);
+    font-size: var(--base-28);
   }
   &.blue {
     background: var(--storm-radial);
