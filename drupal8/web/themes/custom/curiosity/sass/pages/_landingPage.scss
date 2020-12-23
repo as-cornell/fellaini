@@ -26,7 +26,7 @@ Descr:
   > div {
     grid-column: 1 / -1;
   }
-  .content > .pageComponent {
+  .content > .pcWrapper {
     margin-bottom: var(--bottom-margin);
   }
   .group__title--sr-only {

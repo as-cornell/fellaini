@@ -13,13 +13,13 @@ Descr:
 // pc--rapper with items laid out on specified grid based on numbe of items.
 
 .pcWrapper {
-  margin-bottom: var(--bottom-margin);
-  > .pcWrapper {
-    // margin-bottom: var(--bottom-margin);
-    // > .pcWrapper {
-    margin-bottom: 0;
-    // }
-  }
+  // margin-bottom: var(--bottom-margin);
+  // > .pcWrapper {
+  //   // margin-bottom: var(--bottom-margin);
+  //   // > .pcWrapper {
+  //   // margin-bottom: 0;
+  //   // }
+  // }
   &.grid {
     display: grid;
     gap: var(--space);
@@ -53,3 +53,15 @@ Descr:
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+//specil for in page-section where they can get stacked
+// .pcWrapper--page-section {
+//   > .pcWrapper {
+//     margin-bottom: var(--margin-3);
+//   }
+//   > .pcWrapper:last-of-type {
+//     .pcWrapper {
+//       margin-bottom: 0;
+//     }
+//   }
+// }

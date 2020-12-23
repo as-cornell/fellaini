@@ -5,7 +5,7 @@
   --gray-dark: #707070;
   --gray-med: #959595;
   --gray-lt: #c2c0c0;
-  --gray-lightest: #eeeeee;
+  --gray-lightest: #fbfbfb;
 
   --dusk: red;
   --fog: red;
@@ -163,7 +163,7 @@
 
   --bottom-margin: 2rem;
   @include large() {
-    --bottom-margin: 6rem;
+    --bottom-margin: 4rem;
   }
 
   // set specific margins usually for containers will collapse at smaller sizes.

@@ -10,13 +10,14 @@ Descr:
 blockquote {
   background: var(--gray-lightest);
   font-size: 1.25rem;
-  margin: 3rem 0;
+  // margin: 3rem 0;
   padding: 1em;
   position: relative;
   z-index: -1;
   @include large() {
     padding: 3rem;
     font-size: 1.5rem;
+    margin: 2rem 0;
   }
 
   // font-style: italic;
@@ -26,6 +27,7 @@ blockquote {
   @include boxShadow;
   .attribution {
     font-weight: var(--regular);
+    font-size: var(--base-28);
   }
   &.blue {
     background: var(--storm-radial);

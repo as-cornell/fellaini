@@ -19,5 +19,8 @@ Descr:
   display: grid;
   grid-gap: 2rem;
   grid-row-gap: 0;
-  padding: 0 1rem;
+  padding: 0 2rem;
+  @include xl() {
+    padding: 0 1rem;
+  }
 }

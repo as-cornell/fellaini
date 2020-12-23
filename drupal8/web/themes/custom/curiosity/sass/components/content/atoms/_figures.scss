@@ -56,10 +56,10 @@ figure {
   }
 }
 // figures in pageComponent--ftb need special width restrictions
-.pageComponent--ftb {
+.pcWrapper--ftb {
   .figure {
     // max-width: 300px;
-    margin-top: calc(1rem + 0.25rem); // to align with top of text
+    margin-top: 1.25rem; // to align with top of text
     @include large() {
       &--6_4_newsletter {
         max-width: 600px;
@@ -67,13 +67,16 @@ figure {
       &--5_4 {
         max-width: 520px;
       }
-      &--4_5,
+
       &--1_1_phototext {
         max-width: 248px;
       }
     }
     &--video {
       max-width: 100%;
+    }
+    &--4_5 {
+      max-width: 400px;
     }
   }
 }

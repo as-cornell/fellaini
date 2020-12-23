@@ -143,7 +143,11 @@ aside {
       "title"
       "byline";
   }
-  a {
+  a.card__title-link {
+    padding-bottom: 0;
+    &:before {
+      display: none;
+    }
     span {
       display: block;
     }
