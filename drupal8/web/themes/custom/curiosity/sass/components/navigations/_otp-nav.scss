@@ -6,14 +6,14 @@ Descr: otpN small and large, hovers and toggles for subNav
 --------------------------- */
 
 // for stuck otpnav
-// .main.otpStuck {
-//   @include large() {
-//     .otpNavWrapper {
-//       position: sticky;
-//       top: 0;
-//     }
-//   }
-// }
+.main.otpStuck {
+  @include large() {
+    .otpNavWrapper {
+      position: sticky;
+      top: 0;
+    }
+  }
+}
 
 @keyframes otpNavFader {
   0% {
@@ -132,6 +132,12 @@ Descr: otpN small and large, hovers and toggles for subNav
 
 // basic page styles
 .otpNav--basic_page {
+  box-shadow: none;
+  @include large() {
+    &:before {
+      display: none;
+    }
+  }
   .otpNav {
     @include large() {
       flex-direction: column;
