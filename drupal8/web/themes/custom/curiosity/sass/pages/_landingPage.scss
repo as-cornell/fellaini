@@ -10,12 +10,15 @@ Descr:
   grid-template-areas: "title" "aside" "content";
   .title {
     grid-area: title;
+    @extend .spotlight;
   }
   aside {
     grid-area: aside;
     position: sticky;
     top: 0;
-    margin: 1rem 0 var(--bottom-margin) 0;
+    margin: 1rem 0 4rem 0;
+    display: flex;
+    justify-content: center;
   }
   .content {
     grid-area: content;
@@ -28,6 +31,11 @@ Descr:
   }
   .group__title--sr-only {
     @extend .sr-only;
+  }
+  &--no-pano {
+    h1 {
+      @extend .spotlight;
+    }
   }
   &--pano {
     .title {
@@ -45,6 +53,7 @@ Descr:
       }
       h1 {
         grid-row: 2;
+        font-weight: var(--regular);
       }
       figure {
         background: none;
@@ -69,6 +78,11 @@ Descr:
       img {
         @extend .pano-mask-1;
       }
+    }
+  }
+  &--has-aside {
+    .title {
+      margin-bottom: 0;
     }
   }
 }

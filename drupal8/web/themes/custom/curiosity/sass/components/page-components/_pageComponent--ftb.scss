@@ -6,7 +6,8 @@ Descr:
 
 --------------------------- */
 
-.pageComponent--ftb {
+.pcWrapper--ftb {
+  margin-bottom: var(--bottom-margin);
   p {
     max-width: var(--line-width);
   }
@@ -15,7 +16,7 @@ Descr:
 // for now target first layer of ftbs on lading page for width
 
 .landingPage {
-  .content > .pageComponent--ftb {
+  .content > .pcWrapper--ftb {
     @include medium() {
       max-width: 72%;
     }

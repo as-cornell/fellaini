@@ -1,11 +1,11 @@
 :root {
-  --as-white: #fdfdfd;
+  --as-white: white;
   --as-black: #2c2c2c;
   --dark-text: #35363f;
   --gray-dark: #707070;
   --gray-med: #959595;
   --gray-lt: #c2c0c0;
-  --gray-lightest: #fbfbfb;
+  --gray-lightest: #eeeeee;
 
   --dusk: red;
   --fog: red;
@@ -131,9 +131,9 @@
   --base-64: 2.66rem;
 
   --base-84: 2rem;
-  @include small() {
-    --base-84: 2.6rem;
-  }
+  // @include small() {
+  //   --base-84: 2.6rem;
+  // }
   @include large() {
     --base-84: 3.5rem;
   }
