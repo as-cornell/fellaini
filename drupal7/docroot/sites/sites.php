@@ -4,11 +4,11 @@ $sites['d7.fellaini.local'] = 'default';
 $sites['dept1.fellaini.local'] = 'dept1';
 $sites['dept2.fellaini.local'] = 'dept2';
 // PLATFORM
-$sites['dept1.as.cornell.edu'] = 'pma';
-$sites['dept2.as.cornell.edu'] = 'phil';
-$sites['dept3.as.cornell.edu'] = 'sociology';
-$sites['dept4.as.cornell.edu'] = 'psych';
-$sites['dept5.as.cornell.edu'] = 'religiousstudies';
+$sites['dept1.as.cornell.edu'] = 'physics';
+$sites['dept2.as.cornell.edu'] = 'chem';
+$sites['dept3.as.cornell.edu'] = 'english';
+$sites['dept4.as.cornell.edu'] = 'bionb';
+$sites['dept5.as.cornell.edu'] = 'math';
 $sites['baroqueorgan.cornell.edu'] = 'organ';
 $sites['cogsci.cornell.edu'] = 'cogsci';
 $sites['cder.as.cornell.edu'] = 'cder';
