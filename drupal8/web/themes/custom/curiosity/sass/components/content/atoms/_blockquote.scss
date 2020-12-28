@@ -11,9 +11,10 @@ blockquote {
   background: var(--gray-lightest);
   font-size: 1.25rem;
   // margin: 3rem 0;
-  padding: 1em;
+  padding: 2em;
   position: relative;
   z-index: -1;
+  margin: 1em 0;
   @include large() {
     padding: 3rem;
     font-size: 1.5rem;
@@ -27,7 +28,7 @@ blockquote {
   @include boxShadow;
   .attribution {
     font-weight: var(--regular);
-    font-size: var(--base-28);
+    font-size: var(--base-24);
   }
   &.blue {
     background: var(--storm-radial);
@@ -114,6 +115,8 @@ blockquote {
 // blockquotes in articles
 .article.main {
   blockquote {
-    margin-left: -3rem;
+    @include large() {
+      margin-left: -3rem;
+    }
   }
 }

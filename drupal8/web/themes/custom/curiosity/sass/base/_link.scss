@@ -9,6 +9,10 @@ a,
 .link {
   color: var(--as-red);
   text-decoration: none;
+  &:focus {
+    outline: 1px dashed var(--as-purple);
+    outline-offset: -1px;
+  }
 }
 
 // main content base link styles

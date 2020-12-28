@@ -17,11 +17,15 @@ Still needs: expand toggle for showing main nav on mobile
   padding: 0 1rem;
   max-height: 0;
   transition: max-height 0.25s ease;
+  text-align: center;
+  align-items: center;
   // overflow: hidden;
   &.shown {
     max-height: 100%;
   }
-
+  .mainNav__item {
+    margin-bottom: 0;
+  }
   .mainNav__link {
     color: var(--gray-lightest);
     font-weight: var(--light);
@@ -31,13 +35,15 @@ Still needs: expand toggle for showing main nav on mobile
   }
   .mainNav__subNavToggle {
     width: 1em;
+    left: -5px;
+    top: -2px;
     padding: 0;
     background: none;
     border: none;
     position: relative;
     z-index: 10;
     svg {
-      fill: var(--gray-lightest);
+      fill: var(--as-black);
     }
     @include headerBreak() {
       opacity: 0;
@@ -60,7 +66,7 @@ Still needs: expand toggle for showing main nav on mobile
     color: var(--as-black);
     padding: 0;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     //new
     .mainNav__item {
       position: relative;
@@ -161,6 +167,7 @@ Still needs: expand toggle for showing main nav on mobile
   // subNav
   .subNav {
     // expandable bits
+    text-align: left;
     max-height: 0;
     margin-bottom: 0;
     &.subNav--expanded {
@@ -232,7 +239,7 @@ Still needs: expand toggle for showing main nav on mobile
   border: none;
   padding: 0;
   svg {
-    fill: var(--as-white);
+    fill: var(--as-black);
   }
   @include headerBreak() {
     svg {

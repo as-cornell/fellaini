@@ -54,12 +54,13 @@ Descr: Sets all specific styles for an person card
     align-items: flex-start;
     background: none;
     box-shadow: none;
-    max-width: 322px;
+    // max-width: 322px;
     :before {
       display: none;
     }
     .card--person__name-title {
       margin: 0;
+      flex: 1 0 60%;
     }
     .card--person__name,
     .card--person__title {

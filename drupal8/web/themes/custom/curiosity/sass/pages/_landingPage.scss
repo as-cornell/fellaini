@@ -95,7 +95,7 @@ Descr:
   }
   &--homepage {
     aside {
-      @extend .sr-only;
+      display: none;
     }
   }
 }

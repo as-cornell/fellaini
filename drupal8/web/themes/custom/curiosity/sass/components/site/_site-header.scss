@@ -26,79 +26,152 @@ all search form design in _forms.scss
 }
 
 header {
+  // background: yellow;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
   margin: 1em auto;
+  max-width: var(--xl);
+
   @include medium() {
-    margin: 3rem auto 5rem auto;
+    margin: 1rem auto 5rem auto;
   }
+
   @include large() {
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto;
     align-items: center;
-    margin: 5rem auto;
+    margin: 1rem auto 2rem auto;
   }
-  max-width: var(--xl);
+
+  @include xl {
+    margin: 3rem auto;
+    grid-template-columns: auto auto 1fr auto;
+  }
 
   form {
     grid-column: 1 / -1;
     grid-row: 3;
   }
-  .header__lockup {
-    display: flex;
-    justify-content: left; // center for hb -- left for large +
-    margin: 1rem;
-    align-items: center;
-    grid-column: 1 / -1;
-    grid-row: 1;
-    @include headerBreak() {
-      justify-content: center;
-      margin-bottom: 3rem;
-    }
-    @include large() {
-      grid-column: 1;
-      justify-content: flex-start;
-      margin-bottom: 0;
-      margin-top: 0;
-    }
-    @include xl {
-      margin-left: 0;
+
+  .cu-logo {
+    text-indent: -9999px;
+
+    flex: 0 0 100%;
+    width: 200px;
+    height: 45px;
+    // background: url(/themes/custom/curiosity/images/CU-insignia.svg);
+    grid-column: 1 / 1;
+    background: url(/themes/custom/curiosity/images/cornell-reduced-black.svg);
+    background-repeat: no-repeat;
+    background-size: 200px 45px;
+
+    @include xl() {
+      grid-row: 1;
+      width: 73px;
+      height: 73px;
+      background: url(/themes/custom/curiosity/images/CU-insignia.svg);
+      background-repeat: no-repeat;
+      background-size: 73px 73px;
     }
   }
-  .header__mainNav {
+
+  .as-logo {
+    text-indent: -9999px;
+    flex: 0 0 100%;
+
     grid-column: 1 / -1;
     grid-row: 2;
+    margin: 1rem 0 0 calc(50% - 200px);
+    // background: url(/themes/custom/curiosity/images/college.svg);
+    background: url(/themes/custom/curiosity/images/the-college-one-line.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+    height: 56px;
+    background-size: 400px 56px;
+    // position: relative;
+    // margin-left: 28px;
+    @include headerBreak() {
+      width: 600px;
+      height: 56px;
+      background-size: 600px 56px;
+      margin: 2rem 0 2rem 0;
+    }
+
+    @include large {
+      background: url(/themes/custom/curiosity/images/the-college-three-line.svg);
+      width: 238px;
+      height: 71px;
+      background-size: 238px 71px;
+      grid-column: 1;
+      grid-row: 2;
+    }
+    @include xl {
+      grid-column: 2;
+      grid-row: 1;
+      position: relative;
+      margin-left: 38px;
+      &:before {
+        position: absolute;
+        width: 1px;
+        background: var(--gray-lt);
+        height: 100%;
+        top: 0;
+        left: -19px;
+        content: "";
+        // @include headerBreak() {
+        //   left: -20px;
+        // }
+      }
+    }
+  }
+
+  .header__mainNav {
+    grid-column: 1 / -1;
+    grid-row: 3;
     display: flex;
     justify-content: center;
     @include large() {
       grid-column: 2;
+      grid-row: 2;
+    }
+    @include xl {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+  .header__buttons {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .iconButton--showNav {
+      @include headerBreak() {
+        display: none;
+      }
+    }
+    @include large() {
+      grid-column: 3;
+      grid-row: 2;
+    }
+    @include xl() {
+      grid-column: 4;
       grid-row: 1;
     }
   }
   .main-nav-toggle {
     grid-area: navIcon;
   }
-  .img {
-    max-width: initial; // force logo full size
-  }
-}
-.header__buttons {
-  grid-column: 4;
-  grid-row: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  button {
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
-  .iconButton--showNav {
-    @include headerBreak() {
-      display: none;
-    }
-  }
+  // .img {
+  //   max-width: initial; // force logo full size
+  // }
 }
 
 //page type specific header styles
@@ -107,44 +180,6 @@ body.landing_page {
     //large screen
     @include xl() {
       padding: 6rem 1rem 5rem 1rem;
-    }
-  }
-}
-
-.cu-logo {
-  text-indent: -9999px;
-  width: 80px;
-  height: 80px;
-  background: url(/themes/custom/curiosity/images/CU-insignia.svg);
-  background-size: 80px 80px;
-}
-
-.as-logo {
-  text-indent: -9999px;
-  background: url(/themes/custom/curiosity/images/college.svg);
-  position: relative;
-
-  width: 220px;
-  height: 56px;
-  background-size: 220px 56px;
-  margin-left: 28px;
-  @include headerBreak() {
-    width: 238px;
-    height: 71px;
-    background-size: 238px 71px;
-    margin-left: 40px;
-  }
-
-  &:before {
-    position: absolute;
-    width: 1px;
-    background: var(--gray-lt);
-    height: 100%;
-    top: 0;
-    left: -7px;
-    content: "";
-    @include headerBreak() {
-      left: -20px;
     }
   }
 }

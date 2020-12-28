@@ -10,7 +10,7 @@ Descr:
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: var(--bottom-margin);
-  margin-top: 2rem;
+  // margin-top: 2rem;
   @include small() {
     flex-direction: row;
     flex-wrap: wrap;
@@ -28,11 +28,14 @@ Descr:
     }
   }
   @include headerBreak() {
-    margin-top: 0;
+    margin-top: 2rem;
     &__feature {
       flex: 0 0 44%;
       order: 2;
-      margin-top: -4rem;
+      margin-top: -3rem;
+      h1 {
+        margin-top: 0;
+      }
     }
     &__articles {
       flex: 0 0 23%;
