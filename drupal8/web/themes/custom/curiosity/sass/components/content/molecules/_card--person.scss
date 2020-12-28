@@ -77,6 +77,10 @@ Descr: Sets all specific styles for an person card
     figure {
       flex: 0 0 30%;
       margin-right: 1rem;
+      @include boxShadow();
+    }
+    img {
+      border-radius: var(--border-radius);
     }
     .card__copy {
       flex: 0 0 60%;
@@ -90,9 +94,10 @@ Descr: Sets all specific styles for an person card
 }
 
 // embed people
-.pageComponent--ftb {
+.pcWrapper--ftb {
   .card--person {
-    max-width: 300px;
+    max-width: 320px;
+    margin-top: 1rem;
     .card--person__contacts {
       display: none;
     }
@@ -101,7 +106,7 @@ Descr: Sets all specific styles for an person card
 
 .list--people {
   .card--person {
-    grid-template-columns: 200px auto;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: auto 1fr auto;
     column-gap: var(--space);
     &__image {

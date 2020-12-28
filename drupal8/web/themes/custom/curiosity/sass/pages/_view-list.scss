@@ -13,8 +13,8 @@ Descr:
   .sidebar {
     grid-area: sidebar;
     .sidebar--filters {
-      position: sticky;
-      top: 150px;
+      // position: sticky;
+      // top: 150px;
     }
   }
   .pageTitle {
@@ -54,13 +54,6 @@ Descr:
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space);
-    // .article,
-    // .major-minor {
-    //   flex: 1 0 30%;
-    //   // &:first-of-type {
-    //   //   flex: 1 1 100%;
-    //   // }
-    // }
   }
 }
 
@@ -70,9 +63,9 @@ Descr:
   grid-template-columns: repeat(12, 1fr);
   .view--form {
     grid-area: form;
-    position: sticky;
-    top: 0.5rem;
-    z-index: 1;
+    // position: sticky;
+    // top: 0.5rem;
+    // z-index: 1;
   }
   .view--facets {
     grid-area: facets;
@@ -97,8 +90,8 @@ Descr:
   }
   // base layout
   grid-template-areas:
-    "sidebar"
     "title"
+    "form"
     "content"
     "pager";
   // medium layout
@@ -113,21 +106,16 @@ Descr:
 }
 
 //people list
-.landingPage--people {
-}
-.list--people {
-  @include medium {
-    grid-template-areas:
-      ". title title title title title title title title title title . "
-      ". form form form form form form form form form form . "
-      ". facets facets facets facets facets facets facets facets facets facets . "
-      "content content content content content content content content content content content content "
-      ". pager pager pager pager pager pager pager pager pager pager . ";
-  }
 
+.list--people {
   .content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    @include medium() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include large() {
+      grid-template-columns: repeat(3, 1fr);
+    }
     gap: var(--space);
   }
 }

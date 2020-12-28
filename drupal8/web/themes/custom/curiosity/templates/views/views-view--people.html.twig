@@ -24,7 +24,7 @@ Descr: main output business for views. PEOPLE
 
 {% set main_element_extra_classes = ['main', 'list--people'] %}
 {% set main_element_extra_classes = main_element_extra_classes|merge([domID.0]) %}
-{% set main_element_base_class = 'basicSidebar' %}
+{% set main_element_base_class = 'landingPage' %}
 {% set main_element_modifiers = ['viewContainer', 'people'] %}
 
 
@@ -43,36 +43,45 @@ Descr: main output business for views. PEOPLE
 {% set view_header = header %}
 
 {# set view specific sidebar #}
+{% if (view.getExposedInput) %}
+	{% set showFacets = true %}
+{% endif %}
 
-{% set view_sidebar %}
+{# {% set view_sidebar %}
 <div class="sidebar--filters">
   {{exposed}}
 </div>
-{% endset %}
+{% endset %} #}
 
-
+{# {{vardumper()}} #}
 
 {# adding "now viewing" labels #}
+{# NAME #}
+{% if (view.getExposedInput.name) %}
+	{% set view_filters_1 = view_filters ~ 'Name search: ' %}
+	{% set name = view.getExposedInput.name %}
+  {% set view_filters_1 = view_filters_1 ~ name  %}
+{% endif %}
 
-{% if (view.getExposedInput.search_api_fulltext) %}
-	{% set view_filters = view_filters ~ 'Keyword search: ' %}
-	{% set keyword = view.getExposedInput.search_api_fulltext %}
-  {% set view_filters = view_filters ~ keyword  %}
+{# Department/program #}
+{% if (view.getExposedInput.departments_programs  != 'All' or '') %}
+	{% set view_filters_2 = 'Department or program: ' %}
+	{% set number = view.getExposedInput.departments_programs %}
+	{% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
+	{% set view_filters_2 = '<strong>' ~ view_filters_2 ~ '</strong>' ~ termname  %}
 {% endif %}
-{% if (view.getExposedInput.level) %}
-	{% set view_filters = 'Level: ' %}
-	{% for key, item in view.getExposedInput.level %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
-		{% set view_filters = view_filters ~ termname  %}
-	{% endfor %}
+
+
+{# TYPE #}
+{% if (view.getExposedInput.person_type  != 'All' or '') %}
+	{% set view_filters_3 = 'Type: ' %}
+	{% set number = view.getExposedInput.person_type %}
+	{% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
+	{% set view_filters_3 = '<strong>' ~ view_filters_3 ~ '</strong>' ~ termname  %}
 {% endif %}
-{% if (view.getExposedInput.field_discipline) %}
-	{% set view_filters = view_filters ~'Discipline: ' %}
-	{% for key, item in view.getExposedInput.field_discipline %}
-		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ')|replace({'&amp;': '&'}) ~ ' '%}
-		{% set view_filters = view_filters ~ termname  %}
-	{% endfor %}
-{% endif %}
+
+
+
 {% if (view.getExposedInput.field_interests) %}
 	{% set view_filters = view_filters ~ 'Interests: ' %}
 	{% for key, item in view.getExposedInput.field_interests %}
@@ -82,6 +91,18 @@ Descr: main output business for views. PEOPLE
 {% endif %}
 
 
+{% set facets %}
+{% if showFacets %}
+	<p>
+		{{view_filters_1|raw}}
+		{{view_filters_2|raw}}
+		{{view_filters_3|raw}}
+		{{view_filters_4|raw}}
+
+
+	</p>
+{% endif %}
+{% endset %}
 
 
 {% include "@pages/_view-list.twig" with {
@@ -89,5 +110,6 @@ Descr: main output business for views. PEOPLE
   view_content : view_content,
   view_pager : view_pager,
   view_sidebar : view_sidebar,
+  view_form: exposed,
   view_header : view_header
 }%}

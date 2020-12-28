@@ -227,17 +227,20 @@ legend {
 #views-exposed-form-site-search-page-1,
 #views-exposed-form-departments-and-programs-search-page-1,
 #views-exposed-form-major-minor-grad-search-page-1,
-#views-exposed-form-people-search-page-1 {
-  display: grid;
-  grid-template-columns: 3fr 3fr 1fr;
-  grid-template-rows: auto;
-  gap: var(--space);
+#views-exposed-form-people-search-page-1,
+#views-exposed-form-people-page-1 {
   // border: 1px solid var(--gray-lt);
   padding: 1rem;
   border-radius: var(--border-radius);
   margin-bottom: 2rem;
   background: var(--as-white);
   @include boxShadow();
+  @include medium() {
+    display: grid;
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-rows: auto;
+    gap: var(--space);
+  }
   // base labels{
   label {
     font-weight: var(--regular);

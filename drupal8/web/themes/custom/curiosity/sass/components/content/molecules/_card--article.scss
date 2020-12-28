@@ -82,6 +82,7 @@ Descr: Sets all specific styles for an article card
     figure {
       flex: 0 0 30%;
       margin-right: 1rem;
+      @include boxShadow();
     }
     .card__copy {
       flex: 1 0 60%;

@@ -9,16 +9,17 @@
 {% set pathtoken = content.field_people_uuid|field_value|safe_join(' ') %}
 {% set person = parse_people_json(pathtoken) %}
 
-{% set contact = drupal_block('ldap_block', {netid: person.netid}) %}
+{# HIDDEN til i get new ldap #}
+{# {% set contact = drupal_block('ldap_block', {netid: person.netid}) %} #}
 
 {# responsibilities #}
-{% if person.responsibilities %}
-	{% set show_responsibilities = true %}
+	{% if person.responsibilities %}
+{% set show_responsibilities = true %}
 {% endif %}
 
 {# departments #}
-{% if person.departments %}
-	{% set show_departments = true %}
+	{% if person.departments %}
+{% set show_departments = true %}
 {% endif %}
 
 
@@ -46,5 +47,4 @@
     person_departments: person.departments,
     person_responsibilities: person.responsibilities,
     person_nodeId : node.id
-} %}
-{% endembed %}
+} %}{% endembed %}
