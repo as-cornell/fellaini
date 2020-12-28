@@ -486,3 +486,53 @@ https://societyhumanities.as.cornell.edu/:
 https://www.societyhumanities.as.cornell.edu/:
     type: redirect
     to: https://societyhumanities.as.cornell.edu/
+https://pma.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.pma.cornell.edu/:
+    type: redirect
+    to: https://pma.cornell.edu/
+https://philosophy.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.philosophy.cornell.edu/:
+    type: redirect
+    to: https://philosophy.cornell.edu/
+https://psychology.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.psych.cornell.edu/:
+    type: redirect
+    to: https://psychology.cornell.edu/
+https://religious-studies.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.religious-studies.cornell.edu/:
+    type: redirect
+    to: https://religious-studies.cornell.edu/
+https://sociology.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.soc.cornell.edu/:
+    type: redirect
+    to: https://sociology.cornell.edu/
