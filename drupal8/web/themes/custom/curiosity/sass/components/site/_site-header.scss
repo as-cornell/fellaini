@@ -34,7 +34,7 @@ header {
   max-width: var(--xl);
 
   @include medium() {
-    margin: 1rem auto 5rem auto;
+    margin: 1rem auto 2rem auto;
   }
 
   @include large() {

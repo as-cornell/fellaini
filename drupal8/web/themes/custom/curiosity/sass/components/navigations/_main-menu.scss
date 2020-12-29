@@ -12,30 +12,37 @@ Still needs: expand toggle for showing main nav on mobile
   padding: 0;
   overflow: hidden;
   width: 100%;
-
+  font-size: var(--base-20);
   background: var(--as-black);
   padding: 0 1rem;
   max-height: 0;
   transition: max-height 0.25s ease;
-  text-align: center;
-  align-items: center;
+  margin-top: 1rem;
+  padding: 0;
+  border-radius: var(--border-radius);
+  // text-align: center;
+
   // overflow: hidden;
   &.shown {
     max-height: 100%;
   }
   .mainNav__item {
     margin-bottom: 0;
+    max-width: 100%;
+    background: var(--as-teal-dark);
   }
   .mainNav__link {
     color: var(--gray-lightest);
     font-weight: var(--light);
     display: inline-block;
-    width: calc(100% - 2rem);
-    padding: 0.5rem 0;
+    width: calc(100% - 2.1rem);
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    border-left: 1px solid var(--as-white);
+    background: var(--as-black);
   }
   .mainNav__subNavToggle {
-    width: 1em;
-    left: -5px;
+    width: 1rem;
+    left: 2px;
     top: -2px;
     padding: 0;
     background: none;
@@ -43,10 +50,14 @@ Still needs: expand toggle for showing main nav on mobile
     position: relative;
     z-index: 10;
     svg {
-      fill: var(--as-black);
+      fill: var(--as-white);
+      @include headerBreak() {
+        fill: var(--as-black);
+      }
     }
     @include headerBreak() {
       opacity: 0;
+      align-items: center;
     }
     &:focus {
       opacity: 1;
@@ -61,19 +72,21 @@ Still needs: expand toggle for showing main nav on mobile
   @include headerBreak() {
     max-height: 100%;
     overflow: visible;
-    font-size: var(--base-18);
+    // font-size: var(--base-18);
     background: transparent;
     color: var(--as-black);
     padding: 0;
     display: flex;
+    margin-top: 0;
     // justify-content: center;
     //new
     .mainNav__item {
       position: relative;
+      background: none;
       &:after {
         position: absolute;
         content: "";
-        width: calc(100% - 15px);
+        width: calc(100% - 27px);
         height: 3px;
         background: var(--as-red);
         top: 0;
@@ -82,6 +95,9 @@ Still needs: expand toggle for showing main nav on mobile
         transition: all 0.15s ease-in;
         visibility: hidden;
         border-radius: 2px;
+      }
+      .mainNav__link {
+        background: none;
       }
       &:hover {
         // border-top: 4px solid var(--as-red);
