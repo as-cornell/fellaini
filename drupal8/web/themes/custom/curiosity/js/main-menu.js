@@ -9,6 +9,7 @@
   $(".nav-opener").on({
     click: function () {
       $(".mainNav").toggleClass("shown");
+      $(".main").toggleClass("fade");
     },
   });
 
