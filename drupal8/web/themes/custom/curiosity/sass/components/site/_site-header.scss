@@ -132,6 +132,7 @@ header {
     grid-row: 3;
     display: flex;
     justify-content: center;
+
     @include large() {
       grid-column: 2;
       grid-row: 2;

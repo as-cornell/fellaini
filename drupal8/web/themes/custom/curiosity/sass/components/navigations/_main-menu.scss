@@ -16,15 +16,17 @@ Still needs: expand toggle for showing main nav on mobile
   background: var(--as-black);
   padding: 0 1rem;
   max-height: 0;
-  transition: max-height 0.25s ease;
   margin-top: 1rem;
   padding: 0;
   border-radius: var(--border-radius);
-  // text-align: center;
-
   // overflow: hidden;
+
   &.shown {
-    max-height: 100%;
+    animation-name: navDrop;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
   .mainNav__item {
     margin-bottom: 0;
@@ -39,6 +41,7 @@ Still needs: expand toggle for showing main nav on mobile
     padding: 0.5rem 0 0.5rem 0.5rem;
     border-left: 1px solid var(--as-white);
     background: var(--as-black);
+    text-decoration: underline;
   }
   .mainNav__subNavToggle {
     width: 1rem;
@@ -55,16 +58,20 @@ Still needs: expand toggle for showing main nav on mobile
         fill: var(--as-black);
       }
     }
-    @include headerBreak() {
-      opacity: 0;
-      align-items: center;
-    }
+
     &:focus {
       opacity: 1;
     }
     &.rotated {
       transform: rotate(180deg);
       transform-origin: 50% 50%;
+    }
+    @include headerBreak() {
+      width: 0.75rem;
+      left: -7px;
+      top: 0;
+      opacity: 0;
+      align-items: center;
     }
   }
 
@@ -186,22 +193,26 @@ Still needs: expand toggle for showing main nav on mobile
     text-align: left;
     max-height: 0;
     margin-bottom: 0;
-    &.subNav--expanded {
-      max-height: 100%;
-      opacity: 1;
-      // width: calc(100% - 3rem);
-    }
-
     list-style-type: none;
-    // position: absolute;
     background: var(--gray-lightest);
-    // @include boxShadow;
-
     display: flex;
     flex-flow: column;
+    width: 100%;
+    padding-left: 0;
+    overflow: hidden;
+    // opacity: 0;
+    // transition: opacity 200ms ease-in;
+    &.subNav--expanded {
+      // max-height: 100%;
+      // opacity: 1;
+      animation-name: navDrop;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
 
     // headerBreak plus styles
-    width: 100%;
     @include headerBreak() {
       width: 240px;
       position: absolute;
@@ -210,40 +221,46 @@ Still needs: expand toggle for showing main nav on mobile
       border-radius: 0 var(--border-radius) var(--border-radius)
         var(--border-radius);
     }
-    padding-left: 0;
-    // margin-top: .5rem;
-    opacity: 0;
-    transition: opacity 200ms ease-in;
+
     li {
       margin: 0;
       padding: 0;
+      max-width: 100%;
     }
     a {
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
       display: block;
       position: relative;
       color: var(--as-black);
       border-top: none;
+      // margin-left: 0.5rem;
+      text-decoration: underline;
       &:hover,
       &:focus {
-        color: var(--as-white);
-        background: var(--as-red);
-        &:after,
-        &:before {
-          position: absolute;
-          content: "";
-          width: 0.25rem;
-          height: 100%;
-          top: 0;
+        background-color: var(--as-white);
+        @include headerBreak() {
+          color: var(--as-white);
           background: var(--as-red);
-          border-radius: 4px;
+          &:after,
+          &:before {
+            position: absolute;
+            content: "";
+            width: 0.25rem;
+            height: 100%;
+            top: 0;
+            background: var(--as-red);
+            border-radius: 4px;
+          }
+          &:after {
+            right: -0.125rem;
+          }
+          &:before {
+            left: -0.125rem;
+          }
         }
-        &:after {
-          right: -0.125rem;
-        }
-        &:before {
-          left: -0.125rem;
-        }
+      }
+      @include headerBreak() {
+        margin-left: 0;
       }
     }
   }
@@ -272,4 +289,15 @@ Still needs: expand toggle for showing main nav on mobile
 .main-nav-toggle {
   background: none;
   border: none;
+}
+
+//animations
+// mainNavDrop
+@keyframes navDrop {
+  0% {
+    max-height: 0%;
+  }
+  100% {
+    max-height: 100%;
+  }
 }
