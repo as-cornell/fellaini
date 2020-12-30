@@ -65,7 +65,9 @@ Descr:
       }
       figure {
         background: none;
-        display: grid;
+        @include medium() {
+          display: grid;
+        }
         grid-row: 1;
         margin-bottom: 2rem;
       }
@@ -75,10 +77,14 @@ Descr:
         grid-row: 1;
       }
       figcaption {
-        // @extend .sr-only;
-        color: var(--as-white);
-        max-width: 80%;
-        @include dropShadow();
+        color: var(--storm-radial);
+        // @extend .blue-blue;
+        @include medium() {
+          color: var(--as-white);
+          max-width: 80%;
+          @include dropShadow();
+        }
+
         @extend .spotlight;
         @extend .base-84;
         align-self: flex-end;

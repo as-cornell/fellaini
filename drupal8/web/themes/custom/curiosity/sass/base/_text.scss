@@ -6,6 +6,7 @@ Descr: Styles for things that are not anywhere else. Essentially css atoms.
 --------------------------- */
 p {
   margin: 0;
+  max-width: var(--line-width);
 }
 * + p {
   margin-top: 1em;

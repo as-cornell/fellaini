@@ -128,7 +128,10 @@
     --base-56: 2.33rem;
   }
 
-  --base-64: 2.66rem;
+  --base-64: 2rem;
+  @include medium() {
+    --base-64: 2.66rem;
+  }
 
   --base-84: 2rem;
   // @include small() {

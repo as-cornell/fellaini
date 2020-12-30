@@ -13,10 +13,17 @@ Descr:
   @include base12GridColumns();
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
-    ". type type type type type type type . . . ."
-    ". title title title title title title title . . . . "
+    "type type type type type type type type . . . ."
+    "title title title title title title title title . . . . "
     // ". description description description description description description description . sidebar sidebar sidebar "
-    ". content content content content content content content . sidebar sidebar sidebar";
+    "content content content content content content content content sidebar sidebar sidebar sidebar";
+  @include large() {
+    grid-template-areas:
+      ". type type type type type type . . . . ."
+      ". title title title title title title . . . . . "
+      // ". description description description description description description description . sidebar sidebar sidebar "
+      ". content content content content content content . sidebar sidebar sidebar .";
+  }
   .title {
     grid-area: title;
   }
