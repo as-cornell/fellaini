@@ -7,7 +7,21 @@ Descr: otpN small and large, hovers and toggles for subNav
 
 // for stuck otpnav
 .main.otpStuck {
+  @include medium() {
+    .otpNavWrapper {
+      // background: red;
+      width: calc(100% + 1rem);
+      margin-left: -1rem;
+      padding-left: 1rem;
+      @include boxShadow();
+    }
+  }
   @include large() {
+    .otpNav--basic_page {
+      margin-left: 0;
+      padding-left: 0;
+      box-shadow: none;
+    }
     .otpNavWrapper {
       position: sticky;
       top: 0;
@@ -37,103 +51,186 @@ Descr: otpN small and large, hovers and toggles for subNav
 
 // Basic otpNav ul styles
 .otpNav {
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  flex-direction: column;
-  height: 0;
-  overflow: hidden;
-  margin: 0;
-  &.expanded {
-    height: 100%;
-    overflow: hidden;
-  }
+  // list-style-type: none;
+  // display: flex;
+  // flex-wrap: wrap;
+  // padding-left: 0;
+  // flex-direction: column;
+  // // height: 0;
+  // overflow: hidden;
+  // margin: 0;
+  // &.expanded {
+  //   // height: 100%;
+  //   overflow: hidden;
+  // }
 
-  @include medium() {
-    height: 100%;
-    overflow: hidden;
-    flex-direction: row;
-  }
-  li {
-    margin-right: 1em;
-    margin-bottom: 0;
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
+  // @include medium() {
+  //   // height: 100%;
+  //   // overflow: hidden;
+  //   flex-direction: row;
+  // }
+  // li {
+  //   margin-right: 1em;
+  //   margin-bottom: 0;
+  //   &:last-of-type {
+  //     margin-right: 0;
+  //   }
+  // }
 }
+
 .otpNavWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  display: grid;
+  // flex-wrap: wrap;
+  // flex-direction: column;
   background: var(--as-white);
-  @include boxShadow($spread: 1px, $color: var(--gray-lt));
+  // background: pink;
+  // border: 1px solid var(--gray-lt);
+  // border-radius: var(--border-radius);
+  // @include boxShadow($spread: 1px, $color: var(--gray-lt));
   position: relative;
   z-index: 1;
-  font-size: var(--base-16);
-  width: 100%;
+  font-size: var(--base-20);
+
+  // padding: 0.5rem 1rem 1rem;
   @include medium() {
     background: var(--as-white);
-    padding: 1rem 1rem 0 1rem;
-    margin: 0 0 1rem -1rem;
+    // background: yellow;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    // position:relative;
+    // padding: 1rem 1rem 0 1rem;
+    // margin: 0 0 1rem -1rem;
   }
   // :before for border/shadow
-  &:before {
-    border-radius: var(--border-radius);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    z-index: -1;
-    @include boxShadow();
-    opacity: 0;
-    transition: opacity 0.25s ease-in;
-  }
-  &:hover {
-    &:before {
-      opacity: 1;
-    }
-  }
+  // &:before {
+  //   border-radius: var(--border-radius);
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   content: "";
+  //   z-index: -1;
+  //   @include boxShadow();
+  //   opacity: 0;
+  //   transition: opacity 0.25s ease-in;
+  // }
+  // &:hover {
+  //   &:before {
+  //     opacity: 1;
+  //   }
+  // }
   // links
-  a {
-    color: var(--as-dark-blue);
-    &:hover {
-      color: var(--as-blue-base);
-    }
-  }
+  // a {
+  //   color: var(--as-dark-blue);
+  //   &:hover {
+  //     color: var(--as-blue-base);
+  //   }
+  //   &.active {
+  //     color: var(--as-teal-dark);
+  //   }
+  // }
   // Header and toggle
   h4 {
     font-size: var(--base-16);
     margin: 0;
     flex: 0 0 auto;
-    margin-right: 0.5rem;
+    // margin-right: 0.5rem;
     font-size: var(--base-20);
     margin-top: 0.5em;
+    padding: 0.5rem;
+    grid-row: 1;
+    border: 1px solid var(--gray-lt);
+    border-radius: var(--border-radius);
     cursor: pointer;
+    text-decoration: underline;
     @include medium() {
       cursor: default;
-      margin-top: 0;
+      margin: 0 0.5rem 0 0;
+      padding-left: 0;
       color: var(--as-black);
       font-size: var(--base-18);
+      // grid-column: 1;
+      border: none;
+      cursor: default;
+      text-decoration: none;
     }
     @include large() {
       font-size: var(--base-20);
       text-align: center;
     }
   }
-  .otpToggle,
+
   .otpNav {
-    flex: 0 0 100%;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    margin: 0;
+    padding-left: 0;
+
+    grid-row: 2;
+    width: 100%;
+    position: absolute;
+    top: -3px;
+    background: var(--as-black);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+    li {
+      max-width: 100%;
+      margin-bottom: 0;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    a {
+      padding: 0.5em 1em;
+      display: block;
+      color: var(--as-white);
+      @include medium() {
+        color: var(--as-dark-blue);
+        &:hover {
+          color: var(--as-blue-base);
+        }
+        &.active {
+          color: var(--as-teal-dark);
+        }
+        padding: 0;
+        margin-right: 1em;
+      }
+    }
+
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 150ms ease-out;
+    &.expanded {
+      transform: scale(1, 1);
+      transform-origin: top;
+      transition: transform 250ms ease-in-out 250ms;
+    }
+    @include medium() {
+      flex-direction: row;
+      transform: none;
+      position: relative;
+      // grid-column: 2;
+      // grid-row: 1;
+      width: auto;
+      background: none;
+      align-items: center;
+    }
   }
 }
 
 // basic page styles
 .otpNav--basic_page {
   box-shadow: none;
+  @include medium() {
+    justify-content: flex-start;
+  }
   @include large() {
+    flex-direction: column;
     h4 {
       margin-bottom: 0.75em;
     }
@@ -152,11 +249,13 @@ Descr: otpN small and large, hovers and toggles for subNav
       li {
         margin-right: 0;
         margin-bottom: 0.5rem;
+        width: 100%;
       }
       a {
         color: var(--as-black);
         background: var(--gray-lightest);
         padding: 0.5em 1em;
+        margin-right: 0;
         display: block;
         border-bottom: 1px solid var(--gray-lightest);
         transition: none;
@@ -174,7 +273,7 @@ Descr: otpN small and large, hovers and toggles for subNav
 //landing page styles
 .otpNav--landing_page {
   @include large() {
-    flex-direction: column;
-    align-content: center;
+    // flex-direction: column;
+    // align-content: center;
   }
 }

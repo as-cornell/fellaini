@@ -16,9 +16,9 @@ Descr:
     grid-area: aside;
     position: sticky;
     top: 0;
-    margin: 1rem 0 4rem 0;
-    display: flex;
-    justify-content: center;
+    margin: 1rem 0 2rem 0;
+    // display: flex;
+    // justify-content: center;
   }
   .content {
     grid-area: content;
@@ -61,7 +61,7 @@ Descr:
       }
       h1 {
         grid-row: 2;
-        font-weight: var(--regular);
+        // font-weight: var(--regular);
       }
       figure {
         background: none;
