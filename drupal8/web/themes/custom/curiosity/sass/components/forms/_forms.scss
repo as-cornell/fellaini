@@ -11,6 +11,16 @@ Descr:
 
 --------------------------- */
 
+form * {
+  font-size: var(--base-16);
+  @include medium() {
+    font-size: var(--base-24);
+  }
+  &:focus {
+    outline: 1px dashed var(--as-purple);
+    outline-offset: -1px;
+  }
+}
 .form--simpleSearch {
   display: inline-flex;
   * {
@@ -69,13 +79,25 @@ Descr:
 
 // search form in header
 .form--overlaySearch {
-  // display: flex;
-  justify-content: flex-end;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  max-height: 0;
+  // max-height: 0;
   overflow: hidden;
-  // opacity: 0;
-  // visibility: hidden;
+  background: var(--as-teal-dark);
+  margin: 1rem 0 0;
+  width: 100%;
+
+  border-radius: var(--border-radius);
+  @include boxShadow() position: absolute;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 150ms ease-out;
+
+  @include medium() {
+    width: calc(100% - 3rem);
+  }
   label,
   .form-item__label {
     display: block;
@@ -83,7 +105,32 @@ Descr:
     @include xs {
       display: block;
       margin-right: 2%;
-      padding: 0.6em 0;
+      padding: 1em;
+      color: var(--as-white);
+    }
+  }
+  .searchField {
+    align-self: stretch;
+    display: flex;
+    .form-text {
+      background: var(--as-teal);
+      // font-size: var(--base-24);
+      border: none;
+      padding: 0 1rem;
+      color: var(--as-blue-gray);
+      &:focus {
+        color: var(--as-black);
+        background: var(--gray-lightest);
+      }
+    }
+    .form-item__submit {
+      border-radius: 0;
+      background: var(--as-dark-blue);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      color: var(--as-white);
+      border: none;
+      text-decoration: underline;
+      // font-size: var(--base-24);
     }
   }
   // .form-item__textfield {
@@ -97,11 +144,11 @@ Descr:
     // border-left: none;
   }
   &.shown {
-    max-height: 100%;
-    // opacity: 1;
-    // visibility: visible;
-    background: var(--as-white);
-    padding: 1rem;
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: transform 250ms ease-in-out 250ms;
+
+    // background: var(--as-white);
     z-index: 1;
   }
 }

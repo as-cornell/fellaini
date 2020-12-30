@@ -1,1 +1,1 @@
-!function(o){console.log("hiya"),o(".search-opener").on({click:function(){o("#header__searchform").toggleClass("shown")}})}(jQuery);
+!function(o){console.log("hiya"),o(".search-opener").on({click:function(){o(".mainNav").removeClass("shown"),o(".header__searchForm > form").toggleClass("shown"),o(".main").toggleClass("fade")}})}(jQuery);

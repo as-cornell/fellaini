@@ -8,7 +8,10 @@
   // });
   $(".nav-opener").on({
     click: function () {
+      $(".header__searchForm > form").removeClass("shown");
+
       $(".mainNav").toggleClass("shown");
+      
       $(".main").toggleClass("fade");
     },
   });

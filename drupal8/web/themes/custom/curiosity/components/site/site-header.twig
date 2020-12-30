@@ -1,8 +1,8 @@
 <header
 	class="header">
 	<!--
-								  ***  SKIP NAV  ***
-								  -->
+													  ***  SKIP NAV  ***
+													  -->
 	<div id="skip">
 		<a href="#as-main-nav">
 			Jump to main navigation
@@ -44,13 +44,15 @@
 			</button>
 		</div>
 	</div>
-	<form action="/site-search" id="header__searchform" class="form form--overlaySearch form--simpleSearch">
-		<label for="search-input">
-			Search for:
-		</label>
-		<span class="searchField">
-			<input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="space" size="30" maxlength="128" class="form-text form-item__textfield"/>
-			<input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="js-form-submit form-submit form-item__submit"/>
-		</span>
-	</form>
-</header>
+	<div class="header__searchForm">
+		<form action="/site-search" id="header__searchform" class="form form--overlaySearch">
+			<label for="search-input">
+				Search for:
+			</label>
+			<span class="searchField">
+				<input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="space" size="30" maxlength="128" class="form-text form-item__textfield"/>
+				<input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="js-form-submit form-submit form-item__submit"/>
+			</span>
+		</form>
+	</div>
+</header></div>

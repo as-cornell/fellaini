@@ -39,10 +39,10 @@ targets.forEach((target) => {
   navObserver.observe(target);
 });
 
-// document is ready to go
+
 
 // watch .title if not intersecting add class 'stuck' to otpNav
-const pageTitle = document.querySelector(".basicSidebar .title");
+const pageTitle = document.querySelector(".main > .title");
 const mainContainer = document.querySelector(".main");
 
 const otpNavOptions = {

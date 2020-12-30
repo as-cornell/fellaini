@@ -3,7 +3,10 @@
   console.log("hiya");
   $(".search-opener").on({
     click: function () {
-      $("#header__searchform").toggleClass("shown");
+      $(".mainNav").removeClass("shown");
+      $(".header__searchForm > form").toggleClass("shown");
+      
+      $(".main").toggleClass("fade");
     },
   });
 })(jQuery); 
