@@ -21,7 +21,7 @@ Still needs: expand toggle for showing main nav on mobile
   border-radius: var(--border-radius);
   position: absolute;
   z-index: 1;
-  width: calc(100% - 3rem);
+  // width: calc(100% - 3rem);
   // animation stuff
   transform: scale(1, 0);
   transform-origin: top;
@@ -47,7 +47,7 @@ Still needs: expand toggle for showing main nav on mobile
     display: inline-block;
     width: calc(100% - 2.1rem);
     padding: 0.5rem 0 0.5rem 0.5rem;
-    border-left: 1px solid var(--as-white);
+    border-right: 1px solid var(--as-white);
     background: var(--as-black);
     text-decoration: underline;
     opacity: 0;

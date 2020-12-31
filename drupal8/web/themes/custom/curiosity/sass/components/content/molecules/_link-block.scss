@@ -17,6 +17,7 @@ Descr: sets background, color options, link styles for link blocks
     ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       li {
         margin: 0 0.5rem;

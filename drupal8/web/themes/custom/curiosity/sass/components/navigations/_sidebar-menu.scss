@@ -9,154 +9,229 @@ Still needs: expand toggle for showing sidebar nav on mobile
 
 ul[class^="nav"] {
   font-size: var(--base-24);
-  line-height: 2em;
-
   list-style-type: none;
-  padding-left: 16px;
-  margin-bottom: 0;
-  overflow: hidden;
-  @include medium() {
-    font-size: var(--base-18);
-    line-height: 1.75em;
+  padding-left: 0;
+  li {
+    margin-bottom: 0;
   }
   a {
-    position: relative;
-    // padding-left: 0.5rem;
     display: block;
-    color: var(--dark-text);
-    &:before {
-      position: absolute;
-      content: "";
-      height: 70%;
-      width: 2px;
-      transform: translateX(-18px);
-      top: 0;
-      background: var(--gray-lt);
-      border-radius: 0 2px 2px 0;
-    }
-    &:hover {
+  }
+  @include medium() {
+    // line-height: 2em;
+    // padding-left: 16px;
+    margin-bottom: 0;
+    overflow: hidden;
+    font-size: var(--base-18);
+    line-height: 1.75em;
+    a {
+      position: relative;
+      // padding-left: 0.5rem;
+
+      color: var(--dark-text);
       &:before {
-        animation-name: indicators;
-        animation-duration: 0.5s;
-        animation-timing-function: ease-out;
-        animation-iteration-count: 1;
-        transform: translateX(-16px);
+        position: absolute;
+        content: "";
+        height: 70%;
+        width: 2px;
+        transform: translateX(-18px);
+        top: 0;
+        background: var(--gray-lt);
+        border-radius: 0 2px 2px 0;
+      }
+      &:hover {
+        &:before {
+          animation-name: indicators;
+          animation-duration: 0.5s;
+          animation-timing-function: ease-out;
+          animation-iteration-count: 1;
+          transform: translateX(-16px);
+        }
       }
     }
-  }
-  // active trail
-  [class*="active-trail"] {
-    > a {
-      font-weight: var(--semi);
-      &:before {
-        transform: translateX(-16px);
+    // active trail
+    [class*="active-trail"] {
+      > a {
+        font-weight: var(--semi);
+        &:before {
+          transform: translateX(-16px);
+        }
       }
     }
-  }
-  .with-sub {
-    display: grid;
-    grid-template-columns: 1fr 2rem;
-    > a {
-      grid-column: 1 / 1;
-    }
-    > button {
-      grid-column: 2 / -1;
-    }
-    > ul {
-      grid-column: 1 / -1;
-    }
-    @include medium() {
-      display: auto;
+    .with-sub {
+      display: grid;
+      grid-template-columns: 1fr 2rem;
+      > a {
+        grid-column: 1 / 1;
+      }
       > button {
-        display: none;
+        grid-column: 2 / -1;
+      }
+      > ul {
+        grid-column: 1 / -1;
+      }
+      @include medium() {
+        display: auto;
+        > button {
+          display: none;
+        }
       }
     }
   }
 }
 
+//top level
 .nav {
-  height: 0;
+  // height: 0;
   overflow: hidden;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  position: absolute;
+  z-index: 1;
+  background: var(--as-teal);
+  padding: 0;
+  width: calc(100% - 2rem);
+  margin-top: -4px;
+  //animation stuff
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 150ms ease-out;
   &.expanded {
-    height: auto;
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: transform 250ms ease-in-out 250ms;
   }
-  @include medium() {
-    height: auto;
+  ul {
+    margin-bottom: 0;
   }
-  &__root {
-    position: inherit;
+  a {
+    color: var(--as-white);
+    padding: 0.5em 0.5em;
+    @include medium() {
+      padding: 0;
+    }
+  }
+  .nav__root {
     > a {
-      grid-column: 1 / -1 !important;
-      font-size: var(--base-20);
-      color: var(--as-black);
-      text-decoration-color: var(--as-black);
-      font-weight: var(--semi);
-      margin-bottom: 0.5em;
-      &:before {
-        display: none;
+      background: var(--as-black);
+      @include medium() {
+        background: none;
       }
     }
   }
+  // [class*="active-trail"] {
+  //   a {
+  //     background: red;
+  //   }
+  // }
   .nav-1 {
-    border-left: 1px solid var(--as-teal);
-    &__item {
-      &[class*="active-trail"] {
+    a {
+      padding-left: 1em;
+      background: var(--dark-text);
+      @include medium() {
+        padding-left: 16px;
+        background: none;
+      }
+    }
+    &__item--active-trail {
+      a {
+        background: var(--as-teal-dark);
+        @include medium() {
+          background: none;
+        }
+      }
+    }
+  }
+  .nav-2 {
+    a {
+      padding-left: 1.75em;
+      background: var(--as-teal);
+      @include medium() {
+        background: none;
+      }
+    }
+  }
+  @include medium() {
+    transition: none;
+    transform: none;
+    position: relative;
+    padding: none;
+    background: none;
+    width: 100%;
+    &__root {
+      position: inherit;
+      > a {
+        grid-column: 1 / -1 !important;
+        font-size: var(--base-20);
+        color: var(--as-black);
+        text-decoration-color: var(--as-black);
+        font-weight: var(--semi);
+        margin-bottom: 0.5em;
+        &:before {
+          display: none;
+        }
+      }
+    }
+    .nav-1 {
+      border-left: 1px solid var(--as-teal);
+      &__item {
+        &[class*="active-trail"] {
+          > a {
+            &:before {
+              background: var(--as-teal);
+            }
+          }
+        }
         > a {
           &:before {
-            background: var(--as-teal);
+            background-color: var(--as-teal);
           }
         }
       }
-      > a {
-        &:before {
-          background-color: var(--as-teal);
-        }
+      a {
+        text-decoration-color: var(--as-teal);
       }
     }
-    a {
-      text-decoration-color: var(--as-teal);
-    }
-  }
 
-  .nav-2 {
-    border-left: 1px solid var(--as-blue-base);
-    &__item {
-      &[class*="active-trail"] {
+    .nav-2 {
+      border-left: 1px solid var(--as-blue-base);
+      &__item {
+        &[class*="active-trail"] {
+          > a {
+            &:before {
+              background: var(--as-blue-base);
+            }
+          }
+        }
         > a {
           &:before {
             background: var(--as-blue-base);
           }
         }
       }
-      > a {
-        &:before {
-          background: var(--as-blue-base);
-        }
+      a {
+        text-decoration-color: var(--as-blue-base);
       }
     }
-    a {
-      text-decoration-color: var(--as-blue-base);
-    }
-  }
 
-  .nav-3 {
-    border-left: 1px solid var(--as-light-blue);
-    &__item {
-      &[class*="active-trail"] {
+    .nav-3 {
+      border-left: 1px solid var(--as-light-blue);
+      &__item {
+        &[class*="active-trail"] {
+          > a {
+            &:before {
+              background: var(--as-light-blue);
+            }
+          }
+        }
         > a {
           &:before {
             background: var(--as-light-blue);
           }
         }
       }
-      > a {
-        &:before {
-          background: var(--as-light-blue);
-        }
+      a {
+        text-decoration-color: var(--as-light-blue);
       }
-    }
-    a {
-      text-decoration-color: var(--as-light-blue);
     }
   }
 
@@ -185,15 +260,23 @@ ul[class^="nav"] {
 // siteNavOpener
 
 .siteNavOpener {
-  background: var(--blue-blue);
-  border-radius: var(--border-radius);
-  padding: 0.5em;
-  color: var(--as-white);
-  font-size: var(--base-24);
+  font-size: var(--base-16);
+  margin: 0;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  flex: 0 0 auto;
+  // margin-right: 0.5rem;
+  font-size: var(--base-20);
+  margin-top: 0.5em;
+  padding: 0.5rem;
+  grid-row: 1;
+  border: 1px solid var(--gray-lt);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-decoration: underline;
   svg {
-    fill: var(--as-white);
+    fill: var(--as-dark-blue);
   }
   @include medium() {
     display: none;

@@ -225,12 +225,15 @@ Descr: otpN small and large, hovers and toggles for subNav
 
 // basic page styles
 .otpNav--basic_page {
+  display: none;
   box-shadow: none;
   @include medium() {
+    display: flex;
     justify-content: flex-start;
   }
   @include large() {
     flex-direction: column;
+    font-size: var(--base-18);
     h4 {
       margin-bottom: 0.75em;
     }

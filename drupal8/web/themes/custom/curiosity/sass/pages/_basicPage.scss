@@ -9,6 +9,7 @@ Descr:
 // Basic sidebar
 .basicSidebar {
   grid-template-rows: auto auto 1fr;
+
   .nav--site {
     grid-area: nav;
   }
