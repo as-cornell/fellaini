@@ -27,6 +27,11 @@ Descr: otpN small and large, hovers and toggles for subNav
       top: 0;
     }
   }
+  @include xl() {
+    .otpNavWrapper {
+      width: 100%;
+    }
+  }
 }
 
 @keyframes otpNavFader {
@@ -49,88 +54,19 @@ Descr: otpN small and large, hovers and toggles for subNav
   }
 }
 
-// Basic otpNav ul styles
-.otpNav {
-  // list-style-type: none;
-  // display: flex;
-  // flex-wrap: wrap;
-  // padding-left: 0;
-  // flex-direction: column;
-  // // height: 0;
-  // overflow: hidden;
-  // margin: 0;
-  // &.expanded {
-  //   // height: 100%;
-  //   overflow: hidden;
-  // }
-
-  // @include medium() {
-  //   // height: 100%;
-  //   // overflow: hidden;
-  //   flex-direction: row;
-  // }
-  // li {
-  //   margin-right: 1em;
-  //   margin-bottom: 0;
-  //   &:last-of-type {
-  //     margin-right: 0;
-  //   }
-  // }
-}
-
 .otpNavWrapper {
   display: grid;
-  // flex-wrap: wrap;
-  // flex-direction: column;
   background: var(--as-white);
-  // background: pink;
-  // border: 1px solid var(--gray-lt);
-  // border-radius: var(--border-radius);
-  // @include boxShadow($spread: 1px, $color: var(--gray-lt));
   position: relative;
   z-index: 1;
-  font-size: var(--base-20);
-
-  // padding: 0.5rem 1rem 1rem;
+  font-size: var(--base-18);
   @include medium() {
     background: var(--as-white);
-    // background: yellow;
     display: flex;
     justify-content: center;
     padding: 1rem 0;
-    // position:relative;
-    // padding: 1rem 1rem 0 1rem;
-    // margin: 0 0 1rem -1rem;
   }
-  // :before for border/shadow
-  // &:before {
-  //   border-radius: var(--border-radius);
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   bottom: 0;
-  //   content: "";
-  //   z-index: -1;
-  //   @include boxShadow();
-  //   opacity: 0;
-  //   transition: opacity 0.25s ease-in;
-  // }
-  // &:hover {
-  //   &:before {
-  //     opacity: 1;
-  //   }
-  // }
-  // links
-  // a {
-  //   color: var(--as-dark-blue);
-  //   &:hover {
-  //     color: var(--as-blue-base);
-  //   }
-  //   &.active {
-  //     color: var(--as-teal-dark);
-  //   }
-  // }
+
   // Header and toggle
   h4 {
     font-size: var(--base-16);
@@ -214,8 +150,6 @@ Descr: otpN small and large, hovers and toggles for subNav
       flex-direction: row;
       transform: none;
       position: relative;
-      // grid-column: 2;
-      // grid-row: 1;
       width: auto;
       background: none;
       align-items: center;
@@ -229,13 +163,16 @@ Descr: otpN small and large, hovers and toggles for subNav
   box-shadow: none;
   @include medium() {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
   }
   @include large() {
     flex-direction: column;
     font-size: var(--base-18);
+    padding-top: 0;
     h4 {
       margin-bottom: 0.75em;
+      padding-top: 0;
     }
     &:before {
       display: none;
@@ -255,20 +192,34 @@ Descr: otpN small and large, hovers and toggles for subNav
         width: 100%;
       }
       a {
-        color: var(--as-black);
-        background: var(--gray-lightest);
-        padding: 0.5em 1em;
+        position: relative;
+        padding-left: 16px;
         margin-right: 0;
-        display: block;
-        border-bottom: 1px solid var(--gray-lightest);
-        transition: none;
-        border-radius: var(--border-radius);
-        &.active,
-        &:hover {
-          color: var(--as-white);
-          background: var(--as-blue-gray);
+        &:before {
+          position: absolute;
+          content: "";
+          height: calc(100% - 2px);
+          left: 0;
+          background: var(--as-teal-dark);
+          width: 2px;
         }
       }
+      //hiding "pill" shaped links
+      // a {
+      //   color: var(--as-black);
+      //   background: var(--gray-lightest);
+      //   padding: 0.5em 1em;
+      //   margin-right: 0;
+      //   display: block;
+      //   border-bottom: 1px solid var(--gray-lightest);
+      //   transition: none;
+      //   border-radius: var(--border-radius);
+      //   &.active,
+      //   &:hover {
+      //     color: var(--as-white);
+      //     background: var(--as-blue-gray);
+      //   }
+      // }
     }
   }
 }

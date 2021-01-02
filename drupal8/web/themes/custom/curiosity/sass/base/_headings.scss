@@ -48,11 +48,15 @@ h3 {
 
 h4 {
   @extend .base-28;
+  margin: 0 0 1em 0;
 }
 
 // Sidebar sizes for component headers
 .sidebar {
   h2 {
     font-size: calc(1.5 * var(--base-font-size));
+  }
+  h4 {
+    @extend .base-24;
   }
 }

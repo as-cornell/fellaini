@@ -20,7 +20,7 @@ ul[class^="nav"] {
   @include medium() {
     // line-height: 2em;
     // padding-left: 16px;
-    margin-bottom: 0;
+    // margin-bottom: 0;
     overflow: hidden;
     font-size: var(--base-18);
     line-height: 1.75em;
@@ -32,10 +32,10 @@ ul[class^="nav"] {
       &:before {
         position: absolute;
         content: "";
-        height: 70%;
+        height: calc(100% - 2px);
         width: 2px;
         transform: translateX(-18px);
-        top: 0;
+        // top: 0;
         background: var(--gray-lt);
         border-radius: 0 2px 2px 0;
       }
@@ -77,6 +77,9 @@ ul[class^="nav"] {
         }
       }
     }
+  }
+  @include large() {
+    font-size: var(--base-20);
   }
 }
 
@@ -138,12 +141,15 @@ ul[class^="nav"] {
         @include medium() {
           background: none;
         }
+        @include large() {
+          // font-size: var(--base-24);
+        }
       }
     }
   }
   .nav-2 {
+    margin-left: 1em;
     a {
-      padding-left: 1.75em;
       background: var(--as-teal);
       @include medium() {
         background: none;
@@ -155,6 +161,7 @@ ul[class^="nav"] {
     transform: none;
     position: relative;
     padding: none;
+    margin-bottom: 2rem;
     background: none;
     width: 100%;
     &__root {
@@ -234,7 +241,13 @@ ul[class^="nav"] {
       }
     }
   }
-
+  @include large() {
+    &__root {
+      > a {
+        font-size: var(--base-24);
+      }
+    }
+  }
   // base withSubNav
   .withSubNav {
     position: relative;

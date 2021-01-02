@@ -17,8 +17,10 @@ Descr:
     grid-area: title;
     h1 {
       text-align: center;
+      font-family: var(--font-serif);
       @include large() {
         text-align: left;
+        margin-top: 0;
       }
     }
   }
