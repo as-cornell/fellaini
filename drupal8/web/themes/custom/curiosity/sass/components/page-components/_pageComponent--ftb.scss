@@ -13,19 +13,20 @@ Descr:
   }
 }
 
-// for now target first layer of ftbs on lading page for width
+// pcWrapper--ftb is on _landingPage.scss
 
 .landingPage {
-  .content > .pcWrapper--ftb {
-    @include medium() {
-      max-width: 72%;
-    }
-    margin-left: auto;
-    margin-right: auto;
-    p {
-      max-width: 100%;
-    }
-  }
+  // .content > .pcWrapper--ftb,
+  // .pageSection > .pcWrapper--ftb {
+  //   @include medium() {
+  //     max-width: 72%;
+  //   }
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   p {
+  //     max-width: 100%;
+  //   }
+  // }
 }
 
 // .pcWrapper

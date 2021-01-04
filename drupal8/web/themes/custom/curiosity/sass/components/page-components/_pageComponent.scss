@@ -23,36 +23,63 @@ Descr:
   &.grid {
     display: grid;
     gap: var(--space);
+    .items--2 {
+      @include medium() {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .items--3 {
+      @include medium() {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .items--4 {
+      grid-template-columns: 1fr 1fr;
+      @include medium() {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
   }
   &.flex {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     @include medium() {
       flex-direction: row;
     }
+    // * > {
+    //   flex-basis: 100%;
+    // }
+    // &.items--4 {
+    //   * > {
+    //     flex: 0 1 48%;
+    //     background: red;
+    //   }
+    // }
   }
 }
 
-.items--2 {
-  @include medium() {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+// .items--2 {
+//   @include medium() {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+// }
 
-.items--3 {
-  @include medium() {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+// .items--3 {
+//   @include medium() {
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+// }
 
-.items--4 {
-  grid-template-columns: 1fr 1fr;
-  @include medium() {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+// .items--4 {
+//   grid-template-columns: 1fr 1fr;
+//   @include medium() {
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// }
 
 //specil for in page-section where they can get stacked
 // .pcWrapper--page-section {

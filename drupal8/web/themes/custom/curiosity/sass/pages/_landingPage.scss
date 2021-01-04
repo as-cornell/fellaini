@@ -30,7 +30,8 @@ Descr:
     margin-bottom: var(--bottom-margin);
   }
   // constrain ftbs
-  .content > .pcWrapper--ftb {
+  .content > .pcWrapper--ftb,
+  .pageSection > .pcWrapper--ftb {
     margin-left: auto;
     margin-right: auto;
     @include medium() {

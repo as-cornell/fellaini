@@ -12,11 +12,14 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
 // pcWrapper--stat
 .pcWrapper--stat {
   // margin-bottom: var(--bottom-margin);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card--stat {
   text-align: center;
-  grid-row: span 1;
+  // grid-row: span 1;
   .card__copy {
     display: flex;
     flex-direction: column;
@@ -29,20 +32,35 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
   .card__title {
     display: none; // really never want this to show up even for a11y
   }
+  a {
+    text-decoration: none;
+  }
+  a,
   .card__label {
     @include baseFont($size: 2rem, $weight: var(--semi));
     position: relative;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.25em;
     margin-bottom: 0.5em;
     &::after {
       position: absolute;
       content: "";
-      width: 30%;
-      height: 4px;
-      background: var(--as-green);
-      left: 35%;
+      height: 2px;
+      background: var(--blue-purple);
+      width: 100%;
+      right: 0;
       bottom: 0;
       border-radius: var(--border-radius);
+
+      transform: scale(0.3, 1);
+      transition: transform 150ms ease-out;
+    }
+  }
+  a {
+    &:hover {
+      &:after {
+        transform: scale(0.8, 1);
+        transition: transform 150ms ease-in-out 250ms;
+      }
     }
   }
 }
@@ -51,5 +69,12 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
 .pcWrapper--layoutGroup {
   .card--stat {
     flex-basis: calc(50% - 1rem);
+  }
+}
+
+// card stats directly in a page section will be 1/4 width
+.pageSection > .pcWrapper--stat {
+  .card--stat {
+    flex: 0 1 23%;
   }
 }
