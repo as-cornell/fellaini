@@ -25,4 +25,9 @@ Descr:
     opacity: 0.25;
     transition: opacity 250ms ease-in-out 250ms;
   }
+  .sidebar {
+    h3 {
+      margin-bottom: 1em;
+    }
+  }
 }

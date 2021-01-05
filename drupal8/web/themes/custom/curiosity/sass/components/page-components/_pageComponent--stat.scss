@@ -78,3 +78,22 @@ Descr: sets up all uniquie styles for Stats wrapper and cards
     flex: 0 1 23%;
   }
 }
+
+.basicSidebar {
+  .pcWrapper--stat {
+    @include medium() {
+      flex-wrap: nowrap;
+    }
+
+    .card--stat {
+      flex: 0 1 48%;
+      @include medium() {
+        flex-basis: 100%;
+        margin-right: 1rem;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
