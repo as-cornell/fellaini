@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * @file
+ * Contains as_recent_media.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+function as_recent_media_get_json() {
+    //set cache id (verify parameters are safe values to use as cache id)
+    $cid = "as_recent_media:";
+    $recent_media_json = NULL;
+    //check cache
+    if ($cache = \Drupal::cache('data')->get($cid)) {
+        //fetch cache data
+      $recent_media_json = $cache->data;
+        //check cache expiration
+    }
+       // if no data check url
+    else {
+    $url = "https://communications.as.cornell.edu/recent-media.json";
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $recent_media_json = $json;
+    \Drupal::cache('data')
+        ->set($cid, $recent_media_json, time()+360);
+    }
+    //return data
+    return $recent_media_json;
+  }
+
+function as_recent_media_generate_item_markup($media_data) {
+    // Deal with instagram's funky json structure
+    dump($media_data);
+    $markup = "";
+    //$user_full_name = $post_data['user']['full_name'];
+    $display_url = $post_data['node']['thumbnail_src'];
+    $text = $post_data['node']['edge_media_to_caption']['edges'][0]['node']['text'];
+    $alt_text = $post_data['node']['accessibility_caption'];
+    $insta_link = $post_data['node']['shortcode'];
+    $insta_link = "https://www.instagram.com/p/" . $insta_link . "/";
+        if ($display_url){
+        $markup = $markup . "<span class='insta__item'><a href='" . $insta_link . "'><img class='img' src='" . $display_url . "' alt='" . $alt_text . "'></a></span>";
+            }
+        //if ($text){
+        //$markup = $markup . "<div  class='photoText__text'><p>" . $text . "<p/></div>";
+           // }
+
+    return $markup;
+  }
+
+
+/**
+ * Implements hook_help().
+ */
+function as_recent_media_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_instagram module.
+    case 'help.page.as_recent_media':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a block of recent media items pulled from a json feed on https://communications.as.cornell.edu/') . '</p>';
+      return $output;
+
+    default:
+  }
+}
