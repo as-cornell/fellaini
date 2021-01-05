@@ -23,7 +23,7 @@ function as_recent_media_get_json() {
     $url = "https://communications.as.cornell.edu/recent-media.json";
     $data = file_get_contents($url);
     $json = json_decode($data, true);
-    $recent_media_json = $json;
+    $recent_media_json = $json['nodes'];
     \Drupal::cache('data')
         ->set($cid, $recent_media_json, time()+360);
     }
@@ -32,21 +32,24 @@ function as_recent_media_get_json() {
   }
 
 function as_recent_media_generate_item_markup($media_data) {
-    // Deal with instagram's funky json structure
-    dump($media_data);
+    // pull out some data from json
+    //dump($media_data);
     $markup = "";
-    //$user_full_name = $post_data['user']['full_name'];
-    $display_url = $post_data['node']['thumbnail_src'];
-    $text = $post_data['node']['edge_media_to_caption']['edges'][0]['node']['text'];
-    $alt_text = $post_data['node']['accessibility_caption'];
-    $insta_link = $post_data['node']['shortcode'];
-    $insta_link = "https://www.instagram.com/p/" . $insta_link . "/";
-        if ($display_url){
-        $markup = $markup . "<span class='insta__item'><a href='" . $insta_link . "'><img class='img' src='" . $display_url . "' alt='" . $alt_text . "'></a></span>";
-            }
-        //if ($text){
-        //$markup = $markup . "<div  class='photoText__text'><p>" . $text . "<p/></div>";
-           // }
+    $title = $media_data['node']['title'];
+    $source = $media_data['node']['media_source'];
+    $link = $media_data['node']['link'];
+    $date = $media_data['node']['field_news_date'];
+    $people = $media_data['node']['related_people'];
+    $departments = $media_data['node']['related_department'];
+    // generate markup
+    $markup = $markup . "<li><a href='" . $link . "'>" . $title . "</a>";
+    $markup = $markup . "<div>" . $source . " - " . $date . "</div>";
+    $markup = $markup . "<div>" . $people;
+    if (!empty($departments)) {
+        $markup = $markup . ", " . $departments;
+        }
+    $markup = $markup ."</div>";
+    $markup = $markup . "</li>";
 
     return $markup;
   }

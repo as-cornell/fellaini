@@ -21,7 +21,7 @@ class DefaultBlock extends BlockBase {
    */
   public function build() {
     $build = [];
-    $build['recent_media_block']['#markup'] = "";
+    $build['recent_media_block']['#markup'] = "<ul>";
     $config = $this->getConfiguration();
     //kint($config);
     if (!empty($config['items_shown'])) {
@@ -29,7 +29,7 @@ class DefaultBlock extends BlockBase {
       $items_shown = $config['items_shown'] - 1;
     }
     else {
-      $items_shown = 0;
+      $items_shown = 2;
     }
 
     $items_count = 0;
@@ -42,6 +42,7 @@ class DefaultBlock extends BlockBase {
           $items_count++;
         }
       }
+      $build['recent_media_block']['#markup'] = $build['recent_media_block']['#markup'] . "</ul>";
     } // There were no instagram posts
     else {
       $build['recent_media_block']['#markup'] = "<main>
