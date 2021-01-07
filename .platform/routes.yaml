@@ -536,3 +536,32 @@ https://sociology.cornell.edu/:
 https://www.soc.cornell.edu/:
     type: redirect
     to: https://sociology.cornell.edu/
+https://chemistry.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.chemistry.cornell.edu/:
+    type: redirect
+    to: https://chemistry.cornell.edu/
+https://chem.cornell.edu/:
+    type: redirect
+    to: https://chemistry.cornell.edu/
+https://www.chem.cornell.edu/:
+    type: redirect
+    to: https://chemistry.cornell.edu/
+https://safety.chem.cornell.edu/:
+    type: redirect
+    to: https://chemistry.cornell.edu/
+https://physics.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.physics.cornell.edu/:
+    type: redirect
+    to: https://physics.cornell.edu/
