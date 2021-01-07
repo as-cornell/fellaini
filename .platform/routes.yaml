@@ -554,7 +554,7 @@ https://www.chem.cornell.edu/:
     to: https://chemistry.cornell.edu/
 https://safety.chem.cornell.edu/:
     type: redirect
-    to: https://chemistry.cornell.edu/
+    to: https://chemistry.cornell.edu/safety
 https://physics.cornell.edu/:
   type: upstream
   upstream: drupal7:http
