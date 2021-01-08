@@ -1,0 +1,13 @@
+{#
+/**
+ name = page-component-entity--recent-media-block.html.twig
+ Displays specified number of recent media
+
+ */
+#}
+
+{% set items_shown = content.field_posts_shown.0 %}
+{% set media_items = parse_media_json(items_shown) %}
+{#vardumper(media_items)#}
+
+

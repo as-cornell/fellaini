@@ -1,0 +1,5 @@
+services:
+  as_recent_media.parseMediaJson:
+    class: Drupal\as_recent_media\parseMediaJson
+    tags:
+      - { name: twig.extension }

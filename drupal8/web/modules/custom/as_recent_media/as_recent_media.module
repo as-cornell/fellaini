@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * Contains as_recent_media.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+function as_recent_media_get_json() {
+    //set cache id (verify parameters are safe values to use as cache id)
+    $cid = "as_recent_media:";
+    $recent_media_json = NULL;
+    //check cache
+    if ($cache = \Drupal::cache('data')->get($cid)) {
+        //fetch cache data
+      $recent_media_json = $cache->data;
+        //check cache expiration
+    }
+       // if no data check url
+    else {
+    $url = "https://communications.as.cornell.edu/recent-media.json";
+    $data = file_get_contents($url);
+    $json = json_decode($data, true);
+    $recent_media_json = $json['nodes'];
+    \Drupal::cache('data')
+        ->set($cid, $recent_media_json, time()+360);
+    }
+    //return data
+    return $recent_media_json;
+  }
+
+function as_recent_media_generate_item_markup($media_data) {
+    // pull out some data from json
+    //dump($media_data);
+    $markup = "";
+    $title = $media_data['node']['title'];
+    $source = $media_data['node']['media_source'];
+    $link = $media_data['node']['link'];
+    $date = $media_data['node']['field_news_date'];
+    $people = $media_data['node']['related_people'];
+    $departments = $media_data['node']['related_department'];
+    // generate markup
+    $markup = $markup . "<li><a href='" . $link . "'>" . $title . "</a>";
+    $markup = $markup . "<div>" . $source . " - " . $date . "</div>";
+    $markup = $markup . "<div>" . $people;
+    if (!empty($departments)) {
+        $markup = $markup . ", " . $departments;
+        }
+    $markup = $markup ."</div>";
+    $markup = $markup . "</li>";
+
+    return $markup;
+  }
+
+
+/**
+ * Implements hook_help().
+ */
+function as_recent_media_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the as_instagram module.
+    case 'help.page.as_recent_media':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a block of recent media items pulled from a json feed on https://communications.as.cornell.edu/') . '</p>';
+      return $output;
+
+    default:
+  }
+}

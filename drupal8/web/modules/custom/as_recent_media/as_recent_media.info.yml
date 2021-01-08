@@ -1,0 +1,5 @@
+name: 'A&S Recent Media'
+type: module
+description: 'Provides a block of recent media items from communications.as.cornell.edu'
+core: 8.x
+package: 'AS'
