@@ -565,3 +565,38 @@ https://physics.cornell.edu/:
 https://www.physics.cornell.edu/:
     type: redirect
     to: https://physics.cornell.edu/
+https://nbb.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.nbb.cornell.edu/:
+    type: redirect
+    to: https://nbb.cornell.edu/
+https://english.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://www.english.cornell.edu/:
+    type: redirect
+    to: https://english.cornell.edu/
+https://english.arts.cornell.edu/:
+    type: redirect
+    to: https://english.cornell.edu/
+https://www.english.arts.cornell.edu/:
+    type: redirect
+    to: https://english.cornell.edu/
+https://epoch.cornell.edu/:
+    type: redirect
+    to: https://english.cornell.edu/
+https://www.epoch.cornell.edu/:
+    type: redirect
+    to: https://english.cornell.edu/
+https://writers.cornell.edu/:
+    type: redirect
+    to: https://english.cornell.edu/
