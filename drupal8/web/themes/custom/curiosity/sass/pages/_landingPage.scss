@@ -29,13 +29,18 @@ Descr:
   .content > .pcWrapper {
     margin-bottom: var(--bottom-margin);
   }
-  // constrain ftbs
+  // constrain ftbs that are in full width contianers
   .content > .pcWrapper--ftb,
   .pageSection > .pcWrapper--ftb {
     margin-left: auto;
     margin-right: auto;
     @include medium() {
-      max-width: 72%;
+      p,
+      ul,
+      ol {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
   .group__title--sr-only {
@@ -84,6 +89,7 @@ Descr:
           color: var(--as-white);
           max-width: 80%;
           @include dropShadow();
+          animation: 2s captionFadeIn 1 forwards ease-in;
         }
 
         @extend .spotlight;
@@ -92,6 +98,8 @@ Descr:
       }
       img {
         @extend .pano-mask-1;
+        // transform: scale(0.95);
+        // animation: 1s panoScale 1 forwards ease-in-out 500ms;
       }
     }
   }
@@ -104,5 +112,34 @@ Descr:
     aside {
       display: none;
     }
+  }
+}
+
+// fake keyframes
+@keyframes panoScale {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes captionFadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

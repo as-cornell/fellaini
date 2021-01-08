@@ -6,25 +6,28 @@ Descr: sets background, color options, link styles for link blocks
 --------------------------- */
 .content {
   .linkBlock {
-    background: var(--gray-lightest);
+    background: var(--blue-blue--light);
     color: var(--as-white);
     text-align: center;
     padding: 4em 2em;
     border-radius: var(--border-radius);
+    @include boxShadow();
     h2 {
       color: var(--as-black);
+      margin-top: 0.5em;
     }
     ul {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      padding-left: 0;
       li {
         margin: 0 0.5rem;
       }
     }
     a {
-      @include btnLink(var(--storm-radial), var(--as-white));
+      @include btnLink(var(--as-white), var(--as-dark-blue));
       margin-right: 1em;
       &:last-of-type {
         margin-right: 0;

@@ -28,6 +28,12 @@ Descr: sets styles for various pce listBlocks
         margin-top: 0;
       }
     }
+    > a {
+      grid-column: 1 / -1;
+      margin-left: auto;
+      margin-right: auto;
+      @extend .btn--blue;
+    }
   }
   &.four-items {
     .listBlock__text {
@@ -77,6 +83,17 @@ Descr: sets styles for various pce listBlocks
     ul {
       list-style-type: none;
       padding-left: 0;
+    }
+  }
+}
+
+//basic page overrides
+.basicSidebar {
+  .pcWrapper {
+    &--listBlock {
+      @include medium() {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 }

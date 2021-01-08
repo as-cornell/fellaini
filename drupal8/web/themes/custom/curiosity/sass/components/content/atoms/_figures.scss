@@ -28,6 +28,8 @@ figure {
     }
     &--video {
       // display: block;
+      margin: auto auto var(--bottom-margin) auto;
+      max-width: 80%;
     }
     &--card {
     }
@@ -55,6 +57,21 @@ figure {
     }
   }
 }
+
+// landing page things
+.landingPage {
+  .figure {
+    &--video {
+      max-width: 80%;
+    }
+  }
+  .content .figure--pano {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 // figures in pageComponent--ftb need special width restrictions
 .pcWrapper--ftb {
   .figure {

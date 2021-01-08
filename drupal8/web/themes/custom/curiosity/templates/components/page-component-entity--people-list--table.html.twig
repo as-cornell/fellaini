@@ -46,33 +46,26 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 
 
 {% set group_base_class = 'pcWrapper' %}
-{% set group_modifiers = ['peopleList', 'listBlock'] %}
+{% set group_modifiers = ['peopleList', 'table'] %}
 
 
 {% set group_classes = ['people'] %}
 
-{# {{vardumper()}} #}
+{% set thead %}
+<thead>
+<tr>
+<th>Name</th>
+<th>Title</th>
+<th>Contact</th>
+</tr>
+</thead>
+{% endset %}
 
-{# {% set layout = content.field_display|field_value|raw %} #}
-{# {{layout}} #}
-{% set layout = content.field_display.0["#markup"] %}
-{# {{content.field_display|field_value|raw|trim}} #}
- {{layout}}
-{#{% set bong = layout|trim %}
-{{bong}}#}
-{% if layout == "list"%}
-{% embed "@content/molecules/_grouping.twig" with{
-  items: content.field_person,
-  group_label : title
-} %}{% endembed %}
-
-{% elseif layout == "table" %}
+{# {{vardumper()}}
+table view mode #}
+{# {% set layout = content.field_display|render %} #}
 
 {% embed "@content/molecules/_table.twig" with{
   items: content.field_person,
-  group_label : title
+  group_label : content.name
 } %}{% endembed %}
-
-{% endif %} 
-
-

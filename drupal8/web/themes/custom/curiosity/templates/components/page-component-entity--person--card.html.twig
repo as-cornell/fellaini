@@ -10,16 +10,16 @@
 {% set person = parse_people_json(pathtoken) %}
 
 {# HIDDEN til i get new ldap #}
-{# {% set contact = drupal_block('ldap_block', {netid: person.netid}) %} #}
+{% set contact = drupal_block('ldap_block', {netid: person.netid}) %}
 
 {# responsibilities #}
-	{% if person.responsibilities %}
-{% set show_responsibilities = true %}
+{% if person.responsibilities %}
+	{% set show_responsibilities = true %}
 {% endif %}
 
 {# departments #}
-	{% if person.departments %}
-{% set show_departments = true %}
+{% if person.departments %}
+	{% set show_departments = true %}
 {% endif %}
 
 
@@ -35,6 +35,16 @@
 	</ul>
 </div>
 {% endset %} #}
+{# {{vardumper()}} #}
+{# {{content.field_person_type}} #}
+{# {% if content.field_person_type.0["#plain_text"] == "Faculty" %}
+
+	FACULTY
+{% endif %} #}
+
+{% set personType = content.field_person_type.0["#plain_text"] %}
+
+{# {{personType}} #}
 
 {% set card_link_url = link %}
 {% embed "@content/molecules/_card--person.twig" with {

@@ -45,12 +45,12 @@ Descr: defines content and blocks for basic person page
 			</h2>
 			{{publications|raw}}
 		{% endif %}
-		{# {% if show_related_articles %} #}
-		<h2>
-			In the news
-		</h2>
-		{{related_articles}}
-		{# {% endif %} #}
+		{% if show_related_articles %}
+			<h2>
+				In the news
+			</h2>
+			{{related_articles}}
+		{% endif %}
 
 	</div>
 	<div class="sidebar">

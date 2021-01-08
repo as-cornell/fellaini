@@ -26,7 +26,7 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
  * @ingroup themeable
  */
 #}
-
+{# {{vardumper()}} #}
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['listBlock'] %}
 {% set layout = content.field_list_block_layout|field_value|safe_join(', ') %}
@@ -39,6 +39,14 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 	{% set textBlock = content.field_formatted_text %}
 {% endif %}
 
+{% if content.field_link|render is not empty %}
+  {% set hasLink = true %}
+  {% set linkURL = content.field_link.0["#url"] %}
+{% set linkTitle = content.field_link.0["#title"] %}
+{% set link%}
+<a href="{{linkURL}}">{{linkTitle}}</a>
+{% endset %}
+{% endif %}
 
 {# {{vardumper(content.field_list_reference)}} #}
 {% embed "@content/molecules/_list-block.twig" with{

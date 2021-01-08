@@ -73,14 +73,15 @@
 @mixin btnLink($background: var(--gray-lightest), $color: var(--storm)) {
   display: inline-block;
   background: $background;
-  padding: 1em;
+  padding: 0.75em;
   border-radius: var(--border-radius);
+  font-size: var(--base-20);
   // font-weight: var(--semi);
   color: $color;
   @include boxShadow();
   margin-right: 1rem;
   margin-top: 1em;
-  &:last-of-type {
-    margin-right: 0;
+  &:hover {
+    box-shadow: none;
   }
 }

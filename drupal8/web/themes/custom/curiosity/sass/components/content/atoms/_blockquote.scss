@@ -18,7 +18,8 @@ blockquote {
   @include large() {
     padding: 3rem;
     font-size: 1.5rem;
-    margin: 2rem 0;
+    margin: 4rem auto;
+    max-width: 80%;
   }
 
   // font-style: italic;
@@ -83,7 +84,7 @@ blockquote {
 
 .pageComponent--blockQuote {
   blockquote {
-    font-size: 2rem;
+    // font-size: 2rem;
     .attribution {
       font-size: 1rem;
     }

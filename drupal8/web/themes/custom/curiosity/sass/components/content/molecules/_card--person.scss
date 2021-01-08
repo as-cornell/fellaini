@@ -8,6 +8,7 @@ Descr: Sets all specific styles for an person card
 
 .card--person {
   display: grid;
+  align-content: flex-start;
   figure {
     background: none;
   }

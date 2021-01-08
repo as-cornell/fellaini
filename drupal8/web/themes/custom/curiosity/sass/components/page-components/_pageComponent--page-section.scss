@@ -31,7 +31,7 @@ Descr: Specific styles for page sections wrappers, headings
 .landingPage {
   .pageSection {
     > .pcWrapper {
-      margin-bottom: 3rem;
+      margin-bottom: var(--bottom-margin);
     }
   }
 }

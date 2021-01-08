@@ -42,21 +42,11 @@ Descr: builds cards for personses'
 			{{person_responsibilities|raw}}
 		</div>
 	{% endif %}
-
-	<div class="card--person__contacts">
-		{{contact}}
-		<p>
-			555-555-5555
-			<br/>
-			email@cornell.edu
-			<br/>
-			<a href="#">
-				professorwebsite.com
-			</a>
-		</p>
-
-	</div>
-
+	{% if personType != "Faculty" %}
+		<div class="card--person__contacts">
+			{{contact}}
+		</div>
+	{% endif %}
 	{% if show_departments %}
 		<div class="card--person__departments">
 			{{person_departments}}
