@@ -40,19 +40,19 @@ Descr: Sets all specific styles for an m/m/g card and teasers
     &--major {
       background: var(--as-dark-blue);
       &:before {
-        content: "M";
+        // content: "M";
       }
     }
     &--minor {
       background: var(--as-teal-dark);
       &:before {
-        content: "M";
+        // content: "M";
       }
     }
     &--graduate {
       background: var(--as-purple);
       &:before {
-        content: "G";
+        // content: "G";
       }
     }
   }
@@ -95,8 +95,8 @@ Descr: Sets all specific styles for an m/m/g card and teasers
 
   .levels {
     .level {
-      width: 1.5em;
-      color: transparent;
+      // width: 1.5em;
+      // color: transparent;
       &:before {
         color: var(--as-white);
         opacity: 1;
@@ -112,7 +112,7 @@ Descr: Sets all specific styles for an m/m/g card and teasers
         animation-timing-function: ease-out;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
-        animation-delay: 0.5s;
+        animation-delay: 250ms;
         &:before {
           opacity: 0;
         }
@@ -124,15 +124,19 @@ Descr: Sets all specific styles for an m/m/g card and teasers
 // jellybean animation
 @keyframes jellybean-animation {
   0% {
-    width: 1.5em;
+    transform: scale(1);
     color: transparent;
   }
-  60% {
-    width: 50px;
+  30% {
+    transform: scale(0.8);
   }
+  // 60% {
+  //   width: 50px;
+  // }
 
   100% {
-    width: 70px;
+    transform: scale(1);
     color: var(--as-white);
+    // background: red;
   }
 }

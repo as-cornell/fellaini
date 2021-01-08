@@ -92,4 +92,9 @@ Descr:
   .content > .pageComponent--ftb > p:first-of-type {
     @extend .base-28;
   }
+
+  //pcWrapper
+  .pcWrapper {
+    margin-bottom: 3rem;
+  }
 }

@@ -45,31 +45,42 @@ Descr: main output business for views. PEOPLE
 {% if (view.getExposedInput) %}
 	{% set showFacets = true %}
 {% endif %}
-{{vardumper()}}
-
+{# {{vardumper()}} #}
 
 
 {# adding "now viewing" labels #}
-{% if (view.getExposedInput.keywords) %}
-	{% set view_filters_1 = 'Keyword: ' %}
-	{% set keyword = view.getExposedInput.keywords %}
-	{% set view_filters_1 = '<strong>' ~ view_filters_1 ~ '</strong>'  ~ keyword  %}
+{# NAME #}
+	{% if (view.getExposedInput.name) %}
+	{% set view_filters_1 = view_filters ~ 'Name search: ' %}
+	{% set name = view.getExposedInput.name %}
+{% set view_filters_1 = view_filters_1 ~ name  %}
 {% endif %}
 
-{% if (view.getExposedInput.departments_and_programs != 'All' or '') %}
+{# Department/program #}
+	{% if (view.getExposedInput.departments_programs  != 'All' or '') %}
 	{% set view_filters_2 = 'Department or program: ' %}
-	{% set number = view.getExposedInput.departments_and_programs %}
+	{% set number = view.getExposedInput.departments_programs %}
 	{% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
-	{% set view_filters_2 = '<strong>' ~ view_filters_2 ~ '</strong>' ~ termname  %}
+{% set view_filters_2 = '<strong>' ~ view_filters_2 ~ '</strong>' ~ termname  %}
 {% endif %}
 
 
-{% if (view.getExposedInput.type  != 'All' or '') %}
+{# TYPE #}
+	{% if (view.getExposedInput.person_type  != 'All' or '') %}
 	{% set view_filters_3 = 'Type: ' %}
-	{% set number = view.getExposedInput.type %}
+	{% set number = view.getExposedInput.person_type %}
 	{% set termname = drupal_field('name', 'taxonomy_term', number)|field_value|render|replace({'&amp;': '&'}) ~ '<br />' %}
-	{% set view_filters_3 = '<strong>' ~ view_filters_3 ~ '</strong>' ~ termname  %}
+{% set view_filters_3 = '<strong>' ~ view_filters_3 ~ '</strong>' ~ termname  %}
 {% endif %}
+
+
+	{% if (view.getExposedInput.field_interests) %}
+	{% set view_filters = view_filters ~ 'Interests: ' %}
+		{% for key, item in view.getExposedInput.field_interests %}
+		{% set termname = drupal_field('name', 'taxonomy_term', item)|field_value|safe_join(', ') ~ ' '%}
+	{% set view_filters = view_filters ~ termname  %}
+{% endfor %}{% endif %}
+
 
 {% set facets %}
 {% if showFacets %}
