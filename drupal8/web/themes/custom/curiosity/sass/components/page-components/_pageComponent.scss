@@ -50,9 +50,12 @@ Descr:
     @include medium() {
       flex-direction: row;
     }
-    // * > {
-    //   flex-basis: 100%;
-    // }
+    > div {
+      margin-right: 1rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
     // &.items--4 {
     //   * > {
     //     flex: 0 1 48%;
