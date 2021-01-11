@@ -31,13 +31,27 @@ form {
   border-radius: var(--border-radius);
   &.form--searchBlock,
   &.form--overlaySearch {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    // display: grid;
+    // grid-template-columns: auto 1fr;
     max-width: var(--line-width);
     .searchField {
       display: grid;
       grid-template-columns: 1fr auto;
       margin-left: 1rem;
+    }
+  }
+  &.form--searchBlock {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem 0;
+    > * {
+      flex-basis: 100%;
+    }
+    label {
+      margin-bottom: 1em;
+    }
+    .searchField {
+      margin-left: 0;
     }
   }
   // elements
@@ -47,6 +61,9 @@ form {
   .form-text {
     border: none;
     border-bottom: 1px solid var(--as-teal-dark);
+    background: var(--gray-lightest);
+    padding: 0 0.5em;
+    border-radius: var(--border-radius);
     &:focus {
     }
   }

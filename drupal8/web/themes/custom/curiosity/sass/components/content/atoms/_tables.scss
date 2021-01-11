@@ -17,15 +17,15 @@ table,
   }
 
   thead {
-    tr {
-      background: var(--as-teal-dark);
-    }
+    // tr {
+    //   background: var(--as-teal-dark);
+    // }
   }
 
   th {
-    // border-top: 1px solid var(--gray-lt);
-    // border-bottom: 1px solid var(--gray-lt);
-    //color: $as-text-lt;
+    position: sticky;
+    top: 0;
+    background: var(--as-teal-dark);
     font-weight: var(--semi);
     // font-size: 13px;
     padding: 0.5em;
