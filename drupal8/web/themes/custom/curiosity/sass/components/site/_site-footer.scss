@@ -10,14 +10,45 @@ all search form design in _forms.scss
 --------------------------- */
 
 footer {
-  width: 100%;
   background: var(--as-black);
   color: var(--as-white);
   font-size: var(--base-20);
-  padding: 3rem 0;
 
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  padding: 3rem 2rem;
+  margin-left: -2rem;
+
+  &:before {
+    position: absolute;
+    // top: 0;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    margin: 0 -0.5rem -0.5rem 0;
+    @include large() {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 675px;
+      height: 105%;
+      margin: -0.5rem -2rem;
+    }
+
+    content: "";
+    background-image: var(--blue-purple);
+    background-size: 300%;
+    animation: bg-animation 3s infinite alternate;
+    z-index: -1;
+
+    clip-path: url(#bigamp);
+    z-index: 1;
+  }
   h2 {
-    font-size: var(--base-24);
+    font-size: var(--base-28);
   }
 
   ul {
@@ -28,23 +59,51 @@ footer {
   .footer {
     margin: 0 auto;
     max-width: var(--xl);
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto auto;
     font-weight: var(--light);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    @include medium() {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+    }
+
+    @include large() {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    z-index: 2;
     &__currentStudents {
-      grid-column: 1 / 4;
+      grid-column: 1 / 2;
       grid-row: 1 / 1;
+
+      @include large() {
+        grid-column: 1 / 4;
+        grid-row: 1 / 1;
+      }
       margin-bottom: 2rem;
+      font-size: 1.2em;
     }
     &__importantLinks {
-      grid-column: 4 / 10;
-      grid-row: 1 / 1;
+      grid-column: 2 / -1;
+      grid-row: 1;
+      @include large() {
+        grid-column: 4 / -1;
+        grid-row: 1 / 1;
+      }
       > ul {
         display: flex;
+        flex-wrap: wrap;
         > li {
-          flex: 0 0 33.3%;
+          flex: 0 0 45%;
+          @include large() {
+            flex: 0 1 24%;
+          }
           font-weight: var(--regular);
+          // margin-right: 0.5rem;
           > a {
             margin-bottom: 0.5em;
             display: block;
@@ -56,32 +115,85 @@ footer {
       }
     }
     &__logo {
-      grid-column: 1 / 4;
+      grid-column: 1 / -1;
       grid-row: 2;
+      margin-bottom: 2rem;
+      @include large() {
+        grid-column: 1 / 5;
+        grid-row: 2;
+      }
+
+      display: flex;
+      align-items: center;
       a {
         display: block;
-        max-width: 10rem;
+        // max-width: 10rem;
       }
     }
     &__address {
-      grid-column: 4 / 6;
-      grid-row: 2;
+      grid-column: 2;
+      grid-row: 3;
+      @include large() {
+        grid-column: 6 / 8;
+        grid-row: 2;
+      }
       font-size: var(--base-16);
     }
     &__contacts {
-      grid-column: 6 / 9;
-      grid-row: 2;
+      grid-column: 1;
+      grid-row: 3;
+      @include large() {
+        grid-column: 8 / 10;
+        grid-row: 2;
+      }
       font-size: var(--base-16);
     }
     &__socialLinks {
-      grid-column: 11 / -1;
-      grid-row: 2;
+      grid-column: 3;
+      grid-row: 3;
+      @include large() {
+        grid-column: 11 / -1;
+        grid-row: 2;
+      }
       font-size: var(--base-16);
     }
+    &__otherInformation {
+      grid-column: 1 / -1;
+      grid-row: 4;
+    }
+  }
+
+  .cu-logo {
+    text-indent: -9999px;
+    width: 100px;
+    height: 100px;
+    background: url(/themes/custom/curiosity/images/cornell-white.svg);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
   }
 
   a {
     color: var(--as-white);
     text-decoration-color: var(--as-blue-gray);
+  }
+  .as-logo {
+    text-indent: -9999px;
+    width: 300px;
+    height: 74px;
+    background: url(/themes/custom/curiosity/images/the-college-two-line-white.svg);
+
+    background-size: 300px 74px;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: 1rem;
+    &:before {
+      position: absolute;
+      width: 1px;
+      background: var(--gray-lt);
+      height: 100%;
+      top: 0;
+      left: 0;
+      content: "";
+    }
   }
 }
