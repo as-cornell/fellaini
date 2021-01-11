@@ -58,6 +58,7 @@ Descr:
         grid-template-columns: 1fr;
         align-items: flex-end;
         margin-bottom: 4rem;
+        max-width: 100%;
       }
 
       figure,
@@ -116,21 +117,21 @@ Descr:
 }
 
 // fake keyframes
-@keyframes panoScale {
-  0% {
-    transform: scale(1);
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  80% {
-    transform: scale(1.08);
-  }
-  100% {
-    transform: scale(1.05);
-  }
-}
+// @keyframes panoScale {
+//   0% {
+//     transform: scale(1);
+//     opacity: 0;
+//   }
+//   30% {
+//     opacity: 1;
+//   }
+//   80% {
+//     transform: scale(1.08);
+//   }
+//   100% {
+//     transform: scale(1.05);
+//   }
+// }
 
 @keyframes captionFadeIn {
   0% {
