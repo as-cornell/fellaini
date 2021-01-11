@@ -6,8 +6,8 @@ $sites['dept2.fellaini.local'] = 'dept2';
 // PLATFORM
 $sites['dept1.as.cornell.edu'] = 'astro';
 $sites['dept2.as.cornell.edu'] = 'sagan';
-$sites['dept3.as.cornell.edu'] = 'english';
-$sites['dept4.as.cornell.edu'] = 'bionb';
+$sites['dept3.as.cornell.edu'] = 'astroresearch';
+$sites['dept4.as.cornell.edu'] = 'communications';
 $sites['dept5.as.cornell.edu'] = 'math';
 $sites['baroqueorgan.cornell.edu'] = 'organ';
 $sites['cogsci.cornell.edu'] = 'cogsci';
