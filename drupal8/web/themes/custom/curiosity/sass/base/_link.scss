@@ -30,6 +30,42 @@ main {
   }
 }
 
+// social media links
+.socialLink {
+  text-indent: -9999px;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  display: block;
+  &:before {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 0;
+    left: 0;
+    background: var(--as-white);
+    // background-image: var(--blue-purple);
+    // background-size: 100%;
+    // animation: bg-animation 3s infinite alternate;
+    content: "";
+  }
+  &--twitter {
+    &:before {
+      clip-path: url(#twitter);
+    }
+  }
+  &--facebook {
+    &:before {
+      clip-path: url(#facebook);
+    }
+  }
+  &--instagram {
+    &:before {
+      clip-path: url(#instagram);
+    }
+  }
+}
+
 //link animatation
 @keyframes link-animation {
   0% {

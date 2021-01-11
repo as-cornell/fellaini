@@ -151,6 +151,9 @@ footer {
     &__socialLinks {
       grid-column: 3;
       grid-row: 3;
+      ul {
+        @extend .inline;
+      }
       @include large() {
         grid-column: 11 / -1;
         grid-row: 2;
