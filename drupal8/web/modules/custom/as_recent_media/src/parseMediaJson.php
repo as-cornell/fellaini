@@ -45,7 +45,7 @@ class parseMediaJson extends \Twig_Extension
     $departments = '';
     //kint($items_shown);
     if (!empty($items_shown)) {
-      $items_shown = intval($items_shown);
+      $items_shown = intval($items_shown) -1;
     }
 
 
