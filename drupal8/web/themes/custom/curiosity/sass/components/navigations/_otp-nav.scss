@@ -14,6 +14,7 @@ Descr: otpN small and large, hovers and toggles for subNav
       margin-left: -1rem;
       padding-left: 1rem;
       @include boxShadow();
+      border-radius: var(--border-radius);
     }
   }
   @include large() {
@@ -204,30 +205,6 @@ Descr: otpN small and large, hovers and toggles for subNav
           width: 2px;
         }
       }
-      //hiding "pill" shaped links
-      // a {
-      //   color: var(--as-black);
-      //   background: var(--gray-lightest);
-      //   padding: 0.5em 1em;
-      //   margin-right: 0;
-      //   display: block;
-      //   border-bottom: 1px solid var(--gray-lightest);
-      //   transition: none;
-      //   border-radius: var(--border-radius);
-      //   &.active,
-      //   &:hover {
-      //     color: var(--as-white);
-      //     background: var(--as-blue-gray);
-      //   }
-      // }
     }
-  }
-}
-
-//landing page styles
-.otpNav--landing_page {
-  @include large() {
-    // flex-direction: column;
-    // align-content: center;
   }
 }

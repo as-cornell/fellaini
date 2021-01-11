@@ -13,3 +13,19 @@ Descr:
     padding-left: 0;
   }
 }
+
+// in layout group
+.pcWrapper--layoutGroup {
+  .pcWrapper--relatedArticles {
+    h4 {
+      @extend .sr-only;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        flex: 0 0 47%;
+      }
+    }
+  }
+}
