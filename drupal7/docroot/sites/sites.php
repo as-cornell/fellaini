@@ -5,7 +5,7 @@ $sites['dept1.fellaini.local'] = 'dept1';
 $sites['dept2.fellaini.local'] = 'dept2';
 // PLATFORM
 $sites['dept1.as.cornell.edu'] = 'astro';
-$sites['dept2.as.cornell.edu'] = 'sagan';
+$sites['dept2.as.cornell.edu'] = 'people';
 $sites['dept3.as.cornell.edu'] = 'astroresearch';
 $sites['dept4.as.cornell.edu'] = 'communications';
 $sites['dept5.as.cornell.edu'] = 'math';
