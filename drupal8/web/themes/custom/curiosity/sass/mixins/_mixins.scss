@@ -15,7 +15,7 @@
 @mixin baseFont(
   $size: var(--base-font-size),
   $color: var(--dark-text),
-  $weight: var(--regular),
+  $weight: var(--light),
   $line-height: var(--line-height),
   $family: var(--font-sans)
 ) {
