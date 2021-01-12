@@ -211,6 +211,7 @@ Still needs: expand toggle for showing main nav on mobile
     margin-bottom: 0;
     list-style-type: none;
     background: var(--gray-lightest);
+    font-weight: var(--regular);
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -247,7 +248,7 @@ Still needs: expand toggle for showing main nav on mobile
       max-width: 100%;
     }
     a {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.5rem;
       display: block;
       position: relative;
       color: var(--as-black);

@@ -18,6 +18,7 @@ Descr:
     h1 {
       text-align: center;
       font-family: var(--font-serif);
+      font-weight: var(--semi);
       @include large() {
         text-align: left;
         margin-top: 0;
@@ -89,8 +90,13 @@ Descr:
   }
 
   // spotlight on the first <p> in the first FTB
-  .content > .pageComponent--ftb > p:first-of-type {
-    @extend .base-28;
+  .content {
+    > h2:first-of-type {
+      margin-top: 0;
+    }
+    > .pageComponent--ftb > p:first-of-type {
+      @extend .base-28;
+    }
   }
 
   //pcWrapper
