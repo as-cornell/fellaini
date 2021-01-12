@@ -13,8 +13,8 @@ function as_base_fields_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
-        'skin' => 'moono',
-        'ckeditor_path' => '//cdn.ckeditor.com/4.4.3/full-all',
+        'skin' => 'moono-lisa',
+        'ckeditor_path' => '//cdn.ckeditor.com/4.14.0/full-all',
         'ckeditor_local_path' => '',
         'ckeditor_plugins_path' => '%m/plugins',
         'ckeditor_plugins_local_path' => '',
@@ -33,7 +33,7 @@ function as_base_fields_ckeditor_profile_defaults() {
         'toolbar' => '[
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Image\',\'Iframe\',\'HorizontalRule\', \'Table\',\'A11ychecker\'],
+    [\'Media\',\'Iframe\',\'HorizontalRule\', \'Table\',\'A11ychecker\'],
     \'/\',
      [\'Format\',\'Styles\',\'ShowBlocks\'],
     [\'Bold\',\'Italic\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
@@ -50,8 +50,43 @@ function as_base_fields_ckeditor_profile_defaults() {
         'lang' => 'en',
         'auto_lang' => 't',
         'language_direction' => 'default',
-        'allowed_content' => 't',
-        'extraAllowedContent' => '',
+        'allowed_content' => 'f',
+        'extraAllowedContent' => 'properties;
+table[class](*);
+tbody[class](*);
+tr[class](*);
+td[class,colspan](*);
+img[title,alt,src,data-cke-saved-src](wysiwyg-break,drupal-content);
+video[width,height,controls,src,controlslist,data-delta,data-fid,data-media-element](*);
+source[src,type,data-cke-saved-src];
+audio[controls,src](*);
+img[*](media-element,file-default,media-wysiwyg-align-right,media-wysiwyg-align-left,media-wysiwyg-align-center);
+p[class](*);
+audio[controls,src](*);
+b[class](*);
+p[class](default,fanc*,text-align*,Indent*);
+a[href,hreflang,data-entity-type,data-entity-uuid,title,target,class,tabindex](*);
+h1[class](*);
+h2[class](*);
+h3[class](*);
+h4[class](*);
+h5[class](*);
+h6[class](*);
+hr[class](*);
+div[class,aria-labelledby,data-parent,id](*);
+button[class,aria-controls,aria-expanded,data-target,data-toggle,type,id](*);
+sub[class](*);
+sup[class](*);
+strong[class](*);
+em[class](*);
+cite[class](*);
+footer[class](default);
+blockquote[class](*);
+ul[class,type](*);
+ol[class,start,type](*);
+span[!class](*);
+span[!lang](*);
+li[class](*);',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;div;pre;address;h1;h2;h3;h4;h5;h6',
@@ -66,7 +101,7 @@ function as_base_fields_ckeditor_profile_defaults() {
             'pre_indent' => 0,
           ),
         ),
-        'css_mode' => 'none',
+        'css_mode' => 'theme',
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
@@ -77,8 +112,8 @@ function as_base_fields_ckeditor_profile_defaults() {
         'UserFilesAbsolutePath' => '%d%b%f/',
         'forcePasteAsPlainText' => 'f',
         'html_entities' => 'f',
-        'scayt_autoStartup' => 'f',
-        'theme_config_js' => 'f',
+        'scayt_autoStartup' => 't',
+        'theme_config_js' => 't',
         'js_conf' => '',
         'loadPlugins' => array(
           'a11ychecker' => array(
@@ -98,6 +133,30 @@ function as_base_fields_ckeditor_profile_defaults() {
             'desc' => 'Plugin file: balloonpanel',
             'path' => '%plugin_dir%balloonpanel/',
             'buttons' => FALSE,
+            'default' => 'f',
+          ),
+          'drupalbreaks' => array(
+            'name' => 'drupalbreaks',
+            'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
+            'path' => '%plugin_dir%drupalbreaks/',
+            'buttons' => array(
+              'DrupalBreak' => array(
+                'label' => 'DrupalBreak',
+                'icon' => 'images/drupalbreak.png',
+              ),
+            ),
+            'default' => 't',
+          ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
+            'buttons' => array(
+              'Media' => array(
+                'icon' => 'icons/media.png',
+                'label' => 'Add media',
+              ),
+            ),
             'default' => 'f',
           ),
           'mediaBrowser' => array(

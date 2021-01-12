@@ -209,7 +209,16 @@ process:
         '1726': 61585
         '1721': 61586
       bypass: TRUE
-  field_tags: field_tags
+  field_tags:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_tags
+    -
+      plugin: explode
+      delimiter: '+'
+    -
+      plugin: entity_generate
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
