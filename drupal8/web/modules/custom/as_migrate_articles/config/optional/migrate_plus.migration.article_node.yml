@@ -212,21 +212,13 @@ process:
   field_tags:
     -
       plugin: skip_on_empty
-      source: field_tags
       method: process
-      message: 'No article view tags.'
+      source: field_tags
     -
       plugin: explode
       delimiter: '+'
     -
-      plugin: callback
-      callable: trim
-    -
       plugin: entity_generate
-      entity_type: taxonomy_term
-      value_key: name
-      bundle_key: vid
-      bundle: tags
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
