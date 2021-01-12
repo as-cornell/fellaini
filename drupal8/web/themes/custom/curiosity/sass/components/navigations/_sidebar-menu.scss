@@ -8,11 +8,12 @@ Still needs: expand toggle for showing sidebar nav on mobile
 --------------------------- */
 
 ul[class^="nav"] {
-  font-size: var(--base-24);
+  font-size: var(--base-20);
   list-style-type: none;
   padding-left: 0;
   li {
-    margin-bottom: 0;
+    // margin-bottom: 0;
+    max-width: 100%;
   }
   a {
     display: block;
@@ -23,7 +24,7 @@ ul[class^="nav"] {
     // margin-bottom: 0;
     overflow: hidden;
     font-size: var(--base-18);
-    line-height: 1.75em;
+    line-height: 1.5em;
     a {
       position: relative;
       // padding-left: 0.5rem;
@@ -282,6 +283,7 @@ ul[class^="nav"] {
   // margin-right: 0.5rem;
   font-size: var(--base-20);
   margin-top: 0.5em;
+  max-width: 100%;
   padding: 0.5rem;
   grid-row: 1;
   border: 1px solid var(--gray-lt);
