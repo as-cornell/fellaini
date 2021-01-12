@@ -1,0 +1,90 @@
+name = CampfireDept
+description = Installer for Cornell University College of Arts and Sciences department websites.
+version = "7.x-1.0-alpha1"
+core = 7.x
+php = 5.3
+
+; The distribution_name property is used in the installer and other places as
+; a label for the software being installed.
+distribution_name = CampfireDept
+
+; The exclusive flag auto-selects the profile during installation, if there
+; are no other exclusive ones.
+exclusive = TRUE
+
+; Required modules (Core)
+dependencies[] = block
+dependencies[] = color
+dependencies[] = contextual
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = shortcut
+dependencies[] = taxonomy
+
+; Required modules (Contrib)
+dependencies[] = admin_views
+dependencies[] = auto_nodetitle
+dependencies[] = bean
+dependencies[] = bean_admin_ui
+dependencies[] = cer
+dependencies[] = ckeditor
+dependencies[] = entity
+dependencies[] = entity_view_mode
+dependencies[] = entityreference
+dependencies[] = fast_404
+dependencies[] = features
+dependencies[] = feeds
+dependencies[] = feeds_ui
+dependencies[] = feeds_tamper
+dependencies[] = feeds_tamper_ui
+dependencies[] = feeds_xpathparser
+dependencies[] = fences
+dependencies[] = file_entity
+dependencies[] = field_collection
+dependencies[] = imce
+dependencies[] = job_scheduler
+dependencies[] = jquery_update
+dependencies[] = json2
+dependencies[] = libraries
+dependencies[] = link
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = module_filter
+dependencies[] = navbar
+dependencies[] = pathauto
+dependencies[] = redirect
+dependencies[] = simplesamlphp_auth
+dependencies[] = simplified_menu_admin
+dependencies[] = title
+dependencies[] = token
+dependencies[] = token_filter
+dependencies[] = uuid
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = views_bulk_operations
+dependencies[] = xmlsitemap
+dependencies[] = xmlsitemap_node
+; Custom AS modules
+dependencies[] = as_dept_view_modes
+dependencies[] = as_modal_links
+dependencies[] = as_people_ldap
+dependencies[] = as_search
+dependencies[] = as_taxonomy_jellybeans
+dependencies[] = localist_block
+; Features (enabled as modules)
+dependencies[] = as_base_fields
+dependencies[] = as_article
+dependencies[] = as_basic_page
+dependencies[] = as_courses
+dependencies[] = as_department_beans
+dependencies[] = as_department_roles
+dependencies[] = as_modal_page
+dependencies[] = as_people_departments

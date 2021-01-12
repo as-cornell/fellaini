@@ -181,7 +181,8 @@
             }
         },
         "preserve-paths": [
-            "docroot/sites"
+            "docroot/sites",
+            "docroot/profiles"
         ]
     }
 }

@@ -116,7 +116,7 @@ source:
       selector: /attributes/field_topic
     -
       name: field_tags
-      label: 'Disciplines'
+      label: 'Tags'
       selector: /attributes/field_article_view_tags
 
 
@@ -209,21 +209,7 @@ process:
         '1726': 61585
         '1721': 61586
       bypass: TRUE
-  field_tags:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: field_tags
-    -
-      plugin: explode
-      delimiter: '+'
-    -
-      plugin: entity_lookup
-      entity_type: taxonomy_term
-      bundle: tags
-      value_key: name
-      bundle_key: vid
-      ignore_case: true
+  field_tags: field_tags
   'field_image/target_id':
     plugin: migration
     migration: article_image_media
