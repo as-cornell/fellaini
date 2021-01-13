@@ -38,6 +38,12 @@ form {
       display: grid;
       grid-template-columns: 1fr auto;
       margin-left: 1rem;
+      flex-basis: 100%;
+    }
+  }
+  &.form--overlaySearch {
+    label {
+      flex-basis: 130px;
     }
   }
   &.form--searchBlock {

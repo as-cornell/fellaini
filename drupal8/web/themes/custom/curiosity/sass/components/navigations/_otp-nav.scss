@@ -203,8 +203,24 @@ Descr: otpN small and large, hovers and toggles for subNav
           left: 0;
           background: var(--as-teal-dark);
           width: 2px;
+          border-radius: var(--border-radius);
+        }
+        &.active {
+          &:before {
+            animation: slideFromTop 150ms 1;
+            width: 4px;
+          }
         }
       }
     }
+  }
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1);
   }
 }
