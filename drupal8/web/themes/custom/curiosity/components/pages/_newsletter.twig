@@ -1,0 +1,51 @@
+{# 
+
+/* -------------------------
+
+Title: _newsletter.twig
+Descr: defines content and blocks for newsletters
+
+  There will be the regular out put for the "View online" version, ++ an extra block that is only visible when logged in to select and copy the HTML
+
+--------------------------- */ 
+
+#}
+
+{% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
+
+<h2>
+	_newsletter.twig
+</h2>
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
+
+
+	<div class="title">
+		{% include "@content/atoms/_heading.twig" with {
+        "heading_level" : 1,
+        "heading" : title,
+        "heading_modifiers" : heading_modifiers,
+        "heading_base_class" : heading_base_class,
+        "heading_class" : heading_class
+      } %}
+	</div>
+	<div class="content">
+		<table>
+			<tr>
+				<td>
+					LOGO
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{{main_content}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Footer
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</main>

@@ -1,0 +1,35 @@
+{#
+/**
+ *field--page-component-entity--newsletter-articles.html.twig
+  ouptuts articles as table wrapper
+ */
+#}
+{# {{vardumper()}}
+{#  #}
+{# {% set group_modifiers = ['articles'] %}
+{% set group_base_class = 'pcWrapper' %}
+{% set group_label = 'Related articles' %}
+{% set group_label_level = '4' %}
+{% set isList = true %}
+{% embed "@content/molecules/_grouping.twig" with{
+  items : content.field_articles
+} %}
+{% endembed %}
+
+<h2>
+	pc nl-articles
+</h2> #}
+{# {{vardumper()}} #}
+{# {% set group_base_class = 'pcWrapper' %}
+{% set group_modifiers = ['relatedArticles'] %}
+
+
+{% set group_classes = ['relatedArticles'] %}
+
+{# {{vardumper()}} #}
+{% embed "@content/molecules/_empty.twig" with{
+  items: content.field_articles
+} %}
+{% endembed %} #}
+
+

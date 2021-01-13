@@ -1,0 +1,58 @@
+
+{#
+
+/* -------------------------
+
+Title: node--newsletter.html.twig
+Descr: Sets up variables and content for _basic-page.twig
+        landing pages do not have sidebars or asides.
+        they do have campfires and panos.
+
+--------------------------- */
+
+#}
+
+
+{# Set up main
+    - extra class main
+    - base class page
+    - modifier basic
+    - turn off sidebarNav
+ #}
+{% set main_element_extra_classes = ['main'] %}
+
+{% set main_element_base_class = 'newsletter' %}
+{% set main_element_modifiers = [''] %}
+
+
+{# {% set main_element_blockname = 'bobsblock' %} #}
+
+{# landing page has no sideber nav aside or sidebarcontent #}
+{% set sidebarNav = false %}
+{% set aside = false %}
+{% set sidebarContent = false %}
+
+{# {% set heading_base_class = 'spotlight' %}
+{% set heading_modifiers = ['title'] %}#}
+{% set heading_class = [''] %}
+
+
+
+
+
+
+
+
+
+{% include "@pages/_newsletter.twig" with {
+    title : label,
+    main_element_modifiers : main_element_modifiers,
+    pano : content.field_pano,
+
+
+    main_content : content.field_newsletter_components,
+
+    content_wrapper_modifiers : content_wrapper_modifiers,
+    main_content_modifiers : main_content_modifiers
+    }
+%}
