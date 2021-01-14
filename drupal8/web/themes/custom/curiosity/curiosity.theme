@@ -1,4 +1,3 @@
-
 <?php
 
 use Drupal\media_entity\entity\Media;
