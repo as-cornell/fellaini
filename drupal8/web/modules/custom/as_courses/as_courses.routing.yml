@@ -1,4 +1,3 @@
-
 as_courses.courses_controller_display:
   path: '/as_courses/display'
   defaults:
