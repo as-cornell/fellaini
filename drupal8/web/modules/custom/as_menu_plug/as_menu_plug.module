@@ -26,7 +26,7 @@ function as_menu_plug_generate_list_class($menu_level) {
     $list_class = NULL;
 
     // build link class one level down from current link
-    $menu_level = $menu_level + 1;
+    $menu_level = (int)$menu_level + 1;
     $list_class = "nav-" . $menu_level;
 
     return $list_class;
