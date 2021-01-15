@@ -12,7 +12,7 @@
   --storm: red;
 
   --gold: #ffd91f;
-
+  --as-gold: #ffd91f;
   --as-red: #952020;
 
   --as-blue-gray: #435363;
@@ -36,6 +36,13 @@
     144deg,
     var(--as-light-blue) 0%,
     var(--as-purple) 100%
+  );
+
+
+  --ampresand: linear-gradient(
+    120deg,
+    var(--as-gold) 0%,
+    var(--as-red) 60%
   );
 
   --teal-purple: linear-gradient(

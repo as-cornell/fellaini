@@ -12,6 +12,7 @@ Descr: pushes relevant content for a stat to 01-card.twig
 {% if content.field_related_content|render is not empty %}
 
 	{% set hasLink = true%}
+  {# {% set link = "/node/" ~ content.field_related_content %} #}
 	{% set link = "/node/" ~ content.field_related_content.0["#plain_text"]%}
 {% endif %}
 {# {{link}} #}

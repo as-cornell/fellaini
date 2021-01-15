@@ -39,9 +39,9 @@ footer {
     }
 
     content: "";
-    background-image: var(--blue-purple);
-    background-size: 300%;
-    animation: bg-animation 3s infinite alternate;
+    background-image: var(--ampresand);
+    background-size: 600%;
+    animation: bg-animation 6s infinite alternate;
     z-index: -1;
 
     clip-path: url(#bigamp);
@@ -197,6 +197,51 @@ footer {
       top: 0;
       left: 0;
       content: "";
+    }
+  }
+}
+
+// Got to top of the page
+.toTopButton {
+  display: block;
+  position: fixed;
+  right: 4rem;
+  bottom: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--gray-lightest);
+  border-radius: var(--border-radius);
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  font-weight: var(--semi);
+  font-size: var(--base-18);
+  color: var(--as-black);
+  @include boxShadow();
+  padding-bottom: 4px;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+  &:before {
+    position: absolute;
+    width: 1.5rem;
+    height: 1rem;
+    content: "";
+    top: 16px;
+
+    left: 18px;
+
+    background: var(--as-purple);
+    clip-path: url(#chevron-up);
+    transition: transform 250ms;
+  }
+  &.show {
+    opacity: 1;
+  }
+  &:hover {
+    &:before {
+      transform: translateY(-4px) scale(1.1);
     }
   }
 }
