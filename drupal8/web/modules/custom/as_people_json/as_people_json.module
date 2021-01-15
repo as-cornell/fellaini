@@ -20,10 +20,12 @@ function as_people_json_get_person_json($pathtoken)
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
+    if (!empty($json)) {
     $person_data['data'] = $json['data'];
     $person_data['included'] = $json['included'];
     \Drupal::cache('data')
       ->set($cid, $json, time() + 360);
+    }
   }
   //return data
   return $person_data;

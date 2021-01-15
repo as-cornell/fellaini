@@ -43,6 +43,8 @@ class parsePeopleJson extends \Twig_Extension
 
     $person_record = [];
     $departments = '';
+    $summary = '';
+    $researchfocus = '';
     $people_json = as_people_json_get_person_json($pathtoken);
     if (!empty($people_json['data'])) {
       // get image path from json

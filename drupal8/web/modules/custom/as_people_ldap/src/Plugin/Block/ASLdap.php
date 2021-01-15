@@ -23,12 +23,15 @@ class ASLdap extends BlockBase implements BlockPluginInterface {
 
 
   public function build() {
+
+    $build = [];
+    $markup '';
     $config = $this->getConfiguration();
 
     if (!empty($config['netid'])) {
       $netid = $config['netid'] ;
     }
-    $build = [];
+
     $info= as_people_ldap_get_netid_ldap($netid);
 
     if (!empty($info)) {
