@@ -596,10 +596,10 @@ https://epoch.cornell.edu/:
     to: https://english.cornell.edu/
 https://www.epoch.cornell.edu/:
     type: redirect
-    to: https://english.cornell.edu/
+    to: https://english.cornell.edu/epoch-magazine-0
 https://writers.cornell.edu/:
     type: redirect
-    to: https://english.cornell.edu/
+    to: https://english.cornell.edu/writersatcornell
 https://research.astro.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -611,6 +611,13 @@ https://www.research.astro.cornell.edu/:
     type: redirect
     to: https://english.cornell.edu/
 https://carlsaganinstitute.cornell.edu/:
+  type: upstream
+  upstream: drupal7:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+https://communications.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
