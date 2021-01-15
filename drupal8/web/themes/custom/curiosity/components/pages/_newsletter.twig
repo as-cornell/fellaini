@@ -3,7 +3,7 @@
 /* -------------------------
 
 Title: _newsletter.twig
-Descr: defines content and blocks for newsletters
+Descr: defines the table for newsletters
 
   There will be the regular out put for the "View online" version, ++ an extra block that is only visible when logged in to select and copy the HTML
 
@@ -11,41 +11,168 @@ Descr: defines content and blocks for newsletters
 
 #}
 
-{% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
-<h2>
-	_newsletter.twig
-</h2>
-<main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
+<table style="background: #efefef; width:100%;">
+
+	<tr>
+		<td style="padding-top: 50px;">
+			<table style="background: #efefef;">
+				<tr>
+					<td>
+						<a href="">
+							view online
+						</a>
+					</td>
+					<td style="text-align: right;">
+						<a href="https://www.facebook.com/CornellCAS" style="text-decoration: none;">
+							<img src="http://as.cornell.edu/sites/as/files/facebook-dark.png" width="20" alt="A&S on Facebook" width="10" style="width:11px; height: 20px;">
+						</a>
+						<a href="https://twitter.com/CornellCAS" style="text-decoration: none;">
+							<img src="http://as.cornell.edu/sites/as/files/twitter-dark.png" alt="A&S on Twitter" width="20" style="margin-left: 10px; width:21px; height: 20px;">
+						</a>
+						<a href="https://instagram.com/cornellcas" style="text-decoration: none;">
+							<img src="http://as.cornell.edu/sites/as/files/insta-dark.png" alt="A&S on Instagram" width="20" style="margin-left: 10px; width:21px; height: 20px;">
+						</a>
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;padding-top: 50px;">
+						<a href="https://as.cornell.edu">
+							<img src="https://as.cornell.edu/sites/as/files/cu-college-full.png" alt="College of Arts and Sciences">
 
 
-	<div class="title">
-		{% include "@content/atoms/_heading.twig" with {
-        "heading_level" : 1,
-        "heading" : title,
-        "heading_modifiers" : heading_modifiers,
-        "heading_base_class" : heading_base_class,
-        "heading_class" : heading_class
-      } %}
-	</div>
-	<div class="content">
-		<table>
-			<tr>
-				<td>
-					LOGO
-				</td>
-			</tr>
-			<tr>
-				<td>
-					{{main_content}}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Footer
-				</td>
-			</tr>
-		</table>
-	</div>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			{{main_content}}
+		</td>
+	</tr>
+	<!-- audience stuff -->
+	{% if audience == "student" %}
+		<tr>
+			<td>
+				student
+			</td>
+		</tr>
+	{% elseif audience == "alumni" %}
+		<tr>
+			<td>
+				<table style="margin-bottom: 50px;">
+					<tr>
+						<td style="">
+							<table>
 
-</main>
+								<tr>
+									<td style="text-align: center; padding: 20px;">
+										<a href="https://securelb.imodules.com/s/1717/alumni/index.aspx?sid=1717&gid=2&pgid=3052&cid=7311&dids=12.13&bledit=1&appealcode=AS20YEM
+																																																																																																																																																																																																																																																																								                    ">
+											Give now
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td style="">
+										<ul style="margin-top: 20px;">
+											<li>
+												<a href="http://as.cornell.edu/alumni" style="text-decoration: none;">
+													Read More News for Alumni &amp; Friends of A&amp;S
+												</a>
+											</li>
+											<li>
+												<a href="https://cornellconnect.cornell.edu/" style="text-decoration: none;">
+													Update your Alumni Directory Profile
+												</a>
+											</li>
+											<li>
+												<a href="http://www.alumni.cornell.edu/participate/search.cfm" style="text-decoration: none;">
+													Find Upcoming Alumni Events
+												</a>
+											</li>
+											<li>
+												<a href="http://www.cornell.edu/visit/" style="text-decoration: none;">
+													Plan Your Next Visit to Cornell
+												</a>
+											</li>
+											<li>
+												<a href="http://as.cornell.edu/contact/Alumni-Affairs-and-Development" style="text-decoration: none;">
+													Questions? Contact Us
+												</a>
+											</li>
+										</ul>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	{% elseif audience == "faculty" %}
+		<tr>
+			<td>
+				<table style="background-color: #efefef;">
+					<tr>
+						<td style="text-align: center; width: 50%;padding-right: 20px;">
+							<a href="http://as.cornell.edu/for-faculty" style="display: block;padding:10px; background-color: #b31b1b; color: #fff;">
+								Faculty Information
+							</a>
+						</td>
+						<td style="text-align: center; width: 50%;padding-left: 20px;">
+							<a href="http://as.cornell.edu/for-staff" style="display: block;padding:10px; background-color: #b31b1b; color: #fff;">
+								Staff Information
+							</a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	{% endif %}
+	{% if audience == "alumni" %}
+		<tr>
+			<td>
+				<table>
+					<tr>
+						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px;text-align:center;margin-top:50px;">
+							<p>
+								##Sender_Org##
+								<br/>
+								##Sender_Address##, ##Sender_City##, ##Sender_State##
+								<br>
+								Click here to
+								<a href="##Unsubscribe_URL##">
+									unsubscribe
+								</a>
+								.
+							</p>
+						</td>
+
+
+					</tr>
+				</table>
+			</td>
+		</tr>
+	{% else %}
+		<tr>
+			<td>
+				<table>
+					<tr>
+						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px;text-align:center;margin-top:50px;">
+							<p>
+								KG 17 Klarman Hall, Ithaca, NY 14853
+							</p>
+							<p>
+								You are receiving this message because of your affiliation with the College of Arts & Sciences at Cornell University.
+							</p>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	{% endif %}
+</table>

@@ -13,33 +13,7 @@ Descr: Sets up variables and content for _basic-page.twig
 #}
 
 
-{# Set up main
-    - extra class main
-    - base class page
-    - modifier basic
-    - turn off sidebarNav
- #}
-{% set main_element_extra_classes = ['main'] %}
-
-{% set main_element_base_class = 'newsletter' %}
-{% set main_element_modifiers = [''] %}
-
-
-{# {% set main_element_blockname = 'bobsblock' %} #}
-
-{# landing page has no sideber nav aside or sidebarcontent #}
-{% set sidebarNav = false %}
-{% set aside = false %}
-{% set sidebarContent = false %}
-
-{# {% set heading_base_class = 'spotlight' %}
-{% set heading_modifiers = ['title'] %}#}
-{% set heading_class = [''] %}
-
-
-
-
-
+{% set audience = content.field_newsletter_type.0["#markup"] %}
 
 
 

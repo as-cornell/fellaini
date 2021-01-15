@@ -27,42 +27,90 @@
 <html {{html_attributes}}>
 	<head>
 		<head-placeholder token="{{ placeholder_token|raw }}">
-    <title>
-      {{ head_title|safe_join(' | ') }}
-    </title>
-    <css-placeholder token="{{ placeholder_token|raw }}">
-    <js-placeholder token="{{ placeholder_token|raw }}">
-      {# currently set up to go to bob's typekit#}
-      <link rel="stylesheet" href="https://use.typekit.net/dsj5vco.css"/> 
+			<title>
+				{{ head_title|safe_join(' | ') }}
+			</title>
+			{% if node_type == "newsletter" %}
+				<style>
+					body {
+						background-color: #efefef;
+						font-family: Helvetica, Arial, sans-serif;
+						color: #222222;
+						font-weight: normal;
+						line-height: 27px;
+						font-size: 18px !important;
+						padding-top: 50px;
+					}
+					h1 {
+						line-height: 1.25;
+						margin-top: 0;
 
-  </head>
-	<body>
-    {# {{vardumper()}} #}
-    <span class="offscreen" aria-hidden="true">
-      {% include "@images/sprite.svg" %}
-    </span>
-    {{ page_top }}
-    {{ page }}
-    {{ page_bottom }}
-    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-  </body>
-	</html>
+					}
+					a {
+						color: #b31b1b !important;
+					}
+					table {
+						background: white;
+						border-spacing: 0;
+						border-collapse: collapse;
+						padding: 0;
+						vertical-align: top;
+						text-align: left;
+						margin: 0 auto 50px;
+						width: 600px;
+					}
+					td {
+						padding: 0;
+						vertical-align: top;
+						margin: 0;
+						border-collapse: collapse !important;
+					}
+					figure {
+						padding: 0;
+						margin: 0;
+					}
+					img {
+						max-width: 600px;
+						height: auto;
+					}
+				</style>
+			{% else %}
+				<css-placeholder token="{{ placeholder_token|raw }}">
+					<js-placeholder token="{{ placeholder_token|raw }}">
+						{# currently set up to go to bob's typekit#}
+						<link rel="stylesheet" href="https://use.typekit.net/dsj5vco.css"/>
+					{% endif %}
+				</head>
+				<body>
+					{{ page_top }}
+					{% if node_type == "newsletter" %}
+						{{page.newsletter}}
+					{% else %}
+						<span class="offscreen" aria-hidden="true">
+							{% include "@images/sprite.svg" %}
+						</span>
+						{{ page }}
+					{% endif %}
+					{{ page_bottom }}
+					<js-bottom-placeholder token="{{ placeholder_token|raw }}"></body>
+				</body>
+			</html>
 
-				{# 
-																												<!DOCTYPE html>
-																												<html{{html_attributes}}>
-																												    <head>
-																												        <head-placeholder token="{{ placeholder_token|raw }}">
-																												        <title>{{ head_title|safe_join(' | ') }}</title>
-																												        <css-placeholder token="{{ placeholder_token|raw }}">
-																												        <js-placeholder token="{{ placeholder_token|raw }}">
-																												        <link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
-																												    </head>
-																												    <body{{attributes}}>
-																												        <span class="hidden" aria-hidden="true">{% include "@dist-images/sprite/sprite.svg" %}</span>
-																												        {{ page_top }}
-																												        {{ page }}
-																												        {{ page_bottom }}
-																												        <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-																												    </body>
-																												</html> #}
+			{# 
+																																																											<!DOCTYPE html>
+																																																											<html{{html_attributes}}>
+																																																											    <head>
+																																																											        <head-placeholder token="{{ placeholder_token|raw }}">
+																																																											        <title>{{ head_title|safe_join(' | ') }}</title>
+																																																											        <css-placeholder token="{{ placeholder_token|raw }}">
+																																																											        <js-placeholder token="{{ placeholder_token|raw }}">
+																																																											        <link href="https://use.typekit.net/njk3stm.css" rel="stylesheet">
+																																																											    </head>
+																																																											    <body{{attributes}}>
+																																																											        <span class="hidden" aria-hidden="true">{% include "@dist-images/sprite/sprite.svg" %}</span>
+																																																											        {{ page_top }}
+																																																											        {{ page }}
+																																																											        {{ page_bottom }}
+																																																											        <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+																																																											    </body>
+																																																											</html> #}
