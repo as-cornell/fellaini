@@ -14,12 +14,14 @@ Variations:
   margin-bottom: var(--bottom-margin);
   figure {
     margin-right: var(--space);
-    flex: 0 0 240px;
+    flex: 0 0 200px;
     figcaption {
       @extend .sr-only;
     }
   }
   .teaser__title {
+    font-size: var(--base-36);
+    font-weight: var(--semi);
     &-link {
       color: var(--as-dark-blue);
       display: block;

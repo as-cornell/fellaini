@@ -111,7 +111,8 @@ Descr: Sets all specific styles for an article card
 }
 
 .sidebar,
-aside {
+aside,
+.smallCards {
   .card--article {
     // &.card--small {
     // grid-template-columns: 180px 1fr;
@@ -150,6 +151,19 @@ aside {
     img {
       border-radius: var(--border-radius);
     }
+  }
+}
+
+.smallCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > div {
+    flex: 0 1 47%;
+  }
+  .btn {
+    flex: 0 0 30%;
+    margin: 1rem auto;
   }
 }
 

@@ -68,7 +68,7 @@ form {
     border: none;
     border-bottom: 1px solid var(--as-teal-dark);
     background: var(--gray-lightest);
-    padding: 0 0.5em;
+    padding: 0.5em;
     border-radius: var(--border-radius);
     &:focus {
     }
@@ -94,6 +94,7 @@ form {
     grid-column: 1 / 3;
     display: grid;
     grid-template-columns: auto 1fr;
+    align-items: center;
     .form-text {
       margin-left: 1rem;
     }

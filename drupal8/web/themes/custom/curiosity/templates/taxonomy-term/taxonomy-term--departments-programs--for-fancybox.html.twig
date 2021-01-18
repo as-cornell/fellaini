@@ -36,7 +36,8 @@
 {% endif %} #}
 
 {# fancybox items #}
-{% set fancyboxID = name[0]['#context']['value']|lower|replace({' ':'-'}) %}
+{% set fancyboxID = name[0]['#context']['value']|lower|replace({' ':'-', '&':'-', ',':'-','/':'-'}) %}
+
 
 
 {# {{fancyboxID}} #}
