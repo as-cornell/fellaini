@@ -41,7 +41,7 @@ footer {
     content: "";
     background-image: var(--ampresand);
     background-size: 600%;
-    animation: bg-animation 6s infinite alternate;
+    animation: bg-animation 10s infinite alternate;
     z-index: -1;
 
     clip-path: url(#bigamp);
@@ -178,6 +178,10 @@ footer {
   a {
     color: var(--as-white);
     text-decoration-color: var(--as-blue-gray);
+    &.btn {
+      font-weight: var(--semi);
+      text-decoration: underline;
+    }
   }
   .as-logo {
     text-indent: -9999px;
