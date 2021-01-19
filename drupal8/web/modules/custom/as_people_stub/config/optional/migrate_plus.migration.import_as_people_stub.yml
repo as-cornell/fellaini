@@ -39,6 +39,10 @@ source:
       label: 'Title'
       selector: title
     -
+      name: field_person_last_name
+      label: 'Title'
+      selector: field_person_last_name
+    -
       name: field_person_type
       label: 'Person Type'
       selector: field_person_type
@@ -46,10 +50,6 @@ source:
       name: field_departments_programs
       label: 'Departments and Programs'
       selector: field_departments_programs
-    -
-      name: field_keywords
-      label: 'Keywords'
-      selector: field_keywords
     -
       name: link
       label: 'Link'
@@ -61,6 +61,7 @@ process:
     plugin: default_value
     default_value: person
   name: title
+  field_person_last_name: field_person_last_name
   field_netid: netid
   field_people_uuid: uuid
   'field_link/uri':
@@ -84,7 +85,6 @@ process:
   field_person_type:
     plugin: entity_lookup
     source: field_person_type
-  field_keywords: field_keywords
   uid:
     plugin: default_value
     default_value: 1
