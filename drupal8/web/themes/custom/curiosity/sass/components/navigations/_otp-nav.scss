@@ -84,7 +84,7 @@ Descr: otpN small and large, hovers and toggles for subNav
     text-decoration: underline;
     @include medium() {
       cursor: default;
-      margin: 0 0.5rem 0 0;
+      margin: 0 0.5rem 4px 0;
       padding-left: 0;
       color: var(--as-black);
       font-size: var(--base-18);

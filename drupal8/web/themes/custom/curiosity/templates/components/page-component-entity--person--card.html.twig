@@ -45,8 +45,19 @@
 {% set personType = content.field_person_type.0["#plain_text"] %}
 
 {# {{personType}} #}
+{# {{vardumper()}} #}
+{% set card_link_url = '/people'~person.path %}
+{# set image #}
+{% set image %}
+	{% if (person.imagepath == "https://people.asd8.as.cornell.edu") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/trefruspeshithedrepereuospiuedocanatechijuclarakowrepestothanalirifromuthocegijicrivugaruphehilup") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/brikaluhuchuswuvowapocrijuslitruclagasonunuclikaspihuphelifrolustafristapeleroprecretucowotrebunephivegoji")%}
 
-{% set card_link_url = link %}
+
+	<img src="https://people.as.cornell.edu/sites/people/files/Klarmanarticle_4784_2.jpg" alt="Klarman Hall"/>
+{% else %}
+	<img src="{{person.imagepath}}" alt="{{person.alt}}">
+{% endif %}
+{% endset %}
+
 {% embed "@content/molecules/_card--person.twig" with {
     card_modifiers : ["person"],
     person_name: person.title,
@@ -57,4 +68,5 @@
     person_departments: person.departments,
     person_responsibilities: person.responsibilities,
     person_nodeId : node.id
-} %}{% endembed %}
+} %}
+{% endembed %}

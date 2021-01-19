@@ -13,8 +13,11 @@ Descr: builds cards for personses'
 {# {% set figure_modifiers = ['mask-one'] %} #}
 {{title_suffix}}
 <div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
-	<figure class='card--person__image'>
-		<img src="{{person_image_path}}" alt="{{person_image_alt}}"/>
+
+	<figure
+		class='card--person__image'>
+		{# <img src="{{person_image_path}}" alt="{{person_image_alt}}"/> #}
+		{{image}}
 	</figure>
 	<div class="card--person__name-title">
 		{% include "@content/atoms/_heading.twig" with {

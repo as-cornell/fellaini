@@ -13,8 +13,7 @@
 {% set person = parse_people_json(pathtoken) %}
 
 
-
-{% set card_link_url = 'people/'~person.path %}
+{% set card_link_url = '/people'~person.path %}
 
 {# {{vardumper(person)}} #}
 
@@ -25,5 +24,5 @@
     person_image_alt : person.alt,
     person_jobtitle: person.jobtitle,
     person_nodeId : node.id
-} %}{% endembed %}
-
+} %}
+{% endembed %}

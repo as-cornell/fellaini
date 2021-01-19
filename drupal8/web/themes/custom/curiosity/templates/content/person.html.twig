@@ -49,10 +49,10 @@
 {% endif %}
 
 {# related articles #}
-{% if person.related_articles %}
+{% if related_articles %}
 	{% set show_related_articles = true %}
 {% endif %}
-{{related_articles}}
+{# {{related_articles}} #}
 
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('person') %}
@@ -60,10 +60,14 @@
 
 {# set image #}
 {% set image %}
-<img src="{{person.imagepath}}" alt="{{person.alt}}">
+{% if person.imagepath == "https://people.asd8.as.cornell.edu" %}
+	<img src="https://people.as.cornell.edu/sites/people/files/Klarmanarticle_4784_2.jpg" alt="Klarman Hall"/>
+{% else %}
+	<img src="{{person.imagepath}}" alt="{{person.alt}}">
+{% endif %}
 {% endset %}
 
-{# {{vardumper()}} #}
+{{vardumper()}}
 
 {% include "@pages/_person.twig" with{
   name : person.title,

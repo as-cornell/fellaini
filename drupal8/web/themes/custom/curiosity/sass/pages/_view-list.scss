@@ -52,15 +52,22 @@ Descr:
   .content {
     grid-area: content;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space);
+    @include medium() {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
 
 // trying it out as a landing page
 .landingPage--viewContainer {
   grid-template-rows: auto auto 1fr;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 1fr;
+  @include medium() {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
   .view--form {
     grid-area: form;
     // position: sticky;
@@ -69,7 +76,7 @@ Descr:
   }
   .view--facets {
     grid-area: facets;
-    grid-area: facets;
+    // grid-area: facets;
     // border: 1px solid var(--as-teal);
     // padding: 1rem;
     // border-radius: var(--border-radius);
@@ -92,6 +99,7 @@ Descr:
   grid-template-areas:
     "title"
     "form"
+    "facets"
     "content"
     "pager";
   // medium layout
@@ -102,6 +110,16 @@ Descr:
       ". form form form form form form form form form form . "
       ". content content content content content content content content content content . "
       ". pager pager pager pager pager pager pager pager pager pager . ";
+  }
+  &.list--cards {
+    @include medium {
+      grid-template-areas:
+        ". title title title title title title title title title title . "
+        ". facets facets facets facets facets facets facets facets facets facets . "
+        ". form form form form form form form form form form . "
+        "content content content content content content content content content content content content "
+        ". pager pager pager pager pager pager pager pager pager pager . ";
+    }
   }
 }
 
