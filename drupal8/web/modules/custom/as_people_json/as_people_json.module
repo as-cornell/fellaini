@@ -61,6 +61,7 @@ function as_people_json_get_department_faculty_json($deptid)
 {
   //set cache id (verify parameters are safe values to use as cache id)
   $cid = "as_people_json_department_faculty:" . $deptid;
+  $json = [];
   $department_data = [];
   //check cache
   if ($cache = \Drupal::cache('data')->get($cid)) {
@@ -74,10 +75,15 @@ function as_people_json_get_department_faculty_json($deptid)
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
+    if (!empty($json['data'])){
     $department_data['data'] = $json['data'];
+      }
+    if (!empty($json['included'])){
     $department_data['included'] = $json['included'];
+      }
     \Drupal::cache('data')
       ->set($cid, $json, time() + 360);
+
   }
   //return data
   return $department_data;

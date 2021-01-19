@@ -29,7 +29,8 @@ public function build() {
       $deptid = $config['deptid'];
     }
     $build = [];
-    $markup = "";
+    $markup = '';
+    $departments = '';
     // get people data from json
     $department_json = as_people_json_get_department_faculty_json($deptid);
     //var_dump($department_json);
