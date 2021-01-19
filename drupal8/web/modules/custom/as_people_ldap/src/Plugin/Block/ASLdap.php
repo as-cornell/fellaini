@@ -32,13 +32,13 @@ class ASLdap extends BlockBase implements BlockPluginInterface {
       $netid = $config['netid'] ;
     }
 
-    $info= as_people_ldap_get_netid_ldap($netid);
+    $info = as_people_ldap_get_netid_ldap($netid);
 
-    if (!empty($info)) {
+    if (!empty($info[0])) {
       if (!empty($info[0]['cornelleducampusaddress'][0])) {
         $markup = $info[0]['cornelleducampusaddress'][0] .'<br />';
           }
-      if (!empty($info[0]['mail'][0].'">'.$info[0]['mail'][0])) {
+      if (!empty($info[0]['mail'][0])) {
         $markup = $markup. '<a href="mailto:'.$info[0]['mail'][0].'">'.$info[0]['mail'][0].'</a><br />';
           }
       if (!empty($info[0]['cornelleducampusphone'][0])) {
