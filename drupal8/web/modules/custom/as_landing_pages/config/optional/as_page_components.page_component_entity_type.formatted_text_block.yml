@@ -1,5 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: formatted_text_block
-label: 'Formatted Text Block'

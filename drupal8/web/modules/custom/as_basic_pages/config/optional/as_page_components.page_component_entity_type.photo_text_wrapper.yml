@@ -1,5 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: photo_text_wrapper
-label: 'Photo Text Wrapper'

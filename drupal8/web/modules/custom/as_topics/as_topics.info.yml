@@ -1,5 +1,0 @@
-name: 'A&S Topics'
-type: module
-description: 'Contains configurations for topics and disciplines as used on as.cornell.edu, and a migration group to import topics and disciplines taxonomy terms from Drupal 7 into Drupal 8'
-core: 8.x
-package: 'AS'

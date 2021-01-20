@@ -1,9 +1,0 @@
-langcode: en
-status: true
-name: Slide
-type: slide
-description: 'Slides are the swiss army knife of displaying things on screens in various location-based slideshows.'
-help: ''
-new_revision: false
-preview_mode: 1
-display_submitted: false

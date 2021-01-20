@@ -1,5 +1,0 @@
-name: 'A&S Stats'
-type: module
-description: 'Contains migrations for stats content type as used on as.cornell.edu from Drupal 7 into Drupal 8'
-core: 8.x
-package: 'AS'

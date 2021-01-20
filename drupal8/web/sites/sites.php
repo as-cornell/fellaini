@@ -85,6 +85,4 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 
 $sites['asd8.as.cornell.edu'] = 'default';
 $sites['departments.asd8.as.cornell.edu'] = 'departments';
-$sites['anthro.asd8.as.cornell.edu'] = 'departments';
-$sites['history.asd8.as.cornell.edu'] = 'departments';
 $sites['people.asd8.as.cornell.edu'] = 'people';
