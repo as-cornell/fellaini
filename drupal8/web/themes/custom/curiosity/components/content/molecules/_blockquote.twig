@@ -15,7 +15,9 @@ receives:
 	<div class="blockquote__quote">
 		{{quote}}
 	</div>
-	<div class="blockquote__person">
-		{{person}}
-	</div>
+	{% if hasPerson %}
+		<div class="blockquote__person">
+			{{person}}
+		</div>
+	{% endif %}
 </div>
