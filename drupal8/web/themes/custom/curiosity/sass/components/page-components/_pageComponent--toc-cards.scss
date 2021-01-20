@@ -9,20 +9,29 @@ Descr: sets up all uniquie styles for toc cards wrappers
 
 --------------------------- */
 
-.pcWrapper--tocCards {
-  display: grid;
-  gap: var(--space);
-  @include small() {
-    grid-template-columns: 1fr 1fr;
+.basicSidebar {
+  .pcWrapper--tocCards {
+    display: grid;
+    gap: var(--space);
+    @include small() {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include medium() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .group__title {
+      grid-column: 1 / -1;
+    }
+    .card {
+      // flex-basis: calc(25% - 1rem);
+      // padding: 1rem;
+    }
   }
-  @include medium() {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .group__title {
-    grid-column: 1 / -1;
-  }
-  .card {
-    // flex-basis: calc(25% - 1rem);
-    // padding: 1rem;
+}
+.landingPage {
+  .pcWrapper--tocCards {
+    @include medium() {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

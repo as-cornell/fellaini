@@ -22,7 +22,7 @@ Descr: outputs a page section
 {% endif %}
 
 {% embed "@content/molecules/_grouping.twig" with{
-  items: items,
+  groupItems: content.field_pages,
   group_label : content.name
 } %}
 {% endembed %}
