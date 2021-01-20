@@ -13,7 +13,8 @@
 {# {{kint(_context)}} #}
 
 {# <img{{ attributes }}/>{{attributes}} #}
+{# {{vardumper()}} #}
 {% include "@content/atoms/_image.twig" with {
-    "img_src" : attributes.uri,
-    "img_alt" : attributes.alt
+    "img_src" : uri,
+    "img_alt" : alt
 } %}

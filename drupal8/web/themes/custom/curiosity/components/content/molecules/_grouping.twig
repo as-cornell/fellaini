@@ -49,10 +49,10 @@ list_base_class / list_base_modifiers
 
 	{% if isList %}
 		{% include "@content/atoms/_ul.twig" with {
-    "ul_items" : items
+    "ul_items" : groupItems
   } %}
 	{% else %}
-		{{items}}
+		{{groupItems}}
 	{% endif %}
 
 </div>

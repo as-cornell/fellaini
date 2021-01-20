@@ -26,23 +26,7 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
  * @ingroup themeable
  */
 #}
-{# {{kint(attributes)}}
-{{label}}
-{{attributes}}
-{{content.name}} #}
-{# <div{{ attributes.addClass('viewList') }}> #}
-{# {{vardumper()}}
-{% set title = content.name %}
-{% include "@content/atoms/_heading.twig" with {
-      "heading_level" : 2,
-      "heading" : title,
-      "heading_modifiers" : ['border']
-  } %}
 
-  {% if content %}
-  {{ content }}
-  {% endif %} #}
-{# </div> #}
 
 
 {% set group_base_class = 'pcWrapper' %}
@@ -51,15 +35,9 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 
 {% set group_classes = ['people'] %}
 
-{# {{vardumper()}} #}
 
-{# {% set layout = content.field_display|field_value|raw %} #}
-{# {{layout}} #}
 {% set layout = content.field_display.0["#markup"] %}
-{# {{content.field_display|field_value|raw|trim}} #}
- {{layout}}
-{#{% set bong = layout|trim %}
-{{bong}}#}
+
 {% if layout == "list"%}
 {% embed "@content/molecules/_grouping.twig" with{
   items: content.field_person,

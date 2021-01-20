@@ -22,8 +22,8 @@ Descr: Group wrapper for layout entity item. Passes wrapper class and items.
 
 {# set classes #}
 {% set group_classes = ['flex', alignment, 'items--'~count] %}
-
+{# {{vardumper()}} #}
 {% include "@content/molecules/_grouping.twig" with {
-    items : items
+    groupItems : content.field_columns
 }
 %}
