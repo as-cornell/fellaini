@@ -108,6 +108,10 @@ function as_menu_plug_theme() {
           'variables' => array(),
           'template' => 'menu-plug-block'
       ),
+      'card_menu_block' => array(
+          'variables' => array(),
+          'template' => 'card-menu-block'
+      ),
   );
 }
 
