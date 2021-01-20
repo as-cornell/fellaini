@@ -5,8 +5,8 @@
 
  */
 #}
-{# {{vardumper()}} #}
-{% set items_shown = content.field_posts_shown.0 %}
+{#vardumper(content.field_posts_shown.0['#markup'])#}
+{% set items_shown = content.field_posts_shown.0['#markup']%}
 {% set items = parse_media_json(items_shown) %}
 {# {{vardumper(items)}} #}
 

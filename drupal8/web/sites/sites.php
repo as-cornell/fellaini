@@ -84,7 +84,6 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 // specify your production domains.
 
 $sites['asd8.as.cornell.edu'] = 'default';
+$sites['as.cornell.edu'] = 'default';
 $sites['departments.asd8.as.cornell.edu'] = 'departments';
-$sites['anthro.asd8.as.cornell.edu'] = 'departments';
-$sites['history.asd8.as.cornell.edu'] = 'departments';
 $sites['people.asd8.as.cornell.edu'] = 'people';

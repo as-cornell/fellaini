@@ -1,7 +1,0 @@
-name: 'A&S Modal Pages'
-type: module
-description: 'Contains configurations for Modal Page content type and block plugin to provide in-page navigation.'
-core: 8.x
-package: AS
-dependencies:
-  - menu_ui

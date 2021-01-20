@@ -44,27 +44,6 @@ https://dept2.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept3.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept4.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept5.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://cder.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -79,9 +58,6 @@ https://baroqueorgan.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.baroqueorgan.cornell.edu/:
-    type: redirect
-    to: https://baroqueorgan.cornell.edu/
 https://cogsci.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -99,9 +75,6 @@ https://frenchstudies.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.frenchstudies.cornell.edu/:
-    type: redirect
-    to: https://frenchstudies.cornell.edu/
 https://igcs.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -109,9 +82,6 @@ https://igcs.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.igcs.cornell.edu/:
-    type: redirect
-    to: https://igcs.cornell.edu/
 https://mediastudies.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -119,9 +89,6 @@ https://mediastudies.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.mediastudies.as.cornell.edu/:
-    type: redirect
-    to: https://mediastudies.as.cornell.edu/
 https://medievalstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -318,9 +285,6 @@ https://fgss.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.fgss.cornell.edu/:
-    type: redirect
-    to: https://fgss.cornell.edu/
 https://german.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -328,9 +292,6 @@ https://german.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.german.cornell.edu/:
-    type: redirect
-    to: https://german.cornell.edu/
 https://government.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -403,9 +364,6 @@ https://lrc.cornell.edu/:
 https://www.lrc.cornell.edu/:
     type: redirect
     to: https://lrc.cornell.edu/
-https://wld.lrc.cornell.edu/:
-    type: redirect
-    to: https://lrc.cornell.edu/
 https://latino.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -423,9 +381,6 @@ https://lgbt.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://www.lgbt.cornell.edu/:
-    type: redirect
-    to: https://lgbt.cornell.edu/
 https://linguistics.cornell.edu/:
   type: upstream
   upstream: drupal7:http

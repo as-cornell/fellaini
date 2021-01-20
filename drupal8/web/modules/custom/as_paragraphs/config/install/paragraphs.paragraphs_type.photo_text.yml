@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: photo_text
-label: 'Photo Text'
-icon_uuid: null
-description: 'Photo Text - has image, title, text, link'
-behavior_plugins: {  }
