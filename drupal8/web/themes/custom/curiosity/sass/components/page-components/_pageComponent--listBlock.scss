@@ -92,6 +92,9 @@ Descr: sets styles for various pce listBlocks
   .pcWrapper {
     &--listBlock {
       @include medium() {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include large() {
         grid-template-columns: repeat(3, 1fr);
       }
     }

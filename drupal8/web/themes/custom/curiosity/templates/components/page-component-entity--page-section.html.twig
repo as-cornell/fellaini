@@ -8,7 +8,7 @@ Descr: outputs a page section
 --------------------------- */
 
 #}
-{# {{vardumper(content.field_page_section_title)}} #}
+{# {{vardumper()}} #}
 
 {% set group_base_class = 'pageSection' %}
 {% set group_modifiers = ['page-section'] %}
@@ -27,7 +27,7 @@ Descr: outputs a page section
 {% endif %}
 
 {% embed "@content/molecules/_grouping.twig" with{
-  items: items,
+  groupItems: content.field_page_components,
   title: content.field_page_section_title,
   divid : divid,
 secondary_label : content.field_page_section_title

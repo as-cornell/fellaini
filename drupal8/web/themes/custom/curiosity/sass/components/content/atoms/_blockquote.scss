@@ -7,7 +7,9 @@ Descr:
 --------------------------- */
 
 // base blockquotes
-blockquote {
+// blockquote {
+.pcWrapper--blockQuote,
+.pcWrapper--ftb blockquote {
   background: var(--gray-lightest);
   font-size: 1.25rem;
   // margin: 3rem 0;
@@ -82,7 +84,7 @@ blockquote {
   }
 }
 
-.pageComponent--blockQuote {
+.pcWrapper--blockQuote {
   blockquote {
     // font-size: 2rem;
     .attribution {
@@ -91,7 +93,7 @@ blockquote {
   }
 
   // with person
-  &.pageComponent--hasPerson {
+  &.pcWrapper--hasPerson {
     display: flex;
     align-items: center;
     margin-bottom: var(--bottom-margin);
@@ -99,7 +101,7 @@ blockquote {
       flex: 0 0 75%;
       margin: 0;
       blockquote {
-        margin: 0 3rem;
+        // margin: 0 3rem;
       }
     }
     .blockquote__person {
@@ -107,7 +109,22 @@ blockquote {
         @extend .sr-only;
       }
       .card {
+        flex-direction: column;
         margin-bottom: 0;
+        // align-items: center;
+        h2 {
+          font-size: var(--base-24);
+          margin: 1em 0 0.5em 0;
+        }
+        p {
+          text-indent: 0;
+        }
+        &:before {
+          display: none;
+        }
+        figure {
+          margin-right: 0;
+        }
       }
     }
   }

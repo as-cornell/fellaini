@@ -26,23 +26,6 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
  * @ingroup themeable
  */
 #}
-{# {{kint(attributes)}}
-{{label}}
-{{attributes}}
-{{content.name}} #}
-{# <div{{ attributes.addClass('viewList') }}> #}
-{# {{vardumper()}}
-{% set title = content.name %}
-{% include "@content/atoms/_heading.twig" with {
-      "heading_level" : 2,
-      "heading" : title,
-      "heading_modifiers" : ['border']
-  } %}
-
-  {% if content %}
-  {{ content }}
-  {% endif %} #}
-{# </div> #}
 
 
 {% set group_base_class = 'pcWrapper' %}

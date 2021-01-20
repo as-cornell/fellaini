@@ -19,6 +19,6 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 {# list view mode #}
 
 {% embed "@content/molecules/_grouping.twig" with{
-  items: content.field_person,
+  groupItems: content.field_person,
   group_label : content.name
 } %}{% endembed %}

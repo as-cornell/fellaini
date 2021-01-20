@@ -9,7 +9,7 @@ set up on grid
 --------------------------- */
 
 #}
-
+{# {{vardumper()}} #}
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['stat'] %}
 {% set group_classes = [''] %}
@@ -28,6 +28,6 @@ set up on grid
 {% set group_classes = group_classes|merge(['items--'~count]) %}
 
 {% embed "@content/molecules/_grouping.twig" with{
-  items: items,
+  groupItems: content.field_stats,
 } %}
 {% endembed %}

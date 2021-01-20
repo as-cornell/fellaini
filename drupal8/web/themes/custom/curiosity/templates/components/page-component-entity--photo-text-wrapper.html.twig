@@ -9,10 +9,11 @@ Descr: Set main wrapper for photo text item
 --------------------------- */
 
 #}
+{# {{vardumper()}} #}
 {% set group_base_class = 'pcWrapper' %}
 {% set group_modifiers = ['photoText'] %}
 
-{% set items = content.field_photo_text_reference %}
+{% set groupItems = content.field_photo_text_reference %}
 
 
 {% if content.field_photo_text_wrapper_class|render is not empty %}
@@ -25,7 +26,7 @@ Descr: Set main wrapper for photo text item
 {% endif %}
 
 {% embed "@content/molecules/_grouping.twig" with{
-  items: items,
+
   title: content.name
 } %}
 {% endembed %}

@@ -50,6 +50,6 @@ Descr: basic for list-wrapper. Needed b/c it's a pce, all of the action happens 
 
 {# {{vardumper(content.field_list_reference)}} #}
 {% embed "@content/molecules/_list-block.twig" with{
-  items: content.field_list_reference,
+  groupItems: content.field_list_reference,
   group_label : content.name,
 } %}{% endembed %}
