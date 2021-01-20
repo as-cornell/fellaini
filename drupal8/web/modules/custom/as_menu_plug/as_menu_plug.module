@@ -40,7 +40,7 @@ function as_menu_plug_generate_link_class($menu_level) {
     $child = NULL;
 
     // build link class one level down from current link
-    $menu_level += 1;
+    $menu_level = 1;
     $link_class = "nav-" .$menu_level. "__item";
 
     return $link_class;
@@ -87,7 +87,29 @@ function as_menu_plug_preprocess_menu(&$variables) {
   //$variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['doortyweefooker']);
 }
 
+/**
+ * Provides a custom webform handler.
+ */
 
+/**
+ * Implements hook_theme().
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function as_menu_plug_theme() {
+  return array(
+      'page_menu_block' => array(
+          'variables' => array(),
+          'template' => 'page-menu-block'
+      ),
+      'menu_plug_block' => array(
+          'variables' => array(),
+          'template' => 'menu-plug-block'
+      ),
+  );
+}
 
 /**
  * Implements hook_help().
