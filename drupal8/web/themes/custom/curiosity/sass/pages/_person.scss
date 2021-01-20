@@ -20,15 +20,30 @@ Descr:
   @include medium {
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
+      "title title title title title title title title . . . ."
+      "content content content content content content content content sidebar sidebar sidebar sidebar";
+  }
+  @include large {
+    grid-template-areas:
       ". title title title title title title title . . . ."
       ". content content content content content content content sidebar sidebar sidebar .";
   }
 
   .title {
     grid-area: title;
+    h1 {
+      margin-bottom: 0;
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
   }
   .content {
     grid-area: content;
+    > h2 {
+      margin-top: 0;
+    }
   }
   .sidebar {
     grid-area: sidebar;

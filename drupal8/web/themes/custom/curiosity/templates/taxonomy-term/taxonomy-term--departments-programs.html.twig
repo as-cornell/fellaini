@@ -57,6 +57,16 @@
 {% endif %}
 {# {{vardumper()}} #}
 {% set type = content.field_type.0['#plain_text'] %}
+
+{% set websiteLink %}
+<a href="{{content.field_department_website.0["#url"]}}" class="btn--blue">Visit {{name}}</a>
+{% endset %}
+
+
+{% if content.field_links.0 %}
+{% set showLinks = true %}
+{% endif %}
+
 {% include "@pages/_department-program.twig" with{
   title : name,
   type : type,

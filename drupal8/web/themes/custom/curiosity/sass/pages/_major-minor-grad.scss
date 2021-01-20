@@ -15,12 +15,12 @@ Descr:
   @include base12GridColumns();
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
-    "title title title title title title title title . level level level "
+    "title title title title title title title . level level level level "
     // ". description description description description description description description . sidebar sidebar sidebar "
     "content content content content content content content content sidebar sidebar sidebar sidebar";
   @include large() {
     grid-template-areas:
-      ". title title title title title title title . level level level "
+      ". title title title title title title . level level level . "
       // ". description description description description description description description . sidebar sidebar sidebar "
       ". content content content content content content . sidebar sidebar sidebar .";
   }
