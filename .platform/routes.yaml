@@ -10,27 +10,6 @@ https://{default}/:
     - Accept-Language
   ssi:
     enabled: false
-https://as.cornell.edu/:
-  type: upstream
-  upstream: drupal8:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-    headers:
-    - Accept
-    - Accept-Language
-  ssi:
-    enabled: false
-https://www.as.cornell.edu/:
-  type: redirect
-  to: https://as.cornell.edu/
-https://arts.cornell.edu/:
-  type: redirect
-  to: https://as.cornell.edu/
-https://www.arts.cornell.edu/:
-  type: redirect
-  to: https://as.cornell.edu/
 https://departments.asd8.as.cornell.edu/:
   type: upstream
   upstream: drupal8:http
