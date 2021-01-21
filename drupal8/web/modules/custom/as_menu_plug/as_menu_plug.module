@@ -75,45 +75,8 @@ function as_menu_plug_menulinkid_nid($menu_link_id) {
   }
 
 
-/**
-* Implements hook_preprocess_HOOK() for menu.html.twig.
-*/
-function as_menu_plug_preprocess_menu(&$variables) {
-  // If there is not an existing class array, create an empty array.
-  //if (!isset($variables['attributes']['class'])) {
-   // $variables['attributes']['class'] = [];
-  //}
-  // Merge with any classes that may have been set by other hook_preprocess_menu invocations
-  //$variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['doortyweefooker']);
-}
 
-/**
- * Provides a custom webform handler.
- */
 
-/**
- * Implements hook_theme().
- */
-
-/**
- * Implements hook_theme().
- */
-function as_menu_plug_theme() {
-  return array(
-      'page_menu_block' => array(
-          'variables' => array(),
-          'template' => 'page-menu-block'
-      ),
-      'menu_plug_block' => array(
-          'variables' => array(),
-          'template' => 'menu-plug-block'
-      ),
-      'card_menu_block' => array(
-          'variables' => array(),
-          'template' => 'card-menu-block'
-      ),
-  );
-}
 
 /**
  * Implements hook_help().
