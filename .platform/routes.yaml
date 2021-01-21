@@ -1,20 +1,6 @@
 https://{default}/:
   type: upstream
   upstream: drupal8:http
-  primary: null
-  id: null
-  attributes: {}
-  redirects:
-    expires: -1s
-    paths: {}
-  tls:
-    strict_transport_security:
-      enabled: null
-      include_subdomains: null
-      preload: null
-    min_version: null
-    client_authentication: null
-    client_certificate_authorities: []
   cache:
     enabled: true
     default_ttl: 0
@@ -24,6 +10,21 @@ https://{default}/:
     - Accept-Language
   ssi:
     enabled: false
+https://as.cornell.edu/:
+  type: upstream
+  upstream: drupal8:http
+  cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+    headers:
+    - Accept
+    - Accept-Language
+  ssi:
+    enabled: false
+https://www.as.cornell.edu/:
+  type: redirect
+  to: https://as.cornell.edu/
 https://departments.asd8.as.cornell.edu/:
   type: upstream
   upstream: drupal8:http
@@ -31,20 +32,6 @@ https://people.asd8.as.cornell.edu/:
   type: upstream
   upstream: drupal8:http
 https://people.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept1.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://dept2.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
   cache:
@@ -73,8 +60,8 @@ https://cogsci.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.cogsci.cornell.edu/:
-    type: redirect
-    to: https://cogsci.cornell.edu/
+  type: redirect
+  to: https://cogsci.cornell.edu/
 https://frenchstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -104,8 +91,8 @@ https://medievalstudies.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.medievalstudies.cornell.edu/:
-    type: redirect
-    to: https://medievalstudies.cornell.edu/
+  type: redirect
+  to: https://medievalstudies.cornell.edu/
 https://rural.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -121,8 +108,8 @@ https://sct.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.sct.cornell.edu/:
-    type: redirect
-    to: https://sct.cornell.edu/
+  type: redirect
+  to: https://sct.cornell.edu/
 https://icm.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -138,8 +125,8 @@ https://inequality.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.inequality.cornell.edu/:
-    type: redirect
-    to: https://inequality.cornell.edu/
+  type: redirect
+  to: https://inequality.cornell.edu/
 https://africana.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -148,14 +135,14 @@ https://africana.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.africana.cornell.edu/:
-    type: redirect
-    to: https://africana.cornell.edu/
+  type: redirect
+  to: https://africana.cornell.edu/
 https://asrc.cornell.edu/:
-    type: redirect
-    to: https://africana.cornell.edu/
+  type: redirect
+  to: https://africana.cornell.edu/
 https://www.asrc.cornell.edu/:
-    type: redirect
-    to: https://africana.cornell.edu/
+  type: redirect
+  to: https://africana.cornell.edu/
 https://americanstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -171,8 +158,8 @@ https://anthropology.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.anthropology.cornell.edu/:
-    type: redirect
-    to: https://anthropology.cornell.edu/
+  type: redirect
+  to: https://anthropology.cornell.edu/
 https://archaeology.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -181,14 +168,14 @@ https://archaeology.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.archaeology.cornell.edu/:
-    type: redirect
-    to: https://archaeology.cornell.edu/
+  type: redirect
+  to: https://archaeology.cornell.edu/
 https://ciams.cornell.edu/:
-    type: redirect
-    to: https://archaeology.cornell.edu/
+  type: redirect
+  to: https://archaeology.cornell.edu/
 https://www.ciams.cornell.edu/:
-    type: redirect
-    to: https://archaeology.cornell.edu/
+  type: redirect
+  to: https://archaeology.cornell.edu/
 https://asianamericanstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -197,8 +184,8 @@ https://asianamericanstudies.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.asianamericanstudies.cornell.edu/:
-    type: redirect
-    to: https://asianamericanstudies.cornell.edu.edu/
+  type: redirect
+  to: https://asianamericanstudies.cornell.edu.edu/
 https://asianstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -207,8 +194,8 @@ https://asianstudies.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.asianstudies.cornell.edu/:
-    type: redirect
-    to: https://asianstudies.cornell.edu/
+  type: redirect
+  to: https://asianstudies.cornell.edu/
 https://caps.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -217,8 +204,8 @@ https://caps.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.caps.cornell.edu/:
-    type: redirect
-    to: https://caps.cornell.edu/
+  type: redirect
+  to: https://caps.cornell.edu/
 https://classics.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -227,8 +214,8 @@ https://classics.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.classics.cornell.edu/:
-    type: redirect
-    to: https://classics.cornell.edu/
+  type: redirect
+  to: https://classics.cornell.edu/
 https://complit.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -237,14 +224,14 @@ https://complit.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.complit.cornell.edu/:
-    type: redirect
-    to: https://complit.cornell.edu/
+  type: redirect
+  to: https://complit.cornell.edu/
 https://complit.arts.cornell.edu/:
-    type: redirect
-    to: https://complit.cornell.edu/
+  type: redirect
+  to: https://complit.cornell.edu/
 https://www.complit.arts.cornell.edu/:
-    type: redirect
-    to: https://complit.cornell.edu/
+  type: redirect
+  to: https://complit.cornell.edu/
 https://sts.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -253,8 +240,8 @@ https://sts.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.sts.cornell.edu/:
-    type: redirect
-    to: https://sts.cornell.edu/
+  type: redirect
+  to: https://sts.cornell.edu/
 https://cinema.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -263,8 +250,8 @@ https://cinema.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.cinema.cornell.edu/:
-    type: redirect
-    to: https://cinema.cornell.edu/
+  type: redirect
+  to: https://cinema.cornell.edu/
 https://ecologyandevolution.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -273,8 +260,8 @@ https://ecologyandevolution.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.ecologyandevolution.cornell.edu/:
-    type: redirect
-    to: https://ecologyandevolution.cornell.edu/
+  type: redirect
+  to: https://ecologyandevolution.cornell.edu/
 https://economics.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -283,8 +270,8 @@ https://economics.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.economics.cornell.edu/:
-    type: redirect
-    to: https://economics.cornell.edu/
+  type: redirect
+  to: https://economics.cornell.edu/
 https://fgss.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -307,14 +294,14 @@ https://government.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.government.cornell.edu/:
-    type: redirect
-    to: https://government.cornell.edu/
+  type: redirect
+  to: https://government.cornell.edu/
 https://government.arts.cornell.edu/:
-    type: redirect
-    to: https://government.cornell.edu/
+  type: redirect
+  to: https://government.cornell.edu/
 https://www.government.arts.cornell.edu/:
-    type: redirect
-    to: https://government.cornell.edu/
+  type: redirect
+  to: https://government.cornell.edu/
 https://history.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -323,14 +310,14 @@ https://history.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.history.cornell.edu/:
-    type: redirect
-    to: https://history.cornell.edu/
+  type: redirect
+  to: https://history.cornell.edu/
 https://history.arts.cornell.edu/:
-    type: redirect
-    to: https://history.cornell.edu/
+  type: redirect
+  to: https://history.cornell.edu/
 https://www.history.arts.cornell.edu/:
-    type: redirect
-    to: https://history.cornell.edu/
+  type: redirect
+  to: https://history.cornell.edu/
 https://arthistory.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -339,8 +326,8 @@ https://arthistory.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.arthistory.cornell.edu/:
-    type: redirect
-    to: https://arthistory.cornell.edu/
+  type: redirect
+  to: https://arthistory.cornell.edu/
 https://jewishstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -349,8 +336,8 @@ https://jewishstudies.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.jewishstudies.cornell.edu/:
-    type: redirect
-    to: https://jewishstudies.cornell.edu/
+  type: redirect
+  to: https://jewishstudies.cornell.edu/
 https://knight.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -359,8 +346,8 @@ https://knight.as.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.knight.as.cornell.edu/:
-    type: redirect
-    to: https://knight.as.cornell.edu/
+  type: redirect
+  to: https://knight.as.cornell.edu/
 https://lrc.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -369,8 +356,8 @@ https://lrc.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.lrc.cornell.edu/:
-    type: redirect
-    to: https://lrc.cornell.edu/
+  type: redirect
+  to: https://lrc.cornell.edu/
 https://latino.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -379,8 +366,8 @@ https://latino.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.latino.cornell.edu/:
-    type: redirect
-    to: https://latino.cornell.edu/
+  type: redirect
+  to: https://latino.cornell.edu/
 https://lgbt.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -396,8 +383,8 @@ https://linguistics.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.linguistics.cornell.edu/:
-    type: redirect
-    to: https://linguistics.cornell.edu/
+  type: redirect
+  to: https://linguistics.cornell.edu/
 https://romancestudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -406,8 +393,8 @@ https://romancestudies.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.romancestudies.cornell.edu/:
-    type: redirect
-    to: https://romancestudies.cornell.edu/
+  type: redirect
+  to: https://romancestudies.cornell.edu/
 https://milstein-program.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -416,8 +403,8 @@ https://milstein-program.as.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.milstein-program.as.cornell.edu/:
-    type: redirect
-    to: https://milstein-program.as.cornell.edu/
+  type: redirect
+  to: https://milstein-program.as.cornell.edu/
 https://music.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -426,8 +413,8 @@ https://music.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.music.cornell.edu/:
-    type: redirect
-    to: https://music.cornell.edu/
+  type: redirect
+  to: https://music.cornell.edu/
 https://neareasternstudies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -436,8 +423,8 @@ https://neareasternstudies.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.neareasternstudies.cornell.edu/:
-    type: redirect
-    to: https://neareasternstudies.cornell.edu/
+  type: redirect
+  to: https://neareasternstudies.cornell.edu/
 https://societyhumanities.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -446,8 +433,8 @@ https://societyhumanities.as.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.societyhumanities.as.cornell.edu/:
-    type: redirect
-    to: https://societyhumanities.as.cornell.edu/
+  type: redirect
+  to: https://societyhumanities.as.cornell.edu/
 https://pma.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -456,8 +443,8 @@ https://pma.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.pma.cornell.edu/:
-    type: redirect
-    to: https://pma.cornell.edu/
+  type: redirect
+  to: https://pma.cornell.edu/
 https://philosophy.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -466,8 +453,8 @@ https://philosophy.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.philosophy.cornell.edu/:
-    type: redirect
-    to: https://philosophy.cornell.edu/
+  type: redirect
+  to: https://philosophy.cornell.edu/
 https://psychology.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -476,8 +463,8 @@ https://psychology.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.psych.cornell.edu/:
-    type: redirect
-    to: https://psychology.cornell.edu/
+  type: redirect
+  to: https://psychology.cornell.edu/
 https://religious-studies.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -486,8 +473,8 @@ https://religious-studies.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.religious-studies.cornell.edu/:
-    type: redirect
-    to: https://religious-studies.cornell.edu/
+  type: redirect
+  to: https://religious-studies.cornell.edu/
 https://sociology.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -496,8 +483,8 @@ https://sociology.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.soc.cornell.edu/:
-    type: redirect
-    to: https://sociology.cornell.edu/
+  type: redirect
+  to: https://sociology.cornell.edu/
 https://chemistry.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -506,17 +493,17 @@ https://chemistry.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.chemistry.cornell.edu/:
-    type: redirect
-    to: https://chemistry.cornell.edu/
+  type: redirect
+  to: https://chemistry.cornell.edu/
 https://chem.cornell.edu/:
-    type: redirect
-    to: https://chemistry.cornell.edu/
+  type: redirect
+  to: https://chemistry.cornell.edu/
 https://www.chem.cornell.edu/:
-    type: redirect
-    to: https://chemistry.cornell.edu/
+  type: redirect
+  to: https://chemistry.cornell.edu/
 https://safety.chem.cornell.edu/:
-    type: redirect
-    to: https://chemistry.cornell.edu/safety
+  type: redirect
+  to: https://chemistry.cornell.edu/safety
 https://physics.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -525,8 +512,8 @@ https://physics.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.physics.cornell.edu/:
-    type: redirect
-    to: https://physics.cornell.edu/
+  type: redirect
+  to: https://physics.cornell.edu/
 https://nbb.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -535,8 +522,8 @@ https://nbb.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.nbb.cornell.edu/:
-    type: redirect
-    to: https://nbb.cornell.edu/
+  type: redirect
+  to: https://nbb.cornell.edu/
 https://english.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -545,23 +532,23 @@ https://english.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.english.cornell.edu/:
-    type: redirect
-    to: https://english.cornell.edu/
+  type: redirect
+  to: https://english.cornell.edu/
 https://english.arts.cornell.edu/:
-    type: redirect
-    to: https://english.cornell.edu/
+  type: redirect
+  to: https://english.cornell.edu/
 https://www.english.arts.cornell.edu/:
-    type: redirect
-    to: https://english.cornell.edu/
+  type: redirect
+  to: https://english.cornell.edu/
 https://epoch.cornell.edu/:
-    type: redirect
-    to: https://english.cornell.edu/
+  type: redirect
+  to: https://english.cornell.edu/
 https://www.epoch.cornell.edu/:
-    type: redirect
-    to: https://english.cornell.edu/epoch-magazine-0
+  type: redirect
+  to: https://english.cornell.edu/epoch-magazine-0
 https://writers.cornell.edu/:
-    type: redirect
-    to: https://english.cornell.edu/writersatcornell
+  type: redirect
+  to: https://english.cornell.edu/writersatcornell
 https://research.astro.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -570,8 +557,8 @@ https://research.astro.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.research.astro.cornell.edu/:
-    type: redirect
-    to: https://english.cornell.edu/
+  type: redirect
+  to: https://english.cornell.edu/
 https://carlsaganinstitute.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -594,8 +581,8 @@ https://astro.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.astro.cornell.edu/:
-    type: redirect
-    to: https://astro.cornell.edu/
+  type: redirect
+  to: https://astro.cornell.edu/
 https://math.cornell.edu/:
   type: upstream
   upstream: drupal7:http
@@ -604,5 +591,5 @@ https://math.cornell.edu/:
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://www.math.cornell.edu/:
-    type: redirect
-    to: https://math.cornell.edu/
+  type: redirect
+  to: https://math.cornell.edu/
