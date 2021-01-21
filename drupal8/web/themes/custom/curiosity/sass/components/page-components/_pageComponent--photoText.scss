@@ -29,15 +29,90 @@ Descr: Sets styles for
       }
     }
   }
+
+  &[class*="gray"],
+  &[class*="purple"],
   &[class*="blue"] {
-    background: var(--blue-blue--light);
-    color: var(--as-black);
     padding: 3rem;
     border-radius: var(--border-radius);
     margin-bottom: var(--bottom-margin);
+
+    font-weight: var(--regular);
     @include boxShadow();
+
     .photoText {
       margin-bottom: 0;
+    }
+    h2,
+    p {
+      @include dropShadow();
+    }
+  }
+  &[class*="blue"] {
+    background: var(--teal-teal);
+    color: var(--as-black);
+    // padding: 3rem;
+    // border-radius: var(--border-radius);
+    // margin-bottom: var(--bottom-margin);
+
+    // font-weight: var(--regular);
+    // @include boxShadow();
+
+    // .photoText {
+    //   margin-bottom: 0;
+    // }
+    h2,
+    p {
+      color: var(--as-white);
+      // @include dropShadow();
+    }
+    a {
+      color: var(--as-white);
+    }
+  }
+
+  &[class*="gray"] {
+    background: var(--as-text);
+    color: var(--as-black);
+    // padding: 3rem;
+    // border-radius: var(--border-radius);
+    // margin-bottom: var(--bottom-margin);
+
+    // font-weight: var(--regular);
+    // @include boxShadow();
+
+    // .photoText {
+    //   margin-bottom: 0;
+    // }
+    h2,
+    p {
+      color: var(--as-white);
+      // @include dropShadow();
+    }
+    a {
+      color: var(--as-white);
+    }
+  }
+  &[class*="purple"] {
+    background: var(--purple-radial);
+    color: var(--as-black);
+    // padding: 3rem;
+    // border-radius: var(--border-radius);
+    // margin-bottom: var(--bottom-margin);
+
+    // font-weight: var(--regular);
+    // @include boxShadow();
+
+    // .photoText {
+    //   margin-bottom: 0;
+    // }
+    h2,
+    p {
+      color: var(--as-white);
+      // @include dropShadow();
+    }
+    a {
+      color: var(--as-white);
     }
   }
 }

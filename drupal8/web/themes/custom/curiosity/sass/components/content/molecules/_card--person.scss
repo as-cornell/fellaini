@@ -28,6 +28,7 @@ Descr: Sets all specific styles for an person card
   &__contacts {
     font-size: var(--base-18);
     padding: 1rem;
+    display: none; // hidden unless in a list view on directory
   }
   &__copy {
     margin: 0 1rem;
@@ -137,6 +138,7 @@ Descr: Sets all specific styles for an person card
       font-size: var(--base-18);
       padding: 0;
       margin: 1rem 1rem 1rem 0;
+      display: block;
     }
     &__departments,
     &__responsibilities {

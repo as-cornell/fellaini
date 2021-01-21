@@ -81,7 +81,7 @@
   // font-weight: var(--semi);
   color: $color;
   @include boxShadow();
-  margin-right: 1rem;
+  // margin-right: 1rem;
   margin-top: 1em;
   &:hover {
     box-shadow: none;

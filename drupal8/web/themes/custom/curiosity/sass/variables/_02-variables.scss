@@ -1,7 +1,7 @@
 :root {
   --as-white: white;
   --as-black: #2c2c2c;
-  --dark-text: #35363f;
+  --dark-text: #414249;
   --gray-dark: #707070;
   --gray-med: #959595;
   --gray-lt: #c2c0c0;
@@ -19,22 +19,36 @@
   --as-blue-base: #006699;
 
   --as-dark-blue: #024d73;
-  --as-light-blue: #3292e0;
-  --as-purple: #a63fe6;
+  --as-light-blue: #287ec4;
+  // --as-purple: #a63fe6;
+
+  --dark-purple-blue: #131c69;
+  --as-purple: #461262;
 
   --as-brown-dark: #81681e;
   --as-brown-light: #b08918;
 
-  --as-green: #1f8335;
-  --as-green-light: #619f38;
+  // --as-green: #1f8335;
+  // --as-green-light: #619f38;
+
+  --as-green: #0e5548;
+  --as-green-dark: #102e26;
 
   --as-teal: #85c4ca;
-  --as-teal-dark: #33a19b;
+  // --as-teal-dark: #33a19b;
+  --as-teal-dark: #117b98;
 
   // gradients
-  --blue-purple: linear-gradient(
+  --blurple-linear: linear-gradient(
     144deg,
     var(--as-light-blue) 0%,
+    var(--as-purple) 100%
+  );
+
+  --purple-radial: radial-gradient(#230c49 0%, #131c69 100%);
+
+  --dark-purple-radial: radial-gradient(
+    var(--dark-purple-blue) 0%,
     var(--as-purple) 100%
   );
 
@@ -45,6 +59,10 @@
     var(--as-teal-dark) 0%,
     var(--as-purple) 100%
   );
+  --teal-purple-radial: radial-gradient(
+    var(--as-teal) 0%,
+    var(--as-teal-dark) 100%
+  );
 
   --main-card-border: linear-gradient(
     90deg,
@@ -54,15 +72,15 @@
 
   --green-green: linear-gradient(
     90deg,
-    var(--as-green-light) 0%,
-    var(--as-green) 100%
+    var(--as-green) 0%,
+    var(--as-green-dark) 100%
   );
 
-  --brown-brown: linear-gradient(
-    90deg,
-    var(--as-brown-light) 0%,
-    var(--as-brown-dark) 100%
-  );
+  // --brown-brown: linear-gradient(
+  //   90deg,
+  //   var(--as-brown-light) 0%,
+  //   var(--as-brown-dark) 100%
+  // );
 
   --blue-blue: linear-gradient(
     60deg,
@@ -70,21 +88,11 @@
     var(--as-blue-gray) 100%
   );
 
-  --blue-blue--light: linear-gradient(
-    60deg,
-    hsla(189, 30, 70, 0.47) 0%,
-    hsla(207, 67, 62, 0.31) 100%
-  );
+  --teal-teal: linear-gradient(60deg, var(--as-teal-dark) 0%, #027c8a 100%);
 
-  --storm-radial: radial-gradient(
-    hsla(195, 82, 16, 0.76) 0,
-    hsla(195, 82, 16, 1) 100%
-  );
+  --storm-radial: radial-gradient(rgb(39, 104, 124) 0, rgb(10, 82, 104) 100%);
 
-  --green-radial: radial-gradient(
-    hsla(96, 48, 48, 1) 0,
-    hsla(96, 48, 33, 1) 100%
-  );
+  --green-radial: radial-gradient(var(--as-green) 0, var(--as-green-dark) 100%);
 
   --white: red; //depricated
   --black: red; //depricated

@@ -6,7 +6,7 @@ Descr: Styles for things that are not anywhere else. Essentially css atoms.
 --------------------------- */
 p {
   margin: 0;
-  max-width: var(--line-width);
+  // max-width: var(--line-width);
 }
 * + p {
   margin-top: 1em;
@@ -40,13 +40,16 @@ strong {
   @include text-gradient(var(--green-green));
 }
 .teal-purple {
-  @include text-gradient(var(--teal-purple));
+  @include text-gradient(var(--teal-purple-radial));
 }
 .blue-purple {
-  @include text-gradient(var(--blue-purple));
+  @include text-gradient(var(--blurple-linear));
 }
 .blue-radial {
   @include text-gradient(var(--storm-radial));
+}
+.teal-teal {
+  @include text-gradient(var(--teal-teal));
 }
 
 .eyebrow {
@@ -89,7 +92,7 @@ strong {
 .base-36 {
   font-size: var(--base-36);
   margin-bottom: 0;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 .base-48 {
   font-size: var(--base-48);
