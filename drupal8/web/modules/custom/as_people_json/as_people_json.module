@@ -21,8 +21,12 @@ function as_people_json_get_person_json($pathtoken)
     $data = file_get_contents($url);
     $json = json_decode($data, true);
     if (!empty($json)) {
-    $person_data['data'] = $json['data'];
+      if (!empty($json['data'])) {
+        $person_data['data'] = $json['data'];
+        }
+      if (!empty($json['included'])) {
     $person_data['included'] = $json['included'];
+        }
     \Drupal::cache('data')
       ->set($cid, $json, time() + 360);
     }
