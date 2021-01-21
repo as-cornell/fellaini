@@ -11,7 +11,8 @@ h2,
 h3,
 h4 {
   font-family: var(--font-sans);
-  font-weight: var(--regular);
+  font-weight: var(--semi);
+  color: #4e4c56;
 }
 // * + h2 {
 //   background: red;
@@ -48,7 +49,7 @@ h3 {
 
 h4 {
   @extend .base-28;
-  margin: 0 0 1em 0;
+  // margin: 0 0 1em 0;
 }
 
 // Sidebar sizes for component headers

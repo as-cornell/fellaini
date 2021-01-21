@@ -60,5 +60,13 @@ Descr:
   @include btnLink(var(--as-red), var(--as-white));
 }
 .btn--green {
-  @include btnLink(var(--as-green), var(--as-white));
+  @include btnLink(var(--green-green), var(--as-white));
+}
+
+.btn--blurple {
+  @include btnLink(var(--dark-purple-radial), var(--as-white));
+}
+
+.btn--teal {
+  @include btnLink(var(--as-teal-dark), var(--as-white));
 }

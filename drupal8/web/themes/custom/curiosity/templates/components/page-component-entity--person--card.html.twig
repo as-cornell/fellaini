@@ -49,13 +49,13 @@
 {% set card_link_url = '/people'~person.path %}
 {# set image #}
 {% set image %}
-	{% if (person.imagepath == "https://people.asd8.as.cornell.edu") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/trefruspeshithedrepereuospiuedocanatechijuclarakowrepestothanalirifromuthocegijicrivugaruphehilup") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/brikaluhuchuswuvowapocrijuslitruclagasonunuclikaspihuphelifrolustafristapeleroprecretucowotrebunephivegoji")%}
+{# {% if (person.imagepath == "https://people.asd8.as.cornell.edu") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/trefruspeshithedrepereuospiuedocanatechijuclarakowrepestothanalirifromuthocegijicrivugaruphehilup") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/brikaluhuchuswuvowapocrijuslitruclagasonunuclikaspihuphelifrolustafristapeleroprecretucowotrebunephivegoji")%}
 
 
 	<img src="https://people.as.cornell.edu/sites/people/files/Klarmanarticle_4784_2.jpg" alt="Klarman Hall"/>
-{% else %}
-	<img src="{{person.imagepath}}" alt="{{person.alt}}">
-{% endif %}
+{% else %} #}
+<img
+src="{{person.imagepath}}" alt="{{person.alt}}"> {# {% endif %} #}
 {% endset %}
 
 {% embed "@content/molecules/_card--person.twig" with {
