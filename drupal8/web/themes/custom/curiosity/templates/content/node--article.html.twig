@@ -27,44 +27,44 @@ Passes:
 {% set content_wrapper_modifiers = ['article'] %}
 
 {# if field_pano not empty add to content_wrapper_modifiers #}
-{% if content.field_pano|render is not empty %}
+	{% if content.field_pano|render is not empty %}
 	{% set hasPano = true %}
-	{% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
+{% set main_element_modifiers = main_element_modifiers|merge(['pano']) %}
 {% endif %}
 
 {# Related department program taxonomy #}
-{% if content.field_department_program|render is not empty %}
-  {% set show_related_departments_programs = true %}
-  {% set related_departments_programs = content.field_department_program %}
+	{% if content.field_department_program|render is not empty %}
+	{% set show_related_departments_programs = true %}
+{% set related_departments_programs = content.field_department_program %}
 {% endif %}
 
 {# Related articles #}
-{% if content.field_related_articles|render is not empty %}
+	{% if content.field_related_articles|render is not empty %}
 	{% set show_related_articles = true %}
-	{% set related_articles = content.field_related_articles %}
+{% set related_articles = content.field_related_articles %}
 {% endif %}
 
 {# Related people #}
-{% if content.field_related_people|render is not empty %}
+	{% if content.field_related_people|render is not empty %}
 	{% set show_related_people = true %}
-	{% set related_people = content.field_related_people %}
+{% set related_people = content.field_related_people %}
 {% endif %}
-
+{# {{content.field_related_people}} #}
 {# byline #}
-{% if content.field_byline_reference|render is not empty %}
+	{% if content.field_byline_reference|render is not empty %}
 	{% set show_byline = true %}
-	{% set byline = content.field_byline_reference %}
+{% set byline = content.field_byline_reference %}
 {% endif %}
 
 {# mediasource #}
-{% if content.field_media_source_reference|render is not empty %}
+	{% if content.field_media_source_reference|render is not empty %}
 	{% set show_mediasource = true %}
-	{% set mediasource = content.field_media_source_reference %}
+{% set mediasource = content.field_media_source_reference %}
 {% endif %}
 {# {{vardumper()}}
 ms- {{show_mediasource}}<br>
 by - {{show_byline}} #}
-{{content.field_focal_image}}
+{# {{content.field_focal_image}} #}
 {% include "@pages/_article.twig" with {
 
   article_pano : content.field_pano,
@@ -83,4 +83,3 @@ by - {{show_byline}} #}
   article_mediasource: mediasource,
 
 } %}
-

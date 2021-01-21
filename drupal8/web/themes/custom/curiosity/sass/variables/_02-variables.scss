@@ -19,7 +19,7 @@
   --as-blue-base: #006699;
 
   --as-dark-blue: #024d73;
-  --as-light-blue: #3292e0;
+  --as-light-blue: #287ec4;
   // --as-purple: #a63fe6;
 
   --dark-purple-blue: #131c69;
@@ -90,10 +90,7 @@
 
   --teal-teal: linear-gradient(60deg, var(--as-teal-dark) 0%, #027c8a 100%);
 
-  --storm-radial: radial-gradient(
-    hsla(195, 82, 16, 1) 0,
-    hsla(195, 82, 16, 1) 100%
-  );
+  --storm-radial: radial-gradient(rgb(39, 104, 124) 0, rgb(10, 82, 104) 100%);
 
   --green-radial: radial-gradient(var(--as-green) 0, var(--as-green-dark) 100%);
 

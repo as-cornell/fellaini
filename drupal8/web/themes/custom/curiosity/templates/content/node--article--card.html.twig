@@ -12,8 +12,13 @@ card_nodeId -- used for lightbox
 
 
 {% set card_modifiers =  ["article"]%}
-{% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %}
+{# {% set article_byline = (content.field_byline_reference|render is not empty) ? content.field_byline_reference %} #}
 
+{# byline #}
+	{% if content.field_byline_reference|render is not empty %}
+	{% set show_byline = true %}
+{% set article_byline = content.field_byline_reference %}
+{% endif %}
 
 
 {% embed "@content/molecules/_card--article.twig" with {
@@ -24,8 +29,4 @@ card_nodeId -- used for lightbox
     card_byline: article_byline,
     card_dateline: content.field_dateline,
     card_nodeId : node.id
-} %}
-
-{% endembed %}
-
-
+} %}{% endembed %}
