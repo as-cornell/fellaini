@@ -25,7 +25,7 @@ source:
     uuid:
       type: string
 
-    fields:
+  fields:
     -
       name: uuid
       label: 'uuid'
