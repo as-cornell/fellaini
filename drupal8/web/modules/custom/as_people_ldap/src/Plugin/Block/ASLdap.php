@@ -26,6 +26,7 @@ class ASLdap extends BlockBase implements BlockPluginInterface {
 
     $build = [];
     $markup = '';
+    $netid = '';
     $config = $this->getConfiguration();
 
     if (!empty($config['netid'])) {
