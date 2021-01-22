@@ -17,7 +17,7 @@ Descr:
   // margin: 3rem 0;
   padding: 2em;
   position: relative;
-  z-index: -1;
+  // z-index: -1;
   margin: 1em 0;
   @include large() {
     padding: 3rem;
@@ -39,10 +39,13 @@ Descr:
     background: var(--storm-radial);
     color: var(--as-white);
   }
+  blockquote {
+    position: relative;
+  }
   p {
     position: relative;
     z-index: 1;
-
+    // background: red;
     &:before {
       position: absolute;
       height: 45px;
@@ -51,12 +54,12 @@ Descr:
       background-image: var(--blurple-linear);
       background-size: 300%;
       animation: bg-animation 3s infinite alternate;
-      z-index: -1;
-    }
-    &:before {
+      z-index: 0;
       margin-left: -3rem;
       margin-top: -1rem;
       clip-path: url(#open-quote);
+    }
+    &:before {
     }
 
     &:first-of-type {
@@ -73,6 +76,24 @@ Descr:
   &:hover {
     p:before {
       background-position: right;
+    }
+  }
+}
+.pcWrapper--blockQuote {
+  blockquote {
+    position: relative;
+    &:before {
+      position: absolute;
+      height: 45px;
+      width: 60px;
+      content: "";
+      background-image: var(--blurple-linear);
+      background-size: 300%;
+      animation: bg-animation 3s infinite alternate;
+      z-index: 0;
+      margin-left: -1rem;
+      margin-top: -1rem;
+      clip-path: url(#open-quote);
     }
   }
 }

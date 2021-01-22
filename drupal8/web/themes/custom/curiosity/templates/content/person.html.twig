@@ -58,16 +58,18 @@
 {% set main_element_base_class = main_element_base_class | default('person') %}
 {% set main_element_modifiers = [''] %}
 
-{# set image #}
+{# set image #} {% if person.imagepath %}
 {% set image %}
-{% if person.imagepath == "https://people.asd8.as.cornell.edu" %}
-	<img src="https://people.as.cornell.edu/sites/people/files/Klarmanarticle_4784_2.jpg" alt="Klarman Hall"/>
-{% else %}
-	<img src="{{person.imagepath}}" alt="{{person.alt}}">
-{% endif %}
-{% endset %}
+ 
+  {% if person.imagepath == "https://people.asd8.as.cornell.edu" %}
+    <img src="https://people.as.cornell.edu/sites/people/files/Klarmanarticle_4784_2.jpg" alt="Klarman Hall"/>
+  {% else %}
+    <img src="{{person.imagepath}}" alt="{{person.alt}}">
+  {% endif %}
+  
+{% endset %}{% endif %}
 
-{# {{vardumper()}} #}
+{{vardumper()}}
 
 {% include "@pages/_person.twig" with{
   name : person.title,
