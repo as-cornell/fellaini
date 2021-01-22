@@ -34,7 +34,13 @@ Descr:
     }
   }
 }
-
+.sidebar {
+  .pcWrapper--relatedArticles {
+    ul {
+      flex-direction: column;
+    }
+  }
+}
 // in layout group
 .pcWrapper--layoutGroup {
   .pcWrapper--relatedArticles {
