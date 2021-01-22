@@ -43,7 +43,7 @@ Descr: sets background, color options, link styles for link blocks
 .basicSidebar {
   .linkBlock {
     a {
-      @include btnLink(var(--as-white), var(--as-dark-blue));
+      @include btnLink(var(--teal-teal), var(--as-white));
       margin-right: 1em;
       &:last-of-type {
         margin-right: 0;

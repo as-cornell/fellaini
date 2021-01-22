@@ -61,9 +61,9 @@ Passes:
 	{% set show_mediasource = true %}
 {% set mediasource = content.field_media_source_reference %}
 {% endif %}
-{{vardumper(attributes)}}
+{# {{vardumper(attributes)}} #}
 {# ms- {{show_mediasource}}<br>
-by - {{show_byline}} #} #}
+by - {{show_byline}} #}
 {# {{content.field_focal_image}} #}
 {% include "@pages/_article.twig" with {
 
