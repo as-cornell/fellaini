@@ -19,10 +19,10 @@ $config = array(
     ),
     'as-sp' => array(
         'saml:SP',
-        'privatekey' => 'prod.pem',
-        'certificate' => 'prod.crt',
+        'privatekey' => 'saml.pem',
+        'certificate' => 'saml.crt',
         'entityID' => 'https://as.cornell.edu/',
-        'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
+        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth',
     ),
     'people-sp' => array(
         'saml:SP',
