@@ -8,6 +8,7 @@ Descr: defines content and blocks for basic person page
 --------------------------- */
 
 #}
+{% set isTitle = true %}
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 	{{title_suffix}}

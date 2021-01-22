@@ -48,16 +48,16 @@
 {# {{vardumper()}} #}
 {% set card_link_url = '/people'~person.path %}
 {# set image #}
-{% if person.imagepath %}
-  {% set image %}
-    {% if (person.imagepath == "https://people.asd8.as.cornell.edu") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/trefruspeshithedrepereuospiuedocanatechijuclarakowrepestothanalirifromuthocegijicrivugaruphehilup") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/brikaluhuchuswuvowapocrijuslitruclagasonunuclikaspihuphelifrolustafristapeleroprecretucowotrebunephivegoji")%}
+	{% if person.imagepath %}
+	{% set image %}
+		{% if (person.imagepath == "https://people.asd8.as.cornell.edu") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/trefruspeshithedrepereuospiuedocanatechijuclarakowrepestothanalirifromuthocegijicrivugaruphehilup") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/brikaluhuchuswuvowapocrijuslitruclagasonunuclikaspihuphelifrolustafristapeleroprecretucowotrebunephivegoji") or (person.imagepath == "https://people.asd8.as.cornell.edu/sites/people/files/Angie%20Torres-Beltran.jpg")%}
 
 
-      <img src="https://people.as.cornell.edu/sites/people/files/Klarmanarticle_4784_2.jpg" alt="Klarman Hall"/>lkjlkj
-    {% else %}
-      <img src="{{person.imagepath}}" alt="{{person.alt}}"> 
-    {% endif %}
-  {% endset %}
+		<img src="https://people.as.cornell.edu/sites/people/files/Klarmanarticle_4784_2.jpg" alt="Klarman Hall"/>
+	{% else %}
+		<img src="{{person.imagepath}}" alt="{{person.alt}}">
+	{% endif %}
+	{% endset %}
 {% endif %}
 
 
