@@ -62,7 +62,7 @@ Descr: Sets styles for
     //   margin-bottom: 0;
     // }
     h2,
-    p {
+    p, ul {
       color: var(--as-white);
       // @include dropShadow();
     }
@@ -85,7 +85,7 @@ Descr: Sets styles for
     //   margin-bottom: 0;
     // }
     h2,
-    p {
+    p, ul {
       color: var(--as-white);
       // @include dropShadow();
     }
@@ -107,7 +107,7 @@ Descr: Sets styles for
     //   margin-bottom: 0;
     // }
     h2,
-    p {
+    p, ul {
       color: var(--as-white);
       // @include dropShadow();
     }
