@@ -47,6 +47,10 @@ Descr:
   }
   .sidebar {
     grid-area: sidebar;
+    h3{
+      @extend .base-28;
+      margin-bottom: .5em;
+    }
   }
   &__contact {
     margin-top: 2rem;
