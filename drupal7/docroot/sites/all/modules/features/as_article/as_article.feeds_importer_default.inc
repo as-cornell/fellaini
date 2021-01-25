@@ -67,7 +67,7 @@ function as_article_feeds_importer_default() {
           'xpathparser:20' => 0,
           'xpathparser:21' => 0,
         ),
-        'context' => '//node',
+        'context' => '//item',
         'exp' => array(
           'errors' => 0,
           'tidy' => 0,
