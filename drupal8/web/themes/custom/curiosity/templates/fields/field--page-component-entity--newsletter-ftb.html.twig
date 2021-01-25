@@ -8,23 +8,15 @@
 
 
 {% for item in items %}
-
 	<tr>
 		<td>
-			<table
-				style="background: #fff;">
+			<table style="background: #fff;">
 				<tr>
 					<td style="padding: 20px;">
-						{# <h1>
-							{{item.name}}
-						</h1> #}
 						{{item.content}}
-
 					</td>
 				</tr>
 			</table>
-
 		</td>
 	</tr>
-
 {% endfor %}

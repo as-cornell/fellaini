@@ -1,4 +1,3 @@
-
 {#
 
 /* -------------------------
@@ -16,16 +15,11 @@ Descr: Sets up variables and content for _basic-page.twig
 {% set audience = content.field_newsletter_type.0["#markup"] %}
 
 
-
-
 {% include "@pages/_newsletter.twig" with {
     title : label,
     main_element_modifiers : main_element_modifiers,
     pano : content.field_pano,
-
-
     main_content : content.field_newsletter_components,
-
     content_wrapper_modifiers : content_wrapper_modifiers,
     main_content_modifiers : main_content_modifiers
     }
