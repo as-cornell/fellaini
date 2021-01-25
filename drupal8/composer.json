@@ -113,7 +113,8 @@
         "drupal/view_mode_switch": "^1.0",
         "drupal/views_data_export": "^1.0",
         "drupal/redirect": "^1.6",
-        "drupal/publishcontent": "^1.2"
+        "drupal/publishcontent": "^1.2",
+        "drupal/google_analytics": "^2.5"
 
 
     },
