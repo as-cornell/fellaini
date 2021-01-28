@@ -5,8 +5,6 @@
 
 
 
-
-
 {% set contact = drupal_block('ldap_block', {netid: person.netid}) %}
 {# edcuation #}
 {% if person.education %}
@@ -52,9 +50,10 @@
 {% endif %}
 
 {# related articles #}
-{% set view = drupal_view_result('news', 'block_related_articles', person.netid)|length %}
+{% set puuid = person.uuid|json_encode(constant('JSON_PRETTY_PRINT'))|replace({'"': ''})%}
+{% set view = drupal_view_result('news', 'block_related_articles', puuid)|length %}
 {% if view > 0 %}
-  {% set related_articles = drupal_view('news', 'block_related_articles', 'eeb36') %}
+  {% set related_articles = drupal_view('news', 'block_related_articles', puuid) %}
   {% set show_related_articles = true %}
 {% endif %}
 {% set main_element_extra_classes = ['main'] %}
