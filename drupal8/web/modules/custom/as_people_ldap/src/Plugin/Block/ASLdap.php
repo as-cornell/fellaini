@@ -46,10 +46,10 @@ class ASLdap extends BlockBase implements BlockPluginInterface {
         $markup = $markup. $info[0]['cornelleducampusphone'][0].'<br />';
           }
         $build['events_block']['#markup'] = $markup;
-    } else { // There were no events
-      $build['events_block']['#markup'] = '<main>
-                <p>No LDAP data for '.$netid.'</p>
-                </main>';
+   // } else { // There were no events
+     // $build['events_block']['#markup'] = '<main>
+                //<p>No LDAP data for '.$netid.'</p>
+                //</main>';
     }
 
     return $build;
