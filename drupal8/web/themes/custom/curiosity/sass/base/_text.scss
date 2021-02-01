@@ -12,7 +12,8 @@ p {
   margin-top: 1em;
 }
 strong {
-  font-weight: var(--semi);
+  font-weight: var(--regular);
+  color: var(--as-black);
 }
 
 // special decoration classes for big messaging labels
