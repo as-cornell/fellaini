@@ -10,7 +10,7 @@ id: page_component_entity.campfire.field_main_article
 field_name: field_main_article
 entity_type: page_component_entity
 bundle: campfire
-label: 'Main Article'
+label: 'Big article'
 description: ''
 required: false
 translatable: false

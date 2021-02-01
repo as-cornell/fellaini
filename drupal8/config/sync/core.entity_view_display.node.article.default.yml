@@ -6,13 +6,12 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_aside_components
-    - field.field.node.article.field_byline
     - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
-    - field.field.node.article.field_media_source
+    - field.field.node.article.field_legacy_nid
     - field.field.node.article.field_media_source_reference
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano
@@ -23,7 +22,6 @@ dependencies:
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - field.field.node.article.field_thumbnail_image
-    - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
     - datetime
@@ -53,14 +51,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_byline:
-    type: string
-    weight: 4
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_byline_reference:
     weight: 5
     label: hidden
@@ -87,13 +77,12 @@ content:
       format_type: m_d_y
     third_party_settings: {  }
   field_department_program:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     weight: 11
     region: content
     label: hidden
     settings:
-      view_mode: list
-      link: false
+      link: true
     third_party_settings: {  }
   field_image:
     type: entity_reference_entity_view
@@ -104,14 +93,15 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  field_media_source:
-    type: string
-    weight: 6
-    region: content
-    label: hidden
+  field_legacy_nid:
+    weight: 17
+    label: above
     settings:
-      link_to_entity: false
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
+    type: number_integer
+    region: content
   field_media_source_reference:
     weight: 7
     label: hidden
@@ -158,7 +148,7 @@ content:
     weight: 13
     label: hidden
     settings:
-      view_mode: list
+      view_mode: card_small
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
@@ -170,15 +160,6 @@ content:
     label: hidden
     settings:
       link: true
-    third_party_settings: {  }
-  field_topics_and_disciplines:
-    type: entity_reference_entity_view
-    weight: 12
-    region: content
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
     third_party_settings: {  }
 hidden:
   body: true

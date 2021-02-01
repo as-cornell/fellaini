@@ -1,0 +1,23 @@
+uuid: 737a9deb-9b6a-4bdb-bcee-0f0d0a9f14e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.people_list
+    - field.storage.page_component_entity.field_display
+  module:
+    - options
+id: page_component_entity.people_list.field_display
+field_name: field_display
+entity_type: page_component_entity
+bundle: people_list
+label: Display
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: card
+default_value_callback: ''
+settings: {  }
+field_type: list_string

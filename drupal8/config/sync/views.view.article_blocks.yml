@@ -1,6 +1,6 @@
 uuid: cee07eb1-4e5f-468b-9506-8ada7e1cb124
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - as_page_components.page_component_entity_type.person
@@ -9,6 +9,8 @@ dependencies:
     - taxonomy.vocabulary.article_bylines
     - taxonomy.vocabulary.article_mediasources
     - taxonomy.vocabulary.departments_programs
+    - taxonomy.vocabulary.discipline
+    - taxonomy.vocabulary.function
   module:
     - node
     - taxonomy
@@ -16,7 +18,7 @@ dependencies:
 id: article_blocks
 label: 'Article Blocks'
 module: views
-description: ''
+description: DEPRECATED
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -330,14 +332,14 @@ display:
             format: default_summary
           specify_validation: true
           validate:
-            type: 'entity:taxonomy_term'
+            type: taxonomy_term_name_into_id
             fail: 'not found'
           validate_options:
             bundles:
               departments_programs: departments_programs
             operation: view
-            multiple: 0
             access: false
+            transform: false
           break_phrase: false
           add_table: false
           require_value: false
@@ -345,13 +347,208 @@ display:
           plugin_id: taxonomy_index_tid
       defaults:
         arguments: false
+        style: false
+        row: false
+        pager: false
+      style:
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      pager:
+        type: some
+        options:
+          items_per_page: 5
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_disciplines:
+    display_plugin: block
+    id: block_disciplines
+    display_title: Disciplines
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      arguments:
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: 'not found'
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: '{{ arguments.tid }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: taxonomy_term_name_into_id
+            fail: 'not found'
+          validate_options:
+            bundles:
+              discipline: discipline
+            operation: view
+            access: false
+            transform: false
+          break_phrase: false
+          add_table: false
+          require_value: false
+          reduce_duplicates: false
+          plugin_id: taxonomy_index_tid
+      defaults:
+        arguments: false
+        pager: false
+        style: false
+        row: false
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+          offset: 0
+      style:
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_functions:
+    display_plugin: block
+    id: block_functions
+    display_title: 'Functional Areas'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      arguments:
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: 'not found'
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: '{{ arguments.tid }}'
+          default_argument_type: fixed
+          default_argument_options:
+            argument: ''
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: taxonomy_term_name_into_id
+            fail: 'not found'
+          validate_options:
+            bundles:
+              function: function
+            operation: view
+            access: false
+            transform: false
+          break_phrase: false
+          add_table: false
+          require_value: false
+          reduce_duplicates: false
+          plugin_id: taxonomy_index_tid
+      defaults:
+        arguments: false
+        pager: false
+        style: false
+        row: false
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+          offset: 0
+      style:
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -470,14 +667,37 @@ display:
       defaults:
         arguments: false
         relationships: false
+        style: false
+        row: false
+        pager: false
       relationships: {  }
+      style:
+        type: html_list
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      pager:
+        type: some
+        options:
+          items_per_page: 5
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

@@ -5,6 +5,7 @@ dependencies:
   config:
     - as_page_components.page_component_entity_type.list_block
     - field.storage.page_component_entity.field_list_reference
+    - views.view.archive
   module:
     - viewsreference
 _core:
@@ -17,7 +18,16 @@ label: 'Content type'
 description: 'What type of list do you want to include?'
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    options:
+      title: 0
+      argument: ''
+    display_id: block_1
+    argument: null
+    title: 0
+    data: null
+    target_uuid: 445ebb27-a22c-440e-b322-4982b0ede955
 default_value_callback: ''
 settings:
   handler: 'default:view'
@@ -29,29 +39,34 @@ settings:
     default: 0
     entity_browser: 0
     page: 0
-    entity_reference: 0
-    feed: 0
     rest_export: 0
     rest_export_nested: 0
+    entity_reference: 0
   preselect_views:
+    departments_and_programs: departments_and_programs
     majors_and_minors: majors_and_minors
     news: news
+    people: people
     article_browser: 0
+    article_search: 0
     block_content: 0
+    bylines: 0
     component_browser: 0
     content: 0
-    content_recent: 0
+    departments_and_programs_search: 0
     entity_references: 0
     files: 0
-    frontpage: 0
+    file_entity_browser: 0
+    major_minor_grad_search: 0
     manage_as_vocabularies: 0
-    media: 0
     media_entity_browser: 0
-    nested_references: 0
+    media_entity_browser_media_library: 0
+    media_library: 0
+    search: 0
+    search_majors_minors: 0
+    site_search: 0
     stat_reference: 0
+    taxonomy_browser: 0
     user_admin_people: 0
-    vue_filters: 0
     watchdog: 0
-    who_s_new: 0
-    who_s_online: 0
 field_type: viewsreference

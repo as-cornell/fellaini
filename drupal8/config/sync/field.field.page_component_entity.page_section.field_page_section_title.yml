@@ -9,8 +9,8 @@ id: page_component_entity.page_section.field_page_section_title
 field_name: field_page_section_title
 entity_type: page_component_entity
 bundle: page_section
-label: 'Page Section Title'
-description: 'Fill this in to add a Page Section Title that will provide an in-page navigation link and appear in the menu entry for this page.'
+label: 'Section title on page'
+description: 'This is the heading for the section on the page and the link text for the On this Page navigation.'
 required: false
 translatable: false
 default_value: {  }

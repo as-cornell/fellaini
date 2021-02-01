@@ -1,0 +1,19 @@
+uuid: b0fbca42-42d9-4b1d-843e-8e234abf5dab
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.person
+    - field.storage.page_component_entity.field_people_uuid
+id: page_component_entity.person.field_people_uuid
+field_name: field_people_uuid
+entity_type: page_component_entity
+bundle: person
+label: 'People UUID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.person
+    - field.field.page_component_entity.person.field_departments_and_programs
     - field.field.page_component_entity.person.field_link
     - field.field.page_component_entity.person.field_netid
+    - field.field.page_component_entity.person.field_people_uuid
+    - field.field.page_component_entity.person.field_person_last_name
+    - field.field.page_component_entity.person.field_person_type
   module:
     - link
 id: page_component_entity.person.default
@@ -13,8 +17,18 @@ targetEntityType: page_component_entity
 bundle: person
 mode: default
 content:
+  field_departments_and_programs:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_link:
-    weight: 2
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -22,12 +36,34 @@ content:
     type: link_default
     region: content
   field_netid:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_people_uuid:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_person_last_name:
     weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_person_type:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   name:
     type: string_textfield

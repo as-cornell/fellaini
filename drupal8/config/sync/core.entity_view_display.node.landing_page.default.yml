@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_page_components
+    - field.field.node.landing_page.field_pano
+    - field.field.node.landing_page.field_summary
     - node.type.landing_page
   module:
     - user
@@ -21,5 +23,22 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
+  field_pano:
+    weight: 4
+    label: above
+    settings:
+      view_mode: pano
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_summary:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
 hidden:
   links: true
+  search_api_excerpt: true

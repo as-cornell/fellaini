@@ -1,0 +1,24 @@
+uuid: 76f5b44e-ad62-4b72-b191-5c2f685b798c
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.file_entity_browser
+  module:
+    - entity_embed
+    - file
+label: File
+id: file
+type_id: entity
+type_settings:
+  entity_type: file
+  bundles: {  }
+  display_plugins:
+    - 'file:file_default'
+  entity_browser: file_entity_browser
+  entity_browser_settings:
+    display_review: true
+icon:
+  data: iVBORw0KGgoAAAANSUhEUgAAACAAAAAeCAYAAABNChwpAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACxElEQVRIia2XwWsTQRSHP0WKlBKKSCmllBCKFCmllBBEZAlBqiB48CDiwUMJ0j+gB+89ePDgSYoHKUWCiAcRD8WTaBQREQlSRUSkhFBCKEVURLSsh3njvt3ubHbT/GAP8+btfvNmZn87C/1VCVgBPgK/gV2gDawDC8DhPvP+awx4BPhdriZwtt/waaAlgF3gIXAJOA4UAA9YBrZUzmK/4DNARx78BbMEVoeAAdXOATU1iH3PxKyCbwCjEq8AdeAX8AdoAFXgoFx2EE1gsFf4nAO+gKkubv1XJSdHsBzVXuHb8oD3wIjEqwq+DhSBSeC6il+W3GWVl0lFYEdubij4VQV5QHjtAW5JX13aZWm3s8BLCv4OOCpxXfl9zOaLypP+HWlPEWzGVDrhgOvK7zngABclp6WK8YGfaeAngW9yw1vgSAy8lgAfBT5L3prEFlUxiTql4G8c8LsJ8DGMLfuYjZuX+EuJ3UiCl4HvkvgaGFajt/A1zLvtgn9S8KLELxCs/5QLXsGsjw+8UnBd+WoXuK58TuKzBHvptgt+OgLPSXxewe90gdvKOwKFsH80gKG4m+cxFupj1imn+irSt5IAHyfYcB3MtwLM9Fu4ds6QdOX1CNzKtdkgXHlbwbV/bBCYV0hlBX+GY3oSNB6BT8fAtW2HpD8OvcLttG9hzgEQNi9t23u0ROBSw66klHD7WpUI/EM7Z6ysKVzbB7yl4C7bdqotyV4G+ISCN4FjEnfZdl8HMIE5fln4pMRdtt1VdblpKUVuHvgq+ZsK7hFv26lkN+Em8e++VSECL0i8rODatlMrR3Csfkr8ppkRqC+DyMfAo86ZSR6BEW0DN4ErmNNODfOXY4/eFq4/WC7nzKQSgZvFXU8wdgvpbDuVDkTaA8B54Aym0r/AB8zfzgvJGcEswyDwHDgH/Oh1AL1oCPOOPya7be/RP8GwGEVbobuvAAAAAElFTkSuQmCC
+  uri: 'public://embed_buttons/paperclip.png'
+icon_uuid: null

@@ -7,9 +7,9 @@ dependencies:
 _core:
   default_config_hash: wTJRNzsLVTenCALONNlVfgm_pBOlqucSPuVFLOD56ck
 id: user_admin_people
-label: People
+label: Users
 module: user
-description: 'Find and manage people interacting with your site.'
+description: 'Find and manage users interacting with your site.'
 tag: default
 base_table: users_field_data
 base_field: uid
@@ -853,7 +853,7 @@ display:
           plugin_id: date
           entity_type: user
           entity_field: created
-      title: People
+      title: Users
       empty:
         area_text_custom:
           id: area_text_custom
@@ -908,9 +908,8 @@ display:
         context: ''
       tab_options:
         type: normal
-        title: People
+        title: Users
         description: 'Manage user accounts, roles, and permissions.'
-        menu_name: admin
         weight: 0
       defaults:
         show_admin_links: false

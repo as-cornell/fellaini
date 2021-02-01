@@ -13,20 +13,25 @@ settings:
     rows:
       -
         -
-          name: Formatting
+          name: styles
           items:
             - Format
             - Styles
+            - RemoveFormat
+        -
+          name: Formatting
+          items:
             - Bold
             - Italic
-            - Strike
             - Superscript
+            - Strike
             - Subscript
-            - RemoveFormat
+            - JustifyCenter
         -
           name: Links
           items:
             - DrupalLink
+            - EntityLink
             - DrupalUnlink
         -
           name: Lists
@@ -38,6 +43,8 @@ settings:
           items:
             - image
             - components
+            - file
+            - embed_video_
         -
           name: Tools
           items:
@@ -49,7 +56,7 @@ settings:
     language:
       language_list: un
     stylescombo:
-      styles: "p.videoContainer|Video Container\r\np.notice|Notice\r\np.attribution|Attribution"
+      styles: "p.none|Remove styles\r\np.videoContainer|Video container\r\np.notice|Notice\r\np.attribution|Attribution\r\np.eyebrow|Eyebrow\r\np.pageIntroduction|Page introduction\r\np.sectionIntroduction|Section introduction\r\n\r\na.btn|Plain 'button' link\r\na.btn--blue|Dark blue 'button' link\r\na.btn--red|Dark red 'button' link\r\na.btn--green|Dark green 'button' link\r\n\r\nh3.green-green|H3 Green\r\nh3.blue-blue|H3 Blue\r\n\r\nh2.green-green|H2 Green\r\nh2.blue-blue|H2 Blue\r\n\r\nh2.spotlight.blue-radial|H2 Spotlight Radial storm\r\nh2.spotlight.blue-blue|H2 Spotlight Blue\r\nh2.spotlight.green-green|H2 Spotlight Green\r\nh2.spotlight.teal-purple|H2 Spotlight Teal>Purple\r\nh2.spotlight.blue-purple|H2 Spotlight Blue>Purple\r\n\r\nul.inline|Inline list\r\nul.thumbnails|Thumbnail list"
 image_upload:
   status: false
   scheme: public

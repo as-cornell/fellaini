@@ -10,7 +10,7 @@ id: node.article.field_byline_reference
 field_name: field_byline_reference
 entity_type: node
 bundle: article
-label: 'Byline Reference'
+label: Byline
 description: ''
 required: false
 translatable: false

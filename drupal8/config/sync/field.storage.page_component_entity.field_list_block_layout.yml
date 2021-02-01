@@ -1,4 +1,4 @@
-uuid: e9983fbe-8bf9-444b-a1c1-44317e31ecbf
+uuid: 7799d9e6-038b-4cbe-88fd-ef77092fce09
 langcode: en
 status: true
 dependencies:
@@ -12,24 +12,6 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: grid--two
-      label: 'Grid Two'
-    -
-      value: grid--four
-      label: 'Grid Four'
-    -
-      value: grid--one-four
-      label: 'Grid Fancy One'
-    -
-      value: noWrapper
-      label: 'No Wrapper'
-    -
-      value: horizontal
-      label: Horizontal
-    -
-      value: vertical
-      label: Vertical
-    -
       value: two-items
       label: 'Two items'
     -
@@ -38,9 +20,6 @@ settings:
     -
       value: six-items
       label: 'Six items'
-    -
-      value: eight-items
-      label: 'Eight items'
   allowed_values_function: ''
 module: options
 locked: false

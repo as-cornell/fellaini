@@ -1,0 +1,29 @@
+uuid: 0fd4b9ee-5200-4ed3-8ebc-6d04c41b2b3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_type
+    - taxonomy.vocabulary.department_type
+    - taxonomy.vocabulary.departments_programs
+id: taxonomy_term.departments_programs.field_type
+field_name: field_type
+entity_type: taxonomy_term
+bundle: departments_programs
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department_type: department_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

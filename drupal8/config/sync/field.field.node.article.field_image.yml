@@ -10,8 +10,8 @@ id: node.article.field_image
 field_name: field_image
 entity_type: node
 bundle: article
-label: Image
-description: ''
+label: 'Main article image'
+description: 'Main image in cards and in top right of full article view. Will be styled as 5x4'
 required: false
 translatable: false
 default_value: {  }

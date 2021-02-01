@@ -5,6 +5,7 @@ dependencies:
   config:
     - as_page_components.page_component_entity_type.blockquote
     - field.field.page_component_entity.blockquote.field_formatted_text
+    - field.field.page_component_entity.blockquote.field_related_person
   module:
     - text
 id: page_component_entity.blockquote.default
@@ -19,6 +20,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_related_person:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   name:
     type: string_textfield

@@ -7,13 +7,12 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_aside_components
-    - field.field.node.article.field_byline
     - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
-    - field.field.node.article.field_media_source
+    - field.field.node.article.field_legacy_nid
     - field.field.node.article.field_media_source_reference
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano
@@ -24,7 +23,6 @@ dependencies:
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - field.field.node.article.field_thumbnail_image
-    - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
     - datetime
@@ -96,6 +94,7 @@ third_party_settings:
         - sticky
         - path
         - status
+        - field_legacy_nid
       parent_name: group_article
       weight: 16
       format_type: tab
@@ -215,6 +214,13 @@ content:
       selection_mode: selection_append
       field_widget_replace: false
     third_party_settings: {  }
+  field_legacy_nid:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_media_source_reference:
     type: entity_reference_autocomplete
     weight: 11
@@ -331,7 +337,7 @@ content:
     region: content
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -346,7 +352,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
@@ -377,6 +383,3 @@ content:
 hidden:
   body: true
   field_aside_components: true
-  field_byline: true
-  field_media_source: true
-  field_topics_and_disciplines: true

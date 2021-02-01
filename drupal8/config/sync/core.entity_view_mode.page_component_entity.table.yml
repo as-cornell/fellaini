@@ -1,0 +1,10 @@
+uuid: 683249c7-508a-4f35-96e7-39e1b8cbc1ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.table
+label: Table
+targetEntityType: page_component_entity
+cache: true

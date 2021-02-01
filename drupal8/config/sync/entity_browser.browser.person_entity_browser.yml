@@ -8,7 +8,7 @@ dependencies:
     - views
 name: person_entity_browser
 label: 'Person Entity Browser'
-display: modal
+display: iframe
 display_configuration:
   width: '650'
   height: '500'

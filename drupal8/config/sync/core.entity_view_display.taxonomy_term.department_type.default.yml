@@ -1,0 +1,22 @@
+uuid: f6b792db-ec4f-4e16-aa8f-4a8532e433aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.department_type
+  module:
+    - text
+id: taxonomy_term.department_type.default
+targetEntityType: taxonomy_term
+bundle: department_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

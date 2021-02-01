@@ -5,13 +5,16 @@ dependencies:
   config:
     - entity_browser.browser.thumbnail_entity_browser
     - field.field.taxonomy_term.majors_minors_gradfields.field_classes
+    - field.field.taxonomy_term.majors_minors_gradfields.field_discipline
     - field.field.taxonomy_term.majors_minors_gradfields.field_image
     - field.field.taxonomy_term.majors_minors_gradfields.field_images
+    - field.field.taxonomy_term.majors_minors_gradfields.field_interests
     - field.field.taxonomy_term.majors_minors_gradfields.field_level
     - field.field.taxonomy_term.majors_minors_gradfields.field_links
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_one
     - field.field.taxonomy_term.majors_minors_gradfields.field_long_text_two
     - field.field.taxonomy_term.majors_minors_gradfields.field_page_components
+    - field.field.taxonomy_term.majors_minors_gradfields.field_related_articles
     - field.field.taxonomy_term.majors_minors_gradfields.field_sidebar_components
     - field.field.taxonomy_term.majors_minors_gradfields.field_student_careers
     - taxonomy.vocabulary.majors_minors_gradfields
@@ -20,7 +23,7 @@ dependencies:
     - entity_browser_entity_form
     - field_group
     - inline_entity_form
-    - path
+    - link
     - text
 third_party_settings:
   field_group:
@@ -28,6 +31,8 @@ third_party_settings:
       children:
         - group_basic_information
         - group_body_content
+        - group_related_content
+        - group_tags
       parent_name: ''
       weight: 1
       format_type: tabs
@@ -39,7 +44,6 @@ third_party_settings:
       region: content
     group_basic_information:
       children:
-        - field_level
         - description
         - field_image
       parent_name: group_standard
@@ -55,10 +59,10 @@ third_party_settings:
       region: content
     group_body_content:
       children:
-        - field_page_components
-        - field_long_text_one
         - field_long_text_two
-        - field_sidebar_components
+        - field_classes
+        - field_long_text_one
+        - field_page_components
       parent_name: group_standard
       weight: 21
       format_type: tab
@@ -70,6 +74,37 @@ third_party_settings:
         required_fields: true
       label: 'Body Content'
       region: content
+    group_related_content:
+      children:
+        - field_related_articles
+        - field_links
+      parent_name: group_standard
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'Related articles, people and starcruisers'
+        formatter: closed
+        required_fields: true
+      label: 'Related Content'
+    group_tags:
+      children:
+        - field_level
+        - field_discipline
+        - field_interests
+      parent_name: group_standard
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Filters
 _core:
   default_config_hash: RnvuAg1vH_2RkNjXFRi4v3tpu4hkgcfcRnaPnygP_s8
 id: taxonomy_term.majors_minors_gradfields.default
@@ -85,6 +120,20 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
+  field_classes:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_discipline:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_image:
     weight: 24
     settings:
@@ -100,14 +149,28 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_level:
-    weight: 22
+  field_interests:
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
+  field_level:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_links:
+    type: link_default
+    weight: 10
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_long_text_one:
-    weight: 6
+    weight: 9
     settings:
       rows: 5
       placeholder: ''
@@ -123,7 +186,7 @@ content:
     type: text_textarea
     region: content
   field_page_components:
-    weight: 5
+    weight: 10
     settings:
       form_mode: default
       label_singular: ''
@@ -141,24 +204,15 @@ content:
         entity_browser_id: _none
     type: inline_entity_form_complex
     region: content
-  field_sidebar_components:
-    weight: 8
+  field_related_articles:
+    weight: 9
     settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
       match_operator: CONTAINS
-      revision: false
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: component_entity_browser
-    type: inline_entity_form_complex
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   name:
     type: string_textfield
@@ -168,21 +222,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 3
-    region: content
-    third_party_settings: {  }
 hidden:
-  field_classes: true
   field_images: true
-  field_links: true
+  field_sidebar_components: true
   field_student_careers: true
+  path: true
+  status: true

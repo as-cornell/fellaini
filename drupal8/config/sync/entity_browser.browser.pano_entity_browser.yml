@@ -34,15 +34,15 @@ widgets:
       submit_text: 'Save pano image'
     uuid: 488e07df-230b-464e-9e7b-88bcb7442805
     weight: -9
-    label: Upload
+    label: 'Add new pano image'
     id: entity_form
   9139a5b1-2901-447e-a127-b9c5b2ba1062:
     settings:
       view: media_entity_browser_media_library
       view_display: entity_browser_5
       submit_text: 'Select pano image'
-      auto_select: true
+      auto_select: false
     uuid: 9139a5b1-2901-447e-a127-b9c5b2ba1062
     weight: -10
-    label: 'Use Existing'
+    label: 'Use existing pano image'
     id: view

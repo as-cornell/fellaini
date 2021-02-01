@@ -5,8 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.card_small
     - field.field.taxonomy_term.departments_programs.field_department_website
+    - field.field.taxonomy_term.departments_programs.field_discipline
     - field.field.taxonomy_term.departments_programs.field_image
+    - field.field.taxonomy_term.departments_programs.field_links
     - field.field.taxonomy_term.departments_programs.field_page_components
+    - field.field.taxonomy_term.departments_programs.field_related_articles
+    - field.field.taxonomy_term.departments_programs.field_summary
+    - field.field.taxonomy_term.departments_programs.field_type
     - taxonomy.vocabulary.departments_programs
 _core:
   default_config_hash: qDuC0Y6MUNedfzwkibfc1kDLvJ1Hde8pGs4eDayorZI
@@ -27,4 +32,10 @@ content:
 hidden:
   description: true
   field_department_website: true
+  field_discipline: true
+  field_links: true
   field_page_components: true
+  field_related_articles: true
+  field_summary: true
+  field_type: true
+  search_api_excerpt: true

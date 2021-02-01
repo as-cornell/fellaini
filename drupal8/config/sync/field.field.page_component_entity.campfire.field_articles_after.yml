@@ -10,7 +10,7 @@ id: page_component_entity.campfire.field_articles_after
 field_name: field_articles_after
 entity_type: page_component_entity
 bundle: campfire
-label: 'Articles After'
+label: 'Articles After -- DEAD'
 description: ''
 required: false
 translatable: true

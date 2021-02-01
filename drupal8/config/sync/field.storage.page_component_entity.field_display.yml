@@ -1,0 +1,27 @@
+uuid: 8e0e11cf-5075-4113-bc47-58b0bffbacd3
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - options
+id: page_component_entity.field_display
+field_name: field_display
+entity_type: page_component_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: card
+      label: Card
+    -
+      value: list
+      label: List
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

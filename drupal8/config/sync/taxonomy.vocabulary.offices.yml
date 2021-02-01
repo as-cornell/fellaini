@@ -1,0 +1,8 @@
+uuid: 81854af4-0b24-48a9-ba66-83064d4c82b4
+langcode: en
+status: true
+dependencies: {  }
+name: Offices
+vid: offices
+description: 'Administrative units in the college'
+weight: 0

@@ -5,7 +5,6 @@ dependencies:
   config:
     - as_page_components.page_component_entity_type.photo_text
     - as_page_components.page_component_entity_type.photo_text_wrapper
-    - as_page_components.page_component_entity_type.small_text
     - field.storage.page_component_entity.field_photo_text_reference
 id: page_component_entity.photo_text_wrapper.field_photo_text_reference
 field_name: field_photo_text_reference
@@ -22,7 +21,6 @@ settings:
   handler_settings:
     target_bundles:
       photo_text: photo_text
-      small_text: small_text
     sort:
       field: _none
     auto_create: false

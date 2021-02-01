@@ -1,0 +1,26 @@
+uuid: 9fa316ba-7aae-49d3-a1d5-a4057cacec5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.people_list
+    - core.entity_view_mode.page_component_entity.list
+    - core.entity_view_mode.page_component_entity.table
+    - field.storage.page_component_entity.field_layout_view
+  module:
+    - view_mode_switch
+id: page_component_entity.people_list.field_layout_view
+field_name: field_layout_view
+entity_type: page_component_entity
+bundle: people_list
+label: 'Layout view'
+description: 'Show this list as a table list or a card list'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_view_modes:
+    list: list
+    table: table
+field_type: view_mode_switch

@@ -1,0 +1,20 @@
+uuid: 67f6d4bf-7710-4c19-afbf-f2f98e1c30b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - taxonomy
+id: page_component_entity.field_departments_and_programs
+field_name: field_departments_and_programs
+entity_type: page_component_entity
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

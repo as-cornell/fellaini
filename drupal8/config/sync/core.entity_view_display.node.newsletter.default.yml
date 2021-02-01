@@ -1,0 +1,39 @@
+uuid: 318336cc-d357-4a85-a2d4-bf9bb2fbf8ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_newsletter_components
+    - field.field.node.newsletter.field_newsletter_ftb
+    - field.field.node.newsletter.field_newsletter_type
+    - node.type.newsletter
+  module:
+    - options
+    - user
+id: node.newsletter.default
+targetEntityType: node
+bundle: newsletter
+mode: default
+content:
+  field_newsletter_components:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_newsletter_type:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden:
+  body: true
+  field_newsletter_ftb: true
+  links: true
+  search_api_excerpt: true

@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_page_components
     - field.field.node.page.field_sidebar_components
     - field.field.node.page.field_sidebar_type
+    - field.field.node.page.field_summary
     - node.type.page
   module:
     - user
@@ -18,17 +19,16 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
-  field_page_components:
-    type: entity_reference_entity_view
+  field_summary:
+    type: basic_string
     weight: 0
     region: content
     label: hidden
-    settings:
-      link: true
-      view_mode: default
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_aside_components: true
+  field_page_components: true
   field_sidebar_components: true
   field_sidebar_type: true
   links: true

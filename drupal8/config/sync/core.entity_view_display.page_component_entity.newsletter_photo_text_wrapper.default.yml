@@ -1,0 +1,40 @@
+uuid: ded56f5e-a990-417a-ba6d-2835a4dedb21
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.newsletter_photo_text_wrapper
+    - field.field.page_component_entity.newsletter_photo_text_wrapper.field_newsletter_photo_text_refe
+  module:
+    - user
+id: page_component_entity.newsletter_photo_text_wrapper.default
+targetEntityType: page_component_entity
+bundle: newsletter_photo_text_wrapper
+mode: default
+content:
+  field_newsletter_photo_text_refe:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: table_row
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

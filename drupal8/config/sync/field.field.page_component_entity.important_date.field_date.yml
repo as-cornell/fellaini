@@ -1,0 +1,21 @@
+uuid: dc31487a-013f-4ced-8710-bcbadeeddc2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.important_date
+    - field.storage.page_component_entity.field_date
+  module:
+    - datetime
+id: page_component_entity.important_date.field_date
+field_name: field_date
+entity_type: page_component_entity
+bundle: important_date
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

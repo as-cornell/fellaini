@@ -1,0 +1,302 @@
+uuid: f7d4f252-afb1-4f66-b724-3dde6ecd99bc
+langcode: en
+status: false
+dependencies:
+  config:
+    - field.storage.page_component_entity.field_departments_and_programs
+    - field.storage.page_component_entity.field_person_last_name
+    - field.storage.page_component_entity.field_person_type
+    - search_api.server.default_server
+  module:
+    - as_page_components
+    - node
+    - search_api
+id: site_search
+name: 'Site Search'
+description: 'The main A&S site search'
+read_only: false
+field_settings:
+  field_departments_and_programs:
+    label: 'Departments and Programs'
+    datasource_id: 'entity:page_component_entity'
+    property_path: field_departments_and_programs
+    type: text
+    boost: !!float 8
+    dependencies:
+      config:
+        - field.storage.page_component_entity.field_departments_and_programs
+  field_person_last_name:
+    label: 'Person Last Name'
+    datasource_id: 'entity:page_component_entity'
+    property_path: field_person_last_name
+    type: text
+    boost: !!float 21
+    dependencies:
+      config:
+        - field.storage.page_component_entity.field_person_last_name
+  field_person_type:
+    label: 'Person Type'
+    datasource_id: 'entity:page_component_entity'
+    property_path: field_person_type
+    type: text
+    dependencies:
+      config:
+        - field.storage.page_component_entity.field_person_type
+  name:
+    label: Name
+    datasource_id: 'entity:page_component_entity'
+    property_path: name
+    type: text
+    boost: !!float 13
+    dependencies:
+      module:
+        - as_page_components
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    boost: !!float 8
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          article: default
+          landing_page: default
+          page: default
+        'entity:page_component_entity':
+          person: default
+        'entity:taxonomy_term':
+          departments_programs: default
+          majors_minors_gradfields: default
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 13
+    dependencies:
+      module:
+        - node
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - article
+        - landing_page
+        - page
+    languages:
+      default: true
+      selected: {  }
+  'entity:page_component_entity':
+    bundles:
+      default: false
+      selected:
+        - person
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -50
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  html_filter:
+    all_fields: false
+    fields:
+      - field_departments_and_programs
+      - field_person_last_name
+      - field_person_type
+      - name
+      - rendered_item
+      - title
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -46
+      preprocess_query: -46
+  ignore_character:
+    all_fields: false
+    fields:
+      - field_departments_and_programs
+      - field_person_last_name
+      - field_person_type
+      - name
+      - rendered_item
+      - title
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -47
+      preprocess_query: -47
+  ignorecase:
+    all_fields: false
+    fields:
+      - field_departments_and_programs
+      - field_person_last_name
+      - field_person_type
+      - name
+      - rendered_item
+      - title
+    weights:
+      preprocess_index: -49
+      preprocess_query: -49
+  language_with_fallback: {  }
+  rendered_item: {  }
+  stemmer:
+    all_fields: false
+    fields:
+      - field_departments_and_programs
+      - field_person_last_name
+      - field_person_type
+      - name
+      - rendered_item
+      - title
+    exceptions:
+      mexican: mexic
+      texan: texa
+    weights:
+      preprocess_index: -43
+      preprocess_query: -43
+  stopwords:
+    all_fields: false
+    fields:
+      - field_departments_and_programs
+      - field_person_last_name
+      - field_person_type
+      - name
+      - rendered_item
+      - title
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -44
+      preprocess_query: -44
+  tokenizer:
+    all_fields: false
+    fields:
+      - field_departments_and_programs
+      - field_person_last_name
+      - field_person_type
+      - name
+      - rendered_item
+      - title
+    ignored: ._-
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -45
+      preprocess_query: -45
+  type_boost:
+    boosts:
+      'entity:node':
+        datasource_boost: !!float 1
+        bundle_boosts:
+          article: !!float 1
+          landing_page: !!float 2
+          page: !!float 3
+      'entity:page_component_entity':
+        datasource_boost: !!float 1
+        bundle_boosts:
+          person: !!float 5
+      'entity:taxonomy_term':
+        datasource_boost: !!float 1
+        bundle_boosts:
+          departments_programs: !!float 5
+          majors_minors_gradfields: !!float 5
+    weights:
+      preprocess_index: -42
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: false
+  cron_limit: 50
+server: default_server

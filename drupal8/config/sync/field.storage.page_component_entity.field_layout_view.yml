@@ -1,0 +1,21 @@
+uuid: fd9124a9-16ec-445c-8da3-3c591d6b0a6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - view_mode_switch
+id: page_component_entity.field_layout_view
+field_name: field_layout_view
+entity_type: page_component_entity
+type: view_mode_switch
+settings:
+  origin_view_modes:
+    default: default
+module: view_mode_switch
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

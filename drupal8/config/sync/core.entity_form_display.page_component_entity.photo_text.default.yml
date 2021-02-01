@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.photo_text
-    - entity_browser.browser.thumbnail_entity_browser
+    - entity_browser.browser.thumbnail_entity_browser_iframe
     - field.field.page_component_entity.photo_text.field_formatted_text
     - field.field.page_component_entity.photo_text.field_image
     - field.field.page_component_entity.photo_text.field_link
@@ -29,7 +29,7 @@ content:
     weight: 2
     region: content
     settings:
-      entity_browser: thumbnail_entity_browser
+      entity_browser: thumbnail_entity_browser_iframe
       field_widget_display: rendered_entity
       field_widget_display_settings:
         view_mode: '1_1'

@@ -42,9 +42,18 @@ content:
       preview_image_style: pano
       crop_preview_image_style: pano
       crop_list:
+        - '1_1'
+        - '4_5'
+        - '5_4'
+        - '6_4'
+        - pano_crop
+      crop_types_required:
+        - '1_1'
+        - '4_5'
+        - '5_4'
+        - '6_4'
         - pano_crop
       progress_indicator: throbber
-      crop_types_required: {  }
     third_party_settings: {  }
     type: image_widget_crop
     weight: 1

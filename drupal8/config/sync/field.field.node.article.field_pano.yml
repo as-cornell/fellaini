@@ -10,8 +10,8 @@ id: node.article.field_pano
 field_name: field_pano
 entity_type: node
 bundle: article
-label: Pano
-description: ''
+label: 'Pano image'
+description: 'Large images only at the top of the article. 1440x810'
 required: false
 translatable: false
 default_value: {  }

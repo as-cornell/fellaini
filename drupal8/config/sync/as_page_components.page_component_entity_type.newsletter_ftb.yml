@@ -1,0 +1,6 @@
+uuid: 215bb44c-fb02-4764-a650-2aba2c830330
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter_ftb
+label: 'Newsletter FTB'
