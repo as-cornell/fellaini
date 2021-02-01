@@ -1,0 +1,20 @@
+uuid: 8827d45c-f7c5-41e0-a62d-3d7e357c1e79
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - datetime
+id: page_component_entity.field_date
+field_name: field_date
+entity_type: page_component_entity
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

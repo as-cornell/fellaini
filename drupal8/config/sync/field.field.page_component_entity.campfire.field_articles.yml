@@ -1,0 +1,28 @@
+uuid: 986f2e79-3af5-4c8e-ad51-6c59da44b41d
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.campfire
+    - field.storage.page_component_entity.field_articles
+    - node.type.article
+id: page_component_entity.campfire.field_articles
+field_name: field_articles
+entity_type: page_component_entity
+bundle: campfire
+label: 'Center other articles'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

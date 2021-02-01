@@ -11,7 +11,7 @@ id: page_component_entity.campfire.field_formatted_text
 field_name: field_formatted_text
 entity_type: page_component_entity
 bundle: campfire
-label: 'Formatted Text'
+label: 'Mission block'
 description: ''
 required: false
 translatable: true

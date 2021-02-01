@@ -17,6 +17,9 @@ settings:
     -
       value: slider
       label: Slider
+    -
+      value: featured--blue
+      label: 'Featured blue'
   allowed_values_function: ''
 module: options
 locked: false

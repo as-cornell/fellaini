@@ -1,0 +1,19 @@
+uuid: 39209485-a866-4010-abdd-e3b846720562
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_summary
+    - taxonomy.vocabulary.departments_programs
+id: taxonomy_term.departments_programs.field_summary
+field_name: field_summary
+entity_type: taxonomy_term
+bundle: departments_programs
+label: Summary
+description: 'Short one or two sentence summary of the page content. Good to get some search keywords in here.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

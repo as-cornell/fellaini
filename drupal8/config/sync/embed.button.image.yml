@@ -4,8 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.1_1
-    - core.entity_view_mode.media.5_4
+    - core.entity_view_mode.media.4_5
     - core.entity_view_mode.media.6_4
+    - core.entity_view_mode.media.pano
     - entity_browser.browser.media_entity_browser_media_library
     - media.type.image
   module:
@@ -20,11 +21,12 @@ type_settings:
     - image
   display_plugins:
     - 'view_mode:media.1_1'
-    - 'view_mode:media.5_4'
+    - 'view_mode:media.4_5'
     - 'view_mode:media.6_4'
+    - 'view_mode:media.pano'
   entity_browser: media_entity_browser_media_library
   entity_browser_settings:
-    display_review: true
+    display_review: false
 icon:
   data: iVBORw0KGgoAAAANSUhEUgAAACAAAAAZCAYAAABQDyyRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABfElEQVRIic2WoUsDYRjGfzdEFocYREzLCyIGkz47NAgGMYhhLJgtVg0iVkFERNRgMBiWBOPYXgzaBAWLwb/BJKb7DG56nPNuzpvb097v3u+eH9/7ve+dJ8nRQ2V6ad4XAAOReB147rJnHthrCeB53nW9Xr/rpnuxWJxw7uvaRU/gmyQVgEngxsye0gaKvQOSysA9cAY8Slr6VwBgO5QzAGz9N8BgQvwpSTlJ02kD7CXEYR0AF5JyqQGY2S4wB2wCM2Z20ipP0jJQAkaB/d8AJHaBmVWBanjN9/1srVZ7a5iPAUehx2VJFTO7agfg15NQ0loQBLeShn3fz/DRIUORtGNJ0bW/A0ha5eOIx4F6EAQ7wGyL1LZL0TZAo86noT0FYCNmS0nSYioAkhaA83bzQzpKKkXiCyX5QIWYGRCjEeCwYwBJU8AlkO3AvKmVuBGe1IavwPwfzJt66QjAzB5SMI9Vf/0ROeemG5Ota3LO5X8EIP5j0xX1vAQ9B3gHae9a/a/KjaQAAAAASUVORK5CYII=
   uri: 'public://embed_buttons/image-icon-png_0.png'

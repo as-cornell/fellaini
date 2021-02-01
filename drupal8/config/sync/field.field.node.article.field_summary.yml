@@ -10,8 +10,8 @@ field_name: field_summary
 entity_type: node
 bundle: article
 label: Summary
-description: ''
-required: false
+description: 'Short sentence or two summarizing the page content. It''s smart to get search words in here.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

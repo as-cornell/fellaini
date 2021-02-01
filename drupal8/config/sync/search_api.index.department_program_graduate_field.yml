@@ -1,0 +1,91 @@
+uuid: 54a946fe-9d71-46ad-b6ea-9b351ff0f39b
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - search_api
+  config:
+    - field.storage.taxonomy_term.field_discipline
+    - field.storage.taxonomy_term.field_page_components
+    - field.storage.taxonomy_term.field_summary
+    - field.storage.taxonomy_term.field_type
+    - search_api.server.default_server
+id: department_program_graduate_field
+name: 'Department, program, graduate field'
+description: 'The index for d/p/g.'
+read_only: false
+field_settings:
+  description:
+    label: Description
+    datasource_id: 'entity:taxonomy_term'
+    property_path: description
+    type: text
+    boost: !!float 13
+    dependencies:
+      module:
+        - taxonomy
+  field_discipline:
+    label: Discipline
+    datasource_id: 'entity:taxonomy_term'
+    property_path: field_discipline
+    type: string
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.taxonomy_term.field_discipline
+  field_page_components:
+    label: 'Page Components'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: field_page_components
+    type: text
+    dependencies:
+      config:
+        - field.storage.taxonomy_term.field_page_components
+  field_summary:
+    label: Summary
+    datasource_id: 'entity:taxonomy_term'
+    property_path: field_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.taxonomy_term.field_summary
+  field_type:
+    label: Type
+    datasource_id: 'entity:taxonomy_term'
+    property_path: field_type
+    type: string
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.taxonomy_term.field_type
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: text
+    boost: !!float 21
+    dependencies:
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:taxonomy_term':
+    bundles:
+      default: false
+      selected:
+        - departments_programs
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default_server

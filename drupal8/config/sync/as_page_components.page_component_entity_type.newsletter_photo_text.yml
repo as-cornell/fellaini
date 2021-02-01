@@ -1,0 +1,6 @@
+uuid: f5ab7083-f8c9-4472-a66e-a019ee78dd60
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter_photo_text
+label: 'Newsletter Photo Text'

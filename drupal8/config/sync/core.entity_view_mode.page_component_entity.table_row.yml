@@ -1,0 +1,10 @@
+uuid: cabd606a-4343-4a75-b6d6-687f98f3e577
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+id: page_component_entity.table_row
+label: 'Table row'
+targetEntityType: page_component_entity
+cache: true

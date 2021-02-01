@@ -1,0 +1,20 @@
+uuid: d77503e5-6f63-4f75-a9ba-cbd610f3aad4
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - taxonomy
+id: page_component_entity.field_person_type
+field_name: field_person_type
+entity_type: page_component_entity
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

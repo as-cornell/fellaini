@@ -15,12 +15,11 @@ bundle: stat
 mode: default
 content:
   field_related_content:
-    type: entity_reference_label
+    type: entity_reference_entity_id
     weight: 3
     region: content
     label: hidden
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
   field_stat_description:
     weight: 1
@@ -39,4 +38,5 @@ content:
     region: content
 hidden:
   name: true
+  search_api_excerpt: true
   user_id: true

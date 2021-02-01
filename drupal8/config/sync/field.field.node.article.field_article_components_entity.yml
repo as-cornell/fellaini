@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.blockquote
+    - as_page_components.page_component_entity_type.figure_video
+    - as_page_components.page_component_entity_type.figure_wrapper
     - as_page_components.page_component_entity_type.formatted_text_block
     - as_page_components.page_component_entity_type.instagram_block
     - as_page_components.page_component_entity_type.layout_group
-    - as_page_components.page_component_entity_type.link_block
     - as_page_components.page_component_entity_type.list_block
     - field.storage.node.field_article_components_entity
     - node.type.article
@@ -26,10 +27,11 @@ settings:
   handler_settings:
     target_bundles:
       blockquote: blockquote
+      figure_video: figure_video
+      figure_wrapper: figure_wrapper
       formatted_text_block: formatted_text_block
       instagram_block: instagram_block
       layout_group: layout_group
-      link_block: link_block
       list_block: list_block
     sort:
       field: _none

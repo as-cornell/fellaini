@@ -3,4 +3,4 @@ langcode: en
 status: true
 dependencies: {  }
 id: page_section
-label: 'Page Section'
+label: 'Page section'

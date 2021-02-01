@@ -1,0 +1,10 @@
+uuid: 9b5bae2a-043e-462f-af0c-28aa90a57e25
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.for_fancybox
+label: 'For Fancybox'
+targetEntityType: taxonomy_term
+cache: true

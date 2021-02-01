@@ -1,0 +1,103 @@
+uuid: 14c51c3b-c90f-4382-8986-d5e6485023bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.page_component_entity.field_departments_and_programs
+    - field.storage.page_component_entity.field_person_last_name
+    - field.storage.page_component_entity.field_person_type
+    - search_api.server.default_server
+  module:
+    - as_page_components
+    - search_api
+id: people
+name: People
+description: 'Index of People component entities.'
+read_only: false
+field_settings:
+  field_departments_and_programs:
+    label: 'Departments and Programs'
+    datasource_id: 'entity:page_component_entity'
+    property_path: field_departments_and_programs
+    type: string
+    boost: !!float 8
+    dependencies:
+      config:
+        - field.storage.page_component_entity.field_departments_and_programs
+  field_person_last_name:
+    label: 'Person Last Name'
+    datasource_id: 'entity:page_component_entity'
+    property_path: field_person_last_name
+    type: text
+    boost: !!float 21
+    dependencies:
+      config:
+        - field.storage.page_component_entity.field_person_last_name
+  field_person_type:
+    label: 'Person Type'
+    datasource_id: 'entity:page_component_entity'
+    property_path: field_person_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.page_component_entity.field_person_type
+  name:
+    label: Name
+    datasource_id: 'entity:page_component_entity'
+    property_path: name
+    type: text
+    boost: !!float 2
+    dependencies:
+      module:
+        - as_page_components
+datasource_settings:
+  'entity:page_component_entity':
+    bundles:
+      default: false
+      selected:
+        - person
+    languages:
+      default: false
+      selected:
+        - en
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignorecase:
+    all_fields: false
+    fields:
+      - name
+    weights:
+      preprocess_index: -50
+      preprocess_query: -50
+  language_with_fallback: {  }
+  rendered_item: {  }
+  tokenizer:
+    all_fields: true
+    fields:
+      - field_person_last_name
+      - name
+    ignored: ._-
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '2'
+    weights:
+      preprocess_index: -49
+      preprocess_query: -49
+tracker_settings:
+  default:
+    indexing_order: lifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default_server

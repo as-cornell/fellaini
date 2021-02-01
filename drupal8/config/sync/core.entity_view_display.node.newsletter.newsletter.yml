@@ -1,0 +1,33 @@
+uuid: 73019204-96b9-442b-8a54-90d7431282fd
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter
+    - field.field.node.newsletter.body
+    - field.field.node.newsletter.field_newsletter_components
+    - field.field.node.newsletter.field_newsletter_ftb
+    - field.field.node.newsletter.field_newsletter_type
+    - node.type.newsletter
+  module:
+    - user
+id: node.newsletter.newsletter
+targetEntityType: node
+bundle: newsletter
+mode: newsletter
+content:
+  field_newsletter_components:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: newsletter
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  body: true
+  field_newsletter_ftb: true
+  field_newsletter_type: true
+  links: true
+  search_api_excerpt: true

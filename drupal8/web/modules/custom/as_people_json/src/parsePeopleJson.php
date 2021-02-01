@@ -56,6 +56,7 @@ class parsePeopleJson extends \Twig_Extension
       foreach ($people_json['data'] as $person_data) {
         $person_record['alt'] = 'Image of ' . $person_data['attributes']['title'];
         $person_record['netid'] = $person_data['attributes']['field_person_netid'];
+        $person_record['uuid'] = $pathtoken;
         $person_record['path'] = $person_data['attributes']['path']['alias'];
         $person_record['title'] = $person_data['attributes']['title'];
         $person_record['jobtitle'] = $person_data['attributes']['field_person_title'];
@@ -82,6 +83,7 @@ class parsePeopleJson extends \Twig_Extension
         $person_record['researchfocus'] = $researchfocus;
       }
     }
+
     return $person_record;
   }
 }

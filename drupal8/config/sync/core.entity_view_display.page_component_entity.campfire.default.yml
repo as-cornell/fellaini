@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - as_page_components.page_component_entity_type.campfire
+    - field.field.page_component_entity.campfire.field_articles
     - field.field.page_component_entity.campfire.field_articles_after
     - field.field.page_component_entity.campfire.field_campfire_after
     - field.field.page_component_entity.campfire.field_campfire_before
     - field.field.page_component_entity.campfire.field_formatted_text
+    - field.field.page_component_entity.campfire.field_label
     - field.field.page_component_entity.campfire.field_main_article
   module:
     - dynamic_entity_reference
@@ -17,11 +19,19 @@ targetEntityType: page_component_entity
 bundle: campfire
 mode: default
 content:
+  field_articles:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_articles_after:
     weight: 3
     label: hidden
     settings:
-      view_mode: list
+      view_mode: simple_link
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
@@ -34,9 +44,6 @@ content:
         view_mode: card
       page_component_entity:
         view_mode: card_small
-      contact_message:
-        view_mode: default
-        link: false
       crop:
         view_mode: default
         link: false
@@ -52,9 +59,6 @@ content:
       media:
         view_mode: default
         link: false
-      paragraph:
-        view_mode: default
-        link: false
       shortcut:
         view_mode: default
         link: false
@@ -62,6 +66,15 @@ content:
         view_mode: default
         link: false
       user:
+        view_mode: default
+        link: false
+      entity_embed_fake_entity:
+        view_mode: default
+        link: false
+      search_api_task:
+        view_mode: default
+        link: false
+      path_alias:
         view_mode: default
         link: false
     third_party_settings: {  }
@@ -75,9 +88,6 @@ content:
         view_mode: card
       page_component_entity:
         view_mode: card_small
-      contact_message:
-        view_mode: default
-        link: false
       crop:
         view_mode: default
         link: false
@@ -93,9 +103,6 @@ content:
       media:
         view_mode: default
         link: false
-      paragraph:
-        view_mode: default
-        link: false
       shortcut:
         view_mode: default
         link: false
@@ -103,6 +110,15 @@ content:
         view_mode: default
         link: false
       user:
+        view_mode: default
+        link: false
+      entity_embed_fake_entity:
+        view_mode: default
+        link: false
+      search_api_task:
+        view_mode: default
+        link: false
+      path_alias:
         view_mode: default
         link: false
     third_party_settings: {  }
@@ -115,6 +131,14 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  field_label:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_main_article:
     weight: 0
     label: hidden
@@ -126,4 +150,5 @@ content:
     region: content
 hidden:
   name: true
+  search_api_excerpt: true
   user_id: true

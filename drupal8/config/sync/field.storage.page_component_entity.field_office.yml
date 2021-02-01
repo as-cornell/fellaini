@@ -1,0 +1,20 @@
+uuid: bca538c3-a98a-4c42-ad28-bbdf37da9eac
+langcode: en
+status: true
+dependencies:
+  module:
+    - as_page_components
+    - taxonomy
+id: page_component_entity.field_office
+field_name: field_office
+entity_type: page_component_entity
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

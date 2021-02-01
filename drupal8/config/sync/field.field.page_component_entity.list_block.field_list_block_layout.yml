@@ -1,4 +1,4 @@
-uuid: 5bbed98d-c24e-49e3-be60-647cf86aaf40
+uuid: e697c942-77b2-4605-9e4d-f740a5c59f23
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ field_name: field_list_block_layout
 entity_type: page_component_entity
 bundle: list_block
 label: 'List Block Layout'
-description: 'Really only use in a pinch if you know what you are doing.'
+description: 'How many items will be in the list? This helps determine the layout of the block.'
 required: false
 translatable: false
 default_value: {  }

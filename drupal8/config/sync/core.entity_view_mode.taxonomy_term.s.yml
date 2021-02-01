@@ -1,0 +1,10 @@
+uuid: 3a5a3700-1216-4a8f-948c-b7e4bbc5d083
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.s
+label: 'Simple link'
+targetEntityType: taxonomy_term
+cache: true

@@ -1,0 +1,45 @@
+uuid: b3e3e3db-44aa-4b36-bb18-394031dbafab
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.people_list
+    - core.entity_view_mode.page_component_entity.table
+    - field.field.page_component_entity.people_list.field_display
+    - field.field.page_component_entity.people_list.field_layout_view
+    - field.field.page_component_entity.people_list.field_person
+  module:
+    - view_mode_switch
+id: page_component_entity.people_list.table
+targetEntityType: page_component_entity
+bundle: people_list
+mode: table
+content:
+  field_layout_view:
+    type: view_mode_switch_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_person:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: table_row
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_display: true
+  search_api_excerpt: true
+  user_id: true

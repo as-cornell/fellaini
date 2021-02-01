@@ -1,0 +1,28 @@
+uuid: 781026cd-d468-4925-96d4-21c0ff9cd3c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.blockquote
+    - as_page_components.page_component_entity_type.person
+    - field.storage.page_component_entity.field_related_person
+id: page_component_entity.blockquote.field_related_person
+field_name: field_related_person
+entity_type: page_component_entity
+bundle: blockquote
+label: 'Related Person'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:page_component_entity'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

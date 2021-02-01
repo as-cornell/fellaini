@@ -1,0 +1,33 @@
+uuid: 3df31814-65a1-40dc-8df4-7f137dd706f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.related_articles
+    - core.entity_view_mode.page_component_entity.newsletter
+    - field.field.page_component_entity.related_articles.field_articles
+id: page_component_entity.related_articles.newsletter
+targetEntityType: page_component_entity
+bundle: related_articles
+mode: newsletter
+content:
+  field_articles:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: newsletter
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true
+  user_id: true

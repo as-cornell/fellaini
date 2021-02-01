@@ -1,0 +1,32 @@
+uuid: 9d80d9a0-0d1e-4c9a-99b2-1a3ab66e25e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.newsletter_articles
+    - as_page_components.page_component_entity_type.newsletter_ftb
+    - as_page_components.page_component_entity_type.newsletter_photo_text
+    - field.storage.node.field_newsletter_components
+    - node.type.newsletter
+id: node.newsletter.field_newsletter_components
+field_name: field_newsletter_components
+entity_type: node
+bundle: newsletter
+label: 'Newsletter Components'
+description: 'Select items to add to the content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:page_component_entity'
+  handler_settings:
+    target_bundles:
+      newsletter_articles: newsletter_articles
+      newsletter_ftb: newsletter_ftb
+      newsletter_photo_text: newsletter_photo_text
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: newsletter_articles
+field_type: entity_reference

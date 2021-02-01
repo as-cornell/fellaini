@@ -1,10 +1,10 @@
 uuid: 2b0613b2-1cb8-4680-bf86-dc20718d9b09
-name: Fellaini
+name: 'The College of Arts & Sciences'
 mail: mark.e.wilson@gmail.com
-slogan: 'Fellaini does what Fellaini''s going to do'
+slogan: 'Redefining the liberal arts for an engaged 21st century'
 page:
   403: ''
-  404: ''
+  404: /node/90121
   front: /node/61745
 admin_compact_mode: false
 weight_select_max: 100

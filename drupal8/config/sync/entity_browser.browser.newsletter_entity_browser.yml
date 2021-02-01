@@ -34,15 +34,15 @@ widgets:
       submit_text: 'Save newsletter image'
     uuid: 73824ea1-3de9-4404-b919-3e5dacfa1194
     weight: -9
-    label: Upload
+    label: 'Add new newsletter image'
     id: entity_form
   b1876ec2-5ba9-46a1-bf45-47769db77f1a:
     settings:
       view: media_entity_browser_media_library
       view_display: entity_browser_3
       submit_text: 'Select newsletter image'
-      auto_select: true
+      auto_select: false
     uuid: b1876ec2-5ba9-46a1-bf45-47769db77f1a
     weight: -10
-    label: 'Use Existing'
+    label: 'Use existing newsletter image'
     id: view

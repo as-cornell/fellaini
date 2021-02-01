@@ -17,6 +17,9 @@ settings:
     -
       value: heavyLeft
       label: 'Heavy Left'
+    -
+      value: threeCol
+      label: 'Three Columns'
   allowed_values_function: ''
 module: options
 locked: false

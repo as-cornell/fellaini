@@ -4,12 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.1_1
+    - core.entity_view_mode.media.1_1_thumbnail_forced
     - core.entity_view_mode.media.4_5
     - core.entity_view_mode.media.5_4
     - core.entity_view_mode.media.6_4
-    - core.entity_view_mode.media.media_library
     - core.entity_view_mode.media.pano
-    - core.entity_view_mode.media.thumbnail
     - media.type.image
   module:
     - entity_browser
@@ -454,11 +453,8 @@ display:
         - 'config:core.entity_view_display.media.audio.media_library'
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.video.default'
-        - 'config:core.entity_view_display.media.video.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'
@@ -467,6 +463,10 @@ display:
         - 'config:core.entity_view_display.media.image.media_library'
         - 'config:core.entity_view_display.media.image.pano'
         - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
   entity_browser_1:
     display_plugin: entity_browser
     id: entity_browser_1
@@ -476,6 +476,56 @@ display:
       display_extenders: {  }
       display_description: ''
       fields:
+        entity_browser_select:
+          id: entity_browser_select
+          table: media
+          field: entity_browser_select
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: js-click-to-select-checkbox
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          entity_type: media
+          plugin_id: entity_browser_select
         name:
           id: name
           table: media_field_data
@@ -589,7 +639,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_mode: media_library
+          view_mode: '1_1'
           entity_type: media
           plugin_id: rendered_entity
         edit_media:
@@ -645,6 +695,89 @@ display:
           absolute: false
           entity_type: media
           plugin_id: entity_link_edit
+      defaults:
+        fields: false
+        style: false
+        row: false
+        title: false
+        pager: false
+      style:
+        type: grid
+        options:
+          grouping: {  }
+          columns: 4
+          automatic_width: true
+          alignment: horizontal
+          col_class_default: true
+          col_class_custom: ''
+          row_class_default: true
+          row_class_custom: ''
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      title: '1_1 Browser'
+      pager:
+        type: full
+        options:
+          items_per_page: 20
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - user.permissions
+      tags:
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
+        - 'config:core.entity_view_display.media.image.4_5'
+        - 'config:core.entity_view_display.media.image.5_4'
+        - 'config:core.entity_view_display.media.image.6_4'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.full'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.pano'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.remote_video.default'
+        - 'config:core.entity_view_display.media.remote_video.media_library'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
+  entity_browser_2:
+    display_plugin: entity_browser
+    id: entity_browser_2
+    display_title: '1_1 thumbnail browser'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      fields:
         entity_browser_select:
           id: entity_browser_select
           table: media
@@ -695,88 +828,6 @@ display:
           hide_alter_empty: true
           entity_type: media
           plugin_id: entity_browser_select
-      defaults:
-        fields: false
-        style: false
-        row: false
-        title: false
-        pager: false
-      style:
-        type: grid
-        options:
-          grouping: {  }
-          columns: 4
-          automatic_width: true
-          alignment: horizontal
-          col_class_default: true
-          col_class_custom: ''
-          row_class_default: true
-          row_class_custom: ''
-      row:
-        type: fields
-        options:
-          inline: {  }
-          separator: ''
-          hide_empty: false
-          default_field_elements: true
-      title: '1_1 Browser'
-      pager:
-        type: full
-        options:
-          items_per_page: 20
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - 'url.query_args:sort_by'
-        - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.audio.default'
-        - 'config:core.entity_view_display.media.audio.media_library'
-        - 'config:core.entity_view_display.media.file.default'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.image.1_1'
-        - 'config:core.entity_view_display.media.image.4_5'
-        - 'config:core.entity_view_display.media.image.5_4'
-        - 'config:core.entity_view_display.media.image.6_4'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.pano'
-        - 'config:core.entity_view_display.media.image.thumbnail'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.video.default'
-        - 'config:core.entity_view_display.media.video.media_library'
-  entity_browser_2:
-    display_plugin: entity_browser
-    id: entity_browser_2
-    display_title: '1_1 thumbnail browser'
-    position: 1
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      fields:
         rendered_entity:
           id: rendered_entity
           table: media
@@ -825,7 +876,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_mode: thumbnail
+          view_mode: 1_1_thumbnail_forced
           entity_type: media
           plugin_id: rendered_entity
         edit_media:
@@ -881,56 +932,6 @@ display:
           absolute: false
           entity_type: media
           plugin_id: entity_link_edit
-        entity_browser_select:
-          id: entity_browser_select
-          table: media
-          field: entity_browser_select
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: js-click-to-select-checkbox
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: media
-          plugin_id: entity_browser_select
       defaults:
         fields: false
         style: false
@@ -943,7 +944,7 @@ display:
         type: grid
         options:
           grouping: {  }
-          columns: 5
+          columns: 4
           automatic_width: true
           alignment: horizontal
           col_class_default: true
@@ -953,10 +954,10 @@ display:
       row:
         type: fields
         options:
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
       title: '1_1 Thumbnail Browser'
       filters:
         status:
@@ -1137,6 +1138,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'
@@ -1158,6 +1160,56 @@ display:
       display_extenders: {  }
       display_description: ''
       fields:
+        entity_browser_select:
+          id: entity_browser_select
+          table: media
+          field: entity_browser_select
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: js-click-to-select-checkbox
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          entity_type: media
+          plugin_id: entity_browser_select
         rendered_entity:
           id: rendered_entity
           table: media
@@ -1209,56 +1261,6 @@ display:
           view_mode: '6_4'
           entity_type: media
           plugin_id: rendered_entity
-        entity_browser_select:
-          id: entity_browser_select
-          table: media
-          field: entity_browser_select
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: js-click-to-select-checkbox
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: media
-          plugin_id: entity_browser_select
         edit_media:
           id: edit_media
           table: media
@@ -1331,10 +1333,10 @@ display:
       row:
         type: fields
         options:
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
       title: '6_4 Browser'
     cache_metadata:
       max-age: -1
@@ -1350,6 +1352,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'
@@ -1371,6 +1374,56 @@ display:
       display_extenders: {  }
       display_description: ''
       fields:
+        entity_browser_select:
+          id: entity_browser_select
+          table: media
+          field: entity_browser_select
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: js-click-to-select-checkbox
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          entity_type: media
+          plugin_id: entity_browser_select
         rendered_entity:
           id: rendered_entity
           table: media
@@ -1422,56 +1475,6 @@ display:
           view_mode: '5_4'
           entity_type: media
           plugin_id: rendered_entity
-        entity_browser_select:
-          id: entity_browser_select
-          table: media
-          field: entity_browser_select
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: js-click-to-select-checkbox
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: media
-          plugin_id: entity_browser_select
         edit_media:
           id: edit_media
           table: media
@@ -1544,10 +1547,10 @@ display:
       row:
         type: fields
         options:
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
       title: '5_4 Browser'
     cache_metadata:
       max-age: -1
@@ -1563,6 +1566,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'
@@ -1584,6 +1588,56 @@ display:
       display_extenders: {  }
       display_description: ''
       fields:
+        entity_browser_select:
+          id: entity_browser_select
+          table: media
+          field: entity_browser_select
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: js-click-to-select-checkbox
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          entity_type: media
+          plugin_id: entity_browser_select
         rendered_entity:
           id: rendered_entity
           table: media
@@ -1635,56 +1689,6 @@ display:
           view_mode: pano
           entity_type: media
           plugin_id: rendered_entity
-        entity_browser_select:
-          id: entity_browser_select
-          table: media
-          field: entity_browser_select
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: js-click-to-select-checkbox
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: media
-          plugin_id: entity_browser_select
         edit_media:
           id: edit_media
           table: media
@@ -1757,10 +1761,10 @@ display:
       row:
         type: fields
         options:
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
       title: 'Pano Browser'
     cache_metadata:
       max-age: -1
@@ -1776,6 +1780,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'
@@ -1797,6 +1802,56 @@ display:
       display_extenders: {  }
       display_description: ''
       fields:
+        entity_browser_select:
+          id: entity_browser_select
+          table: media
+          field: entity_browser_select
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: js-click-to-select-checkbox
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          entity_type: media
+          plugin_id: entity_browser_select
         rendered_entity:
           id: rendered_entity
           table: media
@@ -1848,56 +1903,6 @@ display:
           view_mode: '4_5'
           entity_type: media
           plugin_id: rendered_entity
-        entity_browser_select:
-          id: entity_browser_select
-          table: media
-          field: entity_browser_select
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: js-click-to-select-checkbox
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          entity_type: media
-          plugin_id: entity_browser_select
         edit_media:
           id: edit_media
           table: media
@@ -1970,10 +1975,10 @@ display:
       row:
         type: fields
         options:
+          default_field_elements: false
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
       title: '4_5 Browser'
     cache_metadata:
       max-age: -1
@@ -1989,6 +1994,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'

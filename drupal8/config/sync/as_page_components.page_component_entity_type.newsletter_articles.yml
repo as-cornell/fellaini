@@ -1,0 +1,6 @@
+uuid: 403c05ef-c177-41bd-87da-c05cde31d206
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter_articles
+label: 'Newsletter Articles'

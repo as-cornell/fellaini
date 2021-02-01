@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: for-current-students
-label: 'For Current Students'
+label: 'For Students'
 description: 'Current student links'
 locked: false

@@ -1,0 +1,29 @@
+uuid: 970b1cfe-1d0b-460b-a1b3-8b8c367141f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_interests
+    - taxonomy.vocabulary.interests
+    - taxonomy.vocabulary.majors_minors_gradfields
+id: taxonomy_term.majors_minors_gradfields.field_interests
+field_name: field_interests
+entity_type: taxonomy_term
+bundle: majors_minors_gradfields
+label: Interests
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      interests: interests
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

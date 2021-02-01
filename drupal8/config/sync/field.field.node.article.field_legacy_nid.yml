@@ -1,0 +1,23 @@
+uuid: de6b48f0-7436-4eb4-9c42-4d14aa143d41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_nid
+    - node.type.article
+id: node.article.field_legacy_nid
+field_name: field_legacy_nid
+entity_type: node
+bundle: article
+label: 'Legacy NID'
+description: 'NID of article in Drupal7'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

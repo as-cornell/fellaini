@@ -51,7 +51,7 @@ function as_article_feeds_importer_default() {
           'xpathparser:21' => 'image-alt',
         ),
         'rawXML' => array(
-          'xpathparser:9' => 'xpathparser:9',
+          'xpathparser:9' => 0,
           'xpathparser:0' => 0,
           'xpathparser:1' => 0,
           'xpathparser:2' => 0,

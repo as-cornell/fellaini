@@ -7,13 +7,12 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_aside_components
-    - field.field.node.article.field_byline
     - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
-    - field.field.node.article.field_media_source
+    - field.field.node.article.field_legacy_nid
     - field.field.node.article.field_media_source_reference
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano
@@ -24,7 +23,6 @@ dependencies:
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - field.field.node.article.field_thumbnail_image
-    - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
     - datetime
@@ -54,14 +52,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_byline:
-    type: string
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_byline_reference:
     weight: 4
     label: hidden
@@ -105,14 +95,6 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  field_media_source:
-    type: string
-    weight: 5
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_media_source_reference:
     weight: 6
     label: hidden
@@ -163,19 +145,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-  field_topics_and_disciplines:
-    type: entity_reference_entity_view
-    weight: 11
-    region: content
-    label: above
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
 hidden:
   body: true
+  field_legacy_nid: true
   field_newsletter_image: true
   field_pano: true
   field_summary: true
   field_thumbnail_image: true
   links: true
+  search_api_excerpt: true

@@ -1,0 +1,35 @@
+uuid: 8240ee89-5808-439e-8346-b30360c6dd18
+langcode: en
+status: false
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.person
+    - core.entity_view_mode.page_component_entity.simple_link
+    - field.field.page_component_entity.person.field_departments_and_programs
+    - field.field.page_component_entity.person.field_link
+    - field.field.page_component_entity.person.field_netid
+    - field.field.page_component_entity.person.field_people_uuid
+    - field.field.page_component_entity.person.field_person_last_name
+    - field.field.page_component_entity.person.field_person_type
+id: page_component_entity.person.simple_link
+targetEntityType: page_component_entity
+bundle: person
+mode: simple_link
+content:
+  field_netid:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_departments_and_programs: true
+  field_link: true
+  field_people_uuid: true
+  field_person_last_name: true
+  field_person_type: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

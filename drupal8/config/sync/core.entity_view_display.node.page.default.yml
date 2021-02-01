@@ -7,9 +7,9 @@ dependencies:
     - field.field.node.page.field_page_components
     - field.field.node.page.field_sidebar_components
     - field.field.node.page.field_sidebar_type
+    - field.field.node.page.field_summary
     - node.type.page
   module:
-    - options
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
@@ -19,7 +19,7 @@ bundle: page
 mode: default
 content:
   field_aside_components:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link: true
@@ -28,7 +28,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_page_components:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       link: true
@@ -45,12 +45,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_sidebar_type:
-    weight: 4
+  field_summary:
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    type: basic_string
     region: content
 hidden:
+  field_sidebar_type: true
   links: true
+  search_api_excerpt: true

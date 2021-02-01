@@ -3,15 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block.block.exposedformsearchpage_2
     - search_api.index.default_index
-    - taxonomy.vocabulary.departments_programs
   module:
     - search_api
 id: search
-label: Search
+label: 'Search -- Drupal'
 module: views
-description: ''
+description: 'Drupal core search, probably depricating.'
 tag: ''
 base_table: search_api_index_default_index
 base_field: search_api_id
@@ -272,54 +270,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_boolean
-        field_department_program:
-          id: field_department_program
-          table: search_api_index_default_index
-          field: field_department_program
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_department_program_op
-            label: 'Departments and Programs'
-            description: ''
-            use_operator: false
-            operator: field_department_program_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: department_program
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: departments_programs
-          hierarchy: false
-          error_message: true
-          plugin_id: search_api_term
         type:
           id: type
           table: search_api_index_default_index
@@ -413,7 +363,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.default_index'
@@ -852,7 +801,16 @@ display:
           view_modes:
             'entity:node':
               article: teaser
+              landing_page: teaser
               page: teaser
+            'entity:taxonomy_term':
+              department_type: teaser
+              discipline: default
+              function: default
+              interests: default
+              level: default
+              tags: default
+              topics: default
     cache_metadata:
       max-age: -1
       contexts:
@@ -869,7 +827,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search
+      path: search/news
       exposed_block: true
       fields:
         search_api_rendered_item:
@@ -986,7 +944,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.default_index'

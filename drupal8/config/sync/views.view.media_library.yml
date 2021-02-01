@@ -491,6 +491,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'
@@ -790,7 +791,7 @@ display:
       defaults:
         fields: false
       menu:
-        type: tab
+        type: none
         title: Media
         description: ''
         expanded: false
@@ -814,6 +815,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'
@@ -1151,6 +1153,7 @@ display:
         - 'config:core.entity_view_display.media.file.default'
         - 'config:core.entity_view_display.media.file.media_library'
         - 'config:core.entity_view_display.media.image.1_1'
+        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
         - 'config:core.entity_view_display.media.image.4_5'
         - 'config:core.entity_view_display.media.image.5_4'
         - 'config:core.entity_view_display.media.image.6_4'

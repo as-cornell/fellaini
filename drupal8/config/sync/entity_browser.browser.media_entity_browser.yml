@@ -13,14 +13,14 @@ display: modal
 display_configuration:
   width: ''
   height: ''
-  link_text: 'Select image'
+  link_text: 'Select main image'
   auto_open: false
 selection_display: multi_step_display
 selection_display_configuration:
   entity_type: media
   display: rendered_entity
   display_settings:
-    view_mode: card
+    view_mode: default
   select_text: 'Use selected'
   selection_hidden: true
 widget_selector: tabs
@@ -30,11 +30,11 @@ widgets:
     settings:
       view: media_entity_browser_media_library
       view_display: entity_browser_1
-      submit_text: 'Select image'
-      auto_select: true
+      submit_text: 'Select main image'
+      auto_select: false
     uuid: 0f83ee99-0c3a-4a0a-82d6-5268fcf67ab9
     weight: 1
-    label: 'Use Existing'
+    label: 'Use existing main image'
     id: view
   f69e354b-3b0a-40b6-80c3-1216b3c5574c:
     settings:
@@ -44,5 +44,5 @@ widgets:
       submit_text: 'Save image'
     uuid: f69e354b-3b0a-40b6-80c3-1216b3c5574c
     weight: 2
-    label: Upload
+    label: 'Upload new main image'
     id: entity_form

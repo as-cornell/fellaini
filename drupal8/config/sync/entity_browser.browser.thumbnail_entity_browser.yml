@@ -30,11 +30,11 @@ widgets:
     settings:
       view: media_entity_browser_media_library
       view_display: entity_browser_2
-      submit_text: 'Select thumbnail image'
-      auto_select: true
+      submit_text: 'Select image'
+      auto_select: false
     uuid: c51daa51-e952-4232-98db-e5979134798d
     weight: 1
-    label: 'Use Existing'
+    label: 'Use existing thumbnail'
     id: view
   b0e79e04-3828-4603-a55e-4afb4f6dbc6e:
     settings:
@@ -44,5 +44,5 @@ widgets:
       submit_text: 'Save entity'
     uuid: b0e79e04-3828-4603-a55e-4afb4f6dbc6e
     weight: 2
-    label: 'Add New'
+    label: 'Add new thumbnail'
     id: entity_form

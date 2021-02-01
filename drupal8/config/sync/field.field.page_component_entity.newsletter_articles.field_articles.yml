@@ -1,0 +1,28 @@
+uuid: a9b9b412-e540-421c-9b52-41b7c4cfe80c
+langcode: en
+status: true
+dependencies:
+  config:
+    - as_page_components.page_component_entity_type.newsletter_articles
+    - field.storage.page_component_entity.field_articles
+    - node.type.article
+id: page_component_entity.newsletter_articles.field_articles
+field_name: field_articles
+entity_type: page_component_entity
+bundle: newsletter_articles
+label: 'Newsletter Articles'
+description: 'Select articles for newsletter'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

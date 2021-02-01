@@ -1,0 +1,8 @@
+uuid: ffc43f1c-e496-49a6-987b-691ffb26fa11
+langcode: en
+status: true
+dependencies: {  }
+name: Interests
+vid: interests
+description: 'Interests to be referenced from Majors Minors'
+weight: 0

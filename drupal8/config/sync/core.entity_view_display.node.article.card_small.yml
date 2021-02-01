@@ -7,13 +7,12 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_components_entity
     - field.field.node.article.field_aside_components
-    - field.field.node.article.field_byline
     - field.field.node.article.field_byline_reference
     - field.field.node.article.field_card_label
     - field.field.node.article.field_dateline
     - field.field.node.article.field_department_program
     - field.field.node.article.field_image
-    - field.field.node.article.field_media_source
+    - field.field.node.article.field_legacy_nid
     - field.field.node.article.field_media_source_reference
     - field.field.node.article.field_newsletter_image
     - field.field.node.article.field_pano
@@ -24,7 +23,6 @@ dependencies:
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
     - field.field.node.article.field_thumbnail_image
-    - field.field.node.article.field_topics_and_disciplines
     - node.type.article
   module:
     - datetime
@@ -36,14 +34,6 @@ targetEntityType: node
 bundle: article
 mode: card_small
 content:
-  field_byline:
-    type: string
-    weight: 3
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_byline_reference:
     weight: 4
     label: hidden
@@ -54,7 +44,7 @@ content:
     region: content
   field_card_label:
     type: string
-    weight: 1
+    weight: 2
     region: content
     label: hidden
     settings:
@@ -62,20 +52,21 @@ content:
     third_party_settings: {  }
   field_dateline:
     type: datetime_default
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:
       timezone_override: ''
       format_type: m_d_y
     third_party_settings: {  }
-  field_media_source:
-    type: string
-    weight: 5
+  field_image:
+    type: entity_reference_entity_view
+    weight: 1
     region: content
     label: hidden
     settings:
-      link_to_entity: false
+      view_mode: 1_1_thumbnail_forced
+      link: false
     third_party_settings: {  }
   field_thumbnail_image:
     type: entity_reference_entity_view
@@ -91,7 +82,7 @@ hidden:
   field_article_components_entity: true
   field_aside_components: true
   field_department_program: true
-  field_image: true
+  field_legacy_nid: true
   field_media_source_reference: true
   field_newsletter_image: true
   field_pano: true
@@ -101,5 +92,5 @@ hidden:
   field_related_people: true
   field_summary: true
   field_tags: true
-  field_topics_and_disciplines: true
   links: true
+  search_api_excerpt: true
