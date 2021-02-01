@@ -15,21 +15,11 @@
   items : content.field_articles
 } %}
 {% endembed %}
-
-<h2>
-	pc nl-articles
-</h2> #}
+#}
 {# {{vardumper()}} #}
-{# {% set group_base_class = 'pcWrapper' %}
-{% set group_modifiers = ['relatedArticles'] %}
+{% embed "@content/molecules/_grouping.twig" with{
+  groupItems: content.field_articles
+} %}{% endembed %}
 
-
-{% set group_classes = ['relatedArticles'] %}
-
-{# {{vardumper()}} #}
-{% embed "@content/molecules/_empty.twig" with{
-  items: content.field_articles
-} %}
-{% endembed %} #}
 
 

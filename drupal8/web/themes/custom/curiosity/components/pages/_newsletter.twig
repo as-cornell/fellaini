@@ -19,7 +19,7 @@ Descr: defines the table for newsletters
 			<table style="background: #efefef;">
 				<tr>
 					<td>
-						<a href="{{url}}">
+						<a href="https://as.cornell.edu{{url}}">
 							view online
 						</a>
 					</td>
@@ -58,90 +58,86 @@ Descr: defines the table for newsletters
 	</tr>
 	<!-- audience stuff -->
 	{% if audience == "student" %}
-		<tr>
-			<td>
-				student
-			</td>
-		</tr>
-	{% elseif audience == "alumni" %}
-		<tr>
-			<td>
-				<table style="margin-bottom: 50px;">
-					<tr>
-						<td style="">
-							<table>
 
-								<tr>
-									<td style="text-align: center; padding: 20px;">
-										<a href="https://securelb.imodules.com/s/1717/alumni/index.aspx?sid=1717&gid=2&pgid=3052&cid=7311&dids=12.13&bledit=1&appealcode=AS20YEM ">
-											Give now
-										</a>
-									</td>
-								</tr>
-								<tr>
-									<td style="">
-										<ul style="margin-top: 20px;">
-											<li>
-												<a href="http://as.cornell.edu/alumni" style="text-decoration: none;">
-													Read More News for Alumni &amp; Friends of A&amp;S
-												</a>
-											</li>
-											<li>
-												<a href="https://cornellconnect.cornell.edu/" style="text-decoration: none;">
-													Update your Alumni Directory Profile
-												</a>
-											</li>
-											<li>
-												<a href="http://www.alumni.cornell.edu/participate/search.cfm" style="text-decoration: none;">
-													Find Upcoming Alumni Events
-												</a>
-											</li>
-											<li>
-												<a href="http://www.cornell.edu/visit/" style="text-decoration: none;">
-													Plan Your Next Visit to Cornell
-												</a>
-											</li>
-											<li>
-												<a href="http://as.cornell.edu/contact/Alumni-Affairs-and-Development" style="text-decoration: none;">
-													Questions? Contact Us
-												</a>
-											</li>
-										</ul>
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	{% elseif audience == "faculty" %}
-		<tr>
-			<td>
-				<table style="background-color: #efefef;">
-					<tr>
-						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px 30px;margin-top:50px;">
-							<p>
-								<img src="https://as.cornell.edu/sites/default/files/2021-01/College-of-arts-and-sciences-white.png" alt="The College of Arts & Sciences">
-							</p>
-						</td>
-					</tr>
+		{% elseif audience == "alumni" %}
+			<tr>
+				<td>
+					<table style="margin-bottom: 50px;">
+						<tr>
+							<td style="">
+								<table>
 
-					<tr>
-						<td style="text-align: center; width: 50%;padding-right: 20px;">
-							<a href="http://as.cornell.edu/for-faculty" style="display: block;padding:10px; background-color: #b31b1b; color: #fff;">
-								Faculty Information
-							</a>
-						</td>
-						<td style="text-align: center; width: 50%;padding-left: 20px;">
-							<a href="http://as.cornell.edu/for-staff" style="display: block;padding:10px; background-color: #b31b1b; color: #fff;">
-								Staff Information
-							</a>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
+									<tr>
+										<td style="text-align: center; padding: 20px;">
+											<a href="https://securelb.imodules.com/s/1717/alumni/index.aspx?sid=1717&gid=2&pgid=3052&cid=7311&dids=12.13&bledit=1&appealcode=AS20YEM ">
+												Give now
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td style="">
+											<ul style="margin-top: 20px;">
+												<li>
+													<a href="http://as.cornell.edu/alumni" style="text-decoration: none;">
+														Read More News for Alumni &amp; Friends of A&amp;S
+													</a>
+												</li>
+												<li>
+													<a href="https://cornellconnect.cornell.edu/" style="text-decoration: none;">
+														Update your Alumni Directory Profile
+													</a>
+												</li>
+												<li>
+													<a href="http://www.alumni.cornell.edu/participate/search.cfm" style="text-decoration: none;">
+														Find Upcoming Alumni Events
+													</a>
+												</li>
+												<li>
+													<a href="http://www.cornell.edu/visit/" style="text-decoration: none;">
+														Plan Your Next Visit to Cornell
+													</a>
+												</li>
+												<li>
+													<a href="http://as.cornell.edu/contact/Alumni-Affairs-and-Development" style="text-decoration: none;">
+														Questions? Contact Us
+													</a>
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		{% elseif audience == "faculty" %}
+			<tr>
+				<td>
+					<table style="background-color: #efefef;">
+						<tr>
+							<td colspan="2" style="background-color: #333; color: #fff;padding: 20px 30px;margin-top:50px;">
+								<p>
+									<img src="https://as.cornell.edu/sites/default/files/2021-01/College-of-arts-and-sciences-white.png" alt="The College of Arts & Sciences">
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="text-align: center; width: 50%;padding-right: 20px;">
+								<a href="http://as.cornell.edu/for-faculty" style="display: block;padding:10px; background-color: #b31b1b; color: #fff;">
+									Faculty Information
+								</a>
+							</td>
+							<td style="text-align: center; width: 50%;padding-left: 20px;">
+								<a href="http://as.cornell.edu/for-staff" style="display: block;padding:10px; background-color: #b31b1b; color: #fff;">
+									Staff Information
+								</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
 	{% endif %}
 	{% if audience == "alumni" %}
 		<tr>
@@ -150,14 +146,16 @@ Descr: defines the table for newsletters
 					<tr>
 						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px 30px;margin-top:50px;">
 							<p>
-								<img src="https://as.cornell.edu/sites/default/files/2021-01/College-of-arts-and-sciences-white.png" alt="The College of Arts & Sciences">
+								<a href="https://as.cornell.edu" style="border:none; outline:none; text-decoration: none">
+									<img src="https://as.cornell.edu/sites/default/files/2021-01/College-of-arts-and-sciences-white.png" alt="The College of Arts & Sciences">
+								</a>
 							</p>
 						</td>
 					</tr>
 
 					<tr>
 						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px;text-align:center;margin-top:50px;">
-							<p>
+							<p style="font-size: 16px !important;">
 								##Sender_Org##
 								<br/>
 								##Sender_Address##, ##Sender_City##, ##Sender_State##
@@ -182,17 +180,19 @@ Descr: defines the table for newsletters
 					<tr>
 						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px 30px;margin-top:50px;">
 							<p>
-								<img src="https://as.cornell.edu/sites/default/files/2021-01/College-of-arts-and-sciences-white.png" alt="The College of Arts & Sciences">
+								<a href="https://as.cornell.edu" style="border:none; outline:none; text-decoration: none">
+									<img src="https://as.cornell.edu/sites/default/files/2021-01/College-of-arts-and-sciences-white.png" alt="The College of Arts & Sciences">
+								</a>
 							</p>
 						</td>
 					</tr>
 
 					<tr>
 						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px;text-align:center;margin-top:50px;">
-							<p>
+							<p style="font-size: 16px !important;">
 								KG 17 Klarman Hall, Ithaca, NY 14853
 							</p>
-							<p>
+							<p style="font-size: 16px !important;">
 								You are receiving this message because of your affiliation with the College of Arts & Sciences at Cornell University.
 							</p>
 						</td>

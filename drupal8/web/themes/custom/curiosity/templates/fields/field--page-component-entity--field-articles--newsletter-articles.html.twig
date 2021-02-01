@@ -6,4 +6,11 @@
  */
 #}
 
-{{items}}
+{% set group_modifiers = ['articles'] %}
+{% set group_base_class = 'pcWrapper' %}
+{% set li_base_class = 'articleList' %}
+
+{% embed "@content/molecules/_grouping.twig" with{
+  groupItems : items
+} %}
+{% endembed %}

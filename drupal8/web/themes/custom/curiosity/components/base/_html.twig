@@ -44,7 +44,12 @@
 					h1 {
 						line-height: 1.25;
 						margin-top: 0;
-
+						font-size: 36px !important;
+					}
+					p,
+					ul {
+						font-size: 20px !important;
+						line-height: 30px !important;
 					}
 					a {
 						color: #b31b1b !important;
@@ -66,37 +71,46 @@
 						border-collapse: collapse !important;
 					}
 					figure {
-						padding: 0;
+						padding: 20px 20px 0;
 						margin: 0;
+          }
+          .embedded-entity figure{
+            padding: 0;
+            margin-bottom: 24px;
+          }
+					figcaption {
+						display: none;
 					}
 					img {
-            max-width: 560px;
-            padding-bottom: 20px;
+						max-width: 560px;
+						/* padding-bottom: 20px; */
 						height: auto;
 					}
-				</style>
+        </style>
+        
 			{% else %}
-      <css-placeholder token="{{ placeholder_token|raw }}">
-      <js-placeholder	token="{{ placeholder_token|raw }}">
-        {# currently set up to go to bob's typekit#}
-      <link rel="stylesheet" href="https://use.typekit.net/dsj5vco.css"/>
-      <script>
-          window.MSInputMethodContext && document.documentMode && document.write( '<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>' );
-        </script>
-      {% endif %}
-    </head>
-    <body>
-      {{ page_top }}
-      {% if node_type == "newsletter" %}
-        {{page.newsletter}}
-      {% else %}
-        <span class="offscreen" aria-hidden="true">
-          {% include "@images/sprite.svg" %}
-        </span>
-        {{ page }}
-      {% endif %}
-      {{ page_bottom }}
-      <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-    </body>
-    </body>
-  </html>
+				<css-placeholder token="{{ placeholder_token|raw }}">
+					<js-placeholder token="{{ placeholder_token|raw }}">
+						{# currently set up to go to bob's typekit#}
+						<link rel="stylesheet" href="https://use.typekit.net/dsj5vco.css"/>
+						<script>
+							window.MSInputMethodContext && document.documentMode && document.write( '<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>' );
+						</script>
+					{% endif %}
+				</head>
+				<body>
+					
+					{% if node_type == "newsletter" %}
+						{{page.newsletter}}
+					{% else %}
+          {{ page_top }}
+						<span class="offscreen" aria-hidden="true">
+							{% include "@images/sprite.svg" %}
+						</span>
+						{{ page }}
+            	{{ page_bottom }}
+					{% endif %}
+				
+					<js-bottom-placeholder token="{{ placeholder_token|raw }}"></body>
+				</body>
+			</html>
