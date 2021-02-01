@@ -104,7 +104,6 @@
         "drupal/seckit": "^1.11",
         "drupal/securepages": "^1.0",
         "drupal/simple_instagram_feed": "^1.4",
-        "drupal/simplesamlphp_auth": "^2.0",
         "drupal/simplified_menu_admin": "^1.0",
         "drupal/smtp": "^1.7",
         "drupal/strongarm": "^2.0",
