@@ -49,7 +49,6 @@ dependencies[] = feeds_xpathparser
 dependencies[] = fences
 dependencies[] = file_entity
 dependencies[] = field_collection
-dependencies[] = imce
 dependencies[] = job_scheduler
 dependencies[] = jquery_update
 dependencies[] = json2
@@ -76,7 +75,6 @@ dependencies[] = xmlsitemap_node
 dependencies[] = as_dept_view_modes
 dependencies[] = as_modal_links
 dependencies[] = as_people_ldap
-dependencies[] = as_search
 dependencies[] = as_taxonomy_jellybeans
 dependencies[] = localist_block
 ; Features (enabled as modules)
