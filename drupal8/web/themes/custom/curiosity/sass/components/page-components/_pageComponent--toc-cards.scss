@@ -8,11 +8,14 @@ Descr: sets up all uniquie styles for toc cards wrappers
 
 
 --------------------------- */
+.pcWrapper--tocCards{
+  display: grid;
+    gap: var(--space);
+}
 
 .basicSidebar {
   .pcWrapper--tocCards {
-    display: grid;
-    gap: var(--space);
+    
     @include small() {
       grid-template-columns: 1fr 1fr;
     }

@@ -12,7 +12,8 @@ p {
   margin-top: 1em;
 }
 strong {
-  font-weight: var(--semi);
+  font-weight: var(--regular);
+  color: var(--as-black);
 }
 
 // special decoration classes for big messaging labels
@@ -23,10 +24,13 @@ strong {
   text-align: center;
   font-size: var(--base-84);
   max-width: 25ch;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1em;
+  margin: 2em auto 1em auto;
   line-height: 1em;
+}
+
+// target just the first .spotlight on landing pages
+.landingPage>.content>.pageSection:nth-of-type(1)>.pcWrapper--ftb>.spotlight{
+  margin-top: 0;
 }
 
 /* 
@@ -88,7 +92,7 @@ strong {
 }
 .base-28 {
   font-size: var(--base-28);
-  line-height: 1.2;
+  line-height: 1.4;
 }
 .base-36 {
   font-size: var(--base-36);

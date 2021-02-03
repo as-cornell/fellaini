@@ -57,7 +57,7 @@ Descr:
         display: grid;
         grid-template-columns: 1fr;
         align-items: flex-end;
-        margin-bottom: 4rem;
+        margin:0;
         max-width: 100%;
       }
 
@@ -107,10 +107,13 @@ Descr:
   }
   &--has-aside {
     .title {
-      margin-bottom: 0;
+      margin: 0;
     }
   }
   &--homepage {
+    .title{
+      @extend .sr-only;
+    }
     aside {
       display: none;
     }
