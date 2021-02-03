@@ -11,13 +11,13 @@ all search form design in _forms.scss
 --------------------------- */
 #skip {
   position: absolute;
-  top: 50px;
+  top: -20px;
   z-index: 3;
   a {
     z-index: 0;
     position: absolute;
     left: -5000px;
-    width: 250px;
+    width: 300px;
     font-weight: 600;
     &:focus {
       left: 200px;

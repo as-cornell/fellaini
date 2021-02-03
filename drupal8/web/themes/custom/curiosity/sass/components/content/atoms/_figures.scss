@@ -76,7 +76,8 @@ figure {
 .pcWrapper--ftb {
   .figure {
     // max-width: 300px;
-    margin-top: 1.25rem; // to align with top of text
+    // margin-top: 1.25rem; // to align with top of text
+    margin: 1.5rem 0;
     @include large() {
       &--6_4_newsletter {
         max-width: 600px;
