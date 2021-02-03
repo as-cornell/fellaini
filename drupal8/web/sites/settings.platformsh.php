@@ -47,10 +47,10 @@ if (isset($_ENV['PLATFORM_APP_DIR'])) {
 
   // Configure private and temporary file paths.
   if (!isset($settings['file_private_path'])) {
-    $settings['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private/' . $platformsh_subsite_id;
+    $settings['file_private_path'] = $_ENV['PLATFORM_APP_DIR'] . '/private';
   }
-  if (!isset($config['system.file']['path']['temporary'])) {
-    $config['system.file']['path']['temporary'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp/' . $platformsh_subsite_id;
+  if (!isset($settings["file_temp_path"])) {
+    $settings["file_temp_path"] = $_ENV['PLATFORM_APP_DIR'] . '/tmp';
   }
 
   // Configure the default PhpStorage and Twig template cache directories.

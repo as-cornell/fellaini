@@ -93,7 +93,6 @@ third_party_settings:
         - promote
         - sticky
         - path
-        - status
         - field_legacy_nid
       parent_name: group_article
       weight: 16
@@ -352,7 +351,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 2
     region: content
     third_party_settings: {  }
   sticky:
@@ -379,6 +378,11 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   body: true

@@ -22,7 +22,6 @@ module:
   ckeditor_a11ychecker: 0
   ckeditor_balloonpanel: 0
   ckeditor_entity_link: 0
-  color: 0
   components: 0
   config: 0
   config_delete: 0
@@ -43,8 +42,6 @@ module:
   entity_browser_entity_form: 0
   entity_embed: 0
   entity_reference_revisions: 0
-  facets: 0
-  facets_summary: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -115,7 +112,6 @@ module:
   pathauto: 1
   externalauth: 10
   views: 10
-  paragraphs: 11
   standard: 1000
 theme:
   stable: 0
