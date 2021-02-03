@@ -22,3 +22,16 @@ function as_manage_vocabularies_help($route_name, RouteMatchInterface $route_mat
     default:
   }
 }
+
+/**
+ * Remove 'path.temporary' config if redundant.
+ */
+function as_manage_vocabularies_system_update_8801() {
+  // If settings is already being used, or the config is set to the OS default,
+  // clear the config value.
+  $config = Drupal::configFactory()->getEditable('system.file');
+  if (Settings::get('file_temp_path') || $config->get('path.temporary') === FileSystem::getOsTemporaryDirectory()) {
+    $config->clear('path.temporary')
+      ->save(TRUE);
+  }
+}

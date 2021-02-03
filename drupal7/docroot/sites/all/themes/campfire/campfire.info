@@ -1,0 +1,9 @@
+name = Campfire
+description = Empty theme to supress missing theme warning
+screenshot = screenshot.png
+core = 7.x
+version = 1.3
+base theme = campfiredept
+
+
+
