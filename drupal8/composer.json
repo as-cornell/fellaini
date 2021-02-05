@@ -105,7 +105,8 @@
         "drupal/views_data_export": "^1.0",
         "drupal/redirect": "^1.6",
         "drupal/google_analytics": "^2.5",
-        "drupal/adminimal_theme": "^1.6"
+        "drupal/adminimal_theme": "^1.6",
+        "drupal/entity_limit": "^2.0@alpha"
 
 
     },
