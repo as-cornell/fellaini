@@ -30,7 +30,7 @@ Setting up new block class of 'teaser'
 	{% endif %}
 
 
-	<div {{ bem(teaser_base_class, (teaser_modifiers), teaser_blockname, teaser_classes) }} {% if teaser_nodeId %} aria-labelledby="article-title-{{teaser_nodeId}}" {% endif %}>
+	<div {{ bem(teaser_base_class, (teaser_modifiers), teaser_blockname, teaser_classes) }} {% if teaser_nodeId %} aria-labelledby="item--{{teaser_nodeId}}" {% endif %}>
 
 
 		{{teaser_img}}
