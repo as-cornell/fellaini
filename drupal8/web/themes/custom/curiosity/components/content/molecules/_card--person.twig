@@ -12,7 +12,7 @@ Descr: builds cards for personses'
 
 {# {% set figure_modifiers = ['mask-one'] %} #}
 {{title_suffix}}
-<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="article-title-{{card_nodeId}}" {% endif %}>
+<div {{ bem(card_base_class, (card_modifiers), card_blockname) }} {% if card_nodeId %} aria-labelledby="item--{{card_nodeId}}" {% endif %}>
 
 	<figure
 		class='card--person__image'>

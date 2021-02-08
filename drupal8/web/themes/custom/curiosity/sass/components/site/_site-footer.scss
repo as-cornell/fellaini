@@ -98,10 +98,11 @@ footer {
       > ul {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         > li {
           flex: 0 0 45%;
           @include large() {
-            flex: 0 1 24%;
+            flex: 0 1 23%;
           }
           font-weight: var(--regular);
           // margin-right: 0.5rem;
@@ -127,7 +128,7 @@ footer {
       display: flex;
       align-items: center;
       a {
-        display: block;
+        // display: block;
         // max-width: 10rem;
       }
     }
@@ -168,12 +169,16 @@ footer {
   }
 
   .cu-logo {
-    text-indent: -9999px;
-    width: 100px;
-    height: 100px;
-    background: url(/themes/custom/curiosity/images/cornell-white.svg);
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
+    display: none;
+    @include small() {
+      display: block;
+      text-indent: -9999px;
+      width: 73px;
+      height: 73px;
+      background: url(/themes/custom/curiosity/images/cornell-white.svg);
+      background-repeat: no-repeat;
+      background-size: 73px 73px;
+    }
   }
 
   a {
@@ -186,22 +191,42 @@ footer {
   }
   .as-logo {
     text-indent: -9999px;
-    width: 300px;
-    height: 74px;
+    width: 238px;
+    height: 71px;
     background: url(/themes/custom/curiosity/images/the-college-two-line-white.svg);
 
-    background-size: 300px 74px;
+    background-size: 238px 71px;
     background-repeat: no-repeat;
     position: relative;
-    margin-left: 1rem;
-    &:before {
-      position: absolute;
-      width: 1px;
-      background: var(--gray-lt);
-      height: 100%;
-      top: 0;
-      left: 0;
-      content: "";
+    @include small() {
+      margin-left: 38px;
+      &:before {
+        position: absolute;
+        width: 1px;
+        background: var(--gray-lt);
+        height: 100%;
+        top: 0;
+        left: -19px;
+        content: "";
+      }
+    }
+  }
+}
+
+.extraLinks {
+  @include small() {
+    display: flex;
+    // flex-direction: column;=
+    flex-wrap: wrap;
+    font-size: var(--base-18);
+    li {
+      margin-right: 1rem;
+      padding-right: 1rem;
+      border-right: 1px solid var(--gray-dark);
+      &:last-of-type {
+        padding-right: 0;
+        border: none;
+      }
     }
   }
 }

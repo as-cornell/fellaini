@@ -91,16 +91,26 @@ header {
 
     grid-column: 1 / -1;
     grid-row: 2;
-    margin: 1rem 0 0 calc(50% - 200px);
-    // background: url(/themes/custom/curiosity/images/college.svg);
-    background: url(/themes/custom/curiosity/images/the-college-one-line.svg);
+    margin: 1rem 0;
+    grid-column: 1;
+    grid-row: 2;
     background-repeat: no-repeat;
     background-position: center;
-    width: 400px;
-    height: 56px;
-    background-size: 400px 56px;
-    // position: relative;
-    // margin-left: 28px;
+    //small logo
+    background: url(/themes/custom/curiosity/images/the-college-three-line.svg);
+    width: 238px;
+    height: 71px;
+    background-size: 238px 71px;
+
+    @include small() {
+      background: url(/themes/custom/curiosity/images/the-college-one-line.svg);
+      // background-repeat: no-repeat;
+      // background-position: center;
+      // margin: 1rem 0 0 calc(50% - 200px);
+      width: 400px;
+      height: 56px;
+      background-size: 400px 56px;
+    }
     @include headerBreak() {
       width: 600px;
       height: 56px;
