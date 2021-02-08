@@ -2018,7 +2018,7 @@ display:
               raw_output: false
             field_department_program:
               alias: Related-Department-or-Program
-              raw_output: false
+              raw_output: true
             view_node:
               alias: Link
               raw_output: false

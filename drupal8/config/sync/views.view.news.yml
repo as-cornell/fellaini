@@ -1218,6 +1218,7 @@ display:
         cache: false
         fields: false
         show_admin_links: false
+        sorts: false
       style:
         type: html_list
         options:
@@ -1374,6 +1375,20 @@ display:
           separator: ', '
           field_api_classes: false
       show_admin_links: false
+      sorts:
+        field_dateline_value:
+          id: field_dateline_value
+          table: node__field_dateline
+          field: field_dateline_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
     cache_metadata:
       max-age: -1
       contexts:
