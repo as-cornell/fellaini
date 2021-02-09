@@ -2,22 +2,15 @@
 id: article_node
 label: Migrate A&S articles from Drupal 7 to Drupal 8
 migration_group: articles
-migration_dependencies:
-  required:
-    - article_body
-    - article_image_media
-  optional: {}
 destination:
   plugin: entity:node
 
 source:
   plugin: url
-  data_fetcher_plugin: http
+  data_fetcher_plugin: file
   data_parser_plugin: json
-  constants:
-    source_base_path: 'https://as.cornell.edu'
-
-  urls: https://as.cornell.edu/articles-asd8-json-depts
+  urls:
+    - '../private/articles-related-people.json'
 
   ids:
     uuid:
