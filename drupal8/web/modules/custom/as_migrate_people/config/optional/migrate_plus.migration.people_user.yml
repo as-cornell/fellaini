@@ -9,11 +9,11 @@ source:
   data_fetcher_plugin: file
   data_parser_plugin: json
   urls:
-    - 'private://users.json'
+    - '../private/users.json'
   ids:
     name:
       type: string
-  item_selector: users
+  item_selector: users/
   constants:
     passstub: '_test'
   fields:
@@ -22,11 +22,15 @@ source:
       label: 'Unique identifier uand account name'
       selector: user/name
     -
+      name: id
+      label: 'UID'
+      selector: user/id
+    -
       name: mail
       label: 'Email'
       selector: user/mail
     -
-      name: role
+      name: roles
       label: 'Email'
       selector: user/rid
     -
@@ -34,19 +38,19 @@ source:
       label: 'Email'
       selector: user/created
     -
-      name: login
+      name: access
       label: 'Email'
       selector: user/login
     -
       name: status
-      label: 'Email'
+      label: 'Status'
       selector: user/status
 
 process:
   name: name
-  uid: name
+  uid: id
   mail: mail
   created: created
-  login: login
-  roles: rid
+  access: access
+  roles: roles
   status: status
