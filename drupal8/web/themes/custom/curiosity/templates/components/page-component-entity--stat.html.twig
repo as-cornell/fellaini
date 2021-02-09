@@ -14,9 +14,13 @@ Descr: pushes relevant content for a stat to 01-card.twig
 	{% set hasLink = true%}
   {# {% set link = "/node/" ~ content.field_related_content %} #}
 	{% set link = "/node/" ~ content.field_related_content.0["#plain_text"]%}
+  {% elseif content.field_link|render is not empty %}
+  	{% set hasLink = true%}
+  {# {% set link = "/node/" ~ content.field_related_content %} #}
+	{% set link = content.field_link.0["#url_title"]%}
 {% endif %}
 {# {{link}} #}
-
+{{link}}
 {% embed "@content/molecules/_card--stat.twig" with {
   card_modifiers: ["stat"],
   card_title: label,
