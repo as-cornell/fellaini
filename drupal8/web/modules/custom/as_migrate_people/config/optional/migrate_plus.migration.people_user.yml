@@ -1,0 +1,62 @@
+# Migration configuration for imported users.
+id: people_user
+label: Import people.as.cornell users from static file
+migration_group: people
+destination:
+  plugin: 'entity:user'
+  md5_passwords: true
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - 'private://people/users.json'
+  ids:
+    name:
+      type: string
+  item_selector: users
+  constants:
+    passstub: '_test'
+  fields:
+    -
+      name: name
+      label: 'Unique identifier uand account name'
+      selector: user/name
+    -
+      name: mail
+      label: 'Email'
+      selector: user/mail
+    -
+      name: role
+      label: 'Email'
+      selector: user/rid
+    -
+      name: created
+      label: 'Email'
+      selector: user/created
+    -
+      name: login
+      label: 'Email'
+      selector: user/login
+    -
+      name: status
+      label: 'Email'
+      selector: user/status
+
+process:
+  name: name
+  uid: name
+  mail: mail
+  pass:
+    -
+      plugin: concat
+      source:
+        - name
+        - constants/passstub'
+    -
+      plugin: callback
+      callable: md5
+  created: created
+  login: login
+  roles: rid
+  status: status
