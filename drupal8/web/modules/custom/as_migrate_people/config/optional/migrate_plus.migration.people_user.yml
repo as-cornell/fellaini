@@ -4,13 +4,12 @@ label: Import people.as.cornell users from static file
 migration_group: people
 destination:
   plugin: 'entity:user'
-  md5_passwords: true
 source:
   plugin: url
   data_fetcher_plugin: file
   data_parser_plugin: json
   urls:
-    - 'private://people/users.json'
+    - 'private://users.json'
   ids:
     name:
       type: string
@@ -47,15 +46,6 @@ process:
   name: name
   uid: name
   mail: mail
-  pass:
-    -
-      plugin: concat
-      source:
-        - name
-        - constants/passstub'
-    -
-      plugin: callback
-      callable: md5
   created: created
   login: login
   roles: rid
