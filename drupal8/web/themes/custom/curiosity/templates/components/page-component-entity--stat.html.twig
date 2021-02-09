@@ -20,7 +20,7 @@ Descr: pushes relevant content for a stat to 01-card.twig
 	{% set link = content.field_link.0["#url_title"]%}
 {% endif %}
 {# {{link}} #}
-{{link}}
+{# {{link}} #}
 {% embed "@content/molecules/_card--stat.twig" with {
   card_modifiers: ["stat"],
   card_title: label,
