@@ -1,0 +1,20 @@
+uuid: c7887894-499f-43ae-8eeb-a0da38de118e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - curiosity
+_core:
+  default_config_hash: ik4PTMlBD0MWansnSMpSXq5SUlWRJ1IVVt6C7AIbQmc
+id: curiosity_local_actions
+theme: curiosity
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

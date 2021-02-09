@@ -1,0 +1,31 @@
+uuid: 3ee2f773-a331-4f30-9f88-864c10f0c30a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_categories
+    - node.type.person
+    - taxonomy.vocabulary.subdisciplines
+_core:
+  default_config_hash: lEKt05eSEoNmctON0HV0fcl_oPWqvr5zSeDPuRVxI3g
+id: node.person.field_person_categories
+field_name: field_person_categories
+entity_type: node
+bundle: person
+label: 'Subdiscipline / Research Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subdisciplines: subdisciplines
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

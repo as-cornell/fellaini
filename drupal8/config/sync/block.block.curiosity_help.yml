@@ -1,4 +1,4 @@
-uuid: abd7229f-7d5d-42c6-8baf-ba74812be91e
+uuid: f4bbcdb6-153a-4248-9731-a49d410e0bcf
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - curiosity
 _core:
-  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+  default_config_hash: PfozGAnWQRNy00G6KEnZjIu9b2lGuWg-j-GT_-Ejglc
 id: curiosity_help
 theme: curiosity
-region: content
-weight: -1
+region: header
+weight: 0
 provider: null
 plugin: help_block
 settings:

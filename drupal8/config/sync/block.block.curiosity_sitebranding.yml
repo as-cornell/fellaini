@@ -1,0 +1,28 @@
+uuid: 864d1fc3-330a-4344-95c9-c8170d8b1ac6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - curiosity
+id: curiosity_sitebranding
+theme: curiosity
+region: header
+weight: -4
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility:
+  request_path:
+    id: request_path
+    pages: '/admin/*'
+    negate: true
+    context_mapping: {  }

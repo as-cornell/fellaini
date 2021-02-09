@@ -1,4 +1,4 @@
-uuid: c5e2ee6c-dc28-4421-86ac-8f50039e3aaf
+uuid: 2f9a7322-177c-4f8f-be00-4b483d05836a
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - filter.format.full_html
   module:
     - ckeditor
+_core:
+  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
 format: full_html
 editor: ckeditor
 settings:
@@ -13,7 +15,7 @@ settings:
     rows:
       -
         -
-          name: styles
+          name: 'Block Formatting'
           items:
             - Format
             - Styles
@@ -23,15 +25,14 @@ settings:
           items:
             - Bold
             - Italic
-            - Superscript
             - Strike
+            - Superscript
             - Subscript
-            - JustifyCenter
+            - '-'
         -
-          name: Links
+          name: Linking
           items:
             - DrupalLink
-            - EntityLink
             - DrupalUnlink
         -
           name: Lists
@@ -41,24 +42,22 @@ settings:
         -
           name: Media
           items:
-            - image
-            - components
-            - file
-            - embed_video_
+            - Blockquote
+            - DrupalImage
+            - Table
+            - HorizontalRule
         -
           name: Tools
           items:
-            - Blockquote
-            - Table
-            - PasteText
+            - ShowBlocks
             - Source
   plugins:
     language:
       language_list: un
     stylescombo:
-      styles: "p.none|Remove styles\r\np.videoContainer|Video container\r\np.notice|Notice\r\np.attribution|Attribution\r\np.eyebrow|Eyebrow\r\np.pageIntroduction|Page introduction\r\np.sectionIntroduction|Section introduction\r\n\r\na.btn|Plain 'button' link\r\na.btn--blue|Dark blue 'button' link\r\na.btn--red|Dark red 'button' link\r\na.btn--green|Dark green 'button' link\r\n\r\nh3.green-green|H3 Green\r\nh3.blue-blue|H3 Blue\r\n\r\nh2.green-green|H2 Green\r\nh2.blue-blue|H2 Blue\r\n\r\nh2.spotlight.blue-radial|H2 Spotlight Radial storm\r\nh2.spotlight.blue-blue|H2 Spotlight Blue\r\nh2.spotlight.green-green|H2 Spotlight Green\r\nh2.spotlight.teal-purple|H2 Spotlight Teal>Purple\r\nh2.spotlight.blue-purple|H2 Spotlight Blue>Purple\r\n\r\nul.inline|Inline list\r\nul.thumbnails|Thumbnail list"
+      styles: "p.videoContainer|Video Container\r\np.notice|Notice\r\np.attribution|Attribution\r\np.eyebrow|Eyebrow\r\np.pageIntroduction|Page introduction\r\np.sectionIntroduction|Section Introduction\r\n\r\n\r\n\r\n\r\nul.inline|Inline list\r\n"
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''

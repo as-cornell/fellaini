@@ -1,4 +1,4 @@
-uuid: 2da7b797-8c3b-44d9-8718-c54913ba3bfc
+uuid: 783b4651-9a7a-4ef6-98a5-373ed6dd36cd
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - curiosity
 _core:
-  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+  default_config_hash: YqKTtloWJ8FjLtfVNfrHaK6kVgxT67lC1cJ3j6i6WLo
 id: curiosity_messages
 theme: curiosity
 region: header
-weight: -3
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

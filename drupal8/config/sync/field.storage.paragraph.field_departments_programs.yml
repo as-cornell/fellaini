@@ -1,0 +1,22 @@
+uuid: be31ce7d-728c-4c24-82b9-5a37b7e46c37
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+_core:
+  default_config_hash: CgGav3SXsO-Et44h9o83RKLse4ePKrpwrqy7oQ0b3YY
+id: paragraph.field_departments_programs
+field_name: field_departments_programs
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

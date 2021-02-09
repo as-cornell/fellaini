@@ -1,0 +1,21 @@
+uuid: 86d88f42-fc35-40d3-8409-bbc9af2f57e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+_core:
+  default_config_hash: xApm8ueJ2RdC3dlDMKkeZwEAg3-3krdzDv1CGO8v1oo
+id: paragraph.field_person_research_focus
+field_name: field_person_research_focus
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 1a5bce9a-ae87-4d43-add2-f969f618e516
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: wGxGiYrOWG8IYYWSVzSbuJbB7TZB9xF5z34Mz5hwa-g
+id: node.field_person_publications
+field_name: field_person_publications
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

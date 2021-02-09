@@ -1,6 +1,6 @@
-uuid: 8728a534-b521-4223-897d-eaeb4914b780
+uuid: 7dc01641-cc90-48b1-9b51-7156563bdea8
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -101,20 +101,16 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: default
+          default_action: 'not found'
           exception:
             value: ''
             title_enable: false
             title: All
           title_enable: true
           title: '{{ arguments.tid }}'
-          default_argument_type: taxonomy_tid
+          default_argument_type: fixed
           default_argument_options:
-            term_page: '1'
-            node: true
-            anyall: +
-            limit: false
-            vids: {  }
+            argument: ''
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -127,13 +123,13 @@ display:
             format: default_summary
           specify_validation: true
           validate:
-            type: taxonomy_term_name_into_id
-            fail: empty
+            type: 'entity:taxonomy_term'
+            fail: 'not found'
           validate_options:
+            access: true
             operation: view
-            transform: true
+            multiple: 0
             bundles: {  }
-            access: false
           break_phrase: false
           add_table: false
           require_value: false
@@ -230,7 +226,6 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: none
           view_mode: teaser
       header:
         entity_taxonomy_term:
@@ -247,20 +242,7 @@ display:
           bypass_access: false
           plugin_id: entity
       footer: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: 'NO RESULTS'
-            format: full_html
-          plugin_id: text
+      empty: {  }
       relationships: {  }
       fields: {  }
       display_extenders: {  }

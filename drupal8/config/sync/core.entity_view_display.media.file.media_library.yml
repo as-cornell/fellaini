@@ -1,11 +1,11 @@
-uuid: 978d42fd-2f7c-4a77-ade5-cc13a63f4f30
+uuid: 7a46f357-5f21-4b2c-bcd5-7b259e4ee9bf
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - field.field.media.file.field_media_file
-    - image.style.media_library
+    - image.style.medium
     - media.type.file
   module:
     - image
@@ -18,7 +18,7 @@ content:
     type: image
     label: hidden
     settings:
-      image_style: media_library
+      image_style: medium
       image_link: ''
     weight: 0
     third_party_settings: {  }

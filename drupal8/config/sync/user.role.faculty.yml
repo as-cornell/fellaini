@@ -1,0 +1,11 @@
+uuid: 3039810b-a835-4eae-8b5a-1864d10a7846
+langcode: en
+status: true
+dependencies: {  }
+id: faculty
+label: Faculty
+weight: 4
+is_admin: null
+permissions:
+  - 'view own unpublished content'
+  - 'view person revisions'

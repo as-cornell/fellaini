@@ -1,4 +1,4 @@
-uuid: f2e393c1-7aac-46b4-a4c7-f1c4971a107b
+uuid: e365193a-5fa2-45c3-a9c0-270a60e53f60
 langcode: en
 status: true
 dependencies: {  }
@@ -6,5 +6,5 @@ _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
 label: 'Main navigation'
-description: 'Full blown navigation with all the pages, lives in the sidebar.'
+description: 'Site section links'
 locked: true

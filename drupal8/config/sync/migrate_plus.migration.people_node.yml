@@ -1,0 +1,194 @@
+uuid: 568453a2-6e9f-48ca-b7a4-ef09397d11dd
+langcode: en
+status: true
+dependencies: {  }
+id: people_node
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: people
+label: 'Import people nodes'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: 'http://people.as.cornell.edu/people-overviews-json'
+  ids:
+    nid:
+      type: integer
+  item_selector: data/
+  fields:
+    -
+      name: nid
+      label: Nid
+      selector: /attributes/nid
+    -
+      name: vid
+      label: Vid
+      selector: /attributes/vid
+    -
+      name: uuid
+      label: Uuid
+      selector: /attributes/uuid
+    -
+      name: title
+      label: Title
+      selector: /attributes/title
+    -
+      name: promote
+      label: Promote
+      selector: /attributes/promote
+    -
+      name: path
+      label: Path
+      selector: /attributes/path
+    -
+      name: affiliation
+      label: Affiliation
+      selector: /attributes/field_person_affiliation
+    -
+      name: gradfields
+      label: 'Graduate Fields'
+      selector: /attributes/field_person_graduate_fields
+    -
+      name: education
+      label: Education
+      selector: /attributes/field_person_education
+    -
+      name: keywords
+      label: Keywords
+      selector: /attributes/field_keywords
+    -
+      name: publications
+      label: Publications
+      selector: /attributes/field_person_publications
+    -
+      name: firstname
+      label: 'First Name'
+      selector: /attributes/field_person_first_name
+    -
+      name: lastname
+      label: 'Last Name'
+      selector: /attributes/field_person_last_name
+    -
+      name: proftitle
+      label: 'Professional Title'
+      selector: /attributes/field_person_title
+    -
+      name: netid
+      label: NetID
+      selector: /attributes/field_person_netid
+    -
+      name: field_links
+      label: 'Links URL'
+      selector: /attributes/field_links
+    -
+      name: field_image_url
+      label: 'Field image URL'
+      selector: /attributes/field_image_url
+    -
+      name: field_departments_programs
+      label: 'Departments Programs'
+      selector: /attributes/field_departments_programs
+    -
+      name: field_person_type
+      label: 'Person Type'
+      selector: /attributes/field_person_type
+    -
+      name: field_regions
+      label: Regions
+      selector: /attributes/field_regions
+    -
+      name: field_summary
+      label: Summary
+      selector: /attributes/field_summary
+    -
+      name: uid
+      label: 'User ID'
+      selector: /attributes/uid
+process:
+  type:
+    plugin: default_value
+    default_value: person
+  uuid: uuid
+  title: title
+  path: path
+  field_person_affiliation:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: affiliation
+    -
+      plugin: explode
+      source: affiliation
+      delimiter: +
+  field_person_graduate_fields:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: gradfields
+    -
+      plugin: explode
+      source: gradfields
+      delimiter: +
+  field_person_education/value: education
+  field_person_education/format:
+    plugin: default_value
+    default_value: full_html
+  field_keywords/value: keywords
+  field_keywords/format:
+    plugin: default_value
+    default_value: full_html
+  field_person_publications/value: publications
+  field_person_publications/format:
+    plugin: default_value
+    default_value: full_html
+  field_person_first_name: firstname
+  field_person_last_name: lastname
+  field_person_title: proftitle
+  field_person_netid: netid
+  field_person_type:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_person_type
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      value_key: name
+  field_image/target_id:
+    plugin: migration
+    migration: people_image_media
+    source: nid
+  field_departments_programs:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_departments_programs
+    -
+      plugin: explode
+      delimiter: +
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      value_key: name
+  pseudo_field_summary:
+    plugin: migration_lookup
+    migration: people_summary
+    source: nid
+  field_summary:
+    plugin: sub_process
+    source:
+      - '@pseudo_field_summary'
+    process:
+      target_id: '0'
+      target_revision_id: '1'
+  field_links:
+    plugin: people_link
+    source: field_links
+  uid: netid
+destination:
+  plugin: 'entity:node'
+  default_bundle: person
+migration_dependencies: {  }

@@ -1,0 +1,23 @@
+uuid: 03b123fe-4f2e-43b6-8d4d-3cc49334e636
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: tc2HEWtoqYr-diYhEJrLFHnwBxWb7dexIlUldKWbny0
+id: node.field_person_title
+field_name: field_person_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

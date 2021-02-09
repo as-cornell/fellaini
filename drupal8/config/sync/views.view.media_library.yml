@@ -1,9 +1,8 @@
-uuid: d5276398-5694-4887-aa60-713cd26ee644
+uuid: 981705ae-dcd7-4fe6-ba03-e1a3d8363bbb
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.1_1
     - core.entity_view_mode.media.media_library
     - image.style.media_library
   enforced:
@@ -56,17 +55,12 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: full
+        type: mini
         options:
           items_per_page: 24
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -75,7 +69,9 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
+          tags:
+            previous: ‹‹
+            next: ››
       style:
         type: default
         options:
@@ -485,25 +481,7 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.audio.default'
-        - 'config:core.entity_view_display.media.audio.media_library'
-        - 'config:core.entity_view_display.media.file.default'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.image.1_1'
-        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
-        - 'config:core.entity_view_display.media.image.4_5'
-        - 'config:core.entity_view_display.media.image.5_4'
-        - 'config:core.entity_view_display.media.image.6_4'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.pano'
-        - 'config:core.entity_view_display.media.image.thumbnail'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.video.default'
-        - 'config:core.entity_view_display.media.video.media_library'
+      tags: {  }
   page:
     display_plugin: page
     id: page
@@ -785,20 +763,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_mode: '1_1'
+          view_mode: media_library
           entity_type: media
           plugin_id: rendered_entity
       defaults:
         fields: false
-      menu:
-        type: none
-        title: Media
-        description: ''
-        expanded: false
-        parent: system.admin_content
-        weight: 0
-        context: '0'
-        menu_name: admin
     cache_metadata:
       max-age: 0
       contexts:
@@ -809,25 +778,7 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.audio.default'
-        - 'config:core.entity_view_display.media.audio.media_library'
-        - 'config:core.entity_view_display.media.file.default'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.image.1_1'
-        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
-        - 'config:core.entity_view_display.media.image.4_5'
-        - 'config:core.entity_view_display.media.image.5_4'
-        - 'config:core.entity_view_display.media.image.6_4'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.pano'
-        - 'config:core.entity_view_display.media.image.thumbnail'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.video.default'
-        - 'config:core.entity_view_display.media.video.media_library'
+      tags: {  }
   widget:
     display_plugin: page
     id: widget
@@ -1147,25 +1098,7 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags:
-        - 'config:core.entity_view_display.media.audio.default'
-        - 'config:core.entity_view_display.media.audio.media_library'
-        - 'config:core.entity_view_display.media.file.default'
-        - 'config:core.entity_view_display.media.file.media_library'
-        - 'config:core.entity_view_display.media.image.1_1'
-        - 'config:core.entity_view_display.media.image.1_1_thumbnail_forced'
-        - 'config:core.entity_view_display.media.image.4_5'
-        - 'config:core.entity_view_display.media.image.5_4'
-        - 'config:core.entity_view_display.media.image.6_4'
-        - 'config:core.entity_view_display.media.image.default'
-        - 'config:core.entity_view_display.media.image.full'
-        - 'config:core.entity_view_display.media.image.media_library'
-        - 'config:core.entity_view_display.media.image.pano'
-        - 'config:core.entity_view_display.media.image.thumbnail'
-        - 'config:core.entity_view_display.media.remote_video.default'
-        - 'config:core.entity_view_display.media.remote_video.media_library'
-        - 'config:core.entity_view_display.media.video.default'
-        - 'config:core.entity_view_display.media.video.media_library'
+      tags: {  }
   widget_table:
     display_plugin: page
     id: widget_table

@@ -1,11 +1,11 @@
-uuid: 2b0613b2-1cb8-4680-bf86-dc20718d9b09
-name: 'The College of Arts & Sciences'
-mail: mark.e.wilson@gmail.com
-slogan: 'Redefining the liberal arts for an engaged 21st century'
+uuid: e16f8bab-5a45-407a-9d5c-5b9a1981bafd
+name: people.asd8
+mail: mew72@cornell.edu
+slogan: ''
 page:
   403: ''
-  404: /node/90121
-  front: /node/61745
+  404: ''
+  front: /node/3760
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

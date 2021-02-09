@@ -1,0 +1,21 @@
+uuid: 1412a382-ee9a-4ba8-bb50-48bcdfbe94e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_responsibilities
+    - node.type.person
+  module:
+    - text
+id: node.person.field_responsibilities
+field_name: field_responsibilities
+entity_type: node
+bundle: person
+label: Responsibilities
+description: 'Used for staff to describe work duties.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
