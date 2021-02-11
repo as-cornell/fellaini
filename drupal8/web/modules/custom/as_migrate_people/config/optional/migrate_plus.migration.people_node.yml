@@ -20,7 +20,7 @@ source:
     nid:
       type: integer
 
-  item_selector: data/
+  item_selector: data
 
   fields:
     -

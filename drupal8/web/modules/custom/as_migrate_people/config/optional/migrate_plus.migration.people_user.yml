@@ -1,7 +1,7 @@
 # Migration configuration for imported users.
 id: people_user
 label: Import people.as.cornell users from static file
-migration_group: people
+migration_group: users
 destination:
   plugin: 'entity:user'
 source:
