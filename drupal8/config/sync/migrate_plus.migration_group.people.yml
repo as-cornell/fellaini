@@ -1,10 +1,10 @@
-uuid: 29c42bd5-78cd-46e7-9e90-efa8fbd2a05c
+uuid: f0380250-a423-48fc-893a-2b487814b788
 langcode: en
 status: true
 dependencies: {  }
 id: people
 label: People
-description: 'Migrate people content from Drupal 7 to Drupal 8'
-source_type: 'Drupal 7'
+description: 'People records'
+source_type: 'JSON from people.as.cornell.edu (Drupal7)'
 module: null
 shared_configuration: null

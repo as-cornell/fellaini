@@ -1,4 +1,4 @@
-uuid: fad771bb-4f13-46e1-ace7-f3ed626488d0
+uuid: 86638f66-362b-45ad-b6f4-cb63c8b78f51
 langcode: en
 status: true
 dependencies: {  }
@@ -11,9 +11,10 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access shortcuts'
   - 'access site-wide contact form'
-  - 'opt-in or out of google analytics tracking'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'use text format basic_html'
   - 'view media'

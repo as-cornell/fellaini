@@ -1,4 +1,4 @@
-uuid: 2a38bb73-69ce-4177-bf05-2546dbb8263b
+uuid: 5a16b5c6-b7df-43c1-b0c3-dfd5838ba8d1
 langcode: en
 status: true
 dependencies:
@@ -32,12 +32,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  revision_log:
-    weight: 81
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
 hidden: {  }

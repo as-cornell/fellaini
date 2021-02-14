@@ -1,8 +1,0 @@
-uuid: 2bbd0751-343c-4daa-8285-06bf9309ea8b
-langcode: en
-status: true
-dependencies: {  }
-id: top-nav
-label: 'Top navigation'
-description: 'Primary site navigation to display in the header, only top level pages.'
-locked: false

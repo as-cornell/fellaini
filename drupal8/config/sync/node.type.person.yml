@@ -1,0 +1,19 @@
+uuid: 6d0851b4-6f75-40ea-81e2-479e3c898453
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: mzuFPbv0X5xiBdUnsGMUxaPv5VypKgiaEgVASi6Z1tc
+name: Person
+type: person
+description: 'People content type for storing all sorts of people data'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,4 +1,4 @@
-uuid: 27c085ac-f627-41f3-951c-9c8bc3463147
+uuid: ff7fa1d9-356b-48ed-8698-3db7296502a7
 langcode: en
 status: true
 dependencies:
@@ -744,11 +744,9 @@ display:
         type: tab
         title: Files
         description: ''
-        expanded: false
-        parent: ''
-        weight: 10
-        context: '0'
         menu_name: admin
+        weight: 0
+        context: ''
       display_description: ''
       defaults:
         pager: true

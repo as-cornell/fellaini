@@ -1,55 +1,35 @@
-uuid: 85bcf564-d7da-41a4-9fa8-ea038aff6e55
+uuid: b84aeaba-39a8-4823-b429-968e76d226b7
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
-    - image.style.6_4_newsletter
+    - image.style.thumbnail
     - media.type.image
   module:
-    - image_widget_crop
+    - image
+_core:
+  default_config_hash: BMLrK4zKp8-FFnMseBdT_6h6YipUsKRfbDf_3WUB5HA
 id: media.image.media_library
 targetEntityType: media
 bundle: image
 mode: media_library
 content:
-  field_caption:
-    type: string_textfield
+  field_media_image:
+    type: image_image
     weight: 1
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_credit:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_media_image:
-    weight: 0
-    settings:
-      show_crop_area: true
-      show_default_crop: true
-      warn_multiple_usages: true
-      preview_image_style: 6_4_newsletter
-      crop_preview_image_style: 6_4_newsletter
-      crop_list:
-        - '5_4'
-        - '6_4'
       progress_indicator: throbber
-      crop_types_required: {  }
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_widget_crop
-    region: content
 hidden:
   created: true
+  field_caption: true
+  field_credit: true
   name: true
   path: true
   status: true

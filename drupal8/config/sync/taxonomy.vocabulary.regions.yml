@@ -1,0 +1,10 @@
+uuid: 8a5d0146-6d5d-4146-b8b8-2e3a8d087b94
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: evgxc0ook-sl4VxnGiCb-v6qGshtn428GQGjc6ceTSQ
+name: Regions
+vid: regions
+description: 'Taxonomy per department for categorizing people and research into regions'
+weight: 0

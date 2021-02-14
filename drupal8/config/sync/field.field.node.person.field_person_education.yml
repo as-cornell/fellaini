@@ -1,0 +1,23 @@
+uuid: 20c6a4ba-6835-4866-82b7-3553f6c566b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_education
+    - node.type.person
+  module:
+    - text
+_core:
+  default_config_hash: tyvkJT9dKTYgQPyD-AgG6P2MR8sdhMjKGR70N_E2MX4
+id: node.person.field_person_education
+field_name: field_person_education
+entity_type: node
+bundle: person
+label: 'Educational Background'
+description: 'Should be unordered list of educational history.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

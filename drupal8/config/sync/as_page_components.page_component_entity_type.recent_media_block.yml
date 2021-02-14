@@ -1,6 +1,0 @@
-uuid: 8c1d0629-4daa-463d-a39a-bb353b1409c2
-langcode: en
-status: true
-dependencies: {  }
-id: recent_media_block
-label: 'Recent Media Block'

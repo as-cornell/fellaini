@@ -1,0 +1,21 @@
+uuid: c511c49c-ac8f-406c-a97b-7467ef02d83b
+langcode: und
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+_core:
+  default_config_hash: opBuMdEzZG5jLRCh1Ou6A_s5TFIs7HcHuv0UAz6i3QM
+id: taxonomy_term.description_field
+field_name: description_field
+entity_type: taxonomy_term
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

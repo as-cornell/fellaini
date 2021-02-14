@@ -1,4 +1,4 @@
-uuid: 6c3cb24e-3961-4885-842c-fbf822d1684f
+uuid: b715fca6-6c31-4c52-90cc-02d4f89cac53
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: cVce1wq8rNNcosWnMLyjsjNUGYhJ9bVMZ-whh77pIdo
 name: media_entity_browser_media_library
-label: 'Media Library Entity Browser'
+label: 'Media Entity Browser (Media Library)'
 display: iframe
 display_configuration:
   width: '1070'
@@ -25,20 +25,20 @@ widgets:
   552cfb05-063f-47a9-81d1-e1260fc8a402:
     settings:
       view: media_entity_browser_media_library
-      view_display: entity_browser_2
+      view_display: media_browser_all
       submit_text: 'Select media'
       auto_select: false
     uuid: 552cfb05-063f-47a9-81d1-e1260fc8a402
-    weight: -10
+    weight: -9
     label: 'Choose existing media'
     id: view
   7e4422b4-dbe9-40f6-9b74-e2bf31b98ae8:
     settings:
       entity_type: media
       bundle: image
-      form_mode: inline_image
+      form_mode: default
       submit_text: 'Save image'
     uuid: 7e4422b4-dbe9-40f6-9b74-e2bf31b98ae8
-    weight: -9
+    weight: -10
     label: 'Upload new image'
     id: entity_form

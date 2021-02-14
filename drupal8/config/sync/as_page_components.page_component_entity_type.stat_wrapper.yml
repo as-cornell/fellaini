@@ -1,6 +1,0 @@
-uuid: 8b1e89af-78a9-4afa-8e57-0f9eaf8fd18e
-langcode: en
-status: true
-dependencies: {  }
-id: stat_wrapper
-label: 'Stat Wrapper'

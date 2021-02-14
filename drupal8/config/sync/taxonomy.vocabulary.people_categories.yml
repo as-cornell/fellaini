@@ -1,0 +1,10 @@
+uuid: d6017a42-5d9f-4451-90c6-a73c90858203
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8cwMCK3xIpwhdx_AMS7YqtPusJCaBQPcT57bk3bFj4E
+name: 'People Categories'
+vid: people_categories
+description: 'Taxonomy for Person content type'
+weight: 0

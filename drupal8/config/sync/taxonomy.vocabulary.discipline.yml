@@ -1,8 +1,0 @@
-uuid: b9735faf-5a32-4b9b-9005-e24ea6b9c768
-langcode: en
-status: true
-dependencies: {  }
-name: Discipline
-vid: discipline
-description: 'Discipline Areas'
-weight: -5

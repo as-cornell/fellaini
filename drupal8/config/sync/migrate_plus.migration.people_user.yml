@@ -1,0 +1,63 @@
+uuid: dc2d6061-5e55-4fb6-83c8-ea34ff920d13
+langcode: en
+status: true
+dependencies: {  }
+id: people_user
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: people
+label: 'Import people.as.cornell users from static file'
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - ../private/users.json
+  ids:
+    name:
+      type: string
+  item_selector: users/
+  constants:
+    passstub: _test
+  fields:
+    -
+      name: name
+      label: 'Unique identifier uand account name'
+      selector: user/name
+    -
+      name: id
+      label: UID
+      selector: user/id
+    -
+      name: mail
+      label: Email
+      selector: user/mail
+    -
+      name: roles
+      label: Email
+      selector: user/rid
+    -
+      name: created
+      label: Email
+      selector: user/created
+    -
+      name: access
+      label: Email
+      selector: user/login
+    -
+      name: status
+      label: Status
+      selector: user/status
+process:
+  name: name
+  uid: id
+  mail: mail
+  created: created
+  access: access
+  roles: roles
+  status: status
+destination:
+  plugin: 'entity:user'
+migration_dependencies: null

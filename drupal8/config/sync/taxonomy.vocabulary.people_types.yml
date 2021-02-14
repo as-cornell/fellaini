@@ -1,8 +1,0 @@
-uuid: e110f376-465d-42dd-bd0f-6b1a795555e6
-langcode: en
-status: true
-dependencies: {  }
-name: 'People Types'
-vid: people_types
-description: ''
-weight: 0

@@ -1,0 +1,23 @@
+uuid: 2f34ca64-78f2-471a-9af4-563e23d91399
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: R3BKsLTk3N7WC1bZJbKmoYHlE7SSlW2w-1X8WiKJd74
+id: node.field_person_affiliation
+field_name: field_person_affiliation
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

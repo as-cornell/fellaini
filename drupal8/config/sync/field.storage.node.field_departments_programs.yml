@@ -1,0 +1,22 @@
+uuid: d3876bfc-9a59-4063-9a2a-e574b51663b6
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: 4oU0HtecQ_ITJQJ547Hm-O7WWawTfR2sQqnN2mpx3Po
+id: node.field_departments_programs
+field_name: field_departments_programs
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: 1b195188-6ff0-4683-abfe-a5a58f288cc5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Departments and Programs'
+vid: departments_and_programs
+description: 'Departments and Programs in the College of Arts and Sciences'
+weight: 0

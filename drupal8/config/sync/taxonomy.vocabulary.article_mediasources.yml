@@ -1,8 +1,0 @@
-uuid: d11f5ba0-ba88-404f-8498-940acdd3aecd
-langcode: en
-status: true
-dependencies: {  }
-name: 'Article Media Sources'
-vid: article_mediasources
-description: 'Media Sources imported from drupal 7 AS and compiled as taxonomy terms'
-weight: 0

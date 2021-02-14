@@ -1,4 +1,4 @@
-uuid: b764eda1-fcae-4bdb-b803-69af1810a9d6
+uuid: 8626a212-ae73-42f4-a5f9-77872b439c23
 langcode: en
 status: true
 dependencies:
@@ -33,6 +33,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  simplesamlphp_auth_user_enable:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   timezone:
     weight: 6
     region: content

@@ -20,7 +20,7 @@ source:
     nid:
       type: integer
 
-  item_selector: data/
+  item_selector: data
 
   fields:
     -
@@ -108,9 +108,9 @@ source:
       label: 'Summary'
       selector: /attributes/field_summary
     -
-      name: uid
-      label: 'User ID'
-      selector: /attributes/uid
+      name: author
+      label: 'Author'
+      selector: /attributes/author
 
 
 process:
@@ -194,6 +194,9 @@ process:
   field_links:
     plugin: people_link
     source: field_links
-
-  uid: netid
+  uid:
+    plugin: entity_lookup
+    entity_type: user
+    value_key: name
+    source: author
 

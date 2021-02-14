@@ -1,0 +1,32 @@
+uuid: 341c7dce-f2b3-4bf1-8838-7eb088359a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.person
+  content:
+    - 'media:image:9aa69518-013e-43a1-a386-1973af9ad979'
+id: node.person.field_image
+field_name: field_image
+entity_type: node
+bundle: person
+label: Image
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 9aa69518-013e-43a1-a386-1973af9ad979
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

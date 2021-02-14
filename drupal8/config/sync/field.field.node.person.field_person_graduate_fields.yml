@@ -1,0 +1,21 @@
+uuid: bddd8c81-9b06-47bb-8de5-0dfba33ff008
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_graduate_fields
+    - node.type.person
+_core:
+  default_config_hash: J4bWC3BmHMGwP843RdlBkAAz9jRamM1M0bsF7Zv7aIE
+id: node.person.field_person_graduate_fields
+field_name: field_person_graduate_fields
+entity_type: node
+bundle: person
+label: 'Graduate Fields'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

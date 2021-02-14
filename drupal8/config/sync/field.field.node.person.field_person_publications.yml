@@ -1,0 +1,23 @@
+uuid: b291c298-6142-4be9-bb31-52e6c650e535
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_publications
+    - node.type.person
+  module:
+    - text
+_core:
+  default_config_hash: Uk4CoCJJdr0IB2C9JQqfjhG8gsGAVVlRxu-j3AlWSXI
+id: node.person.field_person_publications
+field_name: field_person_publications
+entity_type: node
+bundle: person
+label: Publications
+description: 'Unordered list of publications. If different types of publications are listed, for example–books, articles and scripts– make a new line, add the heading, and format it as a heading 2.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

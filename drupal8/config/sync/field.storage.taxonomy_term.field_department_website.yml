@@ -1,12 +1,10 @@
-uuid: 7243af3a-c4e2-4d39-841e-e7e94e890b80
+uuid: 1634fb18-3654-4efd-9953-c7e54e8d0b1f
 langcode: en
 status: true
 dependencies:
   module:
     - link
     - taxonomy
-_core:
-  default_config_hash: Ch0McZTUbVRFPpGPRmYLeozsHQmrC5oFFlgaR3lMSzk
 id: taxonomy_term.field_department_website
 field_name: field_department_website
 entity_type: taxonomy_term

@@ -107,7 +107,8 @@
         "drupal/google_analytics": "^2.5",
         "drupal/adminimal_theme": "^1.6",
         "drupal/entity_limit": "^2.0@alpha",
-        "drupal/mail_safety": "^1.2"
+        "drupal/mail_safety": "^1.2",
+        "drupal/fancy_file_delete": "^2.0"
 
 
     },
