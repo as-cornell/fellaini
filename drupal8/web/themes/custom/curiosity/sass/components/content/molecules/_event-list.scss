@@ -30,6 +30,7 @@ Descr: Sets grid default ( full width ) and stacked (in columns) event lists
   // flex: 0 0 30%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   // grid-gap: var(--space);
   // grid-row-gap: 0;
   // grid-template-columns: 84px 1fr;
