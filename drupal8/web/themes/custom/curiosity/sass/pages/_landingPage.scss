@@ -34,6 +34,7 @@ Descr:
   .pageSection > .pcWrapper--ftb {
     margin-left: auto;
     margin-right: auto;
+    // background: red;
     @include medium() {
       p,
       ul,
@@ -43,12 +44,24 @@ Descr:
       }
     }
   }
+  // remove margin-top from first spotlight
+  .content > .pcWrapper--ftb:first-of-type() {
+    .spotlight {
+      margin-top: 0;
+    }
+  }
   .group__title--sr-only {
     @extend .sr-only;
   }
   &--no-pano {
+    .title {
+      position: relative;
+      margin: 0 auto;
+    }
     h1 {
       @extend .spotlight;
+      margin: 0.5em auto 1em;
+      //for the to top to work
     }
   }
   &--pano {
@@ -57,7 +70,7 @@ Descr:
         display: grid;
         grid-template-columns: 1fr;
         align-items: flex-end;
-        margin:0;
+        margin: 0;
         max-width: 100%;
       }
 
@@ -107,11 +120,11 @@ Descr:
   }
   &--has-aside {
     .title {
-      margin: 0 auto;
+      // margin: 0 auto;
     }
   }
   &--homepage {
-    .title{
+    .title {
       @extend .sr-only;
     }
     aside {
