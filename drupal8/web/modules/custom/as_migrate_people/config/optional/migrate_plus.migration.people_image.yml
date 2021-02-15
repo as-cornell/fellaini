@@ -14,14 +14,14 @@ source:
   urls: http://people.as.cornell.edu/people-overviews-json
 
   ids:
-    id:
+    nid:
       type: integer
 
   item_selector: data
 
   fields:
     -
-      name: id
+      name: nid
       label: 'id'
       selector: /attributes/nid
     -
@@ -38,12 +38,24 @@ destination:
   plugin: entity:file
 
 process:
-
+  temp_uri:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: uri
+    -
+      plugin: filenameclean
   uri:
-    plugin: download
-    source:
-      - url
-      - uri
+    -
+      plugin: skip_on_empty
+      method: row
+      source: '@temp_uri'
+    -
+      plugin: download
+      source:
+        - url
+        - '@temp_uri'
+      guzzle_options:
+        base_uri: url
 
-    guzzle_options:
-      base_uri: url
+
