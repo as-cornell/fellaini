@@ -21,14 +21,18 @@ class FilenameClean extends ProcessPluginBase {
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     try {
-      $sep='-';
-      $value = strtolower($value);
-      $value = preg_replace('#[^A-Za-z0-9-./:/]#', ' ', $value);
-      $value = preg_replace('/[[:space:]]+/', $sep, $value);
+      $title = ltrim(strtolower(end(explode('|', $value))));
+      $sep = '-';
+      // get just extension
+      $arr = explode("|", $value, 2);
+      $extension = end(explode('.', $arr[0]));
+      $title = preg_replace('#[^A-Za-z0-9-]#', ' ', $title);
+      $filename = preg_replace('/[[:space:]]+/', $sep, $title);
+      $value = 'public://'.$filename.'.'.$extension;
     }
     catch (\Exception $e) {
       throw new MigrateException('Invalid filename.');
     }
-    return trim($value, $sep);
+    return $value;
   }
 }

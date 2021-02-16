@@ -25,6 +25,10 @@ source:
       label: 'id'
       selector: /attributes/nid
     -
+      name: title
+      label: 'Title'
+      selector: /attributes/title
+    -
       name: uri
       label: 'Uri'
       selector: /attributes/field_image_uri
@@ -44,12 +48,14 @@ process:
       method: row
       source: uri
     -
+      plugin: concat
+      source:
+        - uri
+        - title
+      delimiter: '|'
+    -
       plugin: filenameclean
   uri:
-    -
-      plugin: skip_on_empty
-      method: row
-      source: '@temp_uri'
     -
       plugin: download
       source:
