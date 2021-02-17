@@ -20,35 +20,27 @@ ul[class^="nav"] {
     display: block;
   }
   @include medium() {
-    // line-height: 2em;
-    // padding-left: 16px;
-    // margin-bottom: 0;
-    overflow: hidden;
+    overflow: visible;
     font-size: var(--base-18);
     line-height: 1.5em;
     a {
       position: relative;
-      // padding-left: 0.5rem;
-
       color: var(--dark-text);
       &:before {
         position: absolute;
         content: "";
         height: calc(100% - 2px);
-        width: 4px;
+        width: 2px;
         transform: translateX(-18px);
         // top: 0;
         background: var(--gray-lt);
-        border-radius: 0 2px 2px 0;
-        transition: transform 250ms;
+        border-radius: 2px;
+        transition: width 250ms;
       }
       &:hover {
         &:before {
-          // animation-name: indicators;
-          // animation-duration: 0.5s;
-          // animation-timing-function: ease-out;
-          // animation-iteration-count: 1;
-          transform: translateX(-16px);
+          width: 4px;
+          // transform: translateX(-16px);
         }
       }
     }
@@ -58,7 +50,8 @@ ul[class^="nav"] {
         font-weight: var(--semi);
         margin-bottom: 8px;
         &:before {
-          transform: translateX(-16px);
+          width: 4px;
+          // transform: translateX(-16px);
         }
       }
     }
@@ -183,7 +176,7 @@ ul[class^="nav"] {
       }
     }
     .nav-1 {
-      border-left: 1px solid var(--as-teal);
+      // border-left: 1px solid var(--as-teal);
       &__item {
         &[class*="active-trail"] {
           > a {
@@ -204,7 +197,7 @@ ul[class^="nav"] {
     }
 
     .nav-2 {
-      border-left: 1px solid var(--as-blue-base);
+      // border-left: 1px solid var(--as-blue-base);
       &__item {
         &[class*="active-trail"] {
           > a {
@@ -225,7 +218,7 @@ ul[class^="nav"] {
     }
 
     .nav-3 {
-      border-left: 1px solid var(--as-light-blue);
+      // border-left: 1px solid var(--as-light-blue);
       &__item {
         &[class*="active-trail"] {
           > a {
