@@ -39,7 +39,8 @@ figure {
     &--inline {
       // max-width: 600px;
     }
-    &--hasCaption {
+    &--hasCaption,
+    &--hasCredit {
       // background: red;
       img {
         border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -52,6 +53,18 @@ figure {
   }
   figcaption {
     font-size: var(--base-16);
+    .caption {
+      display: block;
+      // padding: 0.75rem;
+    }
+    .credit {
+      display: block;
+      font-size: var(--base-16);
+      font-weight: var(--light);
+      margin-right: 8px;
+      margin-top: -10px;
+      text-align: right;
+    }
     @include large() {
       font-size: var(--base-18);
     }
@@ -72,22 +85,24 @@ figure {
   }
 }
 
-// figures in pageComponent--ftb need special width restrictions
-.pcWrapper--ftb {
+// figures in pageComponent--ftb, and photoText__text need special width restrictions
+.pcWrapper--ftb,
+.photoText__text {
   .figure {
     // max-width: 300px;
     // margin-top: 1.25rem; // to align with top of text
     margin: 1.5rem 0;
+    @include medium() {
+      &--1_1_phototext {
+        max-width: 248px;
+      }
+    }
     @include large() {
       &--6_4_newsletter {
         max-width: 600px;
       }
       &--5_4 {
         max-width: 520px;
-      }
-
-      &--1_1_phototext {
-        max-width: 248px;
       }
     }
     &--video {
@@ -101,9 +116,29 @@ figure {
 
 figcaption {
   font-weight: var(--light);
-  font-size: var(--medium-font-size);
-  padding: 1rem;
+  font-size: var(--base-20);
+  font-weight: var(--regular);
+  padding: 0.75rem;
+  // .caption {
+  //   display: block;
+  //   // padding: 0.75rem;
+  // }
+  // .credit {
+  //   display: block;
+  //   font-size: var(--base-16);
+  //   font-weight: var(--light);
+  //   margin-right: 8px;
+  //   margin-top: -10px;
+  //   text-align: right;
+  // }
 }
+
+//hide figcaption for pcWrapper--featured
+// .pcWrapper--photoText.pcWrapper--featured{
+//   figcaption{
+//     @extend .sr-only;
+//   }
+// }
 
 // video Wrapper
 

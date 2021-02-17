@@ -110,6 +110,10 @@ Descr:
         @extend .base-84;
         margin-bottom: 0.5em;
         align-self: flex-end;
+
+        .credit{
+          display: none;
+        }
       }
       img {
         @extend .pano-mask-1;
