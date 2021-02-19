@@ -17,7 +17,6 @@
     ],
     "require": {
         "composer/installers": "^1.0.20",
-        "drupal-composer/drupal-scaffold": "^2.0.1",
         "cweagans/composer-patches": "~1.0",
         "drupal/core": "^8.7",
         "drupal/console": "~1.0",
@@ -109,7 +108,8 @@
         "drupal/entity_limit": "^2.0@alpha",
         "drupal/mail_safety": "^1.2",
         "drupal/fancy_file_delete": "^2.0",
-        "drupal/filefield_paths": "^1.0@beta"
+        "drupal/filefield_paths": "^1.0@beta",
+        "drupal/core-composer-scaffold": "^8.8"
 
 
     },
@@ -129,7 +129,6 @@
         ]
     },
     "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "pre-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
@@ -152,8 +151,13 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
-    "replace": {
-        "drupal/drupal": "*"
-      }
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+                }
+            },
+        "replace": {
+            "drupal/drupal": "*"
+        }
     }
 }

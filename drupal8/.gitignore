@@ -37,3 +37,5 @@ web/sites/*/default.settings.php
 # backup files
 *.original
 *.backup
+/.editorconfig
+/.gitattributes
