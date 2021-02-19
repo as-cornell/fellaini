@@ -16,9 +16,8 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.0.20",
+        "composer/installers": "^1.7",
         "cweagans/composer-patches": "~1.0",
-        "drupal/core": "^8.7",
         "drupal/console": "~1.0",
         "drupal/components": "^1.1",
         "drupal/config_split": "^1.4",
@@ -109,7 +108,8 @@
         "drupal/mail_safety": "^1.2",
         "drupal/fancy_file_delete": "^2.0",
         "drupal/filefield_paths": "^1.0@beta",
-        "drupal/core-composer-scaffold": "^8.8"
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-recommended": "^8.8"
 
 
     },
