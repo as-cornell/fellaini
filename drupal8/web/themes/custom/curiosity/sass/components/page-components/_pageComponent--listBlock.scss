@@ -15,6 +15,7 @@ Descr: sets styles for various pce listBlocks
   &--listBlock {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 1.5rem;
     @include medium() {
       grid-template-columns: repeat(4, 1fr);
     }

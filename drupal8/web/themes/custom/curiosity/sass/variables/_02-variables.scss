@@ -184,6 +184,11 @@
     --margin-3: 3rem;
   }
 
+  --margin-4: 2rem;
+  @include medium() {
+    --margin-4: 4rem;
+  }
+
   --margin-6: 2rem;
   @include medium() {
     --margin-6: 6rem;

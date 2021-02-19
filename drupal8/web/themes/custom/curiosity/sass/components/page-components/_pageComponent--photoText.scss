@@ -133,7 +133,7 @@ Descr: Sets styles for
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: var(--margin-3);
+  margin-bottom: var(--margin-4);
   font-size: var(--base-24);
 
   &__text {
@@ -143,7 +143,7 @@ Descr: Sets styles for
     flex: 0 0 calc(34% - var(--space));
   }
   @include large() {
-    align-items: center;
+    // align-items: center;
     &__image {
       flex: 0 0 40%;
     }

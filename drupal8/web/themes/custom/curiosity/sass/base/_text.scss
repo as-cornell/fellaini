@@ -24,12 +24,16 @@ strong {
   text-align: center;
   font-size: var(--base-84);
   max-width: 25ch;
-  margin: 2em auto 1em auto;
+  margin: 2.5em auto 1em auto;
   line-height: 1em;
 }
 
 // target just the first .spotlight on landing pages
-.landingPage>.content>.pageSection:nth-of-type(1)>.pcWrapper--ftb>.spotlight{
+.landingPage
+  > .content
+  > .pageSection:nth-of-type(1)
+  > .pcWrapper--ftb
+  > .spotlight {
   margin-top: 0;
 }
 
