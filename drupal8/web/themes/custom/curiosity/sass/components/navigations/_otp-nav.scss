@@ -26,6 +26,7 @@ Descr: otpN small and large, hovers and toggles for subNav
     .otpNavWrapper {
       position: sticky;
       top: 0;
+      z-index: 1;
     }
   }
   @include xl() {
