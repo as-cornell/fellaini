@@ -14,7 +14,7 @@ function as_base_fields_ckeditor_profile_defaults() {
       'name' => 'CKEditor Global Profile',
       'settings' => array(
         'skin' => 'moono-lisa',
-        'ckeditor_path' => '//cdn.ckeditor.com/4.14.0/full-all',
+        'ckeditor_path' => '//cdn.ckeditor.com/4.12.0/full-all',
         'ckeditor_local_path' => '',
         'ckeditor_plugins_path' => '%m/plugins',
         'ckeditor_plugins_local_path' => '',
