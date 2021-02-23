@@ -109,7 +109,8 @@
         "drupal/fancy_file_delete": "^2.0",
         "drupal/filefield_paths": "^1.0@beta",
         "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-recommended": "^8.8"
+        "drupal/core-recommended": "^8.8",
+        "drupal/path_redirect_import": "^1.0@beta"
 
 
     },
