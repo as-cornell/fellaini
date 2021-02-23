@@ -147,7 +147,7 @@ body {
   text-rendering: optimizeLegibility;
   padding: 0;
   margin: 0;
-  quotes: '\201c' '\201d'; }
+  quotes: "“" "”"; }
 
 a {
   color: #b31b1b; }
@@ -161,10 +161,23 @@ a:hover {
   padding-left: 5px;
   color: #e44444; }
 
-h1, h2, h3, h4, h5, h6, p, ul, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   margin: 0; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "canada-type-gibson", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -175,7 +188,7 @@ h1 {
   margin-bottom: 1em; }
   h1 span {
     color: #f7c73e;
-    margin: 0 -.75rem; }
+    margin: 0 -0.75rem; }
 
 .pageTitle {
   font-family: "canada-type-gibson", sans-serif;
@@ -219,7 +232,7 @@ h3 {
   margin-bottom: .75rem; }
 
 p {
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   margin-bottom: 1.5rem; }
 
 strong {
@@ -329,12 +342,14 @@ header .as-container, header .as-page__container, header .as-color-bar .as-tablo
 main img {
   max-width: 100%; }
 
-main ul, .mfp-container ul {
+main ul,
+.mfp-container ul {
   padding-left: 1rem;
   margin-bottom: 1.5rem;
   list-style-type: circle; }
-  main ul li, .mfp-container ul li {
-    margin-bottom: .5rem; }
+  main ul li,
+  .mfp-container ul li {
+    margin-bottom: 0.5rem; }
 
 main ol {
   padding-left: 1rem; }

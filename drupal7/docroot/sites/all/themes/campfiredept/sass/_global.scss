@@ -6,12 +6,12 @@
   @include box-sizing(border-box);
 }
 
-html{
+html {
   font-size: 14px;
   scroll-behavior: smooth;
-  @include small-plus(){
+  @include small-plus() {
     //font-size: 16px;
-  };
+  }
 }
 //body
 
@@ -23,8 +23,7 @@ body {
   text-rendering: optimizeLegibility;
   padding: 0;
   margin: 0;
-  quotes: '\201c' '\201d';
-
+  quotes: "\201c""\201d";
 }
 
 //links
@@ -38,18 +37,15 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
-@mixin as-link($color: $as-red-link){
-    color: $color;
-    text-decoration: underline;
-    &:after {
+@mixin as-link($color: $as-red-link) {
+  color: $color;
+  text-decoration: underline;
+  &:after {
     content: "›";
     display: inline-block;
     height: 100%;
     padding-left: 5px;
     color: $color;
-    
   }
 }
 
@@ -65,60 +61,73 @@ a:hover {
 
 // headers
 
-h1, h2, h3, h4, h5, h6, p, ul, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @include font-sans;
   //margin-bottom: .5em;
   line-height: 1.2em;
 }
 
-h1{
-  span{
+h1 {
+  span {
     color: $as-gold;
-    margin: 0 -.75rem;
+    margin: 0 -0.75rem;
   }
   font-size: 2rem;
   margin-bottom: 1em;
 }
 
 .pageTitle {
-  @include sans-font($size:32px,$weight:600);
-  @include medium-plus{
-    @include sans-font($size:63px,$weight:800);
+  @include sans-font($size: 32px, $weight: 600);
+  @include medium-plus {
+    @include sans-font($size: 63px, $weight: 800);
   }
   line-height: 1em;
   //margin-bottom: gutter(8);
 }
-  .pageTitle--first{
-    padding-top: gutter(2);
-    @include small-plus {
-      padding-top: gutter(4);
-    }
+.pageTitle--first {
+  padding-top: gutter(2);
+  @include small-plus {
+    padding-top: gutter(4);
   }
+}
 
-h2{
+h2 {
   margin-bottom: 1em;
   font-size: 2rem;
-  &.first{
+  &.first {
     margin-top: 26px;
   }
 }
 
-h3{
-  @include serif-font($size:20px, $weight: 400);
+h3 {
+  @include serif-font($size: 20px, $weight: 400);
   //margin-bottom: 1.5em;
 }
 
 // text
 
-p{
+p {
   //@include font-sans-lt;
   //@include font-size(18px);
   //line-height: 1.5;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   margin-bottom: 1.5rem;
 }
 
@@ -135,7 +144,6 @@ iframe {
 }
 
 hr {
-
   border: transparent;
   clear: both;
   height: 1px;
@@ -145,7 +153,6 @@ hr {
 mark {
   background: none;
 }
-
 
 /////////////////// Forms
 
@@ -174,11 +181,7 @@ label {
   position: relative;
 }
 
-
-
 // common
-
-
 
 .as-main {
   background: $as-white;
@@ -195,21 +198,19 @@ label {
     @include layout(12 (24 / 78));
     @include container(1200px);
   }
-  @media screen and (max-width:1200px){
+  @media screen and (max-width: 1200px) {
     //padding: 0 1rem;
   }
 }
-header{
-
-  .as-container{
+header {
+  .as-container {
     padding: 0;
-    @include medium-plus{
+    @include medium-plus {
       //padding: 0 1rem;
     }
   }
-
 }
-.as-container--narrow{
+.as-container--narrow {
   @include container(800px);
 }
 
@@ -240,34 +241,33 @@ header{
   }
 }
 
-.centered{
+.centered {
   text-align: center;
 }
 
 // images
-main img{
+main img {
   max-width: 100%;
 }
 
-
-
 // Lists
-main ul, .mfp-container ul{
+main ul,
+.mfp-container ul {
   padding-left: 1rem;
   margin-bottom: 1.5rem;
   list-style-type: circle;
-  li{
-    margin-bottom: .5rem;
+  li {
+    margin-bottom: 0.5rem;
   }
 }
 
-main ol{
+main ol {
   padding-left: 1rem;
 }
 
-.inlineList{
+.inlineList {
   padding: 0;
-  li{
+  li {
     display: inline;
     margin-left: 1rem;
   }

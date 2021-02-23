@@ -60,7 +60,8 @@ module.exports = function(grunt) {
 
         compass: {
             options:{
-                sourcemap: true
+            sourcemap: true,
+              require: 'susy'
             },
             dev: {
 
@@ -114,7 +115,7 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 options: {
-                    proxy: 'http://anthro.dd:8083/',
+                    proxy: 'http://d7.fellaini.local/',
                     background: true
                 }
             }
