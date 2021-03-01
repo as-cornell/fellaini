@@ -14,6 +14,9 @@ Descr: Sets up variables and content for _basic-page.twig
 
 {% set audience = content.field_newsletter_type.0["#markup"] %}
 
+{% if content.field_newsletter_extras.0["#markup"] == "showAlumniGiving" %}
+	{% set includeAlumniGiving = true %}
+{% endif %}
 
 {% include "@pages/_newsletter.twig" with {
     title : label,

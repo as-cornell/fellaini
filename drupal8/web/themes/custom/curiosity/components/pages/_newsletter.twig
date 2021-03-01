@@ -10,7 +10,7 @@ Descr: defines the table for newsletters
 --------------------------- */ 
 
 #}
-
+{# {{vardumper()}} #}
 
 <table style="background: #efefef; width:100%;">
 
@@ -56,107 +56,112 @@ Descr: defines the table for newsletters
 			{{main_content}}
 		</td>
 	</tr>
+	{# giving  button #}
+	{% if includeAlumniGiving %}
+ 
+		<tr>
+			<td>
+				<table style="margin-bottom: 50px;">
+					<tr>
+						<td style="">
+							<table>
+
+								<tr>
+									<td style="text-align: center; padding: 20px;">
+										<a href="https://securelb.imodules.com/s/1717/alumni/index.aspx?sid=1717&gid=2&pgid=3052&cid=7311&dids=12.13&bledit=1&appealcode=AS20YEM" style="
+                        display: inline-block;
+                        background: #b31b1b;
+                        color: white !important;
+                        padding: 10px 20px;
+                        font-size: 24px;
+                        border-radius: 4px;
+                        margin-top: 20px;
+                    ">
+											Give now
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td style="">
+										<ul style="margin-top: 20px;">
+											<li>
+												<a href="http://as.cornell.edu/alumni" style="text-decoration: none;">
+													Read More News for Alumni &amp; Friends of A&amp;S
+												</a>
+											</li>
+											<li>
+												<a href="https://cornellconnect.cornell.edu/" style="text-decoration: none;">
+													Update your Alumni Directory Profile
+												</a>
+											</li>
+											<li>
+												<a href="http://www.alumni.cornell.edu/participate/search.cfm" style="text-decoration: none;">
+													Find Upcoming Alumni Events
+												</a>
+											</li>
+											<li>
+												<a href="http://www.cornell.edu/visit/" style="text-decoration: none;">
+													Plan Your Next Visit to Cornell
+												</a>
+											</li>
+											<li>
+												<a href="http://as.cornell.edu/contact/Alumni-Affairs-and-Development" style="text-decoration: none;">
+													Questions? Contact Us
+												</a>
+											</li>
+										</ul>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+	{% endif %}
 	<!-- audience stuff -->
 	{% if audience == "student" %}
-
-		{% elseif audience == "alumni" %}
-			<tr>
-				<td>
-					<table style="margin-bottom: 50px;">
-						<tr>
-							<td style="">
-								<table>
-
-									<tr>
-										<td style="text-align: center; padding: 20px;">
-											<a href="https://securelb.imodules.com/s/1717/alumni/index.aspx?sid=1717&gid=2&pgid=3052&cid=7311&dids=12.13&bledit=1&appealcode=AS20YEM"style="
-    display: inline-block;
-    background: #b31b1b;
-    color: white !important;
-    padding: 10px 20px;
-    font-size: 24px;
-    border-radius: 4px;
-    margin-top: 20px;
-">
-												Give now
-											</a>
-										</td>
-									</tr>
-									<tr>
-										<td style="">
-											<ul style="margin-top: 20px;">
-												<li>
-													<a href="http://as.cornell.edu/alumni" style="text-decoration: none;">
-														Read More News for Alumni &amp; Friends of A&amp;S
-													</a>
-												</li>
-												<li>
-													<a href="https://cornellconnect.cornell.edu/" style="text-decoration: none;">
-														Update your Alumni Directory Profile
-													</a>
-												</li>
-												<li>
-													<a href="http://www.alumni.cornell.edu/participate/search.cfm" style="text-decoration: none;">
-														Find Upcoming Alumni Events
-													</a>
-												</li>
-												<li>
-													<a href="http://www.cornell.edu/visit/" style="text-decoration: none;">
-														Plan Your Next Visit to Cornell
-													</a>
-												</li>
-												<li>
-													<a href="http://as.cornell.edu/contact/Alumni-Affairs-and-Development" style="text-decoration: none;">
-														Questions? Contact Us
-													</a>
-												</li>
-											</ul>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		{% elseif audience == "faculty" %}
-			<tr>
-				<td>
-					<table style="background-color: #efefef;">
-					
-
-						<tr>
-							<td style="text-align:right; width: 50%;padding-right: 20px;">
-								<a href="http://as.cornell.edu/faculty-resources" style="
-    display: inline-block;
-    background: #006699;
-    color: white !important;
-    padding: 10px 20px;
-    font-size: 24px;
-    border-radius: 4px;
-    margin-top: 20px;
-">
-									Faculty Information
-								</a>
-							</td>
-							<td style="width: 50%;padding-left: 20px;">
-								<a href="http://as.cornell.edu/for-staff" style="
-    display: inline-block;
-    background: #006699;
-    color: white !important;
-    padding: 10px 20px;
-    font-size: 24px;
-    border-radius: 4px;
-    margin-top: 20px;
-">
-									Staff Information
-								</a>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
+    {# anything just for all stuent emails #}
+  {% elseif audience == "alumni" %}
+		{# anything for all alumni emails #}
+  {% elseif audience == "faculty" %}
+    <tr>
+      <td>
+        <table style="background-color: #efefef;">
+          <tr>
+            <td style="text-align:right; width: 50%;padding-right: 20px;">
+              <a href="http://as.cornell.edu/faculty-resources" style="
+                  display: inline-block;
+                  background: #006699;
+                  color: white !important;
+                  padding: 10px 20px;
+                  font-size: 24px;
+                  border-radius: 4px;
+                  margin-top: 20px;
+              ">
+                Faculty Information
+              </a>
+            </td>
+            <td style="width: 50%;padding-left: 20px;">
+              <a href="http://as.cornell.edu/for-staff" style="
+                  display: inline-block;
+                  background: #006699;
+                  color: white !important;
+                  padding: 10px 20px;
+                  font-size: 24px;
+                  border-radius: 4px;
+                  margin-top: 20px;
+              ">
+                Staff Information
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
 	{% endif %}
+  {# audience footers #}
 	{% if audience == "alumni" %}
 		<tr>
 			<td>
@@ -170,7 +175,6 @@ Descr: defines the table for newsletters
 							</p>
 						</td>
 					</tr>
-
 					<tr>
 						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px;text-align:center;margin-top:50px;">
 							<p style="font-size: 16px !important;">
@@ -185,8 +189,6 @@ Descr: defines the table for newsletters
 								.
 							</p>
 						</td>
-
-
 					</tr>
 				</table>
 			</td>
@@ -204,7 +206,6 @@ Descr: defines the table for newsletters
 							</p>
 						</td>
 					</tr>
-
 					<tr>
 						<td colspan="2" style="background-color: #333; color: #fff;padding: 20px;text-align:center;margin-top:50px;">
 							<p style="font-size: 16px !important;">
