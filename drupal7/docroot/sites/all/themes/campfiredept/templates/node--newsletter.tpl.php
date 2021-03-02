@@ -25,26 +25,26 @@
                 <?php if ($site_name == 'Milstein Program in Technology & Humanity') : ?>
                   <table class="twelve columns toprow" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 600px;">
                     <tr style="padding: 0;vertical-align: top;text-align: left;">
-                      <td style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;padding: 0;vertical-align: top;text-align: left;color: #222222;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0;line-height: 27px;font-size: 18px;padding-top: 15px;border-collapse: collapse !important;width: 50% !important;"><a href="http://cornell.edu" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/cornell-reduced-black_web.png
+                      <td style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;padding: 0;vertical-align: top;text-align: left;color: #222222;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0;line-height: 27px;font-size: 18px;padding-top: 15px;border-collapse: collapse !important;width: 50% !important;"><a href="https://cornell.edu" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/cornell-reduced-black_web.png
 " alt="Cornell University"></a></td>
 
                       <td style="text-align: right;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;padding: 0;vertical-align: top;color: #222222;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0;line-height: 27px;font-size: 18px;padding-top: 15px;border-collapse: collapse !important;width: 50% !important;">
                         <a href="<?php print $GLOBALS['base_url']; ?><?php print($base_url . $node_url); ?>" style="color: #b31b1b;text-decoration: none;">view online</a>
                         <?php if ($facebook) : ?>
                           <a href="https://www.facebook.com/<?php print $facebook; ?>" style="color: #b31b1b;text-decoration: none;">
-                            <img src="http://as.cornell.edu/sites/as/files/facebook-green.png" width="20" alt="<?php print $site_name; ?> on Facebook" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:11px; height: 20px;"></a>
+                            <img src="https://as.cornell.edu/sites/as/files/facebook-green.png" width="20" alt="<?php print $site_name; ?> on Facebook" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:11px; height: 20px;"></a>
 
                         <?php endif; ?>
 
                         <?php if ($twitter) : ?>
-                          <a href="https://twitter.com/<?php print $twitter; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/twitter-green.png" alt="<?php print $site_name; ?> on Twitter" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
+                          <a href="https://twitter.com/<?php print $twitter; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/twitter-green.png" alt="<?php print $site_name; ?> on Twitter" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
                         <?php endif; ?>
 
                         <?php if ($instagram) : ?>
-                          <a href="https://instagram.com/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/instagram-green.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
+                          <a href="https://instagram.com/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/instagram-green.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
                         <?php endif; ?>
                         <?php if ($linkedin) : ?>
-                          <a href="https://linkedin.com/company/<?php print $linkedin; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/linkedin-green.png" alt="<?php print $site_name; ?> on LinkedIn" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
+                          <a href="https://linkedin.com/company/<?php print $linkedin; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/linkedin-green.png" alt="<?php print $site_name; ?> on LinkedIn" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
                         <?php endif; ?>
 
                       </td>
@@ -60,19 +60,19 @@
                       <td style="text-align: right;word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;padding: 0;vertical-align: top;color: #222222;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0;line-height: 27px;font-size: 18px;padding-top: 15px;border-collapse: collapse !important;width: 50% !important;">
                         <?php if ($facebook) : ?>
                           <a href="https://www.facebook.com/<?php print $facebook; ?>" style="color: #b31b1b;text-decoration: none;">
-                            <img src="http://as.cornell.edu/sites/as/files/facebook-green.png" width="20" alt="<?php print $site_name; ?> on Facebook" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:11px; height: 20px;"></a>
+                            <img src="https://as.cornell.edu/sites/as/files/facebook-green.png" width="20" alt="<?php print $site_name; ?> on Facebook" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:11px; height: 20px;"></a>
 
                         <?php endif; ?>
 
                         <?php if ($twitter) : ?>
-                          <a href="https://twitter.com/<?php print $twitter; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/twitter-green.png" alt="<?php print $site_name; ?> on Twitter" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
+                          <a href="https://twitter.com/<?php print $twitter; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/twitter-green.png" alt="<?php print $site_name; ?> on Twitter" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
                         <?php endif; ?>
 
                         <?php if ($instagram) : ?>
-                          <a href="https://instagram.com/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/instagram-green.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
+                          <a href="https://instagram.com/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/instagram-green.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
                         <?php endif; ?>
                         <?php if ($linkedin) : ?>
-                          <a href="https://linkedin.com/company/<?php print $linkedin; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/linkedin-green.png" alt="<?php print $site_name; ?> on LinkedIn" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
+                          <a href="https://linkedin.com/company/<?php print $linkedin; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/linkedin-green.png" alt="<?php print $site_name; ?> on LinkedIn" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width:21px; height: 20px;"></a>
                         <?php endif; ?>
 
                       </td>
@@ -145,7 +145,7 @@ we can have automagically branded newsletters per department */
                                 ?>
 
                                 <td class="center logo" align="center" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;padding: 0;vertical-align: top;text-align: center;color: #222222;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0;line-height: 27px;font-size: 18px;border-collapse: collapse !important;">
-                                  <a href="http://cornell.edu" class="logo--cornell"><img src="https://as.cornell.edu/sites/as/files/cu-insignia-newsletter.png
+                                  <a href="https://cornell.edu" class="logo--cornell"><img src="https://as.cornell.edu/sites/as/files/cu-insignia-newsletter.png
 " alt="Cornell University"></a>
 
                                   <a href="<?php print $GLOBALS['base_url']; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="as-header__brand">
@@ -175,12 +175,12 @@ we can have automagically branded newsletters per department */
 
                     <!-- start events -->
                     <?php
-                      if (!empty($content['field_newsletter_events'])){
-                        print render($content['field_newsletter_events']);
-                      }
-                      if (!empty($content['field_eventsblk'])){
-                        print render($content['field_eventsblk']);
-                      }
+                    if (!empty($content['field_newsletter_events'])) {
+                      print render($content['field_newsletter_events']);
+                    }
+                    if (!empty($content['field_eventsblk'])) {
+                      print render($content['field_eventsblk']);
+                    }
                     ?>
                     <!-- end events -->
 
@@ -257,20 +257,20 @@ we can have automagically branded newsletters per department */
                             <tr style="padding: 0;vertical-align: top;text-align: left;">
 
                               <td style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;padding: 20px;vertical-align: middle;text-align: left;color: #222222;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0;line-height: 27px;font-size: 18px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;border-collapse: collapse !important;padding-right: 0;width: 50% !important;">
-                                <img src="http://as.cornell.edu/sites/as/files/small-lockup.png" alt="College of Arts & Sciences" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;margin-left: 0px;">
+                                <img src="https://as.cornell.edu/sites/as/files/small-lockup.png" alt="College of Arts & Sciences" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;margin-left: 0px;">
                               </td>
                               <td class="socialLinks" style="word-break: break-word;-webkit-hyphens: none;-moz-hyphens: none;hyphens: none;padding: 20px;vertical-align: middle;text-align: right;color: #222222;font-family: Helvetica, Arial, sans-serif;font-weight: normal;margin: 0;line-height: 27px;font-size: 18px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;border-collapse: collapse !important;padding-left: 0;">
                                 <?php if ($facebook) : ?>
-                                  <a href="https://facebook.com/<?php print $facebook; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/facebook-gray.png" alt="<?php print $site_name; ?> on Twitter" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
+                                  <a href="https://facebook.com/<?php print $facebook; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/facebook-gray.png" alt="<?php print $site_name; ?> on Twitter" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
                                 <?php endif; ?>
                                 <?php if ($twitter) : ?>
-                                  <a href="https://twitter.com/<?php print $twitter; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/twitter-gray.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
+                                  <a href="https://twitter.com/<?php print $twitter; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/twitter-gray.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
                                 <?php endif; ?>
                                 <?php if ($instagram) : ?>
-                                  <a href="https://instagram.com/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/instagram-gray.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
+                                  <a href="https://instagram.com/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/instagram-gray.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
                                 <?php endif; ?>
                                 <?php if ($linkedin) : ?>
-                                  <a href="https://linkedin.com/company/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="http://as.cornell.edu/sites/as/files/linkedin-gray.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
+                                  <a href="https://linkedin.com/company/<?php print $instagram; ?>" style="color: #b31b1b;text-decoration: none;"><img src="https://as.cornell.edu/sites/as/files/linkedin-gray.png" alt="<?php print $site_name; ?> on Instagram" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;width: auto !important;max-width: 100% !important;float: none;clear: both;display: inline-block;height: auto;border: none;margin-left: 10px; width: 21px;"></a>
                                 <?php endif; ?>
 
 
