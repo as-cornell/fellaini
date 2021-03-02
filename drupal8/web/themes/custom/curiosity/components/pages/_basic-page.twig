@@ -14,7 +14,7 @@ Descr: defines content and blocks for _default.twig for content type 'basic page
 {% set sidebar_wrapper_extra_classes = sidebar_wrapper_extra_classes | default(['']) %}
 
 
-<main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }}>
+<main {{ bem(main_element_base_class, (main_element_modifiers), main_element_blockname, main_element_extra_classes) }} id="mainContent">
 
 
 	<div class="title">
