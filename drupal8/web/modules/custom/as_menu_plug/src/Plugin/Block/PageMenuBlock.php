@@ -28,7 +28,7 @@ class PageMenuBlock extends BlockBase
     $list_class = 'otpNav';
     $alias = '';
     $build = [];
-    $build['#theme'] = 'page_menu_block';
+    //$build['#theme'] = 'page_menu_block';
     $config = $this->getConfiguration();
     //get link values in an array
     if (!empty($config['link_values'])) {

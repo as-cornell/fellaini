@@ -14,7 +14,7 @@ class PeopleController extends ControllerBase {
    * @return array
    */
   public function content($pathtoken) {
-
+    $uuid ='';
     $path = 'https://asd8.as.cornell.edu/people/'.$pathtoken;
     // get people uuids from path
       $pids = \Drupal::entityQuery('page_component_entity')

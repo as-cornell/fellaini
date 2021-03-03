@@ -20,7 +20,7 @@ class CardMenuBlock extends BlockBase {
   public function build() {
     $link_class = 'cardNav__item';
     $build = [];
-    $build['#theme'] = 'card_menu_block';
+    //$build['#theme'] = 'card_menu_block';
     $config = $this->getConfiguration();
     //dump($config) ;
     if (!empty($config['link_values'])) {

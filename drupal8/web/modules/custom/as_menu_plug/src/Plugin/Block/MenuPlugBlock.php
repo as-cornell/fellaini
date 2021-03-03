@@ -23,7 +23,7 @@ class MenuPlugBlock extends BlockBase
   public function build()
   {
     $build = [];
-    $build['#theme'] = 'menu_plug_block';
+    //$build['#theme'] = 'menu_plug_block';
     $build['menu_plug_block']['#markup'] = '';
     $menu_link_id = '';
     $entity_id = '';
@@ -64,7 +64,7 @@ class MenuPlugBlock extends BlockBase
         $index = 0;
         // make sure we need a wrapper
 
-        // RTM 8/17 hiding the list with inpage navs from big view added otpNav as they can both be the same just visually hidden in sidebar. 
+        // RTM 8/17 hiding the list with inpage navs from big view added otpNav as they can both be the same just visually hidden in sidebar.
 
         //if (!empty($node->field_page_components[0]->entity->field_page_section_title[0])) {
         $build['menu_plug_block']['#markup'] = $build['menu_plug_block']['#markup'] . '<ul class="' . $list_class . ' otpNav">';

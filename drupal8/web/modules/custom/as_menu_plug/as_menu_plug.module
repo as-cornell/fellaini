@@ -74,7 +74,26 @@ function as_menu_plug_menulinkid_nid($menu_link_id) {
 
   }
 
+/**
+ * Implements hook_theme().
+ */
+function as_menu_plug_theme() {
+  return [
+    'card_menu_block' => [
+      'render element' => 'children',
+      'template' => 'card-menu-block'
+    ],
+    'menu_plug_block' => [
+      'render element' => 'children',
+      'template' => 'menu-plug-block'
+    ],
+    'page_menu_block' => [
+      'render element' => 'children',
+      'template' => 'page-menu-block'
+    ],
 
+  ];
+}
 
 
 
