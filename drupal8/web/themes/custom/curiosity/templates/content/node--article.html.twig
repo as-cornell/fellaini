@@ -11,7 +11,7 @@ Passes:
 --------------------------- */
 
 #}
-{# {{vardumper()}} #}
+
 {# Set up main
     - extra class main
     - base class page
@@ -22,7 +22,7 @@ Passes:
 {% set main_element_base_class = main_element_base_class | default('article') %}
 {% set main_element_modifiers = [''] %}
 
-{# {{vardumper()}} #}
+
 {# Content wrapper modifiers#}
 {% set content_wrapper_modifiers = ['article'] %}
 
@@ -49,7 +49,7 @@ Passes:
 	{% set show_related_people = true %}
 {% set related_people = content.field_related_people %}
 {% endif %}
-{# {{content.field_related_people}} #}
+
 {# byline #}
 	{% if content.field_byline_reference|render is not empty %}
 	{% set show_byline = true %}
@@ -61,10 +61,7 @@ Passes:
 	{% set show_mediasource = true %}
 {% set mediasource = content.field_media_source_reference %}
 {% endif %}
-{# {{vardumper(attributes)}} #}
-{# ms- {{show_mediasource}}<br>
-by - {{show_byline}} #}
-{# {{content.field_focal_image}} #}
+
 {% include "@pages/_article.twig" with {
 
   article_pano : content.field_pano,

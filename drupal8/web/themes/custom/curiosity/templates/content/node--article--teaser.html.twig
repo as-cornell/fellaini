@@ -17,7 +17,7 @@ Setting up new block class of 'teaser'
 
 --------------------------- */
 #}
-{# {{vardumper(content)}} #}
+
 {% set nodeType = 'article' %}
 {% set teaser_modifiers = [''] %}
 {% set teaser_modifiers = teaser_modifiers|merge([nodeType]) %}
@@ -25,7 +25,6 @@ Setting up new block class of 'teaser'
 {# if no summary set to chopped body #}
 	{% if content.field_summary|render is not empty %}
 	{% set teaser_body = content.field_summary.0['#context'].value%}
-
 
 {% else %}
 	{% set teaser_body = '<p>' ~ content.field_article_components_entity|field_target_entity.field_formatted_text.value|striptags|truncate(400, true, '...') ~ '</p>' %}

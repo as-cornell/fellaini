@@ -4,6 +4,7 @@
  makes link to news filtered by byline
  */
 #}
+
 {%  set base_url = url('<front>')  %}
 {% for item in items %}
   {% set link = item.content["#title"] %}

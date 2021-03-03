@@ -25,7 +25,6 @@ Descr: Sets up variables and content for _basic-page.twig
 {% set main_element_modifiers = [''] %}
 
 
-{# {% set main_element_blockname = 'bobsblock' %} #}
 
 {# landing page has no sideber nav aside or sidebarcontent #}
 {% set sidebarNav = false %}
@@ -42,12 +41,8 @@ Descr: Sets up variables and content for _basic-page.twig
 {% endif %}
 
 
-
-
-{# {{vardumper()}} #}
-
-{# 
-  If pano image 
+{#
+  If pano image
   -- Currently not using pano on landing page.
 #}
 {# if field_pano not empty add to content_wrapper_modifiers #}
@@ -65,7 +60,7 @@ Descr: Sets up variables and content for _basic-page.twig
   {% endif %}
 {% endfor %}
 
-{# if page sectin values set aside_nav to the page menu block #}
+{# if page section values set aside_nav to the page menu block #}
 {% if linkValues %}
   {% set otp_nav %}
   <div class="otpNavWrapper otpNav--landing_page">
@@ -86,7 +81,6 @@ Descr: Sets up variables and content for _basic-page.twig
     title : label,
     main_element_modifiers : main_element_modifiers,
     pano : content.field_pano,
-
 
     main_content : content.field_page_components,
 

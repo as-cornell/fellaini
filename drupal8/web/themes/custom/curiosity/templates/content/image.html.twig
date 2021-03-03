@@ -10,10 +10,7 @@
  * @see template_preprocess_image()
  */
 #}
-{# {{kint(_context)}} #}
 
-{# <img{{ attributes }}/>{{attributes}} #}
-{# {{vardumper()}} #}
 {% include "@content/atoms/_image.twig" with {
     "img_src" : uri,
     "img_alt" : alt

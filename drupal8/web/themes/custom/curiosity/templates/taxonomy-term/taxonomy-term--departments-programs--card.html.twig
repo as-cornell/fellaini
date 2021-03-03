@@ -23,8 +23,7 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-{# {{vardumper()}} #}
-{# {% set main_element_extra_classes = ['main'] %} #}
+
 
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
 {% set card_modifiers = ['department-program'] %}
@@ -33,7 +32,7 @@
     {% set card_image = content.field_image %}
   {% else %}
 {% set card_image = '<figure
-	
+
 	class="figure figure--inline figure--4_5 contextual-region"
 	data-quickedit-entity-instance-id="0"
 >

@@ -48,14 +48,10 @@ Descr: This is the framework for a basic page contnet type. Sets up variables an
 	{% set sidebar_content = content.field_sidebar_components %}
 {% endif %}
 
-{#
-{% set sidebarContent = true %} #}
 {# Set sidebar_nav #}
 {% set sidebar_nav %}
 {{ drupal_menu('main', 1, 0, FALSE) }}
 {% endset %}
-
-{# {{drupal_menu('main', 1, 0, FALSE)}} #}
 
 
 {#

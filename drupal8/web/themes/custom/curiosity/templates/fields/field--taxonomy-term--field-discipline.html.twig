@@ -4,11 +4,8 @@
  using _ul.twig because just a plain list not a page component
  */
 #}
-{# {{vardumper(items)}} #}
 
 {% set ul_modifiers = ['related-disciplines'] %}
-
-
 
 {% embed "@content/atoms/_ul.twig" with{
   ul_items : items
