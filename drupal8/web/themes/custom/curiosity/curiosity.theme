@@ -30,12 +30,7 @@ function curiosity_preprocess_node(&$variables)
 {
     /** @var \Drupal\node\Entity\Node $node */
     $node = &$variables['node'];
-    // here's where to put any image fields that are media refrences outside of paragrpahs
-    //if ($node->hasField('field_image_reference')) {
-    //if ($media_entity = curiosity_get_media_entity_from_reference($node->get('field_image_reference')->first())) {
-    //$variables['img'] = curiosity_get_image_properties_from_media_entity($media_entity);
-    //}
-    //}
+    // here's where to put any image fields that are media refrences outside of paragraphs
     if ($node->hasField('field_image')) {
         $media_entity = curiosity_get_media_entity_from_reference($node->get('field_image')->first());
         $variables['field_image_img'] = curiosity_get_image_properties_from_media_entity($media_entity);
@@ -46,23 +41,13 @@ function curiosity_preprocess_node(&$variables)
     }
 }
 
-function curiosity_preprocess_media(&$variables)
-{
-    if ($variables['media']->bundle() == 'image') {
-        $variables['img'] = curiosity_get_image_properties_from_media_entity($variables['media']);
-    }
-}
-
 /**
  * Implements hook_preprocess_entity().
  */
 function curiosity_preprocess_page_component_entity(&$variables)
 {
     $page_component_entity = &$variables['elements']['#page_component_entity'];
-    if ($page_component_entity->hasField('field_pano_image')) {
-        $media_entity = curiosity_get_media_entity_from_reference($page_component_entity->get('field_pano_image')->first());
-        $variables['img'] = curiosity_get_image_properties_from_media_entity($media_entity);
-    }
+
     if ($page_component_entity->hasField('field_figure_image')) {
         $media_entity = curiosity_get_media_entity_from_reference($page_component_entity->get('field_figure_image')->first());
         $variables['img'] = curiosity_get_image_properties_from_media_entity($media_entity);
@@ -73,6 +58,15 @@ function curiosity_preprocess_page_component_entity(&$variables)
     }
 
 }
+
+function curiosity_preprocess_media(&$variables)
+{
+    if ($variables['media']->bundle() == 'image') {
+        $variables['img'] = curiosity_get_image_properties_from_media_entity($variables['media']);
+    }
+}
+
+
 
 /**
  * Takes an entity_reference and returns the media_entity
