@@ -111,7 +111,8 @@
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/path_redirect_import": "^1.0@beta",
-        "drupal/noreqnewpass": "^1.2"
+        "drupal/noreqnewpass": "^1.2",
+        "drupal/redirect_after_login": "^2.7"
 
 
     },
