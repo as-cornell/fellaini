@@ -5,6 +5,9 @@ core: 8.x
 # Defines the base theme
 base theme: adminimal_theme
 
+libraries:
+  - adminimal_as/global-styling
+
 regions:
   header: 'Header'
   pre_content: 'Pre-content'
