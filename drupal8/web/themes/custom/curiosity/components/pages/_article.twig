@@ -15,7 +15,7 @@ Needed? :
 --------------------------- */
 
 #}
-{# {{vardumper()}} #}
+
 {% set isTitle = true %}
 <main {{ bem(main_element_base_class, (main_element_modifiers), main_blockname, main_element_extra_classes) }}>
 {{titles_suffix}}
@@ -26,7 +26,7 @@ Needed? :
   </div>
 
 	{% endif %}
-	{# {{vardumper($content)}} #}
+
 	<div class="article__title">
 		{% include "@content/atoms/_heading.twig" with {
       "heading_level" : 1,
@@ -47,8 +47,8 @@ Needed? :
           {{mediasource}}
         {% endif %}
         <br/>
-        {% endif %}   
-      </p> 
+        {% endif %}
+      </p>
     {% endif %}
     <span class="article__dateline">{{article_dateline}}</span>
 	</div>
@@ -74,7 +74,7 @@ Needed? :
 		{{article_card}}
 	</div>
 	<aside role="complimentary">
-    
+
     {% if show_related_articles %}
       <h3>
         Related articles

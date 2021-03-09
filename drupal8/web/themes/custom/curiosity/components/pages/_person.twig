@@ -85,5 +85,12 @@ Descr: defines content and blocks for basic person page
 				{% endfor %}
 			</ul>
 		{% endif %}
+		{% if show_node_links %}
+			<h3>
+				Links
+			</h3>
+			{{links}}
+			</ul>
+		{% endif %}
 	</div>
 </main>
