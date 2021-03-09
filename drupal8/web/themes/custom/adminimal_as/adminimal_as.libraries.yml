@@ -1,4 +1,4 @@
-framework:
+global:
   css:
     theme:
       css/style.css: {}
