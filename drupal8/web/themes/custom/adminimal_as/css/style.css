@@ -1,0 +1,18 @@
+body{
+  /*background: pink;*/
+}
+
+.layout-region-node-main{
+  width: 100%;
+  float: none;
+}
+.layout-region-node-secondary{
+  width: 100%;
+  float: none;
+}
+
+/* form fields */
+
+.form-checkboxes{
+  columns: 3;
+}

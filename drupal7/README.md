@@ -1,4 +1,4 @@
-# Scholsie
+# drupal7 (Scholsie)
 
 Old school Drupal in a composer based package for plagtform.sh.
 
