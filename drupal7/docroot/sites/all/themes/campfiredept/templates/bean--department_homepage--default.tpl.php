@@ -128,6 +128,9 @@
     if ($siteurl == 'latino') {
       $block = module_invoke('block', 'block_view', '11');
     }
+    if ($siteurl == 'aas') {
+      $block = module_invoke('block', 'block_view', '7');
+    }
     // if ($siteurl == 'sochum') {
     //   $block = module_invoke('block', 'block_view', '1');
     // }
