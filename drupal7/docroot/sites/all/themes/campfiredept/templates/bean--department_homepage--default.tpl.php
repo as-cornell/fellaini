@@ -123,14 +123,16 @@
   <?php
   $siteurl = variable_get('file_public_path', conf_path());
   $siteurl = str_replace('sites/', '', $siteurl);
-  $siteurl = str_replace('.dd', '', $siteurl);
   if (!empty($siteurl)) {
+
     if ($siteurl == 'latino') {
       $block = module_invoke('block', 'block_view', '11');
     }
+
     if ($siteurl == 'aas') {
       $block = module_invoke('block', 'block_view', '7');
     }
+    
     // if ($siteurl == 'sochum') {
     //   $block = module_invoke('block', 'block_view', '1');
     // }
