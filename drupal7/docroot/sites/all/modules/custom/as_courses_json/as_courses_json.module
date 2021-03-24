@@ -46,14 +46,14 @@ global $base_url;
 $link = $base_url .'/courses/';
 //semester name
 $semestername = "";
-  if ($semester == 'SU20') {
-    $semestername = 'Summer 2020';
-      }
-  if ($semester == 'FA20') {
-    $semestername = 'Fall 2020';
-      }
   if ($semester == 'SP21') {
     $semestername = 'Spring 2021';
+      }
+  if ($semester == 'SU21') {
+    $semestername = 'Summer 2021';
+      }
+  if ($semester == 'FA21') {
+    $semestername = 'Fall 2021';
       }
 
     $build['courses_block']['#markup'] = "
@@ -67,7 +67,7 @@ $semestername = "";
       <ul class='inlineList'>
       <li>Courses by semester: </li>
         <li><a href='".$link ."SP21'>Spring 2021</a></li>
-        <li><a href='".$link ."FA20'>Fall 2020</a></li>
+        <li><a href='".$link ."SU21'>Summer 2021</a></li>
       </ul>
     </div>
       <div class='as-container list courses__list  grid grid--three'>";
@@ -199,7 +199,7 @@ $semestername = "";
 $filternetid = "";
 $filternetid2 = "";
 //edit this to control what semesters get fetched
-$semesters = array('SP21');
+$semesters = array('SP21','SU21');
 //course subject from sitewide department variables
 $keyword_params = explode(',',variable_get('as_dept_variables_coursesubjects', ''));
 $courses = array();
