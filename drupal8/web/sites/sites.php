@@ -56,9 +56,6 @@
 
 $sites = array(
   'fellaini.local' => 'default',
-  'departments.fellaini.local' => 'departments',
-  'anthro.fellaini.local' => 'departments',
-  'history.fellaini.local' => 'departments',
   'people.fellaini.local' => 'people'
 );
 
@@ -85,5 +82,4 @@ if (!empty($_ENV['PLATFORM_ROUTES'])) {
 
 $sites['asd8.as.cornell.edu'] = 'default';
 $sites['as.cornell.edu'] = 'default';
-$sites['departments.asd8.as.cornell.edu'] = 'departments';
 $sites['people.asd8.as.cornell.edu'] = 'people';

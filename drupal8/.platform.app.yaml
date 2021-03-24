@@ -14,7 +14,6 @@ dependencies:
 
 relationships:
   first: "mysqldb:first"
-  departments: "mysqldb:departments"
   people: "mysqldb:people"
   saml: "mysqldb:saml"
 #    solr: 'solrsearch:solr'
@@ -69,16 +68,6 @@ web:
       root: "web/sites/as/files"
       scripts: false
 
-    "/sites/departments/files":
-      allow: true
-      expires: 5m
-      passthru: "/index.php"
-      root: "web/sites/departments/files"
-      scripts: false
-      rules:
-        "^/sites/department/files/(css|js)":
-          expires: 2w
-
     "/sites/people/files":
       allow: true
       expires: 5m
@@ -97,7 +86,6 @@ disk: 16384
 # 'shared:files/NAME', where NAME is just a unique name for the mount.
 mounts:
   "/web/sites/default/files": "shared:files/files-first"
-  "/web/sites/departments/files": "shared:files/files-departments"
   "/web/sites/people/files": "shared:files/files-people"
   "/web/sites/as/files": "shared:files/files-as"
   "/tmp": "shared:files/tmp"
