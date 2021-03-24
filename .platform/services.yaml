@@ -18,10 +18,6 @@ mysqldb:
                 default_schema: firstdb
                 privileges:
                     firstdb: admin
-            departments:
-                default_schema: departmentsdb
-                privileges:
-                    departmentsdb: admin
             people:
                 default_schema: peopledb
                 privileges:
