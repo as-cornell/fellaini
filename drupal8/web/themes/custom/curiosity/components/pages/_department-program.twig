@@ -29,14 +29,15 @@ Descr: defines content and blocks for majors and minors detail pages
 	<div class="content">
 		{{description}}
 		{{body}}
-		{% if show_related_people %}
-			<h3>
-				Department Faculty
-			</h3>
-			<ul class="columns">
+    <p><a href="{{content.field_department_website.0["#url"]}}">Visit {{title}}</a></p>
+		{# {% if show_related_people %} #}
+			{# <h3>
+				Associated Faculty
+			</h3> #}
+			{# <ul class="columns"> #}
 				{{related_people}}
-			</ul>
-		{% endif %}
+			{# </ul> #}
+		{# {% endif %} #}
 
 
 	</div>
@@ -45,9 +46,9 @@ Descr: defines content and blocks for majors and minors detail pages
 		{{websiteLink}}
 
 
-		<p>
+		{# <p>
 			<a href=""></a>
-		</p>
+		</p> #}
     {% if showLinks %}
 		<h3>
 			Learn more

@@ -23,7 +23,7 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-{#vardumper(term.tid.value)#}
+{# {{vardumper()}} #}
 {#drupal_block('people_department_block', {deptid: term.tid.value})#}
 {% set main_element_extra_classes = ['main'] %}
 {% set main_element_base_class = main_element_base_class | default('department-program') %}
@@ -52,6 +52,7 @@
 
 {# Related People#}
 {% set related_people = drupal_block('people_dept_faculty_block', {deptid: term.tid.value}) %}
+
 {% if related_people %}
   {% set show_related_people = true %}
 {% endif %}
