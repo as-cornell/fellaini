@@ -1,7 +1,7 @@
 /* -------------------------
 
 Title: tables
-Descr: 
+Descr:
    - style tables
 
 --------------------------- */
@@ -11,6 +11,7 @@ table,
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 3rem;
+  margin-top: 1.5rem;
   font-size: var(--base-20);
   caption {
     @extend .sr-only;
