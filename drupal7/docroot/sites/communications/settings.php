@@ -21,7 +21,7 @@ ini_set('pcre.recursion_limit', 200000);
 $databases = array();
 $update_free_access = FALSE;
 $drupal_hash_salt = '';
-
+///
 // Set Drupal not to check for HTTP connectivity.
 $conf['https'] = TRUE;
 $conf['drupal_http_request_fails'] = FALSE;
