@@ -31,11 +31,4 @@ $config = array(
         'entityID' => 'https://people.asd8.as.cornell.edu/',
         'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
     ),
-    'departments-sp' => array(
-        'saml:SP',
-        'privatekey' => 'saml.pem',
-        'certificate' => 'saml.crt',
-        'entityID' => 'https://departments.asd8.as.cornell.edu/',
-        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
-    ),
 );
