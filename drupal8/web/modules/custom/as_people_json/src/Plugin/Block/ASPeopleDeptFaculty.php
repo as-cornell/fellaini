@@ -34,11 +34,13 @@ public function build() {
     // get people data from json
     $department_json = as_people_json_get_department_faculty_json($deptid);
     //var_dump($department_json);
+    //rtm9 3-27-21 add the whole associated faculty in here
     if (!empty($department_json['data'])) {
       // get image path from json
       //foreach($department_json['included'] as $image) {
           //$imagepath = $image['attributes']['uri']['url'];
       //}
+      $markup = '<h3>Associated Faculty</h3><ul class="columns">';
       foreach($department_json['data'] as $person_data) {
           //$alt = $person_data['relationships']['field_image']['data']['meta']['alt'];
           $path = $person_data['attributes']['path']['alias'];
@@ -52,7 +54,7 @@ public function build() {
           }
           $markup = $markup . '<li><a href="/people'. $path .'">' . $title . '</a></li>';
       }
-
+      $markup = $markup . '</ul>';
     }
     //else {
       // There were no people
