@@ -1,7 +1,7 @@
 # See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
 
 name: "drupal8"
-type: "php:7.2"
+type: "php:7.4"
 
 # Configuration of the build of this application.
 build:
