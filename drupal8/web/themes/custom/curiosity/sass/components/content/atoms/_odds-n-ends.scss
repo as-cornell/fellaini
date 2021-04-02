@@ -9,9 +9,11 @@ Descr: I know right...
 
 .align-right {
   margin-left: var(--space);
+  clear: both;
 }
 .align-left {
   margin-right: var(--space);
+  clear: both;
 }
 
 .block {

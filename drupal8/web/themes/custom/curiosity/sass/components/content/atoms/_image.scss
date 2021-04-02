@@ -19,6 +19,7 @@ picture {
   clip-path: url(#mask-one);
   -webkit-clip-path: url(#mask-one);
 }
+
 @for $i from 1 through 3 {
   .mask-#{$i} {
     clip-path: url(#mask-#{$i});

@@ -92,37 +92,9 @@ strong {
 
 .specialSection {
   padding: 2rem;
-  // border: 1px solid var(--gray-lt);
   border-radius: var(--border-radius);
   @include boxShadow();
-  // h3 {
-  //   font-family: var(--font-serif);
-  //   margin-top: 0;
-  //   position: relative;
-  //   background-clip: text;
-  //   -webkit-background-clip: text;
-  //   color: transparent;
-  //   // background-image: var(--blurple-linear);
-  //   // background-size: 100% 50px;
-  //   // -webkit-text-fill-color: transparent;
-  //   // -webkit-background-clip: text;
-  //   // -webkit-animation: stripes 2s linear infinite;
-  //   // animation: stripes 2s linear infinite;
-  //   &:after {
-  //     position: absolute;
-  //     height: 100%;
-  //     width: 100%;
-  //     top: 0%;
-  //     left: 0%;
-  //     content: "";
-  //     background-image: var(--blurple-linear);
-  //     background-size: 300%;
-  //     animation: bg-animation 3s infinite alternate;
-  //     z-index: 0;
-  //     // margin-left: -1rem;
-  //     // margin-top: -1rem;
-  //   }
-  // }
+
   h3 {
     font-family: var(--font-serif);
     font-size: 2rem;
@@ -136,9 +108,6 @@ strong {
     animation: bg-animation 3s infinite alternate;
     margin-top: 0;
   }
-  p {
-    // font-style: italic;
-  }
 }
 
 @keyframes bg-animation {
@@ -149,20 +118,6 @@ strong {
     background-position: right;
   }
 }
-// @-webkit-keyframes stripes {
-//   100% {
-//     // background-position: 0 -50px;
-//   }
-// }
-// @keyframes stripes {
-//   100% {
-//     // background-position: 0 -50px;
-//     background-position: ;
-//   }
-// }
-/*
-// font size choices
-*/
 
 .base-24 {
   font-size: var(--base-24);
