@@ -66,6 +66,14 @@ strong {
   font-weight: var(--regular);
 }
 
+.sectionTitle {
+  @extend .base-84;
+  font-family: var(--font-serif);
+}
+
+/*
+// special block styles
+*/
 .pageIntroduction {
   @extend .base-36;
   max-width: var(--large);
@@ -74,10 +82,6 @@ strong {
   margin: 2rem auto 3rem auto;
 }
 
-.sectionTitle {
-  @extend .base-84;
-  font-family: var(--font-serif);
-}
 .sectionIntroduction {
   @extend .base-28;
   max-width: var(--large);
@@ -86,6 +90,76 @@ strong {
   margin: 2rem auto 3rem auto;
 }
 
+.specialSection {
+  padding: 2rem;
+  // border: 1px solid var(--gray-lt);
+  border-radius: var(--border-radius);
+  @include boxShadow();
+  // h3 {
+  //   font-family: var(--font-serif);
+  //   margin-top: 0;
+  //   position: relative;
+  //   background-clip: text;
+  //   -webkit-background-clip: text;
+  //   color: transparent;
+  //   // background-image: var(--blurple-linear);
+  //   // background-size: 100% 50px;
+  //   // -webkit-text-fill-color: transparent;
+  //   // -webkit-background-clip: text;
+  //   // -webkit-animation: stripes 2s linear infinite;
+  //   // animation: stripes 2s linear infinite;
+  //   &:after {
+  //     position: absolute;
+  //     height: 100%;
+  //     width: 100%;
+  //     top: 0%;
+  //     left: 0%;
+  //     content: "";
+  //     background-image: var(--blurple-linear);
+  //     background-size: 300%;
+  //     animation: bg-animation 3s infinite alternate;
+  //     z-index: 0;
+  //     // margin-left: -1rem;
+  //     // margin-top: -1rem;
+  //   }
+  // }
+  h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 1.25em;
+    font-weight: var(--heavy);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: var(--teal-purple);
+    background-size: 200%;
+    animation: bg-animation 3s infinite alternate;
+    margin-top: 0;
+  }
+  p {
+    // font-style: italic;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+// @-webkit-keyframes stripes {
+//   100% {
+//     // background-position: 0 -50px;
+//   }
+// }
+// @keyframes stripes {
+//   100% {
+//     // background-position: 0 -50px;
+//     background-position: ;
+//   }
+// }
 /*
 // font size choices
 */
