@@ -10,6 +10,18 @@ https://as.cornell.edu/:
     - Accept-Language
   ssi:
     enabled: false
+https://people.as.cornell.edu/:
+  type: upstream
+  upstream: drupal8:http
+    cache:
+    enabled: true
+    default_ttl: 0
+    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
+    headers:
+    - Accept
+    - Accept-Language
+  ssi:
+    enabled: false
 https://www.as.cornell.edu/:
   type: redirect
   to: https://as.cornell.edu/
@@ -25,13 +37,6 @@ https://asd8.as.cornell.edu/:
 https://people.asd8.as.cornell.edu/:
   type: upstream
   upstream: drupal8:http
-https://people.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://cder.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
