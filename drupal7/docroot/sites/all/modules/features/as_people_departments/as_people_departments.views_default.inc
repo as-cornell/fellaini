@@ -306,7 +306,7 @@ function as_people_departments_views_default_views() {
   $handler->display->display_options['fields']['field_person_research_focus']['element_type'] = '0';
   $handler->display->display_options['fields']['field_person_research_focus']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_person_research_focus']['element_default_classes'] = FALSE;
-  /* Field: Content: Website(s) */
+  /* Field: Content: Important Links */
   $handler->display->display_options['fields']['field_links']['id'] = 'field_links';
   $handler->display->display_options['fields']['field_links']['table'] = 'field_data_field_links';
   $handler->display->display_options['fields']['field_links']['field'] = 'field_links';
@@ -320,7 +320,7 @@ function as_people_departments_views_default_views() {
   $handler->display->display_options['fields']['field_links']['type'] = 'link_title_plain';
   $handler->display->display_options['fields']['field_links']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_links']['separator'] = '|';
-  /* Field: Content: Website(s) */
+  /* Field: Content: Important Links */
   $handler->display->display_options['fields']['field_links_1']['id'] = 'field_links_1';
   $handler->display->display_options['fields']['field_links_1']['table'] = 'field_data_field_links';
   $handler->display->display_options['fields']['field_links_1']['field'] = 'field_links';

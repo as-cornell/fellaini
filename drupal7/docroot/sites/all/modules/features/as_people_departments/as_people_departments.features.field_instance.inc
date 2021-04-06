@@ -138,6 +138,121 @@ function as_people_departments_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-person-field_academic_role'.
+  $field_instances['node-person-field_academic_role'] = array(
+    'bundle' => 'person',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Used to filter people by their academic status.',
+    'display' => array(
+      'card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'directory' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'homepage_article' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'netid' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'newsletter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'newsletter_sbs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'newsletter_slug' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'pano_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'quote' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'spotlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'stat' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'tabloid' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_academic_role',
+    'label' => 'Academic Role',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'node-person-field_departments_programs'.
   $field_instances['node-person-field_departments_programs'] = array(
     'bundle' => 'person',
@@ -255,7 +370,7 @@ function as_people_departments_field_default_field_instances() {
   $field_instances['node-person-field_image'] = array(
     'bundle' => 'person',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Crop to 450x510 before uploading.',
     'display' => array(
       'card' => array(
         'label' => 'hidden',
@@ -376,20 +491,18 @@ function as_people_departments_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
+      'max_filesize' => '200 KB',
+      'max_resolution' => '450x510',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_insert' => 0,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'feed' => 0,
-          'http' => 0,
-          'https' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
@@ -401,7 +514,6 @@ function as_people_departments_field_default_field_instances() {
         'browser_plugins' => array(
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
-          'remote_file' => 0,
           'upload' => 0,
         ),
       ),
@@ -552,7 +664,9 @@ function as_people_departments_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 11,
       ),
@@ -2828,6 +2942,7 @@ function as_people_departments_field_default_field_instances() {
   t('Academic Role');
   t('Affiliations');
   t('Articles that have been related to this person.  Typically this field will be populated by the referred article.');
+  t('Crop to 450x510 before uploading.');
   t('Departments/Programs');
   t('Educational Background');
   t('Graduate Fields');
@@ -2850,6 +2965,7 @@ function as_people_departments_field_default_field_instances() {
   t('Subdisciplines');
   t('This will appear as the academic or job title in Person listings.');
   t('Used as key between people and various other content types.');
+  t('Used to filter people by their academic status.');
   t('Website(s)');
 
   return $field_instances;
