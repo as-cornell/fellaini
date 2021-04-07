@@ -50,7 +50,7 @@ class parsePeopleJson extends \Twig_Extension
       // get image path from json
       //foreach($people_json['included'] as $image) {
       if (!empty($people_json['included'])) {
-      $person_record['imagepath'] = 'https://people.asd8.as.cornell.edu' . $people_json['included'][1]['attributes']['uri']['url'];
+      $person_record['imagepath'] = 'https://people.as.cornell.edu' . $people_json['included'][1]['attributes']['uri']['url'];
         }
       //}
       foreach ($people_json['data'] as $person_data) {
