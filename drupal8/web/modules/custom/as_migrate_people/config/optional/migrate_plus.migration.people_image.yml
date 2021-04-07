@@ -11,7 +11,7 @@ source:
   constants:
     source_base_path: 'http://people.as.cornell.edu'
 
-  urls: http://people.as.cornell.edu/people-overviews-json
+  urls: http://people.asd8.as.cornell.edu/people-overviews-json
 
   ids:
     nid:
