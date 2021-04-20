@@ -330,7 +330,7 @@ $config = array(
         'saml:SP',
         'privatekey' => 'prod.pem',
         'certificate' => 'prod.crt',
-        'entityID' => 'https://baroqueorgan.cornell.edu/',
+        'entityID' => 'https://historicalkeyboards.as.cornell.edu/',
         'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
     ),
     'mediastudies-sp' => array(
@@ -404,27 +404,5 @@ $config = array(
         'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth',
     ),
 
-// Entries below are directed to TEST server, which doesn't require registered metadata to return credentials
-    'dev-sp' => array(
-        'saml:SP',
-        'privatekey' => 'dev.pem',
-        'certificate' => 'dev.crt',
-        'entityID' => 'https://dev.as.cornell.edu/',
-        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth',
-    ),
-    'budget-sp' => array(
-        'saml:SP',
-        'privatekey' => 'prod.pem',
-        'certificate' => 'prod.crt',
-        'entityID' => 'https://budgetdev.as.cornell.edu',
-        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth',
-    ),
-    'dev-sp' => array(
-        'saml:SP',
-        'privatekey' => 'asdev.pem',
-        'certificate' => 'asdev.crt',
-        'entityID' => 'https://dev.as.cornell.edu/',
-        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth',
-    ),
 
 );
