@@ -2204,23 +2204,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.79.0",
+            "version": "7.80.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.79"
+                "reference": "7.80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.79.zip",
-                "reference": "7.79",
-                "shasum": "7a8b4368f57c6874ea5eebb62dbc003d1f854687"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.80.zip",
+                "reference": "7.80",
+                "shasum": "a3bc28036b43ec44deda643182bcdc3e4c28aff0"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.79",
-                    "datestamp": "1617792850",
+                    "version": "7.80",
+                    "datestamp": "1619022873",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4240,26 +4240,30 @@
         },
         {
             "name": "drupal/link",
-            "version": "1.7.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/link.git",
-                "reference": "7.x-1.7"
+                "reference": "7.x-1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/link-7.x-1.7.zip",
-                "reference": "7.x-1.7",
-                "shasum": "b18da8e72f499ad738f971026cbd90bcfef95ff4"
+                "url": "https://ftp.drupal.org/files/projects/link-7.x-1.9.zip",
+                "reference": "7.x-1.9",
+                "shasum": "fdd871af43a6bbcfc31d89ced7987f76f5c820ec"
             },
             "require": {
                 "drupal/drupal": "~7.0"
             },
+            "require-dev": {
+                "drupal/entity": "*",
+                "drupal/token": "*"
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.x-1.7",
-                    "datestamp": "1573731186",
+                    "version": "7.x-1.9",
+                    "datestamp": "1618831237",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6711,32 +6715,12 @@
                     "homepage": "https://www.drupal.org/user/493050"
                 },
                 {
-                    "name": "bucefal91",
-                    "homepage": "https://www.drupal.org/user/504128"
-                },
-                {
-                    "name": "fenstrat",
-                    "homepage": "https://www.drupal.org/user/362649"
-                },
-                {
                     "name": "jrockowitz",
                     "homepage": "https://www.drupal.org/user/371407"
                 },
                 {
-                    "name": "podarok",
-                    "homepage": "https://www.drupal.org/user/116002"
-                },
-                {
                     "name": "quicksketch",
                     "homepage": "https://www.drupal.org/user/35821"
-                },
-                {
-                    "name": "sanchiz",
-                    "homepage": "https://www.drupal.org/user/1671246"
-                },
-                {
-                    "name": "tedbow",
-                    "homepage": "https://www.drupal.org/user/240860"
                 },
                 {
                     "name": "torotil",
@@ -8156,21 +8140,21 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.2.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1"
+                "reference": "f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d15da7ba4957ffb8f1747218be9e1a121fd298a1",
-                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb",
+                "reference": "f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
-                "psr/container": "^1.0"
+                "psr/container": "^1.1"
             },
             "suggest": {
                 "symfony/service-implementation": ""
@@ -8178,7 +8162,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-main": "2.4-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -8215,7 +8199,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/master"
+                "source": "https://github.com/symfony/service-contracts/tree/v2.4.0"
             },
             "funding": [
                 {
@@ -8231,7 +8215,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-07T11:33:47+00:00"
+            "time": "2021-04-01T10:43:52+00:00"
         },
         {
             "name": "symfony/var-dumper",
