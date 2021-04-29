@@ -70,6 +70,7 @@ footer {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto auto;
+      gap: 1rem;
     }
 
     @include large() {
@@ -162,8 +163,8 @@ footer {
       }
       font-size: var(--base-16);
     }
-    .socialLink{
-      &:before{
+    .socialLink {
+      &:before {
         background: var(--as-white);
       }
     }

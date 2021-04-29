@@ -52,7 +52,7 @@
 						line-height: 30px !important;
 					}
 					a {
-						color: #b31b1b !important;
+						color: #b31b1b;
 					}
 					table {
 						background: white;
@@ -73,11 +73,11 @@
 					figure {
 						padding: 0;
 						margin: 0;
-          }
-          .embedded-entity figure{
-            padding: 0;
-            margin-bottom: 24px;
-          }
+					}
+					.embedded-entity figure {
+						padding: 0;
+						margin-bottom: 24px;
+					}
 					figcaption {
 						display: none;
 					}
@@ -85,11 +85,12 @@
 						max-width: 560px;
 						height: auto;
 					}
-        </style>
-        
+				</style>
+
 			{% else %}
 				<css-placeholder token="{{ placeholder_token|raw }}">
-					<js-placeholder token="{{ placeholder_token|raw }}">
+					<js-placeholder
+						token="{{ placeholder_token|raw }}">
 						{# currently set up to go to bob's typekit#}
 						<link rel="stylesheet" href="https://use.typekit.net/dsj5vco.css"/>
 						<script>
@@ -98,18 +99,18 @@
 					{% endif %}
 				</head>
 				<body>
-					
+
 					{% if node_type == "newsletter" %}
 						{{page.newsletter}}
 					{% else %}
-          {{ page_top }}
+						{{ page_top }}
 						<span class="offscreen" aria-hidden="true">
 							{% include "@images/sprite.svg" %}
 						</span>
 						{{ page }}
-            	{{ page_bottom }}
+						{{ page_bottom }}
 					{% endif %}
-				
+
 					<js-bottom-placeholder token="{{ placeholder_token|raw }}"></body>
 				</body>
 			</html>
