@@ -3,17 +3,10 @@
         <div class="person--directory">
             <div class="name-title">
             <?php
+            $nodeurl = url('node/'. $node->nid);
             print "<span class='name'>";
-            $a =  render($content['field_person_type']);
-            if (strpos($a, 'Faculty') !== false) {
-            //if ($persontype === $b ) {
-                $nodeurl = url('node/'. $node->nid);
-                //$alias = drupal_get_path_alias("node/".$nid);
-                print "<a href='".$nodeurl."''>";
-                print $title."</a>";
-            }else{
-                print $title."</a>";
-            }
+            print "<a href='".$nodeurl."''>";
+            print $title."</a>";
             print "</span>";
             if (!empty($content['field_person_title'])) {
             print "<span class='title'>";

@@ -14,7 +14,7 @@ source:
   data_fetcher_plugin: http
   data_parser_plugin: json
 
-  urls: http://people.as.cornell.edu/people-overviews-json
+  urls: http://people.asd8.as.cornell.edu/people-overviews-json
 
   ids:
     nid:

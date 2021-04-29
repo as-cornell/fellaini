@@ -16,7 +16,7 @@ function as_people_json_get_person_json($pathtoken)
   }
   // if no data check url
   else {
-    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter[id]=' . $pathtoken .'&include=field_image.field_media_image';
+    $url = 'https://people.as.cornell.edu/jsonapi/node/person/?filter[id]=' . $pathtoken .'&include=field_image.field_media_image';
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
@@ -48,7 +48,7 @@ function as_people_json_get_department_people_json($deptid)
   }
   // if no data check url
   else {
-    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]=' . $deptid ;
+    $url = 'https://people.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]=' . $deptid ;
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
@@ -75,7 +75,7 @@ function as_people_json_get_department_faculty_json($deptid)
   }
   // if no data check url
   else {
-    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]='. $deptid .'&filter[field_person_type.tid][value]=80099&sort=field_person_last_name';
+    $url = 'https://people.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]='. $deptid .'&filter[field_person_type.tid][value]=80099&sort=field_person_last_name';
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
@@ -106,7 +106,7 @@ function as_people_json_get_department_staff_json($deptid)
   }
   // if no data check url
   else {
-    $url = 'https://people.asd8.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]='. $deptid .'&filter[field_person_type.tid][value]=80100&sort=field_person_last_name' ;
+    $url = 'https://people.as.cornell.edu/jsonapi/node/person/?filter[field_departments_programs.tid][value]='. $deptid .'&filter[field_person_type.tid][value]=80100&sort=field_person_last_name' ;
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
@@ -132,7 +132,7 @@ function as_people_json_get_dept_json($deptuuid)
   }
   // if no data check url
   else {
-    $url = 'https://people.asd8.as.cornell.edu/jsonapi/taxonomy_term/departments_and_programs/' . $deptuuid;
+    $url = 'https://people.as.cornell.edu/jsonapi/taxonomy_term/departments_and_programs/' . $deptuuid;
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);
@@ -157,7 +157,7 @@ function as_people_json_get_people_summary_json($summaryuuid)
   }
   // if no data check url
   else {
-    $url = 'https://people.asd8.as.cornell.edu/jsonapi/paragraph/person_description_standard/' . $summaryuuid;
+    $url = 'https://people.as.cornell.edu/jsonapi/paragraph/person_description_standard/' . $summaryuuid;
     //fetch data and set cache
     $data = file_get_contents($url);
     $json = json_decode($data, true);

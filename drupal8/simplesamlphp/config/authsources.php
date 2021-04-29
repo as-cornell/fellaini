@@ -10,13 +10,6 @@ $config = array(
     ),
     // An authentication source which can authenticate against both SAML 2.0
     // and Shibboleth 1.3 IdPs.
-    'default-sp' => array(
-        'saml:SP',
-        'privatekey' => 'saml.pem',
-        'certificate' => 'saml.crt',
-        'entityID' => 'https://asd8.as.cornell.edu/',
-        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
-    ),
     'as-sp' => array(
         'saml:SP',
         'privatekey' => 'saml.pem',
@@ -28,7 +21,7 @@ $config = array(
         'saml:SP',
         'privatekey' => 'saml.pem',
         'certificate' => 'saml.crt',
-        'entityID' => 'https://people.asd8.as.cornell.edu/',
-        'idp' => 'https://shibidp-test.cit.cornell.edu/idp/shibboleth'
+        'entityID' => 'https://people.as.cornell.edu/',
+        'idp' => 'https://shibidp.cit.cornell.edu/idp/shibboleth'
     ),
 );
