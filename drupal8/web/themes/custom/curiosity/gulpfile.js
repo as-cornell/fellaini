@@ -6,7 +6,7 @@ var autoprefixer = require("gulp-autoprefixer");
 var importer = require("node-sass-globbing");
 var plumber = require("gulp-plumber");
 var browserSync = require("browser-sync").create();
-var cssmin = require("gulp-cssmin");
+var cssnano = require('gulp-cssnano');
 var stripCssComments = require("gulp-strip-css-comments");
 var uglify = require("gulp-uglify-es").default;
 var livereload = require("gulp-livereload");
@@ -38,8 +38,8 @@ gulp.task("sass", function () {
         browsers: ["last 2 version"],
       })
     )
-    .pipe(stripCssComments({ preserve: false }))
-    .pipe(cssmin())
+
+    .pipe(cssnano())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("./css"));
 });
