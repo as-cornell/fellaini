@@ -14,7 +14,7 @@ body {
   @include baseFont();
   overflow-x: hidden;
   padding: 0 1rem;
-  @include medium() {
+  @include large() {
     padding: 0 2rem;
   }
   margin: 0;

@@ -12,7 +12,7 @@ Descr: otpN small and large, hovers and toggles for subNav
       // background: red;
       width: calc(100% + 1rem);
       margin-left: -1rem;
-      padding-left: 1rem;
+      padding: 0 1rem 1rem;
       @include boxShadow();
       border-radius: var(--border-radius);
     }
@@ -132,9 +132,11 @@ Descr: otpN small and large, hovers and toggles for subNav
         color: var(--as-dark-blue);
         &:hover {
           color: var(--as-blue-base);
+          text-decoration-color: inherit;
         }
         &.active {
           color: var(--as-teal-dark);
+          text-decoration-color: inherit;
         }
         padding: 0;
         margin-right: 1em;

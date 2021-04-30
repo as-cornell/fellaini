@@ -155,6 +155,7 @@ header {
     @include large() {
       grid-column: 2 / -1;
       grid-row: 2;
+      padding-left: 1rem;
     }
     @include xl {
       grid-column: 3;
