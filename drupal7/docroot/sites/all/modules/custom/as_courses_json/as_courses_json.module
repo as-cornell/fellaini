@@ -68,6 +68,7 @@ $semestername = "";
       <li>Courses by semester: </li>
         <li><a href='".$link ."SP21'>Spring 2021</a></li>
         <li><a href='".$link ."SU21'>Summer 2021</a></li>
+        <li><a href='".$link ."FA21'>Fall 2021</a></li>
       </ul>
     </div>
       <div class='as-container list courses__list  grid grid--three'>";
@@ -199,7 +200,7 @@ $semestername = "";
 $filternetid = "";
 $filternetid2 = "";
 //edit this to control what semesters get fetched
-$semesters = array('SP21','SU21');
+$semesters = array('SP21','SU21','FA21');
 //course subject from sitewide department variables
 $keyword_params = explode(',',variable_get('as_dept_variables_coursesubjects', ''));
 $courses = array();
@@ -241,6 +242,12 @@ $coursemarkup = "";
       //semester name
       if ($semester == 'SP21') {
         $semestername = 'Spring 2021';
+      }
+      if ($semester == 'SU21') {
+        $semestername = 'Summer 2021';
+      }
+      if ($semester == 'FA21') {
+        $semestername = 'Fall 2021';
       }
       if (!empty($courses[$semester]['markup'])){
         $markup = $markup . "<h3>{$semestername}</h3><ul>";
