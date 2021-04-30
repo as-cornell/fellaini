@@ -29,11 +29,11 @@ footer {
     width: 300px;
     height: 300px;
     margin: 0 -0.5rem -0.5rem 0;
-    @include large() {
+    @include xl() {
       top: 0;
       bottom: 0;
       right: 0;
-      width: 702px;
+      width: 740px;
       height: 105%;
       margin: -0.5rem -2rem;
     }
@@ -92,6 +92,9 @@ footer {
     &__importantLinks {
       grid-column: 2 / -1;
       grid-row: 1;
+      > ul > li > a {
+        font-weight: var(--semi);
+      }
       @include large() {
         grid-column: 4 / -1;
         grid-row: 1 / 1;
@@ -189,7 +192,7 @@ footer {
 
   a {
     color: var(--as-white);
-    text-decoration-color: var(--as-blue-gray);
+
     &.btn {
       font-weight: var(--semi);
       text-decoration: underline;
