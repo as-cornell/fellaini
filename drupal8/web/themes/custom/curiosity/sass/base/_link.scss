@@ -10,8 +10,8 @@ a,
   color: var(--as-red);
   text-decoration: none;
   &:focus {
-    outline: 1px dashed var(--as-purple);
-    outline-offset: -1px;
+    outline: 2px dashed var(--as-purple);
+    outline-offset: 0px;
   }
 }
 
@@ -23,7 +23,7 @@ main {
 
     text-decoration: underline;
     text-decoration-color: var(--gray-lt);
-    transition: all 1s;
+    // transition: all 1s;
     &:hover {
       text-decoration-color: var(--gray-lightest);
     }

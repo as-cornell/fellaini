@@ -1,0 +1,1 @@
+!function(t){console.log("hiya"),t(document).ready((function(){pathname=t(location).attr("pathname").split("/"),utmCampaign=pathname[2],pieces=utmCampaign.split("-"),utmSource=pieces[0],t("a.newsletterLink").each((function(){var a=t(this).attr("href")+"&utm_campaign="+utmCampaign+"&utm_source="+utmSource;console.log(a),t(this).attr("href",a)}))}))}(jQuery);

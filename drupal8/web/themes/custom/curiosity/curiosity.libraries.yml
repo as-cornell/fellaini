@@ -30,3 +30,7 @@ fancybox:
     js_min/jquery.fancybox-scripts.min.js: {}
   dependencies:
     - core/jquery
+
+newsletter:
+  js:
+    js_min/newsletter.js: {}
