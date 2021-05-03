@@ -12,8 +12,8 @@ Descr: otpN small and large, hovers and toggles for subNav
       // background: red;
       width: calc(100% + 1rem);
       margin-left: -1rem;
-      padding: 0 1rem 1rem;
-      @include boxShadow();
+      padding: 0 1rem 0rem;
+      @include boxShadow($spread: 12px);
       border-radius: var(--border-radius);
     }
   }
@@ -96,7 +96,7 @@ Descr: otpN small and large, hovers and toggles for subNav
     }
     @include large() {
       font-size: var(--base-20);
-      text-align: center;
+      // text-align: center;
     }
   }
 

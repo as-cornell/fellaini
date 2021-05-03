@@ -13,6 +13,9 @@ a,
     outline: 2px dashed var(--as-purple);
     outline-offset: 0px;
   }
+  &:active{
+    outline: 1px dashed var(--gray-lt);
+  }
 }
 
 // main content base link styles
