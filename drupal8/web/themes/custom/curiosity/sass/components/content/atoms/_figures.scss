@@ -109,7 +109,13 @@ figure {
       max-width: 100%;
     }
     &--4_5 {
-      max-width: 320px;
+      max-width: 200px;
+      @include medium(){
+        max-width: 240px;
+      }
+      @include large(){
+        max-width: 280px;
+      }
     }
   }
 }

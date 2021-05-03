@@ -13,11 +13,11 @@
       "social social social social social social social social social social social social"
       "content content content content content content content content aside aside aside aside";
   }
-  @include large() {
+  @include xl() {
     grid-template-columns: repeat(24, 1fr);
     grid-template-areas:
-      ". title title title title title title title title title title title title title title title . thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail"
-      "social content content content content content content content content content content content content content content content . aside aside aside aside aside aside aside";
+      ". title title title title title title title title title title title title title title . thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail thumbnail ."
+      "social content content content content content content content content content content content content content content . aside aside aside aside aside aside aside .";
   }
   &__title {
     grid-area: title;
