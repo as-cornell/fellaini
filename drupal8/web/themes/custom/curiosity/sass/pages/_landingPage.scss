@@ -10,7 +10,16 @@ Descr:
   grid-template-areas: "title" "aside" "content";
   .title {
     grid-area: title;
-    @extend .spotlight;
+    // @extend .spotlight;
+    h1 {
+      font-family: var(--font-serif);
+      text-align: center;
+      font-size: var(--base-84);
+      max-width: 25ch;
+      line-height: 1em;
+      font-weight: var(--heavy);
+      margin: 0 0.5em 0.5em;
+    }
   }
   aside {
     grid-area: aside;
@@ -59,28 +68,35 @@ Descr:
       margin: 0 auto;
     }
     h1 {
-      @extend .spotlight;
-      margin: 0.5em auto 1em;
-      //for the to top to work
+      // font-family: var(--font-serif);
+      // text-align: center;
+      // font-size: var(--base-84);
+      // max-width: 25ch;
+      // line-height: 1em;
+      // margin: 0.5em auto 1em;
     }
   }
   &--pano {
     .title {
+      text-align: center;
       @include medium() {
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        font-weight: var(--heavy);
         grid-template-columns: 1fr;
         align-items: flex-end;
-        margin: 0;
+
         max-width: 100%;
       }
 
       figure,
       h1 {
-        grid-column: 1 / -1;
-        grid-row: 1;
+        // grid-column: 1 / -1;
+        // grid-row: 1;
+        margin: 0.5em auto;
       }
       h1 {
-        grid-row: 2;
+        // grid-row: 2;
         // font-weight: var(--regular);
       }
       figure {
@@ -88,7 +104,7 @@ Descr:
         @include medium() {
           display: grid;
         }
-        grid-row: 1;
+        // grid-row: 1;
         margin-bottom: 2rem;
       }
       figcaption,
@@ -98,33 +114,30 @@ Descr:
       }
       figcaption {
         color: var(--storm-radial);
-        // @extend .blue-blue;
+        font-weight: var(--regular);
+        margin: 0 auto 1em auto;
         @include medium() {
           color: var(--as-white);
           max-width: 80%;
           @include dropShadow();
           animation: 2s captionFadeIn 1 forwards ease-in;
+          font-weight: var(--heavy);
         }
-
-        @extend .spotlight;
+        font-family: var(--font-serif);
+        text-align: center;
+        font-size: var(--base-84);
+        max-width: 25ch;
+        line-height: 1em;
         @extend .base-84;
         margin-bottom: 0.5em;
         align-self: flex-end;
-
-        .credit{
+        .credit {
           display: none;
         }
       }
       img {
         @extend .pano-mask-1;
-        // transform: scale(0.95);
-        // animation: 1s panoScale 1 forwards ease-in-out 500ms;
       }
-    }
-  }
-  &--has-aside {
-    .title {
-      // margin: 0 auto;
     }
   }
   &--homepage {
@@ -136,24 +149,6 @@ Descr:
     }
   }
 }
-
-// fake keyframes
-// @keyframes panoScale {
-//   0% {
-//     transform: scale(1);
-//     opacity: 0;
-//   }
-//   30% {
-//     opacity: 1;
-//   }
-//   80% {
-//     transform: scale(1.08);
-//   }
-//   100% {
-//     transform: scale(1.05);
-//   }
-// }
-
 @keyframes captionFadeIn {
   0% {
     opacity: 0;

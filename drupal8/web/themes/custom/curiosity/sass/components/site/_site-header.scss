@@ -35,14 +35,14 @@ header {
   position: relative;
 
   @include medium() {
-    margin: 1rem auto 2rem auto;
+    margin: 1rem auto 1rem auto;
   }
 
   @include large() {
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto;
     align-items: center;
-    margin: 1rem auto 2rem auto;
+    // margin: 1rem auto 2rem auto;
   }
 
   @include xl {

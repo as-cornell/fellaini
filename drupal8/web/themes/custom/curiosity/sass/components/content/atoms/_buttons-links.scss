@@ -56,6 +56,9 @@ Descr:
 .btn--blue {
   @include btnLink(var(--storm-radial), var(--as-white));
 }
+.btn--blue-purple {
+  @include btnLink(var(--blurple-linear), var(--as-white));
+}
 .btn--red {
   @include btnLink(var(--as-red), var(--as-white));
 }

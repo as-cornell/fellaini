@@ -40,7 +40,7 @@
 
   // gradients
   --blurple-linear: linear-gradient(
-    144deg,
+    170deg,
     var(--as-light-blue) 0%,
     var(--as-purple) 100%
   );
@@ -129,7 +129,12 @@
   --base-20: 0.8333rem;
   --base-24: 1rem;
   --base-28: 1.2rem;
-  --base-36: 1.5rem;
+
+  --base-36: 1.2rem;
+  @include headerBreak() {
+    --base-36: 1.5rem;
+  }
+
   --base-48: 2rem;
 
   --base-56: 2rem;
@@ -146,7 +151,7 @@
   // @include small() {
   //   --base-84: 2.6rem;
   // }
-  @include large() {
+  @include medium() {
     --base-84: 3.5rem;
   }
 

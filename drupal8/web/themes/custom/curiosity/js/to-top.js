@@ -17,7 +17,6 @@ const otpNavOptions1 = {
 
 const toTopObserver = new IntersectionObserver(function (entries, toTopObserver) { 
   entries.forEach(entry => {
-    console.log(entry.target);
     if (!entry.isIntersecting) {
       toTopButton.classList.add('show');
     } else {
