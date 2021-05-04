@@ -9,10 +9,6 @@ Descr: otpN small and large, hovers and toggles for subNav
 .main.otpStuck {
   @include medium() {
     .otpNavWrapper {
-      // background: red;
-      width: calc(100% + 1rem);
-      margin-left: -1rem;
-      padding: 0 1rem 0rem;
       @include boxShadow($spread: 12px);
       border-radius: var(--border-radius);
     }
@@ -22,6 +18,9 @@ Descr: otpN small and large, hovers and toggles for subNav
       margin-left: 0;
       padding-left: 0;
       box-shadow: none;
+    }
+    .otpNav--landing_page {
+      padding: 0.5rem 1rem 0.25rem 1rem;
     }
     .otpNavWrapper {
       position: sticky;
@@ -56,6 +55,7 @@ Descr: otpN small and large, hovers and toggles for subNav
   }
 }
 
+// basic wrapper styles
 .otpNavWrapper {
   display: grid;
   background: var(--as-white);
@@ -66,7 +66,11 @@ Descr: otpN small and large, hovers and toggles for subNav
     background: var(--as-white);
     display: flex;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 0 1rem 0.5rem;
+    flex-direction: column;
+  }
+  @include large() {
+    // font-size: var(--base-20);
   }
 
   // Header and toggle
@@ -75,7 +79,7 @@ Descr: otpN small and large, hovers and toggles for subNav
     margin: 0;
     flex: 0 0 auto;
     // margin-right: 0.5rem;
-    font-size: var(--base-20);
+    // font-size: var(--base-20);
     margin-top: 0.5em;
     padding: 0.5rem;
     grid-row: 1;
@@ -88,14 +92,15 @@ Descr: otpN small and large, hovers and toggles for subNav
       margin: 0 0.5rem 4px 0;
       padding-left: 0;
       color: var(--as-black);
-      font-size: var(--base-18);
+      font-weight: var(--regular);
+      // font-size: var(--base-18);
       // grid-column: 1;
       border: none;
       cursor: default;
       text-decoration: none;
     }
     @include large() {
-      font-size: var(--base-20);
+      // font-size: var(--base-20);
       // text-align: center;
     }
   }
@@ -119,7 +124,7 @@ Descr: otpN small and large, hovers and toggles for subNav
 
     li {
       max-width: 100%;
-      margin-bottom: 0;
+      // margin-bottom: 0;
       &:last-of-type {
         margin-right: 0;
       }
@@ -129,17 +134,27 @@ Descr: otpN small and large, hovers and toggles for subNav
       display: block;
       color: var(--as-white);
       @include medium() {
+        padding: 0rem 1rem 0 0rem;
         color: var(--as-dark-blue);
-        &:hover {
-          color: var(--as-blue-base);
-          text-decoration-color: inherit;
+        position: relative;
+        &:before {
+          position: absolute;
+          content: "";
+          transform: scaleX(0);
+          height: 1px;
+          bottom: 0;
+          transition: all 0.2s;
+          background-image: var(--teal-purple);
+          width: calc(100% - 1rem);
         }
-        &.active {
-          color: var(--as-teal-dark);
-          text-decoration-color: inherit;
+        &:hover,
+        &.active,
+        &:focus {
+          text-decoration: none;
+          &:before {
+            transform: scaleX(1);
+          }
         }
-        padding: 0;
-        margin-right: 1em;
       }
     }
 
@@ -161,15 +176,23 @@ Descr: otpN small and large, hovers and toggles for subNav
     }
   }
 }
-
+// landing page styles
+.otpNav--landing_page {
+  @include large() {
+    padding: 0;
+    flex-direction: row;
+  }
+}
 // basic page styles
 .otpNav--basic_page {
-  display: none;
-  box-shadow: none;
+  // display: none;
+  // box-shadow: none;
   @include medium() {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: auto;
+    // padding: 0 1rem 0.5rem;
   }
   @include large() {
     flex-direction: column;
@@ -183,6 +206,7 @@ Descr: otpN small and large, hovers and toggles for subNav
       display: none;
     }
   }
+  // column view for basic page
   .otpNav {
     @include large() {
       flex-direction: column;
@@ -197,22 +221,33 @@ Descr: otpN small and large, hovers and toggles for subNav
         width: 100%;
       }
       a {
-        position: relative;
-        padding-left: 16px;
+        // position: relative;
+        padding: 0 1rem 0 0.75rem;
         margin-right: 0;
-        &:before {
+        &:before,
+        &:after {
           position: absolute;
           content: "";
-          height: calc(100% - 2px);
+          transform: scaley(0);
+          height: 100%;
+          top: 0;
           left: 0;
-          background: var(--as-teal-dark);
-          width: 2px;
+          width: 4px;
           border-radius: var(--border-radius);
+          transition: all 0.2s;
+          background-image: var(--teal-purple-radial);
         }
-        &.active {
+        &:after {
+          background: var(--gray-lightest);
+          z-index: -1;
+          transform: scaleY(1);
+        }
+        &:hover,
+        &.active,
+        &:focus {
+          text-decoration: none;
           &:before {
-            animation: slideFromTop 150ms 1;
-            width: 4px;
+            transform: scaley(1);
           }
         }
       }
