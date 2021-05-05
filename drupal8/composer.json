@@ -114,7 +114,9 @@
         "drupal/noreqnewpass": "^1.2",
         "drupal/redirect_after_login": "^2.7",
         "drupal/cacheexclude": "^1.0",
-        "drupal/field_permissions": "^1.1"
+        "drupal/field_permissions": "^1.1",
+        "drupal/jsonapi_extras": "^3.17",
+        "drupal/consumer_image_styles": "^4.0"
 
 
     },
