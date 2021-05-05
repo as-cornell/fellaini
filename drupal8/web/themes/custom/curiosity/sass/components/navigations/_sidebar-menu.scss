@@ -13,7 +13,7 @@ ul[class^="nav"] {
   padding-left: 0;
   font-weight: var(--regular);
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
     max-width: 100%;
   }
   a {
@@ -23,6 +23,9 @@ ul[class^="nav"] {
     overflow: visible;
     font-size: var(--base-18);
     line-height: 1.5em;
+    li{
+      margin-bottom: .5rem;
+    }
     a {
       position: relative;
       color: var(--dark-text);
@@ -99,6 +102,7 @@ ul[class^="nav"] {
     transform: scale(1, 1);
     transform-origin: top;
     transition: transform 250ms ease-in-out 250ms;
+    z-index: 2;
   }
   ul {
     margin-bottom: 0;
@@ -147,7 +151,7 @@ ul[class^="nav"] {
   .nav-2 {
     margin-left: 1em;
     a {
-      background: var(--as-teal);
+      // background: var(--as-teal);
       @include medium() {
         background: none;
       }
@@ -271,6 +275,7 @@ ul[class^="nav"] {
 
 .siteNavOpener {
   font-size: var(--base-16);
+  font-weight: var(--semi);
   margin: 0;
   display: flex;
   align-items: center;
