@@ -116,7 +116,7 @@
         "drupal/cacheexclude": "^1.0",
         "drupal/field_permissions": "^1.1",
         "drupal/jsonapi_extras": "^3.17",
-        "drupal/consumer_image_styles": "^4.0"
+        "drupal/jsonapi_image_styles": "^2.0@beta"
 
 
     },
