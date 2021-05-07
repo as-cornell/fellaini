@@ -62,6 +62,14 @@ Passes:
 {% set mediasource = content.field_media_source_reference %}
 {% endif %}
 
+{# Related article by list block #}
+{% if content.field_article_list|render is not empty %}
+	{% set show_relatedArticleList = true %}
+	{% set relatedArticleList = content.field_article_list %}
+{% endif %}
+
+
+{# {{content.field_article_list}} #}
 {% include "@pages/_article.twig" with {
 
   article_pano : content.field_pano,
