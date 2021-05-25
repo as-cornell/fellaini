@@ -30,24 +30,21 @@
             </div>
             <div class="other">
             <?php
-            if (strpos($a, 'Faculty') !== false) {
-                if ($content['field_keywords']) {
+                if (!empty($content['field_keywords'])) {
                 print render($content['field_keywords']);
-                }else{
+                }
+                if (!empty($content['field_person_graduate_fields'])) {
                 print render($content['field_person_graduate_fields']);
                 }
-            }
-            if (strpos($a, 'Graduate Student') !== false) {
-                if ($content['field_related_people']) {
+                if (!empty($content['field_related_people'])) {
                 print "<strong>Related Faculty:</strong>";
                 print render($content['field_related_people']);
                 }
-            }
-            if (strpos($a, 'Staff') !== false) {
-                if ($content['body']) {
-                print render($content['body']);
-                }
-            }
+
+            //if (strpos($a, 'Staff') !== false) {
+                //print render($content['body']);
+                //}
+            //}
             // possibly add if-staff show overview or summary?
             ?>
             </div>
