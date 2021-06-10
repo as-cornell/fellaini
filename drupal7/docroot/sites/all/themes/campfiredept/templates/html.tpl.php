@@ -99,6 +99,7 @@
 <script type="text/javascript" src="/sites/all/themes/campfiredept/js/plugins/list.min.js"></script>
 <script type="text/javascript" src="/sites/all/themes/campfiredept/js/plugins/lodash.min.js"></script>
 <script type="text/javascript" src="/sites/all/themes/campfiredept/js/plugins/magnific-popup.js"></script>
+<script type="text/javascript" src="/sites/all/themes/campfiredept/js/plugins/flickity.pkgd.min.js"></script>
 <script type="text/javascript" src="/sites/all/themes/campfiredept/js/build/campAS-scripts.js">
 </script>
 

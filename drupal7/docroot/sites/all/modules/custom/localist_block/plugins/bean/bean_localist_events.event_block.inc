@@ -87,7 +87,7 @@ class EventBlockBean extends BeanPlugin {
     $content['events'] = $this->generate_events_view($bean, $event_json, $calendar_link);
     $content['events']['#weight'] = '-1';
     if (module_exists('as_department_beans')) {
-    $content['link'] ['#markup']= '<h2>'.$calendar_title.'</h2>';
+    $content['link'] ['#markup']= '<h2>'.$calendar_title.'</h2> <a href="' . $calendar_link . '" class="as-button as-button--light viewAll">View all events</a>';
     $content['link']['#weight'] = '-2';
     }
     return $content;
@@ -136,7 +136,7 @@ class EventBlockBean extends BeanPlugin {
 
       }
     //$events[] = array('#markup' => $bean->keywords);
-    $events[] = array('#markup' => '<a href="'.$calendar_link.'" class="btn">View all events</a></div>');
+    $events[] = array('#markup' => '</div>');
 
     } // There were no events
     else {

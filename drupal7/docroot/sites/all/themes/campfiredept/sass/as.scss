@@ -1,7 +1,7 @@
 // Plugins
-@import 'compass';
+@import "compass";
 //@import 'breakpoint';
-@import 'susy';
+@import "susy";
 // @import 'susy_settings
 $susy: (
   global-box-sizing: border-box,
@@ -10,19 +10,25 @@ $susy: (
   ),
 );
 @mixin box-sizing($box-model: $default-box-sizing) {
-@if type-of($box-model) == string {
-$box-model: unquote($box-model);
-}
-@include prefixed-properties(css3-boxsizing, $box-sizing-support-threshold, (box-sizing: $box-model));
+  @if type-of($box-model) == string {
+    $box-model: unquote($box-model);
+  }
+  @include prefixed-properties(
+    css3-boxsizing,
+    $box-sizing-support-threshold,
+    (
+      box-sizing: $box-model,
+    )
+  );
 }
 //$susy: (global-box-sizing: border-box, debug: ( image: show ) )
 
 // Global
-@import 'base';
-@import 'fonts';
+@import "base";
+@import "fonts";
 //@import 'icons';
-@import 'as-cu';
-@import 'global';
+@import "as-cu";
+@import "global";
 
 // Pages
 //@import 'pages/home';
@@ -35,50 +41,51 @@ $box-model: unquote($box-model);
 //@import 'pages/search';
 
 // Modules
-@import 'modules/page';
-@import 'modules/headings';
-@import 'modules/section';
-@import 'modules/header';
-@import 'modules/info_bar';
-@import 'modules/nav';
-@import 'modules/filter-panel';
-@import 'modules/mobile_title';
+@import "modules/page";
+@import "modules/headings";
+@import "modules/section";
+@import "modules/header";
+@import "modules/info_bar";
+@import "modules/nav";
+@import "modules/filter-panel";
+@import "modules/mobile_title";
 
-@import 'modules/footer';
-@import 'modules/grid';
-@import 'modules/event';
-@import 'modules/card';
-@import 'modules/color_bar';
-@import 'modules/hero';
-@import 'modules/modal';
-@import 'modules/block_quote';
-@import 'modules/popular_links';
-@import 'modules/link_lists';
-@import 'modules/info_nav';
-@import 'modules/search';
-@import 'modules/search_bar';
-@import 'modules/tip_bar';
-@import 'modules/faq';
-@import 'modules/social_bar';
-@import 'modules/slider';
-@import 'modules/filter';
-@import 'modules/quick_view';
-@import 'modules/tabs';
-@import 'modules/tabloid--article';
-@import 'modules/event_listings';
-@import 'modules/full_page';
-@import 'modules/pullquotes';
-@import 'modules/tables';
-@import 'modules/utilities';
-@import 'modules/_article_listings';
-@import 'modules/_media-block';
-@import 'modules/course_listings';
-@import 'modules/person';
-@import 'modules/forms';
-@import 'modules/buttons';
-@import 'modules/icons';
+@import "modules/footer";
+@import "modules/grid";
+@import "modules/event";
+@import "modules/card";
+@import "modules/color_bar";
+@import "modules/hero";
+@import "modules/modal";
+@import "modules/block_quote";
+@import "modules/popular_links";
+@import "modules/link_lists";
+@import "modules/info_nav";
+@import "modules/search";
+@import "modules/search_bar";
+@import "modules/tip_bar";
+@import "modules/faq";
+@import "modules/social_bar";
+@import "modules/slider";
+@import "modules/filter";
+@import "modules/quick_view";
+@import "modules/tabs";
+@import "modules/tabloid--article";
+@import "modules/event_listings";
+@import "modules/full_page";
+@import "modules/pullquotes";
+@import "modules/tables";
+@import "modules/utilities";
+@import "modules/_article_listings";
+@import "modules/_media-block";
+@import "modules/course_listings";
+@import "modules/person";
+@import "modules/forms";
+@import "modules/buttons";
+@import "modules/icons";
 /* Calndar which i doth in protest */
-@import 'modules/calendar'; 
+@import "modules/calendar";
 /* add magnific */
-@import 'magnific';
-@import 'modules/newstuff';
+@import "magnific";
+@import "modules/newstuff";
+@import "modules/flickity";

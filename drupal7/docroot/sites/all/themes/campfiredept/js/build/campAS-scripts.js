@@ -60,18 +60,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-// Mobile Main Nav
-// $(".menu--secondary").before("<span class='as-icon as-icon--arrow-down'></span>");
 
-//   $(".as-header__link--menu").on({
-//     click: function(){
-//       $(".as-container--nav").toggleClass("as-container--nav--expanded");
-//       $("body").toggleClass("mainNav-expanded");
-//       $(".as-overlay").toggleClass("as-overlay--shade");
-//       $(this).toggleClass("as-header__link--menu--expanded");
-//       $(".as-mainNav-icon").toggleClass("as-icon--bars").toggleClass("as-icon--close");
-//     }
-//   });
 
   // document is ready to go...
   (function ($) {
@@ -92,15 +81,7 @@ jQuery(document).ready(function ($) {
         // $(this).parent().toggleClass("toggleFilters--active");
       }
     });
-    // $("#toggle-menu").click(function (e) {
-    //   $('.menu--primary').attr('aria-hidden', 'false');
-    // });
 
-    // $("#toggle-menu").click(function () {
-    //   $('.menu--primary').attr('show-hide', function (index, attr) {
-    //     return attr == 'show' ? null : 'show';
-    //   });
-    // });
 
     // if a menu-button is clicked...
     $('.menu-toggle').click(function (e) {
@@ -214,23 +195,7 @@ jQuery(document).ready(function ($) {
 
 
 
-//pin things
 
-  // $(".sidebarNav").pin({
-  //   containerSelector: ".as-page__container"
-  // });
-  // $(".as-search-bar--pin").pin();
-
-
-// Sticky Mobile Nav
-  // $(".sidebarNav__trigger").append("<span class='as-icon as-icon--arrow-down'></span>");
-  // $(".sidebarNav__trigger").on({
-  //   click: function(){
-  //     $(".sidebarNav__list").toggleClass("sidebarNav__list--expanded");
-  //     //$(".as-overlay").toggleClass("as-overlay--shade");
-  //     $(this).toggleClass("as-header__link--menu--active");
-  //   }
-  // });
   $(".sidebarNav__trigger").append("<span class='as-icon as-icon--arrow-down'></span>");
   $(".sidebarNav__trigger").on({
     click: function () {
@@ -249,12 +214,12 @@ jQuery(document).ready(function ($) {
     });
 
 
-//magnific popup from m/m
-  /*$(document).ready(function(){
-    $('.ajax-popup-link').magnificPopup({
-      type: 'ajax'
-    });
-});*/
+// $(window).load(function() {
+//   $('.flexslider').flexslider({
+//     animation: "slide"
+//   });
+//   console.log('hello');
+// });
 
 });
 
@@ -356,6 +321,11 @@ carousel = (function () {
 
 })();
 
+// $(window).load(function() {
+//   $('.flexslider').flexslider({
+//     animation: "slide"
+//   });
+// });
 jQuery(document).ready(function ($) {
   if($("#facultyListing").length){
   var options = {
