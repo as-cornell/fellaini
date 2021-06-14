@@ -60,4 +60,3 @@ $sites['astro.cornell.edu'] = 'astro';
 $sites['carlsaganinstitute.cornell.edu'] = 'sagan';
 $sites['research.astro.cornell.edu'] = 'astroresearch';
 $sites['communications.as.cornell.edu'] = 'communications';
-$sites['people.asd8.as.cornell.edu'] = 'people';

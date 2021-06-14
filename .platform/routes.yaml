@@ -29,13 +29,6 @@ https://people.as.cornell.edu/:
     enabled: true
     default_ttl: 0
     cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
-https://people.asd8.as.cornell.edu/:
-  type: upstream
-  upstream: drupal7:http
-  cache:
-    enabled: true
-    default_ttl: 0
-    cookies: ['/^SS?ESS/', '/^Drupal.visitor/', 'SimpleSAMLSessionID', 'SimpleSAMLAuthToken']
 https://cder.as.cornell.edu/:
   type: upstream
   upstream: drupal7:http
