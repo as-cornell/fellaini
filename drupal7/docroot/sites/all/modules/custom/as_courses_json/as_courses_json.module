@@ -27,7 +27,7 @@ function as_courses_json_menu() {
 function as_courses_json_page($semester) {
   //set current semester across all depts, if not passed as argument
   if (empty($semester)) {
-    $semester = 'SP21';
+    $semester = 'FA21';
   }
   // multiple keyword params in a string
   $keyword_params = variable_get('as_dept_variables_coursesubjects', '');
@@ -46,9 +46,6 @@ global $base_url;
 $link = $base_url .'/courses/';
 //semester name
 $semestername = "";
-  if ($semester == 'SP21') {
-    $semestername = 'Spring 2021';
-      }
   if ($semester == 'SU21') {
     $semestername = 'Summer 2021';
       }
@@ -66,7 +63,6 @@ $semestername = "";
     </div>
       <ul class='inlineList'>
       <li>Courses by semester: </li>
-        <li><a href='".$link ."SP21'>Spring 2021</a></li>
         <li><a href='".$link ."SU21'>Summer 2021</a></li>
         <li><a href='".$link ."FA21'>Fall 2021</a></li>
       </ul>
@@ -200,7 +196,7 @@ $semestername = "";
 $filternetid = "";
 $filternetid2 = "";
 //edit this to control what semesters get fetched
-$semesters = array('SP21','SU21','FA21');
+$semesters = array('SU21','FA21');
 //course subject from sitewide department variables
 $keyword_params = explode(',',variable_get('as_dept_variables_coursesubjects', ''));
 $courses = array();
@@ -240,9 +236,6 @@ $coursemarkup = "";
 //display
   foreach ($semesters as $semester)  {
       //semester name
-      if ($semester == 'SP21') {
-        $semestername = 'Spring 2021';
-      }
       if ($semester == 'SU21') {
         $semestername = 'Summer 2021';
       }
