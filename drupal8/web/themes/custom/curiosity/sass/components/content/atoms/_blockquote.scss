@@ -25,9 +25,6 @@ Descr:
     margin: 4rem auto;
     max-width: 80%;
   }
-
-  // font-style: italic;
-
   font-weight: var(--regular);
   border-radius: var(--border-radius);
   @include boxShadow;
@@ -79,22 +76,35 @@ Descr:
     }
   }
 }
+
+.basicSidebar{
+  .pcWrapper--blockQuote, .pcWrapper--ftb blockquote{
+    padding: 1rem;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+  .attribution{
+    font-weight: var(--light);
+  }
+}
+
+
 .pcWrapper--blockQuote {
   blockquote {
-    position: relative;
-    &:before {
-      position: absolute;
-      height: 45px;
-      width: 60px;
-      content: "";
-      background-image: var(--blurple-linear);
-      background-size: 300%;
-      animation: bg-animation 3s infinite alternate;
-      z-index: 0;
-      margin-left: -1rem;
-      margin-top: -1rem;
-      clip-path: url(#open-quote);
-    }
+    // position: relative;
+    // &:before {
+    //   position: absolute;
+    //   height: 45px;
+    //   width: 60px;
+    //   content: "";
+    //   background-image: var(--blurple-linear);
+    //   background-size: 300%;
+    //   animation: bg-animation 3s infinite alternate;
+    //   z-index: 0;
+    //   margin-left: -1rem;
+    //   margin-top: -1rem;
+    //   clip-path: url(#open-quote);
+    // }
   }
 }
 
@@ -110,6 +120,20 @@ Descr:
 .pcWrapper--blockQuote {
   blockquote {
     // font-size: 2rem;
+    position: relative;
+    &:before {
+      position: absolute;
+      height: 45px;
+      width: 60px;
+      content: "";
+      background-image: var(--blurple-linear);
+      background-size: 300%;
+      animation: bg-animation 3s infinite alternate;
+      z-index: 0;
+      margin-left: -1rem;
+      margin-top: -1rem;
+      clip-path: url(#open-quote);
+    }
     .attribution {
       font-size: 1rem;
     }
