@@ -31,16 +31,16 @@
    </div>
  </div>
 
- <div class="as-page__block">
+ <!-- <div class="as-page__block">
    <div class="as-container">
-     <!-- event listing -->
      <div class="event-listing">
-       <div class="eventList eventList--horizontal">
-         <?php print $eventslist; ?>
-       </div>
+       <div class="eventList eventList--horizontal"> -->
+ <?php // print $eventslist; 
+  ?>
+ <!-- </div>
      </div>
    </div>
- </div>
+ </div> -->
 
  <div class="as-page__block">
    <div class="as-container">
