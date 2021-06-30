@@ -1134,6 +1134,12 @@ svg[class*="viewToggle"] {
         flex-direction: row; } }
     .as-footer__section .logos--row .max--125 {
       max-width: 125px; }
+    .as-footer__section .logos--row .max--140 {
+      max-width: 140px; }
+  .as-footer__section .logos--psych {
+    justify-content: center; }
+    .as-footer__section .logos--psych a {
+      margin: 2rem 4rem; }
 
 @media screen and (min-width: 746px) {
   .as-footer__nav {
@@ -1251,10 +1257,12 @@ a.as-footer__link {
   font-weight: 100;
   letter-spacing: 0.7px;
   padding: 32px 0; }
-  .as-footer__sub .as-footer__sub__address, .as-footer__sub .as-footer__sub__contacts {
+  .as-footer__sub .as-footer__sub__address,
+  .as-footer__sub .as-footer__sub__contacts {
     display: block; }
     @media screen and (min-width: 746px) {
-      .as-footer__sub .as-footer__sub__address, .as-footer__sub .as-footer__sub__contacts {
+      .as-footer__sub .as-footer__sub__address,
+      .as-footer__sub .as-footer__sub__contacts {
         display: inline-block;
         padding-left: 2rem; } }
   @media screen and (min-width: 746px) {
@@ -1278,7 +1286,7 @@ a.as-footer__social-link:hover {
 
 .copyright {
   text-align: center;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding-bottom: 3rem; }
 
 .astroLinks {
