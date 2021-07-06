@@ -120,7 +120,8 @@
         "drupal/unmanaged_files": "^1.0",
         "drupal/webform": "^6.0",
         "drupal/captcha": "^1.2",
-        "drupal/recaptcha": "^3.0"
+        "drupal/recaptcha": "^3.0",
+        "drupal/edit_profiles_perms": "^1.0"
 
 
     },
