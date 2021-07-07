@@ -9,7 +9,6 @@ mysqldb:
     configuration:
         schemas:
             - firstdb
-            - departmentsdb
             - peopledb
             - samldb
             - drupal7db
