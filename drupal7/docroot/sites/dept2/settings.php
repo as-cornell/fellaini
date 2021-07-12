@@ -12,6 +12,7 @@ ini_set('session.cookie_lifetime', 2000000);
 ini_set('pcre.backtrack_limit', 200000);
 ini_set('pcre.recursion_limit', 200000);
 
+
 // Default Drupal 7 settings.
 //
 // These are already explained with detailed comments in Drupal's
