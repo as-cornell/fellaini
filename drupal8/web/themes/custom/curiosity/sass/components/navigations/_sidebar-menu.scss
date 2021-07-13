@@ -23,8 +23,8 @@ ul[class^="nav"] {
     overflow: visible;
     font-size: var(--base-18);
     line-height: 1.5em;
-    li{
-      margin-bottom: .5rem;
+    li {
+      margin-bottom: 0.5rem;
     }
     a {
       position: relative;
@@ -203,6 +203,9 @@ ul[class^="nav"] {
     .nav-2 {
       // border-left: 1px solid var(--as-blue-base);
       &__item {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
         &[class*="active-trail"] {
           > a {
             &:before {

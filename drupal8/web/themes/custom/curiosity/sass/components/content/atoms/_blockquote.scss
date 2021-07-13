@@ -77,34 +77,16 @@ Descr:
   }
 }
 
-.basicSidebar{
-  .pcWrapper--blockQuote, .pcWrapper--ftb blockquote{
+.basicSidebar {
+  .pcWrapper--blockQuote {
     padding: 1rem;
     max-width: 100%;
     font-size: 1rem;
   }
-  .attribution{
-    font-weight: var(--light);
+  .pcWrapper--ftb blockquote {
   }
-}
-
-
-.pcWrapper--blockQuote {
-  blockquote {
-    // position: relative;
-    // &:before {
-    //   position: absolute;
-    //   height: 45px;
-    //   width: 60px;
-    //   content: "";
-    //   background-image: var(--blurple-linear);
-    //   background-size: 300%;
-    //   animation: bg-animation 3s infinite alternate;
-    //   z-index: 0;
-    //   margin-left: -1rem;
-    //   margin-top: -1rem;
-    //   clip-path: url(#open-quote);
-    // }
+  .attribution {
+    font-weight: var(--light);
   }
 }
 
